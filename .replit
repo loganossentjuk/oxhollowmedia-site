@@ -1,0 +1,9 @@
+run = "python3 -m http.server 8080"
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["python3", "-m", "http.server", "8080"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80

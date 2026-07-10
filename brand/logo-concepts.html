@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ox Hollow — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--green:#3D6B4F;--paper:#F4EEE2;--sand:#EBE2D2;--dark:#1F281E;--clay:#B67C56;--text:#262219;--muted:#6E6656;--border:#DAD0BC;}
+  *{margin:0;box-sizing:border-box;}
+  body{background:var(--paper);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;padding:3.5rem;}
+  h1{font-family:'DM Serif Display',serif;font-size:2.6rem;font-weight:400;margin-bottom:.25rem;}
+  .sub{color:var(--muted);margin-bottom:2.5rem;letter-spacing:.02em;}
+  .kicker{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin:2.5rem 0 1rem;font-weight:500;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:4px;padding:2rem 1.75rem 1.5rem;text-align:center;}
+  .mark{width:120px;height:120px;color:var(--green);margin:0 auto .25rem;display:block;}
+  .row{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+  .fav{width:30px;height:30px;color:var(--green);}
+  .rev{width:52px;height:52px;background:var(--dark);border-radius:6px;color:var(--paper);padding:9px;}
+  .rev svg{width:100%;height:100%;display:block;}
+  .name{font-family:'DM Serif Display',serif;font-size:1.05rem;margin-top:1rem;}
+  .tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;}
+  /* Wordmark lockups */
+  .lockups{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem;}
+  .lock{background:#fff;border:1px solid var(--border);border-radius:4px;padding:2.5rem;display:flex;align-items:center;justify-content:center;gap:1.4rem;}
+  .lock.dark{background:var(--dark);}
+  .lock .mark{width:66px;height:66px;margin:0;}
+  .wm{ text-align:left; }
+  .wm .n{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;color:var(--text);letter-spacing:.01em;}
+  .wm .m{font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);margin-top:.35rem;padding-left:.1rem;}
+  .lock.dark .wm .n{color:var(--paper);}
+  .lock.dark .wm .m{color:rgba(244,238,226,.55);}
+  .lock.dark .mark{color:var(--paper);}
+  .vert{flex-direction:column;gap:.9rem;}
+  .vert .wm{text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>Ox Hollow — Logo Concepts</h1>
+<p class="sub">Forest green on paper · six directions · each shown large, at favicon size, and reversed on dark.</p>
+
+<!-- ══ Symbol definitions ══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- 1. Refined aperture O (evolves current mark) -->
+  <symbol id="m-aperture" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="38" y1="12" x2="38" y2="88" stroke="currentColor" stroke-width="2.4"/>
+  </symbol>
+
+  <!-- 2. Horizon / sunrise O -->
+  <symbol id="m-horizon" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <circle cx="50" cy="43" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <line x1="12" y1="60" x2="88" y2="60" stroke="currentColor" stroke-width="2.4"/>
+  </symbol>
+
+  <!-- 3. Mountain O -->
+  <symbol id="m-mountain" viewBox="0 0 100 100">
+    <defs><clipPath id="clipM"><circle cx="50" cy="50" r="40"/></clipPath></defs>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <g clip-path="url(#clipM)">
+      <path d="M2,82 L26,50 L40,65 L57,38 L73,61 L98,82 L98,100 L2,100 Z" fill="currentColor"/>
+    </g>
+    <circle cx="69" cy="33" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+  </symbol>
+
+  <!-- 4. Wave / ocean O -->
+  <symbol id="m-wave" viewBox="0 0 100 100">
+    <defs><clipPath id="clipW"><circle cx="50" cy="50" r="40"/></clipPath></defs>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <g clip-path="url(#clipW)">
+      <path d="M-2,62 C12,54 20,70 34,62 C48,54 54,70 68,62 C82,54 90,70 102,62 L102,104 L-2,104 Z" fill="currentColor"/>
+    </g>
+  </symbol>
+
+  <!-- 5. OH serif monogram -->
+  <symbol id="m-oh" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <text x="50" y="53" text-anchor="middle" dominant-baseline="central"
+          font-family="DM Serif Display, serif" font-size="37" fill="currentColor">OH</text>
+  </symbol>
+
+  <!-- 6. Circular seal / watermark -->
+  <symbol id="m-seal" viewBox="0 0 100 100">
+    <defs><path id="sealPath" d="M50,11 a39,39 0 1,1 -0.01,0"/></defs>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <circle cx="50" cy="50" r="31" fill="none" stroke="currentColor" stroke-width="0.9"/>
+    <text font-family="DM Sans, sans-serif" font-size="6" letter-spacing="1.6" fill="currentColor">
+      <textPath href="#sealPath" startOffset="1%">OX&#160;HOLLOW&#160;MEDIA&#160;·&#160;DARE&#160;TO&#160;SEE&#160;·&#160;</textPath>
+    </text>
+    <path d="M34,57 L43,46 L50,53 L58,43 L66,57 Z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="kicker">Direction A — Refined “O” (evolves your current mark)</div>
+<div class="grid">
+  <div class="card">
+    <svg class="mark"><use href="#m-aperture"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-aperture"/></svg><span class="rev"><svg><use href="#m-aperture"/></svg></span></div>
+    <div class="name">01 · Aperture</div>
+    <div class="tag">Your current O, refined</div>
+  </div>
+  <div class="card">
+    <svg class="mark"><use href="#m-horizon"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-horizon"/></svg><span class="rev"><svg><use href="#m-horizon"/></svg></span></div>
+    <div class="name">02 · Horizon</div>
+    <div class="tag">Sun over water</div>
+  </div>
+  <div class="card">
+    <svg class="mark"><use href="#m-oh"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-oh"/></svg><span class="rev"><svg><use href="#m-oh"/></svg></span></div>
+    <div class="name">05 · OH Monogram</div>
+    <div class="tag">Serif initials in ring</div>
+  </div>
+</div>
+
+<div class="kicker">Direction B — Nature motif inside the O</div>
+<div class="grid">
+  <div class="card">
+    <svg class="mark"><use href="#m-mountain"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-mountain"/></svg><span class="rev"><svg><use href="#m-mountain"/></svg></span></div>
+    <div class="name">03 · Mountain</div>
+    <div class="tag">High country + sun</div>
+  </div>
+  <div class="card">
+    <svg class="mark"><use href="#m-wave"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-wave"/></svg><span class="rev"><svg><use href="#m-wave"/></svg></span></div>
+    <div class="name">04 · Wave</div>
+    <div class="tag">Ocean</div>
+  </div>
+  <div class="card">
+    <svg class="mark"><use href="#m-seal"/></svg>
+    <div class="row"><svg class="fav"><use href="#m-seal"/></svg><span class="rev"><svg><use href="#m-seal"/></svg></span></div>
+    <div class="name">06 · Seal</div>
+    <div class="tag">Watermark / photo stamp</div>
+  </div>
+</div>
+
+<div class="kicker">Wordmark lockups (shown with the Mountain mark)</div>
+<div class="lockups">
+  <div class="lock">
+    <svg class="mark"><use href="#m-mountain"/></svg>
+    <div class="wm"><div class="n">Ox Hollow</div><div class="m">Media</div></div>
+  </div>
+  <div class="lock dark vert">
+    <svg class="mark"><use href="#m-mountain"/></svg>
+    <div class="wm"><div class="n">Ox Hollow</div><div class="m">Media</div></div>
+  </div>
+</div>
+
+</body>
+</html>

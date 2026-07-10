@@ -118,11 +118,20 @@ em { font-style: italic; }
   border-bottom-color: var(--border);
 }
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--serif);
   font-size: 1.125rem;
   color: #F4EEE2;
   letter-spacing: 0.02em;
   transition: color 0.3s ease;
+}
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  display: block;
 }
 #nav.scrolled .nav-logo { color: var(--text); }
 
@@ -502,7 +511,8 @@ footer {
   gap: 1rem;
   flex-wrap: wrap;
 }
-.footer-logo { font-family: var(--serif); color: rgba(244,238,226,0.65); font-size: 1rem; }
+.footer-logo { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--serif); color: rgba(244,238,226,0.65); font-size: 1rem; }
+.footer-logo .brand-mark { width: 22px; height: 22px; }
 .footer-tagline { color: rgba(244,238,226,0.3); font-size: 0.9rem; font-family: var(--serif); font-style: italic; }
 .footer-copy { color: rgba(244,238,226,0.25); font-size: 0.78rem; }
 

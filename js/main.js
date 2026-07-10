@@ -28,6 +28,10 @@ const status = document.getElementById('form-status');
 if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (form.action.includes('YOUR_FORM_ID')) {
+      status.textContent = 'Form not configured yet — email hello@oxhollowmedia.com.';
+      return;
+    }
     status.textContent = 'Sending…';
     try {
       const res = await fetch(form.action, {

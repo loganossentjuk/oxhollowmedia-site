@@ -52,7 +52,7 @@ if (form) {
 }
 
 /* ── Fade-in on scroll ── */
-const fadeEls = document.querySelectorAll('.service-card, .work-card, .about-grid, .contact-grid');
+const fadeEls = document.querySelectorAll('.statement-block, .offer-card, .masonry-item, .about-grid, .contact-grid, .highlights-head');
 const io = new IntersectionObserver(
   (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
   { threshold: 0.1 }

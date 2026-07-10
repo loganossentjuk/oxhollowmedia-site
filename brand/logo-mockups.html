@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Ox Hollow — Logo Mockups in Context</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--green:#3D6B4F;--paper:#F4EEE2;--sand:#EBE2D2;--dark:#1F281E;--clay:#B67C56;--text:#262219;--muted:#6E6656;--border:#DAD0BC;}
+  *{margin:0;box-sizing:border-box;}
+  body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;padding:3rem;}
+  h1{font-family:'DM Serif Display',serif;font-size:2.4rem;font-weight:400;}
+  .sub{color:var(--muted);margin:.25rem 0 2.5rem;}
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+  .col > .label{text-align:center;font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:.9rem;}
+  .cell{background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.1rem;margin-bottom:1rem;}
+  .cell .ct{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;text-align:center;}
+
+  .mark{color:var(--green);}
+  .big{width:96px;height:96px;display:block;margin:.4rem auto 0;color:var(--green);}
+
+  /* browser tab */
+  .tab{display:flex;align-items:center;gap:.5rem;background:var(--sand);border:1px solid var(--border);border-radius:8px 8px 0 0;padding:.55rem .7rem;max-width:210px;margin:0 auto;}
+  .tab svg{width:16px;height:16px;color:var(--green);flex:0 0 auto;}
+  .tab span{font-size:.72rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+  /* nav bar */
+  .nav{display:flex;align-items:center;gap:.55rem;background:var(--dark);border-radius:5px;padding:.7rem .9rem;}
+  .nav svg{width:22px;height:22px;color:var(--paper);}
+  .nav .n{font-family:'DM Serif Display',serif;color:var(--paper);font-size:.95rem;}
+  .nav .links{margin-left:auto;display:flex;gap:.7rem;}
+  .nav .links i{font-style:normal;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,226,.6);}
+
+  /* photo watermark */
+  .photo{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden;
+         background:linear-gradient(140deg,#6d8a86 0%,#8a6b4a 100%);}
+  .photo .wm{position:absolute;right:.6rem;bottom:.55rem;display:flex;align-items:center;gap:.35rem;opacity:.9;}
+  .photo .wm svg{width:22px;height:22px;color:var(--paper);}
+  .photo .wm i{font-style:normal;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);}
+
+  /* lockup */
+  .lock{display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:.6rem 0;}
+  .lock svg{width:52px;height:52px;color:var(--green);}
+  .lock .n{font-family:'DM Serif Display',serif;font-size:1.35rem;line-height:1;color:var(--text);}
+  .lock .m{font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);}
+</style>
+</head>
+<body>
+<h1>Logo Mockups — in context</h1>
+<p class="sub">Each concept as a browser favicon, in the site nav, watermarking a photo, and as a stacked lockup.</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="m-aperture" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="38" y1="12" x2="38" y2="88" stroke="currentColor" stroke-width="2.4"/></symbol>
+  <symbol id="m-horizon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="50" cy="43" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><line x1="12" y1="60" x2="88" y2="60" stroke="currentColor" stroke-width="2.4"/></symbol>
+  <symbol id="m-mountain" viewBox="0 0 100 100"><defs><clipPath id="cm"><circle cx="50" cy="50" r="40"/></clipPath></defs><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.4"/><g clip-path="url(#cm)"><path d="M2,82 L26,50 L40,65 L57,38 L73,61 L98,82 L98,100 L2,100 Z" fill="currentColor"/></g><circle cx="69" cy="33" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  <symbol id="m-monogram" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="50" y="53" text-anchor="middle" dominant-baseline="central" font-family="'DM Serif Display',serif" font-size="37" fill="currentColor">OH</text></symbol>
+</svg>
+
+<div class="cols" id="cols"></div>
+
+<script>
+  const concepts = [
+    ['03 · Mountain','m-mountain'],
+    ['01 · Aperture','m-aperture'],
+    ['02 · Horizon','m-horizon'],
+    ['05 · OH Monogram','m-monogram'],
+  ];
+  const use = (id, cls='') => `<svg class="${cls}"><use href="#${id}"/></svg>`;
+  document.getElementById('cols').innerHTML = concepts.map(([label,id]) => `
+    <div class="col">
+      <div class="label">${label}</div>
+      <div class="cell"><div class="ct">The mark</div>${use(id,'big')}</div>
+      <div class="cell"><div class="ct">Browser tab</div>
+        <div class="tab">${use(id)}<span>Ox Hollow Media</span></div></div>
+      <div class="cell"><div class="ct">Site nav</div>
+        <div class="nav">${use(id)}<span class="n">Ox Hollow</span>
+          <span class="links"><i>Gallery</i><i>About</i><i>Prints</i></span></div></div>
+      <div class="cell"><div class="ct">Photo watermark</div>
+        <div class="photo"><div class="wm">${use(id)}<i>Ox Hollow</i></div></div></div>
+      <div class="cell"><div class="ct">Lockup</div>
+        <div class="lock">${use(id)}<div class="n">Ox Hollow</div><div class="m">Media</div></div></div>
+    </div>`).join('');
+</script>
+</body>
+</html>

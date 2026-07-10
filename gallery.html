@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Ox Hollow Media gallery — a photo walk through ocean, mountains, and people. Fine-art prints and digital downloads available." />
+  <title>Gallery — Ox Hollow Media</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gallery — Ox Hollow Media" />
+  <meta property="og:description" content="A photo walk through ocean, mountains, and people." />
+  <meta property="og:url" content="https://oxhollowmedia.com/gallery.html" />
+  <meta property="og:image" content="https://oxhollowmedia.com/images/logo.png" />
+
+  <link rel="canonical" href="https://oxhollowmedia.com/gallery.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="light-nav">
+
+  <!-- ── Navigation ── -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Ox Hollow Media</a>
+    <ul class="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#offerings">Prints</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-drawer" id="drawer">
+    <button class="drawer-close" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#offerings">Prints</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="overlay"></div>
+
+  <!-- ── Gallery header ── -->
+  <header id="gallery-hero">
+    <div class="container">
+      <p class="section-label">The Gallery</p>
+      <h1 style="font-size: clamp(2.6rem, 6vw, 4.5rem);">A photo walk.</h1>
+      <p>Wander the collection — coastline, high country, and the people who move through them. Every image is available as a fine-art print or digital download; tap any frame to inquire.</p>
+
+      <div class="filters" id="filters" role="tablist" aria-label="Filter by category">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="ocean">Ocean</button>
+        <button class="filter-chip" data-filter="mountains">Mountains</button>
+        <button class="filter-chip" data-filter="people">People</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Gallery grid ── -->
+  <section id="gallery-wrap">
+    <div class="container">
+      <div class="masonry" id="gallery-grid">
+        <!-- Placeholder frames until real photos land. Each item carries data-cat. -->
+        <a class="masonry-item" data-cat="ocean"     href="index.html#contact"><div class="ph ph-ocean ph-tall"></div><div class="cap"><span class="cap-cat">Ocean</span><div class="cap-title">Untitled · Ocean</div></div></a>
+        <a class="masonry-item" data-cat="mountains" href="index.html#contact"><div class="ph ph-mountains ph-wide"></div><div class="cap"><span class="cap-cat">Mountains</span><div class="cap-title">Untitled · Mountains</div></div></a>
+        <a class="masonry-item" data-cat="people"    href="index.html#contact"><div class="ph ph-people ph-sq"></div><div class="cap"><span class="cap-cat">People</span><div class="cap-title">Untitled · People</div></div></a>
+        <a class="masonry-item" data-cat="mountains" href="index.html#contact"><div class="ph ph-mountains ph-tall"></div><div class="cap"><span class="cap-cat">Mountains</span><div class="cap-title">Untitled · Mountains</div></div></a>
+        <a class="masonry-item" data-cat="ocean"     href="index.html#contact"><div class="ph ph-ocean ph-wide"></div><div class="cap"><span class="cap-cat">Ocean</span><div class="cap-title">Untitled · Ocean</div></div></a>
+        <a class="masonry-item" data-cat="people"    href="index.html#contact"><div class="ph ph-people ph-tall"></div><div class="cap"><span class="cap-cat">People</span><div class="cap-title">Untitled · People</div></div></a>
+        <a class="masonry-item" data-cat="ocean"     href="index.html#contact"><div class="ph ph-ocean ph-sq"></div><div class="cap"><span class="cap-cat">Ocean</span><div class="cap-title">Untitled · Ocean</div></div></a>
+        <a class="masonry-item" data-cat="mountains" href="index.html#contact"><div class="ph ph-mountains ph-sq"></div><div class="cap"><span class="cap-cat">Mountains</span><div class="cap-title">Untitled · Mountains</div></div></a>
+        <a class="masonry-item" data-cat="people"    href="index.html#contact"><div class="ph ph-people ph-wide"></div><div class="cap"><span class="cap-cat">People</span><div class="cap-title">Untitled · People</div></div></a>
+        <a class="masonry-item" data-cat="mountains" href="index.html#contact"><div class="ph ph-mountains ph-tall"></div><div class="cap"><span class="cap-cat">Mountains</span><div class="cap-title">Untitled · Mountains</div></div></a>
+        <a class="masonry-item" data-cat="ocean"     href="index.html#contact"><div class="ph ph-ocean ph-wide"></div><div class="cap"><span class="cap-cat">Ocean</span><div class="cap-title">Untitled · Ocean</div></div></a>
+        <a class="masonry-item" data-cat="people"    href="index.html#contact"><div class="ph ph-people ph-sq"></div><div class="cap"><span class="cap-cat">People</span><div class="cap-title">Untitled · People</div></div></a>
+      </div>
+      <p class="gallery-empty" id="gallery-empty">No frames in this category yet — check back soon.</p>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Ox Hollow Media</span>
+      <span class="footer-tagline"><em>Dare to see.</em></span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

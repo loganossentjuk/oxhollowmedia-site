@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ox Hollow Media — visual storytelling through film, photography, and brand content." />
-  <title>Ox Hollow Media</title>
+  <meta name="description" content="Ox Hollow Media — nature and conservation photography bringing people closer to the wild. Ocean, mountains, and the people who love them. Prints & downloads available." />
+  <title>Ox Hollow Media — Nature & Conservation Photography</title>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
@@ -13,8 +13,8 @@
 
   <!-- Social sharing (Open Graph / Twitter) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ox Hollow Media" />
-  <meta property="og:description" content="Visual storytelling through film, photography, and brand content." />
+  <meta property="og:title" content="Ox Hollow Media — Nature & Conservation Photography" />
+  <meta property="og:description" content="Bringing people closer to nature. Ocean, mountains, and the people who love them." />
   <meta property="og:url" content="https://oxhollowmedia.com" />
   <meta property="og:image" content="https://oxhollowmedia.com/images/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -32,10 +32,10 @@
   <nav id="nav">
     <a href="#hero" class="nav-logo">Ox Hollow Media</a>
     <ul class="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#offerings">Prints</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -46,9 +46,9 @@
   <div class="nav-drawer" id="drawer">
     <button class="drawer-close" aria-label="Close menu">✕</button>
     <ul>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#offerings">Prints</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -56,15 +56,31 @@
 
   <!-- ── Hero ── -->
   <section id="hero">
+    <!-- To set a real hero photo: add background-image to .hero-media in CSS (or inline). -->
+    <div class="hero-media"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="eyebrow">Visual Storytelling</p>
-      <h1 class="hero-headline">Dare to<br><em>see.</em></h1>
-      <p class="hero-sub">Film · Photography · Brand Content</p>
-      <a href="#work" class="btn btn-outline">View Our Work</a>
+      <p class="eyebrow">Nature &amp; Conservation Photography</p>
+      <h1 class="hero-headline">Dare to <em>see.</em></h1>
+      <p class="hero-sub">Ocean · Mountains · People</p>
+      <div class="hero-actions">
+        <a href="gallery.html" class="btn btn-outline">Walk the Gallery</a>
+        <a href="#statement" class="btn btn-outline">Our Vision</a>
+      </div>
     </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+  </section>
+
+  <!-- ── Vision / Mission ── -->
+  <section id="statement">
+    <div class="container statement-grid">
+      <div class="statement-block">
+        <p class="section-label">Vision</p>
+        <p class="lead">Ox Hollow strives to bring people closer to nature — illuminating stories of action, passion, and belief in <em>conservation, cultivation, and care.</em></p>
+      </div>
+      <div class="statement-block">
+        <p class="section-label">Mission</p>
+        <p class="lead">To illuminate the unseen, instill devotion, and craft stories of our <em>innate natural connections.</em></p>
+      </div>
     </div>
   </section>
 
@@ -73,103 +89,61 @@
     <div class="container about-grid">
       <div class="about-text">
         <p class="section-label">About</p>
-        <h2>We make things<br>worth watching.</h2>
-        <p>Ox Hollow Media is an independent production company built on the belief that every brand, project, and story deserves to be told with intention. We bring a filmmaker's eye to every frame — whether that's a short documentary, a commercial campaign, or an editorial shoot.</p>
-        <p>Based in the Pacific Northwest, we work with clients who care about craft.</p>
+        <h2>Behind<br>the lens.</h2>
+        <p>Ox Hollow Media is the work of a photographer drawn to wild places and the people who protect them. Every frame begins the same way — quietly, on foot, waiting for the light to reveal something worth remembering.</p>
+        <p>Rooted in the Pacific Northwest, the work moves between coastline, high country, and the faces in between — always in service of a closer, more devoted relationship with the natural world.</p>
+        <a href="#contact" class="btn btn-dark">Work with us</a>
       </div>
       <div class="about-image">
-        <div class="image-placeholder" aria-label="Behind-the-scenes photo">
-          <span>Behind the lens</span>
+        <div class="image-placeholder" aria-label="Portrait photo placeholder">
+          <span>Add: images/about/portrait.jpg</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Services ── -->
-  <section id="services">
+  <!-- ── Offerings ── -->
+  <section id="offerings">
     <div class="container">
-      <p class="section-label">Services</p>
-      <h2>What we do</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Video Production</h3>
-          <p>Concept through delivery — branded films, commercials, event coverage, and short-form content that moves people.</p>
+      <p class="section-label">Prints &amp; Commissions</p>
+      <h2>Take a piece<br>of the wild home.</h2>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <span class="offer-num">01</span>
+          <h3>Fine-Art Prints</h3>
+          <p>Archival, gallery-quality prints of select work — printed to order and shipped to your door, ready to frame.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Photography</h3>
-          <p>Editorial, product, and lifestyle photography with a natural, documentary sensibility.</p>
+        <div class="offer-card">
+          <span class="offer-num">02</span>
+          <h3>Digital Downloads</h3>
+          <p>High-resolution files licensed for personal use, wallpapers, and creative projects — delivered instantly.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Post-Production</h3>
-          <p>Color grading, sound design, and editing that elevates raw footage into something lasting.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Brand Content</h3>
-          <p>Ongoing creative partnerships — social assets, campaign shoots, and visual identity work for brands that want to stand out.</p>
+        <div class="offer-card">
+          <span class="offer-num">03</span>
+          <h3>Commissions &amp; Licensing</h3>
+          <p>Assignment work and image licensing for brands, conservation groups, and publications that share the vision.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Portfolio / Work ── -->
-  <section id="work">
+  <!-- ── Gallery highlights ── -->
+  <section id="highlights">
     <div class="container">
-      <p class="section-label">Work</p>
-      <h2>Selected projects</h2>
-      <div class="work-grid">
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Video Production · 2025</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Photography · 2025</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Brand Content · 2024</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Post-Production · 2024</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Video Production · 2024</p>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <div class="work-thumb"></div>
-          <div class="work-meta">
-            <h3>Project Title</h3>
-            <p>Photography · 2024</p>
-          </div>
-        </article>
-
+      <div class="highlights-head">
+        <div>
+          <p class="section-label">The Walk</p>
+          <h2>Selected frames</h2>
+        </div>
+        <a href="gallery.html" class="btn btn-dark">Enter the gallery →</a>
+      </div>
+      <div class="masonry" id="highlights-grid">
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-ocean ph-tall"></div><div class="cap"><span class="cap-cat">Ocean</span></div></a>
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-mountains ph-wide"></div><div class="cap"><span class="cap-cat">Mountains</span></div></a>
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-people ph-sq"></div><div class="cap"><span class="cap-cat">People</span></div></a>
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-mountains ph-tall"></div><div class="cap"><span class="cap-cat">Mountains</span></div></a>
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-people ph-wide"></div><div class="cap"><span class="cap-cat">People</span></div></a>
+        <a class="masonry-item" href="gallery.html"><div class="ph ph-ocean ph-sq"></div><div class="cap"><span class="cap-cat">Ocean</span></div></a>
       </div>
     </div>
   </section>
@@ -179,8 +153,8 @@
     <div class="container contact-grid">
       <div class="contact-text">
         <p class="section-label">Contact</p>
-        <h2>Let's make<br>something.</h2>
-        <p>Have a project in mind? We'd love to hear about it. Reach out and we'll be in touch within 1–2 business days.</p>
+        <h2>Let's make<br>something wild.</h2>
+        <p>Interested in a print, a commission, or a licensing conversation? Reach out and we'll be in touch within 1–2 business days.</p>
         <a href="mailto:hello@oxhollowmedia.com" class="contact-email">hello@oxhollowmedia.com</a>
       </div>
       <!-- ⚠️ SETUP: create a free form at https://formspree.io (use hello@oxhollowmedia.com),
@@ -200,7 +174,7 @@
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project…"></textarea>
+          <textarea id="message" name="message" required rows="5" placeholder="Tell us what you have in mind…"></textarea>
         </div>
         <button type="submit" class="btn btn-filled">Send Message</button>
         <p class="form-note" id="form-status"></p>

@@ -11,8 +11,9 @@
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Short TTL: these files change on deploys and aren't content-hashed
 /css/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate
 
 /js/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate

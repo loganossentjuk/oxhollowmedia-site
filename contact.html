@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Ox Hollow Media — prints, commissions, licensing, and collaborations. Available for booking." />
+  <title>Contact — Ox Hollow Media</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact — Ox Hollow Media" />
+  <meta property="og:description" content="Prints, commissions, licensing, and collaborations. Available for booking." />
+  <meta property="og:url" content="https://oxhollowmedia.com/contact.html" />
+  <meta property="og:image" content="https://oxhollowmedia.com/images/social-card.png" />
+
+  <link rel="canonical" href="https://oxhollowmedia.com/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="light-nav">
+
+  <!-- ── Navigation ── -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Ox Hollow Media — home">
+      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M50,10 A40,40 0 0 0 50,90 Z" fill="currentColor"/>
+      </svg>
+      <span>Ox Hollow</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-drawer" id="drawer">
+    <button class="drawer-close" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay" id="overlay"></div>
+
+  <!-- ── Page header ── -->
+  <header class="page-hero">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h1>Let's create.</h1>
+      <p>Available for booking — prints, commissions, licensing, and collaborations. Reach out and we'll be in touch within 1–2 business days.</p>
+    </div>
+  </header>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-text">
+        <p class="section-label">Available for booking</p>
+        <h2>Let's make<br>something wild.</h2>
+        <p>Tell us about the print you have your eye on, the story you want told, or the wall that needs the wild brought to it.</p>
+        <div class="contact-info">
+          <span class="ci-label">Email</span>
+          <a href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a>
+          <span class="ci-label">Phone</span>
+          <a href="tel:+13039055199">(303) 905-5199</a>
+        </div>
+        <div class="socials">
+          <a href="https://instagram.com/oxhollowmedia" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/logan-ossentjuk/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/mqerajwr"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Tell us what you have in mind…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-filled">Send Message</button>
+        <p class="form-note" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M50,10 A40,40 0 0 0 50,90 Z" fill="currentColor"/>
+        </svg>
+        Ox Hollow
+      </span>
+      <span class="footer-tagline"><em>Dare to see.</em></span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

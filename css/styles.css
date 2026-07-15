@@ -414,12 +414,13 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   color: var(--accent-soft);
 }
 
-/* ── Gallery page header + filters ── */
-#gallery-hero {
+/* ── Interior page header (gallery, about, store, contact) ── */
+#gallery-hero, .page-hero {
   padding: calc(var(--nav-h) + 5rem) 0 3rem;
   background: var(--bg);
 }
-#gallery-hero p { max-width: 52ch; }
+#gallery-hero p, .page-hero p { max-width: 52ch; }
+.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); }
 .filters {
   display: flex;
   gap: 0.6rem;
@@ -448,6 +449,55 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .filter-count { color: inherit; opacity: 0.55; margin-left: 0.35rem; }
 
 #gallery-wrap { padding: 2.5rem 0 8rem; background: var(--bg); }
+
+/* ── Films (video embeds on gallery page) ── */
+#films {
+  padding: 7rem 0 8rem;
+  background: var(--bg-section);
+}
+#films h2 { margin-bottom: 3rem; }
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.film { display: flex; flex-direction: column; }
+.film-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-dark);
+}
+.film-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.film h3 { margin: 1.1rem 0 0.2rem; font-family: var(--serif); font-weight: 500; font-size: 1.35rem; }
+.film p { font-size: 0.9rem; margin-bottom: 0; }
+
+/* ── Contact info block (contact page) ── */
+.contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.contact-info a { color: var(--accent-soft); font-size: 0.95rem; transition: opacity 0.2s; }
+.contact-info a:hover { opacity: 0.7; }
+.contact-info .ci-label {
+  font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(244,238,226,0.4); margin-top: 1rem;
+}
+.socials { display: flex; gap: 1.5rem; margin-top: 2.5rem; }
+.socials a {
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(244,238,226,0.55); border-bottom: 1px solid rgba(244,238,226,0.2);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.socials a:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+
+/* ── About page ── */
+.craft-note { font-size: 0.95rem; }
+.about-hero-img { width: 100%; border-radius: var(--radius); margin: 3rem 0 0; }
 .masonry-item.is-hidden { display: none; }
 .gallery-empty {
   display: none;
@@ -532,6 +582,7 @@ footer {
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .statement-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .films-grid { grid-template-columns: 1fr; }
   .offer-grid { grid-template-columns: 1fr; border-top: 1px solid var(--border); }
   .offer-card {
     border-right: none;

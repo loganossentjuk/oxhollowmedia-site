@@ -30,7 +30,7 @@
 
   <!-- ── Navigation ── -->
   <nav id="nav">
-    <a href="#hero" class="nav-logo" aria-label="Ox Hollow Media — home">
+    <a href="index.html" class="nav-logo" aria-label="Ox Hollow Media — home">
       <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
         <path d="M50,10 A40,40 0 0 0 50,90 Z" fill="currentColor"/>
@@ -39,9 +39,9 @@
     </a>
     <ul class="nav-links">
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#offerings">Prints</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -52,17 +52,17 @@
   <div class="nav-drawer" id="drawer">
     <button class="drawer-close" aria-label="Close menu">✕</button>
     <ul>
+      <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#offerings">Prints</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
   <div class="drawer-overlay" id="overlay"></div>
 
   <!-- ── Hero ── -->
   <section id="hero">
-    <!-- To set a real hero photo: add background-image to .hero-media in CSS (or inline). -->
     <div class="hero-media"></div>
     <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-inner">
@@ -90,48 +90,7 @@
     </div>
   </section>
 
-  <!-- ── About ── -->
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <p class="section-label">About</p>
-        <h2>Behind<br>the lens.</h2>
-        <p>Ox Hollow Media is the work of a photographer drawn to wild places and the people who protect them. Every frame begins the same way — quietly, on foot, waiting for the light to reveal something worth remembering.</p>
-        <p>Rooted in the Pacific Northwest, the work moves between coastline, high country, and the faces in between — always in service of a closer, more devoted relationship with the natural world.</p>
-        <a href="#contact" class="btn btn-dark">Work with us</a>
-      </div>
-      <div class="about-image">
-        <img src="images/about/portrait.jpg" alt="Self-portrait of the photographer, camera in hand" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Offerings ── -->
-  <section id="offerings">
-    <div class="container">
-      <p class="section-label">Prints &amp; Commissions</p>
-      <h2>Take a piece<br>of the wild home.</h2>
-      <div class="offer-grid">
-        <div class="offer-card">
-          <span class="offer-num">01</span>
-          <h3>Fine-Art Prints</h3>
-          <p>Archival, gallery-quality prints of select work — printed to order and shipped to your door, ready to frame.</p>
-        </div>
-        <div class="offer-card">
-          <span class="offer-num">02</span>
-          <h3>Digital Downloads</h3>
-          <p>High-resolution files licensed for personal use, wallpapers, and creative projects — delivered instantly.</p>
-        </div>
-        <div class="offer-card">
-          <span class="offer-num">03</span>
-          <h3>Commissions &amp; Licensing</h3>
-          <p>Assignment work and image licensing for brands, conservation groups, and publications that share the vision.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Gallery highlights ── -->
+  <!-- ── Gallery highlights (featured frames from the original portfolio) ── -->
   <section id="highlights">
     <div class="container">
       <div class="highlights-head">
@@ -144,43 +103,27 @@
       <div class="masonry" id="highlights-grid">
         <a class="masonry-item" href="gallery.html"><img src="images/portfolio/ocean/07-golden-gate-fog.jpg" alt="Golden Gate Bridge rising into fog" loading="lazy"><div class="cap"><span class="cap-cat">Ocean</span></div></a>
         <a class="masonry-item" href="gallery.html"><img src="images/portfolio/mountains/01-fitz-roy-alpenglow.jpg" alt="Alpenglow on Fitz Roy" loading="lazy"><div class="cap"><span class="cap-cat">Mountains</span></div></a>
-        <a class="masonry-item" href="gallery.html"><img src="images/portfolio/people/03-scientist-with-sample.jpg" alt="Marine scientist holding a specimen jar" loading="lazy"><div class="cap"><span class="cap-cat">People</span></div></a>
+        <a class="masonry-item" href="gallery.html"><img src="images/portfolio/ocean/04-blue-footed-booby.jpg" alt="Blue-footed booby displaying in the Galápagos" loading="lazy"><div class="cap"><span class="cap-cat">Ocean</span></div></a>
         <a class="masonry-item" href="gallery.html"><img src="images/portfolio/mountains/04-fog-forest.jpg" alt="Fog drifting through conifer forest" loading="lazy"><div class="cap"><span class="cap-cat">Mountains</span></div></a>
-        <a class="masonry-item" href="gallery.html"><img src="images/portfolio/people/01-window-portrait.jpg" alt="Window-lit portrait" loading="lazy"><div class="cap"><span class="cap-cat">People</span></div></a>
+        <a class="masonry-item" href="gallery.html"><img src="images/portfolio/ocean/02-shark-silhouette.jpg" alt="Shark silhouette in deep blue water" loading="lazy"><div class="cap"><span class="cap-cat">Ocean</span></div></a>
         <a class="masonry-item" href="gallery.html"><img src="images/portfolio/ocean/01-humpback-breach.jpg" alt="Humpback whale breaching" loading="lazy"><div class="cap"><span class="cap-cat">Ocean</span></div></a>
       </div>
     </div>
   </section>
 
-  <!-- ── Contact ── -->
+  <!-- ── Closing CTA ── -->
   <section id="contact">
     <div class="container contact-grid">
       <div class="contact-text">
-        <p class="section-label">Contact</p>
-        <h2>Let's make<br>something wild.</h2>
-        <p>Interested in a print, a commission, or a licensing conversation? Reach out and we'll be in touch within 1–2 business days.</p>
+        <p class="section-label">Prints · Commissions · Films</p>
+        <h2>Take a piece<br>of the wild home.</h2>
+        <p>Every frame in the gallery is available as an archival print or licensed download — and the camera is available for the next story worth telling.</p>
         <a href="mailto:hello@oxhollowmedia.com" class="contact-email">hello@oxhollowmedia.com</a>
       </div>
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/mqerajwr"
-        method="POST"
-      >
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required rows="5" placeholder="Tell us what you have in mind…"></textarea>
-        </div>
-        <button type="submit" class="btn btn-filled">Send Message</button>
-        <p class="form-note" id="form-status"></p>
-      </form>
+      <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: flex-start;">
+        <a href="store.html" class="btn btn-outline">Visit the store</a>
+        <a href="contact.html" class="btn btn-filled">Get in touch</a>
+      </div>
     </div>
   </section>
 
@@ -192,7 +135,7 @@
           <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
           <path d="M50,10 A40,40 0 0 0 50,90 Z" fill="currentColor"/>
         </svg>
-        Ox Hollow
+        Ox Hollow Media
       </span>
       <span class="footer-tagline"><em>Dare to see.</em></span>
       <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>

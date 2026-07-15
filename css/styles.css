@@ -231,9 +231,9 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .hero-media {
   position: absolute;
   inset: 0;
-  /* Warm placeholder gradient until a featured photo is set.
-     To use a real image: set background-image on .hero-media and remove this gradient. */
+  /* Featured photo (surfer at dusk, from the original portfolio); gradient shows while it loads. */
   background:
+    url('../images/hero/dawn-patrol.jpg') center / cover no-repeat,
     linear-gradient(115deg, #2b3a2a 0%, #4a5b3e 40%, #8a6b4a 78%, #b6875c 100%);
 }
 .hero-media::after {
@@ -309,6 +309,7 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 }
 .about-text p { max-width: 48ch; }
 .about-image { display: flex; justify-content: center; }
+.about-image img { width: 100%; height: auto; border-radius: var(--radius); }
 .image-placeholder {
   width: 100%;
   aspect-ratio: 4/5;

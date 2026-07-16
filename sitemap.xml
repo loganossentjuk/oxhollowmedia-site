@@ -1,32 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://oxhollowmedia.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://oxhollowmedia.com/gallery.html</loc>
+    <loc>https://oxhollowmedia.com/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/01-humpback-breach.jpg</image:loc>
+      <image:title>Humpback Breach</image:title>
+      <image:caption>Humpback whale breaching in open blue water</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/01-fitz-roy-alpenglow.jpg</image:loc>
+      <image:title>Fitz Roy, Alpenglow</image:title>
+      <image:caption>Alpenglow on the granite spires of Fitz Roy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/01-window-portrait.jpg</image:loc>
+      <image:title>Window Portrait</image:title>
+      <image:caption>Window-lit portrait of a young woman</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/04-fog-forest.jpg</image:loc>
+      <image:title>Fog Forest</image:title>
+      <image:caption>Fog drifting through tall conifer forest</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/03-sea-lion-pup.jpg</image:loc>
+      <image:title>Sea Lion Pup</image:title>
+      <image:caption>Sea lion pup resting on the sand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/02-field-notes-at-sea.jpg</image:loc>
+      <image:title>Field Notes at Sea</image:title>
+      <image:caption>Researcher taking field notes on the deck of a ship</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/07-golden-gate-fog.jpg</image:loc>
+      <image:title>Golden Gate, Fog</image:title>
+      <image:caption>Golden Gate Bridge rising into fog, seen from the water's edge</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/02-highland-river.jpg</image:loc>
+      <image:title>Highland River</image:title>
+      <image:caption>River winding through a green highland valley</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/03-scientist-with-sample.jpg</image:loc>
+      <image:title>Scientist with Sample</image:title>
+      <image:caption>Marine scientist holding up a specimen jar aboard a research vessel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/06-winter-bark.jpg</image:loc>
+      <image:title>Winter Bark</image:title>
+      <image:caption>Snow-dusted bark of an old conifer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/05-shorebreak-boulders.jpg</image:loc>
+      <image:title>Shorebreak Boulders</image:title>
+      <image:caption>Waves breaking over mossy shoreline boulders</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/04-research-vessel-dawn.jpg</image:loc>
+      <image:title>Research Vessel, Dawn</image:title>
+      <image:caption>Research vessel deck rigging silhouetted at dawn</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/07-banyan-light.jpg</image:loc>
+      <image:title>Banyan Light</image:title>
+      <image:caption>Light breaking through tangled banyan branches</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/04-blue-footed-booby.jpg</image:loc>
+      <image:title>Blue-Footed Booby</image:title>
+      <image:caption>Blue-footed booby displaying in the Galápagos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/03-misty-ridgeline.jpg</image:loc>
+      <image:title>Misty Ridgeline</image:title>
+      <image:caption>Forested ridgeline fading into blue evening mist</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/05-peace-skyline.jpg</image:loc>
+      <image:title>Peace, Skyline</image:title>
+      <image:caption>PEACE sign glowing against a night city skyline</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/06-tidepool-lava.jpg</image:loc>
+      <image:title>Tidepool, Lava</image:title>
+      <image:caption>Aquamarine tidepool set in dark lava rock</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/05-conifer-canopy.jpg</image:loc>
+      <image:title>Conifer Canopy</image:title>
+      <image:caption>Looking up into a conifer canopy against a pale sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/08-golden-gate-paddler.jpg</image:loc>
+      <image:title>Paddler at the Gate</image:title>
+      <image:caption>Paddleboarder crossing beneath the Golden Gate Bridge</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/08-jungle-lily.jpg</image:loc>
+      <image:title>Jungle Lily</image:title>
+      <image:caption>White peace lily blooming in deep jungle shade</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/people/06-city-thunderheads.jpg</image:loc>
+      <image:title>City Thunderheads</image:title>
+      <image:caption>Thunderheads building over a city skyline at golden hour</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/02-shark-silhouette.jpg</image:loc>
+      <image:title>Shark Silhouette</image:title>
+      <image:caption>Shark silhouette in deep blue water</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/10-rainier-afterglow.jpg</image:loc>
+      <image:title>Rainier Afterglow</image:title>
+      <image:caption>Mount Rainier silhouetted against a pink and violet afterglow</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/09-dusk-waterfowl.jpg</image:loc>
+      <image:title>Dusk Waterfowl</image:title>
+      <image:caption>Waterfowl drifting on still water at dusk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/09-palm-canopy.jpg</image:loc>
+      <image:title>Palm Canopy</image:title>
+      <image:caption>Palm trunks reaching into a bright tropical canopy</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/01-gala-conversation.jpg</image:loc>
+      <image:title>Gala Conversation</image:title>
+      <image:caption>Two guests in conversation beneath balloon decor at a gala</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/12-marine-iguana.jpg</image:loc>
+      <image:title>Marine Iguana</image:title>
+      <image:caption>Marine iguana resting on sun-bleached rocks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/01-executive-headshot.jpg</image:loc>
+      <image:title>Executive Headshot</image:title>
+      <image:caption>Corporate headshot of a smiling executive in a blue suit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/02-keynote.jpg</image:loc>
+      <image:title>The Keynote</image:title>
+      <image:caption>Speaker addressing a crowd beneath a balloon arch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/12-forest-fungus.jpg</image:loc>
+      <image:title>Forest Fungus</image:title>
+      <image:caption>White fungus blooming on a fallen log</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/11-reef-sharks.jpg</image:loc>
+      <image:title>Reef Sharks</image:title>
+      <image:caption>Sharks and reef fish schooling in hazy blue water</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/03-team-celebration.jpg</image:loc>
+      <image:title>Team Celebration</image:title>
+      <image:caption>Colleagues posing together at an office celebration</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/02-amber-portrait.jpg</image:loc>
+      <image:title>Amber Portrait</image:title>
+      <image:caption>Low-light portrait of a woman in amber tones</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/10-turquoise-harbor.jpg</image:loc>
+      <image:title>Turquoise Harbor</image:title>
+      <image:caption>Boats moored in a turquoise island harbor</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/04-industry-mingle.jpg</image:loc>
+      <image:title>Industry Mingle</image:title>
+      <image:caption>Guests talking at an evening industry event</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/13-dusk-branches.jpg</image:loc>
+      <image:title>Dusk Branches</image:title>
+      <image:caption>Bare branches silhouetted against a deep dusk sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/03-quiet-gaze.jpg</image:loc>
+      <image:title>Quiet Gaze</image:title>
+      <image:caption>Intimate low-light portrait of a woman with braided hair</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/05-evening-reception.jpg</image:loc>
+      <image:title>Evening Reception</image:title>
+      <image:caption>Guests mingling with drinks at an evening reception</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/13-sea-cave-glow.jpg</image:loc>
+      <image:title>Sea-Cave Glow</image:title>
+      <image:caption>Aquamarine glow inside a dark sea cave</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/11-ember-study.jpg</image:loc>
+      <image:title>Ember Study</image:title>
+      <image:caption>Close study of campfire flames against the dark</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/d3H1rcCFtrQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Ocean Defenders</video:title>
+      <video:description>A documentary short about the people who stand between the sea and what threatens it.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/d3H1rcCFtrQ</video:player_loc>
+      <video:duration>568</video:duration>
+      <video:publication_date>2023-06-26T12:28:22-07:00</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.vimeocdn.com/video/737744483-12c5b549496ae5f36634ca4c0b974b2b25953ead8650b47de8c03e67d6d64dc0-d_640</video:thumbnail_loc>
+      <video:title>Discarded Matters</video:title>
+      <video:description>What we throw away doesn't go away — a documentary short on waste and consequence.</video:description>
+      <video:player_loc>https://player.vimeo.com/video/299590434</video:player_loc>
+      <video:duration>149</video:duration>
+      <video:publication_date>2018-11-08T00:13:47+00:00</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.vimeocdn.com/video/849919926-115462557ab0abb80539d3e825347cf7998d959b81806abcff24650457df9e6d-d_640</video:thumbnail_loc>
+      <video:title>Fluid Frontier</video:title>
+      <video:description>At the edge where land gives way to water — a documentary short.</video:description>
+      <video:player_loc>https://player.vimeo.com/video/304798458</video:player_loc>
+      <video:duration>172</video:duration>
+      <video:publication_date>2018-12-06T06:24:26+00:00</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/store</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://oxhollowmedia.com/about.html</loc>
+    <loc>https://oxhollowmedia.com/work-with-me</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://oxhollowmedia.com/store.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://oxhollowmedia.com/work-with-me.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://oxhollowmedia.com/contact.html</loc>
+    <loc>https://oxhollowmedia.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

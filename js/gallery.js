@@ -24,3 +24,20 @@ if (filterBar && grid) {
     applyFilter(chip.dataset.filter);
   });
 }
+
+/* ── Visible frame titles (buyer feedback: titles were hover-only) ── */
+document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
+  const t = item.querySelector('.cap-title');
+  const c = item.querySelector('.cap-cat');
+  if (!t) return;
+  const line = document.createElement('span');
+  line.className = 'frame-title';
+  line.textContent = t.textContent;
+  if (c) {
+    const cat = document.createElement('span');
+    cat.className = 'frame-cat';
+    cat.textContent = c.textContent;
+    line.appendChild(cat);
+  }
+  item.appendChild(line);
+});

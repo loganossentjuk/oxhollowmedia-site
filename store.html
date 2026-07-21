@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "OfferCatalog", "name": "Ox Hollow Media Print Shop", "url": "https://oxhollowmedia.com/store", "provider": {"@id": "https://oxhollowmedia.com/#business"}, "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Archival Fine-Art Nature Print", "description": "Gallery-quality archival prints of ocean, mountain, and wildlife photography, printed to order.", "brand": {"@type": "Brand", "name": "Ox Hollow Media"}}}, {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Licensed Digital Download", "description": "High-resolution nature photography licensed for personal use and creative projects."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commissions & Image Licensing", "description": "Assignment photography and licensing for brands, conservation groups, and publications."}}]}</script>
 </head>
 <body class="light-nav">
@@ -66,65 +66,131 @@
   <!-- ── Page header ── -->
   <header class="page-hero">
     <div class="container">
-      <p class="section-label">Store</p>
+      <p class="section-label">The Print Shop</p>
       <h1>Take a piece of<br>the wild home.</h1>
-      <p>Every nature frame in the gallery — ocean, mountains, wildlife — is available as an archival fine-art print or a licensed digital download. Online checkout is in the works; until then, ordering is a one-email affair. Booking events or portraits? That lives at <a href="/work-with-me" style="text-decoration:underline">Work With Me</a>.</p>
+      <p>Eighteen selected frames, each available as a gallery-quality archival print — printed to order, shipped to your door. Click any frame to order. Booking events or portraits? That lives at <a href="/work-with-me" style="text-decoration:underline">Work With Me</a>.</p>
     </div>
   </header>
 
-  <!-- ── Offerings ── -->
-  <section id="offerings" style="padding-top: 4rem;">
+  <!-- ── Product grid ── -->
+  <section id="store-collection" style="padding: 4rem 0 8rem; background: var(--bg);">
     <div class="container">
-      <div class="offer-grid">
-        <div class="offer-card">
-          <span class="offer-num">01</span>
-          <h3>Fine-Art Prints</h3>
-          <p>Archival, gallery-quality prints of select work — printed to order and shipped to your door, ready to frame.</p>
+      <div class="store-grid">
+        <div class="product">
+          <a class="product-frame" data-product="humpback-breach" href="/contact"><img src="images/portfolio/ocean/01-humpback-breach.jpg" width="2000" height="1331" decoding="async" alt="Humpback whale breaching in open blue water" loading="lazy"></a>
+          <h3>Humpback Breach</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="humpback-breach" href="/contact">Order this print</a>
         </div>
-        <div class="offer-card">
-          <span class="offer-num">02</span>
-          <h3>Digital Downloads</h3>
-          <p>High-resolution files licensed for personal use, wallpapers, and creative projects — delivered instantly.</p>
+        <div class="product">
+          <a class="product-frame" data-product="fitz-roy-alpenglow" href="/contact"><img src="images/portfolio/mountains/01-fitz-roy-alpenglow.jpg" width="2000" height="1500" decoding="async" alt="Alpenglow on the granite spires of Fitz Roy" loading="lazy"></a>
+          <h3>Fitz Roy, Alpenglow</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="fitz-roy-alpenglow" href="/contact">Order this print</a>
         </div>
-        <div class="offer-card">
-          <span class="offer-num">03</span>
-          <h3>Commissions &amp; Licensing</h3>
-          <p>Assignment work and image licensing for brands, conservation groups, and publications that share the vision.</p>
+        <div class="product">
+          <a class="product-frame" data-product="golden-gate-fog" href="/contact"><img src="images/portfolio/ocean/07-golden-gate-fog.jpg" width="972" height="2000" decoding="async" alt="Golden Gate Bridge rising into fog, seen from the water's edge" loading="lazy"></a>
+          <h3>Golden Gate, Fog</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="golden-gate-fog" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <span class="pair-note">Mirror set · I of II</span>
+          <a class="product-frame" data-product="reef-passage-mirror-1" href="/contact"><img src="images/portfolio/ocean/02-shark-silhouette.jpg" width="2000" height="1500" decoding="async" alt="Shark gliding through hazy blue water, reef wall to the right — mirror image I" loading="lazy"></a>
+          <h3>Reef Passage — Mirror I</h3>
+          <p class="product-meta">Ocean · Sold alone or as the mirror-image pair</p>
+          <a class="btn btn-filled" data-product="reef-passage-mirror-1" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <span class="pair-note">Mirror set · II of II</span>
+          <a class="product-frame" data-product="reef-passage-mirror-2" href="/contact"><img src="images/portfolio/ocean/11-reef-sharks.jpg" width="2000" height="1500" decoding="async" alt="Sharks and reef fish in hazy blue water, reef wall to the left — mirror image II" loading="lazy"></a>
+          <h3>Reef Passage — Mirror II</h3>
+          <p class="product-meta">Ocean · Sold alone or as the mirror-image pair</p>
+          <a class="btn btn-filled" data-product="reef-passage-mirror-2" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="fog-forest" href="/contact"><img src="images/portfolio/mountains/04-fog-forest.jpg" width="1125" height="2000" decoding="async" alt="Fog drifting through tall conifer forest" loading="lazy"></a>
+          <h3>Fog Forest</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="fog-forest" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="rainier-afterglow" href="/contact"><img src="images/portfolio/mountains/10-rainier-afterglow.jpg" width="2000" height="1125" decoding="async" alt="Mount Rainier silhouetted against a pink and violet afterglow" loading="lazy"></a>
+          <h3>Rainier Afterglow</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="rainier-afterglow" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <span class="pair-note">Mirror set · I of II</span>
+          <a class="product-frame" data-product="sea-cave-glow" href="/contact"><img src="images/portfolio/ocean/13-sea-cave-glow.jpg" width="1599" height="2000" decoding="async" alt="Aquamarine pool in dark lava rock, coral wall to the left — mirror image I" loading="lazy"></a>
+          <h3>Lava Pools — Mirror I</h3>
+          <p class="product-meta">Ocean · Sold alone or as the mirror-image pair</p>
+          <a class="btn btn-filled" data-product="sea-cave-glow" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <span class="pair-note">Mirror set · II of II</span>
+          <a class="product-frame" data-product="tidepool-lava" href="/contact"><img src="images/portfolio/ocean/06-tidepool-lava.jpg" width="1279" height="1600" decoding="async" alt="Aquamarine tidepool in dark lava rock, coral wall to the right — mirror image II" loading="lazy"></a>
+          <h3>Lava Pools — Mirror II</h3>
+          <p class="product-meta">Ocean · Sold alone or as the mirror-image pair</p>
+          <a class="btn btn-filled" data-product="tidepool-lava" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="marine-iguana" href="/contact"><img src="images/portfolio/ocean/12-marine-iguana.jpg" width="2000" height="972" decoding="async" alt="Marine iguana resting on sun-bleached rocks" loading="lazy"></a>
+          <h3>Marine Iguana</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="marine-iguana" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="blue-footed-booby" href="/contact"><img src="images/portfolio/ocean/04-blue-footed-booby.jpg" width="2000" height="1333" decoding="async" alt="Blue-footed booby displaying in the Galápagos" loading="lazy"></a>
+          <h3>Blue-Footed Booby</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="blue-footed-booby" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="sea-lion-pup" href="/contact"><img src="images/portfolio/ocean/03-sea-lion-pup.jpg" width="2000" height="1332" decoding="async" alt="Sea lion pup resting on the sand" loading="lazy"></a>
+          <h3>Sea Lion Pup</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="sea-lion-pup" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="highland-river" href="/contact"><img src="images/portfolio/mountains/02-highland-river.jpg" width="1500" height="2000" decoding="async" alt="River winding through a green highland valley" loading="lazy"></a>
+          <h3>Highland River</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="highland-river" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="misty-ridgeline" href="/contact"><img src="images/portfolio/mountains/03-misty-ridgeline.jpg" width="2000" height="1333" decoding="async" alt="Forested ridgeline fading into blue evening mist" loading="lazy"></a>
+          <h3>Misty Ridgeline</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="misty-ridgeline" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="shorebreak-boulders" href="/contact"><img src="images/portfolio/ocean/05-shorebreak-boulders.jpg" width="2000" height="924" decoding="async" alt="Waves breaking over mossy shoreline boulders" loading="lazy"></a>
+          <h3>Shorebreak Boulders</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="shorebreak-boulders" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="turquoise-harbor" href="/contact"><img src="images/portfolio/ocean/10-turquoise-harbor.jpg" width="2000" height="972" decoding="async" alt="Boats moored in a turquoise island harbor" loading="lazy"></a>
+          <h3>Turquoise Harbor</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="turquoise-harbor" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="golden-gate-paddler" href="/contact"><img src="images/portfolio/ocean/08-golden-gate-paddler.jpg" width="2000" height="1500" decoding="async" alt="Paddleboarder crossing beneath the Golden Gate Bridge" loading="lazy"></a>
+          <h3>Paddler at the Gate</h3>
+          <p class="product-meta">Ocean · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="golden-gate-paddler" href="/contact">Order this print</a>
+        </div>
+        <div class="product">
+          <a class="product-frame" data-product="dusk-branches" href="/contact"><img src="images/portfolio/mountains/13-dusk-branches.jpg" width="2000" height="1125" decoding="async" alt="Bare branches silhouetted against a deep dusk sky" loading="lazy"></a>
+          <h3>Dusk Branches</h3>
+          <p class="product-meta">Mountains · Archival print, multiple sizes</p>
+          <a class="btn btn-filled" data-product="dusk-branches" href="/contact">Order this print</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ── How to order ── -->
-  <section id="highlights">
-    <div class="container">
-      <div class="highlights-head">
-        <div>
-          <p class="section-label">How it works</p>
-          <h2>Three steps to your wall.</h2>
-        </div>
-        <a href="/gallery" class="btn btn-dark">Browse the gallery →</a>
-      </div>
-      <div class="offer-grid">
-        <div class="offer-card">
-          <span class="offer-num">1</span>
-          <h3>Pick your frame</h3>
-          <p>Walk the gallery and note the title of the image you want — every frame is available.</p>
-        </div>
-        <div class="offer-card">
-          <span class="offer-num">2</span>
-          <h3>Tell us the size</h3>
-          <p>Send the title plus your preferred size and finish through the contact form, or just email us.</p>
-        </div>
-        <div class="offer-card">
-          <span class="offer-num">3</span>
-          <h3>We handle the rest</h3>
-          <p>You'll get a quote within 1–2 business days; prints ship to your door, downloads arrive by email.</p>
-        </div>
-      </div>
-      <div style="margin-top: 3.5rem;">
-        <a href="/contact" class="btn btn-filled">Start an order</a>
-      </div>
+      <p style="margin-top: 3.5rem; font-size: 0.9rem;">Want a frame that isn't in the shop, a digital license, or the Reef Passage mirror pair as a set? <a href="/contact" style="text-decoration: underline;">Get in touch</a> — every image in the <a href="/gallery" style="text-decoration: underline;">gallery</a> is available.</p>
     </div>
   </section>
 
@@ -143,6 +209,43 @@
     </div>
   </footer>
 
+  <script>
+    /* ── Storefront links ─────────────────────────────────────────────
+       Once the Fine Art America (or Shopify) account exists, paste each
+       image's product-page URL here. Any product left as "" falls back
+       to the contact page with a prefilled order subject.            */
+    const BUY_LINKS = {
+      "humpback-breach": "",
+      "fitz-roy-alpenglow": "",
+      "golden-gate-fog": "",
+      "reef-passage-mirror-1": "",
+      "reef-passage-mirror-2": "",
+      "fog-forest": "",
+      "rainier-afterglow": "",
+      "sea-cave-glow": "",
+      "tidepool-lava": "",
+      "marine-iguana": "",
+      "blue-footed-booby": "",
+      "sea-lion-pup": "",
+      "highland-river": "",
+      "misty-ridgeline": "",
+      "shorebreak-boulders": "",
+      "turquoise-harbor": "",
+      "golden-gate-paddler": "",
+      "dusk-branches": ""
+    };
+    document.querySelectorAll('[data-product]').forEach((el) => {
+      const url = BUY_LINKS[el.dataset.product];
+      if (url) {
+        el.href = url;
+        el.target = '_blank';
+        el.rel = 'noopener';
+      } else {
+        const title = el.closest('.product').querySelector('h3').textContent;
+        el.href = 'mailto:hello@oxhollowmedia.com?subject=' + encodeURIComponent('Print order: ' + title);
+      }
+    });
+  </script>
   <script src="js/main.js?v=2"></script>
 </body>
 </html>

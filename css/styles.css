@@ -673,3 +673,19 @@ footer {
   .nav-drawer { inset: 0; }
   .container, .hero-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
+
+/* ── Linked craft cards (about page) ── */
+a.offer-link { color: inherit; }
+a.offer-link .offer-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+a.offer-link:hover .offer-cta { border-color: var(--accent); }
+a.offer-link:hover h3 { color: var(--accent); }

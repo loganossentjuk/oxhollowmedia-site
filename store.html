@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "OfferCatalog", "name": "Ox Hollow Media Print Shop", "url": "https://oxhollowmedia.com/store", "provider": {"@id": "https://oxhollowmedia.com/#business"}, "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Archival Fine-Art Nature Print", "description": "Gallery-quality archival prints of ocean, mountain, and wildlife photography, printed to order.", "brand": {"@type": "Brand", "name": "Ox Hollow Media"}}}, {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Licensed Digital Download", "description": "High-resolution nature photography licensed for personal use and creative projects."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commissions & Image Licensing", "description": "Assignment photography and licensing for brands, conservation groups, and publications."}}]}</script>
 </head>
 <body class="light-nav">
@@ -211,9 +211,9 @@
 
   <script>
     /* ── Storefront links ─────────────────────────────────────────────
-       Once the Fine Art America (or Shopify) account exists, paste each
-       image's product-page URL here. Any product left as "" falls back
-       to the contact page with a prefilled order subject.            */
+       Once the Shopify store exists (see SHOPIFY-SETUP.md), paste each
+       product page URL here. Any product left as "" falls back to the
+       contact page with the print title prefilled in the message.    */
     const BUY_LINKS = {
       "humpback-breach": "",
       "fitz-roy-alpenglow": "",
@@ -242,7 +242,7 @@
         el.rel = 'noopener';
       } else {
         const title = el.closest('.product').querySelector('h3').textContent;
-        el.href = 'mailto:hello@oxhollowmedia.com?subject=' + encodeURIComponent('Print order: ' + title);
+        el.href = '/contact?print=' + encodeURIComponent(title);
       }
     });
   </script>

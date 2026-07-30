@@ -9,7 +9,11 @@ if (filterBar && grid) {
   const applyFilter = (cat) => {
     let shown = 0;
     items.forEach((item) => {
-      const match = cat === 'all' || item.dataset.cat === cat;
+      // Event coverage is client work, not part of the print collection, so it
+      // stays out of the default view and only appears under its own filter.
+      const match = cat === 'all'
+        ? item.dataset.cat !== 'events'
+        : item.dataset.cat === cat;
       item.classList.toggle('is-hidden', !match);
       if (match) shown++;
     });
@@ -33,10 +37,11 @@ if (filterBar && grid) {
   /* Deep-linkable filters: /gallery#events preselects the Events chip
      (linked from the corporate landing page and Work With Me). */
   const hash = (location.hash || '').replace('#', '');
-  if (hash && hash !== 'films') {
-    const chip = filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`);
-    if (chip) selectChip(chip);
-  }
+  const deepLinked = hash && hash !== 'films'
+    ? filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`)
+    : null;
+  if (deepLinked) selectChip(deepLinked);
+  else applyFilter('all');   // run once on load so events start hidden
 }
 
 /* ── Visible frame titles (buyer feedback: titles were hover-only) ── */

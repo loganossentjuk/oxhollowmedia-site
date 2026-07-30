@@ -77,8 +77,8 @@
     <div class="container contact-grid">
       <div class="contact-text">
         <p class="section-label">Available for booking</p>
-        <h2>Let's make<br>something wild.</h2>
-        <p>Tell us about the print you have your eye on, the story you want told, or the wall that needs the wild brought to it.</p>
+        <h2>Let's talk about<br>your project.</h2>
+        <p>Booking an event, commissioning a film, licensing an image, or ordering a print? Tell me what you have in mind and you'll hear back within one business day.</p>
         <div class="contact-info">
           <span class="ci-label">Email</span>
           <a href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a>
@@ -102,6 +102,33 @@
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="project">What do you need?</label>
+          <select id="project" name="project">
+            <option>Event photography</option>
+            <option>Executive portraits / headshots</option>
+            <option>Brand / documentary film</option>
+            <option>Brand content partnership / retainer</option>
+            <option>Fine-art print order</option>
+            <option>Image licensing</option>
+            <option>Art consultant / trade</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="event-date">Event date <span class="label-hint">(if known)</span></label>
+          <input type="date" id="event-date" name="event_date" />
+        </div>
+        <div class="form-group">
+          <label for="budget">Approximate budget <span class="label-hint">(optional)</span></label>
+          <select id="budget" name="budget">
+            <option>Not sure yet</option>
+            <option>Under $1,000</option>
+            <option>$1,000–$3,000</option>
+            <option>$3,000–$7,500</option>
+            <option>$7,500+</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -128,15 +155,17 @@
     </div>
   </footer>
 
+  <script src="js/main.js?v=3"></script>
   <script>
-    // Prefill the message when arriving from a store "Order this print" button
+    // Prefill the form when arriving from a store "Order this print" link
     const printTitle = new URLSearchParams(location.search).get('print');
     if (printTitle) {
       const msg = document.getElementById('message');
-      if (msg && !msg.value) msg.value = `I'd like to order a print of: ${printTitle}\n\nPreferred size / finish: `;
+      if (msg && !msg.value) msg.value = `I'd like to order a print of: ${printTitle}\n\nShipping address: `;
+      const proj = document.getElementById('project');
+      if (proj) proj.value = 'Fine-art print order';
       document.getElementById('name')?.focus();
     }
   </script>
-  <script src="js/main.js?v=2"></script>
 </body>
 </html>

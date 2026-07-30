@@ -4,13 +4,11 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://oxhollowmedia.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-23</lastmod>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/01-humpback-breach.jpg</image:loc>
       <image:title>Humpback Breach</image:title>
@@ -238,22 +236,27 @@
   </url>
   <url>
     <loc>https://oxhollowmedia.com/store</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/work-with-me</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/corporate-event-photographer-san-francisco</loc>
+    <lastmod>2026-07-23</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/02-keynote.jpg</image:loc>
+      <image:title>Conference Keynote</image:title>
+      <image:caption>Speaker addressing a conference crowd beneath a balloon arch in San Francisco</image:caption>
+    </image:image>
   </url>
 </urlset>

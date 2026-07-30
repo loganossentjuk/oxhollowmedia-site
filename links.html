@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ox Hollow Media — fine-art prints, event photography bookings, films, and the print-drop list. Everything from the link in bio." />
+  <title>Links | Ox Hollow Media</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <link rel="canonical" href="https://oxhollowmedia.com/links" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=7" />
+</head>
+<body class="light-nav">
+
+  <main class="links-page">
+    <div class="links-inner">
+      <a href="/" class="nav-logo links-logo" aria-label="Ox Hollow Media — home">
+        <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/>
+          <path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/>
+        </svg>
+        <span>Ox Hollow</span>
+      </a>
+      <p class="links-tagline"><em>Dare to see.</em> — fine-art nature prints &amp; event photography, SF Bay Area.</p>
+
+      <nav class="links-stack" aria-label="Links">
+        <a class="btn btn-filled" href="/store?utm_source=instagram&utm_medium=bio&utm_campaign=links">Shop fine-art prints</a>
+        <a class="btn btn-outline" href="#drop-list">Join the print-drop list</a>
+        <a class="btn btn-outline" href="/work-with-me?utm_source=instagram&utm_medium=bio&utm_campaign=links">Book an event or film</a>
+        <a class="btn btn-outline" href="/corporate-event-photographer-san-francisco?utm_source=instagram&utm_medium=bio&utm_campaign=links">Corporate event photography — SF</a>
+        <a class="btn btn-outline" href="/gallery?utm_source=instagram&utm_medium=bio&utm_campaign=links#films">Watch the films</a>
+        <a class="btn btn-outline" href="/contact?utm_source=instagram&utm_medium=bio&utm_campaign=links">Get in touch</a>
+      </nav>
+
+      <form id="drop-list" class="newsletter-form links-form" action="https://formspree.io/f/mqerajwr" method="POST">
+        <p class="links-form-label">First dibs on the next limited print drop:</p>
+        <input type="hidden" name="_subject" value="Print-drop list signup (links page)" />
+        <input type="email" name="email" required placeholder="your@email.com" aria-label="Email address" />
+        <button type="submit" class="btn btn-filled" data-cta="newsletter">Join the list</button>
+      </form>
+    </div>
+  </main>
+
+  <script>document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

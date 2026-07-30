@@ -16,13 +16,27 @@ if (filterBar && grid) {
     emptyMsg.style.display = shown === 0 ? 'block' : 'none';
   };
 
+  const selectChip = (chip) => {
+    filterBar.querySelectorAll('.filter-chip').forEach((c) => {
+      c.classList.toggle('active', c === chip);
+      c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+    });
+    applyFilter(chip.dataset.filter);
+  };
+
   filterBar.addEventListener('click', (e) => {
     const chip = e.target.closest('.filter-chip');
     if (!chip) return;
-    filterBar.querySelectorAll('.filter-chip').forEach((c) => c.classList.remove('active'));
-    chip.classList.add('active');
-    applyFilter(chip.dataset.filter);
+    selectChip(chip);
   });
+
+  /* Deep-linkable filters: /gallery#events preselects the Events chip
+     (linked from the corporate landing page and Work With Me). */
+  const hash = (location.hash || '').replace('#', '');
+  if (hash && hash !== 'films') {
+    const chip = filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`);
+    if (chip) selectChip(chip);
+  }
 }
 
 /* ── Visible frame titles (buyer feedback: titles were hover-only) ── */

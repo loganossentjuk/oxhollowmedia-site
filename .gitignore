@@ -2,3 +2,9 @@
 .replit.nix
 .config/
 .upm/
+
+# Print masters (TIF) stay local / in Dropbox — never committed.
+# They run 12-140MB each; GitHub hard-rejects anything over 100MB, and the
+# site only ever serves the 2000px JPEG/WebP derivatives beside them.
+*.tif
+*.tiff

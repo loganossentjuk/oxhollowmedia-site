@@ -4,13 +4,191 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://oxhollowmedia.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/gallery</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-23</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/14-sierra-river-bend.jpg</image:loc>
+      <image:title>Sierra River Bend</image:title>
+      <image:caption>Snow-capped Sierra peaks above a wide river bend</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/15-valley-in-violet.jpg</image:loc>
+      <image:title>Valley in Violet</image:title>
+      <image:caption>Violet light across a mountain range above a braided river</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/16-cloudbreak-ridge.jpg</image:loc>
+      <image:title>Cloudbreak Ridge</image:title>
+      <image:caption>Snowy peaks in blue shadow beneath breaking cloud</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/17-snowline.jpg</image:loc>
+      <image:title>Snowline</image:title>
+      <image:caption>Fresh snow along a high Sierra ridgeline</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/18-the-long-valley.jpg</image:loc>
+      <image:title>The Long Valley</image:title>
+      <image:caption>Green valley floor and river running to distant peaks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/19-range-and-scrub.jpg</image:loc>
+      <image:title>Range and Scrub</image:title>
+      <image:caption>High desert scrub below a long snow-dusted range</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/20-autumn-flats.jpg</image:loc>
+      <image:title>Autumn Flats</image:title>
+      <image:caption>Autumn scrub and river flats beneath the eastern Sierra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/21-blue-hour-ridge.jpg</image:loc>
+      <image:title>Blue Hour Ridge</image:title>
+      <image:caption>Mountain silhouette layered in blue cloud at dusk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/22-fog-on-the-flats.jpg</image:loc>
+      <image:title>Fog on the Flats</image:title>
+      <image:caption>High-key fog settling over brush and distant hills</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/23-golden-brush.jpg</image:loc>
+      <image:title>Golden Brush</image:title>
+      <image:caption>Golden brush in the foreground of a fog-wrapped mountain</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/24-aspen-and-cobalt.jpg</image:loc>
+      <image:title>Aspen and Cobalt</image:title>
+      <image:caption>Yellow aspen and dark pine against a cobalt sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/25-sunflare-oak.jpg</image:loc>
+      <image:title>Sunflare, Oak</image:title>
+      <image:caption>Sun flaring through autumn oak leaves</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/26-autumn-against-blue.jpg</image:loc>
+      <image:title>Autumn Against Blue</image:title>
+      <image:caption>Turning leaves and bare branches against deep blue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/27-still-pond.jpg</image:loc>
+      <image:title>Still Pond</image:title>
+      <image:caption>A still pond, autumn tree, and stone wall under blue sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/14-green-water-i.jpg</image:loc>
+      <image:title>Green Water I</image:title>
+      <image:caption>Abstract of green and white water flowing over dark rock</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/15-green-water-ii.jpg</image:loc>
+      <image:title>Green Water II</image:title>
+      <image:caption>Abstract of teal water against oxidised red rock</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/16-tidepool-ledge.jpg</image:loc>
+      <image:title>Tidepool Ledge</image:title>
+      <image:caption>Teal tidepool water beneath a dark rock ledge</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/17-turquoise-shallows.jpg</image:loc>
+      <image:title>Turquoise Shallows</image:title>
+      <image:caption>Turquoise shallows breaking white over reef</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/18-dawn-patrol-kneeling.jpg</image:loc>
+      <image:title>The Wax Ritual</image:title>
+      <image:caption>A surfer kneeling to wax a board as the sun burns through haze</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/19-driftwood-shore.jpg</image:loc>
+      <image:title>Driftwood Shore</image:title>
+      <image:caption>Bleached driftwood on a still lake shore under open sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/20-marsh-at-dusk.jpg</image:loc>
+      <image:title>Marsh at Dusk</image:title>
+      <image:caption>Tidal marsh and still water under a warm dusk sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/21-sun-on-the-water.jpg</image:loc>
+      <image:title>Sun on the Water</image:title>
+      <image:caption>Low sun laying a path of light across tidal water</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/01-petunia-blush.jpg</image:loc>
+      <image:title>Petunia, Blush</image:title>
+      <image:caption>Hot-pink petunias opening in close focus</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/02-hydrangea-blue.jpg</image:loc>
+      <image:title>Hydrangea, Deep Blue</image:title>
+      <image:caption>Deep blue hydrangea blooms against lit green leaves</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/03-geranium-white.jpg</image:loc>
+      <image:title>Geranium, White</image:title>
+      <image:caption>White geranium blossoms against dark foliage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/04-geranium-coral.jpg</image:loc>
+      <image:title>Geranium, Coral</image:title>
+      <image:caption>Coral geranium cluster in soft light</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/05-petunia-crimson.jpg</image:loc>
+      <image:title>Petunia, Crimson</image:title>
+      <image:caption>Single crimson petunia on a pale ground</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/06-petunia-veined.jpg</image:loc>
+      <image:title>Petunia, Veined</image:title>
+      <image:caption>Purple petunias with dark veining, backlit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/07-flower-market.jpg</image:loc>
+      <image:title>The Flower Market</image:title>
+      <image:caption>Buckets of cut dahlias and blooms at a flower market</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/botanical/08-amber-glass.jpg</image:loc>
+      <image:title>Amber Glass</image:title>
+      <image:caption>Abstract close study of amber glass pebbles</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/01-cocktails-neon.jpg</image:loc>
+      <image:title>Cocktails</image:title>
+      <image:caption>Red neon Cocktails sign glowing in a dark bar window</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/02-wall-of-names.jpg</image:loc>
+      <image:title>Wall of Names</image:title>
+      <image:caption>Layered graffiti tags across a brick wall</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/03-art-will-save-you.jpg</image:loc>
+      <image:title>Art Will Save You</image:title>
+      <image:caption>A sticker reading ART WILL SAVE YOU on a yellow road line</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/04-glass-spire.jpg</image:loc>
+      <image:title>Glass Spire</image:title>
+      <image:caption>Glass tower converging to a spire against pale sky</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/05-mural-sundown.jpg</image:loc>
+      <image:title>Mural, Sundown</image:title>
+      <image:caption>Mural of a figure silhouetted against a painted sun</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/urban/06-harbour-pastel.jpg</image:loc>
+      <image:title>Harbour, Pastel</image:title>
+      <image:caption>Still harbour water under a pastel dusk skyline</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/01-humpback-breach.jpg</image:loc>
       <image:title>Humpback Breach</image:title>
@@ -93,8 +271,8 @@
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/06-tidepool-lava.jpg</image:loc>
-      <image:title>Lava Pools — Mirror II</image:title>
-      <image:caption>Aquamarine tidepool in dark lava rock, coral wall right — mirror image II</image:caption>
+      <image:title>Tidepool, Lava</image:title>
+      <image:caption>Aquamarine tidepool in dark lava rock</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/05-conifer-canopy.jpg</image:loc>
@@ -118,8 +296,8 @@
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/02-shark-silhouette.jpg</image:loc>
-      <image:title>Reef Passage — Mirror I</image:title>
-      <image:caption>Shark gliding through hazy blue water, reef wall right — mirror image I</image:caption>
+      <image:title>Reef Passage</image:title>
+      <image:caption>Shark gliding through hazy blue water</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/10-rainier-afterglow.jpg</image:loc>
@@ -147,11 +325,6 @@
       <image:caption>Marine iguana resting on sun-bleached rocks</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/01-executive-headshot.jpg</image:loc>
-      <image:title>Executive Headshot</image:title>
-      <image:caption>Corporate headshot of a smiling executive in a blue suit</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/events/02-keynote.jpg</image:loc>
       <image:title>The Keynote</image:title>
       <image:caption>Speaker addressing a crowd beneath a balloon arch</image:caption>
@@ -163,18 +336,13 @@
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/11-reef-sharks.jpg</image:loc>
-      <image:title>Reef Passage — Mirror II</image:title>
-      <image:caption>Sharks and reef fish in hazy blue water, reef wall left — mirror image II</image:caption>
+      <image:title>Reef Shadow</image:title>
+      <image:caption>Sharks and reef fish in hazy blue water</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/events/03-team-celebration.jpg</image:loc>
       <image:title>Team Celebration</image:title>
       <image:caption>Colleagues posing together at an office celebration</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/02-amber-portrait.jpg</image:loc>
-      <image:title>Amber Portrait</image:title>
-      <image:caption>Low-light portrait of a woman in amber tones</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/10-turquoise-harbor.jpg</image:loc>
@@ -192,19 +360,14 @@
       <image:caption>Bare branches silhouetted against a deep dusk sky</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/portraits/03-quiet-gaze.jpg</image:loc>
-      <image:title>Quiet Gaze</image:title>
-      <image:caption>Intimate low-light portrait of a woman with braided hair</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/events/05-evening-reception.jpg</image:loc>
       <image:title>Evening Reception</image:title>
       <image:caption>Guests mingling with drinks at an evening reception</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/13-sea-cave-glow.jpg</image:loc>
-      <image:title>Lava Pools — Mirror I</image:title>
-      <image:caption>Aquamarine pool in dark lava rock, coral wall left — mirror image I</image:caption>
+      <image:title>Lava Pool, Aquamarine</image:title>
+      <image:caption>Aquamarine pool in dark lava rock</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/11-ember-study.jpg</image:loc>
@@ -238,22 +401,27 @@
   </url>
   <url>
     <loc>https://oxhollowmedia.com/store</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/work-with-me</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-07-23</lastmod>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/corporate-event-photographer-san-francisco</loc>
+    <lastmod>2026-07-23</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/events/02-keynote.jpg</image:loc>
+      <image:title>Conference Keynote</image:title>
+      <image:caption>Speaker addressing a conference crowd beneath a balloon arch in San Francisco</image:caption>
+    </image:image>
   </url>
 </urlset>

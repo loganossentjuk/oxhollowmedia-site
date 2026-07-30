@@ -1,0 +1,3 @@
+# The store page became /prints (Jul 2026). Preserve inbound links and SEO.
+/store    /prints    301
+/store/   /prints    301

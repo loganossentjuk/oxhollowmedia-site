@@ -883,3 +883,79 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 0.28rem 0.6rem;
   border-radius: 100px;
 }
+
+/* ── Prints page: matted print cards ─────────────────────────────────── */
+#prints-hero { padding: calc(var(--nav-h) + 5rem) 0 1rem; background: var(--bg); }
+.print-section { padding: 3.5rem 0 1rem; }
+.print-section:nth-of-type(even) { background: var(--bg-section); }
+.print-section-head { margin-bottom: 2.25rem; }
+.print-section-head h2 { margin-bottom: 0.35rem; font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.print-section-head p { font-size: 0.92rem; margin-bottom: 0; }
+
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 1.75rem;
+  padding-bottom: 3.5rem;
+}
+/* the mat: generous inner margin so each frame reads as a matted print */
+.print-mat {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.print-section:nth-of-type(even) .print-mat { background: #fff; }
+.print-mat picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* the mat window: one size for every frame */
+}
+.print-mat img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.print-card:hover .print-mat { box-shadow: 0 10px 26px rgba(35,33,32,0.11); transform: translateY(-2px); }
+.print-card h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.22rem;
+  margin: 0.9rem 0 0.3rem;
+  letter-spacing: 0;
+}
+.print-spec {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.55rem;
+}
+.print-cta {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+  transition: color 0.2s;
+}
+.print-cta:hover { color: var(--accent); }
+
+#print-info { padding: 6rem 0; background: var(--bg-dark); }
+#print-info h2, #print-info h3 { color: var(--paper); }
+#print-info p, #print-info dd { color: rgba(244,238,226,0.62); }
+#print-info dt { color: var(--paper); font-family: var(--serif); font-size: 1.1rem; margin-top: 1.75rem; }
+#print-info a { color: var(--accent-soft); text-decoration: underline; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+@media (max-width: 1024px) { .print-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px)  { .print-grid { grid-template-columns: repeat(2, 1fr); } .info-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+@media (max-width: 460px)  { .print-grid { grid-template-columns: 1fr; } }

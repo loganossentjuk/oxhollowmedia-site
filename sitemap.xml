@@ -335,11 +335,6 @@
       <image:caption>White fungus blooming on a fallen log</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/11-reef-sharks.jpg</image:loc>
-      <image:title>Reef Shadow</image:title>
-      <image:caption>Sharks and reef fish in hazy blue water</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/events/03-team-celebration.jpg</image:loc>
       <image:title>Team Celebration</image:title>
       <image:caption>Colleagues posing together at an office celebration</image:caption>
@@ -363,11 +358,6 @@
       <image:loc>https://oxhollowmedia.com/images/portfolio/events/05-evening-reception.jpg</image:loc>
       <image:title>Evening Reception</image:title>
       <image:caption>Guests mingling with drinks at an evening reception</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/ocean/13-sea-cave-glow.jpg</image:loc>
-      <image:title>Lava Pool, Aquamarine</image:title>
-      <image:caption>Aquamarine pool in dark lava rock</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/11-ember-study.jpg</image:loc>
@@ -400,7 +390,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://oxhollowmedia.com/store</loc>
+    <loc>https://oxhollowmedia.com/prints</loc>
     <lastmod>2026-07-23</lastmod>
   </url>
   <url>

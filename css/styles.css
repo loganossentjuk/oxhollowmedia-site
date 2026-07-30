@@ -863,3 +863,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ig-handle:hover { color: var(--accent); border-color: var(--accent); }
 .ig-handle svg { width: 20px; height: 20px; fill: currentColor; }
 @media (max-width: 700px) { .follow-inner { flex-direction: column; align-items: flex-start; } }
+
+/* ── "New" badge on the latest frames ── */
+.masonry-item[data-new] { position: relative; }
+.masonry-item[data-new]::before {
+  content: "New";
+  position: absolute;
+  top: 0.7rem; left: 0.7rem;
+  z-index: 2;
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: rgba(35,33,32,0.78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.28rem 0.6rem;
+  border-radius: 100px;
+}

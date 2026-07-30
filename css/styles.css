@@ -839,3 +839,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   html { scroll-behavior: auto; }
   .fade-in { opacity: 1 !important; transform: none !important; }
 }
+
+/* ── Social / Instagram connection ── */
+.footer-social { display: inline-flex; align-items: center; gap: 1.1rem; }
+.footer-social a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(244,238,226,0.55); transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--accent-soft); }
+.footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+#follow { padding: 6rem 0; background: var(--bg-section); }
+.follow-inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.follow-inner h2 { margin-bottom: 0.4rem; }
+.follow-inner p { margin-bottom: 0; }
+.ig-handle {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--serif); font-weight: 500; font-size: 1.35rem;
+  color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.ig-handle:hover { color: var(--accent); border-color: var(--accent); }
+.ig-handle svg { width: 20px; height: 20px; fill: currentColor; }
+@media (max-width: 700px) { .follow-inner { flex-direction: column; align-items: flex-start; } }

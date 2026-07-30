@@ -23,7 +23,7 @@ marked 🤖 Claude does once you're past the account wall.
 
 ## 2. 🧑 Import the products (~5 min)
 1. Admin → **Products → Import** → upload `shopify-products.csv`
-   (in the repo root; all 20 products: 18 prints + the 2 mirror sets,
+   (in the repo root; all products in the shop,
    images pull automatically from oxhollowmedia.com).
 2. They import as **drafts** with price 0.00 — that's intentional;
    pricing comes after Prodigi is connected (step 3) so you can price

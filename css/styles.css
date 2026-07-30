@@ -886,6 +886,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ── Prints page: matted print cards ─────────────────────────────────── */
 #prints-hero { padding: calc(var(--nav-h) + 5rem) 0 1rem; background: var(--bg); }
+/* This page doubles as a gallery, so it gets a wider canvas than the rest
+   of the site: four frames across at a size you can actually read. */
+body.prints-page .container { max-width: 1680px; }
 .print-section { padding: 3.5rem 0 1rem; }
 .print-section:nth-of-type(even) { background: var(--bg-section); }
 .print-section-head { margin-bottom: 2.25rem; }
@@ -895,7 +898,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .print-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem 1.75rem;
+  gap: 2.25rem 1.5rem;
   padding-bottom: 3.5rem;
 }
 /* the mat: generous inner margin so each frame reads as a matted print */
@@ -904,7 +907,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.15rem;
+  padding: 0.85rem;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .print-section:nth-of-type(even) .print-mat { background: #fff; }
@@ -913,7 +916,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 4 / 3;   /* the mat window: one size for every frame */
+  aspect-ratio: 3 / 2;   /* the mat window: one size for every frame */
 }
 .print-mat img {
   max-width: 100%;
@@ -928,20 +931,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-family: var(--serif);
   font-weight: 500;
   font-style: italic;
-  font-size: 1.22rem;
-  margin: 0.9rem 0 0.3rem;
+  font-size: 1.02rem;
+  margin: 0.7rem 0 0.2rem;
   letter-spacing: 0;
 }
 .print-spec {
   font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
   color: var(--text-muted);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.4rem;
 }
 .print-cta {
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--clay);
@@ -956,6 +959,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 #print-info a { color: var(--accent-soft); text-decoration: underline; }
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
 
-@media (max-width: 1024px) { .print-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1200px) { .print-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px)  { .print-grid { grid-template-columns: repeat(2, 1fr); } .info-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 @media (max-width: 460px)  { .print-grid { grid-template-columns: 1fr; } }

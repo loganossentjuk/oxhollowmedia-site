@@ -999,3 +999,16 @@ body.prints-page .container { max-width: 1680px; }
 
 /* the name section sits between two light sections, so give it breathing room */
 #the-name + #offerings { padding-top: 6rem; }
+
+/* ── Section labels wear the original site's // … // marks ───────────────
+   Logan used this treatment throughout the first Ox Hollow site
+   (// Vision //, // Mission //, // Let's Create //). Done with generated
+   content so the markup stays clean and it can be lifted in one place.
+   The " / \"\" " gives the slashes empty alt text, so screen readers read
+   the label itself rather than announcing the punctuation.            */
+.section-label::before,
+.eyebrow::before { content: "// " / ""; opacity: 0.5; }
+.section-label::after,
+.eyebrow::after  { content: " //" / ""; opacity: 0.5; }
+/* long kickers must not strand the closing "//" on a line of its own */
+.section-label, .eyebrow { text-wrap: balance; }

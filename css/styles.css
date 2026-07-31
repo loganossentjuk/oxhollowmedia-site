@@ -1012,3 +1012,43 @@ body.prints-page .container { max-width: 1680px; }
 .eyebrow::after  { content: " //" / ""; opacity: 0.5; }
 /* long kickers must not strand the closing "//" on a line of its own */
 .section-label, .eyebrow { text-wrap: balance; }
+
+/* ── Single print page ─────────────────────────────────────────────────── */
+.crumb { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+.crumb a { color: var(--text-muted); }
+.crumb a:hover { color: var(--accent); }
+
+#print-detail { padding: calc(var(--nav-h) + 3rem) 0 4rem; background: var(--bg); }
+.detail-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
+.detail-frame { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; }
+.detail-frame img { width: 100%; height: auto; display: block; }
+
+.detail-title { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 0 0 0.6rem; }
+.detail-lede { font-family: var(--serif); font-size: clamp(1.1rem, 1.7vw, 1.35rem); font-style: italic; color: var(--text); margin-bottom: 1.2rem; }
+.detail-story { font-size: 0.95rem; margin-bottom: 1.6rem; }
+.detail-spec {
+  font-size: 0.68rem; letter-spacing: 0.08em; color: var(--text-muted);
+  padding-bottom: 1.4rem; margin-bottom: 1.4rem; border-bottom: 1px solid var(--border);
+}
+.buy-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.4rem; }
+.buy-btn {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  border: 1px solid var(--text); border-radius: var(--radius);
+  padding: 0.85rem 1.2rem;
+  font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.06em;
+  color: var(--text); transition: all 0.2s ease;
+}
+.buy-btn .size { text-transform: uppercase; letter-spacing: 0.1em; }
+.buy-btn .price { font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0; }
+.buy-btn:hover { background: var(--text); color: var(--bg); }
+.buy-btn.is-pending { border-style: dashed; border-color: var(--border); color: var(--text-muted); }
+.buy-note { font-size: 0.8rem; color: var(--text-muted); }
+.buy-note strong { color: var(--text); font-weight: 500; }
+
+#more-prints { padding: 5rem 0 7rem; background: var(--bg-section); }
+.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 2rem; }
+
+@media (max-width: 900px) {
+  .detail-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+  .more-grid { grid-template-columns: 1fr; }
+}

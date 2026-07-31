@@ -1,3 +1,8 @@
+> **Superseded — see [STRIPE-SETUP.md](STRIPE-SETUP.md).** We went with Stripe
+> Payment Links instead: no monthly fee, no platform to maintain, and checkout
+> stays on oxhollowmedia.com. This file is kept only as a record of the
+> Shopify option we compared against.
+
 # Shopify Store Setup — Ox Hollow Media
 
 Goal: ship-to-order fine-art prints. Buyers click "Order this print" on

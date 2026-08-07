@@ -449,6 +449,21 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 }
 .filter-count { color: inherit; opacity: 0.55; margin-left: 0.35rem; }
 
+/* The Films chip is a jump link, not a category filter. The play glyph and the
+   full-strength border set it apart — deliberately not a separator rule, which
+   would hang off the row edge whenever the chip row wraps. */
+.chip-films {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--text);
+  border-color: var(--text);
+  margin-left: 0.5rem;
+}
+.chip-films svg { width: 0.6em; height: 0.6em; fill: currentColor; flex: none; }
+.chip-films:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+
 #gallery-wrap { padding: 2.5rem 0 8rem; background: var(--bg); }
 
 /* ── Films (video embeds on gallery page) ── */
@@ -456,10 +471,17 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   padding: 7rem 0 8rem;
   background: var(--bg-section);
 }
-#films h2 { margin-bottom: 3rem; }
+#films h2 { margin-bottom: 1rem; }
+.films-intro {
+  max-width: 46ch;
+  margin-bottom: 3rem;
+  color: var(--text-muted);
+}
 .films-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit, not repeat(3): a fourth or fifth film wraps to a new row on its
+     own, and two films centre instead of leaving a hole. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 .film { display: flex; flex-direction: column; }

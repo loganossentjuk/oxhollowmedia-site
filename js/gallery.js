@@ -29,7 +29,9 @@ if (filterBar && grid) {
   };
 
   filterBar.addEventListener('click', (e) => {
-    const chip = e.target.closest('.filter-chip');
+    // .chip-films is a jump link, not a category — it has no data-filter and
+    // must not fall through to applyFilter(undefined), which would hide the grid.
+    const chip = e.target.closest('.filter-chip[data-filter]');
     if (!chip) return;
     selectChip(chip);
   });

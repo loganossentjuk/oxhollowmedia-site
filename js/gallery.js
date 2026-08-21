@@ -62,3 +62,33 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
   }
   item.appendChild(line);
 });
+
+/* ── Frame size (S / M / L) ────────────────────────────────────────────────
+   Changes the masonry column count. The choice sticks across pages and
+   visits, since it's a browsing preference rather than a filter. */
+(() => {
+  const grid = document.getElementById('gallery-grid');
+  const bar  = document.querySelector('.size-toggle');
+  if (!grid || !bar) return;
+
+  const SIZES = ['s', 'm', 'l'];
+  const KEY = 'oxh-frame-size';
+
+  const apply = (size) => {
+    if (!SIZES.includes(size)) size = 'm';
+    SIZES.forEach((s) => grid.classList.toggle('size-' + s, s === size));
+    bar.querySelectorAll('.size-btn').forEach((b) => {
+      b.setAttribute('aria-pressed', b.dataset.size === size ? 'true' : 'false');
+    });
+    try { localStorage.setItem(KEY, size); } catch { /* private mode */ }
+  };
+
+  bar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.size-btn');
+    if (btn) apply(btn.dataset.size);
+  });
+
+  let saved = 'm';
+  try { saved = localStorage.getItem(KEY) || 'm'; } catch { /* private mode */ }
+  apply(saved);
+})();

@@ -77,10 +77,4 @@ if (form) {
   });
 }
 
-/* ── Fade-in on scroll ── */
-const fadeEls = document.querySelectorAll('.statement-block, .offer-card, .masonry-item, .about-grid, .contact-grid, .highlights-head');
-const io = new IntersectionObserver(
-  (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
-  { threshold: 0.1 }
-);
-fadeEls.forEach(el => { el.classList.add('fade-in'); io.observe(el); });
+/* Reveal-on-scroll lives in motion.js. */

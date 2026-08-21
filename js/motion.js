@@ -1,73 +1,12 @@
 /* ══════════════════════════════════════════════════════════════════════════
    Motion — hand-rolled, no dependencies.
 
-   Four effects: weighted scroll, hero slideshow, nav label swap, and reveal
-   on scroll. Each one is additive: if this file fails to load or throws, the
-   site falls back to its pre-motion behaviour rather than breaking.
+   Three effects: hero slideshow, nav label swap, and reveal on scroll. Each
+   one is additive: if this file fails to load or throws, the site falls back
+   to its pre-motion behaviour rather than breaking.
    ══════════════════════════════════════════════════════════════════════════ */
 
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
-
-/* ── Weighted scroll ───────────────────────────────────────────────────────
-   Lerps the window toward a wheel-driven target so momentum carries past the
-   gesture. Desktop pointers only: touch already has native momentum, and
-   hijacking it there costs more than it gives. */
-(() => {
-  if (REDUCED.matches || !matchMedia('(pointer: fine)').matches) return;
-
-  const EASE = 0.085;          // lower = heavier
-  let target = window.scrollY;
-  let current = target;
-  let frame = null;
-  let driving = false;         // true while we own the scroll position
-
-  const limit = () => document.documentElement.scrollHeight - window.innerHeight;
-
-  // Wheel deltas arrive in pixels, lines, or pages depending on the device.
-  const toPixels = (e) => {
-    if (e.deltaMode === 1) return e.deltaY * 16;
-    if (e.deltaMode === 2) return e.deltaY * window.innerHeight;
-    return e.deltaY;
-  };
-
-  const tick = () => {
-    const gap = target - current;
-    if (Math.abs(gap) < 0.5) {
-      current = target;
-      window.scrollTo(0, current);
-      frame = null;
-      driving = false;
-      return;
-    }
-    current += gap * EASE;
-    window.scrollTo(0, current);
-    frame = requestAnimationFrame(tick);
-  };
-
-  window.addEventListener('wheel', (e) => {
-    if (e.ctrlKey) return;                                  // pinch-zoom
-    // e.target is not always an Element (document, or a text node), and calling
-    // closest() on those throws — which would kill scrolling outright.
-    const el = e.target instanceof Element ? e.target : null;
-    if (el && el.closest('.nav-drawer, [data-native-scroll]')) return;
-    e.preventDefault();
-    target = Math.min(Math.max(target + toPixels(e), 0), limit());
-    driving = true;
-    if (!frame) frame = requestAnimationFrame(tick);
-  }, { passive: false });
-
-  /* Anything that scrolls by other means — keyboard, anchor jumps, find-in-page,
-     focus — moves the window directly. Resync so the next wheel event starts
-     from where the page actually is instead of snapping back. */
-  window.addEventListener('scroll', () => {
-    if (driving) return;
-    target = current = window.scrollY;
-  }, { passive: true });
-
-  window.addEventListener('resize', () => {
-    target = current = window.scrollY;
-  }, { passive: true });
-})();
 
 /* ── Hero slideshow ───────────────────────────────────────────────────────*/
 (() => {

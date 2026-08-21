@@ -246,6 +246,9 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 }
 .hero-media.has-slides::after {
   background:
+    /* Nav band. A single bottom-weighted scrim was enough for one dusk frame,
+       but the rotating set includes bright-topped shots that wash out the logo. */
+    linear-gradient(to bottom, rgba(28,25,22,0.58) 0%, rgba(28,25,22,0.14) 17%, transparent 32%),
     linear-gradient(to top, rgba(28,25,22,0.82) 0%, rgba(28,25,22,0.34) 48%, rgba(28,25,22,0.10) 100%);
 }
 .hero-grain {
@@ -1125,7 +1128,7 @@ body.prints-page .container { max-width: 1680px; }
 .hero-slide.is-active { opacity: 1; transform: scale(1); }
 .hero-slide-1 { background-image: image-set(url('../images/hero/dawn-patrol.webp') type('image/webp'), url('../images/hero/dawn-patrol.jpg') type('image/jpeg')); }
 .hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/14-sierra-river-bend.webp') type('image/webp'), url('../images/portfolio/mountains/14-sierra-river-bend.jpg') type('image/jpeg')); }
-.hero-slide-3 { background-image: image-set(url('../images/portfolio/ocean/01-humpback-breach.webp') type('image/webp'), url('../images/portfolio/ocean/01-humpback-breach.jpg') type('image/jpeg')); }
+.hero-slide-3 { background-image: image-set(url('../images/portfolio/ocean/04-blue-footed-booby.webp') type('image/webp'), url('../images/portfolio/ocean/04-blue-footed-booby.jpg') type('image/jpeg')); }
 
 /* Once the slideshow is live the base layer would double-expose through the
    cross-fade, so JS drops the flag and we hide it. */

@@ -369,6 +369,14 @@
     <loc>https://oxhollowmedia.com/films</loc>
     <lastmod>2026-08-21</lastmod>
     <video:video>
+      <video:thumbnail_loc>https://i.vimeocdn.com/video/2192695927-832a32f1c69a82726389d60879b20b54ac19f294ae193b4d41811dd40b9821b6-d_640</video:thumbnail_loc>
+      <video:title>A Weekend At Sedgwick</video:title>
+      <video:description>A documentary short by Logan Ossentjuk of Ox Hollow Media.</video:description>
+      <video:player_loc>https://player.vimeo.com/video/1220283354</video:player_loc>
+      <video:duration>377</video:duration>
+      <video:publication_date>2026-08-21T15:10:54+00:00</video:publication_date>
+    </video:video>
+    <video:video>
       <video:thumbnail_loc>https://i.vimeocdn.com/video/1973480704-2131f1e85f7b3fa0d11cbf35eac710c03a9c59504ab1cc88b76a47b4df0ca525-d_640</video:thumbnail_loc>
       <video:title>Ocean Defenders</video:title>
       <video:description>A story of contention to camaraderie, how Kurt Lieber, founder of Ocean Defenders Alliance, found partnership with fishermen throughout Southern California to recover lost fishing gear, return it to its owners and promote ocean health.</video:description>

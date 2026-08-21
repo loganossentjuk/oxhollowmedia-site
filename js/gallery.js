@@ -29,7 +29,7 @@ if (filterBar && grid) {
   };
 
   filterBar.addEventListener('click', (e) => {
-    // .chip-films is a jump link, not a category — it has no data-filter and
+    // .chip-films links out to /films, not a category — it has no data-filter and
     // must not fall through to applyFilter(undefined), which would hide the grid.
     const chip = e.target.closest('.filter-chip[data-filter]');
     if (!chip) return;
@@ -39,7 +39,7 @@ if (filterBar && grid) {
   /* Deep-linkable filters: /gallery#events preselects the Events chip
      (linked from the corporate landing page and Work With Me). */
   const hash = (location.hash || '').replace('#', '');
-  const deepLinked = hash && hash !== 'films'
+  const deepLinked = hash
     ? filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`)
     : null;
   if (deepLinked) selectChip(deepLinked);

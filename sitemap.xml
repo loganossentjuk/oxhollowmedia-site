@@ -364,26 +364,30 @@
       <image:title>Ember Study</image:title>
       <image:caption>Close study of campfire flames against the dark</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/films</loc>
+    <lastmod>2026-08-21</lastmod>
     <video:video>
-      <video:thumbnail_loc>https://i.ytimg.com/vi/d3H1rcCFtrQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://i.vimeocdn.com/video/1973480704-2131f1e85f7b3fa0d11cbf35eac710c03a9c59504ab1cc88b76a47b4df0ca525-d_640</video:thumbnail_loc>
       <video:title>Ocean Defenders</video:title>
-      <video:description>A documentary short about the people who stand between the sea and what threatens it.</video:description>
-      <video:player_loc>https://www.youtube.com/embed/d3H1rcCFtrQ</video:player_loc>
+      <video:description>A story of contention to camaraderie, how Kurt Lieber, founder of Ocean Defenders Alliance, found partnership with fishermen throughout Southern California to recover lost fishing gear, return it to its owners and promote ocean health.</video:description>
+      <video:player_loc>https://player.vimeo.com/video/1049186301</video:player_loc>
       <video:duration>568</video:duration>
-      <video:publication_date>2023-06-26T12:28:22-07:00</video:publication_date>
+      <video:publication_date>2025-01-22T00:53:58+00:00</video:publication_date>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://i.vimeocdn.com/video/737744483-12c5b549496ae5f36634ca4c0b974b2b25953ead8650b47de8c03e67d6d64dc0-d_640</video:thumbnail_loc>
-      <video:title>Discarded Matters</video:title>
-      <video:description>What we throw away doesn't go away — a documentary short on waste and consequence.</video:description>
-      <video:player_loc>https://player.vimeo.com/video/299590434</video:player_loc>
-      <video:duration>149</video:duration>
-      <video:publication_date>2018-11-08T00:13:47+00:00</video:publication_date>
+      <video:thumbnail_loc>https://i.vimeocdn.com/video/2192682430-be5a00b58a16f4fa452727dfbb0e1a7750740eff9f248d73dad207c94a993972-d_640</video:thumbnail_loc>
+      <video:title>Brushstrokes For Survival</video:title>
+      <video:description>Driven to make a difference, Nate Irwin, a conservationist turned artist partners with his father, cascading paint on canvas to illuminate the plight of critically endangered steelhead in the Santa Ynez River Valley and cultivate action towards their conservation.</video:description>
+      <video:player_loc>https://player.vimeo.com/video/846297616</video:player_loc>
+      <video:duration>875</video:duration>
+      <video:publication_date>2023-07-18T11:06:27+00:00</video:publication_date>
     </video:video>
     <video:video>
       <video:thumbnail_loc>https://i.vimeocdn.com/video/849919926-115462557ab0abb80539d3e825347cf7998d959b81806abcff24650457df9e6d-d_640</video:thumbnail_loc>
       <video:title>Fluid Frontier</video:title>
-      <video:description>At the edge where land gives way to water — a documentary short.</video:description>
+      <video:description>Avant-garde exploration of the intersection between the ocean’s edge and humanity’s impact.</video:description>
       <video:player_loc>https://player.vimeo.com/video/304798458</video:player_loc>
       <video:duration>172</video:duration>
       <video:publication_date>2018-12-06T06:24:26+00:00</video:publication_date>

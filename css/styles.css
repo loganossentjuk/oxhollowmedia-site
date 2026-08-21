@@ -241,7 +241,15 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(to top, rgba(28,25,22,0.74) 0%, rgba(28,25,22,0.16) 45%, transparent 75%);
+}
+.hero-media.has-slides::after {
+  background:
+    /* Nav band. A single bottom-weighted scrim was enough for one dusk frame,
+       but the rotating set includes bright-topped shots that wash out the logo. */
+    linear-gradient(to bottom, rgba(28,25,22,0.58) 0%, rgba(28,25,22,0.14) 17%, transparent 32%),
+    linear-gradient(to top, rgba(28,25,22,0.82) 0%, rgba(28,25,22,0.34) 48%, rgba(28,25,22,0.10) 100%);
 }
 .hero-grain {
   position: absolute;
@@ -679,8 +687,6 @@ footer {
 .footer-copy { color: rgba(244,238,226,0.5); font-size: 0.78rem; }
 
 /* ── Fade-in animation ── */
-.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-in.visible { opacity: 1; transform: none; }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
@@ -876,7 +882,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
-  .fade-in { opacity: 1 !important; transform: none !important; }
 }
 
 /* ── Social / Instagram connection ── */
@@ -1096,4 +1101,186 @@ body.prints-page .container { max-width: 1680px; }
 @media (max-width: 900px) {
   .detail-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .more-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOTION
+   Hand-rolled, no dependencies. Every effect below is gated on
+   prefers-reduced-motion, and the fallbacks are the pre-motion styles — if
+   the JS never runs, the site renders exactly as it did before.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero slideshow ────────────────────────────────────────────────────────
+   Three stacked layers cross-fading under a slow push-in. .hero-media keeps
+   its own background as the first paint, so the hero is never empty. */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s ease, transform 8s linear;
+  will-change: opacity, transform;
+}
+.hero-slide.is-active { opacity: 1; transform: scale(1); }
+.hero-slide-1 { background-image: image-set(url('../images/hero/dawn-patrol.webp') type('image/webp'), url('../images/hero/dawn-patrol.jpg') type('image/jpeg')); }
+.hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/14-sierra-river-bend.webp') type('image/webp'), url('../images/portfolio/mountains/14-sierra-river-bend.jpg') type('image/jpeg')); }
+.hero-slide-3 { background-image: image-set(url('../images/portfolio/ocean/04-blue-footed-booby.webp') type('image/webp'), url('../images/portfolio/ocean/04-blue-footed-booby.jpg') type('image/jpeg')); }
+
+/* Once the slideshow is live the base layer would double-expose through the
+   cross-fade, so JS drops the flag and we hide it. */
+.hero-media.has-slides { background-image: none; }
+
+.hero-index {
+  position: absolute;
+  left: 2.5rem; bottom: 1.75rem;
+  z-index: 2;
+  display: flex;
+  gap: 1.1rem;
+}
+.hero-dot {
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: rgba(244,238,226,0.4);
+  transition: color 0.3s ease;
+}
+.hero-dot.is-active, .hero-dot:hover { color: #F4EEE2; }
+.hero-dot.is-active { position: relative; }
+.hero-dot.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  animation: heroTick var(--hero-dwell, 6s) linear forwards;
+}
+@keyframes heroTick { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.hero-scroll {
+  position: absolute;
+  right: 2.5rem; bottom: 1.75rem;
+  z-index: 2;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(244,238,226,0.55);
+}
+.hero-scroll span { display: inline-block; animation: heroNudge 2.4s ease-in-out infinite; }
+@keyframes heroNudge { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+
+@media (max-width: 700px) {
+  .hero-index { left: 1.5rem; bottom: 1.25rem; gap: 0.9rem; }
+  .hero-scroll { display: none; }
+}
+
+/* ── Nav label swap ────────────────────────────────────────────────────────
+   The duplicate label is injected by JS, so the markup stays clean and the
+   links read normally to assistive tech and with JS off. */
+.nav-links a.swap, .footer-social a.swap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.nav-links a.swap .swap-in,
+.footer-social a.swap .swap-in { display: block; transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1); }
+.nav-links a.swap::after,
+.footer-social a.swap::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0; top: 0;
+  transform: translateY(105%);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.nav-links a.swap:hover .swap-in,
+.nav-links a.swap:focus-visible .swap-in,
+.footer-social a.swap:hover .swap-in { transform: translateY(-105%); }
+.nav-links a.swap:hover::after,
+.nav-links a.swap:focus-visible::after,
+.footer-social a.swap:hover::after { transform: translateY(0); }
+/* The Contact pill has a border and padding — clipping it would crop the box. */
+.nav-links a.nav-cta.swap { overflow: visible; }
+.nav-links a.nav-cta.swap::after { display: none; }
+
+/* ── Reveal on scroll ──────────────────────────────────────────────────────
+   Replaces the old .fade-in with a longer, softer curve and per-item stagger
+   (the delay is set inline by JS from the item's index in its group). */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+/* Photo tiles get a touch of scale so they settle rather than slide. */
+.masonry-item.reveal { transform: translateY(28px) scale(0.985); }
+.masonry-item.reveal.is-in { transform: none; }
+
+/* ── Gallery size toggle (S / M / L) ───────────────────────────────────── */
+.gallery-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+}
+.size-label {
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.size-toggle { display: inline-flex; gap: 0.15rem; }
+.size-btn {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.size-btn:hover { color: var(--text); }
+.size-btn[aria-pressed="true"] { color: var(--text); border-color: var(--border); background: var(--bg-section); }
+
+/* column-count is animatable, and transitioning it reflows every tile mid-flight
+   for a janky result — the density change is instant on purpose. */
+.masonry.size-s { column-count: 4; }
+.masonry.size-m { column-count: 3; }
+.masonry.size-l { column-count: 2; column-gap: 1.75rem; }
+.masonry.size-l .masonry-item { margin-bottom: 1.75rem; }
+@media (max-width: 960px) {
+  .masonry.size-s { column-count: 3; }
+  .masonry.size-l { column-count: 1; }
+}
+@media (max-width: 700px) {
+  /* One column at phone widths whatever the setting, so the control would be a
+     dead switch — hide it rather than offer a choice that does nothing. */
+  .gallery-tools { display: none; }
+  .masonry.size-s, .masonry.size-m, .masonry.size-l { column-count: 1; }
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────────────
+   Everything resolves to its finished state; nothing animates, nothing hides.
+   JS reads the same query and skips the slideshow and smooth scroll. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .masonry-item.reveal { opacity: 1; transform: none; transition: none; }
+  .hero-slide { transition: opacity 0.01ms; transform: none; }
+  .hero-dot.is-active::after { animation: none; transform: scaleX(1); }
+  .hero-scroll span { animation: none; }
+  .nav-links a.swap .swap-in, .nav-links a.swap::after,
+  .footer-social a.swap .swap-in, .footer-social a.swap::after { transition: none; }
 }

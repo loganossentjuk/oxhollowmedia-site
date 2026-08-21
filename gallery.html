@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=18" />
+  <link rel="stylesheet" href="css/styles.css?v=24" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ImageGallery", "name": "Ox Hollow Media Photography Gallery", "url": "https://oxhollowmedia.com/gallery", "description": "Ocean, mountain, and wildlife photography available as fine-art prints, plus event photography and portraits.", "publisher": {"@id": "https://oxhollowmedia.com/#business"}}</script>
 </head>
 <body class="light-nav">
@@ -82,13 +82,22 @@
         <button class="filter-chip" data-filter="urban" aria-pressed="false">Urban</button>
         <a class="filter-chip chip-films" href="/films" aria-label="See the films"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10 6 L3 10.5 Z"/></svg>Films</a>
       </div>
+
+      <div class="gallery-tools">
+        <span class="size-label">Size</span>
+        <div class="size-toggle" role="group" aria-label="Frame size">
+          <button class="size-btn" type="button" data-size="s" aria-pressed="false">S</button>
+          <button class="size-btn" type="button" data-size="m" aria-pressed="true">M</button>
+          <button class="size-btn" type="button" data-size="l" aria-pressed="false">L</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <!-- ── Gallery grid ── -->
   <section id="gallery-wrap">
     <div class="container">
-      <div class="masonry" id="gallery-grid">
+      <div class="masonry size-m" id="gallery-grid">
         <!-- 2026 print masters lead the grid (data-new marks them for the New badge). -->
         <a class="masonry-item" data-cat="mountains" data-new="1" href="/contact?print=Sierra%20River%20Bend"><picture><source type="image/webp" srcset="images/portfolio/mountains/14-sierra-river-bend.webp"><img src="images/portfolio/mountains/14-sierra-river-bend.jpg" width="2000" height="1125" decoding="async" alt="Snow-capped Sierra peaks above a wide river bend" loading="lazy"></picture><div class="cap"><span class="cap-cat">Mountains</span><div class="cap-title">Sierra River Bend</div></div></a>
         <a class="masonry-item" data-cat="botanical"    href="/contact?print=Petunia%2C%20Blush"><picture><source type="image/webp" srcset="images/portfolio/botanical/01-petunia-blush.webp"><img src="images/portfolio/botanical/01-petunia-blush.jpg" width="2000" height="1333" decoding="async" alt="Hot-pink petunias opening in close focus" loading="lazy"></picture><div class="cap"><span class="cap-cat">Botanical</span><div class="cap-title">Petunia, Blush</div></div></a>
@@ -196,6 +205,7 @@
   </footer>
 
   <script src="js/main.js?v=3"></script>
-  <script src="js/gallery.js?v=16"></script>
+  <script src="js/motion.js?v=4"></script>
+  <script src="js/gallery.js?v=17"></script>
 </body>
 </html>

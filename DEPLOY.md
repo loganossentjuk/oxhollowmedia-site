@@ -49,7 +49,7 @@ Done — `https://oxhollowmedia.com` is live.
 
 The form currently shows "Form not configured yet" until you do this:
 
-1. Sign up free at <https://formspree.io> using **hello@oxhollowmedia.com**.
+1. Sign up free at <https://formspree.io> using **oxhollowmedia@gmail.com**.
 2. Create a new form; Formspree gives you an endpoint like
    `https://formspree.io/f/abcdwxyz`.
 3. In `index.html`, find `YOUR_FORM_ID` (one spot, flagged with a ⚠️ comment)
@@ -58,11 +58,11 @@ The form currently shows "Form not configured yet" until you do this:
 
 ---
 
-## 4. (Optional) Get email at hello@oxhollowmedia.com
+## 4. (Optional) Get email at oxhollowmedia@gmail.com
 
-The site links to `hello@oxhollowmedia.com`. To actually receive mail there for
+The site links to `oxhollowmedia@gmail.com`. To actually receive mail there for
 free, use **Cloudflare Email Routing** (in your domain's dashboard → Email):
-forward `hello@oxhollowmedia.com` → your personal Gmail. No mailbox to manage.
+forward `oxhollowmedia@gmail.com` → your personal Gmail. No mailbox to manage.
 
 ---
 

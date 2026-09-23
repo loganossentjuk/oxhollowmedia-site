@@ -83,7 +83,7 @@ for p in prints:
             skipped += 1
             continue
         product = stripe("products", {
-            "name": f"{p['title']} — {label} archival print",
+            "name": f"{p['title']}, {label} archival print",
             "description": "Archival matte fine-art print, made to order. Free US shipping.",
             "images[0]": p["image"],
         })

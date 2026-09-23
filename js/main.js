@@ -54,7 +54,7 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.action.includes('YOUR_FORM_ID')) {
-      status.textContent = 'Form not configured yet — email oxhollowmedia@gmail.com.';
+      status.textContent = 'Form not configured yet. Email oxhollowmedia@gmail.com.';
       return;
     }
     status.textContent = 'Sending…';
@@ -65,7 +65,7 @@ if (form) {
         headers: { Accept: 'application/json' },
       });
       if (res.ok) {
-        status.textContent = 'Message sent — we\'ll be in touch soon.';
+        status.textContent = 'Message sent. We\'ll be in touch soon.';
         track('Contact Form Submit');
         form.reset();
       } else {

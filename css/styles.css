@@ -4,17 +4,18 @@
 
 /* ── Design tokens ── */
 :root {
-  --bg:           #FFFFFF;   /* white — primary surface (per style guide) */
-  --bg-section:   #F6F1E7;   /* warm paper — alternating sections */
-  --bg-dark:      #232120;   /* warm charcoal ink (accent sections) */
-  --accent:       #3D6B4F;   /* forest green (brand mark green) */
-  --accent-hover: #2E5240;
-  --accent-soft:  #DDE6D5;
+  --bg:           #F3EFE4;   /* light cream — primary surface (paler card stock) */
+  --bg-section:   #E5DEC8;   /* card cream — alternating sections (business card back) */
+  --bg-dark:      #294132;   /* card forest green — dark bands (business card front) */
+  --ink:          #232120;   /* warm charcoal — behind photos and video */
+  --accent:       #2F4D3A;   /* deep forest green (between mark green and card green) */
+  --accent-hover: #233B2C;
+  --accent-soft:  #D5DFCB;
   --clay:         #B67C56;   /* warm terracotta accent */
   --paper:        #F4EEE2;   /* cream — type on dark surfaces */
   --text:         #232120;   /* warm near-black (matches ink) */
-  --text-muted:   #6E695E;   /* warm muted grey */
-  --border:       #E9E3D6;   /* warm light border */
+  --text-muted:   #625D52;   /* warm muted grey (darkened to hold contrast on cream) */
+  --border:       #DCD4C0;   /* warm light border (reads on cream) */
   --paper-05:     rgba(255,255,255,0.05);
 
   --serif:        'Cormorant Garamond', Georgia, serif;  /* brand serif (logo sheet: CG 500) */
@@ -92,6 +93,16 @@ em { font-style: italic; }
   border: 1px solid var(--accent);
 }
 .btn-filled:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+/* On the forest-green bands the green button vanishes — flip it to the card's
+   cream-on-green, the way the business card front reads. */
+#contact .btn-filled, #newsletter .btn-filled, .links-page .btn-filled,
+#print-info .btn-filled, #the-name .btn-filled {
+  background: var(--paper); border-color: var(--paper); color: var(--bg-dark);
+}
+#contact .btn-filled:hover, #newsletter .btn-filled:hover, .links-page .btn-filled:hover,
+#print-info .btn-filled:hover, #the-name .btn-filled:hover {
+  background: var(--bg-section); border-color: var(--bg-section);
+}
 
 .btn-dark {
   border: 1px solid var(--text);
@@ -113,7 +124,7 @@ em { font-style: italic; }
   border-bottom: 1px solid transparent;
 }
 #nav.scrolled {
-  background: rgba(255,255,255,0.92);
+  background: rgba(243,239,228,0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--border);
@@ -226,7 +237,7 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background: var(--bg-dark);
+  background: var(--ink);
 }
 .hero-media {
   position: absolute;
@@ -480,7 +491,7 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--bg-dark);
+  background: var(--ink);
 }
 .film-frame iframe {
   position: absolute;
@@ -664,13 +675,13 @@ input::placeholder, textarea::placeholder { color: rgba(244,238,226,0.25); }
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--accent);
-  background: rgba(61,107,79,0.1);
+  background: rgba(47,77,58,0.1);
 }
 .form-note { font-size: 0.8125rem; color: var(--accent-soft); max-width: none; margin: 0; }
 
 /* ── Footer ── */
 footer {
-  background: var(--bg-dark);
+  background: #213529;   /* a shade under --bg-dark so it parts from the contact band */
   border-top: 1px solid rgba(244,238,226,0.07);
   padding: 2.25rem 0;
 }
@@ -841,6 +852,8 @@ select option { color: #232120; background: #FFFFFF; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+/* links.html carries body.light-nav, whose ink logo rule would otherwise win. */
+body.light-nav .links-logo { color: var(--paper); }
 .links-logo .brand-mark { width: 20px; height: 20px; }
 .links-tagline { color: rgba(244,238,226,0.6); margin: 1rem auto 2.25rem; font-size: 0.95rem; }
 .links-stack { display: flex; flex-direction: column; gap: 0.9rem; }
@@ -1208,9 +1221,32 @@ body.prints-page .container { max-width: 1680px; }
 .nav-links a.swap:hover::after,
 .nav-links a.swap:focus-visible::after,
 .footer-social a.swap:hover::after { transform: translateY(0); }
-/* The Contact pill has a border and padding — clipping it would crop the box. */
+/* The Contact pill has a border and padding — clipping it would crop the box,
+   so the swap runs inside .swap-clip and the pill itself fills on hover. */
 .nav-links a.nav-cta.swap { overflow: visible; }
 .nav-links a.nav-cta.swap::after { display: none; }
+.nav-cta .swap-clip {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.nav-cta .swap-clip::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0; top: 0;
+  transform: translateY(105%);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.nav-links a.nav-cta.swap:hover .swap-clip::after,
+.nav-links a.nav-cta.swap:focus-visible .swap-clip::after { transform: translateY(0); }
+.nav-links a.nav-cta { transition: color 0.3s, background-color 0.3s, border-color 0.3s; }
+/* Over the hero: cream pill, ink label. On light pages / scrolled: green pill. */
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta:focus-visible { background: var(--paper); border-color: var(--paper); color: var(--text); }
+#nav.scrolled .nav-links a.nav-cta:hover,
+#nav.scrolled .nav-links a.nav-cta:focus-visible,
+body.light-nav .nav-links a.nav-cta:hover,
+body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 
 /* ── Reveal on scroll ──────────────────────────────────────────────────────
    Replaces the old .fade-in with a longer, softer curve and per-item stagger
@@ -1284,3 +1320,6 @@ body.prints-page .container { max-width: 1680px; }
   .nav-links a.swap .swap-in, .nav-links a.swap::after,
   .footer-social a.swap .swap-in, .footer-social a.swap::after { transition: none; }
 }
+
+/* The footer's only social link is the Instagram handle — keep it lowercase. */
+.footer-social a[href*="instagram.com"] { text-transform: none; letter-spacing: 0.04em; }

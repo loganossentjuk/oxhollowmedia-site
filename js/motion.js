@@ -64,6 +64,11 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
     if (!label) return;
     a.dataset.label = label;
     a.innerHTML = '<span class="swap-in">' + label + '</span>';
+    /* The Contact pill can't clip itself without cropping its border, so the
+       swap runs inside an inner span that does the clipping instead. */
+    if (a.classList.contains('nav-cta')) {
+      a.innerHTML = '<span class="swap-clip" data-label="' + label + '">' + a.innerHTML + '</span>';
+    }
     a.classList.add('swap');
   });
 })();

@@ -1323,3 +1323,8 @@ body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent); b
 
 /* The footer's only social link is the Instagram handle — keep it lowercase. */
 .footer-social a[href*="instagram.com"] { text-transform: none; letter-spacing: 0.04em; }
+
+/* Prints page: jump links to each subject section (Botanical sits fourth down a long page). */
+.print-jump { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+.print-jump .filter-chip { text-decoration: none; }
+.print-section { scroll-margin-top: calc(var(--nav-h) + 1rem); }

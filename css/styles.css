@@ -1328,3 +1328,14 @@ body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent); b
 .print-jump { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
 .print-jump .filter-chip { text-decoration: none; }
 .print-section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+
+/* ── Service landing pages (nonprofit, startup/VC, videography, conservation) ── */
+#films-list { padding: 2rem 0 5rem; background: var(--bg); }
+#films-list h2 { margin-bottom: 1rem; }
+#related { background: var(--bg-section); }
+.related-links { line-height: 2; }
+.related-links a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); white-space: nowrap; }
+.related-links a:hover { border-color: var(--accent); }
+/* Outline buttons default to cream-on-dark; on the light page headers they vanished. */
+.page-hero .btn-outline { border-color: var(--text); color: var(--text); }
+.page-hero .btn-outline:hover { background: var(--text); border-color: var(--text); color: var(--bg); }

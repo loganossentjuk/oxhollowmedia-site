@@ -1,3 +1,10 @@
 # The store page became /prints (Jul 2026). Preserve inbound links and SEO.
 /store    /prints    301
 /store/   /prints    301
+
+# Service pages consolidated into /events and /filmmaking (Sep 2026).
+/corporate-event-photographer-san-francisco   /events       301
+/nonprofit-event-photographer-san-francisco   /events       301
+/startup-vc-event-photographer-san-francisco  /events       301
+/event-videographer-san-francisco             /filmmaking   301
+/conservation-filmmaker-bay-area              /filmmaking   301

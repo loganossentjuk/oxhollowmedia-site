@@ -2,8 +2,8 @@
 """
 Create a Stripe Payment Link for every print x size on the site.
 
-Reads the catalogue straight out of prints/index.html so it can never drift
-from what's actually published. Writes stripe-links.json, mapping
+Reads the catalogue straight out of gallery.html (every nature and urban
+frame) so it can never drift from what's actually published. Writes stripe-links.json, mapping
 "<slug>|<size>" -> checkout URL, ready to wire into the print pages.
 
     export STRIPE_SECRET_KEY=sk_live_...
@@ -34,17 +34,23 @@ if not KEY and not DRY:
 
 
 def catalogue():
-    """Every print on the index: slug, title, image URL."""
-    html = (ROOT / "prints" / "index.html").read_text()
+    """Every buyable frame in the gallery: slug, title, image URL.
+
+    Events and portraits are client work and never for sale. The slug is the
+    title slugified, which is exactly what js/gallery.js computes to look a
+    link up, so the two can't disagree.
+    """
+    html = (ROOT / "gallery.html").read_text()
     pat = re.compile(
-        r'<a class="print-mat" href="([^"]+)">.*?<img src="([^"]+)".*?<h3>([^<]+)</h3>',
-        re.S)
+        r'<a class="masonry-item" data-cat="(\w+)"[^>]*>.*?<img src="([^"]+)".*?'
+        r'<div class="cap-title">([^<]+)</div>', re.S)
     out = []
-    for href, img, title in pat.findall(html):
+    for cat, img, title in pat.findall(html):
+        if cat in ("events", "portraits"):
+            continue
         title = title.strip()
-        slug = (href[len("/prints/"):] if href.startswith("/prints/")
-                else re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-"))
-        out.append({"slug": slug, "title": title, "image": SITE + img})
+        slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+        out.append({"slug": slug, "title": title, "image": f"{SITE}/{img.lstrip('/')}"})
     return out
 
 
@@ -95,7 +101,8 @@ for p in prints:
             "line_items[0][quantity]": "1",
             "shipping_address_collection[allowed_countries][0]": "US",
             "after_completion[type]": "redirect",
-            "after_completion[redirect][url]": f"{SITE}/prints/{p['slug']}?ordered=1",
+            "after_completion[redirect][url]": f"{SITE}/thank-you",
+            "phone_number_collection[enabled]": "true",
         })
         links[ident] = link["url"]
         made += 1

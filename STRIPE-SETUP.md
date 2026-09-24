@@ -98,20 +98,33 @@ $320 price is too thin and we should raise it.
 
 ---
 
-## Scaling to the rest of the catalogue
+## Turning on checkout for the whole gallery
 
-43 prints × 4 sizes = **172 Payment Links**, which is unreasonable by hand.
-`scripts/make-stripe-links.mjs` creates them all from the site's own product
-data.
+Every nature and urban photo in the gallery opens in a viewer with four size
+buttons. Until Stripe links exist, those buttons open the enquiry form with
+the photo and size filled in. One script creates all the links:
+63 photos × 4 sizes = **252 Payment Links**.
 
 ```bash
-export STRIPE_SECRET_KEY=sk_live_...   # never commit this
-node scripts/make-stripe-links.mjs --dry-run   # preview
-node scripts/make-stripe-links.mjs             # create for real
+export STRIPE_SECRET_KEY=sk_test_...          # test key first; never commit it
+python3 scripts/make_stripe_links.py --dry-run
+python3 scripts/make_stripe_links.py
 ```
 
-It writes `stripe-links.json`, which Claude can then wire into every print
-page at once.
+It reads the photos straight from `gallery.html` (skipping Events and
+Portraits), creates a product, price and Payment Link for each size with US
+shipping-address and phone collection, and sends buyers to `/thank-you` after
+paying. The result is `stripe-links.json`, a list of public checkout URLs.
+Commit and push that file and every buy button on the gallery and on
+`/prints/sierra-river-bend` switches to direct checkout. The file holds no
+secrets, only public checkout URLs.
 
-**Run it yourself.** Your secret key controls your money — it should never be
+Re-running is safe: links already in the file are skipped. Adding photos
+to the gallery later? Run it again and only the new ones are created.
+
+Do the whole thing once with a **test** key, buy something with card
+`4242 4242 4242 4242`, then delete `stripe-links.json`, switch to your
+**live** key and run it again. Test links don't work in live mode.
+
+**Run it yourself.** Your secret key controls your money. It should never be
 pasted into a chat, and Claude never needs to see it.

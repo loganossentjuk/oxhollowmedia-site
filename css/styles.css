@@ -468,6 +468,12 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 }
 .filter-count { color: inherit; opacity: 0.55; margin-left: 0.35rem; }
 
+/* Event categories (Candids / Portraits / Atmosphere): a lighter second row */
+.sub-filters { margin: 0 0 1.75rem; gap: 0.45rem; }
+.sub-filters[hidden] { display: none; }
+.sub-filters .filter-chip { font-size: 0.68rem; padding: 0.42rem 0.95rem; }
+#gallery-hero .sub-filters { margin: 0.9rem 0 0.5rem; }
+
 /* The Films chip is a jump link, not a category filter. The play glyph and the
    full-strength border set it apart — deliberately not a separator rule, which
    would hang off the row edge whenever the chip row wraps. */

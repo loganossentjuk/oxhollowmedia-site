@@ -403,6 +403,9 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
 .audiences { padding: 3.5rem 0 5rem; }
 .audiences h2 { margin-bottom: 2.5rem; }
+@media (min-width: 961px) {
+  .offer-grid.steps { grid-template-columns: repeat(4, 1fr); }
+}
 @media (max-width: 768px) {
   .masonry.frames-row { grid-template-columns: 1fr; }
   .frames-row .masonry-item { aspect-ratio: 4 / 5; }

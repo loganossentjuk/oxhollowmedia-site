@@ -54,22 +54,28 @@ Free US shipping is built into these prices. Don't add a shipping rate at checko
 - **Settings → Customer emails:** turn on "Successful payments" so buyers get a receipt.
 - **Settings → Branding:** upload the logo and set the brand color to `#294132` so checkout matches the site.
 - **Settings → Notifications:** make sure you get an email for every successful payment. That email is your order ticket.
-- **Sales tax:** physical prints are taxable in many states, including California. Look at **Stripe Tax** or check with an accountant before you go live.
+- **Sales tax:** physical prints are taxable in many states, including California. Every product is already tagged with the tax code for general physical goods, so Stripe Tax can be switched on later. Turning it on without first adding a tax registration (Tax → Registrations) collects nothing, and Stripe doesn't warn you. Decide with an accountant whether tax is added on top of the listed prices or included in them.
+
+### Safety net
+
+This repo has a commit check that blocks any Stripe key (`sk_`/`rk_`) from being committed. Turn it on once in any new copy of the repo with `git config core.hooksPath .githooks`.
 
 ### 3. Create the links in test mode
 
 1. Switch the dashboard to **Test mode**.
-2. **Developers → API keys** and copy the **test secret key** (`sk_test_...`).
-3. In your own terminal (never paste the key into a chat or commit it):
+2. **Developers → API keys → Create restricted key.** Name it `print-shop-links` and give it **Write** access to **Products**, **Prices** and **Payment Links** only. Leave everything else at None. Copy the key (`rk_test_...`).
+   A restricted key can only do those three things, so it does far less harm if it ever leaks than the full secret key would.
+3. In your own terminal (never paste the key into a chat, a file in this repo, or a commit):
 
    ```bash
    cd ~/projects/oxhollowmedia-site
-   export STRIPE_SECRET_KEY=sk_test_...
+   export STRIPE_API_KEY=rk_test_...
    python3 scripts/make_stripe_links.py --dry-run
    python3 scripts/make_stripe_links.py
    ```
 
    That creates 168 links (42 prints × 4 sizes) and writes `stripe-links.json`.
+   If it stops partway, just run it again: finished links are skipped and nothing is duplicated.
 4. Tell Claude it's done. Claude commits `stripe-links.json` to a preview so you can test before anything goes live.
 5. On the preview, buy a print with card `4242 4242 4242 4242`, any future date, any CVC. Check that the receipt arrives, the shipping address is collected, and you land on `/thank-you`.
 
@@ -79,9 +85,11 @@ Test-mode links don't work for real payments. Once the test purchase works:
 
 ```bash
 rm stripe-links.json
-export STRIPE_SECRET_KEY=sk_live_...
+export STRIPE_API_KEY=rk_live_...
 python3 scripts/make_stripe_links.py
 ```
+
+Create the live restricted key the same way (Products, Prices, Payment Links: Write). When the links are made, you can delete or expire both restricted keys in the dashboard. The site itself never uses a key.
 
 Then Claude commits the new file and publishes.
 

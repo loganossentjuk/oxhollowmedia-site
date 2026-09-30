@@ -2,9 +2,10 @@
 """
 Create a Stripe Payment Link for every print x size on the site.
 
-Reads the catalogue straight out of gallery.html (every nature and urban
-frame) so it can never drift from what's actually published. Writes stripe-links.json, mapping
-"<slug>|<size>" -> checkout URL, ready to wire into the print pages.
+Reads prints/catalog.json, the same file scripts/build_print_pages.py builds
+the shop from, so the links always match the print pages. Writes
+stripe-links.json, mapping "<slug>|<size>" -> checkout URL; js/print-buy.js
+(print pages) and js/gallery.js (gallery viewer) read it.
 
     export STRIPE_SECRET_KEY=sk_live_...
     python3 scripts/make_stripe_links.py --dry-run
@@ -20,12 +21,8 @@ from pathlib import Path
 
 SITE = "https://oxhollowmedia.com"
 ROOT = Path(__file__).resolve().parent.parent
-SIZES = [
-    ("8x12",  "8×12″",  5500),
-    ("12x18", "12×18″", 10000),
-    ("16x24", "16×24″", 17500),
-    ("24x36", "24×36″", 32000),
-]
+CATALOG = json.loads((ROOT / "prints" / "catalog.json").read_text())
+SIZES = [(z["key"], z["label"], z["price"] * 100) for z in CATALOG["sizes"]]
 
 DRY = "--dry-run" in sys.argv
 KEY = os.environ.get("STRIPE_SECRET_KEY", "")
@@ -34,24 +31,9 @@ if not KEY and not DRY:
 
 
 def catalogue():
-    """Every buyable frame in the gallery: slug, title, image URL.
-
-    Events and portraits are client work and never for sale. The slug is the
-    title slugified, which is exactly what js/gallery.js computes to look a
-    link up, so the two can't disagree.
-    """
-    html = (ROOT / "gallery.html").read_text()
-    pat = re.compile(
-        r'<a class="masonry-item" data-cat="(\w+)"[^>]*>.*?<img src="([^"]+)".*?'
-        r'<div class="cap-title">([^<]+)</div>', re.S)
-    out = []
-    for cat, img, title in pat.findall(html):
-        if cat in ("events", "portraits"):
-            continue
-        title = title.strip()
-        slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
-        out.append({"slug": slug, "title": title, "image": f"{SITE}/{img.lstrip('/')}"})
-    return out
+    """Every print in the shop: slug, title, absolute image URL."""
+    return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"]}
+            for p in CATALOG["prints"]]
 
 
 def stripe(path, params):
@@ -75,7 +57,7 @@ if DRY:
     for p in prints[:3]:
         for _, label, cents in SIZES:
             print(f"  would create: {p['title']} - {label}  ${cents/100:.2f}")
-    print(f"  ... and {total - 12} more. Re-run without --dry-run to create them.")
+    print(f"  ... and {total - 3 * len(SIZES)} more. Re-run without --dry-run to create them.")
     sys.exit(0)
 
 out_file = ROOT / "stripe-links.json"
@@ -90,6 +72,7 @@ for p in prints:
             continue
         product = stripe("products", {
             "name": f"{p['title']}, {label} archival print",
+            "metadata[slug]": p["slug"], "metadata[size]": key,
             "description": "Archival matte fine-art print, made to order. Free US shipping.",
             "images[0]": p["image"],
         })

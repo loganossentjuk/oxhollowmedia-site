@@ -1,130 +1,104 @@
-# Stripe setup — selling prints from oxhollowmedia.com
+# Stripe setup: selling prints from oxhollowmedia.com
 
-The print pages take payment through **Stripe Payment Links**: one hosted
-checkout URL per size. No server, no monthly platform fee, nothing to
-maintain. Stripe's cut is 2.9% + 30¢ per sale and that's it.
+Every print in the shop has its own page at `/prints/<name>` with four Buy
+buttons. Payment runs through **Stripe Payment Links**: one hosted checkout
+URL per print and size. There's no server and no monthly fee. Stripe takes
+2.9% + 30¢ per sale.
 
-Right now **one print is live as a full product page**:
-`/prints/sierra-river-bend`. Its four buttons fall back to the enquiry form
-until you paste in Stripe links — so nothing is ever broken for a visitor.
+Until Stripe links exist, each Buy button opens the enquiry form with the
+print and size filled in, so no button is ever broken.
 
----
+## How the pieces fit
 
-## The price ladder
+| File | What it does |
+|---|---|
+| `prints/catalog.json` | The list of prints, sizes and prices. Edit this to add, remove or reorder prints. |
+| `scripts/build_print_pages.py` | Builds every `/prints/<name>` page, the shop grid and the sitemap from the catalogue. |
+| `scripts/make_stripe_links.py` | Creates a Stripe product, price and Payment Link for every print × size and writes `stripe-links.json`. |
+| `stripe-links.json` | Public checkout URLs (no secrets). Once it's committed, every Buy button goes straight to checkout. |
+| `js/print-buy.js` | Swaps each Buy button to its Stripe link when one exists. |
 
-| Size   | Price |
-|--------|-------|
-| 8×12″  | $55   |
-| 12×18″ | $100  |
-| 16×24″ | $175  |
-| 24×36″ | $320  |
+Changing the shop later:
 
-Free US shipping — the cost is baked into these prices, so don't add a
-shipping charge at checkout.
-
----
-
-## 1. 🧑 Create the Stripe account (~10 min)
-
-1. <https://dashboard.stripe.com/register> — sign up with
-   **oxhollowbooking@gmail.com**.
-2. Business type: **Individual / sole proprietor** unless you've actually
-   registered an LLC.
-3. Add your bank details for payouts. Stripe will ask for SSN/EIN — that's
-   standard for US payment processing and goes directly to Stripe.
-4. Stay in **Test mode** (toggle, top right) until step 4 below.
-
-## 2. 🧑 Create four Payment Links (~10 min for the first print)
-
-For each row of the table above:
-
-1. Dashboard → **Payment links** → **+ New**.
-2. **Product:** "Sierra River Bend — 8×12″ archival print" (etc.)
-3. **Price:** from the table. One-off, USD.
-4. **Image:** upload the photo — it shows in checkout and matters.
-5. Under **Options**:
-   - ✅ **Collect customers' shipping addresses** → United States only
-   - ❌ Do *not* add a shipping rate (shipping is already in the price)
-   - ✅ Collect phone number (optional, useful for delivery issues)
-6. **After payment** → redirect to `https://oxhollowmedia.com/thank-you`
-   *(or leave Stripe's default confirmation for now)*
-7. Copy the resulting `https://buy.stripe.com/...` URL.
-
-## 3. 🤖 Paste the links in
-
-Open `prints/sierra-river-bend.html`, find `STRIPE_LINKS` near the bottom,
-and fill in the four URLs:
-
-```js
-const STRIPE_LINKS = {
-  "8x12":  "https://buy.stripe.com/...",
-  "12x18": "https://buy.stripe.com/...",
-  "16x24": "https://buy.stripe.com/...",
-  "24x36": "https://buy.stripe.com/..."
-};
+```bash
+python3 scripts/build_print_pages.py      # after editing prints/catalog.json
+python3 scripts/make_stripe_links.py      # creates links only for new prints
 ```
 
-Any size left as `""` keeps falling back to the enquiry form. Send the URLs
-to Claude and this gets done and deployed in a minute.
+## Prices
 
-## 4. 🧑 Test it, then go live
+| Size | Price |
+|---|---|
+| 8×12″ | $55 |
+| 12×18″ | $100 |
+| 16×24″ | $175 |
+| 24×36″ | $320 |
 
-1. In **Test mode**, buy your own print with card `4242 4242 4242 4242`,
-   any future expiry, any CVC.
-2. Confirm the order email arrives and the shipping address is captured.
-3. Flip Stripe to **Live mode** and recreate the four links — *test-mode
-   links do not work in live mode*. Paste the live URLs in.
+Free US shipping is built into these prices. Don't add a shipping rate at checkout.
+
+---
+
+## One-time setup (you do these steps; they need your identity and bank details)
+
+### 1. Create and activate the account
+
+1. Sign up at <https://dashboard.stripe.com/register>.
+2. **Activate payments:** business type (individual/sole proprietor unless you have an LLC), your details, and the bank account for payouts.
+   - Website: `https://oxhollowmedia.com/prints`
+   - Product description: "Archival fine-art photography prints, made to order and shipped in the US."
+   - Statement descriptor: `OX HOLLOW MEDIA`
+3. Stripe checks that the site shows prices, contact details and a refund policy. All three are live: the print pages, the footer email and phone, and `/shipping-returns`.
+
+### 2. Settings worth turning on
+
+- **Settings → Customer emails:** turn on "Successful payments" so buyers get a receipt.
+- **Settings → Branding:** upload the logo and set the brand color to `#294132` so checkout matches the site.
+- **Settings → Notifications:** make sure you get an email for every successful payment. That email is your order ticket.
+- **Sales tax:** physical prints are taxable in many states, including California. Look at **Stripe Tax** or check with an accountant before you go live.
+
+### 3. Create the links in test mode
+
+1. Switch the dashboard to **Test mode**.
+2. **Developers → API keys** and copy the **test secret key** (`sk_test_...`).
+3. In your own terminal (never paste the key into a chat or commit it):
+
+   ```bash
+   cd ~/projects/oxhollowmedia-site
+   export STRIPE_SECRET_KEY=sk_test_...
+   python3 scripts/make_stripe_links.py --dry-run
+   python3 scripts/make_stripe_links.py
+   ```
+
+   That creates 168 links (42 prints × 4 sizes) and writes `stripe-links.json`.
+4. Tell Claude it's done. Claude commits `stripe-links.json` to a preview so you can test before anything goes live.
+5. On the preview, buy a print with card `4242 4242 4242 4242`, any future date, any CVC. Check that the receipt arrives, the shipping address is collected, and you land on `/thank-you`.
+
+### 4. Go live
+
+Test-mode links don't work for real payments. Once the test purchase works:
+
+```bash
+rm stripe-links.json
+export STRIPE_SECRET_KEY=sk_live_...
+python3 scripts/make_stripe_links.py
+```
+
+Then Claude commits the new file and publishes.
 
 ---
 
 ## Fulfilling an order
 
-You chose print-on-demand, so the loop is:
-
-1. Stripe emails you: print, size, buyer's shipping address.
-2. Open the master TIFF from
-   `Dropbox/Career/OxHollow/PrintMasters/<category>/`.
-3. Upload to your lab (Prodigi, WHCC, Bay Photo) and enter the buyer's
-   address as the ship-to. They print and ship direct.
-4. Stripe payout lands on its normal schedule.
-
-Two or three minutes per order. When volume justifies it, this can be
-automated with a Cloudflare Worker on a Stripe webhook that submits the
-order to the lab's API — no manual step at all.
+1. Stripe emails you the print, the size and the buyer's shipping address.
+2. Open the master file for that print.
+3. Order it from your print lab and enter the buyer's address as the ship-to.
+4. Email the buyer when it ships.
 
 **Check your margin before going live.** Get a real quote from your lab for
-a 24×36 giclée. If their cost plus shipping is more than about $120, the
-$320 price is too thin and we should raise it.
+each size, especially 24×36″. If the lab's cost plus shipping is more than
+about $120 for that size, $320 is too thin and the price should go up.
 
----
-
-## Turning on checkout for the whole gallery
-
-Every nature and urban photo in the gallery opens in a viewer with four size
-buttons. Until Stripe links exist, those buttons open the enquiry form with
-the photo and size filled in. One script creates all the links:
-63 photos × 4 sizes = **252 Payment Links**.
-
-```bash
-export STRIPE_SECRET_KEY=sk_test_...          # test key first; never commit it
-python3 scripts/make_stripe_links.py --dry-run
-python3 scripts/make_stripe_links.py
-```
-
-It reads the photos straight from `gallery.html` (skipping Events and
-Portraits), creates a product, price and Payment Link for each size with US
-shipping-address and phone collection, and sends buyers to `/thank-you` after
-paying. The result is `stripe-links.json`, a list of public checkout URLs.
-Commit and push that file and every buy button on the gallery and on
-`/prints/sierra-river-bend` switches to direct checkout. The file holds no
-secrets, only public checkout URLs.
-
-Re-running is safe: links already in the file are skipped. Adding photos
-to the gallery later? Run it again and only the new ones are created.
-
-Do the whole thing once with a **test** key, buy something with card
-`4242 4242 4242 4242`, then delete `stripe-links.json`, switch to your
-**live** key and run it again. Test links don't work in live mode.
-
-**Run it yourself.** Your secret key controls your money. It should never be
-pasted into a chat, and Claude never needs to see it.
+**Check print shapes with your lab.** The four sizes are all 2:3. About half
+the prints are other shapes (16:9 wides, 4:5 and 3:4 verticals, panoramas,
+one square). Decide with your lab whether those print with a white border
+or get cropped, and whether any should get different sizes.

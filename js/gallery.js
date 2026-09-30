@@ -6,19 +6,40 @@ const emptyMsg  = document.getElementById('gallery-empty');
 if (filterBar && grid) {
   const items = Array.from(grid.querySelectorAll('.masonry-item'));
 
+  // Candids / Portraits / Atmosphere row, shown only under the Events filter.
+  const subBar = document.getElementById('event-filters');
+  let currentCat = 'all';
+  let sub = 'all';
+
   const applyFilter = (cat) => {
+    currentCat = cat;
     let shown = 0;
     items.forEach((item) => {
       // Event coverage is client work, not part of the print collection, so it
       // stays out of the default view and only appears under its own filter.
       const match = cat === 'all'
         ? item.dataset.cat !== 'events'
-        : item.dataset.cat === cat;
+        : item.dataset.cat === cat
+          && (cat !== 'events' || sub === 'all' || item.dataset.sub === sub);
       item.classList.toggle('is-hidden', !match);
       if (match) shown++;
     });
     emptyMsg.style.display = shown === 0 ? 'block' : 'none';
+    if (subBar) subBar.hidden = cat !== 'events';
   };
+
+  if (subBar) {
+    subBar.addEventListener('click', (e) => {
+      const chip = e.target.closest('.filter-chip[data-sub]');
+      if (!chip) return;
+      sub = chip.dataset.sub;
+      subBar.querySelectorAll('.filter-chip').forEach((c) => {
+        c.classList.toggle('active', c === chip);
+        c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+      });
+      applyFilter(currentCat);
+    });
+  }
 
   const selectChip = (chip) => {
     filterBar.querySelectorAll('.filter-chip').forEach((c) => {
@@ -153,8 +174,11 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     const item = list[i];
     const pic = item.querySelector('img');
     const webp = item.querySelector('source');
-    const title = (item.querySelector('.cap-title') || {}).textContent || pic.alt;
     const cat = item.dataset.cat;
+    // Event frames go untitled for visitors; we track them by data-ref (E01…).
+    const title = cat === 'events'
+      ? ''
+      : (item.querySelector('.cap-title') || {}).textContent || pic.alt;
 
     src.srcset = webp ? webp.srcset : '';
     img.src = pic.currentSrc || pic.src;

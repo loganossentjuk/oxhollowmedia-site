@@ -401,7 +401,15 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .frames-row .masonry-item picture,
 .frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
 .hero-frames { margin-top: 2rem; }
-.hero-frames-cta { margin-top: 1.25rem; }
+.hero-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+}
+.hero-meta .trust-bar { flex: 1 1 32rem; }
+.hero-frames-cta { flex: none; }
 #offerings.audiences { padding: 5rem 0; }
 #offerings.audiences h2 { margin-bottom: 2.5rem; }
 @media (min-width: 961px) {

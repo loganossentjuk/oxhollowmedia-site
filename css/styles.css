@@ -389,6 +389,25 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 }
 .highlights-head h2 { margin-bottom: 0; }
 
+/* Work With Me: an even row of three frames (one per audience) and a tighter
+   hand-off into the "Who I work with" cards below it. */
+.frames-section { padding-bottom: 3rem; }
+.masonry.frames-row {
+  column-count: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.frames-row .masonry-item { margin: 0; aspect-ratio: 3 / 4; }
+.frames-row .masonry-item picture,
+.frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
+.audiences { padding: 3.5rem 0 5rem; }
+.audiences h2 { margin-bottom: 2.5rem; }
+@media (max-width: 768px) {
+  .masonry.frames-row { grid-template-columns: 1fr; }
+  .frames-row .masonry-item { aspect-ratio: 4 / 5; }
+}
+
 /* ── Masonry (shared: home highlights + gallery page) ── */
 .masonry {
   column-count: 3;

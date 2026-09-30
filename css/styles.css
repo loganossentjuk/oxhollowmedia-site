@@ -397,7 +397,7 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
-.frames-row .masonry-item { margin: 0; aspect-ratio: 3 / 2; }
+.frames-row .masonry-item { margin: 0; aspect-ratio: 3 / 4; }
 .frames-row .masonry-item picture,
 .frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
 .hero-frames { margin-top: 2rem; }

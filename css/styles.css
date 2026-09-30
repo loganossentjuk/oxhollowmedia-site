@@ -391,7 +391,7 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 
 /* Work With Me: an even row of three frames (one per audience) and a tighter
    hand-off into the "Who I work with" cards below it. */
-.frames-section { padding-bottom: 3rem; }
+#highlights.frames-section { padding: 3rem 0; }
 .masonry.frames-row {
   column-count: auto;
   display: grid;
@@ -401,8 +401,8 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .frames-row .masonry-item { margin: 0; aspect-ratio: 3 / 4; }
 .frames-row .masonry-item picture,
 .frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
-.audiences { padding: 3.5rem 0 5rem; }
-.audiences h2 { margin-bottom: 2.5rem; }
+#offerings.audiences { padding: 3.5rem 0 5rem; }
+#offerings.audiences h2 { margin-bottom: 2.5rem; }
 @media (min-width: 961px) {
   .offer-grid.steps { grid-template-columns: repeat(4, 1fr); }
 }

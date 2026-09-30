@@ -174,8 +174,11 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     const item = list[i];
     const pic = item.querySelector('img');
     const webp = item.querySelector('source');
-    const title = (item.querySelector('.cap-title') || {}).textContent || pic.alt;
     const cat = item.dataset.cat;
+    // Event frames go untitled for visitors; we track them by data-ref (E01…).
+    const title = cat === 'events'
+      ? ''
+      : (item.querySelector('.cap-title') || {}).textContent || pic.alt;
 
     src.srcset = webp ? webp.srcset : '';
     img.src = pic.currentSrc || pic.src;

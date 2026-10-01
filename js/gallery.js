@@ -139,6 +139,16 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     .then((j) => { links = j || {}; })
     .catch(() => {});
 
+  // Prints in the shop get a link to their page (/prints/<slug>) and the
+  // shop's sizes; anything else falls back to SIZES above.
+  let shopSizes = new Map();
+  fetch('/prints/catalog.json', { cache: 'no-cache' })
+    .then((r) => (r.ok ? r.json() : { prints: [] }))
+    .then((c) => {
+      shopSizes = new Map((c.prints || []).map((p) => [p.slug, c.sizes || SIZES]));
+    })
+    .catch(() => {});
+
   const box = document.createElement('div');
   box.className = 'lightbox';
   box.setAttribute('role', 'dialog');
@@ -160,6 +170,7 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
       <div class="lb-buy">
         <p class="lb-spec">Archival matte paper · made to order · free US shipping</p>
         <div class="lb-sizes"></div>
+        <a class="lb-page" hidden>Print details &amp; story →</a>
       </div>
     </div>`;
   document.body.appendChild(box);
@@ -188,9 +199,12 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
 
     const forSale = !NOT_FOR_SALE.includes(cat);
     $('.lb-buy').hidden = !forSale;
+    const page = $('.lb-page');
+    page.hidden = true;
     if (forSale) {
       const slug = slugify(title);
-      $('.lb-sizes').innerHTML = SIZES.map((s) => {
+      if (shopSizes.has(slug)) { page.href = `/prints/${slug}`; page.hidden = false; }
+      $('.lb-sizes').innerHTML = (shopSizes.get(slug) || SIZES).map((s) => {
         const url = links[`${slug}|${s.key}`];
         const href = url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
         return `<a class="lb-size" href="${href}" data-size="${s.key}" data-product="${slug}"${url ? ' data-checkout="stripe"' : ''}>`

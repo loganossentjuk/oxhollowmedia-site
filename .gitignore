@@ -8,3 +8,7 @@
 # site only ever serves the 2000px JPEG/WebP derivatives beside them.
 *.tif
 *.tiff
+
+# Stripe and other API keys live in your shell or a secrets vault, never here.
+.env
+.env.*

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Block commits that contain a Stripe API key (sk_ / rk_, test or live).
+# Enable once per clone:  git config core.hooksPath .githooks
+if git diff --cached -U0 | grep -E '^\+' | grep -Eq '(sk|rk)_(test|live)_[0-9A-Za-z]{10,}'; then
+  echo "Commit blocked: it contains what looks like a Stripe API key." >&2
+  echo "Remove it, and roll the key in the Stripe dashboard if it was ever shared." >&2
+  exit 1
+fi

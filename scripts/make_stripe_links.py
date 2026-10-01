@@ -168,6 +168,10 @@ for p in prints:
             "after_completion[redirect][url]": f"{SITE}/thank-you",
             "phone_number_collection[enabled]": "true",
         }, f"link-{ident}")
+        if not link.get("active", True):
+            # Same request within 24h returns the earlier link, which may have
+            # been retired since. Switch it back on rather than save a dead URL.
+            link = stripe(f"payment_links/{link['id']}", {"active": "true"}, f"revive-{link['id']}")
         links[ident] = link["url"]
         made += 1
         print(f"  ok {ident}  {link['url']}")

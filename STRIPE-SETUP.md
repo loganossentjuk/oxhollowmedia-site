@@ -68,7 +68,10 @@ Free US shipping is built into these prices. Don't add a shipping rate at checko
 - **Settings → Customer emails:** turn on "Successful payments" so buyers get a receipt.
 - **Settings → Branding:** upload the logo and set the brand color to `#294132` so checkout matches the site.
 - **Settings → Notifications:** make sure you get an email for every successful payment. That email is your order ticket.
-- **Sales tax:** physical prints are taxable in many states, including California. Every product is already tagged with the tax code for general physical goods, so Stripe Tax can be switched on later. Turning it on without first adding a tax registration (Tax → Registrations) collects nothing, and Stripe doesn't warn you. Decide with an accountant whether tax is added on top of the listed prices or included in them.
+- **Sales tax:** prints are taxable in California. Every product is already tagged with the tax code for general physical goods. To collect tax:
+  1. Get a free seller's permit from the CDTFA (California Department of Tax and Fee Administration).
+  2. In Stripe: **Tax → Settings**, set your origin address and choose whether prices **include** tax or tax is **added at checkout**. Then **Tax → Registrations → Add** California.
+  3. Give the restricted key **Tax Registrations: Read** as well, and run `python3 scripts/make_stripe_links.py --enable-tax`. It checks for an active registration first and stops if there isn't one, because automatic tax without a registration silently collects nothing.
 
 ### Safety net
 

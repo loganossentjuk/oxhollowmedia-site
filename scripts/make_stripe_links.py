@@ -20,6 +20,15 @@ create call carries an idempotency key so a retried request can't make a
 duplicate, and the file is saved after every link so an interruption never
 loses work.
 
+Sales tax (once you have a seller's permit and a registration in Stripe):
+
+    python3 scripts/make_stripe_links.py --enable-tax
+
+turns on Stripe automatic tax for every link. It refuses to run until Stripe
+shows at least one active tax registration, because automatic tax with no
+registration silently collects nothing. The restricted key also needs
+Tax Registrations: Read for this step.
+
 Standard library only - no pip install needed.
 """
 import json, os, re, sys, urllib.parse, urllib.request
@@ -92,6 +101,27 @@ def stripe_list(path, query):
             return out
         after = page["data"][-1]["id"]
 
+
+if "--enable-tax" in sys.argv:
+    if DRY:
+        sys.exit("--enable-tax can't be combined with --dry-run.")
+    regs = stripe_list("tax/registrations", {"status": "active"})
+    if not regs:
+        sys.exit("No active tax registration in Stripe, so automatic tax would collect nothing.\n"
+                 "Add one under Tax > Registrations (e.g. California, after getting your CDTFA seller's permit), then re-run.")
+    print("Active tax registrations: " + ", ".join(
+        f"{g['country']}-{g.get('country_options', {}).get(g['country'].lower(), {}).get('state', '')}".rstrip("-")
+        for g in regs))
+    links = json.loads((ROOT / "stripe-links.json").read_text())
+    live_links = stripe_list("payment_links", {"active": "true"})
+    ours = [l for l in live_links if l["url"] in set(links.values())]
+    on = 0
+    for l in ours:
+        if not (l.get("automatic_tax") or {}).get("enabled"):
+            stripe(f"payment_links/{l['id']}", {"automatic_tax[enabled]": "true"}, f"tax-on-{l['id']}")
+            on += 1
+    print(f"automatic tax on for {len(ours)} links ({on} changed) ({MODE} mode)")
+    sys.exit(0)
 
 prints = catalogue()
 wanted = {f"{p['slug']}|{k}" for p in prints for k, _, _ in p["sizes"]}

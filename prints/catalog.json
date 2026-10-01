@@ -1,28 +1,140 @@
 {
-  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional. Sizes and prices apply to every print; scripts/make_stripe_links.py reads them too.",
+  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Each print's 'shape' picks its four sizes from size_sets, so every size matches the photo's proportions (labels are short side × long side). 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional.",
   "paper": "Archival matte fine-art paper, 200gsm",
-  "sizes": [
-    {
-      "key": "8x12",
-      "label": "8×12″",
-      "price": 55
-    },
-    {
-      "key": "12x18",
-      "label": "12×18″",
-      "price": 100
-    },
-    {
-      "key": "16x24",
-      "label": "16×24″",
-      "price": 175
-    },
-    {
-      "key": "24x36",
-      "label": "24×36″",
-      "price": 320
-    }
-  ],
+  "size_sets": {
+    "3:2": [
+      {
+        "key": "8x12",
+        "label": "8×12″",
+        "price": 55
+      },
+      {
+        "key": "12x18",
+        "label": "12×18″",
+        "price": 100
+      },
+      {
+        "key": "16x24",
+        "label": "16×24″",
+        "price": 175
+      },
+      {
+        "key": "24x36",
+        "label": "24×36″",
+        "price": 320
+      }
+    ],
+    "16:9": [
+      {
+        "key": "9x16",
+        "label": "9×16″",
+        "price": 75
+      },
+      {
+        "key": "12x21",
+        "label": "12×21″",
+        "price": 115
+      },
+      {
+        "key": "18x32",
+        "label": "18×32″",
+        "price": 235
+      },
+      {
+        "key": "20x36",
+        "label": "20×36″",
+        "price": 275
+      }
+    ],
+    "4:3": [
+      {
+        "key": "9x12",
+        "label": "9×12″",
+        "price": 60
+      },
+      {
+        "key": "12x16",
+        "label": "12×16″",
+        "price": 90
+      },
+      {
+        "key": "18x24",
+        "label": "18×24″",
+        "price": 190
+      },
+      {
+        "key": "24x32",
+        "label": "24×32″",
+        "price": 290
+      }
+    ],
+    "5:4": [
+      {
+        "key": "8x10",
+        "label": "8×10″",
+        "price": 45
+      },
+      {
+        "key": "12x15",
+        "label": "12×15″",
+        "price": 85
+      },
+      {
+        "key": "16x20",
+        "label": "16×20″",
+        "price": 145
+      },
+      {
+        "key": "24x30",
+        "label": "24×30″",
+        "price": 275
+      }
+    ],
+    "1:1": [
+      {
+        "key": "10x10",
+        "label": "10×10″",
+        "price": 55
+      },
+      {
+        "key": "12x12",
+        "label": "12×12″",
+        "price": 75
+      },
+      {
+        "key": "20x20",
+        "label": "20×20″",
+        "price": 180
+      },
+      {
+        "key": "30x30",
+        "label": "30×30″",
+        "price": 330
+      }
+    ],
+    "2:1": [
+      {
+        "key": "6x12",
+        "label": "6×12″",
+        "price": 40
+      },
+      {
+        "key": "9x18",
+        "label": "9×18″",
+        "price": 80
+      },
+      {
+        "key": "12x24",
+        "label": "12×24″",
+        "price": 130
+      },
+      {
+        "key": "18x36",
+        "label": "18×36″",
+        "price": 255
+      }
+    ]
+  },
   "categories": {
     "mountains": {
       "name": "Mountains",
@@ -56,7 +168,8 @@
       "height": 1125,
       "alt": "Mountain silhouette layered in blue cloud at dusk",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "sierra-river-bend",
@@ -68,7 +181,8 @@
       "height": 1125,
       "alt": "Snow-capped Sierra peaks above a wide river bend",
       "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
-      "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down."
+      "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
+      "shape": "16:9"
     },
     {
       "slug": "fitz-roy-alpenglow",
@@ -80,7 +194,8 @@
       "height": 1500,
       "alt": "Alpenglow on the granite spires of Fitz Roy",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     },
     {
       "slug": "cloudbreak-ridge",
@@ -92,7 +207,8 @@
       "height": 1125,
       "alt": "Snowy peaks in blue shadow beneath breaking cloud",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "fog-forest",
@@ -104,7 +220,8 @@
       "height": 2000,
       "alt": "Fog drifting through tall conifer forest",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "highland-river",
@@ -116,7 +233,8 @@
       "height": 2000,
       "alt": "River winding through a green highland valley",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     },
     {
       "slug": "misty-ridgeline",
@@ -128,7 +246,8 @@
       "height": 1333,
       "alt": "Forested ridgeline fading into blue evening mist",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "dusk-branches",
@@ -140,7 +259,8 @@
       "height": 1125,
       "alt": "Bare branches silhouetted against a deep dusk sky",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "aspen-and-cobalt",
@@ -152,7 +272,8 @@
       "height": 2000,
       "alt": "Yellow aspen and dark pine against a cobalt sky",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     },
     {
       "slug": "rainier-afterglow",
@@ -164,7 +285,8 @@
       "height": 1125,
       "alt": "Mount Rainier silhouetted against a pink and violet afterglow",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "marsh-at-dusk",
@@ -176,7 +298,8 @@
       "height": 1125,
       "alt": "Tidal marsh and still water under a warm dusk sky",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "sun-on-the-water",
@@ -188,7 +311,8 @@
       "height": 1125,
       "alt": "Low sun laying a path of light across tidal water",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "the-wax-ritual",
@@ -200,7 +324,8 @@
       "height": 2000,
       "alt": "A surfer kneeling to wax a board as the sun burns through haze",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "shorebreak-boulders",
@@ -212,7 +337,8 @@
       "height": 924,
       "alt": "Waves breaking over mossy shoreline boulders",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "2:1"
     },
     {
       "slug": "green-water-i",
@@ -224,7 +350,8 @@
       "height": 2000,
       "alt": "Abstract of green and white water flowing over dark rock",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "5:4"
     },
     {
       "slug": "turquoise-shallows",
@@ -236,7 +363,8 @@
       "height": 1125,
       "alt": "Turquoise shallows breaking white over reef",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "copper-and-teal",
@@ -248,7 +376,8 @@
       "height": 2000,
       "alt": "Teal water against oxidised copper-red rock",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "5:4"
     },
     {
       "slug": "tidepool-lava",
@@ -260,7 +389,8 @@
       "height": 1600,
       "alt": "An aquamarine tidepool set in dark lava rock",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "5:4"
     },
     {
       "slug": "golden-gate-fog",
@@ -272,7 +402,8 @@
       "height": 2000,
       "alt": "Golden Gate Bridge rising into fog from the water's edge",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "2:1"
     },
     {
       "slug": "turquoise-harbor",
@@ -284,7 +415,8 @@
       "height": 972,
       "alt": "Boats moored in a turquoise island harbour",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "2:1"
     },
     {
       "slug": "paddler-at-the-gate",
@@ -296,7 +428,8 @@
       "height": 1500,
       "alt": "A paddleboarder crossing beneath the Golden Gate Bridge",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     },
     {
       "slug": "driftwood-shore",
@@ -308,7 +441,8 @@
       "height": 1125,
       "alt": "Bleached driftwood on a still lake shore under open sky",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "blue-footed-booby",
@@ -320,7 +454,8 @@
       "height": 1333,
       "alt": "A blue-footed booby displaying in the Galápagos",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "sea-lion-pup",
@@ -332,7 +467,8 @@
       "height": 1332,
       "alt": "A sea lion pup resting on the sand",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "dusk-waterfowl",
@@ -344,7 +480,8 @@
       "height": 1125,
       "alt": "Waterfowl drifting on still water at dusk",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "16:9"
     },
     {
       "slug": "marine-iguana",
@@ -356,7 +493,8 @@
       "height": 972,
       "alt": "A marine iguana resting on sun-bleached rock",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "2:1"
     },
     {
       "slug": "reef-passage",
@@ -368,7 +506,8 @@
       "height": 1500,
       "alt": "A shark gliding through hazy blue water beside a reef wall",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     },
     {
       "slug": "humpback-breach",
@@ -380,7 +519,8 @@
       "height": 1331,
       "alt": "A humpback whale breaching in open blue water",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "amber-glass",
@@ -392,7 +532,8 @@
       "height": 1333,
       "alt": "Abstract close study of amber glass pebbles",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "petunia-crimson",
@@ -404,7 +545,8 @@
       "height": 1333,
       "alt": "A single crimson petunia on a pale ground",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "geranium-coral",
@@ -416,7 +558,8 @@
       "height": 1333,
       "alt": "A coral geranium cluster in soft light",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "the-flower-market",
@@ -428,7 +571,8 @@
       "height": 1333,
       "alt": "Buckets of cut dahlias and blooms at a flower market",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "geranium-white",
@@ -440,7 +584,8 @@
       "height": 1333,
       "alt": "White geranium blossoms against dark foliage",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "hydrangea-deep-blue",
@@ -452,7 +597,8 @@
       "height": 1333,
       "alt": "Deep blue hydrangea blooms against lit green leaves",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "petunia-veined",
@@ -464,7 +610,8 @@
       "height": 1333,
       "alt": "Purple petunias with dark veining, backlit",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "petunia-blush",
@@ -476,7 +623,8 @@
       "height": 1333,
       "alt": "Hot-pink petunias opening in close focus",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "cocktails",
@@ -488,7 +636,8 @@
       "height": 1333,
       "alt": "Red neon Cocktails sign glowing in a dark bar window",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "wall-of-names",
@@ -500,7 +649,8 @@
       "height": 1333,
       "alt": "Layered graffiti tags across a brick wall",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "mural-sundown",
@@ -512,7 +662,8 @@
       "height": 1651,
       "alt": "A mural figure silhouetted against a painted sun",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "5:4"
     },
     {
       "slug": "art-will-save-you",
@@ -524,7 +675,8 @@
       "height": 1333,
       "alt": "A sticker reading ART WILL SAVE YOU on a yellow road line",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "3:2"
     },
     {
       "slug": "harbour-pastel",
@@ -536,7 +688,8 @@
       "height": 2000,
       "alt": "Still harbour water under a pastel dusk skyline",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "1:1"
     },
     {
       "slug": "glass-spire",
@@ -548,7 +701,8 @@
       "height": 2000,
       "alt": "A glass tower converging to a spire against pale sky",
       "lede": "",
-      "story": ""
+      "story": "",
+      "shape": "4:3"
     }
   ]
 }

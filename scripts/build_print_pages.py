@@ -24,7 +24,8 @@ SITE = "https://oxhollowmedia.com"
 ROOT = Path(__file__).resolve().parent.parent
 PRINTS = ROOT / "prints"
 CAT = json.loads((PRINTS / "catalog.json").read_text())
-SIZES, PAPER = CAT["sizes"], CAT["paper"]
+SIZE_SETS, PAPER = CAT["size_sets"], CAT["paper"]
+sizes = lambda p: SIZE_SETS[p["shape"]]
 CSS_VER = re.search(r'styles\.css\?v=(\d+)', (ROOT / "index.html").read_text()).group(1)
 
 e = lambda s: html.escape(s, quote=True)
@@ -36,8 +37,8 @@ NAV = re.search(r'  <!-- ── Navigation ── -->.*?<div class="drawer-overl
 FOOTER = re.search(r'  <!-- ── Footer ── -->.*?</footer>\n', index_html, re.S).group(0)
 
 
-def spec_line():
-    return "Archival matte paper · " + " · ".join(f"{s['label']} ${s['price']}" for s in SIZES)
+def spec_line(p):
+    return "Archival matte paper · " + " · ".join(f"{s['label']} ${s['price']}" for s in sizes(p))
 
 
 def lede(p):
@@ -52,7 +53,7 @@ def product_ld(p):
         "shippingDetails": {"@type": "OfferShippingDetails",
                             "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
                             "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}},
-    } for s in SIZES]
+    } for s in sizes(p)]
     return json.dumps({"@context": "https://schema.org", "@type": "Product", "name": p["title"],
                        "description": lede(p), "image": SITE + p["image"],
                        "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": offers},
@@ -84,7 +85,7 @@ def page(p):
     buttons = "".join(f'''
             <a class="buy-btn is-pending" data-slug="{p['slug']}" data-size="{s['key']}" href="/contact?print={quote(p['title'] + ' (' + s['label'].rstrip('″') + ')')}">
               <span class="size">Buy {s['label']}</span><span class="price">${s['price']}</span>
-            </a>''' for s in SIZES)
+            </a>''' for s in sizes(p))
     story = f'\n          <p class="detail-story">{e(p["story"])}</p>' if p["story"] else ""
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -128,7 +129,7 @@ def page(p):
           <p class="section-label">Fine art print</p>
           <h1 class="detail-title">{t}</h1>
           <p class="detail-lede">{e(lede(p))}</p>{story}
-          <p class="detail-spec">{e(PAPER)} · made to order</p>
+          <p class="detail-spec">{e(PAPER)} · sized to the photograph's proportions · made to order</p>
           <div class="buy-list">{buttons}
           </div>
           <p class="buy-note"><strong>Free US shipping.</strong> Each print is made to order on archival paper. Allow a few days for printing plus transit. Arrives damaged or wrong? Email a photo within 14 days and I'll send a free replacement. <a href="/shipping-returns">Shipping &amp; returns</a>. Questions, other sizes, or framing? <a href="/contact?print={quote(p['title'])}">Get in touch</a>.</p>
@@ -167,7 +168,7 @@ def shop_sections():
               {picture(p, ' loading="lazy"')}
             </a>
             <h3>{e(p['title'])}</h3>
-            <p class="print-spec">{e(spec_line())}</p>
+            <p class="print-spec">{e(spec_line(p))}</p>
             <a class="print-cta" href="/prints/{p['slug']}">→ View details &amp; buy</a>
           </div>''' for p in items)
         out.append(f'''  <!-- ── {e(meta['name'])} ── -->

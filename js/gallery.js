@@ -139,11 +139,15 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     .then((j) => { links = j || {}; })
     .catch(() => {});
 
-  // Prints with their own shop page (/prints/<slug>) get a link to it.
-  let shopSlugs = new Set();
+  // Prints in the shop get a link to their page (/prints/<slug>) and the
+  // sizes that match their shape; anything else falls back to SIZES above.
+  let shopSizes = new Map();
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
-    .then((c) => { shopSlugs = new Set((c.prints || []).map((p) => p.slug)); })
+    .then((c) => {
+      const sets = c.size_sets || {};
+      shopSizes = new Map((c.prints || []).map((p) => [p.slug, sets[p.shape] || SIZES]));
+    })
     .catch(() => {});
 
   const box = document.createElement('div');
@@ -200,8 +204,8 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     page.hidden = true;
     if (forSale) {
       const slug = slugify(title);
-      if (shopSlugs.has(slug)) { page.href = `/prints/${slug}`; page.hidden = false; }
-      $('.lb-sizes').innerHTML = SIZES.map((s) => {
+      if (shopSizes.has(slug)) { page.href = `/prints/${slug}`; page.hidden = false; }
+      $('.lb-sizes').innerHTML = (shopSizes.get(slug) || SIZES).map((s) => {
         const url = links[`${slug}|${s.key}`];
         const href = url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
         return `<a class="lb-size" href="${href}" data-size="${s.key}" data-product="${slug}"${url ? ' data-checkout="stripe"' : ''}>`

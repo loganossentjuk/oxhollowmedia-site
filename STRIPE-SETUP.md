@@ -27,8 +27,22 @@ python3 scripts/make_stripe_links.py      # creates links only for new prints
 
 ## Prices
 
-| Size | Price |
-|---|---|
+Every print is offered in four sizes that match its shape (sizes are short side × long side). The shape is set per print in `prints/catalog.json`.
+
+| Shape | Prints | Sizes and prices |
+|---|---|---|
+| 3:2 | 15 | 8×12″ $55 · 12×18″ $100 · 16×24″ $175 · 24×36″ $320 |
+| 16:9 | 12 | 9×16″ $75 · 12×21″ $115 · 18×32″ $235 · 20×36″ $275 |
+| 4:3 | 6 | 9×12″ $60 · 12×16″ $90 · 18×24″ $190 · 24×32″ $290 |
+| 5:4 | 4 | 8×10″ $45 · 12×15″ $85 · 16×20″ $145 · 24×30″ $275 |
+| 2:1 | 4 | 6×12″ $40 · 9×18″ $80 · 12×24″ $130 · 18×36″ $255 |
+| 1:1 | 1 | 10×10″ $55 · 12×12″ $75 · 20×20″ $180 · 30×30″ $330 |
+
+Prices follow the original 3:2 ladder by print area, so a size costs about what a 3:2 print of the same area does. Free US shipping is built in. Don't add a shipping rate at checkout.
+
+When sizes change, `make_stripe_links.py` creates links for the new sizes and turns off the old ones in Stripe, so an old checkout URL can't take an order.
+
+---|---|
 | 8×12″ | $55 |
 | 12×18″ | $100 |
 | 16×24″ | $175 |
@@ -74,7 +88,7 @@ This repo has a commit check that blocks any Stripe key (`sk_`/`rk_`) from being
    python3 scripts/make_stripe_links.py
    ```
 
-   That creates 168 links (42 prints × 4 sizes) and writes `stripe-links.json`.
+   That creates every print × size link (168 for 42 prints) and writes `stripe-links.json`.
    If it stops partway, just run it again: finished links are skipped and nothing is duplicated.
 4. Tell Claude it's done. Claude commits `stripe-links.json` to a preview so you can test before anything goes live.
 5. On the preview, buy a print with card `4242 4242 4242 4242`, any future date, any CVC. Check that the receipt arrives, the shipping address is collected, and you land on `/thank-you`.
@@ -106,7 +120,8 @@ Then Claude commits the new file and publishes.
 each size, especially 24×36″. If the lab's cost plus shipping is more than
 about $120 for that size, $320 is too thin and the price should go up.
 
-**Check print shapes with your lab.** The four sizes are all 2:3. About half
-the prints are other shapes (16:9 wides, 4:5 and 3:4 verticals, panoramas,
-one square). Decide with your lab whether those print with a white border
-or get cropped, and whether any should get different sizes.
+**Check the sizes with your lab.** Each print's sizes match its shape, but a
+few are close rather than exact: 12×21″ and 20×36″ for 16:9 photos, the 2:1
+sizes for Shorebreak Boulders (about 2.17:1) and the 5:4 sizes for Mural,
+Sundown (about 1.21:1) trim a sliver off one edge. Confirm your lab offers
+every size listed, or tell Claude which to swap.

@@ -28,7 +28,9 @@ from pathlib import Path
 SITE = "https://oxhollowmedia.com"
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = json.loads((ROOT / "prints" / "catalog.json").read_text())
-SIZES = [(z["key"], z["label"], z["price"] * 100) for z in CATALOG["sizes"]]
+# Each print's sizes come from its shape, so every size matches the photo.
+SIZE_SETS = {shape: [(z["key"], z["label"], z["price"] * 100) for z in zs]
+             for shape, zs in CATALOG["size_sets"].items()}
 
 API_VERSION = "2026-06-24.dahlia"
 TAX_CODE = "txcd_99999999"   # general tangible goods; used once Stripe Tax is on
@@ -53,8 +55,8 @@ MODE = "live" if "_live_" in KEY else "test"
 
 def catalogue():
     """Every print in the shop: slug, title, absolute image URL."""
-    return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"]}
-            for p in CATALOG["prints"]]
+    return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"],
+             "sizes": SIZE_SETS[p["shape"]]} for p in CATALOG["prints"]]
 
 
 def stripe(path, params, idem):
@@ -72,23 +74,47 @@ def stripe(path, params, idem):
         sys.exit(f"Stripe {path} failed: {e.code}\n{e.read().decode()[:400]}")
 
 
+def stripe_list(path, query):
+    """Every object from a list endpoint, following pagination."""
+    out, after = [], None
+    while True:
+        q = dict(query, limit="100", **({"starting_after": after} if after else {}))
+        req = urllib.request.Request(
+            f"https://api.stripe.com/v1/{path}?" + urllib.parse.urlencode(q),
+            headers={"Authorization": "Bearer " + KEY, "Stripe-Version": API_VERSION})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                page = json.load(r)
+        except urllib.error.HTTPError as e:
+            sys.exit(f"Stripe {path} failed: {e.code}\n{e.read().decode()[:400]}")
+        out += page["data"]
+        if not page.get("has_more"):
+            return out
+        after = page["data"][-1]["id"]
+
+
 prints = catalogue()
-total = len(prints) * len(SIZES)
-print(f"{len(prints)} prints x {len(SIZES)} sizes = {total} payment links" + ("" if DRY else f" ({MODE} mode)"))
-
-if DRY:
-    for p in prints[:3]:
-        for _, label, cents in SIZES:
-            print(f"  would create: {p['title']} - {label}  ${cents/100:.2f}")
-    print(f"  ... and {total - 3 * len(SIZES)} more. Re-run without --dry-run to create them.")
-    sys.exit(0)
-
+wanted = {f"{p['slug']}|{k}" for p in prints for k, _, _ in p["sizes"]}
 out_file = ROOT / "stripe-links.json"
 links = json.loads(out_file.read_text()) if out_file.exists() else {}
+stale = sorted(set(links) - wanted)
+todo = sorted(wanted - set(links))
+print(f"{len(prints)} prints, {len(wanted)} payment links: {len(todo)} to create, "
+      f"{len(stale)} to retire" + ("" if DRY else f" ({MODE} mode)"))
+
+if DRY:
+    for p in prints:
+        for key, label, cents in p["sizes"]:
+            if f"{p['slug']}|{key}" in todo:
+                print(f"  would create: {p['title']} - {label}  ${cents/100:.2f}")
+    for ident in stale:
+        print(f"  would retire:  {ident}")
+    sys.exit(0)
+
 made = skipped = 0
 
 for p in prints:
-    for key, label, cents in SIZES:
+    for key, label, cents in p["sizes"]:
         ident = f"{p['slug']}|{key}"
         if ident in links:
             skipped += 1
@@ -117,4 +143,19 @@ for p in prints:
         print(f"  ok {ident}  {link['url']}")
         out_file.write_text(json.dumps(links, indent=2))   # save as we go
 
-print(f"\ncreated {made}, skipped {skipped} already present -> stripe-links.json")
+# Retire links for sizes a print no longer offers: deactivate them in Stripe
+# so an old URL can't take an order, then drop them from the file.
+retired = 0
+if stale:
+    by_ident = {f"{l['metadata'].get('slug')}|{l['metadata'].get('size')}": l
+                for l in stripe_list("payment_links", {"active": "true"})}
+    for ident in stale:
+        l = by_ident.get(ident)
+        if l:
+            stripe(f"payment_links/{l['id']}", {"active": "false"}, f"retire-{l['id']}")
+        links.pop(ident)
+        retired += 1
+        print(f"  retired {ident}" + ("" if l else " (not active in Stripe)"))
+    out_file.write_text(json.dumps(links, indent=2))
+
+print(f"\ncreated {made}, skipped {skipped} already present, retired {retired} -> stripe-links.json")

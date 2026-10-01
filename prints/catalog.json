@@ -1,140 +1,28 @@
 {
-  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Each print's 'shape' picks its four sizes from size_sets, so every size matches the photo's proportions (labels are short side × long side). 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional.",
+  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Every print is sold in the same standard sizes. 'shape' is the photo's proportions: 3:2 photos print edge to edge, any other shape prints whole on the same paper with a white border, never cropped. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional.",
   "paper": "Archival matte fine-art paper, 200gsm",
-  "size_sets": {
-    "3:2": [
-      {
-        "key": "8x12",
-        "label": "8×12″",
-        "price": 55
-      },
-      {
-        "key": "12x18",
-        "label": "12×18″",
-        "price": 100
-      },
-      {
-        "key": "16x24",
-        "label": "16×24″",
-        "price": 175
-      },
-      {
-        "key": "24x36",
-        "label": "24×36″",
-        "price": 320
-      }
-    ],
-    "16:9": [
-      {
-        "key": "9x16",
-        "label": "9×16″",
-        "price": 75
-      },
-      {
-        "key": "12x21",
-        "label": "12×21″",
-        "price": 115
-      },
-      {
-        "key": "18x32",
-        "label": "18×32″",
-        "price": 235
-      },
-      {
-        "key": "20x36",
-        "label": "20×36″",
-        "price": 275
-      }
-    ],
-    "4:3": [
-      {
-        "key": "9x12",
-        "label": "9×12″",
-        "price": 60
-      },
-      {
-        "key": "12x16",
-        "label": "12×16″",
-        "price": 90
-      },
-      {
-        "key": "18x24",
-        "label": "18×24″",
-        "price": 190
-      },
-      {
-        "key": "24x32",
-        "label": "24×32″",
-        "price": 290
-      }
-    ],
-    "5:4": [
-      {
-        "key": "8x10",
-        "label": "8×10″",
-        "price": 45
-      },
-      {
-        "key": "12x15",
-        "label": "12×15″",
-        "price": 85
-      },
-      {
-        "key": "16x20",
-        "label": "16×20″",
-        "price": 145
-      },
-      {
-        "key": "24x30",
-        "label": "24×30″",
-        "price": 275
-      }
-    ],
-    "1:1": [
-      {
-        "key": "10x10",
-        "label": "10×10″",
-        "price": 55
-      },
-      {
-        "key": "12x12",
-        "label": "12×12″",
-        "price": 75
-      },
-      {
-        "key": "20x20",
-        "label": "20×20″",
-        "price": 180
-      },
-      {
-        "key": "30x30",
-        "label": "30×30″",
-        "price": 330
-      }
-    ],
-    "2:1": [
-      {
-        "key": "6x12",
-        "label": "6×12″",
-        "price": 40
-      },
-      {
-        "key": "9x18",
-        "label": "9×18″",
-        "price": 80
-      },
-      {
-        "key": "12x24",
-        "label": "12×24″",
-        "price": 130
-      },
-      {
-        "key": "18x36",
-        "label": "18×36″",
-        "price": 255
-      }
-    ]
-  },
+  "sizes": [
+    {
+      "key": "8x12",
+      "label": "8×12″",
+      "price": 55
+    },
+    {
+      "key": "12x18",
+      "label": "12×18″",
+      "price": 100
+    },
+    {
+      "key": "16x24",
+      "label": "16×24″",
+      "price": 175
+    },
+    {
+      "key": "24x36",
+      "label": "24×36″",
+      "price": 320
+    }
+  ],
   "categories": {
     "mountains": {
       "name": "Mountains",

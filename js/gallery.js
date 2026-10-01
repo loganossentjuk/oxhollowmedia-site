@@ -140,13 +140,12 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     .catch(() => {});
 
   // Prints in the shop get a link to their page (/prints/<slug>) and the
-  // sizes that match their shape; anything else falls back to SIZES above.
+  // shop's sizes; anything else falls back to SIZES above.
   let shopSizes = new Map();
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
     .then((c) => {
-      const sets = c.size_sets || {};
-      shopSizes = new Map((c.prints || []).map((p) => [p.slug, sets[p.shape] || SIZES]));
+      shopSizes = new Map((c.prints || []).map((p) => [p.slug, c.sizes || SIZES]));
     })
     .catch(() => {});
 

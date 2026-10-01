@@ -37,9 +37,8 @@ from pathlib import Path
 SITE = "https://oxhollowmedia.com"
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = json.loads((ROOT / "prints" / "catalog.json").read_text())
-# Each print's sizes come from its shape, so every size matches the photo.
-SIZE_SETS = {shape: [(z["key"], z["label"], z["price"] * 100) for z in zs]
-             for shape, zs in CATALOG["size_sets"].items()}
+# Every print is sold in the same standard sizes (non-3:2 photos print with a border).
+SIZES = [(z["key"], z["label"], z["price"] * 100) for z in CATALOG["sizes"]]
 
 API_VERSION = "2026-06-24.dahlia"
 TAX_CODE = "txcd_99999999"   # general tangible goods; used once Stripe Tax is on
@@ -65,7 +64,7 @@ MODE = "live" if "_live_" in KEY else "test"
 def catalogue():
     """Every print in the shop: slug, title, absolute image URL."""
     return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"],
-             "sizes": SIZE_SETS[p["shape"]]} for p in CATALOG["prints"]]
+             "sizes": SIZES} for p in CATALOG["prints"]]
 
 
 def stripe(path, params, idem):

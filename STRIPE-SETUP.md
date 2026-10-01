@@ -27,10 +27,22 @@ python3 scripts/make_stripe_links.py      # creates links only for new prints
 
 ## Prices
 
-Every print is offered in four sizes that match its shape (sizes are short side × long side). The shape is set per print in `prints/catalog.json`.
+Every print is sold in the same four standard sizes, so each fits a ready-made frame:
 
-| Shape | Prints | Sizes and prices |
-|---|---|---|
+| Size | Price |
+|---|---|
+| 8×12″ | $55 |
+| 12×18″ | $100 |
+| 16×24″ | $175 |
+| 24×36″ | $320 |
+
+These sizes are 2:3. The 15 prints shot in 3:2 print edge to edge. The other 27 (16:9, 4:3, 5:4, 2:1 panoramas and one square) print **in full on the same paper with a white border**, never cropped. Each print's shape is recorded in `prints/catalog.json`, and its page tells the buyer which way it prints.
+
+Free US shipping is built into these prices. Don't add a shipping rate at checkout.
+
+When sizes change, `make_stripe_links.py` creates links for the new sizes and turns off the old ones in Stripe, so an old checkout URL can't take an order.
+
+---|---|---|
 | 3:2 | 15 | 8×12″ $55 · 12×18″ $100 · 16×24″ $175 · 24×36″ $320 |
 | 16:9 | 12 | 9×16″ $75 · 12×21″ $115 · 18×32″ $235 · 20×36″ $275 |
 | 4:3 | 6 | 9×12″ $60 · 12×16″ $90 · 18×24″ $190 · 24×32″ $290 |
@@ -123,8 +135,4 @@ Then Claude commits the new file and publishes.
 each size, especially 24×36″. If the lab's cost plus shipping is more than
 about $120 for that size, $320 is too thin and the price should go up.
 
-**Check the sizes with your lab.** Each print's sizes match its shape, but a
-few are close rather than exact: 12×21″ and 20×36″ for 16:9 photos, the 2:1
-sizes for Shorebreak Boulders (about 2.17:1) and the 5:4 sizes for Mural,
-Sundown (about 1.21:1) trim a sliver off one edge. Confirm your lab offers
-every size listed, or tell Claude which to swap.
+**Tell your lab to "fit to paper with border, no crop"** for any print that isn't 3:2. The print's page and `prints/catalog.json` say which ones those are. If your lab can't do borders, upload a bordered file instead (Claude can generate them).

@@ -35,8 +35,17 @@ TAX_CODE = "txcd_99999999"   # general tangible goods; used once Stripe Tax is o
 
 DRY = "--dry-run" in sys.argv
 KEY = os.environ.get("STRIPE_API_KEY") or os.environ.get("STRIPE_SECRET_KEY", "")
+# The example from the docs ("rk_test_..." / "...yourActualKeyHere") is not a key.
+if KEY and (KEY.endswith(("...", "Here")) or len(KEY) < 30):
+    KEY = ""
 if not KEY and not DRY:
-    sys.exit("STRIPE_API_KEY is not set. Export a restricted key (rk_...) first, or pass --dry-run.")
+    if not sys.stdin.isatty():
+        sys.exit("No Stripe key found. Run: export STRIPE_API_KEY=<your rk_test_ key>, or pass --dry-run.")
+    import getpass
+    print("Copy your restricted key from Stripe (Developers > API keys > print-shop-links, copy icon).")
+    KEY = getpass.getpass("Paste it here and press Enter (it won't show on screen): ").strip()
+    if not KEY:
+        sys.exit("No key entered.")
 if KEY and not KEY.startswith(("rk_", "sk_")):
     sys.exit("That doesn't look like a Stripe API key (expected rk_... or sk_...).")
 MODE = "live" if "_live_" in KEY else "test"

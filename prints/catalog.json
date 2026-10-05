@@ -1,5 +1,5 @@
 {
-  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Every print is sold in the same standard sizes. 'shape' is the photo's proportions: 3:2 photos print edge to edge, any other shape prints whole on the same paper with a white border, never cropped. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional. 'source_px' is the long edge in pixels of the best file we have for that print (its 'master' path is relative to Dropbox/Career/OxHollow/); a size is only offered if its long side × 150 ppi fits in source_px.",
+  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Every print is sold in the same standard sizes. 'shape' is the photo's proportions: 3:2 photos print edge to edge, any other shape prints whole on the same paper with a white border, never cropped. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional. 'source_px' is the long edge in pixels of the best file we have for that print (its 'master' path is relative to Dropbox/Career/OxHollow/); a size is only offered if its long side × 150 ppi fits in source_px. 'shopify' (optional) lists Gelato-fulfilled canvas/wood/acrylic variants sold through the Shopify store (shopify_store); each print page shows them as a material picker that links to Shopify checkout.",
   "paper": "Archival matte fine-art paper, 200gsm",
   "sizes": [
     {
@@ -73,7 +73,63 @@
       "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0300.tif"
+      "master": "PrintMasters/mountains/_DSC0300.tif",
+      "shopify": {
+        "acrylic": {
+          "8x12": {
+            "variant": "67640037703922",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67640037802226",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67640037900530",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67640037998834",
+            "price": 210
+          }
+        },
+        "canvas": {
+          "8x12": {
+            "variant": "67640037736690",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67640037834994",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67640037933298",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67640038031602",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67640037769458",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67640037867762",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67640037966066",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67640038064370",
+            "price": 225
+          }
+        }
+      }
     },
     {
       "slug": "fitz-roy-alpenglow",
@@ -102,7 +158,51 @@
       "story": "",
       "shape": "16:9",
       "source_px": 4096,
-      "master": "PrintMasters/mountains/E6BA2D3A-731D-4CD8-B498-D8EFAE10CD55.tif"
+      "master": "PrintMasters/mountains/E6BA2D3A-731D-4CD8-B498-D8EFAE10CD55.tif",
+      "shopify": {
+        "acrylic": {
+          "8x12": {
+            "variant": "67640050254066",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67640050352370",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67640050450674",
+            "price": 130
+          }
+        },
+        "canvas": {
+          "8x12": {
+            "variant": "67640050286834",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67640050385138",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67640050483442",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67640050319602",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67640050417906",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67640050516210",
+            "price": 160
+          }
+        }
+      }
     },
     {
       "slug": "fog-forest",
@@ -645,5 +745,11 @@
       "shape": "4:3",
       "source_px": 2000
     }
-  ]
+  ],
+  "shopify_store": "sessjk-nj.myshopify.com",
+  "materials": {
+    "canvas": "Canvas",
+    "wood": "Wood",
+    "acrylic": "Acrylic"
+  }
 }

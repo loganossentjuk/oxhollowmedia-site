@@ -90,6 +90,35 @@ def more_prints(p):
     return cards
 
 
+def materials(p):
+    """Canvas / wood / acrylic picker for prints sold through Shopify (Gelato fulfils).
+    CSS-only tabs: one radio per material; each size links to Shopify checkout."""
+    mats = p.get("shopify")
+    if not mats:
+        return ""
+    store, names = CAT["shopify_store"], CAT["materials"]
+    order = [m for m in names if m in mats]
+    tabs = "".join(
+        f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
+        f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
+        for i, m in enumerate(order))
+    panels = ""
+    for m in order:
+        rows = "".join(f'''
+              <a class="buy-btn" href="https://{store}/cart/{v['variant']}:1" rel="nofollow">
+                <span class="size">Buy {key.replace("x", "×")}″</span><span class="price">${v['price']}</span>
+              </a>''' for key, v in sorted(mats[m].items(), key=lambda kv: int(kv[0].split("x")[0])))
+        panels += f'''
+            <div class="mat-panel" data-mat="{m}">{rows}
+            </div>'''
+    return f'''
+          <div class="materials">
+            <p class="detail-spec">Also on canvas, wood or acrylic · printed edge to edge · free US shipping</p>
+            <div class="mat-tabs">{tabs}{panels}
+            </div>
+          </div>'''
+
+
 def page(p):
     t, url = e(p["title"]), f"{SITE}/prints/{p['slug']}"
     desc = f"{p['title']}, an archival fine-art print by Logan Ossentjuk. {lede(p)} Made to order, free US shipping."
@@ -140,9 +169,9 @@ def page(p):
           <p class="section-label">Fine art print</p>
           <h1 class="detail-title">{t}</h1>
           <p class="detail-lede">{e(lede(p))}</p>{story}
-          <p class="detail-spec">{e(PAPER)} · {fit(p)} · made to order</p>
+          <p class="detail-spec">{"Fine-art paper · " if p.get("shopify") else ""}{e(PAPER)} · {fit(p)} · made to order</p>
           <div class="buy-list">{buttons}
-          </div>
+          </div>{materials(p)}
           <p class="buy-note"><strong>Free US shipping.</strong> Each print is made to order on archival paper. Allow a few days for printing plus transit. Arrives damaged or wrong? Email a photo within 14 days and I'll send a free replacement. <a href="/shipping-returns">Shipping &amp; returns</a>. Questions, other sizes, or framing? <a href="/contact?print={quote(p['title'])}">Get in touch</a>.</p>
         </div>
       </div>

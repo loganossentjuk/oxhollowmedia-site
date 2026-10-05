@@ -25,7 +25,13 @@ ROOT = Path(__file__).resolve().parent.parent
 PRINTS = ROOT / "prints"
 CAT = json.loads((PRINTS / "catalog.json").read_text())
 SIZES, PAPER = CAT["sizes"], CAT["paper"]
-sizes = lambda p: SIZES   # same standard sizes for every print
+PPI = 150   # minimum resolution for a sharp print
+
+
+def sizes(p):
+    """Standard sizes this print's file can support: long side x PPI must fit in source_px."""
+    return [z for z in SIZES
+            if max(int(n) for n in z["key"].split("x")) * PPI <= p["source_px"]]
 CSS_VER = re.search(r'styles\.css\?v=(\d+)', (ROOT / "index.html").read_text()).group(1)
 
 e = lambda s: html.escape(s, quote=True)

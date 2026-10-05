@@ -145,7 +145,9 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
     .then((c) => {
-      shopSizes = new Map((c.prints || []).map((p) => [p.slug, c.sizes || SIZES]));
+      // Only the sizes the print's file supports (long side x 150 ppi), as on its page.
+      const fits = (p) => (z) => Math.max(...z.key.split('x').map(Number)) * 150 <= (p.source_px || 0);
+      shopSizes = new Map((c.prints || []).map((p) => [p.slug, (c.sizes || SIZES).filter(fits(p))]));
     })
     .catch(() => {});
 

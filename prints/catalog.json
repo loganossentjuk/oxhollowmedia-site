@@ -373,7 +373,63 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/_DSC9631.tif"
+      "master": "PrintMasters/ocean/_DSC9631.tif",
+      "shopify": {
+        "acrylic": {
+          "8x12": {
+            "variant": "67640159764722",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67640159863026",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67640159961330",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67640160059634",
+            "price": 210
+          }
+        },
+        "canvas": {
+          "8x12": {
+            "variant": "67640159797490",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67640159895794",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67640159994098",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67640160092402",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67640159830258",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67640159928562",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67640160026866",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67640160125170",
+            "price": 225
+          }
+        }
+      }
     },
     {
       "slug": "the-wax-ritual",

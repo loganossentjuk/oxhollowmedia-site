@@ -581,7 +581,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8323.tif"
+      "master": "PrintMasters/ocean/IMG_8323.tif",
+      "shopify": {
+        "canvas": {
+          "16x24": {
+            "variant": "67641714245874",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641714180338",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67641714278642",
+            "price": 170
+          },
+          "12x18": {
+            "variant": "67641714213106",
+            "price": 80
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641716015346",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641716048114",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641716080882",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641716113650",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641720144114",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641720176882",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641720209650",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641720242418",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15416994267378",
+        "wood": "15416994726130",
+        "acrylic": "15416995447026"
+      }
     },
     {
       "slug": "blue-footed-booby",
@@ -885,5 +946,36 @@
     "canvas": "Canvas",
     "wood": "Wood",
     "acrylic": "Acrylic"
+  },
+  "gelato": {
+    "_readme": "Used by scripts/gelato_publish.py. templates: Gelato template IDs per orientation and material (found by name on first run). prices: retail USD per material and size, matching the Gelato templates.",
+    "store_id": "e55c0c9f-5002-4f1a-814a-28d45dbca781",
+    "templates": {
+      "landscape": {
+        "canvas": "d58b84d6-5f9a-4f73-a5be-42c4b6d1b61d",
+        "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
+        "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a"
+      }
+    },
+    "prices": {
+      "canvas": {
+        "8x12": 55,
+        "12x18": 80,
+        "16x24": 90,
+        "24x36": 170
+      },
+      "wood": {
+        "8x12": 80,
+        "12x18": 125,
+        "16x24": 160,
+        "24x36": 225
+      },
+      "acrylic": {
+        "8x12": 75,
+        "12x18": 100,
+        "16x24": 130,
+        "24x36": 210
+      }
+    }
   }
 }

@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CATALOG = json.loads((ROOT / "prints" / "catalog.json").read_text())
 # Every print is sold in the same standard sizes (non-3:2 photos print with a border).
 SIZES = [(z["key"], z["label"], z["price"] * 100) for z in CATALOG["sizes"]]
+PPI = 150   # only sell sizes the print's file can support (matches build_print_pages.py)
 
 API_VERSION = "2026-06-24.dahlia"
 TAX_CODE = "txcd_99999999"   # general tangible goods; used once Stripe Tax is on
@@ -64,7 +65,9 @@ MODE = "live" if "_live_" in KEY else "test"
 def catalogue():
     """Every print in the shop: slug, title, absolute image URL."""
     return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"],
-             "sizes": SIZES} for p in CATALOG["prints"]]
+             "sizes": [z for z in SIZES
+                       if max(int(n) for n in z[0].split("x")) * PPI <= p["source_px"]]}
+            for p in CATALOG["prints"]]
 
 
 def stripe(path, params, idem):

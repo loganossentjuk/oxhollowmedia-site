@@ -1,5 +1,5 @@
 {
-  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Every print is sold in the same standard sizes. 'shape' is the photo's proportions: 3:2 photos print edge to edge, any other shape prints whole on the same paper with a white border, never cropped. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional.",
+  "_readme": "Source of truth for the print shop. Edit here, then run: python3 scripts/build_print_pages.py, then python3 scripts/make_stripe_links.py. Every print is sold in the same standard sizes. 'shape' is the photo's proportions: 3:2 photos print edge to edge, any other shape prints whole on the same paper with a white border, never cropped. 'lede' is the one-line italic under the title and 'story' the paragraph below it; both are optional. 'source_px' is the long edge in pixels of the best file we have for that print (its 'master' path is relative to Dropbox/Career/OxHollow/); a size is only offered if its long side × 150 ppi fits in source_px.",
   "paper": "Archival matte fine-art paper, 200gsm",
   "sizes": [
     {
@@ -57,7 +57,8 @@
       "alt": "Mountain silhouette layered in blue cloud at dusk",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 2000
     },
     {
       "slug": "sierra-river-bend",
@@ -70,7 +71,9 @@
       "alt": "Snow-capped Sierra peaks above a wide river bend",
       "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
       "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/mountains/_DSC0300.tif"
     },
     {
       "slug": "fitz-roy-alpenglow",
@@ -83,7 +86,8 @@
       "alt": "Alpenglow on the granite spires of Fitz Roy",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 2000
     },
     {
       "slug": "cloudbreak-ridge",
@@ -96,7 +100,9 @@
       "alt": "Snowy peaks in blue shadow beneath breaking cloud",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 4096,
+      "master": "PrintMasters/mountains/E6BA2D3A-731D-4CD8-B498-D8EFAE10CD55.tif"
     },
     {
       "slug": "fog-forest",
@@ -109,7 +115,8 @@
       "alt": "Fog drifting through tall conifer forest",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 2000
     },
     {
       "slug": "highland-river",
@@ -122,7 +129,8 @@
       "alt": "River winding through a green highland valley",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 2000
     },
     {
       "slug": "misty-ridgeline",
@@ -135,7 +143,8 @@
       "alt": "Forested ridgeline fading into blue evening mist",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "dusk-branches",
@@ -148,7 +157,8 @@
       "alt": "Bare branches silhouetted against a deep dusk sky",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 2000
     },
     {
       "slug": "aspen-and-cobalt",
@@ -161,7 +171,9 @@
       "alt": "Yellow aspen and dark pine against a cobalt sky",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 5712,
+      "master": "PrintMasters/mountains/CA546F5B-493D-4A11-A2D1-09565FA9E430.tif"
     },
     {
       "slug": "rainier-afterglow",
@@ -174,7 +186,8 @@
       "alt": "Mount Rainier silhouetted against a pink and violet afterglow",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 2000
     },
     {
       "slug": "marsh-at-dusk",
@@ -187,7 +200,9 @@
       "alt": "Tidal marsh and still water under a warm dusk sky",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/_DSC9630.tif"
     },
     {
       "slug": "sun-on-the-water",
@@ -200,7 +215,9 @@
       "alt": "Low sun laying a path of light across tidal water",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/_DSC9631.tif"
     },
     {
       "slug": "the-wax-ritual",
@@ -213,7 +230,9 @@
       "alt": "A surfer kneeling to wax a board as the sun burns through haze",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/IMG_8321.tif"
     },
     {
       "slug": "shorebreak-boulders",
@@ -226,7 +245,8 @@
       "alt": "Waves breaking over mossy shoreline boulders",
       "lede": "",
       "story": "",
-      "shape": "2:1"
+      "shape": "2:1",
+      "source_px": 2000
     },
     {
       "slug": "green-water-i",
@@ -239,7 +259,9 @@
       "alt": "Abstract of green and white water flowing over dark rock",
       "lede": "",
       "story": "",
-      "shape": "5:4"
+      "shape": "5:4",
+      "source_px": 4096,
+      "master": "PrintMasters/ocean/626D43F0-A0F4-4117-858C-E0EE7D2AEB15.tif"
     },
     {
       "slug": "turquoise-shallows",
@@ -252,7 +274,9 @@
       "alt": "Turquoise shallows breaking white over reef",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/IMG_8168.tif"
     },
     {
       "slug": "copper-and-teal",
@@ -265,7 +289,9 @@
       "alt": "Teal water against oxidised copper-red rock",
       "lede": "",
       "story": "",
-      "shape": "5:4"
+      "shape": "5:4",
+      "source_px": 4094,
+      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.tif"
     },
     {
       "slug": "tidepool-lava",
@@ -278,7 +304,9 @@
       "alt": "An aquamarine tidepool set in dark lava rock",
       "lede": "",
       "story": "",
-      "shape": "5:4"
+      "shape": "5:4",
+      "source_px": 4096,
+      "master": "PrintMasters/ocean/F81FC704-C057-444E-A78E-54AC34626960.tif"
     },
     {
       "slug": "golden-gate-fog",
@@ -291,7 +319,8 @@
       "alt": "Golden Gate Bridge rising into fog from the water's edge",
       "lede": "",
       "story": "",
-      "shape": "2:1"
+      "shape": "2:1",
+      "source_px": 2000
     },
     {
       "slug": "turquoise-harbor",
@@ -304,7 +333,8 @@
       "alt": "Boats moored in a turquoise island harbour",
       "lede": "",
       "story": "",
-      "shape": "2:1"
+      "shape": "2:1",
+      "source_px": 2000
     },
     {
       "slug": "paddler-at-the-gate",
@@ -317,7 +347,8 @@
       "alt": "A paddleboarder crossing beneath the Golden Gate Bridge",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 2000
     },
     {
       "slug": "driftwood-shore",
@@ -330,7 +361,9 @@
       "alt": "Bleached driftwood on a still lake shore under open sky",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/IMG_8323.tif"
     },
     {
       "slug": "blue-footed-booby",
@@ -343,7 +376,8 @@
       "alt": "A blue-footed booby displaying in the Galápagos",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "sea-lion-pup",
@@ -356,7 +390,8 @@
       "alt": "A sea lion pup resting on the sand",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "dusk-waterfowl",
@@ -369,7 +404,8 @@
       "alt": "Waterfowl drifting on still water at dusk",
       "lede": "",
       "story": "",
-      "shape": "16:9"
+      "shape": "16:9",
+      "source_px": 2000
     },
     {
       "slug": "marine-iguana",
@@ -382,7 +418,8 @@
       "alt": "A marine iguana resting on sun-bleached rock",
       "lede": "",
       "story": "",
-      "shape": "2:1"
+      "shape": "2:1",
+      "source_px": 2000
     },
     {
       "slug": "reef-passage",
@@ -395,7 +432,8 @@
       "alt": "A shark gliding through hazy blue water beside a reef wall",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 2000
     },
     {
       "slug": "humpback-breach",
@@ -408,7 +446,8 @@
       "alt": "A humpback whale breaching in open blue water",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "amber-glass",
@@ -421,7 +460,8 @@
       "alt": "Abstract close study of amber glass pebbles",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "petunia-crimson",
@@ -434,7 +474,8 @@
       "alt": "A single crimson petunia on a pale ground",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "geranium-coral",
@@ -447,7 +488,8 @@
       "alt": "A coral geranium cluster in soft light",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "the-flower-market",
@@ -460,7 +502,8 @@
       "alt": "Buckets of cut dahlias and blooms at a flower market",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "geranium-white",
@@ -473,7 +516,8 @@
       "alt": "White geranium blossoms against dark foliage",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "hydrangea-deep-blue",
@@ -486,7 +530,8 @@
       "alt": "Deep blue hydrangea blooms against lit green leaves",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "petunia-veined",
@@ -499,7 +544,8 @@
       "alt": "Purple petunias with dark veining, backlit",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "petunia-blush",
@@ -512,7 +558,8 @@
       "alt": "Hot-pink petunias opening in close focus",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "cocktails",
@@ -525,7 +572,8 @@
       "alt": "Red neon Cocktails sign glowing in a dark bar window",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "wall-of-names",
@@ -538,7 +586,8 @@
       "alt": "Layered graffiti tags across a brick wall",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "mural-sundown",
@@ -551,7 +600,8 @@
       "alt": "A mural figure silhouetted against a painted sun",
       "lede": "",
       "story": "",
-      "shape": "5:4"
+      "shape": "5:4",
+      "source_px": 2000
     },
     {
       "slug": "art-will-save-you",
@@ -564,7 +614,8 @@
       "alt": "A sticker reading ART WILL SAVE YOU on a yellow road line",
       "lede": "",
       "story": "",
-      "shape": "3:2"
+      "shape": "3:2",
+      "source_px": 2000
     },
     {
       "slug": "harbour-pastel",
@@ -577,7 +628,8 @@
       "alt": "Still harbour water under a pastel dusk skyline",
       "lede": "",
       "story": "",
-      "shape": "1:1"
+      "shape": "1:1",
+      "source_px": 2000
     },
     {
       "slug": "glass-spire",
@@ -590,7 +642,8 @@
       "alt": "A glass tower converging to a spire against pale sky",
       "lede": "",
       "story": "",
-      "shape": "4:3"
+      "shape": "4:3",
+      "source_px": 2000
     }
   ]
 }

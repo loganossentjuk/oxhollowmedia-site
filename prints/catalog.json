@@ -5,22 +5,22 @@
     {
       "key": "8x12",
       "label": "8×12″",
-      "price": 55
+      "price": 35
     },
     {
       "key": "12x18",
       "label": "12×18″",
-      "price": 100
+      "price": 50
     },
     {
       "key": "16x24",
       "label": "16×24″",
-      "price": 175
+      "price": 55
     },
     {
       "key": "24x36",
       "label": "24×36″",
-      "price": 320
+      "price": 70
     }
   ],
   "categories": {

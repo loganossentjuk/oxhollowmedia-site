@@ -141,7 +141,28 @@ if DRY:
                 print(f"  would create: {p['title']} - {label}  ${cents/100:.2f}")
     for ident in stale:
         print(f"  would retire:  {ident}")
+    print("  (price changes on existing links are detected on the real run, which reads Stripe)")
     sys.exit(0)
+
+# Price changes: a Payment Link's price can't be edited, so any link whose
+# price no longer matches the catalogue is turned off and recreated below.
+want_cents = {f"{p['slug']}|{k}": c for p in prints for k, _, c in p["sizes"]}
+active = {f"{l['metadata'].get('slug')}|{l['metadata'].get('size')}": l
+          for l in stripe_list("payment_links", {"active": "true"})}
+repriced = 0
+for ident in sorted(set(links) & wanted):
+    l = active.get(ident)
+    if not l:
+        continue
+    items = stripe_list(f"payment_links/{l['id']}/line_items", {})
+    have = items[0]["price"]["unit_amount"] if items else None
+    if have != want_cents[ident]:
+        stripe(f"payment_links/{l['id']}", {"active": "false"}, f"retire-{l['id']}")
+        links.pop(ident)
+        repriced += 1
+        print(f"  repricing {ident}: ${(have or 0)/100:.2f} -> ${want_cents[ident]/100:.2f}")
+if repriced:
+    out_file.write_text(json.dumps(links, indent=2))
 
 made = skipped = 0
 
@@ -160,7 +181,7 @@ for p in prints:
         }, f"product-{ident}")
         price = stripe("prices", {
             "product": product["id"], "unit_amount": str(cents), "currency": "usd",
-        }, f"price-{ident}")
+        }, f"price-{ident}-{cents}")
         link = stripe("payment_links", {
             "metadata[slug]": p["slug"], "metadata[size]": key,
             "line_items[0][price]": price["id"],
@@ -169,7 +190,7 @@ for p in prints:
             "after_completion[type]": "redirect",
             "after_completion[redirect][url]": f"{SITE}/thank-you",
             "phone_number_collection[enabled]": "true",
-        }, f"link-{ident}")
+        }, f"link-{ident}-{cents}")
         if not link.get("active", True):
             # Same request within 24h returns the earlier link, which may have
             # been retired since. Switch it back on rather than save a dead URL.
@@ -194,4 +215,5 @@ if stale:
         print(f"  retired {ident}" + ("" if l else " (not active in Stripe)"))
     out_file.write_text(json.dumps(links, indent=2))
 
-print(f"\ncreated {made}, skipped {skipped} already present, retired {retired} -> stripe-links.json")
+print(f"\ncreated {made} (incl. {repriced} repriced), skipped {skipped} already present, "
+      f"retired {retired} -> stripe-links.json")

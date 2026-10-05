@@ -27,40 +27,22 @@ python3 scripts/make_stripe_links.py      # creates links only for new prints
 
 ## Prices
 
-Every print is sold in the same four standard sizes, so each fits a ready-made frame:
+Every paper print is sold in up to four standard sizes, so each fits a ready-made frame. A print only offers the sizes its file can support at 150 ppi (`source_px` in `prints/catalog.json`).
 
 | Size | Price |
 |---|---|
-| 8×12″ | $55 |
-| 12×18″ | $100 |
-| 16×24″ | $175 |
-| 24×36″ | $320 |
+| 8×12″ | $35 |
+| 12×18″ | $50 |
+| 16×24″ | $55 |
+| 24×36″ | $70 |
 
-These sizes are 2:3. The 15 prints shot in 3:2 print edge to edge. The other 27 (16:9, 4:3, 5:4, 2:1 panoramas and one square) print **in full on the same paper with a white border**, never cropped. Each print's shape is recorded in `prints/catalog.json`, and its page tells the buyer which way it prints.
-
-Free US shipping is built into these prices. Don't add a shipping rate at checkout.
-
-When sizes change, `make_stripe_links.py` creates links for the new sizes and turns off the old ones in Stripe, so an old checkout URL can't take an order.
-
----|---|---|
-| 3:2 | 15 | 8×12″ $55 · 12×18″ $100 · 16×24″ $175 · 24×36″ $320 |
-| 16:9 | 12 | 9×16″ $75 · 12×21″ $115 · 18×32″ $235 · 20×36″ $275 |
-| 4:3 | 6 | 9×12″ $60 · 12×16″ $90 · 18×24″ $190 · 24×32″ $290 |
-| 5:4 | 4 | 8×10″ $45 · 12×15″ $85 · 16×20″ $145 · 24×30″ $275 |
-| 2:1 | 4 | 6×12″ $40 · 9×18″ $80 · 12×24″ $130 · 18×36″ $255 |
-| 1:1 | 1 | 10×10″ $55 · 12×12″ $75 · 20×20″ $180 · 30×30″ $330 |
-
-Prices follow the original 3:2 ladder by print area, so a size costs about what a 3:2 print of the same area does. Free US shipping is built in. Don't add a shipping rate at checkout.
-
-When sizes change, `make_stripe_links.py` creates links for the new sizes and turns off the old ones in Stripe, so an old checkout URL can't take an order.
-
----|---|
-| 8×12″ | $55 |
-| 12×18″ | $100 |
-| 16×24″ | $175 |
-| 24×36″ | $320 |
+Set at about 2.5× Gelato's fine-art paper cost (print plus US shipping), and below canvas at every size. The 3:2 photos print edge to edge; any other shape prints **in full with a white border**, never cropped.
 
 Free US shipping is built into these prices. Don't add a shipping rate at checkout.
+
+`make_stripe_links.py` keeps Stripe in step with the catalogue: it creates links for new prints or sizes, turns off links for sizes no longer offered, and when a price changes it turns off the old link and creates a new one.
+
+Canvas, acrylic and wood are sold through Shopify with Gelato fulfilling (see the Gelato products in the Shopify store).
 
 ---
 
@@ -131,8 +113,6 @@ Then Claude commits the new file and publishes.
 3. Order it from your print lab and enter the buyer's address as the ship-to.
 4. Email the buyer when it ships.
 
-**Check your margin before going live.** Get a real quote from your lab for
-each size, especially 24×36″. If the lab's cost plus shipping is more than
-about $120 for that size, $320 is too thin and the price should go up.
+**Check your margin if you switch labs.** Paper prices assume Gelato-level costs (about $14–28 per print with US shipping). A lab that costs more needs higher prices.
 
 **Tell your lab to "fit to paper with border, no crop"** for any print that isn't 3:2. The print's page and `prints/catalog.json` say which ones those are. If your lab can't do borders, upload a bordered file instead (Claude can generate them).

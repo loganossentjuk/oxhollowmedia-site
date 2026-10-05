@@ -125,10 +125,10 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
   if (!grid) return;
 
   const SIZES = [
-    { key: '8x12',  label: '8×12″',  price: 55 },
-    { key: '12x18', label: '12×18″', price: 100 },
-    { key: '16x24', label: '16×24″', price: 175 },
-    { key: '24x36', label: '24×36″', price: 320 },
+    { key: '8x12',  label: '8×12″',  price: 35 },
+    { key: '12x18', label: '12×18″', price: 50 },
+    { key: '16x24', label: '16×24″', price: 55 },
+    { key: '24x36', label: '24×36″', price: 70 },
   ];
   const NOT_FOR_SALE = ['events', 'portraits'];
   const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');

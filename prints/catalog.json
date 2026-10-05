@@ -298,11 +298,67 @@
       "width": 2000,
       "height": 1125,
       "alt": "Tidal marsh and still water under a warm dusk sky",
-      "lede": "",
+      "lede": "Tidal marsh and still water under a warm dusk sky on Cape Cod.",
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/_DSC9630.tif"
+      "master": "PrintMasters/ocean/_DSC9630.tif",
+      "shopify": {
+        "acrylic": {
+          "8x12": {
+            "variant": "67640138432754",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67640138531058",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67640138629362",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67640138727666",
+            "price": 210
+          }
+        },
+        "canvas": {
+          "8x12": {
+            "variant": "67640138465522",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67640138563826",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67640138662130",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67640138760434",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67640138498290",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67640138596594",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67640138694898",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67640138793202",
+            "price": 225
+          }
+        }
+      }
     },
     {
       "slug": "sun-on-the-water",

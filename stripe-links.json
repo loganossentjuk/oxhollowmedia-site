@@ -30,9 +30,6 @@
   "the-wax-ritual|16x24": "https://buy.stripe.com/28EeVf69c2df6cj2Ej9wt0M",
   "the-wax-ritual|24x36": "https://buy.stripe.com/14A9AV7dg7xz9ov1Af9wt0N",
   "shorebreak-boulders|8x12": "https://buy.stripe.com/bJe28tgNQbNP7gn4Mr9wt0O",
-  "green-water-i|8x12": "https://buy.stripe.com/fZu9AV69cg456cjgv99wt0P",
-  "green-water-i|12x18": "https://buy.stripe.com/3cI5kF1SWf01aszdiX9wt0Q",
-  "green-water-i|16x24": "https://buy.stripe.com/dRm6oJgNQbNP6cj2Ej9wt0R",
   "turquoise-shallows|8x12": "https://buy.stripe.com/8x27sNfJMf01bwD2Ej9wt0S",
   "turquoise-shallows|12x18": "https://buy.stripe.com/cNi00l0OS8BDcAH1Af9wt0T",
   "turquoise-shallows|16x24": "https://buy.stripe.com/4gM9AV414g45cAHdiX9wt0U",
@@ -119,5 +116,9 @@
   "glass-spire|16x24": "https://buy.stripe.com/28E4gB8hk19b0RZen19wt2d",
   "dawn-patrol|8x12": "https://buy.stripe.com/9B614p1SWg4544b4Mr9wt2e",
   "dawn-patrol|12x18": "https://buy.stripe.com/6oU28tapsf01cAH2Ej9wt2f",
-  "dawn-patrol|16x24": "https://buy.stripe.com/aFa28tgNQ9FH1W37YD9wt2g"
+  "dawn-patrol|16x24": "https://buy.stripe.com/aFa28tgNQ9FH1W37YD9wt2g",
+  "dawn-patrol|24x36": "https://buy.stripe.com/eVq14pcxAbNPbwDgv99wt2h",
+  "green-water|8x12": "https://buy.stripe.com/00w28t1SWdVX6cjbaP9wt2i",
+  "green-water|12x18": "https://buy.stripe.com/cNi28teFI9FH7gn2Ej9wt2j",
+  "green-water|16x24": "https://buy.stripe.com/00w3cx1SW0579ovdiX9wt2k"
 }

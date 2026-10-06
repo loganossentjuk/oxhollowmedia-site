@@ -1478,16 +1478,19 @@ html.lb-open { overflow: hidden; }
 .masonry.salon {
   --row-h: 300px; --frame: 7px; --mat: 16px;
   column-count: auto;
-  display: flex; flex-wrap: wrap; align-items: flex-start;
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
   gap: 2.6rem 1.7rem;
 }
+#gallery-wrap .container { max-width: 1680px; }
 .masonry.salon::after { content: ""; flex-grow: 999; }      /* last row keeps its natural size */
-.masonry.salon.size-s { --row-h: 200px; --mat: 11px; --frame: 5px; gap: 2rem 1.2rem; }
-.masonry.salon.size-m { --row-h: 300px; }
-.masonry.salon.size-l { --row-h: 440px; --mat: 22px; --frame: 9px; gap: 3rem 2.2rem; }
+.masonry.salon.size-s { --row-h: 170px; --mat: 10px; --frame: 5px; gap: 2rem 1.2rem; }
+.masonry.salon.size-m { --row-h: 240px; }
+.masonry.salon.size-l { --row-h: 360px; --mat: 20px; --frame: 8px; gap: 3rem 2.2rem; }
 .salon .masonry-item {
   --ar: 1.5;
   flex: var(--ar) 1 calc(var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
+  /* A frame left alone on a row may grow, but not balloon: cap at 1.5x. */
+  max-width: calc(1.5 * var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
   margin: 0; overflow: visible; border-radius: 0; background: none;
 }
 .salon .masonry-item picture {
@@ -1520,8 +1523,8 @@ html.lb-open { overflow: hidden; }
 .salon .frame-title .frame-cat { display: block; margin: 0.2rem 0 0; }
 .salon .masonry-item[data-new]::before { top: calc(var(--frame) + var(--mat) + 0.5rem); left: calc(var(--frame) + var(--mat) + 0.5rem); }
 @media (max-width: 1000px) {
-  .masonry.salon.size-l { --row-h: 320px; }
-  .masonry.salon.size-m { --row-h: 230px; }
+  .masonry.salon.size-l { --row-h: 280px; }
+  .masonry.salon.size-m { --row-h: 200px; }
 }
 @media (max-width: 700px) {
   .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }

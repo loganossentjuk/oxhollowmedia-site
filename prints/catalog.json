@@ -132,6 +132,21 @@
       }
     },
     {
+      "slug": "autumn-flats",
+      "title": "Autumn Flats",
+      "category": "mountains",
+      "image": "/images/portfolio/mountains/20-autumn-flats.jpg",
+      "webp": "/images/portfolio/mountains/20-autumn-flats.webp",
+      "width": 2000,
+      "height": 1125,
+      "alt": "Autumn scrub and river flats beneath the eastern Sierra",
+      "lede": "",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 4096,
+      "master": "PrintMasters/mountains/20F26880-52EE-4C44-9564-C29496552BC7.tif"
+    },
+    {
       "slug": "fitz-roy-alpenglow",
       "title": "Fitz Roy, Alpenglow",
       "category": "mountains",

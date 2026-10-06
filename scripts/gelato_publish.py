@@ -50,7 +50,22 @@ cfg = cat["gelato"]
 
 
 def save():
-    CAT_PATH.write_text(json.dumps(cat, indent=2, ensure_ascii=False) + "\n")
+    # Merge into the file on disk rather than overwrite it, so a second run (or a
+    # hand edit) made while this one is going isn't lost: only this run's Shopify
+    # entries and the Gelato template IDs are written back.
+    disk = json.loads(CAT_PATH.read_text())
+    mine = {p["slug"]: p for p in cat["prints"]}
+    for p in disk["prints"]:
+        q = mine.get(p["slug"])
+        for k in ("shopify", "shopify_products"):
+            if q and q.get(k):
+                p.setdefault(k, {}).update(q[k])
+    g = disk.setdefault("gelato", {})
+    for o, mats in cfg.get("templates", {}).items():
+        g.setdefault("templates", {}).setdefault(o, {}).update(mats)
+    if cfg.get("_candidates_done"):
+        g.pop("template_candidates", None)
+    CAT_PATH.write_text(json.dumps(disk, indent=2, ensure_ascii=False) + "\n")
 
 
 def orientation(path):
@@ -122,6 +137,7 @@ if cfg.get("template_candidates"):
             cfg["templates"].setdefault(o, {})[m] = tid
             templates[tid] = t
     cfg.pop("template_candidates")
+    cfg["_candidates_done"] = True
     save()
     print("templates: " + json.dumps(cfg["templates"]))
 
@@ -209,7 +225,9 @@ try:
     for p, f, orient in jobs:
         url = f"{base}/{token}/{f.name}"
         wait_reachable(url)
-        allowed = [z["key"] for z in cat["sizes"] if max(map(int, z["key"].split("x"))) * PPI <= p["source_px"]]
+        # Square photos use their own sizes (gelato.square_sizes); the rest use the paper sizes.
+        keys = cfg.get("square_sizes", []) if orient == "square" else [z["key"] for z in cat["sizes"]]
+        allowed = [k for k in keys if max(map(int, k.split("x"))) * PPI <= p["source_px"]]
         p.setdefault("shopify", {})
         for mat in MATERIALS:
             if mat in p["shopify"]:

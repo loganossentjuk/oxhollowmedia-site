@@ -35,13 +35,17 @@ CAT_PATH = ROOT / "prints" / "catalog.json"
 READY = Path.home() / "Dropbox/Career/OxHollow/PrintMasters/gelato-ready"
 API = "https://ecommerce.gelatoapis.com/v1"
 PPI = 150          # same rule as the paper sizes: long side x 150 must fit the file
-MATERIALS = ["canvas", "wood", "acrylic"]
-LABEL = {"canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
+MATERIALS = ["canvas", "wood", "acrylic", "paper"]
+LABEL = {"canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic", "paper": "Paper"}
 BLURB = {
     "canvas": "Gallery-wrapped canvas with mirrored edges, ready to hang.",
     "wood": "Printed on FSC-certified birch, so the natural grain shows through the lightest areas.",
     "acrylic": "Glossy acrylic with a glass-like finish and vivid color.",
+    "paper": "Archival matte fine-art paper.",
 }
+# Paper keeps the whole photo (white border where its shape differs from the
+# paper's); canvas, wood and acrylic fill the panel edge to edge.
+FIT = {"paper": "meet"}
 
 DRY = "--dry-run" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1].split(",") if "--only" in sys.argv else None
@@ -217,8 +221,10 @@ def size_key(title):
 def description(p, mat):
     lede = p.get("lede") or p["alt"].rstrip(".") + "."
     return (f"<p>{html.escape(lede)} Photographed by Logan Ossentjuk of Ox Hollow Media.</p>"
-            f"<p>{BLURB[mat]} Printed edge to edge, so the image is trimmed slightly to fill each size. "
-            f"Made to order and shipped free in the US.</p>")
+            f"<p>{BLURB[mat]} "
+            + ("Printed in full, never cropped. " if mat == "paper"
+               else "Printed edge to edge, so the image is trimmed slightly to fill each size. ")
+            + "Made to order and shipped free in the US.</p>")
 
 
 try:
@@ -244,7 +250,7 @@ try:
                 "vendor": "Ox Hollow Media",
                 "productType": f"{LABEL[mat]} Print",
                 "variants": [{"templateVariantId": v["id"],
-                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": "slice"}
+                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": FIT.get(mat, "slice")}
                                                     for ph in v["imagePlaceholders"]]} for v in variants],
             }
             prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)

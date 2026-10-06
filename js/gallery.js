@@ -150,13 +150,18 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
 
   // Prints in the shop get a link to their page (/prints/<slug>) and the
   // shop's sizes; anything else falls back to SIZES above.
-  let shopSizes = new Map();
+  // Paper sold through Shopify (Gelato prints and ships it) goes straight to
+  // Shopify checkout; otherwise Stripe; otherwise the enquiry form.
+  let shopSizes = new Map(), shopPaper = new Map(), store = '';
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
     .then((c) => {
       // Only the sizes the print's file supports (long side x 150 ppi), as on its page.
       const fits = (p) => (z) => Math.max(...z.key.split('x').map(Number)) * 150 <= (p.source_px || 0);
       shopSizes = new Map((c.prints || []).map((p) => [p.slug, (c.sizes || SIZES).filter(fits(p))]));
+      shopPaper = new Map((c.prints || []).filter((p) => p.shopify && p.shopify.paper)
+        .map((p) => [p.slug, p.shopify.paper]));
+      store = c.shopify_store || '';
     })
     .catch(() => {});
 
@@ -215,7 +220,13 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     if (forSale) {
       const slug = slugify(title);
       if (shopSizes.has(slug)) { page.href = `/prints/${slug}`; page.hidden = false; }
-      $('.lb-sizes').innerHTML = (shopSizes.get(slug) || SIZES).map((s) => {
+      const paper = store && shopPaper.get(slug);
+      $('.lb-sizes').innerHTML = paper
+        ? Object.entries(paper)
+            .sort((a, b) => parseInt(a[0], 10) - parseInt(b[0], 10))
+            .map(([key, v]) => `<a class="lb-size" href="https://${store}/cart/${v.variant}:1" rel="nofollow" data-size="${key}" data-product="${slug}" data-checkout="shopify">`
+                             + `<span>${key.replace('x', '×')}″</span><strong>$${v.price}</strong></a>`).join('')
+        : (shopSizes.get(slug) || SIZES).map((s) => {
         const url = links[`${slug}|${s.key}`];
         const href = url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
         return `<a class="lb-size" href="${href}" data-size="${s.key}" data-product="${slug}"${url ? ' data-checkout="stripe"' : ''}>`

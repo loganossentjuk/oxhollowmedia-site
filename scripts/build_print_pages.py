@@ -93,7 +93,7 @@ def more_prints(p):
 def materials(p):
     """Canvas / wood / acrylic picker for prints sold through Shopify (Gelato fulfils).
     CSS-only tabs: one radio per material; each size links to Shopify checkout."""
-    mats = p.get("shopify")
+    mats = {m: v for m, v in (p.get("shopify") or {}).items() if m != "paper"}
     if not mats:
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
@@ -122,7 +122,14 @@ def materials(p):
 def page(p):
     t, url = e(p["title"]), f"{SITE}/prints/{p['slug']}"
     desc = f"{p['title']}, an archival fine-art print by Logan Ossentjuk. {lede(p)} Made to order, free US shipping."
-    buttons = "".join(f'''
+    paper = (p.get("shopify") or {}).get("paper")
+    if paper:   # Gelato prints and ships these: straight to Shopify checkout
+        buttons = "".join(f'''
+            <a class="buy-btn" href="https://{CAT['shopify_store']}/cart/{v['variant']}:1" rel="nofollow">
+              <span class="size">Buy {key.replace("x", "×")}″</span><span class="price">${v['price']}</span>
+            </a>''' for key, v in sorted(paper.items(), key=lambda kv: int(kv[0].split("x")[0])))
+    else:       # Stripe (filled in by print-buy.js), else the enquiry form
+        buttons = "".join(f'''
             <a class="buy-btn is-pending" data-slug="{p['slug']}" data-size="{s['key']}" href="/contact?print={quote(p['title'] + ' (' + s['label'].rstrip('″') + ')')}">
               <span class="size">Buy {s['label']}</span><span class="price">${s['price']}</span>
             </a>''' for s in sizes(p))

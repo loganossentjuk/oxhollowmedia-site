@@ -17,6 +17,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
   if (slides.length < 2) return;
 
   const dots = [...document.querySelectorAll('.hero-dot')];
+  const caps = [...document.querySelectorAll('.hero-cap')];   // print link per slide
   const DWELL = 6000;
   let index = 0;
   let timer = null;
@@ -27,6 +28,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)');
   const show = (next) => {
     index = (next + slides.length) % slides.length;
     slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+    caps.forEach((c, i) => c.classList.toggle('is-active', i === index));
     dots.forEach((d, i) => {
       d.classList.toggle('is-active', i === index);
       d.setAttribute('aria-pressed', i === index ? 'true' : 'false');

@@ -1455,3 +1455,15 @@ html.lb-open { overflow: hidden; }
 .mat-radio:nth-of-type(1):checked ~ .mat-panel:nth-of-type(1),
 .mat-radio:nth-of-type(2):checked ~ .mat-panel:nth-of-type(2),
 .mat-radio:nth-of-type(3):checked ~ .mat-panel:nth-of-type(3) { display: flex; }
+
+/* Hero: the active slide's title + link to buy it, beside the 01/02/03 dots. */
+.hero-caps { position: relative; display: inline-block; margin-left: 0.6rem; min-width: 18rem; height: 1.2em; }
+.hero-cap {
+  position: absolute; left: 0; top: 0; white-space: nowrap;
+  font-family: var(--serif); font-size: 1rem; letter-spacing: 0.02em; text-transform: none;
+  color: var(--paper); opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
+}
+.hero-cap span { font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,238,226,0.7); }
+.hero-cap.is-active { opacity: 1; pointer-events: auto; }
+.hero-cap:hover span, .hero-cap:focus-visible span { color: var(--paper); }
+@media (max-width: 700px) { .hero-caps { min-width: 0; margin-left: 0.3rem; } .hero-cap { font-size: 0.9rem; } }

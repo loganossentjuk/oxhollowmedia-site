@@ -450,6 +450,21 @@
       "master": "PrintMasters/ocean/IMG_8321.tif"
     },
     {
+      "slug": "dawn-patrol",
+      "title": "Dawn Patrol",
+      "category": "ocean",
+      "image": "/images/portfolio/ocean/22-dawn-patrol.jpg",
+      "webp": "/images/portfolio/ocean/22-dawn-patrol.webp",
+      "width": 2000,
+      "height": 1125,
+      "alt": "A surfer holding a longboard at the water's edge, silhouetted against a sunset sky",
+      "lede": "",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 6000,
+      "master": "PrintMasters/ocean/DSC07020.JPG"
+    },
+    {
       "slug": "shorebreak-boulders",
       "title": "Shorebreak Boulders",
       "category": "ocean",

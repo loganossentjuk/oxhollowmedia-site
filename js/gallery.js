@@ -67,6 +67,14 @@ if (filterBar && grid) {
   else applyFilter('all');   // run once on load so events start hidden
 }
 
+/* ── Salon wall: each frame's width follows its photo's shape (see .salon in
+   styles.css). Uses the width/height attributes, so it needs no image load. */
+document.querySelectorAll('#gallery-grid.salon .masonry-item').forEach((item) => {
+  const img = item.querySelector('img');
+  const w = +img.getAttribute('width'), h = +img.getAttribute('height');
+  if (w && h) item.style.setProperty('--ar', (w / h).toFixed(4));
+});
+
 /* ── Visible frame titles (buyer feedback: titles were hover-only) ── */
 document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
   const t = item.querySelector('.cap-title');

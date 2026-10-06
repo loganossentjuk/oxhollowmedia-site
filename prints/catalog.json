@@ -480,19 +480,19 @@
       "master": "PrintMasters/ocean/20191205_150831.jpg"
     },
     {
-      "slug": "green-water-i",
-      "title": "Green Water I",
+      "slug": "green-water",
+      "title": "Green Water",
       "category": "ocean",
-      "image": "/images/portfolio/ocean/14-green-water-i.jpg",
-      "webp": "/images/portfolio/ocean/14-green-water-i.webp",
-      "width": 1599,
-      "height": 2000,
+      "image": "/images/portfolio/ocean/14-green-water.jpg",
+      "webp": "/images/portfolio/ocean/14-green-water.webp",
+      "width": 2000,
+      "height": 1600,
       "alt": "Abstract of green and white water flowing over dark rock",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/626D43F0-A0F4-4117-858C-E0EE7D2AEB15.tif"
+      "master": "PrintMasters/ocean/green-water-landscape.tif"
     },
     {
       "slug": "turquoise-shallows",

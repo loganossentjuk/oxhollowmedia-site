@@ -216,7 +216,8 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 6000,
+      "master": "PrintMasters/mountains/DSC04311.JPG"
     },
     {
       "slug": "highland-river",
@@ -244,7 +245,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5472,
+      "master": "PrintMasters/mountains/IMG_0051.JPG"
     },
     {
       "slug": "dusk-branches",
@@ -258,7 +260,8 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 6000,
+      "master": "PrintMasters/mountains/_DSC7272.JPG"
     },
     {
       "slug": "aspen-and-cobalt",
@@ -458,7 +461,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 2000
+      "source_px": 4128,
+      "master": "PrintMasters/ocean/20191205_150831.jpg"
     },
     {
       "slug": "green-water-i",
@@ -532,7 +536,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 2000
+      "source_px": 4032,
+      "master": "PrintMasters/ocean/GoldenGatePhotoEdit.jpg"
     },
     {
       "slug": "turquoise-harbor",
@@ -546,7 +551,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 2000
+      "source_px": 4032,
+      "master": "PrintMasters/ocean/20191007_134529.jpg"
     },
     {
       "slug": "paddler-at-the-gate",
@@ -575,7 +581,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8323.tif"
+      "master": "PrintMasters/ocean/IMG_8323.tif",
+      "shopify": {
+        "canvas": {
+          "16x24": {
+            "variant": "67641714245874",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641714180338",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67641714278642",
+            "price": 170
+          },
+          "12x18": {
+            "variant": "67641714213106",
+            "price": 80
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641716015346",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641716048114",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641716080882",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641716113650",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641720144114",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641720176882",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641720209650",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641720242418",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15416994267378",
+        "wood": "15416994726130",
+        "acrylic": "15416995447026"
+      }
     },
     {
       "slug": "blue-footed-booby",
@@ -617,7 +684,8 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 6000,
+      "master": "PrintMasters/wildlife/_DSC4468.JPG"
     },
     {
       "slug": "marine-iguana",
@@ -631,7 +699,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 2000
+      "source_px": 4032,
+      "master": "PrintMasters/wildlife/20191031_110319.jpg"
     },
     {
       "slug": "reef-passage",
@@ -673,7 +742,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0327.JPG"
     },
     {
       "slug": "petunia-crimson",
@@ -687,7 +757,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0530.JPG"
     },
     {
       "slug": "geranium-coral",
@@ -701,7 +772,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0529.JPG"
     },
     {
       "slug": "the-flower-market",
@@ -715,7 +787,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0694.JPG"
     },
     {
       "slug": "geranium-white",
@@ -729,7 +802,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0527.JPG"
     },
     {
       "slug": "hydrangea-deep-blue",
@@ -743,7 +817,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0317.JPG"
     },
     {
       "slug": "petunia-veined",
@@ -757,7 +832,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0584.JPG"
     },
     {
       "slug": "petunia-blush",
@@ -771,7 +847,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/botanical/IMG_0318.JPG"
     },
     {
       "slug": "cocktails",
@@ -785,7 +862,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/urban/IMG_0683.JPG"
     },
     {
       "slug": "wall-of-names",
@@ -799,7 +877,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/urban/IMG_0870.JPG"
     },
     {
       "slug": "mural-sundown",
@@ -813,7 +892,8 @@
       "lede": "",
       "story": "",
       "shape": "5:4",
-      "source_px": 2000
+      "source_px": 3662,
+      "master": "PrintMasters/urban/2018-10-01 09.16.43 1.jpg"
     },
     {
       "slug": "art-will-save-you",
@@ -827,7 +907,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 5184,
+      "master": "PrintMasters/urban/IMG_0699.JPG"
     },
     {
       "slug": "harbour-pastel",
@@ -841,7 +922,8 @@
       "lede": "",
       "story": "",
       "shape": "1:1",
-      "source_px": 2000
+      "source_px": 3024,
+      "master": "PrintMasters/urban/2017-12-10 08.03.56 2.jpg"
     },
     {
       "slug": "glass-spire",
@@ -855,7 +937,8 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 4032,
+      "master": "PrintMasters/urban/2018-10-01 09.16.15 1.jpg"
     }
   ],
   "shopify_store": "sessjk-nj.myshopify.com",
@@ -863,5 +946,36 @@
     "canvas": "Canvas",
     "wood": "Wood",
     "acrylic": "Acrylic"
+  },
+  "gelato": {
+    "_readme": "Used by scripts/gelato_publish.py. templates: Gelato template IDs per orientation and material (found by name on first run). prices: retail USD per material and size, matching the Gelato templates.",
+    "store_id": "e55c0c9f-5002-4f1a-814a-28d45dbca781",
+    "templates": {
+      "landscape": {
+        "canvas": "d58b84d6-5f9a-4f73-a5be-42c4b6d1b61d",
+        "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
+        "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a"
+      }
+    },
+    "prices": {
+      "canvas": {
+        "8x12": 55,
+        "12x18": 80,
+        "16x24": 90,
+        "24x36": 170
+      },
+      "wood": {
+        "8x12": 80,
+        "12x18": 125,
+        "16x24": 160,
+        "24x36": 225
+      },
+      "acrylic": {
+        "8x12": 75,
+        "12x18": 100,
+        "16x24": 130,
+        "24x36": 210
+      }
+    }
   }
 }

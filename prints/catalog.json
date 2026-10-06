@@ -847,7 +847,7 @@
       "shape": "5:4",
       "source_px": 4096,
       "master": "PrintMasters/ocean/green-water-landscape.tif",
-      "shopify": {
+      "shopify_portrait_old": {
         "canvas": {
           "8x12": {
             "variant": "67641831981298",
@@ -891,7 +891,7 @@
           }
         }
       },
-      "shopify_products": {
+      "shopify_products_portrait_old": {
         "canvas": "15417022972146",
         "wood": "15417023529202",
         "acrylic": "15417023627506"
@@ -987,7 +987,7 @@
       "shape": "5:4",
       "source_px": 4094,
       "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.jpg",
-      "shopify": {
+      "shopify_portrait_old": {
         "canvas": {
           "8x12": {
             "variant": "67641838141682",
@@ -1031,7 +1031,7 @@
           }
         }
       },
-      "shopify_products": {
+      "shopify_products_portrait_old": {
         "canvas": "15417025364210",
         "wood": "15417025495282",
         "acrylic": "15417025560818"

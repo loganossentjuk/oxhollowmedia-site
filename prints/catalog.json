@@ -461,8 +461,8 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 4096,
-      "master": "PrintMasters/ocean/Photo Feb 11 2022, 6 23 31 PM.jpg"
+      "source_px": 12000,
+      "master": "PrintMasters/ocean/DSC07020-2.jpg"
     },
     {
       "slug": "shorebreak-boulders",
@@ -513,16 +513,16 @@
       "slug": "copper-and-teal",
       "title": "Copper and Teal",
       "category": "ocean",
-      "image": "/images/portfolio/ocean/15-green-water-ii.jpg",
-      "webp": "/images/portfolio/ocean/15-green-water-ii.webp",
-      "width": 1600,
-      "height": 2000,
+      "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
+      "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
+      "width": 2000,
+      "height": 1600,
       "alt": "Teal water against oxidised copper-red rock",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4094,
-      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.tif"
+      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.jpg"
     },
     {
       "slug": "tidepool-lava",

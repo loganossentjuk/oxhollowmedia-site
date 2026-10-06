@@ -17,8 +17,9 @@ if (filterBar && grid) {
     items.forEach((item) => {
       // Event coverage is client work, not part of the print collection, so it
       // stays out of the default view and only appears under its own filter.
+      // Any frame marked data-filter-only does the same (e.g. Window Portrait).
       const match = cat === 'all'
-        ? item.dataset.cat !== 'events'
+        ? item.dataset.cat !== 'events' && !('filterOnly' in item.dataset)
         : item.dataset.cat === cat
           && (cat !== 'events' || sub === 'all' || item.dataset.sub === sub);
       item.classList.toggle('is-hidden', !match);

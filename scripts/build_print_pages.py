@@ -8,8 +8,11 @@ Build the print shop from prints/catalog.json:
 
     python3 scripts/build_print_pages.py
 
-Buy buttons start as enquiry links and switch to Stripe checkout at runtime
-once stripe-links.json has an entry for "<slug>|<size>" (js/print-buy.js).
+A print sold framed (its catalog "shopify" entry has "framed") is sold only
+through Shopify/Gelato: framed print, framed canvas, wood and acrylic, with
+the frames in black, white or oak. Until then, paper buy buttons start as
+enquiry links and switch to Stripe checkout at runtime once stripe-links.json
+has an entry for "<slug>|<size>" (js/print-buy.js).
 Pages for prints removed from the catalogue are deleted, so the folder never
 serves a print the shop no longer lists.
 
@@ -43,7 +46,33 @@ NAV = re.search(r'  <!-- ── Navigation ── -->.*?<div class="drawer-overl
 FOOTER = re.search(r'  <!-- ── Footer ── -->.*?</footer>\n', index_html, re.S).group(0)
 
 
+FRAMES = CAT["gelato"].get("frames", {})
+FRAMED = ("framed", "framed_canvas")
+
+
+def framed(p):
+    return bool((p.get("shopify") or {}).get("framed"))
+
+
+def label(key):
+    return key.replace("x", "×") + "″"
+
+
+def by_size(d):
+    return sorted(d.items(), key=lambda kv: int(kv[0].split("x")[0]))
+
+
+def offers_of(p):
+    """(name, price) for every size a print sells: framed prints from Shopify, others on paper."""
+    if framed(p):
+        return [(f"{label(k)} framed print", v["price"]) for k, v in by_size(p["shopify"]["framed"])]
+    return [(f"{s['label']} archival print", s["price"]) for s in sizes(p)]
+
+
 def spec_line(p):
+    if framed(p):
+        return "Framed · black, white or oak · " + " · ".join(
+            f"{label(k)} ${v['price']}" for k, v in by_size(p["shopify"]["framed"]))
     return "Archival matte paper · " + " · ".join(f"{s['label']} ${s['price']}" for s in sizes(p))
 
 
@@ -59,12 +88,12 @@ def lede(p):
 def product_ld(p):
     url = f"{SITE}/prints/{p['slug']}"
     offers = [{
-        "@type": "Offer", "name": f"{s['label']} archival print", "price": str(s["price"]),
+        "@type": "Offer", "name": name, "price": str(price),
         "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": url,
         "shippingDetails": {"@type": "OfferShippingDetails",
                             "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
                             "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}},
-    } for s in sizes(p)]
+    } for name, price in offers_of(p)]
     return json.dumps({"@context": "https://schema.org", "@type": "Product", "name": p["title"],
                        "description": lede(p), "image": SITE + p["image"],
                        "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": offers},
@@ -90,20 +119,49 @@ def more_prints(p):
     return cards
 
 
+def frame_panel(p, m, by_key):
+    """Frame colour swatches (CSS-only radios), each with its own row of size buttons."""
+    store, sid = CAT["shopify_store"], f'{p["slug"]}-{m}'
+    colours = [c for c in FRAMES if any(c in v["frames"] for v in by_key.values())]
+    radios = "".join(
+        f'<input type="radio" name="frame-{sid}" id="frame-{sid}-{c}" class="frame-radio"{" checked" if i == 0 else ""}>'
+        f'<label for="frame-{sid}-{c}" class="frame-tab"><span class="frame-swatch frame-{c}"></span>{e(FRAMES[c])}</label>'
+        for i, c in enumerate(colours))
+    panels = ""
+    for c in colours:
+        rows = "".join(f'''
+                  <a class="buy-btn" href="https://{store}/cart/{v['frames'][c]}:1" rel="nofollow">
+                    <span class="size">Buy {label(k)}</span><span class="price">${v['price']}</span>
+                  </a>''' for k, v in by_size(by_key) if c in v["frames"])
+        panels += f'''
+                <div class="frame-panel" data-frame="{c}">{rows}
+                </div>'''
+    return f'''
+              <div class="frame-pick"><span class="frame-label">Frame</span>{radios}{panels}
+              </div>'''
+
+
 def materials(p):
-    """Canvas / wood / acrylic picker for prints sold through Shopify (Gelato fulfils).
-    CSS-only tabs: one radio per material; each size links to Shopify checkout."""
+    """Framed print / framed canvas / wood / acrylic picker for prints sold through
+    Shopify (Gelato fulfils). CSS-only tabs: one radio per material; each size links
+    to Shopify checkout. Framed materials add a frame-colour picker inside their
+    panel. Plain canvas is hidden once framed canvas replaces it."""
     mats = p.get("shopify")
     if not mats:
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
-    order = [m for m in names if m in mats]
+    order = [m for m in names if m in mats and not (m == "canvas" and "framed_canvas" in mats)]
     tabs = "".join(
         f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
         f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
         for i, m in enumerate(order))
     panels = ""
     for m in order:
+        if m in FRAMED:
+            panels += f'''
+            <div class="mat-panel" data-mat="{m}">{frame_panel(p, m, mats[m])}
+            </div>'''
+            continue
         rows = "".join(f'''
               <a class="buy-btn" href="https://{store}/cart/{v['variant']}:1" rel="nofollow">
                 <span class="size">Buy {key.replace("x", "×")}″</span><span class="price">${v['price']}</span>
@@ -111,9 +169,11 @@ def materials(p):
         panels += f'''
             <div class="mat-panel" data-mat="{m}">{rows}
             </div>'''
+    intro = ("Framed and ready to hang, or on wood or acrylic · free US shipping" if framed(p)
+             else "Also on canvas, wood or acrylic · printed edge to edge · free US shipping")
     return f'''
-          <div class="materials">
-            <p class="detail-spec">Also on canvas, wood or acrylic · printed edge to edge · free US shipping</p>
+          <div class="materials{' is-primary' if framed(p) else ''}">
+            <p class="detail-spec">{intro}</p>
             <div class="mat-tabs">{tabs}{panels}
             </div>
           </div>'''
@@ -121,12 +181,27 @@ def materials(p):
 
 def page(p):
     t, url = e(p["title"]), f"{SITE}/prints/{p['slug']}"
-    desc = f"{p['title']}, an archival fine-art print by Logan Ossentjuk. {lede(p)} Made to order, free US shipping."
+    desc = f"{p['title']}, {'a framed' if framed(p) else 'an archival'} fine-art print by Logan Ossentjuk. {lede(p)} Made to order, free US shipping."
     buttons = "".join(f'''
             <a class="buy-btn is-pending" data-slug="{p['slug']}" data-size="{s['key']}" href="/contact?print={quote(p['title'] + ' (' + s['label'].rstrip('″') + ')')}">
               <span class="size">Buy {s['label']}</span><span class="price">${s['price']}</span>
             </a>''' for s in sizes(p))
     story = f'\n          <p class="detail-story">{e(p["story"])}</p>' if p["story"] else ""
+    if framed(p):
+        # Framed only: no unframed paper buttons; the material picker is the buy block.
+        buy = f'''
+          <p class="detail-spec">{e(PAPER)}, framed in black, white or oak · made to order</p>{materials(p)}'''
+        note = ("Each print is made to order and framed behind shatterproof plexiglass, ready to hang. "
+                "Allow a few days for printing and framing plus transit.")
+        ask = "Questions or other sizes?"
+    else:
+        buy = f'''
+          <p class="detail-spec">{"Fine-art paper · " if p.get("shopify") else ""}{e(PAPER)} · {fit(p)} · made to order</p>
+          <div class="buy-list">{buttons}
+          </div>{materials(p)}'''
+        note = "Each print is made to order on archival paper. Allow a few days for printing plus transit."
+        ask = "Questions, other sizes, or framing?"
+    kind = "Framed print" if framed(p) else "Archival print"
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,7 +216,7 @@ def page(p):
   <meta property="og:site_name" content="Ox Hollow Media" />
   <meta property="og:type" content="product" />
   <meta property="og:title" content="{t} | Fine-Art Print | Ox Hollow Media" />
-  <meta property="og:description" content="{e(lede(p))} Archival print, made to order, free US shipping." />
+  <meta property="og:description" content="{e(lede(p))} {kind}, made to order, free US shipping." />
   <meta property="og:url" content="{url}" />
   <meta property="og:image" content="{SITE}{p['image']}" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -166,13 +241,10 @@ def page(p):
           {picture(p, ' fetchpriority="high"')}
         </div>
         <div class="detail-buy">
-          <p class="section-label">Fine art print</p>
+          <p class="section-label">{"Framed fine art print" if framed(p) else "Fine art print"}</p>
           <h1 class="detail-title">{t}</h1>
-          <p class="detail-lede">{e(lede(p))}</p>{story}
-          <p class="detail-spec">{"Fine-art paper · " if p.get("shopify") else ""}{e(PAPER)} · {fit(p)} · made to order</p>
-          <div class="buy-list">{buttons}
-          </div>{materials(p)}
-          <p class="buy-note"><strong>Free US shipping.</strong> Each print is made to order on archival paper. Allow a few days for printing plus transit. Arrives damaged or wrong? Email a photo within 14 days and I'll send a free replacement. <a href="/shipping-returns">Shipping &amp; returns</a>. Questions, other sizes, or framing? <a href="/contact?print={quote(p['title'])}">Get in touch</a>.</p>
+          <p class="detail-lede">{e(lede(p))}</p>{story}{buy}
+          <p class="buy-note"><strong>Free US shipping.</strong> {note} Arrives damaged or wrong? Email a photo within 14 days and I'll send a free replacement. <a href="/shipping-returns">Shipping &amp; returns</a>. {ask} <a href="/contact?print={quote(p['title'])}">Get in touch</a>.</p>
         </div>
       </div>
     </div>

@@ -1454,7 +1454,31 @@ html.lb-open { overflow: hidden; }
 .buy-note a { text-decoration: underline; }
 .mat-radio:nth-of-type(1):checked ~ .mat-panel:nth-of-type(1),
 .mat-radio:nth-of-type(2):checked ~ .mat-panel:nth-of-type(2),
-.mat-radio:nth-of-type(3):checked ~ .mat-panel:nth-of-type(3) { display: flex; }
+.mat-radio:nth-of-type(3):checked ~ .mat-panel:nth-of-type(3),
+.mat-radio:nth-of-type(4):checked ~ .mat-panel:nth-of-type(4),
+.mat-radio:nth-of-type(5):checked ~ .mat-panel:nth-of-type(5) { display: flex; }
+
+/* Framed prints: the picker is the buy block, and framed materials pick a frame
+   colour (black / white / oak) inside their panel, same radio trick one level down. */
+.materials.is-primary { margin-top: 0; padding-top: 0; border-top: 0; }
+.frame-pick { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.4rem; }
+.frame-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-right: 0.3rem; }
+.frame-radio { position: absolute; opacity: 0; pointer-events: none; }
+.frame-tab {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.4rem 0.85rem 0.4rem 0.5rem;
+  border: 1px solid var(--border); border-radius: 100px; cursor: pointer; color: var(--text-muted);
+}
+.frame-radio:checked + .frame-tab { border-color: var(--text); color: var(--text); }
+.frame-radio:focus-visible + .frame-tab { outline: 2px solid var(--accent); outline-offset: 2px; }
+.frame-swatch { width: 1.1rem; height: 1.1rem; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.25); }
+.frame-black { background: #1b1b1b; }
+.frame-white { background: #f7f5f0; }
+.frame-oak { background: linear-gradient(135deg, #c9a273, #a87f52); }
+.frame-panel { display: none; flex-basis: 100%; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem; }
+.frame-radio:nth-of-type(1):checked ~ .frame-panel:nth-of-type(1),
+.frame-radio:nth-of-type(2):checked ~ .frame-panel:nth-of-type(2),
+.frame-radio:nth-of-type(3):checked ~ .frame-panel:nth-of-type(3) { display: flex; }
 
 /* Hero: the active slide's title + link to buy it, beside the 01/02/03 dots. */
 .hero-caps { position: relative; display: inline-block; margin-left: 0.6rem; min-width: 18rem; height: 1.2em; }

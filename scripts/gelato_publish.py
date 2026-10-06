@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 """
-Put prints on canvas, wood and acrylic: create the Gelato products (which
-Gelato publishes to the Shopify store and fulfils), then record the Shopify
-variant IDs in prints/catalog.json so the print pages get the material picker.
+Put prints on framed paper, framed canvas, wood and acrylic: create the
+Gelato products (which Gelato publishes to the Shopify store and fulfils),
+then record the Shopify variant IDs in prints/catalog.json so the print pages
+get the material picker.
 
     python3 scripts/gelato_publish.py --only driftwood-shore   # one print
     python3 scripts/gelato_publish.py                          # every ready print
     python3 scripts/gelato_publish.py --dry-run                # just list them
+    python3 scripts/gelato_publish.py --materials framed,framed_canvas
+    python3 scripts/gelato_publish.py --templates ID,ID,...    # find new templates by name
+    python3 scripts/gelato_publish.py --quote                  # Gelato cost + suggested price per size
+
+Framed products: one Gelato template per orientation ("OHM Framed Print -
+Landscape", "OHM Framed Canvas - Portrait" ...) holding every size in black,
+white and natural (oak) frames. Each size gets one price; the frame colour is
+a variant of it. Plain canvas is no longer made (framed canvas replaces it),
+so it is not in the default material list.
+
+--quote prints Gelato's US cost (item + cheapest shipping) for each framed
+size and a suggested retail price at about 2.5x, rounded to $5. Nothing is
+created; copy the prices you approve into gelato.prices in the catalog.
 
 A print is "ready" when Dropbox/Career/OxHollow/PrintMasters/gelato-ready/
 <slug>.jpg exists and the catalog has no Shopify entry for it yet. Only
@@ -35,16 +49,34 @@ CAT_PATH = ROOT / "prints" / "catalog.json"
 READY = Path.home() / "Dropbox/Career/OxHollow/PrintMasters/gelato-ready"
 API = "https://ecommerce.gelatoapis.com/v1"
 PPI = 150          # same rule as the paper sizes: long side x 150 must fit the file
-MATERIALS = ["canvas", "wood", "acrylic"]
-LABEL = {"canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
+ALL_MATERIALS = ["framed", "framed_canvas", "canvas", "wood", "acrylic"]
+DEFAULT = ["framed", "framed_canvas", "wood", "acrylic"]
+FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
+LABEL = {"framed": "Framed Print", "framed_canvas": "Framed Canvas",
+         "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {
+    "framed": "Archival matte fine-art paper in a wooden frame (black, white or natural oak) "
+              "behind shatterproof plexiglass, ready to hang.",
+    "framed_canvas": "Gallery-wrapped canvas set in a floating wooden frame (black, white or natural oak), "
+                     "ready to hang.",
     "canvas": "Gallery-wrapped canvas with mirrored edges, ready to hang.",
     "wood": "Printed on FSC-certified birch, so the natural grain shows through the lightest areas.",
     "acrylic": "Glossy acrylic with a glass-like finish and vivid color.",
 }
 
+
+
+def arg(name):
+    return sys.argv[sys.argv.index(name) + 1].split(",") if name in sys.argv else None
+
+
 DRY = "--dry-run" in sys.argv
-ONLY = sys.argv[sys.argv.index("--only") + 1].split(",") if "--only" in sys.argv else None
+QUOTE = "--quote" in sys.argv
+ONLY = arg("--only")
+MATERIALS = arg("--materials") or DEFAULT
+bad = [m for m in MATERIALS if m not in ALL_MATERIALS]
+if bad:
+    sys.exit(f"unknown material(s): {', '.join(bad)} (choose from {', '.join(ALL_MATERIALS)})")
 cat = json.loads(CAT_PATH.read_text())
 cfg = cat["gelato"]
 
@@ -73,6 +105,15 @@ def orientation(path):
     return "landscape" if w > h * 1.05 else "portrait" if h > w * 1.05 else "square"
 
 
+def frame_key(v):
+    """black / white / oak from a template variant's options or title; None for unframed."""
+    text = " ".join([v.get("title", "")] + [str(o.get("value", "")) for o in v.get("variantOptions") or []]).lower()
+    for key, pat in (("black", r"\bblack\b"), ("white", r"\bwhite\b"), ("oak", r"\b(natural|oak|wood)\b")):
+        if re.search(pat, text):
+            return key
+    return None
+
+
 def todo():
     out = []
     for p in cat["prints"]:
@@ -82,17 +123,18 @@ def todo():
         if not f.exists() or all(m in (p.get("shopify") or {}) for m in MATERIALS):
             continue
         o = orientation(f)
-        if o not in cfg["templates"]:
+        if not cfg["templates"].get(o):
             print(f"  skip {p['slug']}: {o} (no {o} templates yet)")
             continue
         out.append((p, f, o))
     return out
 
 
-jobs = todo()
-print(f"{len(jobs)} print(s) to set up: " + ", ".join(p["slug"] for p, _, _ in jobs))
-if DRY or not jobs:
-    sys.exit(0)
+jobs = [] if QUOTE else todo()
+if not QUOTE:
+    print(f"{len(jobs)} print(s) to set up ({', '.join(MATERIALS)}): " + ", ".join(p["slug"] for p, _, _ in jobs))
+    if DRY or not jobs:
+        sys.exit(0)
 
 KEY = os.environ.get("GELATO_API_KEY", "")
 if not KEY:
@@ -104,8 +146,8 @@ if re.fullmatch(r"[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}", KEY):
     sys.exit("That looks like a template or product ID, not an API key (keys have a ':' in them). Copy the key again.")
 
 
-def gelato(method, path, body=None):
-    req = urllib.request.Request(API + path, method=method,
+def gelato(method, path, body=None, api=API):
+    req = urllib.request.Request(api + path, method=method,
                                  data=json.dumps(body).encode() if body is not None else None,
                                  headers={"X-API-KEY": KEY, "Content-Type": "application/json", "Accept": "application/json",
                                           # Gelato's Cloudflare blocks the default Python-urllib agent (error 1010)
@@ -123,9 +165,10 @@ templates = {}
 
 # Template IDs are found once by name ("OHM Canvas - Landscape" ...) among
 # candidate IDs (Templates page > ... > Copy Template ID), then kept in the catalog.
-if cfg.get("template_candidates"):
-    names = {f"OHM {LABEL[m]} - {o.title()}": (o, m) for o in ("landscape", "portrait", "square") for m in MATERIALS}
-    for tid in cfg["template_candidates"]:
+candidates = (cfg.get("template_candidates") or []) + (arg("--templates") or [])
+if candidates:
+    names = {f"OHM {LABEL[m]} - {o.title()}": (o, m) for o in ("landscape", "portrait", "square") for m in ALL_MATERIALS}
+    for tid in candidates:
         try:
             t = gelato("GET", f"/templates/{tid}")
         except RuntimeError as e:
@@ -136,7 +179,9 @@ if cfg.get("template_candidates"):
             o, m = names[t["templateName"]]
             cfg["templates"].setdefault(o, {})[m] = tid
             templates[tid] = t
-    cfg.pop("template_candidates")
+        elif t.get("templateName"):
+            print(f"    (name doesn't match any of: {', '.join(sorted(names))})")
+    cfg.pop("template_candidates", None)
     cfg["_candidates_done"] = True
     save()
     print("templates: " + json.dumps(cfg["templates"]))
@@ -151,10 +196,74 @@ def template(orient, mat):
     return templates[tid]
 
 
+def size_key(title):
+    m = re.search(r"(\d+)\s*[x×]\s*(\d+)\s*(?:[″\"]|in\b)", title)
+    return f"{m.group(1)}x{m.group(2)}" if m else None
+
+
+def sizes_for(orient):
+    # Square photos use their own sizes (gelato.square_sizes); the rest use the paper sizes.
+    return cfg.get("square_sizes", []) if orient == "square" else [z["key"] for z in cat["sizes"]]
+
+
+if QUOTE:
+    # Gelato's US cost for every framed size: product price + cheapest shipping,
+    # then ~2.5x rounded up to $5 (the rule the paper prices were set by).
+    PRODUCT_API, ORDER_API = "https://product.gelatoapis.com/v3", "https://order.gelatoapis.com/v4"
+    to = {"firstName": "Ox", "lastName": "Hollow", "addressLine1": "1 Market St", "city": "San Francisco",
+          "state": "CA", "postCode": "94105", "country": "US", "email": "quote@example.com"}
+    suggest = {}
+    for orient, mats in cfg["templates"].items():
+        for mat, tid in mats.items():
+            if mat not in FRAMED or mat not in MATERIALS:
+                continue
+            t = template(orient, mat)
+            by_size = {}
+            for v in t["variants"]:
+                k = size_key(v["title"])
+                if k in sizes_for(orient):
+                    by_size.setdefault(k, []).append(v)
+            for k, vs in sorted(by_size.items(), key=lambda kv: int(kv[0].split("x")[0])):
+                costs = []
+                for v in vs:                       # the dearest frame colour sets the price
+                    uid = v["productUid"]
+                    try:
+                        item = min(float(r["price"]) for r in gelato(
+                            "GET", f"/products/{uid}/prices?country=US&currency=USD", api=PRODUCT_API)
+                            if int(r.get("quantity", 1)) == 1)
+                    except Exception as e:
+                        print(f"  {mat} {k} {frame_key(v)}: no price ({str(e)[:100]})")
+                        continue
+                    ship = None
+                    try:
+                        q = gelato("POST", "/orders:quote", {
+                            "orderReferenceId": "quote", "customerReferenceId": "quote", "currency": "USD",
+                            "allowMultipleQuotes": False, "recipient": to,
+                            "products": [{"itemReferenceId": "1", "productUid": uid, "quantity": 1}]}, api=ORDER_API)
+                        ship = min(float(m["price"]) for qq in q["quotes"] for m in qq["shipmentMethods"])
+                    except Exception as e:
+                        print(f"  {mat} {k}: shipping quote failed ({str(e)[:100]})")
+                    costs.append((item + (ship or 0), item, ship))
+                if not costs:
+                    continue
+                total, item, ship = max(costs)
+                price = int(-(-total * 2.5 // 5) * 5)
+                suggest.setdefault(mat, {})[k] = price
+                print(f"  {LABEL[mat]:14} {k:>6}  item ${item:7.2f}  ship "
+                      + (f"${ship:6.2f}" if ship is not None else "     ?") + f"  -> ${price}")
+    print("\nsuggested gelato.prices (approve, then paste into prints/catalog.json):")
+    print(json.dumps(suggest, indent=2))
+    sys.exit(0)
+
 missing = sorted({f"OHM {LABEL[m]} - {o.title()}" for _, _, o in jobs for m in MATERIALS
                   if not cfg["templates"].get(o, {}).get(m)})
 if missing:
     sys.exit("Gelato templates not found: " + ", ".join(missing))
+unpriced = sorted({f"{m} {k}" for p, _, o in jobs for m in MATERIALS for k in sizes_for(o)
+                   if max(map(int, k.split("x"))) * PPI <= p["source_px"]
+                   and k not in cfg["prices"].get(m, {})})
+if unpriced:
+    sys.exit("No price in gelato.prices for: " + ", ".join(unpriced) + " (run with --quote)")
 
 
 # ── Serve upright copies of the files through a temporary tunnel ──
@@ -209,11 +318,6 @@ def wait_reachable(url):
     raise RuntimeError(f"tunnel not reachable ({err}): {url}")
 
 
-def size_key(title):
-    m = re.search(r"(\d+)x(\d+)\s*[″\"]", title)
-    return f"{m.group(1)}x{m.group(2)}" if m else None
-
-
 def description(p, mat):
     lede = p.get("lede") or p["alt"].rstrip(".") + "."
     return (f"<p>{html.escape(lede)} Photographed by Logan Ossentjuk of Ox Hollow Media.</p>"
@@ -225,15 +329,14 @@ try:
     for p, f, orient in jobs:
         url = f"{base}/{token}/{f.name}"
         wait_reachable(url)
-        # Square photos use their own sizes (gelato.square_sizes); the rest use the paper sizes.
-        keys = cfg.get("square_sizes", []) if orient == "square" else [z["key"] for z in cat["sizes"]]
-        allowed = [k for k in keys if max(map(int, k.split("x"))) * PPI <= p["source_px"]]
+        allowed = [k for k in sizes_for(orient) if max(map(int, k.split("x"))) * PPI <= p["source_px"]]
         p.setdefault("shopify", {})
         for mat in MATERIALS:
             if mat in p["shopify"]:
                 continue
             t = template(orient, mat)
-            variants = [v for v in t["variants"] if size_key(v["title"]) in allowed]
+            variants = [v for v in t["variants"] if size_key(v["title"]) in allowed
+                        and (mat not in FRAMED or frame_key(v) in cfg["frames"])]
             body = {
                 "templateId": t["id"],
                 "title": f"{p['title']} - {LABEL[mat]}",
@@ -269,9 +372,18 @@ try:
                     and all(v.get("externalId") for v in prod["variants"])):
                 raise RuntimeError(f"{p['slug']} {mat}: {prod['status']} {prod.get('publishingErrorCode')}")
             price = cfg["prices"][mat]
-            p["shopify"][mat] = {
-                size_key(v["title"]): {"variant": v["externalId"], "price": price[size_key(v["title"])]}
-                for v in prod["variants"] if v.get("externalId") and size_key(v["title"])}
+            if mat in FRAMED:
+                # {"12x18": {"price": 120, "frames": {"black": variant, "white": ..., "oak": ...}}}
+                entry = {}
+                for v in prod["variants"]:
+                    k, fk = size_key(v["title"]), frame_key(v)
+                    if v.get("externalId") and k and fk:
+                        entry.setdefault(k, {"price": price[k], "frames": {}})["frames"][fk] = v["externalId"]
+                p["shopify"][mat] = entry
+            else:
+                p["shopify"][mat] = {
+                    size_key(v["title"]): {"variant": v["externalId"], "price": price[size_key(v["title"])]}
+                    for v in prod["variants"] if v.get("externalId") and size_key(v["title"])}
             p.setdefault("shopify_products", {})[mat] = prod["externalId"]
             save()                                     # keep progress if a later step fails
 finally:

@@ -2056,12 +2056,14 @@
   ],
   "shopify_store": "sessjk-nj.myshopify.com",
   "materials": {
+    "framed": "Framed print",
+    "framed_canvas": "Framed canvas",
     "canvas": "Canvas",
     "wood": "Wood",
     "acrylic": "Acrylic"
   },
   "gelato": {
-    "_readme": "Used by scripts/gelato_publish.py. templates: Gelato template IDs per orientation and material (found by name on first run). prices: retail USD per material and size, matching the Gelato templates.",
+    "_readme": "Used by scripts/gelato_publish.py. templates: Gelato template IDs per orientation and material (found by name). prices: retail USD per material and size (framed prices from --quote, ~2.5x Gelato cost). frames: frame colours offered on framed print and framed canvas, keyed as the script reads them from Gelato.",
     "store_id": "e55c0c9f-5002-4f1a-814a-28d45dbca781",
     "templates": {
       "landscape": {
@@ -2114,6 +2116,11 @@
       "12x12",
       "16x16",
       "20x20"
-    ]
+    ],
+    "frames": {
+      "black": "Black",
+      "white": "White",
+      "oak": "Oak"
+    }
   }
 }

@@ -202,8 +202,9 @@ def template(orient, mat):
 
 
 def size_key(title):
+    # Short side first, as the catalog keys are ("8x12"), whichever way Gelato names it.
     m = re.search(r"(\d+)\s*[x×]\s*(\d+)\s*(?:[″\"]|in\b)", title)
-    return f"{m.group(1)}x{m.group(2)}" if m else None
+    return "x".join(map(str, sorted(map(int, m.groups())))) if m else None
 
 
 def sizes_for(orient):

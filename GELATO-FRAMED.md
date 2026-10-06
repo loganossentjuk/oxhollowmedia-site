@@ -60,8 +60,29 @@ python3 scripts/gelato_publish.py               # framed print, print only, fram
 ```
 
 Wood and acrylic that already exist are skipped. Gelato takes 5–60 minutes per
-listing, so 43 prints × 3 new listings is a long run. Use `--only slug,slug` to
-go in batches.
+listing, so the run goes in batches, best sellers first. With no sales on
+record yet, "best" means gallery-wall order (top of the wall first). Run
+`--dry-run` before each batch, and do step 4 after each one:
+
+```bash
+# Batch 1
+python3 scripts/gelato_publish.py --only dawn-patrol,sierra-river-bend,autumn-flats,blue-footed-booby,petunia-blush,humpback-breach,cloudbreak-ridge,fitz-roy-alpenglow,hydrangea-deep-blue,fog-forest
+# Batch 2
+python3 scripts/gelato_publish.py --only geranium-white,blue-hour-ridge,sea-lion-pup,geranium-coral,aspen-and-cobalt,golden-gate-fog,highland-river,petunia-crimson,petunia-veined,shorebreak-boulders
+# Batch 3
+python3 scripts/gelato_publish.py --only turquoise-shallows,the-wax-ritual,the-flower-market,driftwood-shore,marsh-at-dusk,sun-on-the-water,amber-glass,misty-ridgeline
+# Batch 4
+python3 scripts/gelato_publish.py --only cocktails,paddler-at-the-gate,wall-of-names,art-will-save-you,reef-passage,glass-spire,rainier-afterglow,dusk-waterfowl,mural-sundown,harbour-pastel
+# Batch 5
+python3 scripts/gelato_publish.py --only marine-iguana,turquoise-harbor,dusk-branches,tidepool-lava
+# Held until their print files are re-made (their canvas/wood/acrylic are hidden for the same reason)
+python3 scripts/gelato_publish.py --only verdigris,copper-and-teal
+```
+
+Prints whose file is 2000 px
+(Blue-footed Booby, Humpback Breach, Fitz Roy, Blue Hour Ridge, Sea Lion Pup,
+Highland River, Paddler, Reef Passage, Rainier) only reach 8×12, so they get a
+framed 8×12 and nothing larger.
 
 ## 4. After each batch (Claude can do this with the Shopify connector)
 

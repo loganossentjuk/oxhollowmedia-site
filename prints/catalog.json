@@ -246,7 +246,30 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5472,
-      "master": "PrintMasters/mountains/IMG_0051.JPG"
+      "master": "PrintMasters/mountains/IMG_0051.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641737052402",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641737085170",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641737117938",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641737150706",
+            "price": 170
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15416999346418"
+      }
     },
     {
       "slug": "dusk-branches",
@@ -955,7 +978,8 @@
         "canvas": "d58b84d6-5f9a-4f73-a5be-42c4b6d1b61d",
         "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
         "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a"
-      }
+      },
+      "portrait": {}
     },
     "prices": {
       "canvas": {
@@ -976,6 +1000,11 @@
         "16x24": 130,
         "24x36": 210
       }
-    }
+    },
+    "template_candidates": [
+      "aaa39961-43be-4d28-9056-51e8c5acc1ca",
+      "24685965-3d02-48ab-b374-428e48f058d0",
+      "56b718b2-68d7-4a4f-adf5-9901d36ba503"
+    ]
   }
 }

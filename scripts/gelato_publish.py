@@ -121,8 +121,7 @@ if cfg.get("template_candidates"):
             o, m = names[t["templateName"]]
             cfg["templates"].setdefault(o, {})[m] = tid
             templates[tid] = t
-    if all(cfg["templates"].get("landscape", {}).get(m) for m in MATERIALS):
-        cfg.pop("template_candidates")
+    cfg.pop("template_candidates")
     save()
     print("templates: " + json.dumps(cfg["templates"]))
 
@@ -232,14 +231,24 @@ try:
             }
             prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)
             print(f"  {p['slug']} {mat}: created {prod['id']}, publishing", end="", flush=True)
-            for _ in range(90):                        # up to ~6 minutes
-                time.sleep(4)
-                prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{prod['id']}")
+            # Gelato can take 30+ minutes, and its status sometimes stays
+            # "created" after the Shopify product exists, so also accept a
+            # product whose variants all carry Shopify IDs.
+            deadline = time.time() + 60 * 60
+            while time.time() < deadline:
+                time.sleep(20)
+                try:
+                    prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{prod['id']}")
+                except (RuntimeError, OSError) as e:      # transient network/API hiccup: keep waiting
+                    print("!", end="", flush=True)
+                    continue
                 print(".", end="", flush=True)
-                if prod["status"] in ("active", "publishing_error"):
+                linked = prod.get("variants") and all(v.get("externalId") for v in prod["variants"])
+                if prod["status"] in ("active", "publishing_error") or (linked and prod.get("externalId")):
                     break
             print(" " + prod["status"])
-            if prod["status"] != "active":
+            if not (prod.get("externalId") and prod.get("variants")
+                    and all(v.get("externalId") for v in prod["variants"])):
                 raise RuntimeError(f"{p['slug']} {mat}: {prod['status']} {prod.get('publishingErrorCode')}")
             price = cfg["prices"][mat]
             p["shopify"][mat] = {

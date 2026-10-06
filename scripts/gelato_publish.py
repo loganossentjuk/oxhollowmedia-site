@@ -50,7 +50,22 @@ cfg = cat["gelato"]
 
 
 def save():
-    CAT_PATH.write_text(json.dumps(cat, indent=2, ensure_ascii=False) + "\n")
+    # Merge into the file on disk rather than overwrite it, so a second run (or a
+    # hand edit) made while this one is going isn't lost: only this run's Shopify
+    # entries and the Gelato template IDs are written back.
+    disk = json.loads(CAT_PATH.read_text())
+    mine = {p["slug"]: p for p in cat["prints"]}
+    for p in disk["prints"]:
+        q = mine.get(p["slug"])
+        for k in ("shopify", "shopify_products"):
+            if q and q.get(k):
+                p.setdefault(k, {}).update(q[k])
+    g = disk.setdefault("gelato", {})
+    for o, mats in cfg.get("templates", {}).items():
+        g.setdefault("templates", {}).setdefault(o, {}).update(mats)
+    if cfg.get("_candidates_done"):
+        g.pop("template_candidates", None)
+    CAT_PATH.write_text(json.dumps(disk, indent=2, ensure_ascii=False) + "\n")
 
 
 def orientation(path):
@@ -121,8 +136,8 @@ if cfg.get("template_candidates"):
             o, m = names[t["templateName"]]
             cfg["templates"].setdefault(o, {})[m] = tid
             templates[tid] = t
-    if all(cfg["templates"].get("landscape", {}).get(m) for m in MATERIALS):
-        cfg.pop("template_candidates")
+    cfg.pop("template_candidates")
+    cfg["_candidates_done"] = True
     save()
     print("templates: " + json.dumps(cfg["templates"]))
 
@@ -210,7 +225,9 @@ try:
     for p, f, orient in jobs:
         url = f"{base}/{token}/{f.name}"
         wait_reachable(url)
-        allowed = [z["key"] for z in cat["sizes"] if max(map(int, z["key"].split("x"))) * PPI <= p["source_px"]]
+        # Square photos use their own sizes (gelato.square_sizes); the rest use the paper sizes.
+        keys = cfg.get("square_sizes", []) if orient == "square" else [z["key"] for z in cat["sizes"]]
+        allowed = [k for k in keys if max(map(int, k.split("x"))) * PPI <= p["source_px"]]
         p.setdefault("shopify", {})
         for mat in MATERIALS:
             if mat in p["shopify"]:
@@ -232,14 +249,24 @@ try:
             }
             prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)
             print(f"  {p['slug']} {mat}: created {prod['id']}, publishing", end="", flush=True)
-            for _ in range(90):                        # up to ~6 minutes
-                time.sleep(4)
-                prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{prod['id']}")
+            # Gelato can take 30+ minutes, and its status sometimes stays
+            # "created" after the Shopify product exists, so also accept a
+            # product whose variants all carry Shopify IDs.
+            deadline = time.time() + 60 * 60
+            while time.time() < deadline:
+                time.sleep(20)
+                try:
+                    prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{prod['id']}")
+                except (RuntimeError, OSError) as e:      # transient network/API hiccup: keep waiting
+                    print("!", end="", flush=True)
+                    continue
                 print(".", end="", flush=True)
-                if prod["status"] in ("active", "publishing_error"):
+                linked = prod.get("variants") and all(v.get("externalId") for v in prod["variants"])
+                if prod["status"] in ("active", "publishing_error") or (linked and prod.get("externalId")):
                     break
             print(" " + prod["status"])
-            if prod["status"] != "active":
+            if not (prod.get("externalId") and prod.get("variants")
+                    and all(v.get("externalId") for v in prod["variants"])):
                 raise RuntimeError(f"{p['slug']} {mat}: {prod['status']} {prod.get('publishingErrorCode')}")
             price = cfg["prices"][mat]
             p["shopify"][mat] = {

@@ -217,7 +217,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC04311.JPG"
+      "master": "PrintMasters/mountains/DSC04311.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641764937970",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641764970738",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641765003506",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641765036274",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641773490418",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641773523186",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641773555954",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641773588722",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641790005490",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641790038258",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641790071026",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641790103794",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417003704562",
+        "wood": "15417004556530",
+        "acrylic": "15417005867250"
+      }
     },
     {
       "slug": "highland-river",
@@ -246,7 +307,68 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5472,
-      "master": "PrintMasters/mountains/IMG_0051.JPG"
+      "master": "PrintMasters/mountains/IMG_0051.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641737052402",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641737085170",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641737117938",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641737150706",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641796559090",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641796591858",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641796624626",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641796657394",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641801015538",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641801048306",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641801081074",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641801113842",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15416999346418",
+        "wood": "15417007112434",
+        "acrylic": "15417009668338"
+      }
     },
     {
       "slug": "dusk-branches",
@@ -261,7 +383,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC7272.JPG"
+      "master": "PrintMasters/mountains/_DSC7272.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641813991666",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641814024434",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641814057202",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641814089970",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641817301234",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641817334002",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641817366770",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641817399538",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641819332850",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641819365618",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641819398386",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641819431154",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417013960946",
+        "wood": "15417016615154",
+        "acrylic": "15417017368818"
+      }
     },
     {
       "slug": "aspen-and-cobalt",
@@ -276,7 +459,68 @@
       "story": "",
       "shape": "4:3",
       "source_px": 5712,
-      "master": "PrintMasters/mountains/CA546F5B-493D-4A11-A2D1-09565FA9E430.tif"
+      "master": "PrintMasters/mountains/CA546F5B-493D-4A11-A2D1-09565FA9E430.tif",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641821102322",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641821135090",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641821167858",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641821200626",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641822544114",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641822576882",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641822609650",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641822642418",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "12x18": {
+            "variant": "67641823461618",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641823494386",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641823527154",
+            "price": 210
+          },
+          "8x12": {
+            "variant": "67641823428850",
+            "price": 75
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417018810610",
+        "wood": "15417019695346",
+        "acrylic": "15417020317938"
+      }
     },
     {
       "slug": "rainier-afterglow",
@@ -447,7 +691,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8321.tif"
+      "master": "PrintMasters/ocean/IMG_8321.tif",
+      "shopify": {
+        "canvas": {
+          "24x36": {
+            "variant": "67641824346354",
+            "price": 170
+          },
+          "8x12": {
+            "variant": "67641824248050",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641824280818",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641824313586",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641825067250",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641825100018",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641825132786",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641825165554",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641828868338",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641828901106",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641828933874",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641828966642",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417020449010",
+        "wood": "15417021038834",
+        "acrylic": "15417022021874"
+      }
     },
     {
       "slug": "dawn-patrol",
@@ -477,7 +782,56 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4128,
-      "master": "PrintMasters/ocean/20191205_150831.jpg"
+      "master": "PrintMasters/ocean/20191205_150831.jpg",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641829425394",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641829458162",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641829490930",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641829589234",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641829622002",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641829654770",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641829818610",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641829851378",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641829884146",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417022087410",
+        "wood": "15417022152946",
+        "acrylic": "15417022284018"
+      }
     },
     {
       "slug": "green-water",
@@ -492,7 +846,56 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/green-water-landscape.tif"
+      "master": "PrintMasters/ocean/green-water-landscape.tif",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641831981298",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641832014066",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641832046834",
+            "price": 90
+          }
+        },
+        "wood": {
+          "12x18": {
+            "variant": "67641833357554",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641833390322",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67641833324786",
+            "price": 80
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641833554162",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641833586930",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641833619698",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417022972146",
+        "wood": "15417023529202",
+        "acrylic": "15417023627506"
+      }
     },
     {
       "slug": "turquoise-shallows",
@@ -507,7 +910,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8168.tif"
+      "master": "PrintMasters/ocean/IMG_8168.tif",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641837191410",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641837224178",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641837256946",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641837289714",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641837486322",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641837519090",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641837551858",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641837584626",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "16x24": {
+            "variant": "67641837977842",
+            "price": 130
+          },
+          "8x12": {
+            "variant": "67641837912306",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641837945074",
+            "price": 100
+          },
+          "24x36": {
+            "variant": "67641838010610",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417025003762",
+        "wood": "15417025134834",
+        "acrylic": "15417025265906"
+      }
     },
     {
       "slug": "copper-and-teal",
@@ -522,7 +986,56 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4094,
-      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.jpg"
+      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.jpg",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641838141682",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641838174450",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641838207218",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641838403826",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641838436594",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641838469362",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641838567666",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641838600434",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641838633202",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417025364210",
+        "wood": "15417025495282",
+        "acrylic": "15417025560818"
+      }
     },
     {
       "slug": "tidepool-lava",
@@ -537,7 +1050,56 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/F81FC704-C057-444E-A78E-54AC34626960.tif"
+      "master": "PrintMasters/ocean/F81FC704-C057-444E-A78E-54AC34626960.tif",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641839255794",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641839288562",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641839321330",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641839583474",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641839616242",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641839649010",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641840042226",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641840074994",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641840107762",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417025757426",
+        "wood": "15417025888498",
+        "acrylic": "15417026052338"
+      }
     },
     {
       "slug": "golden-gate-fog",
@@ -552,7 +1114,56 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4032,
-      "master": "PrintMasters/ocean/GoldenGatePhotoEdit.jpg"
+      "master": "PrintMasters/ocean/GoldenGatePhotoEdit.jpg",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641840271602",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641840304370",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641840337138",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641840599282",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641840632050",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641840664818",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641840795890",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641840828658",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641840861426",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417026150642",
+        "wood": "15417026281714",
+        "acrylic": "15417026380018"
+      }
     },
     {
       "slug": "turquoise-harbor",
@@ -567,7 +1178,56 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4032,
-      "master": "PrintMasters/ocean/20191007_134529.jpg"
+      "master": "PrintMasters/ocean/20191007_134529.jpg",
+      "shopify": {
+        "canvas": {
+          "16x24": {
+            "variant": "67641841221874",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641841156338",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641841189106",
+            "price": 80
+          }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67641841385714",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67641841320178",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641841352946",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641841516786",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641841549554",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641841582322",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417026511090",
+        "wood": "15417026576626",
+        "acrylic": "15417026674930"
+      }
     },
     {
       "slug": "paddler-at-the-gate",
@@ -700,7 +1360,68 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/wildlife/_DSC4468.JPG"
+      "master": "PrintMasters/wildlife/_DSC4468.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641842172146",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641842204914",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641842237682",
+            "price": 90
+          },
+          "24x36": {
+            "variant": "67641842270450",
+            "price": 170
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641842598130",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641842630898",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641842663666",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67641842696434",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641842893042",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641842925810",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641842958578",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67641842991346",
+            "price": 210
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417026806002",
+        "wood": "15417026904306",
+        "acrylic": "15417027035378"
+      }
     },
     {
       "slug": "marine-iguana",
@@ -715,7 +1436,56 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4032,
-      "master": "PrintMasters/wildlife/20191031_110319.jpg"
+      "master": "PrintMasters/wildlife/20191031_110319.jpg",
+      "shopify": {
+        "canvas": {
+          "16x24": {
+            "variant": "67641844596978",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641844531442",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641844564210",
+            "price": 80
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641844629746",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641844662514",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641844695282",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641845711090",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641845743858",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641845776626",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417027264754",
+        "wood": "15417027297522",
+        "acrylic": "15417027526898"
+      }
     },
     {
       "slug": "reef-passage",
@@ -758,7 +1528,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0327.JPG"
+      "master": "PrintMasters/botanical/IMG_0327.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641848070386",
+            "price": 55
+          },
+          "16x24": {
+            "variant": "67641848135922",
+            "price": 90
+          },
+          "12x18": {
+            "variant": "67641848103154",
+            "price": 80
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641849413874",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641849446642",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641849479410",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641849839858",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641849872626",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641849905394",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417027854578",
+        "wood": "15417028215026",
+        "acrylic": "15417028313330"
+      }
     },
     {
       "slug": "petunia-crimson",
@@ -773,7 +1592,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0530.JPG"
+      "master": "PrintMasters/botanical/IMG_0530.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641852166386",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641852199154",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641852231922",
+            "price": 90
+          }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67641853182194",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67641853116658",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641853149426",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641853346034",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641853378802",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641853411570",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417029066994",
+        "wood": "15417029263602",
+        "acrylic": "15417029394674"
+      }
     },
     {
       "slug": "geranium-coral",
@@ -788,7 +1656,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0529.JPG"
+      "master": "PrintMasters/botanical/IMG_0529.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641853575410",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641853608178",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641853640946",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641853870322",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641853903090",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641853935858",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "12x18": {
+            "variant": "67641854427378",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641854460146",
+            "price": 130
+          },
+          "8x12": {
+            "variant": "67641854394610",
+            "price": 75
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417029492978",
+        "wood": "15417029656818",
+        "acrylic": "15417029820658"
+      }
     },
     {
       "slug": "the-flower-market",
@@ -803,7 +1720,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0694.JPG"
+      "master": "PrintMasters/botanical/IMG_0694.JPG",
+      "shopify": {
+        "canvas": {
+          "12x18": {
+            "variant": "67641855770866",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641855803634",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641855738098",
+            "price": 55
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641856131314",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641856164082",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641856196850",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641856458994",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641856491762",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641856524530",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417029984498",
+        "wood": "15417030115570",
+        "acrylic": "15417030246642"
+      }
     },
     {
       "slug": "geranium-white",
@@ -818,7 +1784,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0527.JPG"
+      "master": "PrintMasters/botanical/IMG_0527.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641858294002",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641858326770",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641858359538",
+            "price": 90
+          }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67641859473650",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67641859408114",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641859440882",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641860980978",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641861013746",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641861046514",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417031000306",
+        "wood": "15417031229682",
+        "acrylic": "15417031852274"
+      }
     },
     {
       "slug": "hydrangea-deep-blue",
@@ -833,7 +1848,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0317.JPG"
+      "master": "PrintMasters/botanical/IMG_0317.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67641861570802",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641861603570",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67641861636338",
+            "price": 90
+          }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67641861865714",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67641861800178",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641861832946",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67641862979826",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67641863012594",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67641863045362",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417032147186",
+        "wood": "15417032245490",
+        "acrylic": "15417032474866"
+      }
     },
     {
       "slug": "petunia-veined",
@@ -848,7 +1912,41 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0584.JPG"
+      "master": "PrintMasters/botanical/IMG_0584.JPG",
+      "shopify": {
+        "canvas": {
+          "16x24": {
+            "variant": "67641863831794",
+            "price": 90
+          },
+          "8x12": {
+            "variant": "67641863766258",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67641863799026",
+            "price": 80
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67641864126706",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67641864159474",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67641864192242",
+            "price": 160
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15417032605938",
+        "wood": "15417032802546"
+      }
     },
     {
       "slug": "petunia-blush",
@@ -970,27 +2068,52 @@
         "canvas": "d58b84d6-5f9a-4f73-a5be-42c4b6d1b61d",
         "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
         "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a"
-      }
+      },
+      "portrait": {
+        "acrylic": "aaa39961-43be-4d28-9056-51e8c5acc1ca",
+        "wood": "24685965-3d02-48ab-b374-428e48f058d0",
+        "canvas": "56b718b2-68d7-4a4f-adf5-9901d36ba503"
+      },
+      "square": {}
     },
     "prices": {
       "canvas": {
         "8x12": 55,
         "12x18": 80,
         "16x24": 90,
-        "24x36": 170
+        "24x36": 170,
+        "12x12": 65,
+        "16x16": 80,
+        "20x20": 100
       },
       "wood": {
         "8x12": 80,
         "12x18": 125,
         "16x24": 160,
-        "24x36": 225
+        "24x36": 225,
+        "12x12": 105,
+        "16x16": 125,
+        "20x20": 165
       },
       "acrylic": {
         "8x12": 75,
         "12x18": 100,
         "16x24": 130,
-        "24x36": 210
+        "24x36": 210,
+        "12x12": 80,
+        "16x16": 100,
+        "20x20": 130
       }
-    }
+    },
+    "template_candidates": [
+      "1e56fc7e-1d8f-41e2-83e4-b4d952ea2965",
+      "df4e7e1f-0854-4a90-ac50-f53f27c2d218",
+      "5c0e98ad-2b35-469a-bd73-eb8b1e0fd44c"
+    ],
+    "square_sizes": [
+      "12x12",
+      "16x16",
+      "20x20"
+    ]
   }
 }

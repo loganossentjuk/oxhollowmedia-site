@@ -63,10 +63,12 @@ MODE = "live" if "_live_" in KEY else "test"
 
 
 def catalogue():
-    """Every print in the shop: slug, title, absolute image URL."""
+    """Every print in the shop: slug, title, absolute image URL. A print sold framed
+    (Shopify/Gelato: catalog shopify.framed) sells no paper sizes here, so its
+    Stripe links count as stale and are retired."""
     return [{"slug": p["slug"], "title": p["title"], "image": SITE + p["image"],
-             "sizes": [z for z in SIZES
-                       if max(int(n) for n in z[0].split("x")) * PPI <= p["source_px"]]}
+             "sizes": [] if (p.get("shopify") or {}).get("framed") else
+                      [z for z in SIZES if max(int(n) for n in z[0].split("x")) * PPI <= p["source_px"]]}
             for p in CATALOG["prints"]]
 
 

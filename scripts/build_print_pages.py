@@ -119,20 +119,33 @@ def more_prints(p):
     return cards
 
 
+def preview_attr(url):
+    return f' data-preview="{e(url)}"' if url else ""
+
+
 def frame_panel(p, m, by_key):
-    """Frame colour swatches (CSS-only radios), each with its own row of size buttons."""
+    """Frame colour swatches (CSS-only radios), each with its own row of size buttons.
+    The framed print adds "No frame" (the Print Only listing) as a last choice. A
+    swatch with a Gelato mockup in the catalog ("previews") carries it in
+    data-preview, and js/print-buy.js swaps the page photo to it when picked."""
     store, sid = CAT["shopify_store"], f'{p["slug"]}-{m}'
-    colours = [c for c in FRAMES if any(c in v["frames"] for v in by_key.values())]
+    shown = (p.get("previews") or {}).get(m, {})
+    choices = [(c, FRAMES[c], {k: (v["frames"][c], v["price"]) for k, v in by_key.items() if c in v["frames"]},
+                shown.get(c)) for c in FRAMES if any(c in v["frames"] for v in by_key.values())]
+    loose = (p.get("shopify") or {}).get("print_only")
+    if m == "framed" and loose:
+        choices.append(("none", "No frame", {k: (v["variant"], v["price"]) for k, v in loose.items()}, p["image"]))
     radios = "".join(
-        f'<input type="radio" name="frame-{sid}" id="frame-{sid}-{c}" class="frame-radio"{" checked" if i == 0 else ""}>'
-        f'<label for="frame-{sid}-{c}" class="frame-tab"><span class="frame-swatch frame-{c}"></span>{e(FRAMES[c])}</label>'
-        for i, c in enumerate(colours))
+        f'<input type="radio" name="frame-{sid}" id="frame-{sid}-{c}" class="frame-radio"'
+        f'{preview_attr(img)}{" checked" if i == 0 else ""}>'
+        f'<label for="frame-{sid}-{c}" class="frame-tab"><span class="frame-swatch frame-{c}"></span>{e(name)}</label>'
+        for i, (c, name, _, img) in enumerate(choices))
     panels = ""
-    for c in colours:
+    for c, _, sizes_, _ in choices:
         rows = "".join(f'''
-                  <a class="buy-btn" href="https://{store}/cart/{v['frames'][c]}:1" rel="nofollow">
-                    <span class="size">Buy {label(k)}</span><span class="price">${v['price']}</span>
-                  </a>''' for k, v in by_size(by_key) if c in v["frames"])
+                  <a class="buy-btn" href="https://{store}/cart/{variant}:1" rel="nofollow">
+                    <span class="size">Buy {label(k)}</span><span class="price">${price}</span>
+                  </a>''' for k, (variant, price) in by_size(sizes_))
         panels += f'''
                 <div class="frame-panel" data-frame="{c}">{rows}
                 </div>'''
@@ -150,7 +163,9 @@ def materials(p):
     if not mats:
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
-    order = [m for m in names if m in mats and not (m == "canvas" and "framed_canvas" in mats)]
+    # Print Only shows as the framed print's "No frame" swatch, not as its own tab.
+    order = [m for m in names if m in mats and m != "print_only"
+             and not (m == "canvas" and "framed_canvas" in mats)]
     tabs = "".join(
         f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
         f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
@@ -169,11 +184,11 @@ def materials(p):
         panels += f'''
             <div class="mat-panel" data-mat="{m}">{rows}
             </div>'''
-    intro = ("Framed and ready to hang, or on wood or acrylic · free US shipping" if framed(p)
-             else "Also on canvas, wood or acrylic · printed edge to edge · free US shipping")
+    # A framed page already says it in the spec line above the picker.
+    intro = "" if framed(p) else '''
+            <p class="detail-spec">Also on canvas, wood or acrylic · printed edge to edge · free US shipping</p>'''
     return f'''
-          <div class="materials{' is-primary' if framed(p) else ''}">
-            <p class="detail-spec">{intro}</p>
+          <div class="materials{' is-primary' if framed(p) else ''}">{intro}
             <div class="mat-tabs">{tabs}{panels}
             </div>
           </div>'''
@@ -260,7 +275,7 @@ def page(p):
   </section>
 
 {FOOTER}
-  <script src="/js/print-buy.js?v=1"></script>
+  <script src="/js/print-buy.js?v=2"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

@@ -141,13 +141,23 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
 
   // Prints in the shop get a link to their page (/prints/<slug>) and the
   // shop's sizes; anything else falls back to SIZES above.
+  // Framed prints (Shopify/Gelato) list their framed sizes and send the buyer to
+  // the print page to pick a frame; framed.add() marks them for the spec line.
   let shopSizes = new Map();
+  const framed = new Set();
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
     .then((c) => {
       // Only the sizes the print's file supports (long side x 150 ppi), as on its page.
       const fits = (p) => (z) => Math.max(...z.key.split('x').map(Number)) * 150 <= (p.source_px || 0);
-      shopSizes = new Map((c.prints || []).map((p) => [p.slug, (c.sizes || SIZES).filter(fits(p))]));
+      shopSizes = new Map((c.prints || []).map((p) => {
+        const f = (p.shopify || {}).framed;
+        if (!f) return [p.slug, (c.sizes || SIZES).filter(fits(p))];
+        framed.add(p.slug);
+        return [p.slug, Object.entries(f)
+          .sort((a, b) => parseInt(a[0], 10) - parseInt(b[0], 10))
+          .map(([key, v]) => ({ key, label: `${key.replace('x', '×')}″`, price: v.price, href: `/prints/${p.slug}` }))];
+      }));
     })
     .catch(() => {});
 
@@ -206,9 +216,12 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     if (forSale) {
       const slug = slugify(title);
       if (shopSizes.has(slug)) { page.href = `/prints/${slug}`; page.hidden = false; }
+      $('.lb-spec').textContent = framed.has(slug)
+        ? 'Framed in black, white or oak · made to order · free US shipping'
+        : 'Archival matte paper · made to order · free US shipping';
       $('.lb-sizes').innerHTML = (shopSizes.get(slug) || SIZES).map((s) => {
-        const url = links[`${slug}|${s.key}`];
-        const href = url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
+        const url = s.href ? '' : links[`${slug}|${s.key}`];
+        const href = s.href || url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
         return `<a class="lb-size" href="${href}" data-size="${s.key}" data-product="${slug}"${url ? ' data-checkout="stripe"' : ''}>`
              + `<span>${s.label}</span><strong>$${s.price}</strong></a>`;
       }).join('');

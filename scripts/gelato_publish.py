@@ -12,6 +12,10 @@ get the material picker.
     python3 scripts/gelato_publish.py --templates ID,ID,...    # find new templates by name
     python3 scripts/gelato_publish.py --quote                  # Gelato cost + suggested price per size
 
+Print Only is the unframed fine-art paper print (template "OHM Print Only -
+Landscape" ...); the website shows it as the "No frame" choice beside the frame
+colours, and it replaces the Stripe paper links.
+
 Framed products: one Gelato template per orientation ("OHM Framed Print -
 Landscape", "OHM Framed Canvas - Portrait" ...) holding every size in black,
 white and natural (oak) frames. Each size gets one price; the frame colour is
@@ -49,14 +53,15 @@ CAT_PATH = ROOT / "prints" / "catalog.json"
 READY = Path.home() / "Dropbox/Career/OxHollow/PrintMasters/gelato-ready"
 API = "https://ecommerce.gelatoapis.com/v1"
 PPI = 150          # same rule as the paper sizes: long side x 150 must fit the file
-ALL_MATERIALS = ["framed", "framed_canvas", "canvas", "wood", "acrylic"]
-DEFAULT = ["framed", "framed_canvas", "wood", "acrylic"]
+ALL_MATERIALS = ["framed", "print_only", "framed_canvas", "canvas", "wood", "acrylic"]
+DEFAULT = ["framed", "print_only", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
-LABEL = {"framed": "Framed Print", "framed_canvas": "Framed Canvas",
+LABEL = {"framed": "Framed Print", "print_only": "Print Only", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {
     "framed": "Archival matte fine-art paper in a wooden frame (black, white or natural oak) "
               "behind shatterproof plexiglass, ready to hang.",
+    "print_only": "Archival matte fine-art paper, unframed, shipped flat or rolled in a tube.",
     "framed_canvas": "Gallery-wrapped canvas set in a floating wooden frame (black, white or natural oak), "
                      "ready to hang.",
     "canvas": "Gallery-wrapped canvas with mirrored edges, ready to hang.",
@@ -215,7 +220,7 @@ if QUOTE:
     suggest = {}
     for orient, mats in cfg["templates"].items():
         for mat, tid in mats.items():
-            if mat not in FRAMED or mat not in MATERIALS:
+            if mat not in FRAMED | {"print_only"} or mat not in MATERIALS:
                 continue
             t = template(orient, mat)
             by_size = {}

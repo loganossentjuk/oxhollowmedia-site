@@ -10,11 +10,6 @@
     <loc>https://oxhollowmedia.com/gallery</loc>
     <lastmod>2026-07-23</lastmod>
     <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/14-sierra-river-bend.jpg</image:loc>
-      <image:title>Sierra River Bend</image:title>
-      <image:caption>Snow-capped Sierra peaks above a wide river bend</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/15-valley-in-violet.jpg</image:loc>
       <image:title>Valley in Violet</image:title>
       <image:caption>Violet light across a mountain range above a braided river</image:caption>
@@ -41,7 +36,7 @@
     </image:image>
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/20-autumn-flats.jpg</image:loc>
-      <image:title>Autumn Flats</image:title>
+      <image:title>Sierra River Bend</image:title>
       <image:caption>Autumn scrub and river flats beneath the eastern Sierra</image:caption>
     </image:image>
     <image:image>
@@ -434,16 +429,8 @@
     <loc>https://oxhollowmedia.com/prints/sierra-river-bend</loc>
     <lastmod>2026-10-07</lastmod>
     <image:image>
-      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/14-sierra-river-bend.jpg</image:loc>
-      <image:title>Sierra River Bend</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://oxhollowmedia.com/prints/autumn-flats</loc>
-    <lastmod>2026-10-07</lastmod>
-    <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/20-autumn-flats.jpg</image:loc>
-      <image:title>Autumn Flats</image:title>
+      <image:title>Sierra River Bend</image:title>
     </image:image>
   </url>
   <url>

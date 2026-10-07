@@ -58,193 +58,30 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
-    },
-    {
-      "slug": "sierra-river-bend",
-      "title": "Sierra River Bend",
-      "category": "mountains",
-      "image": "/images/portfolio/mountains/14-sierra-river-bend.jpg",
-      "webp": "/images/portfolio/mountains/14-sierra-river-bend.webp",
-      "width": 2000,
-      "height": 1125,
-      "alt": "Snow-capped Sierra peaks above a wide river bend",
-      "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
-      "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
-      "shape": "16:9",
-      "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0300.tif",
+      "source_px": 2000,
       "shopify": {
-        "acrylic": {
-          "8x12": {
-            "variant": "67640037703922",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67640037802226",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67640037900530",
-            "price": 130
-          },
-          "24x36": {
-            "variant": "67640037998834",
-            "price": 210
-          }
-        },
-        "canvas": {
-          "8x12": {
-            "variant": "67640037736690",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67640037834994",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67640037933298",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67640038031602",
-            "price": 170
-          }
-        },
-        "wood": {
-          "8x12": {
-            "variant": "67640037769458",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67640037867762",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67640037966066",
-            "price": 160
-          },
-          "24x36": {
-            "variant": "67640038064370",
-            "price": 225
-          }
-        },
-        "framed": {
-          "8x12": {
-            "price": 115,
-            "frames": {
-              "white": "67650350612722",
-              "oak": "67650350645490",
-              "black": "67650350678258"
-            }
-          },
-          "16x24": {
-            "price": 205,
-            "frames": {
-              "oak": "67650350842098",
-              "black": "67650350874866",
-              "white": "67650350809330"
-            }
-          },
-          "24x36": {
-            "price": 315,
-            "frames": {
-              "white": "67650350907634",
-              "oak": "67650350940402",
-              "black": "67650350973170"
-            }
-          },
-          "12x18": {
-            "price": 155,
-            "frames": {
-              "white": "67650350711026",
-              "oak": "67650350743794",
-              "black": "67650350776562"
-            }
-          }
-        },
         "paper": {
-          "12x18": {
-            "variant": "67650353070322",
-            "price": 50
-          },
-          "16x24": {
-            "variant": "67650353103090",
-            "price": 55
-          },
           "8x12": {
-            "variant": "67650353037554",
+            "variant": "67650331279602",
             "price": 35
-          },
-          "24x36": {
-            "variant": "67650353135858",
-            "price": 70
-          }
-        },
-        "framed_canvas": {
-          "8x12": {
-            "price": 125,
-            "frames": {
-              "oak": "67650361098482",
-              "walnut": "67650361131250",
-              "black": "67650361164018"
-            }
-          },
-          "12x18": {
-            "price": 150,
-            "frames": {
-              "oak": "67650361196786",
-              "walnut": "67650361229554",
-              "black": "67650361262322"
-            }
-          },
-          "16x24": {
-            "price": 195,
-            "frames": {
-              "oak": "67650361295090",
-              "walnut": "67650361327858",
-              "black": "67650361360626"
-            }
-          },
-          "24x36": {
-            "price": 330,
-            "frames": {
-              "oak": "67650361393394",
-              "walnut": "67650361426162",
-              "black": "67650361458930"
-            }
           }
         }
       },
       "shopify_products": {
-        "framed": "15419830665458",
-        "paper": "15419836399858",
-        "framed_canvas": "15419841249522"
-      },
-      "previews": {
-        "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8729a1e9-34ef-46d9-a62c-7f3b243d4bb9.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/deffe050-5f7f-4572-9695-9585403ecc0c.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6b2a5bc4-10a4-40d8-b233-bb582d5cba00.jpg"
-        },
-        "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d4ef6e2b-e118-4ff7-b37b-f2a27ba467df.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b2322bf8-858c-4f25-bc81-bf7270958b32.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9d219f8b-d08f-449f-a975-78317bb6de75.jpg"
-        }
+        "paper": "15419813069042"
       }
     },
     {
-      "slug": "autumn-flats",
-      "title": "Autumn Flats",
+      "slug": "sierra-river-bend",
+      "title": "Sierra River Bend",
       "category": "mountains",
       "image": "/images/portfolio/mountains/20-autumn-flats.jpg",
       "webp": "/images/portfolio/mountains/20-autumn-flats.webp",
       "width": 2000,
       "height": 1125,
       "alt": "Autumn scrub and river flats beneath the eastern Sierra",
-      "lede": "",
-      "story": "",
+      "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
+      "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
       "shape": "16:9",
       "source_px": 4096,
       "master": "PrintMasters/mountains/20F26880-52EE-4C44-9564-C29496552BC7.tif",
@@ -277,15 +114,15 @@
         },
         "paper": {
           "8x12": {
-            "variant": "67650366570738",
+            "variant": "67650334884082",
             "price": 35
           },
           "12x18": {
-            "variant": "67650366603506",
+            "variant": "67650334916850",
             "price": 50
           },
           "16x24": {
-            "variant": "67650366636274",
+            "variant": "67650334949618",
             "price": 55
           }
         },
@@ -318,7 +155,7 @@
       },
       "shopify_products": {
         "framed": "15419842527474",
-        "paper": "15419844395250",
+        "paper": "15419814379762",
         "framed_canvas": "15419849081074"
       },
       "previews": {
@@ -360,7 +197,7 @@
         },
         "paper": {
           "8x12": {
-            "variant": "67650387378418",
+            "variant": "67650335539442",
             "price": 35
           }
         },
@@ -377,7 +214,7 @@
       },
       "shopify_products": {
         "framed": "15419852816626",
-        "paper": "15419856388338",
+        "paper": "15419814707442",
         "framed_canvas": "15419859402994"
       },
       "previews": {
@@ -478,15 +315,15 @@
         },
         "paper": {
           "8x12": {
-            "variant": "67650394325234",
+            "variant": "67650335965426",
             "price": 35
           },
           "12x18": {
-            "variant": "67650394358002",
+            "variant": "67650335998194",
             "price": 50
           },
           "16x24": {
-            "variant": "67650394390770",
+            "variant": "67650336030962",
             "price": 55
           }
         },
@@ -519,7 +356,7 @@
       },
       "shopify_products": {
         "framed": "15419871887602",
-        "paper": "15419872182514",
+        "paper": "15419814805746",
         "framed_canvas": "15419872477426"
       },
       "previews": {
@@ -603,12 +440,31 @@
             "variant": "67641790103794",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650338423026",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650338455794",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650338488562",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650338521330",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417003704562",
         "wood": "15417004556530",
-        "acrylic": "15417005867250"
+        "acrylic": "15417005867250",
+        "paper": "15419815428338"
       }
     },
     {
@@ -623,7 +479,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650339111154",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419815657714"
+      }
     },
     {
       "slug": "misty-ridgeline",
@@ -693,12 +560,31 @@
             "variant": "67641801113842",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650340192498",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650340225266",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650340258034",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650340290802",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15416999346418",
         "wood": "15417007112434",
-        "acrylic": "15417009668338"
+        "acrylic": "15417009668338",
+        "paper": "15419815985394"
       }
     },
     {
@@ -769,12 +655,31 @@
             "variant": "67641819431154",
             "price": 210
           }
+        },
+        "paper": {
+          "24x36": {
+            "variant": "67650347630834",
+            "price": 70
+          },
+          "8x12": {
+            "variant": "67650347532530",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650347565298",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650347598066",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417013960946",
         "wood": "15417016615154",
-        "acrylic": "15417017368818"
+        "acrylic": "15417017368818",
+        "paper": "15419817885938"
       }
     },
     {
@@ -1135,14 +1040,6 @@
           }
         },
         "paper": {
-          "16x24": {
-            "variant": "67650398585074",
-            "price": 55
-          },
-          "24x36": {
-            "variant": "67650398617842",
-            "price": 70
-          },
           "8x12": {
             "variant": "67650398519538",
             "price": 35
@@ -1150,6 +1047,14 @@
           "12x18": {
             "variant": "67650398552306",
             "price": 50
+          },
+          "16x24": {
+            "variant": "67650398585074",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650398617842",
+            "price": 70
           }
         },
         "framed_canvas": {
@@ -3068,14 +2973,6 @@
           }
         },
         "paper": {
-          "16x24": {
-            "variant": "67650429714674",
-            "price": 55
-          },
-          "24x36": {
-            "variant": "67650429747442",
-            "price": 70
-          },
           "8x12": {
             "variant": "67650429649138",
             "price": 35
@@ -3083,6 +2980,14 @@
           "12x18": {
             "variant": "67650429681906",
             "price": 50
+          },
+          "16x24": {
+            "variant": "67650429714674",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650429747442",
+            "price": 70
           }
         },
         "framed_canvas": {
@@ -3196,13 +3101,13 @@
             "variant": "67650443411698",
             "price": 50
           },
-          "24x36": {
-            "variant": "67650443477234",
-            "price": 70
-          },
           "16x24": {
             "variant": "67650443444466",
             "price": 55
+          },
+          "24x36": {
+            "variant": "67650443477234",
+            "price": 70
           }
         },
         "framed_canvas": {

@@ -347,6 +347,7 @@ def description(p, mat):
             + "Made to order and shipped free in the US.</p>")
 
 
+failed = []
 try:
     for p, f, orient in jobs:
         url = f"{base}/{token}/{f.name}"
@@ -395,7 +396,11 @@ try:
             print(" " + prod["status"])
             if not (prod.get("externalId") and prod.get("variants")
                     and all(v.get("externalId") for v in prod["variants"])):
-                raise RuntimeError(f"{p['slug']} {mat}: {prod['status']} {prod.get('publishingErrorCode')}")
+                # One stuck product shouldn't end a long run: note it and move on.
+                # Re-running later retries it (its catalog entry is still missing).
+                failed.append(f"{p['slug']} {mat} ({prod['status']} {prod.get('publishingErrorCode') or ''})".strip())
+                print(f"  ! skipped {p['slug']} {mat}: Gelato left it '{prod['status']}'")
+                continue
             price = cfg["prices"][mat]
             if mat in FRAMED:
                 # {"12x18": {"price": 120, "frames": {"black": variant, "white": ..., "oak": ...}}}
@@ -416,4 +421,6 @@ finally:
     httpd.shutdown()
     shutil.rmtree(stage, ignore_errors=True)
 
+if failed:
+    print("\nnot published (re-run to retry): " + ", ".join(failed))
 print("\ndone. Next: prices/shipping check in Shopify, then python3 scripts/build_print_pages.py")

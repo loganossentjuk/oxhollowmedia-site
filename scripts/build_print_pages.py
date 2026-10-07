@@ -105,12 +105,17 @@ def picture(p, extra=""):
             f'width="{p["width"]}" height="{p["height"]}" decoding="async" alt="{e(p["alt"])}"{extra}></picture>')
 
 
+def ar(p):
+    """Width / height, for the salon-wall frames (see .salon-wall in styles.css)."""
+    return f"{p['width'] / p['height']:.4f}"
+
+
 def more_prints(p):
     same = [q for q in CAT["prints"] if q["category"] == p["category"]]
     i = same.index(p)
     picks = [same[(i + k) % len(same)] for k in range(1, len(same))][:3]
     cards = "".join(f'''
-        <div class="print-card">
+        <div class="print-card" style="--ar:{ar(q)}">
           <a class="print-mat" href="/prints/{q['slug']}">
             {picture(q, ' loading="lazy"')}
           </a>
@@ -275,7 +280,7 @@ def page(p):
   <section id="more-prints">
     <div class="container">
       <p class="section-label">More prints</p>
-      <div class="more-grid">{more_prints(p)}
+      <div class="more-grid salon-wall">{more_prints(p)}
       </div>
     </div>
   </section>
@@ -296,7 +301,7 @@ def shop_sections():
         if not items:
             continue
         cards = "".join(f'''
-          <div class="print-card">
+          <div class="print-card" style="--ar:{ar(p)}">
             <a class="print-mat" href="/prints/{p['slug']}">
               {picture(p, ' loading="lazy"')}
             </a>
@@ -311,7 +316,7 @@ def shop_sections():
         <h2>{e(meta['name'])}</h2>
         <p>{e(meta['intro'])}</p>
       </div>
-      <div class="print-grid">{cards}
+      <div class="print-grid salon-wall">{cards}
       </div>
     </div>
   </section>

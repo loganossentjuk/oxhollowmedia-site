@@ -1010,7 +1010,6 @@ body.prints-page .container { max-width: 1680px; }
   padding: 0.85rem;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
-.print-section:nth-of-type(even) .print-mat { background: #fff; }
 .print-mat picture {
   display: flex;
   align-items: center;
@@ -1120,7 +1119,6 @@ body.prints-page .container { max-width: 1680px; }
 
 #print-detail { padding: calc(var(--nav-h) + 3rem) 0 4rem; background: var(--bg); }
 .detail-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
-.detail-frame { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; }
 .detail-frame img { width: 100%; height: auto; display: block; }
 
 .detail-title { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 0 0 0.6rem; }
@@ -1191,7 +1189,7 @@ body.prints-page .container { max-width: 1680px; }
 }
 .hero-slide.is-active { opacity: 1; transform: scale(1); }
 .hero-slide-1 { background-image: image-set(url('../images/hero/dawn-patrol.webp') type('image/webp'), url('../images/hero/dawn-patrol.jpg') type('image/jpeg')); }
-.hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/14-sierra-river-bend.webp') type('image/webp'), url('../images/portfolio/mountains/14-sierra-river-bend.jpg') type('image/jpeg')); }
+.hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/20-autumn-flats.webp') type('image/webp'), url('../images/portfolio/mountains/20-autumn-flats.jpg') type('image/jpeg')); }
 .hero-slide-3 { background-image: image-set(url('../images/portfolio/ocean/04-blue-footed-booby.webp') type('image/webp'), url('../images/portfolio/ocean/04-blue-footed-booby.jpg') type('image/jpeg')); }
 
 /* Once the slideshow is live the base layer would double-expose through the
@@ -1522,7 +1520,9 @@ html.lb-open { overflow: hidden; }
   max-width: calc(1.5 * var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
   margin: 0; overflow: visible; border-radius: 0; background: none;
 }
-.salon .masonry-item picture {
+.salon .masonry-item picture,
+.salon-wall .print-mat,
+.detail-frame {
   display: block;
   padding: var(--mat);
   background: #FBF9F4;                                   /* the mat */
@@ -1533,14 +1533,18 @@ html.lb-open { overflow: hidden; }
     0 16px 30px -14px rgba(35,33,32,0.45);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.salon .masonry-item img {
+.salon .masonry-item img,
+.salon-wall .print-mat img,
+.detail-frame img {
   width: 100%; height: auto; display: block; transform: none;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
   outline: 1px solid rgba(35,33,32,0.12);               /* bevel where print meets mat */
 }
 .salon .masonry-item:hover img { transform: none; }
 .salon .masonry-item:hover picture,
-.salon .masonry-item:focus-visible picture {
+.salon .masonry-item:focus-visible picture,
+.salon-wall .print-card:hover .print-mat,
+.salon-wall .print-mat:focus-visible {
   transform: translateY(-4px);
   box-shadow:
     inset 0 0 0 1px rgba(0,0,0,0.05),
@@ -1560,4 +1564,30 @@ html.lb-open { overflow: hidden; }
   .masonry.salon.size-s { --row-h: 105px; --mat: 6px; --frame: 3px; }
   .masonry.salon.size-l { --row-h: 240px; --mat: 10px; --frame: 5px; }
   .salon .frame-title { font-size: 0.85rem; }
+}
+
+/* The print shop and "More prints" hang the same framed salon wall: cards
+   carry --ar inline (build_print_pages.py), the frame/mat come from above. */
+.print-grid.salon-wall, .more-grid.salon-wall {
+  --row-h: 190px; --frame: 7px; --mat: 16px;
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+  gap: 2.6rem 1.7rem;
+}
+.more-grid.salon-wall { --row-h: 180px; }
+.salon-wall::after { content: ""; flex-grow: 999; }
+.salon-wall .print-card {
+  --ar: 1.5;
+  flex: var(--ar) 1 calc(var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
+  max-width: calc(1.5 * var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
+  text-align: center;
+}
+.salon-wall .print-mat { border-radius: 0; }
+.salon-wall .print-mat picture { display: block; aspect-ratio: auto; }
+.salon-wall .print-mat img { max-width: none; max-height: none; object-fit: fill; }
+.salon-wall .print-card h3 { margin-top: 0.95rem; }
+.detail-frame { --frame: 9px; --mat: 22px; border-radius: 0; }
+@media (max-width: 1000px) { .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 160px; } }
+@media (max-width: 700px) {
+  .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 120px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
+  .detail-frame { --frame: 5px; --mat: 12px; }
 }

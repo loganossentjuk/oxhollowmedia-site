@@ -1189,7 +1189,7 @@ body.prints-page .container { max-width: 1680px; }
 }
 .hero-slide.is-active { opacity: 1; transform: scale(1); }
 .hero-slide-1 { background-image: image-set(url('../images/hero/dawn-patrol.webp') type('image/webp'), url('../images/hero/dawn-patrol.jpg') type('image/jpeg')); }
-.hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/14-sierra-river-bend.webp') type('image/webp'), url('../images/portfolio/mountains/14-sierra-river-bend.jpg') type('image/jpeg')); }
+.hero-slide-2 { background-image: image-set(url('../images/portfolio/mountains/20-autumn-flats.webp') type('image/webp'), url('../images/portfolio/mountains/20-autumn-flats.jpg') type('image/jpeg')); }
 .hero-slide-3 { background-image: image-set(url('../images/portfolio/ocean/04-blue-footed-booby.webp') type('image/webp'), url('../images/portfolio/ocean/04-blue-footed-booby.jpg') type('image/jpeg')); }
 
 /* Once the slideshow is live the base layer would double-expose through the

@@ -61,7 +61,7 @@ LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Ca
 BLURB = {
     "framed": "Archival matte fine-art paper in a wooden frame (black, white or natural oak) "
               "behind shatterproof plexiglass, ready to hang.",
-    "framed_canvas": "Gallery-wrapped canvas set in a floating wooden frame (black, white or natural oak), "
+    "framed_canvas": "Gallery-wrapped canvas set in a floating wooden frame (black, natural oak or dark walnut), "
                      "ready to hang.",
     "canvas": "Gallery-wrapped canvas with mirrored edges, ready to hang.",
     "wood": "Printed on FSC-certified birch, so the natural grain shows through the lightest areas.",
@@ -116,7 +116,9 @@ def orientation(path):
 def frame_key(v):
     """black / white / oak from a template variant's options or title; None for unframed."""
     text = " ".join([v.get("title", "")] + [str(o.get("value", "")) for o in v.get("variantOptions") or []]).lower()
-    for key, pat in (("black", r"\bblack\b"), ("white", r"\bwhite\b"), ("oak", r"\b(natural|oak|wood)\b")):
+    # "Dark wood" before plain "wood": walnut vs oak.
+    for key, pat in (("black", r"\bblack\b"), ("white", r"\bwhite\b"), ("walnut", r"\b(dark\s*wood|walnut)\b"),
+                     ("oak", r"\b(natural|oak|wood)\b")):
         if re.search(pat, text):
             return key
     return None
@@ -210,9 +212,17 @@ def size_key(title):
     return "x".join(map(str, sorted(map(int, m.groups())))) if m else None
 
 
-def sizes_for(orient):
-    # Square photos use their own sizes (gelato.square_sizes); the rest use the paper sizes.
-    return cfg.get("square_sizes", []) if orient == "square" else [z["key"] for z in cat["sizes"]]
+def sizes_for(orient, mat=None):
+    # Square photos use their own sizes (gelato.square_sizes, or a material's own
+    # in gelato.square_sizes_by_material); the rest use the paper sizes.
+    if orient == "square":
+        return cfg.get("square_sizes_by_material", {}).get(mat) or cfg.get("square_sizes", [])
+    return [z["key"] for z in cat["sizes"]]
+
+
+def frames_for(mat):
+    """Frame colours a framed material is sold in (gelato.frame_choices), else all of gelato.frames."""
+    return cfg.get("frame_choices", {}).get(mat) or list(cfg["frames"])
 
 
 if QUOTE:
@@ -230,7 +240,7 @@ if QUOTE:
             by_size = {}
             for v in t["variants"]:
                 k = size_key(v["title"])
-                if k in sizes_for(orient):
+                if k in sizes_for(orient, mat) and (mat not in FRAMED or frame_key(v) in frames_for(mat)):
                     by_size.setdefault(k, []).append(v)
             for k, vs in sorted(by_size.items(), key=lambda kv: int(kv[0].split("x")[0])):
                 costs = []
@@ -268,7 +278,7 @@ missing = sorted({f"OHM {LABEL[m]} - {o.title()}" for _, _, o in jobs for m in M
                   if not cfg["templates"].get(o, {}).get(m)})
 if missing:
     sys.exit("Gelato templates not found: " + ", ".join(missing))
-unpriced = sorted({f"{m} {k}" for p, _, o in jobs for m in MATERIALS for k in sizes_for(o)
+unpriced = sorted({f"{m} {k}" for p, _, o in jobs for m in MATERIALS for k in sizes_for(o, m)
                    if max(map(int, k.split("x"))) * PPI <= p["source_px"]
                    and k not in cfg["prices"].get(m, {})})
 if unpriced:
@@ -340,14 +350,15 @@ try:
     for p, f, orient in jobs:
         url = f"{base}/{token}/{f.name}"
         wait_reachable(url)
-        allowed = [k for k in sizes_for(orient) if max(map(int, k.split("x"))) * PPI <= p["source_px"]]
+        fits = lambda k: max(map(int, k.split("x"))) * PPI <= p["source_px"]
         p.setdefault("shopify", {})
         for mat in MATERIALS:
             if mat in p["shopify"]:
                 continue
             t = template(orient, mat)
+            allowed = [k for k in sizes_for(orient, mat) if fits(k)]
             variants = [v for v in t["variants"] if size_key(v["title"]) in allowed
-                        and (mat not in FRAMED or frame_key(v) in cfg["frames"])]
+                        and (mat not in FRAMED or frame_key(v) in frames_for(mat))]
             body = {
                 "templateId": t["id"],
                 "title": f"{p['title']} - {LABEL[mat]}",

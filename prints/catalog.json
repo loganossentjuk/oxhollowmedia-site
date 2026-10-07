@@ -2436,7 +2436,26 @@
     "frames": {
       "black": "Black",
       "white": "White",
-      "oak": "Oak"
+      "oak": "Oak",
+      "walnut": "Walnut"
+    },
+    "frame_choices": {
+      "framed": [
+        "black",
+        "white",
+        "oak"
+      ],
+      "framed_canvas": [
+        "black",
+        "oak",
+        "walnut"
+      ]
+    },
+    "square_sizes_by_material": {
+      "framed_canvas": [
+        "12x12",
+        "24x24"
+      ]
     }
   }
 }

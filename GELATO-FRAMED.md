@@ -5,7 +5,7 @@ Every print is sold through Shopify, with Gelato printing and shipping:
 | Tab on the print page | Gelato product | Choices |
 |---|---|---|
 | Framed print | Framed poster, archival matte paper, **no mat** | Black · White · Oak · **No frame** (the Paper listing) |
-| Framed canvas | Canvas in a floating frame | Black · White · Oak |
+| Framed canvas | Canvas in a floating frame | Black · Oak · Walnut (Gelato has no white; "Dark wood" = Walnut). Square: 12×12 and 24×24 only |
 | Wood | (already live) | |
 | Acrylic | (already live) | |
 
@@ -28,7 +28,7 @@ In the Gelato dashboard, go to **Templates → Create template**. For each one:
    - *Framed Canvas*: Framed canvas (canvas in a floating frame).
    - *Paper*: Posters, **archival matte paper** (the same paper the Stripe prints used). Already in `main` as the `paper` material.
 2. **Orientation:** landscape, portrait or square.
-3. **Frame colours** (both framed products): **Black, White, Natural wood**. The site shows Natural wood as "Oak".
+3. **Frame colours:** Framed Print **Black, White, Wood** (shown as Oak); Framed Canvas **Black, Wood, Dark wood** (Oak, Walnut).
 4. **Sizes in inches:** tick **8×12, 12×18, 16×24, 24×36**, or **12×12, 16×16, 20×20** for square. Untick any Gelato doesn't offer for that product. Sizes must be in inches: cm-only sizes are ignored.
 5. Upload any photo as the design (it gets replaced per print) and save with the name:
 
@@ -39,6 +39,9 @@ OHM Framed Print - Square        OHM Framed Canvas - Square        OHM Paper - S
 ```
 
 6. Copy each template's ID (Templates page → ⋯ → **Copy Template ID**) and send all 9 IDs over.
+
+Gelato's 8×12 for framed and paper is A4 (21×29.7 cm, about 8.3×11.7″), so 2:3
+photos are trimmed slightly at that size.
 
 ## 2. Price them (one command, then you approve)
 

@@ -1476,6 +1476,7 @@ html.lb-open { overflow: hidden; }
 .frame-black { background: #1b1b1b; }
 .frame-white { background: #f7f5f0; }
 .frame-oak { background: linear-gradient(135deg, #c9a273, #a87f52); }
+.frame-walnut { background: linear-gradient(135deg, #5a3d2b, #3b2619); }
 .frame-panel { display: none; flex-basis: 100%; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem; }
 .frame-radio:nth-of-type(1):checked ~ .frame-panel:nth-of-type(1),
 .frame-radio:nth-of-type(2):checked ~ .frame-panel:nth-of-type(2),

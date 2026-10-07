@@ -58,7 +58,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650331279602",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419813069042"
+      }
     },
     {
       "slug": "sierra-river-bend",
@@ -128,7 +139,28 @@
             "variant": "67640038064370",
             "price": 225
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650332524786",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650332557554",
+            "price": 50
+          },
+          "24x36": {
+            "variant": "67650332623090",
+            "price": 70
+          },
+          "16x24": {
+            "variant": "67650332590322",
+            "price": 55
+          }
         }
+      },
+      "shopify_products": {
+        "paper": "15419813724402"
       }
     },
     {
@@ -144,7 +176,26 @@
       "story": "",
       "shape": "16:9",
       "source_px": 4096,
-      "master": "PrintMasters/mountains/20F26880-52EE-4C44-9564-C29496552BC7.tif"
+      "master": "PrintMasters/mountains/20F26880-52EE-4C44-9564-C29496552BC7.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650334884082",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650334916850",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650334949618",
+            "price": 55
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419814379762"
+      }
     },
     {
       "slug": "fitz-roy-alpenglow",
@@ -158,7 +209,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650335539442",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419814707442"
+      }
     },
     {
       "slug": "cloudbreak-ridge",
@@ -216,7 +278,24 @@
             "variant": "67640050516210",
             "price": 160
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650335965426",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650335998194",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650336030962",
+            "price": 55
+          }
         }
+      },
+      "shopify_products": {
+        "paper": "15419814805746"
       }
     },
     {
@@ -287,12 +366,31 @@
             "variant": "67641790103794",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650338423026",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650338455794",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650338488562",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650338521330",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417003704562",
         "wood": "15417004556530",
-        "acrylic": "15417005867250"
+        "acrylic": "15417005867250",
+        "paper": "15419815428338"
       }
     },
     {
@@ -307,7 +405,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650339111154",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419815657714"
+      }
     },
     {
       "slug": "misty-ridgeline",
@@ -377,12 +486,31 @@
             "variant": "67641801113842",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650340192498",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650340225266",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650340258034",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650340290802",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15416999346418",
         "wood": "15417007112434",
-        "acrylic": "15417009668338"
+        "acrylic": "15417009668338",
+        "paper": "15419815985394"
       }
     },
     {
@@ -453,12 +581,31 @@
             "variant": "67641819431154",
             "price": 210
           }
+        },
+        "paper": {
+          "24x36": {
+            "variant": "67650347630834",
+            "price": 70
+          },
+          "8x12": {
+            "variant": "67650347532530",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650347565298",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650347598066",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417013960946",
         "wood": "15417016615154",
-        "acrylic": "15417017368818"
+        "acrylic": "15417017368818",
+        "paper": "15419817885938"
       }
     },
     {
@@ -782,7 +929,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 12000,
-      "master": "PrintMasters/ocean/DSC07020-2.jpg"
+      "master": "PrintMasters/ocean/DSC07020-2.jpg",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650398519538",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650398552306",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650398585074",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650398617842",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419873853682"
+      }
     },
     {
       "slug": "shorebreak-boulders",
@@ -1380,7 +1550,18 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650414412018",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419878179058"
+      }
     },
     {
       "slug": "sea-lion-pup",
@@ -1562,7 +1743,18 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650416771314",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419878998258"
+      }
     },
     {
       "slug": "amber-glass",
@@ -2068,12 +2260,27 @@
             "variant": "67646795350258",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650423423218",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650423455986",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650423488754",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418512212210",
         "wood": "15418512572658",
-        "acrylic": "15418515423474"
+        "acrylic": "15418515423474",
+        "paper": "15419880636658"
       }
     },
     {
@@ -2424,7 +2631,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0292.tif"
+      "master": "PrintMasters/mountains/_DSC0292.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650429649138",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650429681906",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650429714674",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650429747442",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419883389170"
+      }
     },
     {
       "slug": "snowline",
@@ -2439,7 +2669,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0243.tif"
+      "master": "PrintMasters/mountains/_DSC0243.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650443378930",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650443411698",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650443444466",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650443477234",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419885355250"
+      }
     },
     {
       "slug": "the-long-valley",
@@ -2718,17 +2971,20 @@
       "landscape": {
         "canvas": "d58b84d6-5f9a-4f73-a5be-42c4b6d1b61d",
         "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
-        "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a"
+        "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a",
+        "paper": "0978d796-7358-459f-9282-5e5f778921a9"
       },
       "portrait": {
         "acrylic": "aaa39961-43be-4d28-9056-51e8c5acc1ca",
         "wood": "24685965-3d02-48ab-b374-428e48f058d0",
-        "canvas": "56b718b2-68d7-4a4f-adf5-9901d36ba503"
+        "canvas": "56b718b2-68d7-4a4f-adf5-9901d36ba503",
+        "paper": "0f610b54-aab5-4177-b018-815f5b5b802f"
       },
       "square": {
         "acrylic": "1e56fc7e-1d8f-41e2-83e4-b4d952ea2965",
         "wood": "df4e7e1f-0854-4a90-ac50-f53f27c2d218",
-        "canvas": "5c0e98ad-2b35-469a-bd73-eb8b1e0fd44c"
+        "canvas": "5c0e98ad-2b35-469a-bd73-eb8b1e0fd44c",
+        "paper": "b4c65a24-351a-43cd-8892-450922a08657"
       }
     },
     "prices": {
@@ -2773,11 +3029,6 @@
       "12x12",
       "16x16",
       "20x20"
-    ],
-    "template_candidates": [
-      "0978d796-7358-459f-9282-5e5f778921a9",
-      "4d91d7e5-98db-4ec2-81fa-869594e327ae",
-      "b4c65a24-351a-43cd-8892-450922a08657"
     ]
   }
 }

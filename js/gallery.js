@@ -17,8 +17,9 @@ if (filterBar && grid) {
     items.forEach((item) => {
       // Event coverage is client work, not part of the print collection, so it
       // stays out of the default view and only appears under its own filter.
+      // Any frame marked data-filter-only does the same (e.g. Window Portrait).
       const match = cat === 'all'
-        ? item.dataset.cat !== 'events'
+        ? item.dataset.cat !== 'events' && !('filterOnly' in item.dataset)
         : item.dataset.cat === cat
           && (cat !== 'events' || sub === 'all' || item.dataset.sub === sub);
       item.classList.toggle('is-hidden', !match);
@@ -66,6 +67,14 @@ if (filterBar && grid) {
   if (deepLinked) selectChip(deepLinked);
   else applyFilter('all');   // run once on load so events start hidden
 }
+
+/* ── Salon wall: each frame's width follows its photo's shape (see .salon in
+   styles.css). Uses the width/height attributes, so it needs no image load. */
+document.querySelectorAll('#gallery-grid.salon .masonry-item').forEach((item) => {
+  const img = item.querySelector('img');
+  const w = +img.getAttribute('width'), h = +img.getAttribute('height');
+  if (w && h) item.style.setProperty('--ar', (w / h).toFixed(4));
+});
 
 /* ── Visible frame titles (buyer feedback: titles were hover-only) ── */
 document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
@@ -141,9 +150,11 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
 
   // Prints in the shop get a link to their page (/prints/<slug>) and the
   // shop's sizes; anything else falls back to SIZES above.
-  // Framed prints (Shopify/Gelato) list their framed sizes and send the buyer to
-  // the print page to pick a frame; framed.add() marks them for the spec line.
-  let shopSizes = new Map();
+  // Paper sold through Shopify (Gelato prints and ships it) goes straight to
+  // Shopify checkout; otherwise Stripe; otherwise the enquiry form. Framed
+  // prints list their framed sizes and send the buyer to the print page to
+  // pick a frame.
+  let shopSizes = new Map(), shopPaper = new Map(), store = '';
   const framed = new Set();
   fetch('/prints/catalog.json', { cache: 'no-cache' })
     .then((r) => (r.ok ? r.json() : { prints: [] }))
@@ -158,6 +169,9 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
           .sort((a, b) => parseInt(a[0], 10) - parseInt(b[0], 10))
           .map(([key, v]) => ({ key, label: `${key.replace('x', '×')}″`, price: v.price, href: `/prints/${p.slug}` }))];
       }));
+      shopPaper = new Map((c.prints || []).filter((p) => p.shopify && p.shopify.paper)
+        .map((p) => [p.slug, p.shopify.paper]));
+      store = c.shopify_store || '';
     })
     .catch(() => {});
 
@@ -219,7 +233,13 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
       $('.lb-spec').textContent = framed.has(slug)
         ? 'Framed in black, white or oak · made to order · free US shipping'
         : 'Archival matte paper · made to order · free US shipping';
-      $('.lb-sizes').innerHTML = (shopSizes.get(slug) || SIZES).map((s) => {
+      const paper = !framed.has(slug) && store && shopPaper.get(slug);
+      $('.lb-sizes').innerHTML = paper
+        ? Object.entries(paper)
+            .sort((a, b) => parseInt(a[0], 10) - parseInt(b[0], 10))
+            .map(([key, v]) => `<a class="lb-size" href="https://${store}/cart/${v.variant}:1" rel="nofollow" data-size="${key}" data-product="${slug}" data-checkout="shopify">`
+                             + `<span>${key.replace('x', '×')}″</span><strong>$${v.price}</strong></a>`).join('')
+        : (shopSizes.get(slug) || SIZES).map((s) => {
         const url = s.href ? '' : links[`${slug}|${s.key}`];
         const href = s.href || url || `/contact?print=${encodeURIComponent(`${title} (${s.label})`)}`;
         return `<a class="lb-size" href="${href}" data-size="${s.key}" data-product="${slug}"${url ? ' data-checkout="stripe"' : ''}>`

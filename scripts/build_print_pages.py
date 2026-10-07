@@ -125,14 +125,14 @@ def preview_attr(url):
 
 def frame_panel(p, m, by_key):
     """Frame colour swatches (CSS-only radios), each with its own row of size buttons.
-    The framed print adds "No frame" (the Print Only listing) as a last choice. A
+    The framed print adds "No frame" (the paper listing) as a last choice. A
     swatch with a Gelato mockup in the catalog ("previews") carries it in
     data-preview, and js/print-buy.js swaps the page photo to it when picked."""
     store, sid = CAT["shopify_store"], f'{p["slug"]}-{m}'
     shown = (p.get("previews") or {}).get(m, {})
     choices = [(c, FRAMES[c], {k: (v["frames"][c], v["price"]) for k, v in by_key.items() if c in v["frames"]},
                 shown.get(c)) for c in FRAMES if any(c in v["frames"] for v in by_key.values())]
-    loose = (p.get("shopify") or {}).get("print_only")
+    loose = (p.get("shopify") or {}).get("paper")
     if m == "framed" and loose:
         choices.append(("none", "No frame", {k: (v["variant"], v["price"]) for k, v in loose.items()}, p["image"]))
     radios = "".join(
@@ -158,14 +158,13 @@ def materials(p):
     """Framed print / framed canvas / wood / acrylic picker for prints sold through
     Shopify (Gelato fulfils). CSS-only tabs: one radio per material; each size links
     to Shopify checkout. Framed materials add a frame-colour picker inside their
-    panel. Plain canvas is hidden once framed canvas replaces it."""
-    mats = p.get("shopify")
+    panel. Plain canvas is hidden once framed canvas replaces it. Paper is not a
+    tab: on a framed print it is the "No frame" swatch, otherwise the buy list."""
+    mats = {m: v for m, v in (p.get("shopify") or {}).items() if m != "paper"}
     if not mats:
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
-    # Print Only shows as the framed print's "No frame" swatch, not as its own tab.
-    order = [m for m in names if m in mats and m != "print_only"
-             and not (m == "canvas" and "framed_canvas" in mats)]
+    order = [m for m in names if m in mats and not (m == "canvas" and "framed_canvas" in mats)]
     tabs = "".join(
         f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
         f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
@@ -197,7 +196,14 @@ def materials(p):
 def page(p):
     t, url = e(p["title"]), f"{SITE}/prints/{p['slug']}"
     desc = f"{p['title']}, {'a framed' if framed(p) else 'an archival'} fine-art print by Logan Ossentjuk. {lede(p)} Made to order, free US shipping."
-    buttons = "".join(f'''
+    paper = (p.get("shopify") or {}).get("paper")
+    if paper:   # Gelato prints and ships these: straight to Shopify checkout
+        buttons = "".join(f'''
+            <a class="buy-btn" href="https://{CAT['shopify_store']}/cart/{v['variant']}:1" rel="nofollow">
+              <span class="size">Buy {key.replace("x", "×")}″</span><span class="price">${v['price']}</span>
+            </a>''' for key, v in sorted(paper.items(), key=lambda kv: int(kv[0].split("x")[0])))
+    else:       # Stripe (filled in by print-buy.js), else the enquiry form
+        buttons = "".join(f'''
             <a class="buy-btn is-pending" data-slug="{p['slug']}" data-size="{s['key']}" href="/contact?print={quote(p['title'] + ' (' + s['label'].rstrip('″') + ')')}">
               <span class="size">Buy {s['label']}</span><span class="price">${s['price']}</span>
             </a>''' for s in sizes(p))

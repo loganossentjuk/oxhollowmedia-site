@@ -4,7 +4,7 @@ Every print is sold through Shopify, with Gelato printing and shipping:
 
 | Tab on the print page | Gelato product | Choices |
 |---|---|---|
-| Framed print | Framed poster, archival matte paper, **no mat** | Black · White · Oak · **No frame** (Print Only) |
+| Framed print | Framed poster, archival matte paper, **no mat** | Black · White · Oak · **No frame** (the Paper listing) |
 | Framed canvas | Canvas in a floating frame | Black · White · Oak |
 | Wood | (already live) | |
 | Acrylic | (already live) | |
@@ -12,7 +12,8 @@ Every print is sold through Shopify, with Gelato printing and shipping:
 Plain canvas and the Stripe paper links are retired: archived and turned off,
 not deleted, and only for a print whose framed listings are live.
 
-Sizes stay as they are: 8×12, 12×18, 16×24, 24×36 (squares 12×12, 16×16,
+Framed paper, like unframed paper, prints the whole photo, never cropped
+(white border where the photo's shape differs). Sizes stay as they are: 8×12, 12×18, 16×24, 24×36 (squares 12×12, 16×16,
 20×20), capped by each file's resolution (long side × 150 ppi).
 
 ## 1. Make the templates in Gelato (you, about 20 minutes)
@@ -25,16 +26,16 @@ In the Gelato dashboard, go to **Templates → Create template**. For each one:
 1. **Product:**
    - *Framed Print*: Framed posters, **wooden frame**, **archival (or premium) matte paper**, **no passe-partout/mat**.
    - *Framed Canvas*: Framed canvas (canvas in a floating frame).
-   - *Print Only*: Posters, **archival matte paper** (the same paper the Stripe prints used).
+   - *Paper*: Posters, **archival matte paper** (the same paper the Stripe prints used). Already in `main` as the `paper` material.
 2. **Orientation:** landscape, portrait or square.
 3. **Frame colours** (both framed products): **Black, White, Natural wood**. The site shows Natural wood as "Oak".
 4. **Sizes in inches:** tick **8×12, 12×18, 16×24, 24×36**, or **12×12, 16×16, 20×20** for square. Untick any Gelato doesn't offer for that product. Sizes must be in inches: cm-only sizes are ignored.
 5. Upload any photo as the design (it gets replaced per print) and save with the name:
 
 ```
-OHM Framed Print - Landscape     OHM Framed Canvas - Landscape     OHM Print Only - Landscape
-OHM Framed Print - Portrait      OHM Framed Canvas - Portrait      OHM Print Only - Portrait
-OHM Framed Print - Square        OHM Framed Canvas - Square        OHM Print Only - Square
+OHM Framed Print - Landscape     OHM Framed Canvas - Landscape     OHM Paper - Landscape
+OHM Framed Print - Portrait      OHM Framed Canvas - Portrait      OHM Paper - Portrait
+OHM Framed Print - Square        OHM Framed Canvas - Square        OHM Paper - Square
 ```
 
 6. Copy each template's ID (Templates page → ⋯ → **Copy Template ID**) and send all 9 IDs over.
@@ -56,7 +57,7 @@ the prices and they go into `gelato.prices` in the catalog.
 
 ```bash
 python3 scripts/gelato_publish.py --dry-run     # check the list first
-python3 scripts/gelato_publish.py               # framed print, print only, framed canvas
+python3 scripts/gelato_publish.py               # framed print, paper, framed canvas
 ```
 
 Wood and acrylic that already exist are skipped. Gelato takes 5–60 minutes per
@@ -66,23 +67,25 @@ record yet, "best" means gallery-wall order (top of the wall first). Run
 
 ```bash
 # Batch 1
-python3 scripts/gelato_publish.py --only dawn-patrol,sierra-river-bend,autumn-flats,blue-footed-booby,petunia-blush,humpback-breach,cloudbreak-ridge,fitz-roy-alpenglow,hydrangea-deep-blue,fog-forest
+python3 scripts/gelato_publish.py --only dawn-patrol,sierra-river-bend,autumn-flats,blue-footed-booby,petunia-blush,valley-in-violet,humpback-breach,cloudbreak-ridge,fitz-roy-alpenglow,snowline
 # Batch 2
-python3 scripts/gelato_publish.py --only geranium-white,blue-hour-ridge,sea-lion-pup,geranium-coral,aspen-and-cobalt,golden-gate-fog,highland-river,petunia-crimson,petunia-veined,shorebreak-boulders
+python3 scripts/gelato_publish.py --only hydrangea-deep-blue,the-long-valley,range-and-scrub,fog-forest,geranium-white,blue-hour-ridge,sea-lion-pup,fog-on-the-flats,golden-brush,geranium-coral
 # Batch 3
-python3 scripts/gelato_publish.py --only turquoise-shallows,the-wax-ritual,the-flower-market,driftwood-shore,marsh-at-dusk,sun-on-the-water,amber-glass,misty-ridgeline
+python3 scripts/gelato_publish.py --only aspen-and-cobalt,golden-gate-fog,sunflare-oak,highland-river,autumn-against-blue,petunia-crimson,still-pond,winter-bark,petunia-veined,tidepool-ledge
 # Batch 4
-python3 scripts/gelato_publish.py --only cocktails,paddler-at-the-gate,wall-of-names,art-will-save-you,reef-passage,glass-spire,rainier-afterglow,dusk-waterfowl,mural-sundown,harbour-pastel
+python3 scripts/gelato_publish.py --only shorebreak-boulders,turquoise-shallows,research-vessel-dawn,the-wax-ritual,the-flower-market,driftwood-shore,banyan-light,marsh-at-dusk,sun-on-the-water,amber-glass
 # Batch 5
-python3 scripts/gelato_publish.py --only marine-iguana,turquoise-harbor,dusk-branches,tidepool-lava
+python3 scripts/gelato_publish.py --only misty-ridgeline,peace-skyline,cocktails,conifer-canopy,paddler-at-the-gate,wall-of-names,jungle-lily,city-thunderheads,art-will-save-you,reef-passage
+# Batch 6
+python3 scripts/gelato_publish.py --only glass-spire,rainier-afterglow,dusk-waterfowl,mural-sundown,palm-canopy,harbour-pastel,marine-iguana,forest-fungus,turquoise-harbor,dusk-branches
+# Batch 7
+python3 scripts/gelato_publish.py --only tidepool-lava,ember-study
 # Held until their print files are re-made (their canvas/wood/acrylic are hidden for the same reason)
 python3 scripts/gelato_publish.py --only verdigris,copper-and-teal
 ```
 
-Prints whose file is 2000 px
-(Blue-footed Booby, Humpback Breach, Fitz Roy, Blue Hour Ridge, Sea Lion Pup,
-Highland River, Paddler, Reef Passage, Rainier) only reach 8×12, so they get a
-framed 8×12 and nothing larger.
+Prints whose file is only 2000 px (18 of them, e.g. Blue-footed Booby, Humpback
+Breach, Fitz Roy) only reach 8×12, so they get a framed 8×12 and nothing larger.
 
 ## 4. After each batch (Claude can do this with the Shopify connector)
 

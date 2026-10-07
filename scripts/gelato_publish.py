@@ -12,9 +12,9 @@ get the material picker.
     python3 scripts/gelato_publish.py --templates ID,ID,...    # find new templates by name
     python3 scripts/gelato_publish.py --quote                  # Gelato cost + suggested price per size
 
-Print Only is the unframed fine-art paper print (template "OHM Print Only -
-Landscape" ...); the website shows it as the "No frame" choice beside the frame
-colours, and it replaces the Stripe paper links.
+Paper (template "OHM Paper - Landscape" ...) is the unframed fine-art print;
+the website shows it as the "No frame" choice beside the frame colours, and it
+replaces the Stripe paper links.
 
 Framed products: one Gelato template per orientation ("OHM Framed Print -
 Landscape", "OHM Framed Canvas - Portrait" ...) holding every size in black,
@@ -53,21 +53,24 @@ CAT_PATH = ROOT / "prints" / "catalog.json"
 READY = Path.home() / "Dropbox/Career/OxHollow/PrintMasters/gelato-ready"
 API = "https://ecommerce.gelatoapis.com/v1"
 PPI = 150          # same rule as the paper sizes: long side x 150 must fit the file
-ALL_MATERIALS = ["framed", "print_only", "framed_canvas", "canvas", "wood", "acrylic"]
-DEFAULT = ["framed", "print_only", "framed_canvas", "wood", "acrylic"]
+ALL_MATERIALS = ["framed", "paper", "framed_canvas", "canvas", "wood", "acrylic"]
+DEFAULT = ["framed", "paper", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
-LABEL = {"framed": "Framed Print", "print_only": "Print Only", "framed_canvas": "Framed Canvas",
+LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {
     "framed": "Archival matte fine-art paper in a wooden frame (black, white or natural oak) "
               "behind shatterproof plexiglass, ready to hang.",
-    "print_only": "Archival matte fine-art paper, unframed, shipped flat or rolled in a tube.",
     "framed_canvas": "Gallery-wrapped canvas set in a floating wooden frame (black, white or natural oak), "
                      "ready to hang.",
     "canvas": "Gallery-wrapped canvas with mirrored edges, ready to hang.",
     "wood": "Printed on FSC-certified birch, so the natural grain shows through the lightest areas.",
     "acrylic": "Glossy acrylic with a glass-like finish and vivid color.",
+    "paper": "Archival matte fine-art paper.",
 }
+# Paper, framed or not, keeps the whole photo (white border where its shape
+# differs from the paper's); canvas, wood and acrylic fill the panel edge to edge.
+FIT = {"paper": "meet", "framed": "meet"}
 
 
 
@@ -221,7 +224,7 @@ if QUOTE:
     suggest = {}
     for orient, mats in cfg["templates"].items():
         for mat, tid in mats.items():
-            if mat not in FRAMED | {"print_only"} or mat not in MATERIALS:
+            if mat not in FRAMED | {"paper"} or mat not in MATERIALS:
                 continue
             t = template(orient, mat)
             by_size = {}
@@ -327,8 +330,10 @@ def wait_reachable(url):
 def description(p, mat):
     lede = p.get("lede") or p["alt"].rstrip(".") + "."
     return (f"<p>{html.escape(lede)} Photographed by Logan Ossentjuk of Ox Hollow Media.</p>"
-            f"<p>{BLURB[mat]} Printed edge to edge, so the image is trimmed slightly to fill each size. "
-            f"Made to order and shipped free in the US.</p>")
+            f"<p>{BLURB[mat]} "
+            + ("Printed in full, never cropped. " if FIT.get(mat) == "meet"
+               else "Printed edge to edge, so the image is trimmed slightly to fill each size. ")
+            + "Made to order and shipped free in the US.</p>")
 
 
 try:
@@ -353,7 +358,7 @@ try:
                 "vendor": "Ox Hollow Media",
                 "productType": f"{LABEL[mat]} Print",
                 "variants": [{"templateVariantId": v["id"],
-                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": "slice"}
+                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": FIT.get(mat, "slice")}
                                                     for ph in v["imagePlaceholders"]]} for v in variants],
             }
             prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)

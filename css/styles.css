@@ -394,13 +394,14 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
 .masonry.frames-row {
   column-count: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--frames, 3), 1fr);
   gap: 1.25rem;
 }
 .frames-row .masonry-item { margin: 0; aspect-ratio: 3 / 4; }
 .frames-row .masonry-item picture,
 .frames-row .masonry-item img { width: 100%; height: 100%; object-fit: cover; }
-.hero-frames { margin-top: 2rem; }
+.hero-frames { margin-top: 2rem; --frames: 4; }
+@media (max-width: 960px) { .hero-frames { --frames: 2; } }
 .hero-meta {
   display: flex;
   align-items: flex-end;
@@ -1494,3 +1495,68 @@ html.lb-open { overflow: hidden; }
 .hero-cap.is-active { opacity: 1; pointer-events: auto; }
 .hero-cap:hover span, .hero-cap:focus-visible span { color: var(--paper); }
 @media (max-width: 700px) { .hero-caps { min-width: 0; margin-left: 0.3rem; } .hero-cap { font-size: 0.9rem; } }
+
+/* ── Gallery as a salon wall ────────────────────────────────────────────────
+   Framed works hung in rows of equal height, each at its true shape. Every
+   item's flex-basis is its aspect ratio (--ar, set by gallery.js) times the
+   row height, plus the fixed frame and mat; flex-grow is also --ar, so the
+   slack in a row is shared in proportion to width and the pictures in a row
+   stay exactly the same height. S/M/L change the row height. */
+#gallery-wrap { background: var(--bg-section); padding-top: 3.5rem; padding-bottom: 6rem; }
+.masonry.salon {
+  --row-h: 300px; --frame: 7px; --mat: 16px;
+  column-count: auto;
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
+  gap: 2.6rem 1.7rem;
+}
+#gallery-wrap .container { max-width: 1680px; }
+.masonry.salon::after { content: ""; flex-grow: 999; }      /* last row keeps its natural size */
+.masonry.salon.size-s { --row-h: 170px; --mat: 10px; --frame: 5px; gap: 2rem 1.2rem; }
+.masonry.salon.size-m { --row-h: 240px; }
+.masonry.salon.size-l { --row-h: 360px; --mat: 20px; --frame: 8px; gap: 3rem 2.2rem; }
+.salon .masonry-item {
+  --ar: 1.5;
+  flex: var(--ar) 1 calc(var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
+  /* A frame left alone on a row may grow, but not balloon: cap at 1.5x. */
+  max-width: calc(1.5 * var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat)));
+  margin: 0; overflow: visible; border-radius: 0; background: none;
+}
+.salon .masonry-item picture {
+  display: block;
+  padding: var(--mat);
+  background: #FBF9F4;                                   /* the mat */
+  border: var(--frame) solid #1E1C1A;                    /* the frame */
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.05),
+    0 2px 4px rgba(35,33,32,0.10),
+    0 16px 30px -14px rgba(35,33,32,0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.salon .masonry-item img {
+  width: 100%; height: auto; display: block; transform: none;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  outline: 1px solid rgba(35,33,32,0.12);               /* bevel where print meets mat */
+}
+.salon .masonry-item:hover img { transform: none; }
+.salon .masonry-item:hover picture,
+.salon .masonry-item:focus-visible picture {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.05),
+    0 4px 8px rgba(35,33,32,0.12),
+    0 26px 44px -18px rgba(35,33,32,0.55);
+}
+.salon .masonry-item .cap { display: none; }            /* the wall label replaces the hover caption */
+.salon .frame-title { text-align: center; margin: 0.95rem 0 0; font-size: 0.98rem; }
+.salon .frame-title .frame-cat { display: block; margin: 0.2rem 0 0; }
+.salon .masonry-item[data-new]::before { top: calc(var(--frame) + var(--mat) + 0.5rem); left: calc(var(--frame) + var(--mat) + 0.5rem); }
+@media (max-width: 1000px) {
+  .masonry.salon.size-l { --row-h: 280px; }
+  .masonry.salon.size-m { --row-h: 200px; }
+}
+@media (max-width: 700px) {
+  .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
+  .masonry.salon.size-s { --row-h: 105px; --mat: 6px; --frame: 3px; }
+  .masonry.salon.size-l { --row-h: 240px; --mat: 10px; --frame: 5px; }
+  .salon .frame-title { font-size: 0.85rem; }
+}

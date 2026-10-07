@@ -910,6 +910,40 @@
         "canvas": "15417022972146",
         "wood": "15417023529202",
         "acrylic": "15417023627506"
+      },
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67647280316658",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67647280349426",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67647280382194",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67647308071154",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67647308103922",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67647308136690",
+            "price": 160
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418622312690",
+        "wood": "15418625392882"
       }
     },
     {
@@ -1956,11 +1990,26 @@
             "variant": "67641864192242",
             "price": 160
           }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67646790041842",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67646790074610",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67646790107378",
+            "price": 130
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417032605938",
-        "wood": "15417032802546"
+        "wood": "15417032802546",
+        "acrylic": "15418511982834"
       }
     },
     {
@@ -1976,7 +2025,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0318.JPG"
+      "master": "PrintMasters/botanical/IMG_0318.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67646791254258",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67646791287026",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67646791319794",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67646792106226",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67646792138994",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67646792171762",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67646795284722",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67646795317490",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67646795350258",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418512212210",
+        "wood": "15418512572658",
+        "acrylic": "15418515423474"
+      }
     },
     {
       "slug": "cocktails",
@@ -1991,7 +2089,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0683.JPG"
+      "master": "PrintMasters/urban/IMG_0683.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67646797119730",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67646797152498",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67646797185266",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67646797349106",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67646797381874",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67646797414642",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67646797709554",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67646797742322",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67646797775090",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418516340978",
+        "wood": "15418516439282",
+        "acrylic": "15418516603122"
+      }
     },
     {
       "slug": "wall-of-names",
@@ -2006,7 +2153,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0870.JPG"
+      "master": "PrintMasters/urban/IMG_0870.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67646831689970",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67646831722738",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67646831755506",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67646836801778",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67646836834546",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67646836867314",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67646885462258",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67646885495026",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67646885527794",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418521452786",
+        "wood": "15418523517170",
+        "acrylic": "15418533708018"
+      }
     },
     {
       "slug": "mural-sundown",
@@ -2021,7 +2217,56 @@
       "story": "",
       "shape": "5:4",
       "source_px": 3662,
-      "master": "PrintMasters/urban/2018-10-01 09.16.43 1.jpg"
+      "master": "PrintMasters/urban/2018-10-01 09.16.43 1.jpg",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67646895587570",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67646895620338",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67646895653106",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67647010930930",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67647010963698",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67647010996466",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "12x18": {
+            "variant": "67647016141042",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67647016173810",
+            "price": 130
+          },
+          "8x12": {
+            "variant": "67647016108274",
+            "price": 75
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418538688754",
+        "wood": "15418553368818",
+        "acrylic": "15418555236594"
+      }
     },
     {
       "slug": "art-will-save-you",
@@ -2036,7 +2281,56 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0699.JPG"
+      "master": "PrintMasters/urban/IMG_0699.JPG",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67647084527858",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67647084560626",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67647084593394",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67647085805810",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67647085838578",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67647085871346",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "16x24": {
+            "variant": "67647115329778",
+            "price": 130
+          },
+          "12x18": {
+            "variant": "67647115297010",
+            "price": 100
+          },
+          "8x12": {
+            "variant": "67647115264242",
+            "price": 75
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418567426290",
+        "wood": "15418568212722",
+        "acrylic": "15418588725490"
+      }
     },
     {
       "slug": "harbour-pastel",
@@ -2051,7 +2345,56 @@
       "story": "",
       "shape": "1:1",
       "source_px": 3024,
-      "master": "PrintMasters/urban/2017-12-10 08.03.56 2.jpg"
+      "master": "PrintMasters/urban/2017-12-10 08.03.56 2.jpg",
+      "shopify": {
+        "canvas": {
+          "12x12": {
+            "variant": "67647228313842",
+            "price": 65
+          },
+          "16x16": {
+            "variant": "67647228346610",
+            "price": 80
+          },
+          "20x20": {
+            "variant": "67647228379378",
+            "price": 100
+          }
+        },
+        "wood": {
+          "12x12": {
+            "variant": "67647280578802",
+            "price": 105
+          },
+          "16x16": {
+            "variant": "67647280611570",
+            "price": 125
+          },
+          "20x20": {
+            "variant": "67647280644338",
+            "price": 165
+          }
+        },
+        "acrylic": {
+          "20x20": {
+            "variant": "67647309021426",
+            "price": 130
+          },
+          "12x12": {
+            "variant": "67647308955890",
+            "price": 80
+          },
+          "16x16": {
+            "variant": "67647308988658",
+            "price": 100
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15418598654194",
+        "wood": "15418622378226",
+        "acrylic": "15418625655026"
+      }
     },
     {
       "slug": "glass-spire",
@@ -2430,6 +2773,11 @@
       "12x12",
       "16x16",
       "20x20"
+    ],
+    "template_candidates": [
+      "0978d796-7358-459f-9282-5e5f778921a9",
+      "4d91d7e5-98db-4ec2-81fa-869594e327ae",
+      "b4c65a24-351a-43cd-8892-450922a08657"
     ]
   }
 }

@@ -7,6 +7,7 @@ variant IDs in prints/catalog.json so the print pages get the material picker.
     python3 scripts/gelato_publish.py --only driftwood-shore   # one print
     python3 scripts/gelato_publish.py                          # every ready print
     python3 scripts/gelato_publish.py --dry-run                # just list them
+    python3 scripts/gelato_publish.py --materials paper        # one material only
 
 A print is "ready" when Dropbox/Career/OxHollow/PrintMasters/gelato-ready/
 <slug>.jpg exists and the catalog has no Shopify entry for it yet. Only
@@ -49,6 +50,9 @@ FIT = {"paper": "meet"}
 
 DRY = "--dry-run" in sys.argv
 ONLY = sys.argv[sys.argv.index("--only") + 1].split(",") if "--only" in sys.argv else None
+# --materials paper  (or canvas,wood): only set up these materials this run.
+if "--materials" in sys.argv:
+    MATERIALS = [m for m in sys.argv[sys.argv.index("--materials") + 1].split(",") if m in MATERIALS]
 cat = json.loads(CAT_PATH.read_text())
 cfg = cat["gelato"]
 

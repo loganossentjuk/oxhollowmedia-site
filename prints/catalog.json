@@ -2375,7 +2375,56 @@
       "story": "",
       "shape": "4:3",
       "source_px": 4032,
-      "master": "PrintMasters/urban/2018-10-01 09.16.15 1.jpg"
+      "master": "PrintMasters/urban/2018-10-01 09.16.15 1.jpg",
+      "shopify": {
+        "canvas": {
+          "8x12": {
+            "variant": "67650334294258",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67650334327026",
+            "price": 80
+          },
+          "16x24": {
+            "variant": "67650334359794",
+            "price": 90
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67650334753010",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67650334785778",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67650334818546",
+            "price": 160
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67650335342834",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67650335375602",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67650335408370",
+            "price": 130
+          }
+        }
+      },
+      "shopify_products": {
+        "canvas": "15419814281458",
+        "wood": "15419814314226",
+        "acrylic": "15419814576370"
+      }
     },
     {
       "slug": "valley-in-violet",

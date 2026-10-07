@@ -92,7 +92,7 @@ Breach, Fitz Roy) only reach 8×12, so they get a framed 8×12 and nothing large
 
 ## 4. After each batch (Claude can do this with the Shopify connector)
 
-1. Set the Shopify prices from `gelato.prices`, then publish the listings to the Online Store. The script creates framed, framed canvas and paper listings hidden, so they're never buyable at Gelato's default price.
+1. Prices come from the Gelato templates (Prices step), so listings go live priced; nothing to set here.
 2. Record each framed listing's mockup image per frame colour into the print's
    `"previews"` in the catalog (`{"framed": {"black": url, ...}, "framed_canvas": {...}}`).
    The print page swaps to the mockup when a frame is picked.

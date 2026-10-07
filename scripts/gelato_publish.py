@@ -56,7 +56,7 @@ PPI = 150          # same rule as the paper sizes: long side x 150 must fit the 
 ALL_MATERIALS = ["framed", "paper", "framed_canvas", "canvas", "wood", "acrylic"]
 DEFAULT = ["framed", "paper", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
-HIDDEN_UNTIL_PRICED = FRAMED | {"paper"}
+HIDDEN_UNTIL_PRICED: set = set()   # listings go live at the Gelato template prices
 LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {

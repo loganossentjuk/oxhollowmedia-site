@@ -56,6 +56,7 @@ PPI = 150          # same rule as the paper sizes: long side x 150 must fit the 
 ALL_MATERIALS = ["framed", "paper", "framed_canvas", "canvas", "wood", "acrylic"]
 DEFAULT = ["framed", "paper", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
+HIDDEN_UNTIL_PRICED = FRAMED | {"paper"}
 LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {
@@ -363,7 +364,9 @@ try:
                 "templateId": t["id"],
                 "title": f"{p['title']} - {LABEL[mat]}",
                 "description": description(p, mat),
-                "isVisibleInTheOnlineStore": True,
+                # Framed/paper listings start hidden: Gelato would publish them at its own
+                # default (cost-plus) price. They're priced, then published, afterwards.
+                "isVisibleInTheOnlineStore": mat not in HIDDEN_UNTIL_PRICED,
                 "salesChannels": ["web"],
                 "tags": ["print", mat, p["category"]],
                 "vendor": "Ox Hollow Media",

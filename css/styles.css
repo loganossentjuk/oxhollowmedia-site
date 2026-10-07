@@ -1541,11 +1541,11 @@ html.lb-open { overflow: hidden; }
 /* The print shop and "More prints" hang the same framed salon wall: cards
    carry --ar inline (build_print_pages.py), the frame/mat come from above. */
 .print-grid.salon-wall, .more-grid.salon-wall {
-  --row-h: 280px; --frame: 7px; --mat: 16px;
+  --row-h: 190px; --frame: 7px; --mat: 16px;
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
   gap: 2.6rem 1.7rem;
 }
-.more-grid.salon-wall { --row-h: 220px; }
+.more-grid.salon-wall { --row-h: 180px; }
 .salon-wall::after { content: ""; flex-grow: 999; }
 .salon-wall .print-card {
   --ar: 1.5;
@@ -1558,8 +1558,8 @@ html.lb-open { overflow: hidden; }
 .salon-wall .print-mat img { max-width: none; max-height: none; object-fit: fill; }
 .salon-wall .print-card h3 { margin-top: 0.95rem; }
 .detail-frame { --frame: 9px; --mat: 22px; border-radius: 0; }
-@media (max-width: 1000px) { .print-grid.salon-wall { --row-h: 220px; } .more-grid.salon-wall { --row-h: 180px; } }
+@media (max-width: 1000px) { .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 160px; } }
 @media (max-width: 700px) {
-  .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 150px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
+  .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 120px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
   .detail-frame { --frame: 5px; --mat: 12px; }
 }

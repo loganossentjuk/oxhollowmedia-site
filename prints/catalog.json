@@ -2379,21 +2379,24 @@
         "wood": "1ac225bb-84bb-412d-90d1-fb2b0635f967",
         "acrylic": "9fd6c17e-69a2-4049-ac09-38657d6d021a",
         "framed": "e91a39a6-c9d1-4109-880e-13359f989d25",
-        "paper": "0978d796-7358-459f-9282-5e5f778921a9"
+        "paper": "0978d796-7358-459f-9282-5e5f778921a9",
+        "framed_canvas": "21e6395e-c3ba-45e9-8511-85d2fda24184"
       },
       "portrait": {
         "acrylic": "aaa39961-43be-4d28-9056-51e8c5acc1ca",
         "wood": "24685965-3d02-48ab-b374-428e48f058d0",
         "canvas": "56b718b2-68d7-4a4f-adf5-9901d36ba503",
         "framed": "3982b93d-3392-4a6f-8e7c-d07546982c75",
-        "paper": "0f610b54-aab5-4177-b018-815f5b5b802f"
+        "paper": "0f610b54-aab5-4177-b018-815f5b5b802f",
+        "framed_canvas": "ce1df160-f4b2-48ec-a3c8-b547a83838d1"
       },
       "square": {
         "acrylic": "1e56fc7e-1d8f-41e2-83e4-b4d952ea2965",
         "wood": "df4e7e1f-0854-4a90-ac50-f53f27c2d218",
         "canvas": "5c0e98ad-2b35-469a-bd73-eb8b1e0fd44c",
         "framed": "4c217e25-29e8-4362-b3ef-82d44306ec19",
-        "paper": "b4c65a24-351a-43cd-8892-450922a08657"
+        "paper": "b4c65a24-351a-43cd-8892-450922a08657",
+        "framed_canvas": "adb6eaec-894e-490a-9a0f-1f2756ae88c3"
       }
     },
     "prices": {

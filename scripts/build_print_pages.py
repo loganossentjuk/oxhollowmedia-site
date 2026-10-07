@@ -281,7 +281,7 @@ def page(p):
   </section>
 
 {FOOTER}
-  <script src="/js/print-buy.js?v=2"></script>
+  <script src="/js/print-buy.js?v=3"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

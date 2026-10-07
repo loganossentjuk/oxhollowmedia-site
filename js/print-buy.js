@@ -26,10 +26,24 @@
   const source = document.querySelector('.detail-frame source');
   if (!img) return;
   const original = { src: img.getAttribute('src'), srcset: source ? source.srcset : '' };
+  // Swap only once the mockup has loaded, so a slow or missing mockup never
+  // blanks the photo; the latest pick wins if several are in flight.
+  let want = '';
   const show = (url) => {
     const back = !url || url === original.src;
-    if (source) source.srcset = back ? original.srcset : '';
-    img.src = back ? original.src : url;
+    want = back ? '' : url;
+    if (back) {
+      if (source) source.srcset = original.srcset;
+      img.src = original.src;
+      return;
+    }
+    const pre = new Image();
+    pre.onload = () => {
+      if (want !== url) return;
+      if (source) source.srcset = '';
+      img.src = url;
+    };
+    pre.src = url;
   };
   if (!document.querySelector('.frame-radio[data-preview]')) return;
   // A frame with no mockup yet shows the photo itself.

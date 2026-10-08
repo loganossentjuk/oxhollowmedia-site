@@ -40,7 +40,8 @@ Each print becomes three Shopify listings ("<Title> - Canvas", "- Wood",
 "- Acrylic") because a Gelato template holds one material. The website's
 picker links straight to each variant's checkout, so that is invisible there.
 
-Key: GELATO_API_KEY in the environment, or paste it at the hidden prompt.
+Key: GELATO_API_KEY in the environment, else the macOS Keychain item
+"ohm-gelato-api-key", else paste it at the hidden prompt.
 Standard library + Pillow (already used by the scan scripts).
 """
 import getpass, html, http.server, json, os, re, secrets, shutil, socketserver, subprocess
@@ -148,6 +149,14 @@ if not QUOTE:
         sys.exit(0)
 
 KEY = os.environ.get("GELATO_API_KEY", "")
+if not KEY and shutil.which("security"):
+    # macOS Keychain, so unattended runs need no paste. Store it once with:
+    #   security add-generic-password -U -a "$USER" -s ohm-gelato-api-key -w
+    r = subprocess.run(["security", "find-generic-password", "-s", "ohm-gelato-api-key", "-w"],
+                       capture_output=True, text=True)
+    KEY = r.stdout.strip() if r.returncode == 0 else ""
+    if KEY:
+        print("Using the Gelato key from the macOS Keychain.")
 if not KEY:
     print("Copy your Gelato API key (Gelato dashboard > Developer > API keys).")
     KEY = getpass.getpass("Paste it here and press Enter (it won't show on screen): ").strip()

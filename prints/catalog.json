@@ -789,7 +789,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650812936434",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419955446002"
+      }
     },
     {
       "slug": "marsh-at-dusk",
@@ -859,7 +870,28 @@
             "variant": "67640138793202",
             "price": 225
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650836398322",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650836431090",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650836463858",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650836496626",
+            "price": 70
+          }
         }
+      },
+      "shopify_products": {
+        "paper": "15419960590578"
       }
     },
     {
@@ -930,7 +962,28 @@
             "variant": "67640160125170",
             "price": 225
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650859991282",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650860024050",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650860056818",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650860089586",
+            "price": 70
+          }
         }
+      },
+      "shopify_products": {
+        "paper": "15419967570162"
       }
     },
     {
@@ -1001,12 +1054,31 @@
             "variant": "67641828966642",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650943353074",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650943385842",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650943418610",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650943451378",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417020449010",
         "wood": "15417021038834",
-        "acrylic": "15417022021874"
+        "acrylic": "15417022021874",
+        "paper": "15419976089842"
       }
     },
     {
@@ -1185,12 +1257,27 @@
             "variant": "67641829884146",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650948268274",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650948301042",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650948333810",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417022087410",
         "wood": "15417022152946",
-        "acrylic": "15417022284018"
+        "acrylic": "15417022284018",
+        "paper": "15419979432178"
       }
     },
     {
@@ -1255,6 +1342,25 @@
         "canvas": "15417022972146",
         "wood": "15417023529202",
         "acrylic": "15417023627506"
+      },
+      "shopify": {
+        "paper": {
+          "16x24": {
+            "variant": "67650949218546",
+            "price": 55
+          },
+          "8x12": {
+            "variant": "67650949153010",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650949185778",
+            "price": 50
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419979890930"
       }
     },
     {
@@ -1325,12 +1431,31 @@
             "variant": "67641838010610",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650951971058",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650952003826",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650952036594",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650952069362",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417025003762",
         "wood": "15417025134834",
-        "acrylic": "15417025265906"
+        "acrylic": "15417025265906",
+        "paper": "15419981005042"
       }
     },
     {
@@ -1395,6 +1520,25 @@
         "canvas": "15417025364210",
         "wood": "15417025495282",
         "acrylic": "15417025560818"
+      },
+      "shopify": {
+        "paper": {
+          "16x24": {
+            "variant": "67650956787954",
+            "price": 55
+          },
+          "8x12": {
+            "variant": "67650956722418",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650956755186",
+            "price": 50
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419983462642"
       }
     },
     {
@@ -1453,12 +1597,27 @@
             "variant": "67641840107762",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650962030834",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650962063602",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650962096370",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417025757426",
         "wood": "15417025888498",
-        "acrylic": "15417026052338"
+        "acrylic": "15417026052338",
+        "paper": "15419985395954"
       }
     },
     {
@@ -1517,12 +1676,27 @@
             "variant": "67641840861426",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650962817266",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650962850034",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650962882802",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417026150642",
         "wood": "15417026281714",
-        "acrylic": "15417026380018"
+        "acrylic": "15417026380018",
+        "paper": "15419985592562"
       }
     },
     {
@@ -1581,12 +1755,27 @@
             "variant": "67641841582322",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650968191218",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650968223986",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650968256754",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417026511090",
         "wood": "15417026576626",
-        "acrylic": "15417026674930"
+        "acrylic": "15417026674930",
+        "paper": "15419986378994"
       }
     },
     {
@@ -1601,7 +1790,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650968682738",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419986575602"
+      }
     },
     {
       "slug": "driftwood-shore",
@@ -1671,12 +1871,31 @@
             "variant": "67641720242418",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650979168498",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650979201266",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650979234034",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650979266802",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15416994267378",
         "wood": "15416994726130",
-        "acrylic": "15416995447026"
+        "acrylic": "15416995447026",
+        "paper": "15419986968818"
       }
     },
     {
@@ -1750,7 +1969,18 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650980086002",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419987198194"
+      }
     },
     {
       "slug": "dusk-waterfowl",
@@ -1820,12 +2050,31 @@
             "variant": "67641842991346",
             "price": 210
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650981331186",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650981363954",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650981396722",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67650981429490",
+            "price": 70
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417026806002",
         "wood": "15417026904306",
-        "acrylic": "15417027035378"
+        "acrylic": "15417027035378",
+        "paper": "15419987886322"
       }
     },
     {
@@ -1884,12 +2133,27 @@
             "variant": "67641845776626",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650981691634",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650981724402",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650981757170",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417027264754",
         "wood": "15417027297522",
-        "acrylic": "15417027526898"
+        "acrylic": "15417027526898",
+        "paper": "15419988148466"
       }
     },
     {
@@ -1904,7 +2168,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67650982314226",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419988377842"
+      }
     },
     {
       "slug": "humpback-breach",
@@ -2021,12 +2296,27 @@
             "variant": "67641849905394",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650983362802",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650983395570",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650983428338",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417027854578",
         "wood": "15417028215026",
-        "acrylic": "15417028313330"
+        "acrylic": "15417028313330",
+        "paper": "15419988639986"
       }
     },
     {
@@ -2085,12 +2375,27 @@
             "variant": "67641853411570",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650985427186",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650985459954",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650985492722",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417029066994",
         "wood": "15417029263602",
-        "acrylic": "15417029394674"
+        "acrylic": "15417029394674",
+        "paper": "15419988967666"
       }
     },
     {
@@ -2149,12 +2454,27 @@
             "variant": "67641854394610",
             "price": 75
           }
+        },
+        "paper": {
+          "12x18": {
+            "variant": "67650985722098",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650985754866",
+            "price": 55
+          },
+          "8x12": {
+            "variant": "67650985689330",
+            "price": 35
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417029492978",
         "wood": "15417029656818",
-        "acrylic": "15417029820658"
+        "acrylic": "15417029820658",
+        "paper": "15419989065970"
       }
     },
     {
@@ -2213,12 +2533,27 @@
             "variant": "67641856524530",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650985885938",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650985918706",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650985951474",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417029984498",
         "wood": "15417030115570",
-        "acrylic": "15417030246642"
+        "acrylic": "15417030246642",
+        "paper": "15419989131506"
       }
     },
     {
@@ -2277,12 +2612,27 @@
             "variant": "67641861046514",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650986574066",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650986606834",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650986639602",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417031000306",
         "wood": "15417031229682",
-        "acrylic": "15417031852274"
+        "acrylic": "15417031852274",
+        "paper": "15419989393650"
       }
     },
     {
@@ -2341,12 +2691,27 @@
             "variant": "67641863045362",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67650987589874",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650987622642",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67650987655410",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417032147186",
         "wood": "15417032245490",
-        "acrylic": "15417032474866"
+        "acrylic": "15417032474866",
+        "paper": "15419989655794"
       }
     },
     {
@@ -2405,12 +2770,27 @@
             "variant": "67646790107378",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67651001876722",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651001909490",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651001942258",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15417032605938",
         "wood": "15417032802546",
-        "acrylic": "15418511982834"
+        "acrylic": "15418511982834",
+        "paper": "15419990343922"
       }
     },
     {
@@ -2614,12 +2994,27 @@
             "variant": "67646797775090",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67651006365938",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651006398706",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651006431474",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418516340978",
         "wood": "15418516439282",
-        "acrylic": "15418516603122"
+        "acrylic": "15418516603122",
+        "paper": "15419991785714"
       }
     },
     {
@@ -2678,12 +3073,27 @@
             "variant": "67646885527794",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67651010068722",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651010101490",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651010134258",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418521452786",
         "wood": "15418523517170",
-        "acrylic": "15418533708018"
+        "acrylic": "15418533708018",
+        "paper": "15419992604914"
       }
     },
     {
@@ -2742,12 +3152,27 @@
             "variant": "67647016108274",
             "price": 75
           }
+        },
+        "paper": {
+          "16x24": {
+            "variant": "67651012919538",
+            "price": 55
+          },
+          "8x12": {
+            "variant": "67651012854002",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651012886770",
+            "price": 50
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418538688754",
         "wood": "15418553368818",
-        "acrylic": "15418555236594"
+        "acrylic": "15418555236594",
+        "paper": "15419993686258"
       }
     },
     {
@@ -2806,12 +3231,27 @@
             "variant": "67647115264242",
             "price": 75
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67651020783858",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651020816626",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651020849394",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418567426290",
         "wood": "15418568212722",
-        "acrylic": "15418588725490"
+        "acrylic": "15418588725490",
+        "paper": "15419994046706"
       }
     },
     {
@@ -2870,12 +3310,27 @@
             "variant": "67647308988658",
             "price": 100
           }
+        },
+        "paper": {
+          "12x12": {
+            "variant": "67651128328434",
+            "price": 40
+          },
+          "16x16": {
+            "variant": "67651128361202",
+            "price": 50
+          },
+          "20x20": {
+            "variant": "67651128393970",
+            "price": 60
+          }
         }
       },
       "shopify_products": {
         "canvas": "15418598654194",
         "wood": "15418622378226",
-        "acrylic": "15418625655026"
+        "acrylic": "15418625655026",
+        "paper": "15420011020530"
       }
     },
     {
@@ -2934,12 +3389,27 @@
             "variant": "67650335408370",
             "price": 130
           }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "67651151888626",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651151921394",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651151954162",
+            "price": 55
+          }
         }
       },
       "shopify_products": {
         "canvas": "15419814281458",
         "wood": "15419814314226",
-        "acrylic": "15419814576370"
+        "acrylic": "15419814576370",
+        "paper": "15420016984306"
       }
     },
     {
@@ -3195,7 +3665,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0290.tif"
+      "master": "PrintMasters/mountains/_DSC0290.tif",
+      "shopify": {
+        "paper": {
+          "24x36": {
+            "variant": "67651160932594",
+            "price": 70
+          },
+          "8x12": {
+            "variant": "67651160834290",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651160867058",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651160899826",
+            "price": 55
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420018655474"
+      }
     },
     {
       "slug": "range-and-scrub",
@@ -3210,7 +3703,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0280.tif"
+      "master": "PrintMasters/mountains/_DSC0280.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651177283826",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651177316594",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651177349362",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67651177382130",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420023832818"
+      }
     },
     {
       "slug": "fog-on-the-flats",
@@ -3225,7 +3741,18 @@
       "story": "",
       "shape": "16:9",
       "source_px": 1920,
-      "master": "PrintMasters/mountains/_DSC0663.tif"
+      "master": "PrintMasters/mountains/_DSC0663.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651187114226",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420026388722"
+      }
     },
     {
       "slug": "golden-brush",
@@ -3240,7 +3767,18 @@
       "story": "",
       "shape": "16:9",
       "source_px": 1920,
-      "master": "PrintMasters/mountains/_DSC0666.tif"
+      "master": "PrintMasters/mountains/_DSC0666.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651189965042",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420027142386"
+      }
     },
     {
       "slug": "sunflare-oak",
@@ -3255,7 +3793,26 @@
       "story": "",
       "shape": "4:3",
       "source_px": 4032,
-      "master": "PrintMasters/mountains/672CFF9A-4A03-4917-A547-EC66B9EE2DC6.tif"
+      "master": "PrintMasters/mountains/672CFF9A-4A03-4917-A547-EC66B9EE2DC6.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651192422642",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651192455410",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651192488178",
+            "price": 55
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420027863282"
+      }
     },
     {
       "slug": "autumn-against-blue",
@@ -3270,7 +3827,26 @@
       "story": "",
       "shape": "4:3",
       "source_px": 4032,
-      "master": "PrintMasters/mountains/CFD3FD1D-8722-43C8-8527-64B16B03B6AD.tif"
+      "master": "PrintMasters/mountains/CFD3FD1D-8722-43C8-8527-64B16B03B6AD.tif",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651203006706",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651203039474",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651203072242",
+            "price": 55
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420029272306"
+      }
     },
     {
       "slug": "still-pond",
@@ -3285,7 +3861,22 @@
       "story": "",
       "shape": "4:3",
       "source_px": 3024,
-      "master": "PrintMasters/mountains/IMG_2780.tif"
+      "master": "PrintMasters/mountains/IMG_2780.tif",
+      "shopify": {
+        "paper": {
+          "12x18": {
+            "variant": "67651206545650",
+            "price": 50
+          },
+          "8x12": {
+            "variant": "67651206512882",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420030189810"
+      }
     },
     {
       "slug": "winter-bark",
@@ -3299,7 +3890,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651207954674",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420030812402"
+      }
     },
     {
       "slug": "tidepool-ledge",
@@ -3314,7 +3916,26 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/9E29947E-5885-4FFE-9A54-3C257A7D9817.tif"
+      "master": "PrintMasters/ocean/9E29947E-5885-4FFE-9A54-3C257A7D9817.tif",
+      "shopify": {
+        "paper": {
+          "16x24": {
+            "variant": "67651210608882",
+            "price": 55
+          },
+          "12x18": {
+            "variant": "67651210576114",
+            "price": 50
+          },
+          "8x12": {
+            "variant": "67651210543346",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420031762674"
+      }
     },
     {
       "slug": "research-vessel-dawn",
@@ -3328,7 +3949,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651213361394",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420032581874"
+      }
     },
     {
       "slug": "banyan-light",
@@ -3342,7 +3974,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651217588466",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420033106162"
+      }
     },
     {
       "slug": "peace-skyline",
@@ -3357,7 +4000,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/urban/DSC06536.JPG"
+      "master": "PrintMasters/urban/DSC06536.JPG",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651223224562",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651223257330",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651223290098",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67651223322866",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420034056434"
+      }
     },
     {
       "slug": "conifer-canopy",
@@ -3371,7 +4037,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651227713778",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420035170546"
+      }
     },
     {
       "slug": "jungle-lily",
@@ -3385,7 +4062,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651230335218",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420035891442"
+      }
     },
     {
       "slug": "city-thunderheads",
@@ -3399,7 +4087,18 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651235643634",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420036907250"
+      }
     },
     {
       "slug": "palm-canopy",
@@ -3413,7 +4112,18 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 2000
+      "source_px": 2000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651237347570",
+            "price": 35
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420037497074"
+      }
     },
     {
       "slug": "forest-fungus",
@@ -3428,7 +4138,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC04282.JPG"
+      "master": "PrintMasters/mountains/DSC04282.JPG",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651249602802",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651249635570",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651249668338",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67651249701106",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420040741106"
+      }
     },
     {
       "slug": "ember-study",
@@ -3443,7 +4176,30 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC03858.JPG"
+      "master": "PrintMasters/mountains/DSC03858.JPG",
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67651256910066",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67651256942834",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67651256975602",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67651257008370",
+            "price": 70
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15420042936562"
+      }
     }
   ],
   "shopify_store": "sessjk-nj.myshopify.com",

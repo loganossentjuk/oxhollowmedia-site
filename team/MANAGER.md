@@ -59,7 +59,11 @@ If something fails, send it back to that specialist once with specific feedback.
 3. Commit, using clear messages, then push the branch.
 4. Open **one pull request** to `main` titled `Team week of YYYY-MM-DD`. The body is the report's Summary and Needs-you sections, plus the Cloudflare preview note ("a preview URL for this branch appears on the PR's Cloudflare check").
 5. If nothing on the site changed this week, still push the report and drafts in the PR so Logan sees them.
-6. The final message of the run is the Summary + Needs-you list plus the PR link. It's what Logan gets as the run's notification.
+6. Email the report to **oxhollowmedia@gmail.com** with the Gmail tools (`send_message`). This is the only email the team ever sends, and only to that address.
+   - **Subject:** `Ox Hollow team: week of YYYY-MM-DD`
+   - **Body:** the Summary, the Needs-you checklist, the shop snapshot and the PR link, in plain text.
+   - If Gmail isn't available in the session, say so in the final message instead.
+7. The final message of the run is the Summary + Needs-you list plus the PR link. It also goes to Logan as the run's notification.
 
 ## Never
 - merge, push to `main`, or force-push

@@ -46,7 +46,9 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Shopify is read-only for the team:**
   - reading orders, products and analytics is fine
   - customer personal data never leaves Shopify and never goes into the repo or a report
-- **Never post, email or message anyone outside the team.** Social posts, newsletters and outreach are drafts in `team/drafts/` for Logan to send.
+- **Never post, email or message anyone outside the team.**
+  - Social posts, newsletters and outreach are drafts in `team/drafts/` for Logan to send.
+  - The one exception: the manager emails the weekly report to oxhollowmedia@gmail.com.
 - **Never push to `main` or merge.** All work goes on the weekly branch and into one pull request that Logan approves.
 - **Never spend money or sign up for services.**
 - **Research is required:**

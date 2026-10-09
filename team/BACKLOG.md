@@ -26,6 +26,10 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Journal entry 2 (event clients): "How to brief your event photographer"
 - [ ] Shelved: "Where the light is: 5 Bay Area spots". Logan's nature work is mostly outside the Bay Area.
 
+## Photo review (Logan)
+- [ ] **(Logan)** Review the 55 BestWork picks not yet on the site: `Dropbox/Career/OxHollow/BestWork picks (review)/` (numbered; `_contact-sheet.jpg` shows all). Pick which go to the gallery and which to the print shop. 16, 39, 40 and 29 are too small to print; 46–55 are portraits of real people and need their OK. Added 2026-10-09.
+- [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
+
 ## Website and bugs
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms

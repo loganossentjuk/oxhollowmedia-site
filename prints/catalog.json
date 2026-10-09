@@ -91,7 +91,8 @@
         "paper": "15419813069042",
         "framed": "15419965931762",
         "framed_canvas": "15419972550898"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/blue-hour-ridge.tif"
     },
     {
       "slug": "sierra-river-bend",
@@ -106,7 +107,7 @@
       "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
       "shape": "16:9",
       "source_px": 4096,
-      "master": "PrintMasters/mountains/20F26880-52EE-4C44-9564-C29496552BC7.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/sierra-river-bend.tif",
       "shopify": {
         "framed": {
           "8x12": {
@@ -250,7 +251,8 @@
           "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4b63c791-1519-4e71-8e15-edac03c81728.jpg",
           "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8f4e668a-613f-4931-96c4-4ced10732707.jpg"
         }
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/fitz-roy-alpenglow.tif"
     },
     {
       "slug": "cloudbreak-ridge",
@@ -265,7 +267,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 4096,
-      "master": "PrintMasters/mountains/E6BA2D3A-731D-4CD8-B498-D8EFAE10CD55.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/cloudbreak-ridge.tif",
       "shopify": {
         "acrylic": {
           "8x12": {
@@ -406,8 +408,8 @@
       "lede": "",
       "story": "",
       "shape": "16:9",
-      "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC04311.JPG",
+      "source_px": 12000,
+      "master": "PrintMasters/gelato-ready/HighResolution/fog-forest.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -604,7 +606,8 @@
         "paper": "15419815657714",
         "framed": "15422109712626",
         "framed_canvas": "15422117806322"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/highland-river.tif"
     },
     {
       "slug": "misty-ridgeline",
@@ -618,8 +621,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 5472,
-      "master": "PrintMasters/mountains/IMG_0051.JPG",
+      "source_px": 10944,
+      "master": "PrintMasters/gelato-ready/HighResolution/misty-ridgeline.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -784,7 +787,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC7272.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/dusk-branches.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -949,7 +952,7 @@
       "story": "",
       "shape": "4:3",
       "source_px": 5712,
-      "master": "PrintMasters/mountains/CA546F5B-493D-4A11-A2D1-09565FA9E430.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/aspen-and-cobalt.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -1146,7 +1149,8 @@
         "paper": "15420925182194",
         "framed": "15422159683826",
         "framed_canvas": "15422162436338"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/rainier-afterglow.tif"
     },
     {
       "slug": "marsh-at-dusk",
@@ -1161,7 +1165,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/_DSC9630.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/marsh-at-dusk.tif",
       "shopify": {
         "acrylic": {
           "8x12": {
@@ -1485,7 +1489,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8321.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/the-wax-ritual.tif",
       "shopify": {
         "canvas": {
           "24x36": {
@@ -1650,7 +1654,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 12000,
-      "master": "PrintMasters/ocean/DSC07020-2.jpg",
+      "master": "PrintMasters/gelato-ready/HighResolution/dawn-patrol.tif",
       "shopify": {
         "framed": {
           "8x12": {
@@ -1769,8 +1773,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 4128,
-      "master": "PrintMasters/ocean/20191205_150831.jpg",
+      "source_px": 8256,
+      "master": "PrintMasters/gelato-ready/HighResolution/shorebreak-boulders.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -1903,7 +1907,7 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/green-water-landscape.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/verdigris.tif",
       "shopify_portrait_old": {
         "canvas": {
           "8x12": {
@@ -1986,7 +1990,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8168.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/turquoise-shallows.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -2151,7 +2155,7 @@
       "story": "",
       "shape": "5:4",
       "source_px": 4094,
-      "master": "PrintMasters/ocean/8F2519A5-04B7-4A92-B36F-22D6BE6FE2E4.jpg",
+      "master": "PrintMasters/gelato-ready/HighResolution/copper-and-teal.tif",
       "shopify_portrait_old": {
         "canvas": {
           "8x12": {
@@ -2227,14 +2231,14 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/06-tidepool-lava.jpg",
       "webp": "/images/portfolio/ocean/06-tidepool-lava.webp",
-      "width": 1279,
-      "height": 1600,
+      "width": 1600,
+      "height": 2000,
       "alt": "An aquamarine tidepool set in dark lava rock",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/F81FC704-C057-444E-A78E-54AC34626960.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/tidepool-lava.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -2367,7 +2371,7 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4032,
-      "master": "PrintMasters/ocean/GoldenGatePhotoEdit.jpg",
+      "master": "PrintMasters/gelato-ready/HighResolution/golden-gate-fog.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -2500,7 +2504,7 @@
       "story": "",
       "shape": "2:1",
       "source_px": 4032,
-      "master": "PrintMasters/ocean/20191007_134529.jpg",
+      "master": "PrintMasters/gelato-ready/HighResolution/turquoise-harbor.tif",
       "shopify": {
         "canvas": {
           "16x24": {
@@ -2665,7 +2669,8 @@
         "paper": "15419986575602",
         "framed": "15422193500402",
         "framed_canvas": "15422194155762"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/paddler-at-the-gate.tif"
     },
     {
       "slug": "driftwood-shore",
@@ -2680,7 +2685,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/ocean/IMG_8323.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/driftwood-shore.tif",
       "shopify": {
         "canvas": {
           "16x24": {
@@ -2889,7 +2894,8 @@
           "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/56287b9c-75d8-4910-9540-71bb7cd5b89a.jpg",
           "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/18a1fb8f-d5cd-45a1-b097-2d3a30f18837.jpg"
         }
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/blue-footed-booby.tif"
     },
     {
       "slug": "sea-lion-pup",
@@ -2936,7 +2942,8 @@
         "paper": "15419987198194",
         "framed": "15419981332722",
         "framed_canvas": "15419982446834"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/sea-lion-pup.tif"
     },
     {
       "slug": "dusk-waterfowl",
@@ -2951,7 +2958,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/wildlife/_DSC4468.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/dusk-waterfowl.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -3115,8 +3122,8 @@
       "lede": "",
       "story": "",
       "shape": "2:1",
-      "source_px": 4032,
-      "master": "PrintMasters/wildlife/20191031_110319.jpg",
+      "source_px": 8064,
+      "master": "PrintMasters/gelato-ready/HighResolution/marine-iguana.tif",
       "shopify": {
         "canvas": {
           "16x24": {
@@ -3281,7 +3288,8 @@
         "paper": "15419988377842",
         "framed": "15422203560178",
         "framed_canvas": "15422203756786"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/reef-passage.tif"
     },
     {
       "slug": "humpback-breach",
@@ -3340,7 +3348,8 @@
           "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a3174029-031f-4580-82f6-ae6b45471b74.jpg",
           "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d005bda8-1b7e-4896-8c78-9f56a4256c59.jpg"
         }
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/humpback-breach.tif"
     },
     {
       "slug": "amber-glass",
@@ -3354,8 +3363,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0327.JPG",
+      "source_px": 10368,
+      "master": "PrintMasters/gelato-ready/HighResolution/amber-glass.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -3488,7 +3497,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0530.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/petunia-crimson.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -3621,7 +3630,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0529.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/geranium-coral.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -3754,7 +3763,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0694.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/the-flower-market.tif",
       "shopify": {
         "canvas": {
           "12x18": {
@@ -3886,8 +3895,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0527.JPG",
+      "source_px": 10368,
+      "master": "PrintMasters/gelato-ready/HighResolution/geranium-white.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4019,8 +4028,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0317.JPG",
+      "source_px": 10368,
+      "master": "PrintMasters/gelato-ready/HighResolution/hydrangea-deep-blue.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4153,7 +4162,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0584.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/petunia-veined.tif",
       "shopify": {
         "canvas": {
           "16x24": {
@@ -4285,8 +4294,8 @@
       "lede": "",
       "story": "",
       "shape": "3:2",
-      "source_px": 5184,
-      "master": "PrintMasters/botanical/IMG_0318.JPG",
+      "source_px": 10368,
+      "master": "PrintMasters/gelato-ready/HighResolution/petunia-blush.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4431,7 +4440,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0683.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/cocktails.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4557,14 +4566,14 @@
       "category": "urban",
       "image": "/images/portfolio/urban/02-wall-of-names.jpg",
       "webp": "/images/portfolio/urban/02-wall-of-names.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1333,
+      "height": 2000,
       "alt": "Layered graffiti tags across a brick wall",
       "lede": "",
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0870.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/wall-of-names.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4691,13 +4700,13 @@
       "image": "/images/portfolio/urban/05-mural-sundown.jpg",
       "webp": "/images/portfolio/urban/05-mural-sundown.webp",
       "width": 2000,
-      "height": 1651,
+      "height": 1652,
       "alt": "A mural figure silhouetted against a painted sun",
       "lede": "",
       "story": "",
       "shape": "5:4",
-      "source_px": 3662,
-      "master": "PrintMasters/urban/2018-10-01 09.16.43 1.jpg",
+      "source_px": 7324,
+      "master": "PrintMasters/gelato-ready/HighResolution/mural-sundown.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4830,7 +4839,7 @@
       "story": "",
       "shape": "3:2",
       "source_px": 5184,
-      "master": "PrintMasters/urban/IMG_0699.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/art-will-save-you.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -4962,8 +4971,8 @@
       "lede": "",
       "story": "",
       "shape": "1:1",
-      "source_px": 3024,
-      "master": "PrintMasters/urban/2017-12-10 08.03.56 2.jpg",
+      "source_px": 6048,
+      "master": "PrintMasters/gelato-ready/HighResolution/harbour-pastel.tif",
       "shopify": {
         "canvas": {
           "12x12": {
@@ -5079,8 +5088,8 @@
       "lede": "",
       "story": "",
       "shape": "4:3",
-      "source_px": 4032,
-      "master": "PrintMasters/urban/2018-10-01 09.16.15 1.jpg",
+      "source_px": 8064,
+      "master": "PrintMasters/gelato-ready/HighResolution/glass-spire.tif",
       "shopify": {
         "canvas": {
           "8x12": {
@@ -5213,7 +5222,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0292.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/valley-in-violet.tif",
       "shopify": {
         "framed": {
           "8x12": {
@@ -5333,7 +5342,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0243.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/snowline.tif",
       "shopify": {
         "framed": {
           "8x12": {
@@ -5453,7 +5462,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/_DSC0290.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/the-long-valley.tif",
       "shopify": {
         "paper": {
           "24x36": {
@@ -5662,14 +5671,14 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/22-fog-on-the-flats.jpg",
       "webp": "/images/portfolio/mountains/22-fog-on-the-flats.webp",
-      "width": 1125,
-      "height": 2000,
+      "width": 1080,
+      "height": 1920,
       "alt": "High-key fog settling over brush and distant hills",
       "lede": "",
       "story": "",
       "shape": "16:9",
       "source_px": 1920,
-      "master": "PrintMasters/mountains/_DSC0663.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/fog-on-the-flats.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -5710,14 +5719,14 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/23-golden-brush.jpg",
       "webp": "/images/portfolio/mountains/23-golden-brush.webp",
-      "width": 1125,
-      "height": 2000,
+      "width": 1080,
+      "height": 1920,
       "alt": "Golden brush in the foreground of a fog-wrapped mountain",
       "lede": "",
       "story": "",
       "shape": "16:9",
       "source_px": 1920,
-      "master": "PrintMasters/mountains/_DSC0666.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/golden-brush.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -5765,7 +5774,7 @@
       "story": "",
       "shape": "4:3",
       "source_px": 4032,
-      "master": "PrintMasters/mountains/672CFF9A-4A03-4917-A547-EC66B9EE2DC6.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/sunflare-oak.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -5853,7 +5862,7 @@
       "story": "",
       "shape": "4:3",
       "source_px": 4032,
-      "master": "PrintMasters/mountains/CFD3FD1D-8722-43C8-8527-64B16B03B6AD.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/autumn-against-blue.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -5941,7 +5950,7 @@
       "story": "",
       "shape": "4:3",
       "source_px": 3024,
-      "master": "PrintMasters/mountains/IMG_2780.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/still-pond.tif",
       "shopify": {
         "paper": {
           "12x18": {
@@ -6041,7 +6050,8 @@
         "paper": "15420030812402",
         "framed": "15422241865970",
         "framed_canvas": "15422242062578"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/winter-bark.tif"
     },
     {
       "slug": "tidepool-ledge",
@@ -6049,14 +6059,14 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/16-tidepool-ledge.jpg",
       "webp": "/images/portfolio/ocean/16-tidepool-ledge.webp",
-      "width": 1599,
+      "width": 1600,
       "height": 2000,
       "alt": "Teal tidepool water beneath a dark rock ledge",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
-      "master": "PrintMasters/ocean/9E29947E-5885-4FFE-9A54-3C257A7D9817.tif",
+      "master": "PrintMasters/gelato-ready/HighResolution/tidepool-ledge.tif",
       "shopify": {
         "paper": {
           "16x24": {
@@ -6176,7 +6186,8 @@
         "paper": "15420032581874",
         "framed": "15422245077234",
         "framed_canvas": "15422245667058"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/research-vessel-dawn.tif"
     },
     {
       "slug": "banyan-light",
@@ -6223,7 +6234,8 @@
         "paper": "15420033106162",
         "framed": "15422249173234",
         "framed_canvas": "15422249599218"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/banyan-light.tif"
     },
     {
       "slug": "peace-skyline",
@@ -6238,7 +6250,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/urban/DSC06536.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/peace-skyline.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -6378,7 +6390,8 @@
         "paper": "15420035170546",
         "framed": "15422252908786",
         "framed_canvas": "15422253203698"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/conifer-canopy.tif"
     },
     {
       "slug": "jungle-lily",
@@ -6425,7 +6438,8 @@
         "paper": "15420035891442",
         "framed": "15422253334770",
         "framed_canvas": "15422253433074"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/jungle-lily.tif"
     },
     {
       "slug": "city-thunderheads",
@@ -6472,7 +6486,8 @@
         "paper": "15420036907250",
         "framed": "15422253596914",
         "framed_canvas": "15422253859058"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/city-thunderheads.tif"
     },
     {
       "slug": "palm-canopy",
@@ -6519,7 +6534,8 @@
         "paper": "15420037497074",
         "framed": "15422254153970",
         "framed_canvas": "15422254186738"
-      }
+      },
+      "master": "PrintMasters/gelato-ready/HighResolution/palm-canopy.tif"
     },
     {
       "slug": "forest-fungus",
@@ -6534,7 +6550,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC04282.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/forest-fungus.tif",
       "shopify": {
         "paper": {
           "8x12": {
@@ -6642,7 +6658,7 @@
       "story": "",
       "shape": "16:9",
       "source_px": 6000,
-      "master": "PrintMasters/mountains/DSC03858.JPG",
+      "master": "PrintMasters/gelato-ready/HighResolution/ember-study.tif",
       "shopify": {
         "paper": {
           "8x12": {

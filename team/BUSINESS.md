@@ -49,6 +49,7 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Print pages:**
   - Generated from `prints/catalog.json` by `python3 scripts/build_print_pages.py`.
   - Never hand-edit `prints/*.html`. Change the catalog or the script, then rebuild.
+- **Watermark:** every image in `images/portfolio/` carries the Ox Hollow mark. After adding or replacing a photo, run `python3 scripts/watermark.py` (it skips images it already stamped).
 - **Checkout:** print pages link to the Shopify cart (`https://sessjk-nj.myshopify.com/cart/<variantId>:1`).
 - **Product scripts:**
   - `scripts/gelato_publish.py` creates Gelato/Shopify products. It runs on Logan's Mac only and the team never runs it.

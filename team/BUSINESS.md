@@ -23,8 +23,8 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Photo count:** about 100 edited photos per hour of coverage.
 - **What's delivered:** select edits by default. RAW files only on request.
 - **NDAs:** Logan will sign them.
-- **Insurance:** Logan has no liability insurance yet. Never claim to be insured.
-- **Second shooter:** pricing not set yet. Don't quote one.
+- **Insurance:** Logan has no liability insurance yet and is looking into it. Never claim to be insured.
+- **Second shooter:** +50% of the package rate (+$500 Session, +$1,000 Day). Already included in The Production.
 
 **Pricing and contact**
 - **Price tier:** "$$". Logan wants to be affordable.

@@ -31,6 +31,9 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
 - [ ] 404 page links back to prints and gallery
 
+## Reminders for Logan (repeat in every report's Needs-you list until ticked)
+- [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
+
 ## Shop
 - [x] Batch 2 framed listings priced and published (2026-10-09)
 - [ ] Verdigris and Copper & Teal are held until their print files are re-made **(Logan)**

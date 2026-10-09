@@ -6752,6 +6752,36 @@
         "framed": "15422256120050",
         "framed_canvas": "15422256611570"
       }
+    },
+    {
+      "slug": "sparks",
+      "title": "Sparks",
+      "category": "mountains",
+      "image": "/images/portfolio/mountains/28-sparks.jpg",
+      "webp": "/images/portfolio/mountains/28-sparks.webp",
+      "width": 2000,
+      "height": 1125,
+      "alt": "Embers and sparks spiralling up from a campfire into the night",
+      "lede": "Embers and sparks spiralling up from a campfire into the night.",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 12000,
+      "master": "PrintMasters/gelato-ready/HighResolution/sparks.tif"
+    },
+    {
+      "slug": "rising-flame",
+      "title": "Rising Flame",
+      "category": "mountains",
+      "image": "/images/portfolio/mountains/29-rising-flame.jpg",
+      "webp": "/images/portfolio/mountains/29-rising-flame.webp",
+      "width": 2000,
+      "height": 1125,
+      "alt": "A single campfire flame curling upward against the dark",
+      "lede": "A single campfire flame curling upward against the dark.",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 24000,
+      "master": "PrintMasters/gelato-ready/HighResolution/rising-flame.tif"
     }
   ],
   "shopify_store": "sessjk-nj.myshopify.com",

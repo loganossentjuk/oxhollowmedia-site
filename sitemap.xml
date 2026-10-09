@@ -921,5 +921,21 @@
       <image:title>Ember Study</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://oxhollowmedia.com/prints/sparks</loc>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/28-sparks.jpg</image:loc>
+      <image:title>Sparks</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/prints/rising-flame</loc>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/29-rising-flame.jpg</image:loc>
+      <image:title>Rising Flame</image:title>
+    </image:image>
+  </url>
   <!-- PRINTS:END -->
 </urlset>

@@ -25,8 +25,8 @@ Everything goes in a single file, `team/drafts/marketing-YYYY-MM-DD.md` (today's
      - the best day and time, with the source
    - **Audio:** Logan adds the music in the Instagram app. Never put music in the file, because it isn't licensed.
    - **Links:** at least one Reel points to a print, with a UTM link for the bio: `https://oxhollowmedia.com/prints/<slug>?utm_source=instagram&utm_medium=reel&utm_campaign=<name>`
-   - **Size:** keep each MP4 under 8 MB so all three fit in one email. Re-encode with a higher CRF if needed.
-   - **Not committed:** `team/drafts/reels/` is git-ignored to keep the repo small. The MP4s reach Logan only as attachments to the weekly email.
+   - **Size:** keep each MP4 under 8 MB; `make_reel.py` already caps the bitrate.
+   - **Not committed:** `team/drafts/reels/` is git-ignored to keep the repo small. The manager publishes them on a `reels-YYYY-MM-DD` preview branch and links them in the weekly email.
    - **Footage ideas:** add one idea Logan could film next week, e.g. a 10-second clip from a shoot. Give it as a short shot list.
 2. **Event-photography leads:** research 5 Bay Area tech companies, venues or event agencies that plausibly hire event photographers.
    - signals: public events, conferences, meetups and offsites from public pages

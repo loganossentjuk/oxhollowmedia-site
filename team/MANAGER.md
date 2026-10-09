@@ -62,7 +62,12 @@ If something fails, send it back to that specialist once with specific feedback.
 6. Email the report to **oxhollowmedia@gmail.com** with the Gmail tools (`send_message`). This is the only email the team ever sends, and only to that address.
    - **Subject:** `Ox Hollow team: week of YYYY-MM-DD`
    - **Body:** the Summary, the Needs-you checklist, the shop snapshot and the PR link, in plain text.
-   - **Instagram:** this week's Reels. Attach the 3 MP4s. Under each Reel's name, put the hook, the caption, the hashtags, the suggested audio and the posting time, ready to copy into Instagram. Logan reviews them on their phone and posts.
+   - **Instagram:** this week's Reels.
+     - Videos are too big to attach through the Gmail tool, so host them on a preview branch instead:
+       1. Copy the MP4s and a cover JPG for each into `reels/YYYY-MM-DD/` on a new branch `reels-YYYY-MM-DD`, cut from main.
+       2. Push that branch. Never merge it and never open a PR for it.
+       3. Read the "Branch Preview URL" from the Cloudflare check run on that commit: `https://reels-YYYY-MM-DD.oxhollowmedia-site.pages.dev`.
+     - **In the email,** for each Reel: a link to the MP4 (Logan opens it on their phone and saves it to Photos), the cover image, the hook, the caption, the hashtags, the suggested audio, and the posting time, ready to copy into Instagram.
    - Only send if the connected Gmail account is oxhollowmedia@gmail.com. Check the sender address, e.g. from a draft's `authuser`.
    - If Gmail is connected to any other account, or isn't available, don't send. Say so in the final message instead.
    - Never send business mail from a work or government account.

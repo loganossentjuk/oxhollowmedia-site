@@ -44,5 +44,19 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Holiday gift-deadline banner idea, using Gelato's published shipping cut-offs **(Logan)**
 
 ## Marketing
+- [ ] **Top priority (marketing-lead, with shop-manager input). Growth strategy: ads and outreach.** Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
+  - **Research first and cite sources:**
+    - realistic costs and results for Google Ads (local "event photographer San Francisco" searches), Meta/Instagram ads (Reels boosts, retargeting site visitors), LinkedIn (tech event planners), and Pinterest (wall art)
+    - free channels: Google Business Profile, event-venue preferred-vendor lists, planner and agency partnerships, tech meetup and community sponsorships, referral asks to past clients, directory listings
+    - print-shop tactics: gift guides, interior designers and offices, holiday timing using Gelato's cut-offs, email list capture
+  - **For each plan:**
+    - who to target
+    - 3–5 channels ranked by expected return for a small budget
+    - a 90-day calendar
+    - the first 3 concrete actions Logan can take this week
+    - what to measure: UTM links, Shopify sales, contact-form leads
+    - a starter budget at three levels ($0, $250 a month, $750 a month), with what each buys
+  - **Draft-only extras:** ad copy and audiences, plus 3 cold-outreach templates for event planners in Logan's voice. Nothing gets launched, spent or sent.
+  - **Return** the plan for Logan to choose. After that, each week's marketing work follows the chosen plan.
 - [ ] Monthly newsletter draft (first run of each month)
 - [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)

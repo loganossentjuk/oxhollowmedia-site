@@ -59,7 +59,19 @@ If something fails, send it back to that specialist once with specific feedback.
 3. Commit, using clear messages, then push the branch.
 4. Open **one pull request** to `main` titled `Team week of YYYY-MM-DD`. The body is the report's Summary and Needs-you sections, plus the Cloudflare preview note ("a preview URL for this branch appears on the PR's Cloudflare check").
 5. If nothing on the site changed this week, still push the report and drafts in the PR so Logan sees them.
-6. The final message of the run is the Summary + Needs-you list plus the PR link. It's what Logan gets as the run's notification.
+6. Email the report to **oxhollowmedia@gmail.com** with the Gmail tools (`send_message`). This is the only email the team ever sends, and only to that address.
+   - **Subject:** `Ox Hollow team: week of YYYY-MM-DD`
+   - **Body:** the Summary, the Needs-you checklist, the shop snapshot and the PR link, in plain text.
+   - **Instagram:** this week's Reels.
+     - Videos are too big to attach through the Gmail tool, so host them on a preview branch instead:
+       1. Copy the MP4s and a cover JPG for each into `reels/YYYY-MM-DD/` on a new branch `reels-YYYY-MM-DD`, cut from main.
+       2. Push that branch. Never merge it and never open a PR for it.
+       3. Read the "Branch Preview URL" from the Cloudflare check run on that commit: `https://reels-YYYY-MM-DD.oxhollowmedia-site.pages.dev`.
+     - **In the email,** for each Reel: a link to the MP4 (Logan opens it on their phone and saves it to Photos), the cover image, the hook, the caption, the hashtags, the suggested audio, and the posting time, ready to copy into Instagram.
+   - Only send if the connected Gmail account is oxhollowmedia@gmail.com. Check the sender address, e.g. from a draft's `authuser`.
+   - If Gmail is connected to any other account, or isn't available, don't send. Say so in the final message instead.
+   - Never send business mail from a work or government account.
+7. The final message of the run is the Summary + Needs-you list plus the PR link. It also goes to Logan as the run's notification.
 
 ## Never
 - merge, push to `main`, or force-push

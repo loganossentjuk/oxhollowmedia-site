@@ -12,3 +12,4 @@
 # Stripe and other API keys live in your shell or a secrets vault, never here.
 .env
 .env.*
+team/drafts/reels/

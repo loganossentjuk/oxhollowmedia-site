@@ -19,19 +19,45 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Content
 - [x] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
 - [ ] Print stories: a 2–3 sentence story per print in the catalog (place, light, moment); start with the gallery-wall top 10
-- [ ] (Logan) Approve a Journal/blog section. First draft idea: "Where the light is: 5 Bay Area spots I photograph" in `team/drafts/`
+- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2021", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
+  - Draft it in `team/drafts/`.
+  - List the personal details needed from Logan as short questions.
+  - Propose a simple `/journal` page design for review. The journal is approved as print stories plus guides for event clients.
+- [ ] Journal entry 2 (event clients): "How to brief your event photographer"
+- [ ] Shelved: "Where the light is: 5 Bay Area spots". Logan's nature work is mostly outside the Bay Area.
+
+## Photo review (Logan)
+- [ ] **(Logan)** Review the 55 BestWork picks not yet on the site: `Dropbox/Career/OxHollow/BestWork picks (review)/` (numbered; `_contact-sheet.jpg` shows all). Pick which go to the gallery and which to the print shop. 16, 39, 40 and 29 are too small to print; 46–55 are portraits of real people and need their OK. Added 2026-10-09.
+- [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
 
 ## Website and bugs
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
 - [x] 404 page links back to prints and gallery
 
+## Reminders for Logan (repeat in every report's Needs-you list until ticked)
+- [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
+
 ## Shop
-- [ ] Batch 2 framed listings (10 prints) were created hidden at Gelato default prices; they need pricing and publishing by Logan or the Gelato cloud session. Track until done.
+- [x] Batch 2 framed listings priced and published (2026-10-09)
 - [ ] Verdigris and Copper & Teal are held until their print files are re-made **(Logan)**
 - [ ] Holiday gift-deadline banner idea, using Gelato's published shipping cut-offs **(Logan)**
 
 ## Marketing
+- [ ] **Top priority (marketing-lead, with shop-manager input). Growth strategy: ads and outreach.** Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
+  - **Research first and cite sources:**
+    - realistic costs and results for Google Ads (local "event photographer San Francisco" searches), Meta/Instagram ads (Reels boosts, retargeting site visitors), LinkedIn (tech event planners), and Pinterest (wall art)
+    - free channels: Google Business Profile, event-venue preferred-vendor lists, planner and agency partnerships, tech meetup and community sponsorships, referral asks to past clients, directory listings
+    - print-shop tactics: gift guides, interior designers and offices, holiday timing using Gelato's cut-offs, email list capture
+  - **For each plan:**
+    - who to target
+    - 3–5 channels ranked by expected return for a small budget
+    - a 90-day calendar
+    - the first 3 concrete actions Logan can take this week
+    - what to measure: UTM links, Shopify sales, contact-form leads
+    - a starter budget at three levels ($0, $250 a month, $750 a month), with what each buys
+  - **Draft-only extras:** ad copy and audiences, plus 3 cold-outreach templates for event planners in Logan's voice. Nothing gets launched, spent or sent.
+  - **Return** the plan for Logan to choose. After that, each week's marketing work follows the chosen plan.
 - [ ] Monthly newsletter draft (first run of each month)
 - [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)
 

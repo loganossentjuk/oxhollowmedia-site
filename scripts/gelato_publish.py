@@ -40,7 +40,8 @@ Each print becomes three Shopify listings ("<Title> - Canvas", "- Wood",
 "- Acrylic") because a Gelato template holds one material. The website's
 picker links straight to each variant's checkout, so that is invisible there.
 
-Key: GELATO_API_KEY in the environment, or paste it at the hidden prompt.
+Key: GELATO_API_KEY in the environment, else the macOS Keychain item
+"ohm-gelato-api-key", else paste it at the hidden prompt.
 Standard library + Pillow (already used by the scan scripts).
 """
 import getpass, html, http.server, json, os, re, secrets, shutil, socketserver, subprocess
@@ -56,7 +57,7 @@ PPI = 150          # same rule as the paper sizes: long side x 150 must fit the 
 ALL_MATERIALS = ["framed", "paper", "framed_canvas", "canvas", "wood", "acrylic"]
 DEFAULT = ["framed", "paper", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
-HIDDEN_UNTIL_PRICED: set = set()   # listings go live at the Gelato template prices
+HIDDEN_UNTIL_PRICED = FRAMED | {"paper"}   # API ignores template prices: hidden until priced in Shopify
 LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {
@@ -148,6 +149,14 @@ if not QUOTE:
         sys.exit(0)
 
 KEY = os.environ.get("GELATO_API_KEY", "")
+if not KEY and shutil.which("security"):
+    # macOS Keychain, so unattended runs need no paste. Store it once with:
+    #   security add-generic-password -U -a "$USER" -s ohm-gelato-api-key -w
+    r = subprocess.run(["security", "find-generic-password", "-s", "ohm-gelato-api-key", "-w"],
+                       capture_output=True, text=True)
+    KEY = r.stdout.strip() if r.returncode == 0 else ""
+    if KEY:
+        print("Using the Gelato key from the macOS Keychain.")
 if not KEY:
     print("Copy your Gelato API key (Gelato dashboard > Developer > API keys).")
     KEY = getpass.getpass("Paste it here and press Enter (it won't show on screen): ").strip()
@@ -163,13 +172,21 @@ def gelato(method, path, body=None, api=API):
                                  headers={"X-API-KEY": KEY, "Content-Type": "application/json", "Accept": "application/json",
                                           # Gelato's Cloudflare blocks the default Python-urllib agent (error 1010)
                                           "User-Agent": "OxHollowMedia-PrintShop/1.0 (+https://oxhollowmedia.com)"})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            return json.load(r)
-    except urllib.error.HTTPError as e:
-        if e.code == 401:
-            sys.exit("Gelato rejected the key (401). Copy it again from Developer > API keys and re-run.")
-        raise RuntimeError(f"Gelato {method} {path} -> {e.code}: {e.read().decode()[:400]}")
+    # Reads are retried through dropped connections. A create is not: Gelato may
+    # have made the product before the connection dropped, so retrying could
+    # make a duplicate. The caller skips that print instead.
+    for attempt in range(5 if method == "GET" else 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code == 401:
+                sys.exit("Gelato rejected the key (401). Copy it again from Developer > API keys and re-run.")
+            raise RuntimeError(f"Gelato {method} {path} -> {e.code}: {e.read().decode()[:400]}")
+        except (urllib.error.URLError, OSError) as e:
+            if method != "GET" or attempt == 4:
+                raise RuntimeError(f"Gelato {method} {path}: connection failed ({e})")
+            time.sleep(15 * (attempt + 1))
 
 
 templates = {}
@@ -376,7 +393,14 @@ try:
                               "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": FIT.get(mat, "slice")}
                                                     for ph in v["imagePlaceholders"]]} for v in variants],
             }
-            prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)
+            try:
+                prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)
+            except RuntimeError as e:
+                if "connection failed" not in str(e):
+                    raise
+                failed.append(f"{p['slug']} {mat} (create call dropped; check Shopify for a listing before re-running)")
+                print(f"  ! {p['slug']} {mat}: {e}")
+                continue
             print(f"  {p['slug']} {mat}: created {prod['id']}, publishing", end="", flush=True)
             # Gelato can take 30+ minutes, and its status sometimes stays
             # "created" after the Shopify product exists, so also accept a

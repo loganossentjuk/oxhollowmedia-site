@@ -13,6 +13,37 @@ Ox Hollow Media is Logan Ossentjuk's one-person studio in the San Francisco Bay 
 The name: Logan means "little hollow" and Ossentjuk means "oxen yoke". Tagline: "Dare to see."
 Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollowmedia.com
 
+## Facts from Logan (2026-10-09). Use these and don't re-ask.
+**Event services**
+- **Usage:** once delivered, clients may use the photos however they like.
+- **No deposit.** Don't mention one anywhere.
+- **Overtime:** $250 per extra hour.
+- **Rush jobs:** a $200 add-on. Ask clients to book at least 24 hours ahead if they can.
+- **Travel outside the Bay Area:** $500 per travel day, plus travel costs.
+- **Photo count:** about 100 edited photos per hour of coverage.
+- **What's delivered:** select edits by default. RAW files only on request.
+- **NDAs:** Logan will sign them.
+- **Insurance:** Logan has no liability insurance yet and is looking into it. Never claim to be insured.
+- **Second shooter:** +50% of the package rate (+$500 Session, +$1,000 Day). Already included in The Production.
+
+**Pricing and contact**
+- **Price tier:** "$$". Logan wants to be affordable.
+- **Phone number:** not in structured data.
+- **Location:** central San Francisco is fine for the business address and geo.
+
+**Films**
+- Ocean Defenders was published 2023-06-03.
+
+**Where the prints were made**
+- **Eastern Sierra, Bishop / Mammoth Lakes area, California:** Sierra River Bend, Cloudbreak Ridge, Blue Hour Ridge, Valley in Violet, Snowline, The Long Valley, Range and Scrub, Fog on the Flats, Golden Brush.
+- **Around Seattle, Washington:** Fog Forest, Highland River, Misty Ridgeline, Rainier Afterglow, Forest Fungus, Winter Bark.
+- **Rocky Mountains, Colorado:** Aspen and Cobalt, Sunflare Oak, Autumn Against Blue, Still Pond.
+- **Galápagos Islands, 2021:** Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage, Humpback Breach.
+
+**Journal**
+- Approved, as "stories behind the prints" plus guides for event clients.
+- The first entry is the Galápagos (2021). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
+
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.
 - **Print pages:**
@@ -46,7 +77,9 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Shopify is read-only for the team:**
   - reading orders, products and analytics is fine
   - customer personal data never leaves Shopify and never goes into the repo or a report
-- **Never post, email or message anyone outside the team.** Social posts, newsletters and outreach are drafts in `team/drafts/` for Logan to send.
+- **Never post, email or message anyone outside the team.**
+  - Social posts, newsletters and outreach are drafts in `team/drafts/` for Logan to send.
+  - The one exception: the manager emails the weekly report to oxhollowmedia@gmail.com.
 - **Never push to `main` or merge.** All work goes on the weekly branch and into one pull request that Logan approves.
 - **Never spend money or sign up for services.**
 - **Research is required:**

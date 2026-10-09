@@ -31,7 +31,7 @@ def frame(src, text, out):
     x, y = (im.width - round(W * 1.15)) // 2, (im.height - round(H * 1.15)) // 2
     im = im.crop((x, y, x + round(W * 1.15), y + round(H * 1.15)))
     if text:
-        font = ImageFont.truetype(FONT, 76) if FONT else ImageFont.load_default()
+        font = ImageFont.truetype(FONT, 92) if FONT else ImageFont.load_default()
         layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
         d = ImageDraw.Draw(layer)
         box = d.multiline_textbbox((0, 0), text, font=font, align="center", spacing=12)
@@ -60,7 +60,7 @@ def main():
         for k, (src, text) in enumerate(pairs):
             f = Path(tmp) / f"{k}.jpg"
             frame(src, text.replace("\\n", "\n"), f)
-            cmd += ["-loop", "1", "-t", str(secs), "-i", str(f)]
+            cmd += ["-i", str(f)]   # one frame in; zoompan makes all n frames from it
         parts, last = [], None
         for k in range(len(pairs)):
             parts.append(f"[{k}:v]zoompan=z='1+0.12*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
@@ -70,7 +70,7 @@ def main():
             parts.append(f"[{last}][v{k}]xfade=transition=fade:duration={FADE}:offset={length - FADE:.3f}[x{k}]")
             last, length = f"x{k}", length + secs - FADE
         cmd += ["-filter_complex", ";".join(parts), "-map", f"[{last}]", "-c:v", "libx264",
-                "-preset", "medium", "-crf", "21", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+                "-preset", "medium", "-crf", "24", "-maxrate", "4M", "-bufsize", "8M", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
                 "-r", str(FPS), out]
         subprocess.run(cmd, check=True)
     print(f"{out}: {len(pairs)} photos, {length:.1f}s")

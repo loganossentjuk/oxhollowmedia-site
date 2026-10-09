@@ -13,3 +13,7 @@
 /prints/green-water-i   /prints/verdigris   301
 /prints/green-water     /prints/verdigris   301
 /prints/autumn-flats   /prints/sierra-river-bend   301
+
+# The AI team's working files live in the repo but aren't part of the site.
+/team/*      /   302
+/.claude/*   /   302

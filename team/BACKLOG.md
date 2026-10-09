@@ -19,7 +19,12 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Content
 - [ ] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
 - [ ] Print stories: a 2–3 sentence story per print in the catalog (place, light, moment); start with the gallery-wall top 10
-- [ ] (Logan) Approve a Journal/blog section. First draft idea: "Where the light is: 5 Bay Area spots I photograph" in `team/drafts/`
+- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2021", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
+  - Draft it in `team/drafts/`.
+  - List the personal details needed from Logan as short questions.
+  - Propose a simple `/journal` page design for review. The journal is approved as print stories plus guides for event clients.
+- [ ] Journal entry 2 (event clients): "How to brief your event photographer"
+- [ ] Shelved: "Where the light is: 5 Bay Area spots". Logan's nature work is mostly outside the Bay Area.
 
 ## Website and bugs
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
@@ -27,7 +32,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] 404 page links back to prints and gallery
 
 ## Shop
-- [ ] Batch 2 framed listings (10 prints) were created hidden at Gelato default prices; they need pricing and publishing by Logan or the Gelato cloud session. Track until done.
+- [x] Batch 2 framed listings priced and published (2026-10-09)
 - [ ] Verdigris and Copper & Teal are held until their print files are re-made **(Logan)**
 - [ ] Holiday gift-deadline banner idea, using Gelato's published shipping cut-offs **(Logan)**
 

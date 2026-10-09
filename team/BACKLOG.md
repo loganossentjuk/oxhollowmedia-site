@@ -8,8 +8,8 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] marketing-lead: 3 Instagram drafts, 5 researched event-photography leads, content calendar
 
 ## SEO
-- [ ] Audit titles and descriptions on all top-level pages (length, uniqueness, target query per page)
-- [ ] Product + Offer JSON-LD on every print page, generated from the catalog; framed price range from `gelato.prices`
+- [x] Audit titles and descriptions on all top-level pages (length, uniqueness, target query per page)
+- [x] Product + Offer JSON-LD on every print page, generated from the catalog; framed price range from `gelato.prices`
 - [ ] LocalBusiness/ProfessionalService JSON-LD: check it is complete and consistent on the home, events and work-with-me pages
 - [ ] VideoObject JSON-LD for films
 - [ ] Internal links: print pages ↔ gallery; events ↔ work-with-me ↔ contact
@@ -17,7 +17,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] (Logan) Google Search Console and Google Business Profile: check they're set up; the team can only prepare instructions
 
 ## Content
-- [ ] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
+- [x] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
 - [ ] Print stories: a 2–3 sentence story per print in the catalog (place, light, moment); start with the gallery-wall top 10
 - [ ] **Top priority.** Journal entry 1: "The Galápagos, 2021", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
   - Draft it in `team/drafts/`.
@@ -33,7 +33,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Website and bugs
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
-- [ ] 404 page links back to prints and gallery
+- [x] 404 page links back to prints and gallery
 
 ## Reminders for Logan (repeat in every report's Needs-you list until ticked)
 - [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
@@ -60,3 +60,14 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
   - **Return** the plan for Logan to choose. After that, each week's marketing work follows the chosen plan.
 - [ ] Monthly newsletter draft (first run of each month)
 - [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)
+
+## New ideas (2026-10-09, ranked)
+- [ ] Home page: short distinct H1/intro with "San Francisco event photography"
+- [ ] Internal-link pass: events <-> work-with-me <-> contact, print pages -> gallery
+- [ ] `/links`: add h1; point Shop button at `/prints`; bump CSS version to ?v=53
+- [ ] Focus-visible outlines, skip link, axe contrast audit
+- [ ] BreadcrumbList JSON-LD on print pages; VideoObject for films (fix placeholder uploadDate)
+- [ ] Generator: stop rewriting sitemap lastmod on every build
+- [ ] Print stories top 10 (needs Logan's notes); "How to brief an event photographer" page
+- [ ] Shop: finish batch 2 framed switch, then holiday banner and gift-sized picks
+- [ ] Weekly QA script in scripts/ (Node Playwright)

@@ -85,18 +85,30 @@ def lede(p):
     return p["lede"] or p["alt"].rstrip(".") + "."
 
 
+def all_prices(p):
+    """Every price a print page lets a buyer pay. Shopify entries carry the
+    gelato.prices figures; prints not on Shopify yet fall back to the paper sizes."""
+    shop = p.get("shopify") or {}
+    found = [v["price"] for d in shop.values() for v in d.values()]
+    return found or [price for _, price in offers_of(p)]
+
+
 def product_ld(p):
+    """Product + AggregateOffer (low to high price across every size, material and
+    frame). Prices come from the catalog only; nothing is set here."""
     url = f"{SITE}/prints/{p['slug']}"
-    offers = [{
-        "@type": "Offer", "name": name, "price": str(price),
-        "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": url,
+    prices = all_prices(p)
+    offer = {
+        "@type": "AggregateOffer", "lowPrice": str(min(prices)), "highPrice": str(max(prices)),
+        "offerCount": len(prices), "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock", "url": url,
         "shippingDetails": {"@type": "OfferShippingDetails",
                             "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
                             "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}},
-    } for name, price in offers_of(p)]
+    }
     return json.dumps({"@context": "https://schema.org", "@type": "Product", "name": p["title"],
                        "description": lede(p), "image": SITE + p["image"],
-                       "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": offers},
+                       "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": offer},
                       ensure_ascii=False)
 
 

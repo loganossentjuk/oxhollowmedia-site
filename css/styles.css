@@ -208,9 +208,10 @@ body.light-nav.scrolled .nav-links a:hover { color: var(--accent); }
   background: var(--bg-dark);
   padding: 5rem 2.5rem 2rem;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  visibility: hidden; /* keeps the closed drawer's links out of the tab order */
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
 }
-.nav-drawer.open { transform: translateX(0); }
+.nav-drawer.open { transform: translateX(0); visibility: visible; transition-delay: 0s; }
 .nav-drawer ul { display: flex; flex-direction: column; gap: 2.25rem; }
 .nav-drawer a { font-size: 1.6rem; font-family: var(--serif); color: var(--bg); }
 .drawer-close {
@@ -757,7 +758,7 @@ footer {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image { order: -1; }
   .image-placeholder { aspect-ratio: 3/2; }
-  .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 3.5rem; }
   .footer-inner { flex-direction: column; text-align: center; }
   .nav-drawer { inset: 0 0 0 25%; }
 }

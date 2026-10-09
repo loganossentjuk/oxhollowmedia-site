@@ -18,6 +18,7 @@ toggle.setAttribute('aria-controls', 'drawer');
 toggle.addEventListener('click', openDrawer);
 close.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) { closeDrawer(); toggle.focus(); } });
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
 /* ── Footer year ── */

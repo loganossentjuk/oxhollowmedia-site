@@ -62,7 +62,9 @@ If something fails, send it back to that specialist once with specific feedback.
 6. Email the report to **oxhollowmedia@gmail.com** with the Gmail tools (`send_message`). This is the only email the team ever sends, and only to that address.
    - **Subject:** `Ox Hollow team: week of YYYY-MM-DD`
    - **Body:** the Summary, the Needs-you checklist, the shop snapshot and the PR link, in plain text.
-   - If Gmail isn't available in the session, say so in the final message instead.
+   - Only send if the connected Gmail account is oxhollowmedia@gmail.com. Check the sender address, e.g. from a draft's `authuser`.
+   - If Gmail is connected to any other account, or isn't available, don't send. Say so in the final message instead.
+   - Never send business mail from a work or government account.
 7. The final message of the run is the Summary + Needs-you list plus the PR link. It also goes to Logan as the run's notification.
 
 ## Never

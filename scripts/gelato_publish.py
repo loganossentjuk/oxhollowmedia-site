@@ -337,15 +337,27 @@ threading.Thread(target=httpd.serve_forever, daemon=True).start()
 port = httpd.server_address[1]
 tunnel = subprocess.Popen(["cloudflared", "tunnel", "--no-autoupdate", "--url", f"http://127.0.0.1:{port}"],
                           stderr=subprocess.PIPE, text=True)
-base = None
+found = []
+
+
+def watch_tunnel():
+    # Read cloudflared's log in a thread (it also keeps the pipe drained), so a
+    # tunnel that never prints its address can't hang the run.
+    for line in tunnel.stderr:
+        m = re.search(r"https://[a-z0-9-]+\.trycloudflare\.com", line)
+        if m and not found:
+            found.append(m.group(0))
+
+
+threading.Thread(target=watch_tunnel, daemon=True).start()
 t0 = time.time()
-while time.time() - t0 < 60 and not base:
-    m = re.search(r"https://[a-z0-9-]+\.trycloudflare\.com", tunnel.stderr.readline())
-    base = m.group(0) if m else None
-if not base:
+while time.time() - t0 < 60 and not found:
+    time.sleep(1)
+if not found:
     tunnel.kill()
-    sys.exit("Couldn't start the cloudflared tunnel.")
-threading.Thread(target=lambda: [None for _ in tunnel.stderr], daemon=True).start()   # drain logs
+    httpd.shutdown()
+    sys.exit("Couldn't start the cloudflared tunnel (no address within 60s). Re-run in a minute.")
+base = found[0]
 
 
 def wait_reachable(url):

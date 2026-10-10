@@ -11,6 +11,10 @@ get the material picker.
     python3 scripts/gelato_publish.py --materials framed,framed_canvas
     python3 scripts/gelato_publish.py --templates ID,ID,...    # find new templates by name
     python3 scripts/gelato_publish.py --quote                  # Gelato cost + suggested price per size
+    python3 scripts/gelato_publish.py --hires --replace --only amber-glass
+        # remake a print's listings from gelato-ready/HighResolution/<slug>.tif
+        # (e.g. so a bigger file can offer 24x36); the old Shopify product IDs
+        # go to "retired_products" in the catalog, to archive once the new ones work
 
 Paper (template "OHM Paper - Landscape" ...) is the unframed fine-art print;
 the website shows it as the "No frame" choice beside the frame colours, and it
@@ -48,6 +52,7 @@ import getpass, html, http.server, json, os, re, secrets, shutil, socketserver, 
 import sys, tempfile, threading, time, urllib.error, urllib.request
 from pathlib import Path
 from PIL import Image, ImageOps
+Image.MAX_IMAGE_PIXELS = None     # the TIF masters are bigger than PIL's bomb guard
 
 ROOT = Path(__file__).resolve().parent.parent
 CAT_PATH = ROOT / "prints" / "catalog.json"
@@ -82,6 +87,8 @@ def arg(name):
 
 DRY = "--dry-run" in sys.argv
 QUOTE = "--quote" in sys.argv
+HIRES = "--hires" in sys.argv          # print from HighResolution/<slug>.tif
+REPLACE = "--replace" in sys.argv      # remake materials that already have listings
 ONLY = arg("--only")
 MATERIALS = arg("--materials") or DEFAULT
 bad = [m for m in MATERIALS if m not in ALL_MATERIALS]
@@ -99,7 +106,7 @@ def save():
     mine = {p["slug"]: p for p in cat["prints"]}
     for p in disk["prints"]:
         q = mine.get(p["slug"])
-        for k in ("shopify", "shopify_products"):
+        for k in ("shopify", "shopify_products", "retired_products"):
             if q and q.get(k):
                 p.setdefault(k, {}).update(q[k])
     g = disk.setdefault("gelato", {})
@@ -129,10 +136,10 @@ def frame_key(v):
 def todo():
     out = []
     for p in cat["prints"]:
-        f = READY / f"{p['slug']}.jpg"
+        f = READY / "HighResolution" / f"{p['slug']}.tif" if HIRES else READY / f"{p['slug']}.jpg"
         if ONLY and p["slug"] not in ONLY:
             continue
-        if not f.exists() or all(m in (p.get("shopify") or {}) for m in MATERIALS):
+        if not f.exists() or (not REPLACE and all(m in (p.get("shopify") or {}) for m in MATERIALS)):
             continue
         o = orientation(f)
         if not cfg["templates"].get(o):
@@ -309,7 +316,9 @@ token = secrets.token_urlsafe(16)                     # unguessable path prefix
 (stage / token).mkdir()
 for p, f, _ in jobs:
     # Bake in EXIF rotation so Gelato sees the photo the right way up.
-    ImageOps.exif_transpose(Image.open(f)).convert("RGB").save(stage / token / f.name, quality=95)
+    im = ImageOps.exif_transpose(Image.open(f)).convert("RGB")
+    im.thumbnail((10800, 10800), Image.LANCZOS)        # 36in at 300ppi: more is wasted upload
+    im.save(stage / token / (f.stem + ".jpg"), quality=95)
 
 
 class Quiet(http.server.SimpleHTTPRequestHandler):
@@ -364,20 +373,54 @@ def description(p, mat):
             + "Made to order and shipped free in the US.</p>")
 
 
+# Created-but-not-yet-recorded products, so a stopped run can pick them up
+# (and never create them twice): [{"slug", "mat", "id"}].
+PENDING = ROOT / ".gelato-pending.json"
+pending = json.loads(PENDING.read_text()) if PENDING.exists() else []
+
+
+def save_pending():
+    PENDING.write_text(json.dumps(pending, indent=2) + "\n")
+
+
+def record(p, mat, prod):
+    price = cfg["prices"][mat]
+    if mat in FRAMED:
+        # {"12x18": {"price": 120, "frames": {"black": variant, "white": ..., "oak": ...}}}
+        entry = {}
+        for v in prod["variants"]:
+            k, fk = size_key(v["title"]), frame_key(v)
+            if v.get("externalId") and k and fk:
+                entry.setdefault(k, {"price": price[k], "frames": {}})["frames"][fk] = v["externalId"]
+        p.setdefault("shopify", {})[mat] = entry
+    else:
+        p.setdefault("shopify", {})[mat] = {
+            size_key(v["title"]): {"variant": v["externalId"], "price": price[size_key(v["title"])]}
+            for v in prod["variants"] if v.get("externalId") and size_key(v["title"])}
+    old = p.get("shopify_products", {}).get(mat)
+    if old and old != prod["externalId"]:
+        p.setdefault("retired_products", {}).setdefault(mat, []).append(old)
+    p.setdefault("shopify_products", {})[mat] = prod["externalId"]
+
+
 failed = []
+by_slug = {p["slug"]: p for p in cat["prints"]}
 try:
+    # 1. Create every listing up front; Gelato then publishes them side by side.
     for p, f, orient in jobs:
-        url = f"{base}/{token}/{f.name}"
+        url = f"{base}/{token}/{f.stem}.jpg"
         wait_reachable(url)
         fits = lambda k: max(map(int, k.split("x"))) * PPI <= p["source_px"]
-        p.setdefault("shopify", {})
         for mat in MATERIALS:
-            if mat in p["shopify"]:
-                continue
+            if any(x["slug"] == p["slug"] and x["mat"] == mat for x in pending):
+                continue                                 # created by an earlier run, still publishing
             t = template(orient, mat)
             allowed = [k for k in sizes_for(orient, mat) if fits(k)]
             variants = [v for v in t["variants"] if size_key(v["title"]) in allowed
                         and (mat not in FRAMED or frame_key(v) in frames_for(mat))]
+            have = set((p.get("shopify") or {}).get(mat, {}))
+            if mat in (p.get("shopify") or {}) and (not REPLACE or {size_key(v["title"]) for v in variants} <= have):
+                continue                                 # listed already, with every size the file allows
             body = {
                 "templateId": t["id"],
                 "title": f"{p['title']} - {LABEL[mat]}",
@@ -401,50 +444,44 @@ try:
                 failed.append(f"{p['slug']} {mat} (create call dropped; check Shopify for a listing before re-running)")
                 print(f"  ! {p['slug']} {mat}: {e}")
                 continue
-            print(f"  {p['slug']} {mat}: created {prod['id']}, publishing", end="", flush=True)
-            # Gelato can take 30+ minutes, and its status sometimes stays
-            # "created" after the Shopify product exists, so also accept a
-            # product whose variants all carry Shopify IDs.
-            deadline = time.time() + 60 * 60
-            while time.time() < deadline:
-                time.sleep(20)
-                try:
-                    prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{prod['id']}")
-                except (RuntimeError, OSError) as e:      # transient network/API hiccup: keep waiting
-                    print("!", end="", flush=True)
-                    continue
-                print(".", end="", flush=True)
-                linked = prod.get("variants") and all(v.get("externalId") for v in prod["variants"])
-                if prod["status"] in ("active", "publishing_error") or (linked and prod.get("externalId")):
-                    break
-            print(" " + prod["status"])
-            if not (prod.get("externalId") and prod.get("variants")
-                    and all(v.get("externalId") for v in prod["variants"])):
-                # One stuck product shouldn't end a long run: note it and move on.
-                # Re-running later retries it (its catalog entry is still missing).
-                failed.append(f"{p['slug']} {mat} ({prod['status']} {prod.get('publishingErrorCode') or ''})".strip())
-                print(f"  ! skipped {p['slug']} {mat}: Gelato left it '{prod['status']}'")
+            pending.append({"slug": p["slug"], "mat": mat, "id": prod["id"]})
+            save_pending()
+            print(f"  {p['slug']} {mat}: created {prod['id']}", flush=True)
+            time.sleep(2)
+
+    # 2. Wait for them together (Gelato can take 30+ minutes each). Its status
+    # sometimes stays "created" after the Shopify product exists, so also accept
+    # a product whose variants all carry Shopify IDs. The tunnel stays up the
+    # whole time, since Gelato may fetch a file late.
+    print(f"\nwaiting on {len(pending)} listing(s)", flush=True)
+    deadline = time.time() + 3 * 60 * 60
+    while pending and time.time() < deadline:
+        time.sleep(30)
+        for x in list(pending):
+            try:
+                prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{x['id']}")
+            except (RuntimeError, OSError):              # transient network/API hiccup: keep waiting
                 continue
-            price = cfg["prices"][mat]
-            if mat in FRAMED:
-                # {"12x18": {"price": 120, "frames": {"black": variant, "white": ..., "oak": ...}}}
-                entry = {}
-                for v in prod["variants"]:
-                    k, fk = size_key(v["title"]), frame_key(v)
-                    if v.get("externalId") and k and fk:
-                        entry.setdefault(k, {"price": price[k], "frames": {}})["frames"][fk] = v["externalId"]
-                p["shopify"][mat] = entry
-            else:
-                p["shopify"][mat] = {
-                    size_key(v["title"]): {"variant": v["externalId"], "price": price[size_key(v["title"])]}
-                    for v in prod["variants"] if v.get("externalId") and size_key(v["title"])}
-            p.setdefault("shopify_products", {})[mat] = prod["externalId"]
-            save()                                     # keep progress if a later step fails
+            linked = (prod.get("externalId") and prod.get("variants")
+                      and all(v.get("externalId") for v in prod["variants"]))
+            if linked:
+                record(by_slug[x["slug"]], x["mat"], prod)
+                pending.remove(x)
+                save()
+                save_pending()
+                print(f"  {x['slug']} {x['mat']}: published ({len(pending)} left)", flush=True)
+            elif prod["status"] == "publishing_error":
+                failed.append(f"{x['slug']} {x['mat']} (publishing_error {prod.get('publishingErrorCode') or ''})".strip())
+                pending.remove(x)
+                save_pending()
+                print(f"  ! {x['slug']} {x['mat']}: Gelato publishing error", flush=True)
 finally:
     tunnel.terminate()
     httpd.shutdown()
     shutil.rmtree(stage, ignore_errors=True)
 
+if pending:
+    print("\nstill publishing (re-run to pick them up): " + ", ".join(f"{x['slug']} {x['mat']}" for x in pending))
 if failed:
     print("\nnot published (re-run to retry): " + ", ".join(failed))
 print("\ndone. Next: prices/shipping check in Shopify, then python3 scripts/build_print_pages.py")

@@ -28,6 +28,10 @@
       "name": "Mountains",
       "intro": "High country: the eastern Sierra, coastal ranges, and the light that moves across them."
     },
+    "embers": {
+      "name": "Embers",
+      "intro": "One campfire, three ways: the wood, the flame, and the sparks it throws into the dark."
+    },
     "ocean": {
       "name": "Ocean",
       "intro": "Coastline, tidepool, and open water, from the Golden Gate to the volcanic shallows."
@@ -1971,10 +1975,64 @@
             "variant": "67650949185778",
             "price": 50
           }
+        },
+        "framed": {
+          "8x12": {
+            "price": 115,
+            "frames": {
+              "black": "67664126804210",
+              "white": "67664126738674",
+              "oak": "67664126771442"
+            }
+          },
+          "12x18": {
+            "price": 155,
+            "frames": {
+              "white": "67664126836978",
+              "oak": "67664126869746",
+              "black": "67664126902514"
+            }
+          },
+          "16x24": {
+            "price": 205,
+            "frames": {
+              "white": "67664126935282",
+              "oak": "67664126968050",
+              "black": "67664127000818"
+            }
+          }
+        },
+        "framed_canvas": {
+          "8x12": {
+            "price": 125,
+            "frames": {
+              "black": "67664206921970",
+              "oak": "67664206856434",
+              "walnut": "67664206889202"
+            }
+          },
+          "12x18": {
+            "price": 150,
+            "frames": {
+              "oak": "67664206954738",
+              "walnut": "67664206987506",
+              "black": "67664207020274"
+            }
+          },
+          "16x24": {
+            "price": 195,
+            "frames": {
+              "oak": "67664207053042",
+              "walnut": "67664207085810",
+              "black": "67664207118578"
+            }
+          }
         }
       },
       "shopify_products": {
-        "paper": "15419979890930"
+        "paper": "15419979890930",
+        "framed": "15422307762418",
+        "framed_canvas": "15422358749426"
       }
     },
     {
@@ -2219,10 +2277,64 @@
             "variant": "67650956755186",
             "price": 50
           }
+        },
+        "framed": {
+          "8x12": {
+            "price": 115,
+            "frames": {
+              "white": "67664295231730",
+              "oak": "67664295264498",
+              "black": "67664295297266"
+            }
+          },
+          "12x18": {
+            "price": 155,
+            "frames": {
+              "white": "67664295330034",
+              "oak": "67664295362802",
+              "black": "67664295395570"
+            }
+          },
+          "16x24": {
+            "price": 205,
+            "frames": {
+              "white": "67664295428338",
+              "oak": "67664295461106",
+              "black": "67664295493874"
+            }
+          }
+        },
+        "framed_canvas": {
+          "16x24": {
+            "price": 195,
+            "frames": {
+              "black": "67664311091442",
+              "oak": "67664311025906",
+              "walnut": "67664311058674"
+            }
+          },
+          "8x12": {
+            "price": 125,
+            "frames": {
+              "oak": "67664310829298",
+              "walnut": "67664310862066",
+              "black": "67664310894834"
+            }
+          },
+          "12x18": {
+            "price": 150,
+            "frames": {
+              "oak": "67664310927602",
+              "walnut": "67664310960370",
+              "black": "67664310993138"
+            }
+          }
         }
       },
       "shopify_products": {
-        "paper": "15419983462642"
+        "paper": "15419983462642",
+        "framed": "15422370480370",
+        "framed_canvas": "15422374215922"
       }
     },
     {
@@ -6648,7 +6760,7 @@
     {
       "slug": "ember-study",
       "title": "Ember Study",
-      "category": "mountains",
+      "category": "embers",
       "image": "/images/portfolio/mountains/11-ember-study.jpg",
       "webp": "/images/portfolio/mountains/11-ember-study.webp",
       "width": 2000,
@@ -6751,6 +6863,222 @@
         "paper": "15420042936562",
         "framed": "15422256120050",
         "framed_canvas": "15422256611570"
+      }
+    },
+    {
+      "slug": "rising-flame",
+      "title": "Rising Flame",
+      "image": "/images/portfolio/mountains/28-rising-flame.jpg",
+      "webp": "/images/portfolio/mountains/28-rising-flame.webp",
+      "alt": "A single tongue of campfire flame rising against the dark",
+      "master": "PrintMasters/mountains/DSC03751.JPG",
+      "category": "embers",
+      "width": 2000,
+      "height": 1125,
+      "lede": "",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 6000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67664167633138",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67664167665906",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67664167698674",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67664167731442",
+            "price": 70
+          }
+        },
+        "framed": {
+          "8x12": {
+            "price": 115,
+            "frames": {
+              "white": "67664221831410",
+              "oak": "67664221864178",
+              "black": "67664221896946"
+            }
+          },
+          "24x36": {
+            "price": 315,
+            "frames": {
+              "black": "67664222191858",
+              "white": "67664222126322",
+              "oak": "67664222159090"
+            }
+          },
+          "12x18": {
+            "price": 155,
+            "frames": {
+              "white": "67664221929714",
+              "oak": "67664221962482",
+              "black": "67664221995250"
+            }
+          },
+          "16x24": {
+            "price": 205,
+            "frames": {
+              "white": "67664222028018",
+              "oak": "67664222060786",
+              "black": "67664222093554"
+            }
+          }
+        },
+        "framed_canvas": {
+          "8x12": {
+            "price": 125,
+            "frames": {
+              "walnut": "67664304046322",
+              "black": "67664304079090",
+              "oak": "67664304013554"
+            }
+          },
+          "12x18": {
+            "price": 150,
+            "frames": {
+              "oak": "67664304111858",
+              "walnut": "67664304144626",
+              "black": "67664304177394"
+            }
+          },
+          "16x24": {
+            "price": 195,
+            "frames": {
+              "oak": "67664304210162",
+              "walnut": "67664304242930",
+              "black": "67664304275698"
+            }
+          },
+          "24x36": {
+            "price": 330,
+            "frames": {
+              "oak": "67664304308466",
+              "walnut": "67664304341234",
+              "black": "67664304374002"
+            }
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15422337908978",
+        "framed": "15422363631858",
+        "framed_canvas": "15422372380914"
+      }
+    },
+    {
+      "slug": "sparks",
+      "title": "Sparks",
+      "image": "/images/portfolio/mountains/29-sparks.jpg",
+      "webp": "/images/portfolio/mountains/29-sparks.webp",
+      "alt": "A spray of campfire sparks drifting through the dark",
+      "master": "PrintMasters/mountains/DSC03915.JPG",
+      "category": "embers",
+      "width": 2000,
+      "height": 1125,
+      "lede": "",
+      "story": "",
+      "shape": "16:9",
+      "source_px": 6000,
+      "shopify": {
+        "paper": {
+          "8x12": {
+            "variant": "67664325640434",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67664325673202",
+            "price": 50
+          },
+          "16x24": {
+            "variant": "67664325705970",
+            "price": 55
+          },
+          "24x36": {
+            "variant": "67664325738738",
+            "price": 70
+          }
+        },
+        "framed": {
+          "8x12": {
+            "price": 115,
+            "frames": {
+              "white": "67664397533426",
+              "oak": "67664397566194",
+              "black": "67664397598962"
+            }
+          },
+          "12x18": {
+            "price": 155,
+            "frames": {
+              "white": "67664397631730",
+              "oak": "67664397664498",
+              "black": "67664397697266"
+            }
+          },
+          "16x24": {
+            "price": 205,
+            "frames": {
+              "white": "67664397730034",
+              "oak": "67664397762802",
+              "black": "67664397795570"
+            }
+          },
+          "24x36": {
+            "price": 315,
+            "frames": {
+              "white": "67664397828338",
+              "oak": "67664397861106",
+              "black": "67664397893874"
+            }
+          }
+        },
+        "framed_canvas": {
+          "16x24": {
+            "price": 195,
+            "frames": {
+              "oak": "67664636313842",
+              "walnut": "67664636346610",
+              "black": "67664636379378"
+            }
+          },
+          "8x12": {
+            "price": 125,
+            "frames": {
+              "oak": "67664636117234",
+              "walnut": "67664636150002",
+              "black": "67664636182770"
+            }
+          },
+          "12x18": {
+            "price": 150,
+            "frames": {
+              "oak": "67664636215538",
+              "walnut": "67664636248306",
+              "black": "67664636281074"
+            }
+          },
+          "24x36": {
+            "price": 330,
+            "frames": {
+              "oak": "67664636412146",
+              "walnut": "67664636444914",
+              "black": "67664636477682"
+            }
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15422376935666",
+        "framed": "15422400463090",
+        "framed_canvas": "15422491853042"
       }
     }
   ],

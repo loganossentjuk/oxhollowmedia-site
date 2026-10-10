@@ -359,6 +359,16 @@
       <image:title>Ember Study</image:title>
       <image:caption>Close study of campfire flames against the dark</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/28-rising-flame.jpg</image:loc>
+      <image:title>Rising Flame</image:title>
+      <image:caption>A single tongue of campfire flame rising against the dark</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/29-sparks.jpg</image:loc>
+      <image:title>Sparks</image:title>
+      <image:caption>A spray of campfire sparks drifting through the dark</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://oxhollowmedia.com/films</loc>
@@ -919,6 +929,22 @@
     <image:image>
       <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/11-ember-study.jpg</image:loc>
       <image:title>Ember Study</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/prints/rising-flame</loc>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/28-rising-flame.jpg</image:loc>
+      <image:title>Rising Flame</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://oxhollowmedia.com/prints/sparks</loc>
+    <lastmod>2026-10-09</lastmod>
+    <image:image>
+      <image:loc>https://oxhollowmedia.com/images/portfolio/mountains/29-sparks.jpg</image:loc>
+      <image:title>Sparks</image:title>
     </image:image>
   </url>
   <!-- PRINTS:END -->

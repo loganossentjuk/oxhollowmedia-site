@@ -10,8 +10,8 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## SEO
 - [x] Audit titles and descriptions on all top-level pages (length, uniqueness, target query per page)
 - [x] Product + Offer JSON-LD on every print page, generated from the catalog; framed price range from `gelato.prices`
-- [ ] LocalBusiness/ProfessionalService JSON-LD: check it is complete and consistent on the home, events and work-with-me pages
-- [ ] VideoObject JSON-LD for films
+- [x] LocalBusiness/ProfessionalService JSON-LD: check it is complete and consistent on the home, events and work-with-me pages
+- [x] VideoObject JSON-LD for films (Ocean Defenders only; other dates TODO(Logan))
 - [ ] Internal links: print pages ↔ gallery; events ↔ work-with-me ↔ contact
 - [ ] Image alt-text pass across the gallery and print pages
 - [ ] (Logan) Google Search Console and Google Business Profile: check they're set up; the team can only prepare instructions
@@ -62,12 +62,20 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)
 
 ## New ideas (2026-10-09, ranked)
-- [ ] Home page: short distinct H1/intro with "San Francisco event photography"
+- [x] Home page: short distinct H1/intro with "San Francisco event photography"
 - [ ] Internal-link pass: events <-> work-with-me <-> contact, print pages -> gallery
-- [ ] `/links`: add h1; point Shop button at `/prints`; bump CSS version to ?v=53
+- [x] `/links`: add h1; point Shop button at `/prints`; bump CSS version to ?v=53
 - [ ] Focus-visible outlines, skip link, axe contrast audit
 - [ ] BreadcrumbList JSON-LD on print pages; VideoObject for films (fix placeholder uploadDate)
 - [ ] Generator: stop rewriting sitemap lastmod on every build
 - [ ] Print stories top 10 (needs Logan's notes); "How to brief an event photographer" page
 - [ ] Shop: finish batch 2 framed switch, then holiday banner and gift-sized picks
 - [ ] Weekly QA script in scripts/ (Node Playwright)
+
+## New ideas (2026-10-12, ranked)
+- [ ] Journal entry 1 is a scaffold: needs Logan's answers (team/drafts/journal-galapagos-2021.md), then fill catalog `story` fields
+- [ ] Catalog: drop archived canvas entry for `petunia-blush`; add framed entries for Verdigris, Copper & Teal; add Rising Flame and Sparks (needs Logan OK)
+- [ ] Decide canonical set for duplicate "-1"/"-2" Shopify products (24x36 added), then repoint catalog
+- [ ] Hidden UTM/source field on /contact form; Pinterest pins; email capture; holiday banner (blocked on Gelato 2026 dates)
+- [ ] Axe contrast audit and skip link; BreadcrumbList on print pages
+- [ ] VideoObject for Brushstrokes For Survival and Fluid Frontier once Vimeo dates are confirmed

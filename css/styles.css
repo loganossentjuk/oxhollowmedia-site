@@ -930,6 +930,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+/* The forest-green outline vanishes on the green bands, footer and link-in-bio
+   page (about 1.2:1), so use cream there. WCAG 2.4.7 / 1.4.11. */
+.links-page :is(a, button):focus-visible,
+:is(#contact, #newsletter, #print-info, #the-name, footer) :is(a, button, input, textarea, select):focus-visible {
+  outline-color: var(--paper);
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }

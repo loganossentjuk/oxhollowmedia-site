@@ -99,14 +99,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/blue-hour-ridge.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e29bd38a-bc7a-44ee-aa56-617088107dd4.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6028f2b0-4663-4851-bf0f-9714e2b65210.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9fe4f374-cd60-4597-acc4-e1def74fc914.jpg"
+          "white": "/images/mockups/blue-hour-ridge-framed-white.jpg",
+          "oak": "/images/mockups/blue-hour-ridge-framed-oak.jpg",
+          "black": "/images/mockups/blue-hour-ridge-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9b995e74-de5d-4cd2-89c1-8816dbb43ade.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/882d720f-c1e3-45d8-b76d-5a1e57fd76e0.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/aa963859-cb56-4d14-b400-7e92f9613234.jpg"
+          "oak": "/images/mockups/blue-hour-ridge-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/blue-hour-ridge-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/blue-hour-ridge-framed-canvas-black.jpg"
         }
       }
     },
@@ -199,14 +199,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e62dcb2a-7f1b-449b-a42f-efeeae4366b8.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0e4f105e-f8aa-45a2-a53a-bb565b503000.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ab50ad2a-2688-4e04-ad0c-da44756278df.jpg"
+          "white": "/images/mockups/sierra-river-bend-framed-white.jpg",
+          "oak": "/images/mockups/sierra-river-bend-framed-oak.jpg",
+          "black": "/images/mockups/sierra-river-bend-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ad46a380-0f26-4842-9ea9-34e3b713f7d1.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b5b73113-5a79-4970-9c0a-4a3b1e4d1f5b.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f4c55b37-4167-4b4e-965a-edce49c5b292.jpg"
+          "walnut": "/images/mockups/sierra-river-bend-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/sierra-river-bend-framed-canvas-black.jpg",
+          "oak": "/images/mockups/sierra-river-bend-framed-canvas-oak.jpg"
         }
       }
     },
@@ -258,14 +258,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/04be259a-9be7-4fcd-8427-ba80d3b29e7c.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1cae4e16-c4e7-40ec-875c-d54c1fcbe45b.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c952cd63-0059-41b6-9b7a-e862d6148d5b.jpg"
+          "white": "/images/mockups/fitz-roy-alpenglow-framed-white.jpg",
+          "oak": "/images/mockups/fitz-roy-alpenglow-framed-oak.jpg",
+          "black": "/images/mockups/fitz-roy-alpenglow-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d776c34b-528c-4908-b6fd-d8d04fc29d8b.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4b63c791-1519-4e71-8e15-edac03c81728.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8f4e668a-613f-4931-96c4-4ced10732707.jpg"
+          "oak": "/images/mockups/fitz-roy-alpenglow-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/fitz-roy-alpenglow-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/fitz-roy-alpenglow-framed-canvas-black.jpg"
         }
       },
       "master": "PrintMasters/gelato-ready/HighResolution/fitz-roy-alpenglow.tif"
@@ -401,14 +401,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/25fdc149-929a-4fe0-bb2a-84ff30cdff73.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c182b19f-9086-46e0-9067-dd028c905e21.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8465449f-84f2-4109-a6e1-c50df6782605.jpg"
+          "white": "/images/mockups/cloudbreak-ridge-framed-white.jpg",
+          "oak": "/images/mockups/cloudbreak-ridge-framed-oak.jpg",
+          "black": "/images/mockups/cloudbreak-ridge-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a4d916e4-48e1-4088-904d-54a68df9dfa3.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/dd0a5886-d728-48d4-b653-d1d1c92f6d6d.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a750f8af-7885-4b8e-978c-5db0fa9c4048.jpg"
+          "oak": "/images/mockups/cloudbreak-ridge-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/cloudbreak-ridge-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/cloudbreak-ridge-framed-canvas-black.jpg"
         }
       }
     },
@@ -578,14 +578,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c819fff2-d7c3-44f8-b63b-ecc4fad8fc72.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9cedb14c-2821-4f99-9f0e-cd8d892ec7c4.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/385f9bae-d8b8-46dd-9f2d-ee408e29200f.jpg"
+          "white": "/images/mockups/fog-forest-framed-white.jpg",
+          "oak": "/images/mockups/fog-forest-framed-oak.jpg",
+          "black": "/images/mockups/fog-forest-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1640669b-3137-4997-b2d4-d5d8a690f46f.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/54390b4b-0d55-4a13-8030-ca76bbfdc962.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b3771523-ba5b-457f-af0e-be38661e8fab.jpg"
+          "oak": "/images/mockups/fog-forest-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/fog-forest-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/fog-forest-framed-canvas-black.jpg"
         }
       }
     },
@@ -638,14 +638,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/highland-river.tif",
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/74cf9125-2baa-4063-a13d-8792203f659c.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/753fb266-9dd6-4949-a4b1-088eb3d3d99c.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/25840571-8e29-45a9-8ffc-8e1a2e3ae41c.jpg"
+          "oak": "/images/mockups/highland-river-framed-oak.jpg",
+          "black": "/images/mockups/highland-river-framed-black.jpg",
+          "white": "/images/mockups/highland-river-framed-white.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/dd2edf9c-f00f-472d-8138-c3b27a7e190d.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/49606d6a-8530-41c3-9c33-7aed4016f81e.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ff017b10-f9b8-4910-9ec7-7f2c5542ca8d.jpg"
+          "walnut": "/images/mockups/highland-river-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/highland-river-framed-canvas-black.jpg",
+          "oak": "/images/mockups/highland-river-framed-canvas-oak.jpg"
         }
       }
     },
@@ -815,9 +815,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8e5922ab-a5b1-4601-8db1-8a867069c9c4.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/01692462-c717-4102-a1a6-60c6ac81d738.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d862a2e5-9e99-4346-832a-77ff41bf9159.jpg"
+          "white": "/images/mockups/misty-ridgeline-framed-white.jpg",
+          "oak": "/images/mockups/misty-ridgeline-framed-oak.jpg",
+          "black": "/images/mockups/misty-ridgeline-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/misty-ridgeline-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/misty-ridgeline-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/misty-ridgeline-framed-canvas-black.jpg"
         }
       }
     },
@@ -987,14 +992,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/84ed2605-7fed-4234-b21c-c3e8a04c7f84.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/86dd2b7a-900d-421f-a344-8ffc6f23e364.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5b1be248-cf94-49dd-84a8-26e1e3a76433.jpg"
+          "white": "/images/mockups/dusk-branches-framed-white.jpg",
+          "oak": "/images/mockups/dusk-branches-framed-oak.jpg",
+          "black": "/images/mockups/dusk-branches-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0039f479-4e46-4a31-ad89-2d8a88b5269c.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1f1b2c71-8409-4057-8211-da8b4dcf2de3.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5d39155d-4368-4a12-b91e-adda21e7d29a.jpg"
+          "oak": "/images/mockups/dusk-branches-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/dusk-branches-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/dusk-branches-framed-canvas-black.jpg"
         }
       }
     },
@@ -1164,14 +1169,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c64a0ff6-77e0-440d-9f74-b4c10889afc4.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1e38bb88-6703-4193-8404-dcef511af9aa.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9c5e49b1-f46e-48d2-975b-714e0bcc2b27.jpg"
+          "white": "/images/mockups/aspen-and-cobalt-framed-white.jpg",
+          "oak": "/images/mockups/aspen-and-cobalt-framed-oak.jpg",
+          "black": "/images/mockups/aspen-and-cobalt-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6a59d491-c7be-451d-8afc-bc5473cc8e35.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a1b9fb44-eca3-4556-97b3-3995c59a175f.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/83de4887-1c18-40cc-8f77-d1304c15d92a.jpg"
+          "oak": "/images/mockups/aspen-and-cobalt-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/aspen-and-cobalt-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/aspen-and-cobalt-framed-canvas-black.jpg"
         }
       }
     },
@@ -1224,14 +1229,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/rainier-afterglow.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/35a47993-a463-4a9c-b1c4-894e67b2d7a6.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8e774426-f44f-48af-a3e8-5e0e1ac33a6f.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0244bec7-aef5-4e30-9078-c733408622bd.jpg"
+          "white": "/images/mockups/rainier-afterglow-framed-white.jpg",
+          "oak": "/images/mockups/rainier-afterglow-framed-oak.jpg",
+          "black": "/images/mockups/rainier-afterglow-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/37fe8fc9-30f0-4d46-972b-287fd58ce660.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e76789dd-d6cb-49d9-b628-cfe129a51615.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/873123a5-4087-470f-aff8-40c197bd392f.jpg"
+          "oak": "/images/mockups/rainier-afterglow-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/rainier-afterglow-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/rainier-afterglow-framed-canvas-black.jpg"
         }
       }
     },
@@ -1398,14 +1403,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/29fe323f-8f7d-4c8a-85a7-edd1edb22a94.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3099da26-7b6b-40b9-bc30-5e9cd9b841ef.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6365bbe2-c8f8-4264-abf2-ccfdd38ec44d.jpg"
+          "white": "/images/mockups/marsh-at-dusk-framed-white.jpg",
+          "oak": "/images/mockups/marsh-at-dusk-framed-oak.jpg",
+          "black": "/images/mockups/marsh-at-dusk-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/754da307-173a-41e0-94e1-b223637fafb1.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/de0a9617-f26b-4b66-96eb-d3a5b65154f7.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/733ec27c-b576-4e9c-ab64-b1aa5762092b.jpg"
+          "oak": "/images/mockups/marsh-at-dusk-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/marsh-at-dusk-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/marsh-at-dusk-framed-canvas-black.jpg"
         }
       }
     },
@@ -1572,14 +1577,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/75039fe0-84ab-4fa2-9757-1a96cf050133.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0673c1c8-8176-46d1-be3c-63e36b24bee8.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a8bc6944-501a-41d2-a349-a3511b737f15.jpg"
+          "white": "/images/mockups/sun-on-the-water-framed-white.jpg",
+          "oak": "/images/mockups/sun-on-the-water-framed-oak.jpg",
+          "black": "/images/mockups/sun-on-the-water-framed-black.jpg"
         },
         "framed_canvas": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/fee84d36-5fe2-4cfe-bc9c-2e083a8e5094.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8d465512-00ca-443b-9335-ced2d4efad89.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/358e8696-1445-4ade-8e84-8424b41b54db.jpg"
+          "black": "/images/mockups/sun-on-the-water-framed-canvas-black.jpg",
+          "oak": "/images/mockups/sun-on-the-water-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/sun-on-the-water-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -1749,14 +1754,14 @@
       },
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b0192d01-6658-48d4-8319-09cddbc71254.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cbdf8c9a-3210-4ad6-a2d1-99ab364b0795.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e4f7dd1f-9d51-460c-a42d-77c373c0b549.jpg"
+          "oak": "/images/mockups/the-wax-ritual-framed-oak.jpg",
+          "black": "/images/mockups/the-wax-ritual-framed-black.jpg",
+          "white": "/images/mockups/the-wax-ritual-framed-white.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e0d30a5c-97ce-465a-af6a-f697fba0bbc5.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/485b3882-7959-4333-8e04-e707f848bb77.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/64f0cca8-672f-44f4-9b33-ab49eb609cfa.jpg"
+          "walnut": "/images/mockups/the-wax-ritual-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/the-wax-ritual-framed-canvas-black.jpg",
+          "oak": "/images/mockups/the-wax-ritual-framed-canvas-oak.jpg"
         }
       }
     },
@@ -1869,14 +1874,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3bbe7867-25af-4834-b8e1-6b4aed00b8f4.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7ebd4849-0f52-4b6e-95be-25b7e85f5f6c.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7c2b6f24-052b-4609-9837-64db5879e445.jpg"
+          "white": "/images/mockups/dawn-patrol-framed-white.jpg",
+          "oak": "/images/mockups/dawn-patrol-framed-oak.jpg",
+          "black": "/images/mockups/dawn-patrol-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/db04eaa0-0750-49ff-a64f-4b62c7b740cc.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/29478772-8d78-4509-8365-a07aed48d2b5.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a5429556-a5a9-4577-852c-e75a6ea44c60.jpg"
+          "oak": "/images/mockups/dawn-patrol-framed-canvas-oak.jpg",
+          "black": "/images/mockups/dawn-patrol-framed-canvas-black.jpg",
+          "walnut": "/images/mockups/dawn-patrol-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -2056,6 +2061,18 @@
         "acrylic": [
           "15417022284018"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/shorebreak-boulders-framed-white.jpg",
+          "oak": "/images/mockups/shorebreak-boulders-framed-oak.jpg",
+          "black": "/images/mockups/shorebreak-boulders-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/shorebreak-boulders-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/shorebreak-boulders-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/shorebreak-boulders-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -2196,14 +2213,14 @@
       },
       "previews": {
         "framed": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7f81f43a-355c-492d-a18d-29256dbfa1bd.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/58af29c1-6ccc-4f75-9e05-80de6fb25d1c.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7d053d66-48ab-43a9-ad2b-2901f0782f7b.jpg"
+          "black": "/images/mockups/verdigris-framed-black.jpg",
+          "white": "/images/mockups/verdigris-framed-white.jpg",
+          "oak": "/images/mockups/verdigris-framed-oak.jpg"
         },
         "framed_canvas": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3dce88e1-3190-49c1-8a50-d493c316f140.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/39ef2162-2d53-401c-b814-32bbef27027e.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9ff05fb8-8659-403d-83cb-a44372fa0937.jpg"
+          "black": "/images/mockups/verdigris-framed-canvas-black.jpg",
+          "oak": "/images/mockups/verdigris-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/verdigris-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -2373,14 +2390,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c69fe97c-1416-4ef7-badd-88d1bf5421d5.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6ce3bb17-3b2a-4f1c-a6f6-c757e3603acf.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/19c3686c-adb7-474e-9a19-e7c62d56120f.jpg"
+          "white": "/images/mockups/turquoise-shallows-framed-white.jpg",
+          "oak": "/images/mockups/turquoise-shallows-framed-oak.jpg",
+          "black": "/images/mockups/turquoise-shallows-framed-black.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/72ce0100-cbf6-4cb9-94e3-3b9d80657a2e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ba7317ef-2332-4f79-a3c3-ebf2048f5f2f.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a10ab87b-0b5b-4767-9dcc-39083a606ad7.jpg"
+          "walnut": "/images/mockups/turquoise-shallows-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/turquoise-shallows-framed-canvas-black.jpg",
+          "oak": "/images/mockups/turquoise-shallows-framed-canvas-oak.jpg"
         }
       }
     },
@@ -2522,14 +2539,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ce0b8d26-2329-4be0-a991-5058e20d307a.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1e9236b9-3661-4777-9280-db78b6f9dd62.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4e06fbf3-8ee0-4139-87a6-b4c2d8fec33a.jpg"
+          "white": "/images/mockups/copper-and-teal-framed-white.jpg",
+          "oak": "/images/mockups/copper-and-teal-framed-oak.jpg",
+          "black": "/images/mockups/copper-and-teal-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/493ca734-8231-4be7-924d-fc9acf24263d.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f3bdb798-99d7-4d5a-8654-d39797eaa8bc.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d96082b9-b453-4401-91a7-c38eec9da58a.jpg"
+          "oak": "/images/mockups/copper-and-teal-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/copper-and-teal-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/copper-and-teal-framed-canvas-black.jpg"
         }
       }
     },
@@ -2667,14 +2684,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2cb31b96-a130-477a-9af3-263eebab75ce.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/66330437-a7f9-4c91-b9b2-b6efd2f91083.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/555f2f51-3a28-405d-878b-0d5efd68a20f.jpg"
+          "white": "/images/mockups/tidepool-lava-framed-white.jpg",
+          "oak": "/images/mockups/tidepool-lava-framed-oak.jpg",
+          "black": "/images/mockups/tidepool-lava-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d00582fa-15fe-4312-9b21-12a490a7da4b.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/aa251d40-e8cd-4785-b626-21321eb75de4.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c73196b6-ec87-4711-aad4-a40c9fef930f.jpg"
+          "oak": "/images/mockups/tidepool-lava-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/tidepool-lava-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/tidepool-lava-framed-canvas-black.jpg"
         }
       }
     },
@@ -2812,14 +2829,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/43379387-12a6-4599-983d-0d135f2a6f85.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a8b9e0dc-5c10-41e8-953d-6b6037b240d7.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8ef000b0-f27c-48d2-b5de-76a8024609ca.jpg"
+          "white": "/images/mockups/golden-gate-fog-framed-white.jpg",
+          "oak": "/images/mockups/golden-gate-fog-framed-oak.jpg",
+          "black": "/images/mockups/golden-gate-fog-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e693a2a8-8ab0-4a70-8488-da716d298269.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e9202b55-44bc-4b0c-bdda-ba21f5452fb6.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/61603b7e-053d-4446-bf62-e41f30b85fc2.jpg"
+          "oak": "/images/mockups/golden-gate-fog-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/golden-gate-fog-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/golden-gate-fog-framed-canvas-black.jpg"
         }
       }
     },
@@ -2957,14 +2974,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2dbd978a-a212-4182-a838-eaf744f54705.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a61c9a1d-b9e1-44e6-ab46-357aff006614.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/00c01993-2f35-4d86-9fc7-8e6d35c65237.jpg"
+          "white": "/images/mockups/turquoise-harbor-framed-white.jpg",
+          "oak": "/images/mockups/turquoise-harbor-framed-oak.jpg",
+          "black": "/images/mockups/turquoise-harbor-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/587af95a-2300-4168-a6f8-53cbc67243c9.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8ea15434-841b-4a20-8651-ce2c1b6d51f7.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/412ee253-d42e-4807-a9d5-ab8fa693be7f.jpg"
+          "oak": "/images/mockups/turquoise-harbor-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/turquoise-harbor-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/turquoise-harbor-framed-canvas-black.jpg"
         }
       }
     },
@@ -3017,14 +3034,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/paddler-at-the-gate.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5884020e-debc-47ac-b862-d288976d1fd7.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/209738b0-87cc-47fc-ac6a-666bcb5eebbb.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a4d968ab-7032-4868-becd-643432dc19c7.jpg"
+          "white": "/images/mockups/paddler-at-the-gate-framed-white.jpg",
+          "oak": "/images/mockups/paddler-at-the-gate-framed-oak.jpg",
+          "black": "/images/mockups/paddler-at-the-gate-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/04f5a001-67b9-4d9e-93dd-0b0b7d41c5e9.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/10bcb361-31be-483b-ab49-45cef9874a9d.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9b46a384-eb9b-4c69-a70f-3eb423570f07.jpg"
+          "oak": "/images/mockups/paddler-at-the-gate-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/paddler-at-the-gate-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/paddler-at-the-gate-framed-canvas-black.jpg"
         }
       }
     },
@@ -3194,14 +3211,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cd4adbdc-7769-49ac-b2d0-2e22d050a535.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d3dba49a-19ff-4aaf-8cc8-21477d26ef8e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/22bcb6e9-abc6-4c8f-b972-ddf0878145ae.jpg"
+          "white": "/images/mockups/driftwood-shore-framed-white.jpg",
+          "oak": "/images/mockups/driftwood-shore-framed-oak.jpg",
+          "black": "/images/mockups/driftwood-shore-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/df7c8c48-9121-48f7-9268-5367cd9cb666.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0dacdf06-a75e-4d6a-baa9-e29bcd1ae88c.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f4d881ac-bfc7-48f3-80b2-320f05f0273b.jpg"
+          "oak": "/images/mockups/driftwood-shore-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/driftwood-shore-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/driftwood-shore-framed-canvas-black.jpg"
         }
       }
     },
@@ -3253,14 +3270,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f901f15b-293b-41f0-8501-78954ea42d0d.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/494642b8-ae1b-4da3-81ea-a6b89c495f88.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a165103c-3b38-4359-8dde-e1cbbda56810.jpg"
+          "white": "/images/mockups/blue-footed-booby-framed-white.jpg",
+          "oak": "/images/mockups/blue-footed-booby-framed-oak.jpg",
+          "black": "/images/mockups/blue-footed-booby-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d62e8c54-37db-4ea2-88f7-c0bc2b88f3c8.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/56287b9c-75d8-4910-9540-71bb7cd5b89a.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/18a1fb8f-d5cd-45a1-b097-2d3a30f18837.jpg"
+          "oak": "/images/mockups/blue-footed-booby-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/blue-footed-booby-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/blue-footed-booby-framed-canvas-black.jpg"
         }
       },
       "master": "PrintMasters/gelato-ready/HighResolution/blue-footed-booby.tif"
@@ -3314,14 +3331,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/sea-lion-pup.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/58d6ace2-6752-4842-9e07-be15f7149feb.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c47c2292-5a13-4be3-a5bf-bae605119ab9.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/593044eb-46b9-4058-96f6-8976d067f513.jpg"
+          "white": "/images/mockups/sea-lion-pup-framed-white.jpg",
+          "oak": "/images/mockups/sea-lion-pup-framed-oak.jpg",
+          "black": "/images/mockups/sea-lion-pup-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c2f66bd8-7c4c-4a93-92b1-8da4ed08ef7c.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1a3ea2e1-27de-4a92-bf2d-8115e1e4efbd.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5b71cb4e-6a30-4c85-a0a2-98823ec0fadf.jpg"
+          "oak": "/images/mockups/sea-lion-pup-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/sea-lion-pup-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/sea-lion-pup-framed-canvas-black.jpg"
         }
       }
     },
@@ -3491,14 +3508,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/82a72c49-b171-47c7-b95a-6268bea05cc3.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cea7e17d-913e-478d-8333-57f2d5358c2e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f6fc621e-6259-4cc0-9457-198a5e074a0a.jpg"
+          "white": "/images/mockups/dusk-waterfowl-framed-white.jpg",
+          "oak": "/images/mockups/dusk-waterfowl-framed-oak.jpg",
+          "black": "/images/mockups/dusk-waterfowl-framed-black.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ac619ddb-74f7-4271-838d-2b58b062f232.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cc5e2eda-474d-4291-9dcc-c64d6dc73828.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a2187a09-407f-4d56-a729-5802c91f6687.jpg"
+          "walnut": "/images/mockups/dusk-waterfowl-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/dusk-waterfowl-framed-canvas-black.jpg",
+          "oak": "/images/mockups/dusk-waterfowl-framed-canvas-oak.jpg"
         }
       }
     },
@@ -3678,6 +3695,18 @@
         "acrylic": [
           "15417027526898"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/marine-iguana-framed-white.jpg",
+          "oak": "/images/mockups/marine-iguana-framed-oak.jpg",
+          "black": "/images/mockups/marine-iguana-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/marine-iguana-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/marine-iguana-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/marine-iguana-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -3729,14 +3758,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/reef-passage.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ba8967ca-0fcc-4546-b2d6-a470f9c33685.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/34a61cf1-5dbf-40b0-8d91-0b94c743064e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/02974420-9481-480d-a281-8678a8528eb3.jpg"
+          "white": "/images/mockups/reef-passage-framed-white.jpg",
+          "oak": "/images/mockups/reef-passage-framed-oak.jpg",
+          "black": "/images/mockups/reef-passage-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ea538346-f018-4174-9e93-79e9413e6a32.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/84537581-e165-4d1f-adfa-55017b5ca71b.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2d10ae63-bb39-4076-b662-759e0ff5800b.jpg"
+          "oak": "/images/mockups/reef-passage-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/reef-passage-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/reef-passage-framed-canvas-black.jpg"
         }
       }
     },
@@ -3788,14 +3817,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/52e83d2c-3155-44d7-9a36-b3a65cae9dc0.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9d7c3d15-8cfd-4ec5-a23d-b2073d729f54.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e1aa009c-f520-4e0d-a4d0-2eeb8a471d16.jpg"
+          "black": "/images/mockups/humpback-breach-framed-black.jpg",
+          "white": "/images/mockups/humpback-breach-framed-white.jpg",
+          "oak": "/images/mockups/humpback-breach-framed-oak.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8823e00d-2ba3-4855-87df-85ea9bc2910d.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a3174029-031f-4580-82f6-ae6b45471b74.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d005bda8-1b7e-4896-8c78-9f56a4256c59.jpg"
+          "oak": "/images/mockups/humpback-breach-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/humpback-breach-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/humpback-breach-framed-canvas-black.jpg"
         }
       },
       "master": "PrintMasters/gelato-ready/HighResolution/humpback-breach.tif"
@@ -3976,6 +4005,18 @@
         "acrylic": [
           "15417028313330"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/amber-glass-framed-white.jpg",
+          "oak": "/images/mockups/amber-glass-framed-oak.jpg",
+          "black": "/images/mockups/amber-glass-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/amber-glass-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/amber-glass-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/amber-glass-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -4112,14 +4153,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/74df9e95-5604-42fe-8ff4-e449e39ec10d.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1fa6061c-f8c5-497a-9cdd-a34af5531805.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b878bdd9-9183-4658-a135-3c4e7f8b56fd.jpg"
+          "white": "/images/mockups/petunia-crimson-framed-white.jpg",
+          "oak": "/images/mockups/petunia-crimson-framed-oak.jpg",
+          "black": "/images/mockups/petunia-crimson-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6cb7c328-534a-472e-9507-bb83ded4e95c.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/63583084-efc3-48c1-8df5-06811862e16f.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/da299a7a-2682-4381-86c7-caff3058f47e.jpg"
+          "oak": "/images/mockups/petunia-crimson-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/petunia-crimson-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/petunia-crimson-framed-canvas-black.jpg"
         }
       }
     },
@@ -4257,14 +4298,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/99e36988-b795-4d08-94ad-b359776298b0.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/897cdbb2-ac79-48fe-b372-71198ccb44f3.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6878af2a-0907-45d6-a7a2-0b9f69d6c0f5.jpg"
+          "white": "/images/mockups/geranium-coral-framed-white.jpg",
+          "oak": "/images/mockups/geranium-coral-framed-oak.jpg",
+          "black": "/images/mockups/geranium-coral-framed-black.jpg"
         },
         "framed_canvas": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f674a5a7-b900-44d8-b597-3f7d687a1a16.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9e68226c-7abd-41bd-ba68-7960d112e43c.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/47b08d63-f1dd-4691-8997-07411c7a8c2c.jpg"
+          "black": "/images/mockups/geranium-coral-framed-canvas-black.jpg",
+          "oak": "/images/mockups/geranium-coral-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/geranium-coral-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -4402,14 +4443,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f7678c58-219c-4d13-a7c2-492e0bd6973b.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/43e944ad-b82d-4768-b527-1b7d1992ee27.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/444c474f-ab09-42a5-a269-ab9ac514250e.jpg"
+          "white": "/images/mockups/the-flower-market-framed-white.jpg",
+          "oak": "/images/mockups/the-flower-market-framed-oak.jpg",
+          "black": "/images/mockups/the-flower-market-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/bc7b8dd3-024b-430f-abe8-d75c001a7249.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/638fbb47-d2d9-48b7-a9bd-839feecc4808.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/48b83cbc-deac-4231-ac3f-1eca6d9aebc2.jpg"
+          "oak": "/images/mockups/the-flower-market-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/the-flower-market-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/the-flower-market-framed-canvas-black.jpg"
         }
       }
     },
@@ -4589,6 +4630,18 @@
         "acrylic": [
           "15417031852274"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/geranium-white-framed-white.jpg",
+          "oak": "/images/mockups/geranium-white-framed-oak.jpg",
+          "black": "/images/mockups/geranium-white-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/geranium-white-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/geranium-white-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/geranium-white-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -4767,6 +4820,18 @@
         "acrylic": [
           "15417032474866"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/hydrangea-deep-blue-framed-white.jpg",
+          "oak": "/images/mockups/hydrangea-deep-blue-framed-oak.jpg",
+          "black": "/images/mockups/hydrangea-deep-blue-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/hydrangea-deep-blue-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/hydrangea-deep-blue-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/hydrangea-deep-blue-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -4903,14 +4968,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d10a1b0e-86f6-4a82-929b-b937a1e16461.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cee464fb-cb39-43e7-861b-1229d77a09a5.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9f72950a-1ff0-4092-a8d8-525b64bd9f74.jpg"
+          "white": "/images/mockups/petunia-veined-framed-white.jpg",
+          "oak": "/images/mockups/petunia-veined-framed-oak.jpg",
+          "black": "/images/mockups/petunia-veined-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f3f4063b-8467-4340-8af2-cbe39608803c.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/318ef939-f0fc-468c-868e-573f58c555c3.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6ff0b723-0658-44a0-af65-328c0310b1bb.jpg"
+          "oak": "/images/mockups/petunia-veined-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/petunia-veined-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/petunia-veined-framed-canvas-black.jpg"
         }
       }
     },
@@ -5076,14 +5141,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/dd4125f1-07d7-47c7-9c71-db3b7615b043.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e8bd470a-1cf2-46c7-a655-4627a2d2b801.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b37b6d0a-4d8b-4fd9-b1fb-496065487ed5.jpg"
+          "white": "/images/mockups/petunia-blush-framed-white.jpg",
+          "oak": "/images/mockups/petunia-blush-framed-oak.jpg",
+          "black": "/images/mockups/petunia-blush-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9c086c0a-3d97-43b7-b5d3-f9cf2180032e.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/28729f04-e4ba-44d8-b2b2-dbfa8afadade.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a1b7c7aa-e4c3-408c-ba8c-5de32b036a6e.jpg"
+          "oak": "/images/mockups/petunia-blush-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/petunia-blush-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/petunia-blush-framed-canvas-black.jpg"
         }
       },
       "retired_products": {
@@ -5238,14 +5303,14 @@
       },
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8788ccd1-d18e-4c34-9a7e-b600cd567441.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2a5a4a5c-1ff6-4e1e-84ad-dbe387df1d68.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b30e0746-eb7e-4e06-bbe8-6d6afdbf5e91.jpg"
+          "oak": "/images/mockups/cocktails-framed-oak.jpg",
+          "black": "/images/mockups/cocktails-framed-black.jpg",
+          "white": "/images/mockups/cocktails-framed-white.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/02bb6ee2-1fa4-4447-a403-112dfe70e4ee.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2bf39d35-cb4b-494b-987f-ad013087a6ec.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/29f59ebf-e4f2-4ba4-9572-2323b74de99e.jpg"
+          "walnut": "/images/mockups/cocktails-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/cocktails-framed-canvas-black.jpg",
+          "oak": "/images/mockups/cocktails-framed-canvas-oak.jpg"
         }
       }
     },
@@ -5383,14 +5448,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/034582e1-0219-41bb-82e2-cd6dbf337228.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c8fa80a1-df9c-488e-82a1-d7a91563334b.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/412a7dfa-0dc3-4108-b208-5e7a23ec92fc.jpg"
+          "white": "/images/mockups/wall-of-names-framed-white.jpg",
+          "oak": "/images/mockups/wall-of-names-framed-oak.jpg",
+          "black": "/images/mockups/wall-of-names-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/97cb5386-0129-46db-82ab-39de28bf0faa.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/457ef6d0-d4b2-4aa8-8b8e-535ed2c044bb.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6a7be98c-8bf2-4f7a-8727-16e2cbde83e1.jpg"
+          "oak": "/images/mockups/wall-of-names-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/wall-of-names-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/wall-of-names-framed-canvas-black.jpg"
         }
       }
     },
@@ -5570,6 +5635,18 @@
         "wood": [
           "15418553368818"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/mural-sundown-framed-white.jpg",
+          "oak": "/images/mockups/mural-sundown-framed-oak.jpg",
+          "black": "/images/mockups/mural-sundown-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/mural-sundown-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/mural-sundown-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/mural-sundown-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -5706,14 +5783,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0e70d9f5-c5a2-4485-8f7c-93af021e06b1.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f4299c90-1c01-4fc0-a4a0-c879bc0be272.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c535e7c7-efe2-4f17-a89e-4e5d6cf259e1.jpg"
+          "white": "/images/mockups/art-will-save-you-framed-white.jpg",
+          "oak": "/images/mockups/art-will-save-you-framed-oak.jpg",
+          "black": "/images/mockups/art-will-save-you-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2c6f9215-5fb0-4ca6-9f5e-7994e24d557f.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ee488bca-5d7e-4ff3-a4cf-a5dc44496820.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4c6c80cb-cd32-4193-b96e-54196ca90fdc.jpg"
+          "oak": "/images/mockups/art-will-save-you-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/art-will-save-you-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/art-will-save-you-framed-canvas-black.jpg"
         }
       }
     },
@@ -5845,6 +5922,18 @@
         "framed_canvas": [
           "15422221025522"
         ]
+      },
+      "previews": {
+        "framed_canvas": {
+          "oak": "/images/mockups/harbour-pastel-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/harbour-pastel-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/harbour-pastel-framed-canvas-black.jpg"
+        },
+        "framed": {
+          "white": "/images/mockups/harbour-pastel-framed-white.jpg",
+          "oak": "/images/mockups/harbour-pastel-framed-oak.jpg",
+          "black": "/images/mockups/harbour-pastel-framed-black.jpg"
+        }
       }
     },
     {
@@ -6023,6 +6112,18 @@
         "acrylic": [
           "15419814576370"
         ]
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/glass-spire-framed-white.jpg",
+          "oak": "/images/mockups/glass-spire-framed-oak.jpg",
+          "black": "/images/mockups/glass-spire-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/glass-spire-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/glass-spire-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/glass-spire-framed-canvas-black.jpg"
+        }
       }
     },
     {
@@ -6134,14 +6235,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5f2a163f-a254-4815-afeb-ba16da103689.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/01afaaba-38ad-4c80-817f-74f9de9ed8d5.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e5a3fb83-a031-4e88-8a5c-dbcbf4e1b449.jpg"
+          "white": "/images/mockups/valley-in-violet-framed-white.jpg",
+          "oak": "/images/mockups/valley-in-violet-framed-oak.jpg",
+          "black": "/images/mockups/valley-in-violet-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d7138793-2c59-4dd2-ab52-779986ebe7ca.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a43740c4-917c-443c-8be3-10dea442dba2.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3bfc57d9-3eaf-4c8d-b923-90403f17549b.jpg"
+          "oak": "/images/mockups/valley-in-violet-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/valley-in-violet-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/valley-in-violet-framed-canvas-black.jpg"
         }
       }
     },
@@ -6254,14 +6355,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/95a129ce-a554-49ea-a5a6-b34d57c2c233.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/36197702-0909-4fa9-972e-69b5eb127aa1.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c247b503-ab66-4583-9ae2-3ce22362133a.jpg"
+          "white": "/images/mockups/snowline-framed-white.jpg",
+          "oak": "/images/mockups/snowline-framed-oak.jpg",
+          "black": "/images/mockups/snowline-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8f7b12ac-a83b-4598-9e25-bb92100e1bbb.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/23b16948-2ddd-497f-a897-214abd1ae2f7.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7a82dfb0-9e1d-4362-89aa-21d1888caa0f.jpg"
+          "oak": "/images/mockups/snowline-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/snowline-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/snowline-framed-canvas-black.jpg"
         }
       }
     },
@@ -6374,14 +6475,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7d6512a2-4bbd-41fa-8d92-6cc1e3e503b0.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/75cac3ae-83d0-44a1-8100-cf827748c63e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5ebfd6dc-a8fc-4f8d-bb17-31a2bb2d4ad9.jpg"
+          "white": "/images/mockups/the-long-valley-framed-white.jpg",
+          "oak": "/images/mockups/the-long-valley-framed-oak.jpg",
+          "black": "/images/mockups/the-long-valley-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2574d429-04f7-44e5-91b7-6237b16ffd13.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/92e216ed-e925-462e-ba43-56c3db1508bb.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5bcd72c1-3cc3-4ad5-8b24-5e3e209ea90e.jpg"
+          "oak": "/images/mockups/the-long-valley-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/the-long-valley-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/the-long-valley-framed-canvas-black.jpg"
         }
       }
     },
@@ -6494,14 +6595,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1972b699-776f-4fef-84b0-3b538cd0ee22.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1c2c7a2c-c0d9-444e-8a91-1709e99e88ce.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f3fd0b7b-e1ad-4225-a33d-2cc99e5a9080.jpg"
+          "white": "/images/mockups/range-and-scrub-framed-white.jpg",
+          "oak": "/images/mockups/range-and-scrub-framed-oak.jpg",
+          "black": "/images/mockups/range-and-scrub-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/bee76f9f-2913-4991-9b8b-bd816dea70bc.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b6595576-691b-43a7-8fea-4b4a3c060da9.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/bcb27a24-3551-4ae3-9078-b2e51210d7d9.jpg"
+          "oak": "/images/mockups/range-and-scrub-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/range-and-scrub-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/range-and-scrub-framed-canvas-black.jpg"
         }
       }
     },
@@ -6554,14 +6655,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0bf2da0e-b58c-4037-b4f5-ebeadd7b3830.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/03b6594a-ea2a-41a0-ad97-1c985af48009.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5c0ce297-c017-4ecc-9de8-fa41636bca47.jpg"
+          "white": "/images/mockups/fog-on-the-flats-framed-white.jpg",
+          "oak": "/images/mockups/fog-on-the-flats-framed-oak.jpg",
+          "black": "/images/mockups/fog-on-the-flats-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/49f50d13-ac4d-41c6-9291-2c54a372fe74.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b7422b7c-5616-472c-a6b8-dd88fe582a59.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2a849e1f-8131-45ea-b4f9-c4b4032e5da2.jpg"
+          "oak": "/images/mockups/fog-on-the-flats-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/fog-on-the-flats-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/fog-on-the-flats-framed-canvas-black.jpg"
         }
       }
     },
@@ -6614,14 +6715,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ecffb767-b8c9-42eb-bdd1-db85e8b9c7bb.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/85e6fefc-f7ae-4793-9887-f433357efd89.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/654dd9bc-9ae1-47be-9e4a-d9822fe7217f.jpg"
+          "white": "/images/mockups/golden-brush-framed-white.jpg",
+          "oak": "/images/mockups/golden-brush-framed-oak.jpg",
+          "black": "/images/mockups/golden-brush-framed-black.jpg"
         },
         "framed_canvas": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/454ae0f4-c7e2-442c-9fe4-7afd2310e359.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ee5f9640-e1c5-422b-8418-9f6b3afdb6aa.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/29e774f7-ded4-43f0-989f-907c606401f0.jpg"
+          "black": "/images/mockups/golden-brush-framed-canvas-black.jpg",
+          "oak": "/images/mockups/golden-brush-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/golden-brush-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -6714,14 +6815,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1b661efb-1465-4fa2-95d8-841eb1500c08.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7ef10d3c-98dd-4053-9006-c2a3de8e079a.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4d8fdfc3-c3cd-410c-9e39-6abfedd64214.jpg"
+          "white": "/images/mockups/sunflare-oak-framed-white.jpg",
+          "oak": "/images/mockups/sunflare-oak-framed-oak.jpg",
+          "black": "/images/mockups/sunflare-oak-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9d95a478-d97e-4b82-9097-4930311f3e30.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9b077fbf-9142-46d0-877c-c46e78b4553c.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9c70927e-88ca-4091-9170-e5a2d13c9314.jpg"
+          "oak": "/images/mockups/sunflare-oak-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/sunflare-oak-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/sunflare-oak-framed-canvas-black.jpg"
         }
       }
     },
@@ -6814,14 +6915,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/de2ba447-da8f-4914-8054-22e66ea73aae.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cb73cc6e-5192-4e0e-b438-5dffa3cb3388.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cc7b288f-e8ca-4b3b-8192-eb29d813e8b2.jpg"
+          "white": "/images/mockups/autumn-against-blue-framed-white.jpg",
+          "oak": "/images/mockups/autumn-against-blue-framed-oak.jpg",
+          "black": "/images/mockups/autumn-against-blue-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/88fadd1f-7398-4963-bc23-26c17968a451.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/40323967-5cc1-4a35-8a64-8b9145845384.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2671c198-b6e9-48bf-8bd3-cabe9d4fd07b.jpg"
+          "oak": "/images/mockups/autumn-against-blue-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/autumn-against-blue-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/autumn-against-blue-framed-canvas-black.jpg"
         }
       }
     },
@@ -6894,14 +6995,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/27809782-84f7-4b7e-9c9f-997168e28980.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e5fd7cf7-bc03-400c-ba25-e5a57c827926.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/f5e26bf1-5dbc-4f35-8416-bba7e1bf3b58.jpg"
+          "white": "/images/mockups/still-pond-framed-white.jpg",
+          "oak": "/images/mockups/still-pond-framed-oak.jpg",
+          "black": "/images/mockups/still-pond-framed-black.jpg"
         },
         "framed_canvas": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c2382d50-1f8c-4446-b905-d7b145d3c962.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1c5f4489-2420-4b19-9a99-6cd8db9134ca.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/add4af3b-b1d9-4666-b0af-b24f5a9e41c3.jpg"
+          "black": "/images/mockups/still-pond-framed-canvas-black.jpg",
+          "walnut": "/images/mockups/still-pond-framed-canvas-walnut.jpg",
+          "oak": "/images/mockups/still-pond-framed-canvas-oak.jpg"
         }
       }
     },
@@ -6954,14 +7055,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/winter-bark.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2d27779e-07da-4773-bebf-b90d37c3c581.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/82307ceb-3151-4750-bc23-f1382900b0bc.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0f8eb20d-05d8-4f74-96a7-2b110cf89912.jpg"
+          "white": "/images/mockups/winter-bark-framed-white.jpg",
+          "oak": "/images/mockups/winter-bark-framed-oak.jpg",
+          "black": "/images/mockups/winter-bark-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e8a7c901-d866-43ba-9206-5d2d6e727c9d.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a8df3a57-f227-4144-a0ca-db11c2f13aec.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1d16ac4b-a829-4742-a0b1-4c069c00a7ec.jpg"
+          "oak": "/images/mockups/winter-bark-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/winter-bark-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/winter-bark-framed-canvas-black.jpg"
         }
       }
     },
@@ -7054,14 +7155,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/97823a98-348d-45e3-a303-76cdc9aa5ab7.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/061080ea-8eec-4791-a0aa-cf813e5ee70a.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7156614e-8f07-4448-b452-b0033edd4f1f.jpg"
+          "white": "/images/mockups/tidepool-ledge-framed-white.jpg",
+          "oak": "/images/mockups/tidepool-ledge-framed-oak.jpg",
+          "black": "/images/mockups/tidepool-ledge-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a1974437-c232-42a3-ab9c-b4b925be4df1.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4bb34c4e-499e-4f67-a69d-4e2c7aed40a1.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/8d8c4cbb-4edf-487a-b3cc-f35c0212e36e.jpg"
+          "oak": "/images/mockups/tidepool-ledge-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/tidepool-ledge-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/tidepool-ledge-framed-canvas-black.jpg"
         }
       }
     },
@@ -7114,14 +7215,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/research-vessel-dawn.tif",
       "previews": {
         "framed": {
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/10b4028e-4027-4e18-b9b1-98c1f1e980f0.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a7fb5b82-d85a-4a49-98d1-e77a995df61e.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/689076f0-925d-4093-a37c-9ee3dcf4fb93.jpg"
+          "black": "/images/mockups/research-vessel-dawn-framed-black.jpg",
+          "white": "/images/mockups/research-vessel-dawn-framed-white.jpg",
+          "oak": "/images/mockups/research-vessel-dawn-framed-oak.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7b0ee95d-689a-4698-b1bc-7c5547c35ea1.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5d756181-c888-4ccd-ad81-b4d7f6488c53.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b6e73857-6476-47f2-b77f-5abc196952f8.jpg"
+          "oak": "/images/mockups/research-vessel-dawn-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/research-vessel-dawn-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/research-vessel-dawn-framed-canvas-black.jpg"
         }
       }
     },
@@ -7174,14 +7275,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/banyan-light.tif",
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2eff90e0-4dfd-4b56-8e18-63ae6319268b.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b43aa1a8-8e02-4c77-833c-fc48dedd363e.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2b043c70-0d19-40ce-95f8-e121784b3950.jpg"
+          "oak": "/images/mockups/banyan-light-framed-oak.jpg",
+          "black": "/images/mockups/banyan-light-framed-black.jpg",
+          "white": "/images/mockups/banyan-light-framed-white.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/671c7ce1-fd51-4ee7-903e-46eac98fdb9b.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a37f9e99-5967-4e2a-8f4c-b508fe7b1275.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1fc3675d-4c18-451c-a3e9-f2a3eadb0e3c.jpg"
+          "oak": "/images/mockups/banyan-light-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/banyan-light-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/banyan-light-framed-canvas-black.jpg"
         }
       }
     },
@@ -7294,14 +7395,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/607002f1-fa8c-4cdb-b95c-e630eceb009c.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/65d90ffa-1875-4ea7-a897-0c1a15a3cafb.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/053fed69-538a-4f98-9fcb-103284ff9ad9.jpg"
+          "white": "/images/mockups/peace-skyline-framed-white.jpg",
+          "oak": "/images/mockups/peace-skyline-framed-oak.jpg",
+          "black": "/images/mockups/peace-skyline-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a96ec505-3e64-41c4-b48e-b90676fc90c2.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9c04150b-d785-4b4d-b0a2-2ef8e64a9730.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/86c89d9b-ea0d-4e9a-bc83-fdce668224b8.jpg"
+          "oak": "/images/mockups/peace-skyline-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/peace-skyline-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/peace-skyline-framed-canvas-black.jpg"
         }
       }
     },
@@ -7354,14 +7455,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/conifer-canopy.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/58942d35-16bf-4817-90d3-56982e89e96d.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/816bde28-9963-47b7-b180-7ff90bb094ac.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6a163b7f-9f66-41f5-8e79-329638401f91.jpg"
+          "white": "/images/mockups/conifer-canopy-framed-white.jpg",
+          "oak": "/images/mockups/conifer-canopy-framed-oak.jpg",
+          "black": "/images/mockups/conifer-canopy-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/81539cec-f790-4f6b-bad5-d082ddd9e478.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a429d1ce-ddf8-4d0a-b6b2-d6633e870922.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/cf9cfc8d-5963-4723-a23d-d109989b041d.jpg"
+          "oak": "/images/mockups/conifer-canopy-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/conifer-canopy-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/conifer-canopy-framed-canvas-black.jpg"
         }
       }
     },
@@ -7414,14 +7515,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/jungle-lily.tif",
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c0debfdb-c046-4a74-9b0d-c1bf074effab.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ed0f9ced-1d42-4820-a5d9-f456414929ad.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e0ab8b84-adce-4c23-ab70-765177b340a7.jpg"
+          "oak": "/images/mockups/jungle-lily-framed-oak.jpg",
+          "white": "/images/mockups/jungle-lily-framed-white.jpg",
+          "black": "/images/mockups/jungle-lily-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3ad891d4-4a84-41ae-aad4-c5bc1f5651dc.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/42f1e0f6-6a25-415f-aca8-26448f6cc3c9.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/439f5e66-3e19-49be-81ea-07d3846f48a5.jpg"
+          "oak": "/images/mockups/jungle-lily-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/jungle-lily-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/jungle-lily-framed-canvas-black.jpg"
         }
       }
     },
@@ -7474,14 +7575,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/city-thunderheads.tif",
       "previews": {
         "framed": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3becf63f-efba-4b9f-9678-3f35e34827bd.jpg",
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/fe4e0bc5-9053-436f-a3de-381afe367d09.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9799790b-2fd6-4e6f-a002-35a6f0ea520e.jpg"
+          "oak": "/images/mockups/city-thunderheads-framed-oak.jpg",
+          "white": "/images/mockups/city-thunderheads-framed-white.jpg",
+          "black": "/images/mockups/city-thunderheads-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e7835326-d025-4e62-83c6-8af18543d4c9.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/0cabfe89-e1f8-48ea-8bdb-e96660c1cb10.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1772b3b3-b2bc-4bc7-b949-2b8db8789593.jpg"
+          "oak": "/images/mockups/city-thunderheads-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/city-thunderheads-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/city-thunderheads-framed-canvas-black.jpg"
         }
       }
     },
@@ -7534,14 +7635,14 @@
       "master": "PrintMasters/gelato-ready/HighResolution/palm-canopy.tif",
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/124be5a6-54f9-4419-9838-a69695c6de9c.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/99b1a99e-c1ae-4564-8bb6-ff6c4ea3e402.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9767da5e-8fc8-4843-8ea1-d65e00c6b7c4.jpg"
+          "white": "/images/mockups/palm-canopy-framed-white.jpg",
+          "oak": "/images/mockups/palm-canopy-framed-oak.jpg",
+          "black": "/images/mockups/palm-canopy-framed-black.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/feda16d1-41b4-400a-9057-28e18c9772f8.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/4ad80206-3ea8-4afe-b5e9-9a1789c6ef19.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d8ad9caf-5a63-49d0-9c80-4fd3d01f93f2.jpg"
+          "walnut": "/images/mockups/palm-canopy-framed-canvas-walnut.jpg",
+          "oak": "/images/mockups/palm-canopy-framed-canvas-oak.jpg",
+          "black": "/images/mockups/palm-canopy-framed-canvas-black.jpg"
         }
       }
     },
@@ -7654,14 +7755,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/95ad9fe6-eb9c-4c52-a440-1bb34881e072.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/34b24609-0335-499f-8dc2-66c0f9c6c1e7.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/92991ebb-27d9-48d5-a9f4-09eb21eb5186.jpg"
+          "white": "/images/mockups/forest-fungus-framed-white.jpg",
+          "oak": "/images/mockups/forest-fungus-framed-oak.jpg",
+          "black": "/images/mockups/forest-fungus-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/b83f2b6a-19e0-4a02-bce6-312444c67555.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/45d950f5-94a0-48fc-ac61-183de7e72a99.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d2d203a9-3b85-4883-a7bd-10a4b688c80c.jpg"
+          "oak": "/images/mockups/forest-fungus-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/forest-fungus-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/forest-fungus-framed-canvas-black.jpg"
         }
       }
     },
@@ -7774,14 +7875,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/9450867a-987c-4969-9cdf-85bc7a89c0f3.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/ba59e822-c10d-4f74-9f60-b141a5ddf408.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e16eaf9c-5eda-4615-9e18-d1170c887bf6.jpg"
+          "white": "/images/mockups/ember-study-framed-white.jpg",
+          "oak": "/images/mockups/ember-study-framed-oak.jpg",
+          "black": "/images/mockups/ember-study-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/7b0377f9-776e-4914-88e0-6ef49af41576.jpg",
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e9c92ef1-e011-4466-97f8-ae66a67008c6.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/c00c7c38-f632-4ae1-a5fe-25b35afa9cf5.jpg"
+          "oak": "/images/mockups/ember-study-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/ember-study-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/ember-study-framed-canvas-black.jpg"
         }
       }
     },
@@ -7894,14 +7995,14 @@
       },
       "previews": {
         "framed": {
-          "white": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/1ed104fa-8313-4a91-a1b7-b3267edfbde7.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/6109c0af-c574-489c-846f-93360313af4e.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/2afbf258-8aa0-4e61-b421-835ad3db5161.jpg"
+          "white": "/images/mockups/rising-flame-framed-white.jpg",
+          "oak": "/images/mockups/rising-flame-framed-oak.jpg",
+          "black": "/images/mockups/rising-flame-framed-black.jpg"
         },
         "framed_canvas": {
-          "walnut": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/99c8c251-ebbb-4e9e-8618-d108ea7a2c5a.jpg",
-          "black": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/77272566-2c9d-4568-817d-062f40d79bcc.jpg",
-          "oak": "https://cdn.shopify.com/s/files/1/0858/7211/5954/files/28fa3da3-3785-4b89-9559-9dc1d56c5d54.jpg"
+          "walnut": "/images/mockups/rising-flame-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/rising-flame-framed-canvas-black.jpg",
+          "oak": "/images/mockups/rising-flame-framed-canvas-oak.jpg"
         }
       }
     },
@@ -8011,6 +8112,18 @@
         "paper": "15422376935666",
         "framed": "15422400463090",
         "framed_canvas": "15422491853042"
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/sparks-framed-white.jpg",
+          "oak": "/images/mockups/sparks-framed-oak.jpg",
+          "black": "/images/mockups/sparks-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/sparks-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/sparks-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/sparks-framed-canvas-black.jpg"
+        }
       }
     }
   ],

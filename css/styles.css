@@ -1505,12 +1505,14 @@ html.lb-open { overflow: hidden; }
    stay exactly the same height. S/M/L change the row height. */
 #gallery-wrap { background: var(--bg-section); padding-top: 3.5rem; padding-bottom: 6rem; }
 .masonry.salon {
-  --row-h: 300px; --frame: 7px; --mat: 16px;
+  --row-h: 320px; --frame: 7px; --mat: 12px;
   column-count: auto;
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
-  gap: 2.6rem 1.7rem;
+  gap: 2.2rem 1.2rem;
 }
-#gallery-wrap .container { max-width: 1680px; }
+/* Edge-to-edge wall (like a print shop's collection grid): slim side
+   margins, no width cap, so the frames take the room instead of the page. */
+#gallery-wrap .container { max-width: none; padding: 0 1.25rem; }
 .masonry.salon::after { content: ""; flex-grow: 999; }      /* last row keeps its natural size */
 .masonry.salon.size-s { --row-h: 170px; --mat: 10px; --frame: 5px; gap: 2rem 1.2rem; }
 .masonry.salon.size-m { --row-h: 240px; }
@@ -1560,7 +1562,8 @@ html.lb-open { overflow: hidden; }
   .masonry.salon.size-m { --row-h: 200px; }
 }
 @media (max-width: 700px) {
-  .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
+  #gallery-wrap .container { padding: 0 10px; }
+  .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 7px; --frame: 4px; gap: 1.4rem 0.6rem; }
   .masonry.salon.size-s { --row-h: 105px; --mat: 6px; --frame: 3px; }
   .masonry.salon.size-l { --row-h: 240px; --mat: 10px; --frame: 5px; }
   .salon .frame-title { font-size: 0.85rem; }
@@ -1571,7 +1574,7 @@ html.lb-open { overflow: hidden; }
 .print-grid.salon-wall, .more-grid.salon-wall {
   --row-h: 190px; --frame: 7px; --mat: 16px;
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
-  gap: 2.6rem 1.7rem;
+  gap: 2.2rem 1.2rem;
 }
 .more-grid.salon-wall { --row-h: 180px; }
 .salon-wall::after { content: ""; flex-grow: 999; }

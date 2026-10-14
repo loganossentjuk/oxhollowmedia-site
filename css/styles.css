@@ -1612,7 +1612,7 @@ html.lb-open { overflow: hidden; }
   content: "";
   position: absolute; inset: -40px;
   z-index: -1;
-  background: url("../images/topo.svg") center / cover no-repeat;
+  background: url("../images/topo.svg?v=2") center / cover no-repeat;
   opacity: 0.32;
   animation: topo-drift 40s ease-in-out infinite alternate;
 }

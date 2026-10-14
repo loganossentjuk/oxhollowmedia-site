@@ -1,3 +1,33 @@
+/* ── Campaign tag on Shopify cart links ──
+   A visit that lands with ?utm_campaign=... keeps it for the session
+   (sessionStorage) and adds it to every Shopify cart permalink as ref=<campaign>,
+   so the order shows where the buyer came from. No UTM, no change.
+   https://shopify.dev/docs/apps/build/checkout/create-cart-permalinks */
+(() => {
+  const KEY = 'ohm_ref';
+  const clean = (v) => (v || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 50);
+  let ref = '';
+  try { ref = clean(new URLSearchParams(location.search).get('utm_campaign')); } catch {}
+  try {
+    if (ref) sessionStorage.setItem(KEY, ref);
+    else ref = clean(sessionStorage.getItem(KEY));
+  } catch {}
+  if (!ref) return;
+  const CART = /^https:\/\/[^/]+\.myshopify\.com\/cart\//;
+  const tag = (a) => {
+    if (!a || !CART.test(a.href)) return;
+    const u = new URL(a.href);
+    if (u.searchParams.get('ref') === ref) return;
+    u.searchParams.set('ref', ref);
+    a.href = u.toString();
+  };
+  const tagAll = () => document.querySelectorAll('a[href*=".myshopify.com/cart/"]').forEach(tag);
+  tagAll();
+  // Links built later (gallery viewer) are tagged as they are clicked.
+  ['click', 'auxclick', 'contextmenu'].forEach((t) =>
+    document.addEventListener(t, (e) => tag(e.target.closest && e.target.closest('a')), true));
+})();
+
 /* ── Nav: add scrolled class ── */
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);

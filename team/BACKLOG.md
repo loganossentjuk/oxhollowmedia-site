@@ -31,6 +31,9 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
 
 ## Website and bugs
+- [x] Measurement (approved 2026-10-13): cart `ref=` code from UTMs, "How did you hear" field, /links → /prints, shipping-returns Stripe wording
+- [ ] **(Logan)** Turn on Cloudflare Web Analytics for the Pages project (dashboard, one click)
+- [ ] Email signup form (not yet approved)
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
 - [x] 404 page links back to prints and gallery
@@ -40,11 +43,12 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 
 ## Shop
 - [x] Batch 2 framed listings priced and published (2026-10-09)
-- [ ] Verdigris and Copper & Teal are held until their print files are re-made **(Logan)**
+- [x] Verdigris and Copper & Teal: files re-made, ready to sell (Logan, 2026-10-13)
 - [ ] Holiday gift-deadline banner idea, using Gelato's published shipping cut-offs **(Logan)**
 
 ## Marketing
-- [ ] **Top priority (marketing-lead, with shop-manager input). Growth strategy: ads and outreach.** Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
+- [x] **Growth strategy drafted 2026-10-13** (`team/drafts/growth-strategy.md`). Logan chose: events lead + prints organic, $0 budget plus a small holiday print-ad test. Weekly marketing work now follows it.
+- [ ] ~~Original brief:~~ Growth strategy: ads and outreach. Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
   - **Research first and cite sources:**
     - realistic costs and results for Google Ads (local "event photographer San Francisco" searches), Meta/Instagram ads (Reels boosts, retargeting site visitors), LinkedIn (tech event planners), and Pinterest (wall art)
     - free channels: Google Business Profile, event-venue preferred-vendor lists, planner and agency partnerships, tech meetup and community sponsorships, referral asks to past clients, directory listings

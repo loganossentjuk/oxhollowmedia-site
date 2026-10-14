@@ -6,6 +6,8 @@ Two plans follow. **Plan A** is event-photography leads and **Plan B** is galler
 
 ---
 
+> **Logan's decisions (2026-10-13):** Plan A leads, Plan B runs on free channels. Budget $0 to start, plus a small holiday ad test for prints (amount TBD by Logan; use the framed break-even numbers in the Shop analyst input as the ceiling per sale). Measurement fixes approved except email signup. Clients we may name in outreach: Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation. Verdigris and Copper and Teal are ready to sell. @oxhollowmedia is a Business account.
+
 ## 0. Before either plan: measurement gaps found in the repo
 
 These cost nothing to fix, and without them we cannot tell whether any channel works.
@@ -92,7 +94,7 @@ The cost-per-lead arithmetic below uses national averages for illustration [S1].
 
 > **Shop analyst input** (full detail in `team/drafts/growth-shop-input.md`)
 > - **Lead with framed, not paper.** Break-even cost per purchase is about $65 (framed 8x12, $115), $88 (12x18), $117 (16x24) and $180 (24x36), against $20–40 for paper. Paid ads should only send traffic to framed and framed-canvas sizes.
-> - **Prints to feature:** Dawn Patrol, Valley in Violet and Snowline in ads; Fog Forest and Aspen and Cobalt on Pinterest (portrait); Golden Gate, Fog for Bay Area gift guides; the Galápagos trio as the $115 gift, tied to the journal; the Embers set as a bundle. Keep Verdigris and Copper and Teal out until Logan confirms their status.
+> - **Prints to feature:** Dawn Patrol, Valley in Violet and Snowline in ads; Fog Forest and Aspen and Cobalt on Pinterest (portrait); Golden Gate, Fog for Bay Area gift guides; the Galápagos trio as the $115 gift, tied to the journal; the Embers set as a bundle. Verdigris and Copper and Teal are confirmed ready to sell (2026-10-13).
 > - **Price position:** below independent nature photographers (Carly Tabak framed 8x12 is $375; ours is $115) and close to marketplace prices. No discount is needed. The message is "framed, ready to hang, shipped free".
 > - **Offers that change no prices (Logan approves each):** a gift-deadline banner (after G-day), a multi-print Embers cart link, gift cards (Shopify Basic supports them), and a gift guide by price point.
 > - **Fix before sending traffic:** `shipping-returns.html` still says the receipt comes from Stripe, but checkout is now Shopify.

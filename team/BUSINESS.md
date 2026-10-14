@@ -44,6 +44,13 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - Approved, as "stories behind the prints" plus guides for event clients.
 - The first entry is the Galápagos (2021). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
 
+## Facts and decisions from Logan (2026-10-13)
+- **Clients we may name** in outreach and referral asks: Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation. Never invent results or quotes for them. Ask Logan before adding new names to site pages.
+- **Instagram:** @oxhollowmedia is a Business account.
+- **Print shop:** no orders yet; Logan is placing the first one. Verdigris and Copper and Teal are ready to sell like any other print.
+- **Growth plan:** event leads lead the next 90 days; prints run on free channels. Ad budget is $0 to start, except a small holiday ad test for prints that Logan is open to (amount for Logan to set).
+- **Measurement:** approved: analytics, a campaign `ref=` code on cart links, and a "How did you hear about me?" field on the contact form. Email signup not approved yet.
+
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.
 - **Print pages:**

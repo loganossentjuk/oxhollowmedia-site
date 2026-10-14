@@ -146,3 +146,20 @@ if (form) {
 }
 
 /* Reveal-on-scroll lives in motion.js. */
+
+/* ── Skip link (WCAG 2.4.1 Bypass Blocks) ──
+   Injected here so every page gets it without per-page markup. Targets <main>
+   when a page has one, else the first content block after the nav/drawer.
+   Pattern: https://webaim.org/techniques/skipnav/ */
+(() => {
+  const target = document.querySelector('main') ||
+    document.querySelector('body > header, body > section, body > article');
+  if (!target) return;
+  if (!target.id) target.id = 'content';
+  if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+  const a = document.createElement('a');
+  a.className = 'skip-link';
+  a.href = '#' + target.id;
+  a.textContent = 'Skip to content';
+  document.body.prepend(a);
+})();

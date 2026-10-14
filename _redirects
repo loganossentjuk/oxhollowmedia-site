@@ -1,6 +1,6 @@
 # The store page became /prints (Jul 2026). Preserve inbound links and SEO.
-/store    /prints    301
-/store/   /prints    301
+/store    /prints/   301
+/store/    /prints/   301
 
 # Service pages consolidated into /events and /filmmaking (Sep 2026).
 /corporate-event-photographer-san-francisco   /events       301
@@ -32,7 +32,6 @@
 /prints/reef-passage   /prints/shark-shadow   301
 /prints/the-flower-market   /prints/buckets-of-blooms   301
 /prints/petunia-veined   /prints/purple-petunia   301
-/prints/petunia-blush   /prints/petunia-blush   301
 /prints/cocktails   /prints/neon-nightcap   301
 /prints/mural-sundown   /prints/sundown-silhouette   301
 /prints/harbour-pastel   /prints/pastel-harbor   301

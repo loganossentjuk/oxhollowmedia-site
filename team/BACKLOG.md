@@ -31,6 +31,11 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
 
 ## Website and bugs
+- [ ] Links/canonical use `/prints` but Pages serves `/prints/` (308 hop on 221 nav links, sitemap, canonical): switch to `/prints/` (SEO + web-engineer)
+- [ ] Add `<main>` landmarks to about, contact, events, films, filmmaking, gallery, index, privacy, shipping-returns, 404
+- [ ] Images: 10 heaviest (683–917KB) → 1600px WebP q75 + 800px srcset (art-will-save-you, tidepool-lava, aspen-and-cobalt, still-pond, wall-of-names, highland-hollow…)
+- [ ] Catalog `location` field so print descriptions name the place (e.g. Galápagos) — generator line ~215
+- [ ] Remove the archived Petunia Blush Canvas entry from the catalog
 - [x] Measurement (approved 2026-10-13): cart `ref=` code from UTMs, "How did you hear" field, /links → /prints, shipping-returns Stripe wording
 - [x] Cloudflare Web Analytics: already on since 2026-07-14 (auto-install); GA4 G-8BE3SQGCQG live 2026-10-13 with begin_checkout/generate_lead, /privacy page
 - [ ] Email signup form (not yet approved)
@@ -39,6 +44,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [x] 404 page links back to prints and gallery
 
 ## Reminders for Logan (repeat in every report's Needs-you list until ticked)
+- [ ] **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
 - [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
 
 ## Shop

@@ -1689,3 +1689,8 @@ html.lb-open { overflow: hidden; }
 @media (max-width: 700px) {
   #gallery-hero { padding: calc(var(--nav-h) + 2.5rem) 0 2rem; }
 }
+
+/* Skip link (injected by main.js): off-screen until keyboard focus. */
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 10000; padding: 10px 16px; background: var(--accent); color: #fff; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }

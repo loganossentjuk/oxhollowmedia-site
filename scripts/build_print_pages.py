@@ -243,6 +243,14 @@ def page(p):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', {{ allow_google_signals: false, allow_ad_personalization_signals: false }});
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{e(desc)}" />

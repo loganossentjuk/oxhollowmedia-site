@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', { allow_google_signals: false, allow_ad_personalization_signals: false });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Conifer Canopy, a framed fine-art print by Logan Ossentjuk. Looking up into a conifer canopy against a pale sky. Made to order, free US shipping." />
@@ -170,7 +178,7 @@
       <span class="footer-social">
         <a href="https://instagram.com/oxhollowmedia?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
       </span>
-      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media · <a href="/privacy">Privacy</a></span>
     </div>
   </footer>
 

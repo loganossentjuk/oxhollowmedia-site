@@ -2696,8 +2696,8 @@
       }
     },
     {
-      "slug": "golden-gate-fog",
-      "title": "Golden Gate, Fog",
+      "slug": "international-orange",
+      "title": "International Orange",
       "category": "ocean",
       "image": "/images/portfolio/ocean/07-golden-gate-fog.jpg",
       "webp": "/images/portfolio/ocean/07-golden-gate-fog.webp",
@@ -2829,14 +2829,14 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/golden-gate-fog-framed-white.jpg",
-          "oak": "/images/mockups/golden-gate-fog-framed-oak.jpg",
-          "black": "/images/mockups/golden-gate-fog-framed-black.jpg"
+          "white": "/images/mockups/international-orange-framed-white.jpg",
+          "oak": "/images/mockups/international-orange-framed-oak.jpg",
+          "black": "/images/mockups/international-orange-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/golden-gate-fog-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/golden-gate-fog-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/golden-gate-fog-framed-canvas-black.jpg"
+          "oak": "/images/mockups/international-orange-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/international-orange-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/international-orange-framed-canvas-black.jpg"
         }
       }
     },

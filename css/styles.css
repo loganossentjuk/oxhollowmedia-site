@@ -1613,7 +1613,7 @@ html.lb-open { overflow: hidden; }
   position: absolute; inset: -40px;
   z-index: -1;
   background: url("../images/topo.svg") center / cover no-repeat;
-  opacity: 0.16;
+  opacity: 0.32;
   animation: topo-drift 40s ease-in-out infinite alternate;
 }
 /* a clay hairline where the band meets the cream gallery */

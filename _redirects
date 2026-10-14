@@ -12,9 +12,38 @@
 # Green Water I -> Green Water -> Verdigris (Oct 2026).
 /prints/green-water-i   /prints/verdigris   301
 /prints/green-water     /prints/verdigris   301
-/prints/autumn-flats   /prints/sierra-river-bend   301
+/prints/autumn-flats   /prints/before-the-wind   301
 
 # The AI team's working files live in the repo but aren't part of the site.
 /team/*      /   302
 /.claude/*   /   302
 /prints/golden-gate-fog   /prints/international-orange   301
+/prints/sierra-river-bend   /prints/before-the-wind   301
+/prints/fog-forest   /prints/drift-and-timber   301
+/prints/highland-river   /prints/highland-hollow   301
+/prints/marsh-at-dusk   /prints/tidal-twilight   301
+/prints/sun-on-the-water   /prints/sun-on-the-tide   301
+/prints/tidepool-lava   /prints/lava-cradle   301
+/prints/turquoise-harbor   /prints/island-moorings   301
+/prints/blue-footed-booby   /prints/blue-footed-display   301
+/prints/sea-lion-pup   /prints/sea-lion-siesta   301
+/prints/dusk-waterfowl   /prints/drifting-at-dusk   301
+/prints/marine-iguana   /prints/salt-and-scales   301
+/prints/reef-passage   /prints/shark-shadow   301
+/prints/the-flower-market   /prints/buckets-of-blooms   301
+/prints/petunia-veined   /prints/purple-petunia   301
+/prints/petunia-blush   /prints/petunia-blush   301
+/prints/cocktails   /prints/neon-nightcap   301
+/prints/mural-sundown   /prints/sundown-silhouette   301
+/prints/harbour-pastel   /prints/pastel-harbor   301
+/prints/snowline   /prints/sierra-snowline   301
+/prints/the-long-valley   /prints/river-to-the-range   301
+/prints/range-and-scrub   /prints/scrub-and-snow   301
+/prints/sunflare-oak   /prints/autumn-flare   301
+/prints/still-pond   /prints/pond-and-stone   301
+/prints/research-vessel-dawn   /prints/rigging-at-dawn   301
+/prints/peace-skyline   /prints/peace-after-dark   301
+/prints/palm-canopy   /prints/palm-pillars   301
+/prints/ember-study   /prints/embers-flicker   301
+/prints/rising-flame   /prints/embers-flame   301
+/prints/sparks   /prints/embers-scatter   301

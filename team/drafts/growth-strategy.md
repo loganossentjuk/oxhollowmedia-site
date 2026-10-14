@@ -10,6 +10,8 @@ Two plans follow. **Plan A** is event-photography leads and **Plan B** is galler
 
 ## 0. Before either plan: measurement gaps found in the repo
 
+> **Update 2026-10-13: all fixed and live.** Cloudflare Web Analytics was already on; GA4 (begin_checkout, generate_lead), cart `ref=` codes, the "How did you hear" field and the /links fix shipped. Email signup still not approved.
+
 These cost nothing to fix, and without them we cannot tell whether any channel works.
 
 1. **The site has no analytics tag in its HTML.** I found no Google Analytics, Cloudflare Web Analytics beacon, Meta Pixel or Pinterest tag. Cloudflare Web Analytics is "available on all plans" [S20]. Whether it is already switched on in the Cloudflare dashboard (it can run without a tag in the HTML) is a question for Logan. TODO(Logan): check Cloudflare dashboard > Web Analytics for oxhollowmedia.com.

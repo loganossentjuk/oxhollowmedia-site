@@ -32,7 +32,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 
 ## Website and bugs
 - [x] Measurement (approved 2026-10-13): cart `ref=` code from UTMs, "How did you hear" field, /links → /prints, shipping-returns Stripe wording
-- [ ] **(Logan)** Turn on Cloudflare Web Analytics for the Pages project (dashboard, one click)
+- [x] Cloudflare Web Analytics: already on since 2026-07-14 (auto-install); GA4 G-8BE3SQGCQG live 2026-10-13 with begin_checkout/generate_lead, /privacy page
 - [ ] Email signup form (not yet approved)
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
@@ -63,12 +63,12 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
   - **Draft-only extras:** ad copy and audiences, plus 3 cold-outreach templates for event planners in Logan's voice. Nothing gets launched, spent or sent.
   - **Return** the plan for Logan to choose. After that, each week's marketing work follows the chosen plan.
 - [ ] Monthly newsletter draft (first run of each month)
-- [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)
+- [x] Instagram bio link page (`/links`): Shop now points at /prints with UTMs (2026-10-13)
 
 ## New ideas (2026-10-09, ranked)
 - [ ] Home page: short distinct H1/intro with "San Francisco event photography"
 - [ ] Internal-link pass: events <-> work-with-me <-> contact, print pages -> gallery
-- [ ] `/links`: add h1; point Shop button at `/prints`; bump CSS version to ?v=53
+- [ ] `/links`: add h1 (Shop button → /prints done 2026-10-13)
 - [ ] Focus-visible outlines, skip link, axe contrast audit
 - [ ] BreadcrumbList JSON-LD on print pages; VideoObject for films (fix placeholder uploadDate)
 - [ ] Generator: stop rewriting sitemap lastmod on every build

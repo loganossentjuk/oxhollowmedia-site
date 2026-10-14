@@ -49,6 +49,9 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Instagram:** @oxhollowmedia is a Business account.
 - **Print shop:** no orders yet; Logan is placing the first one. Verdigris and Copper and Teal are ready to sell like any other print.
 - **Growth plan:** event leads lead the next 90 days; prints run on free channels. Ad budget is $0 to start, except a small holiday ad test for prints that Logan is open to (amount for Logan to set).
+- **Event types (Logan's page copy, 2026-10-14):** conferences, launches, demo days, galas, and family celebrations.
+- **People in photos:** Instagram and marketing may only show recognisable people with their OK; flag face-forward photos for Logan to clear.
+- **Outreach sender:** Logan wants outreach to come from hello@oxhollowmedia.com.
 - **Measurement:** approved: analytics, a campaign `ref=` code on cart links, and a "How did you hear about me?" field on the contact form. Email signup not approved yet.
 
 ## How the site works

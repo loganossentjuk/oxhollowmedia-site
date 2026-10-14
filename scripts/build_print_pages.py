@@ -112,8 +112,17 @@ def product_ld(p):
                       ensure_ascii=False)
 
 
-def picture(p, extra=""):
-    return (f'<picture><source type="image/webp" srcset="{p["webp"]}"><img src="{p["image"]}" '
+GRID_SIZES = "(max-width: 600px) 100vw, 33vw"
+DETAIL_SIZES = "(max-width: 900px) 100vw, 60vw"
+
+
+def picture(p, extra="", sizes=GRID_SIZES):
+    """<name>-800.webp and <name>.webp are made by scripts/resize_web_images.py;
+    width/height in the catalog are the big file's size."""
+    small = p["webp"][:-5] + "-800.webp"
+    srcset = (f'{small} 800w, {p["webp"]} {p["width"]}w" sizes="{sizes}'
+              if (ROOT / small.lstrip("/")).exists() else p["webp"])
+    return (f'<picture><source type="image/webp" srcset="{srcset}"><img src="{p["image"]}" '
             f'width="{p["width"]}" height="{p["height"]}" decoding="async" alt="{e(p["alt"])}"{extra}></picture>')
 
 
@@ -284,7 +293,7 @@ def page(p):
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
         <div class="detail-frame">
-          {picture(p, ' fetchpriority="high"')}
+          {picture(p, ' fetchpriority="high"', DETAIL_SIZES)}
         </div>
         <div class="detail-buy">
           <p class="section-label">{"Framed fine art print" if framed(p) else "Fine art print"}</p>

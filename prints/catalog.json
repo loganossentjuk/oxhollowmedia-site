@@ -56,8 +56,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/21-blue-hour-ridge.jpg",
       "webp": "/images/portfolio/mountains/21-blue-hour-ridge.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Mountain silhouette layered in blue cloud at dusk",
       "lede": "",
       "story": "",
@@ -116,8 +116,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/20-autumn-flats.jpg",
       "webp": "/images/portfolio/mountains/20-autumn-flats.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Autumn scrub and river flats beneath the eastern Sierra",
       "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
       "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
@@ -216,8 +216,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/01-fitz-roy-alpenglow.jpg",
       "webp": "/images/portfolio/mountains/01-fitz-roy-alpenglow.webp",
-      "width": 2000,
-      "height": 1500,
+      "width": 1600,
+      "height": 1200,
       "alt": "Alpenglow on the granite spires of Fitz Roy",
       "lede": "",
       "story": "",
@@ -276,8 +276,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/16-cloudbreak-ridge.jpg",
       "webp": "/images/portfolio/mountains/16-cloudbreak-ridge.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Snowy peaks in blue shadow beneath breaking cloud",
       "lede": "",
       "story": "",
@@ -297,20 +297,6 @@
           "16x24": {
             "variant": "67640050450674",
             "price": 130
-          }
-        },
-        "canvas": {
-          "8x12": {
-            "variant": "67640050286834",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67640050385138",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67640050483442",
-            "price": 90
           }
         },
         "wood": {
@@ -427,24 +413,6 @@
       "source_px": 12000,
       "master": "PrintMasters/gelato-ready/HighResolution/fog-forest.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641764937970",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641764970738",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641765003506",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641765036274",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641773490418",
@@ -569,7 +537,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417003704562",
         "wood": "15417004556530",
         "acrylic": "15417005867250",
         "paper": "15419815428338",
@@ -655,8 +622,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/03-misty-ridgeline.jpg",
       "webp": "/images/portfolio/mountains/03-misty-ridgeline.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Forested ridgeline fading into blue evening mist",
       "lede": "",
       "story": "",
@@ -664,24 +631,6 @@
       "source_px": 10944,
       "master": "PrintMasters/gelato-ready/HighResolution/misty-ridgeline.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641737052402",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641737085170",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641737117938",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641737150706",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641796559090",
@@ -806,7 +755,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15416999346418",
         "wood": "15417007112434",
         "acrylic": "15417009668338",
         "paper": "15419815985394",
@@ -832,8 +780,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/13-dusk-branches.jpg",
       "webp": "/images/portfolio/mountains/13-dusk-branches.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Bare branches silhouetted against a deep dusk sky",
       "lede": "",
       "story": "",
@@ -841,24 +789,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/dusk-branches.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641813991666",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641814024434",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641814057202",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641814089970",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641817301234",
@@ -983,7 +913,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417013960946",
         "wood": "15417016615154",
         "acrylic": "15417017368818",
         "paper": "15419817885938",
@@ -1018,24 +947,6 @@
       "source_px": 5712,
       "master": "PrintMasters/gelato-ready/HighResolution/aspen-and-cobalt.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641821102322",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641821135090",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641821167858",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641821200626",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641822544114",
@@ -1160,7 +1071,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417018810610",
         "wood": "15417019695346",
         "acrylic": "15417020317938",
         "paper": "15419945418994",
@@ -1186,8 +1096,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/10-rainier-afterglow.jpg",
       "webp": "/images/portfolio/mountains/10-rainier-afterglow.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Mount Rainier silhouetted against a pink and violet afterglow",
       "lede": "",
       "story": "",
@@ -1246,8 +1156,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/20-marsh-at-dusk.jpg",
       "webp": "/images/portfolio/ocean/20-marsh-at-dusk.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Tidal marsh and still water under a warm dusk sky",
       "lede": "Tidal marsh and still water under a warm dusk sky on Cape Cod.",
       "story": "",
@@ -1271,24 +1181,6 @@
           "24x36": {
             "variant": "67640138727666",
             "price": 210
-          }
-        },
-        "canvas": {
-          "8x12": {
-            "variant": "67640138465522",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67640138563826",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67640138662130",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67640138760434",
-            "price": 170
           }
         },
         "wood": {
@@ -1420,8 +1312,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/21-sun-on-the-water.jpg",
       "webp": "/images/portfolio/ocean/21-sun-on-the-water.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Low sun laying a path of light across tidal water",
       "lede": "Low sun laying a path of light across tidal water on Cape Cod.",
       "story": "",
@@ -1445,24 +1337,6 @@
           "24x36": {
             "variant": "67640160059634",
             "price": 210
-          }
-        },
-        "canvas": {
-          "8x12": {
-            "variant": "67640159797490",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67640159895794",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67640159994098",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67640160092402",
-            "price": 170
           }
         },
         "wood": {
@@ -1603,24 +1477,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/the-wax-ritual.tif",
       "shopify": {
-        "canvas": {
-          "24x36": {
-            "variant": "67641824346354",
-            "price": 170
-          },
-          "8x12": {
-            "variant": "67641824248050",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641824280818",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641824313586",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641825067250",
@@ -1745,7 +1601,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417020449010",
         "wood": "15417021038834",
         "acrylic": "15417022021874",
         "paper": "15419976089842",
@@ -1771,8 +1626,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/22-dawn-patrol.jpg",
       "webp": "/images/portfolio/ocean/22-dawn-patrol.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "A surfer holding a longboard at the water's edge, silhouetted against a sunset sky",
       "lede": "",
       "story": "",
@@ -1891,8 +1746,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/05-shorebreak-boulders.jpg",
       "webp": "/images/portfolio/ocean/05-shorebreak-boulders.webp",
-      "width": 2000,
-      "height": 924,
+      "width": 1600,
+      "height": 739,
       "alt": "Waves breaking over mossy shoreline boulders",
       "lede": "",
       "story": "",
@@ -1900,20 +1755,6 @@
       "source_px": 8256,
       "master": "PrintMasters/gelato-ready/HighResolution/shorebreak-boulders.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641829425394",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641829458162",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641829490930",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67664324034802",
@@ -2038,7 +1879,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417022087410",
         "wood": "15422376640754",
         "acrylic": "15422375362802",
         "paper": "15422374969586",
@@ -2081,63 +1921,14 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/14-green-water.jpg",
       "webp": "/images/portfolio/ocean/14-green-water.webp",
-      "width": 2000,
-      "height": 1600,
+      "width": 1600,
+      "height": 1280,
       "alt": "Green and white water sliding over dark rock, the colour of weathered copper",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
       "master": "PrintMasters/gelato-ready/HighResolution/verdigris.tif",
-      "shopify_portrait_old": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641831981298",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641832014066",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641832046834",
-            "price": 90
-          }
-        },
-        "wood": {
-          "12x18": {
-            "variant": "67641833357554",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67641833390322",
-            "price": 160
-          },
-          "8x12": {
-            "variant": "67641833324786",
-            "price": 80
-          }
-        },
-        "acrylic": {
-          "8x12": {
-            "variant": "67641833554162",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67641833586930",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67641833619698",
-            "price": 130
-          }
-        }
-      },
-      "shopify_products_portrait_old": {
-        "canvas": "15417022972146",
-        "wood": "15417023529202",
-        "acrylic": "15417023627506"
-      },
       "shopify": {
         "paper": {
           "16x24": {
@@ -2230,8 +2021,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/17-turquoise-shallows.jpg",
       "webp": "/images/portfolio/ocean/17-turquoise-shallows.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Turquoise shallows breaking white over reef",
       "lede": "",
       "story": "",
@@ -2239,24 +2030,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/turquoise-shallows.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641837191410",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641837224178",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641837256946",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641837289714",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641837486322",
@@ -2381,7 +2154,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417025003762",
         "wood": "15417025134834",
         "acrylic": "15417025265906",
         "paper": "15419981005042",
@@ -2407,63 +2179,14 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
       "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
-      "width": 2000,
-      "height": 1600,
+      "width": 1600,
+      "height": 1280,
       "alt": "Teal water against oxidised copper-red rock",
       "lede": "",
       "story": "",
       "shape": "5:4",
       "source_px": 4094,
       "master": "PrintMasters/gelato-ready/HighResolution/copper-and-teal.tif",
-      "shopify_portrait_old": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641838141682",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641838174450",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641838207218",
-            "price": 90
-          }
-        },
-        "wood": {
-          "8x12": {
-            "variant": "67641838403826",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67641838436594",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67641838469362",
-            "price": 160
-          }
-        },
-        "acrylic": {
-          "8x12": {
-            "variant": "67641838567666",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67641838600434",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67641838633202",
-            "price": 130
-          }
-        }
-      },
-      "shopify_products_portrait_old": {
-        "canvas": "15417025364210",
-        "wood": "15417025495282",
-        "acrylic": "15417025560818"
-      },
       "shopify": {
         "paper": {
           "16x24": {
@@ -2565,20 +2288,6 @@
       "source_px": 4096,
       "master": "PrintMasters/gelato-ready/HighResolution/tidepool-lava.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641839255794",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641839288562",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641839321330",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641839583474",
@@ -2675,7 +2384,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417025757426",
         "wood": "15417025888498",
         "acrylic": "15417026052338",
         "paper": "15419985395954",
@@ -2710,20 +2418,6 @@
       "source_px": 4032,
       "master": "PrintMasters/gelato-ready/HighResolution/golden-gate-fog.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641840271602",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641840304370",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641840337138",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641840599282",
@@ -2820,7 +2514,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417026150642",
         "wood": "15417026281714",
         "acrylic": "15417026380018",
         "paper": "15419985592562",
@@ -2846,8 +2539,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/10-turquoise-harbor.jpg",
       "webp": "/images/portfolio/ocean/10-turquoise-harbor.webp",
-      "width": 2000,
-      "height": 972,
+      "width": 1600,
+      "height": 778,
       "alt": "Boats moored in a turquoise island harbour",
       "lede": "",
       "story": "",
@@ -2855,20 +2548,6 @@
       "source_px": 4032,
       "master": "PrintMasters/gelato-ready/HighResolution/turquoise-harbor.tif",
       "shopify": {
-        "canvas": {
-          "16x24": {
-            "variant": "67641841221874",
-            "price": 90
-          },
-          "8x12": {
-            "variant": "67641841156338",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641841189106",
-            "price": 80
-          }
-        },
         "wood": {
           "16x24": {
             "variant": "67641841385714",
@@ -2965,7 +2644,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417026511090",
         "wood": "15417026576626",
         "acrylic": "15417026674930",
         "paper": "15419986378994",
@@ -2991,8 +2669,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/08-golden-gate-paddler.jpg",
       "webp": "/images/portfolio/ocean/08-golden-gate-paddler.webp",
-      "width": 2000,
-      "height": 1500,
+      "width": 1600,
+      "height": 1200,
       "alt": "A paddleboarder crossing beneath the Golden Gate Bridge",
       "lede": "",
       "story": "",
@@ -3051,8 +2729,8 @@
       "category": "ocean",
       "image": "/images/portfolio/ocean/19-driftwood-shore.jpg",
       "webp": "/images/portfolio/ocean/19-driftwood-shore.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Bleached driftwood on a still lake shore under open sky",
       "lede": "",
       "story": "",
@@ -3060,24 +2738,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/driftwood-shore.tif",
       "shopify": {
-        "canvas": {
-          "16x24": {
-            "variant": "67641714245874",
-            "price": 90
-          },
-          "8x12": {
-            "variant": "67641714180338",
-            "price": 55
-          },
-          "24x36": {
-            "variant": "67641714278642",
-            "price": 170
-          },
-          "12x18": {
-            "variant": "67641714213106",
-            "price": 80
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641716015346",
@@ -3202,7 +2862,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15416994267378",
         "wood": "15416994726130",
         "acrylic": "15416995447026",
         "paper": "15419986968818",
@@ -3228,8 +2887,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/04-blue-footed-booby.jpg",
       "webp": "/images/portfolio/ocean/04-blue-footed-booby.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "A blue-footed booby displaying in the Galápagos",
       "lede": "",
       "story": "",
@@ -3288,8 +2947,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/03-sea-lion-pup.jpg",
       "webp": "/images/portfolio/ocean/03-sea-lion-pup.webp",
-      "width": 2000,
-      "height": 1332,
+      "width": 1600,
+      "height": 1066,
       "alt": "A sea lion pup resting on the sand",
       "lede": "",
       "story": "",
@@ -3348,8 +3007,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/09-dusk-waterfowl.jpg",
       "webp": "/images/portfolio/ocean/09-dusk-waterfowl.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Waterfowl drifting on still water at dusk",
       "lede": "",
       "story": "",
@@ -3357,24 +3016,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/dusk-waterfowl.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641842172146",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641842204914",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641842237682",
-            "price": 90
-          },
-          "24x36": {
-            "variant": "67641842270450",
-            "price": 170
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641842598130",
@@ -3499,7 +3140,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417026806002",
         "wood": "15417026904306",
         "acrylic": "15417027035378",
         "paper": "15419987886322",
@@ -3525,8 +3165,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/12-marine-iguana.jpg",
       "webp": "/images/portfolio/ocean/12-marine-iguana.webp",
-      "width": 2000,
-      "height": 972,
+      "width": 1600,
+      "height": 778,
       "alt": "A marine iguana resting on sun-bleached rock",
       "lede": "",
       "story": "",
@@ -3534,20 +3174,6 @@
       "source_px": 8064,
       "master": "PrintMasters/gelato-ready/HighResolution/marine-iguana.tif",
       "shopify": {
-        "canvas": {
-          "16x24": {
-            "variant": "67641844596978",
-            "price": 90
-          },
-          "8x12": {
-            "variant": "67641844531442",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641844564210",
-            "price": 80
-          }
-        },
         "wood": {
           "16x24": {
             "variant": "67664318005490",
@@ -3672,7 +3298,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417027264754",
         "wood": "15422375493874",
         "acrylic": "15422375788786",
         "paper": "15422375100658",
@@ -3715,8 +3340,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/02-shark-silhouette.jpg",
       "webp": "/images/portfolio/ocean/02-shark-silhouette.webp",
-      "width": 2000,
-      "height": 1500,
+      "width": 1600,
+      "height": 1200,
       "alt": "A shark gliding through hazy blue water beside a reef wall",
       "lede": "",
       "story": "",
@@ -3775,8 +3400,8 @@
       "category": "wildlife",
       "image": "/images/portfolio/ocean/01-humpback-breach.jpg",
       "webp": "/images/portfolio/ocean/01-humpback-breach.webp",
-      "width": 2000,
-      "height": 1331,
+      "width": 1600,
+      "height": 1065,
       "alt": "A humpback whale breaching in open blue water",
       "lede": "",
       "story": "",
@@ -3835,8 +3460,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/08-amber-glass.jpg",
       "webp": "/images/portfolio/botanical/08-amber-glass.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Abstract close study of amber glass pebbles",
       "lede": "",
       "story": "",
@@ -3844,20 +3469,6 @@
       "source_px": 10368,
       "master": "PrintMasters/gelato-ready/HighResolution/amber-glass.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641848070386",
-            "price": 55
-          },
-          "16x24": {
-            "variant": "67641848135922",
-            "price": 90
-          },
-          "12x18": {
-            "variant": "67641848103154",
-            "price": 80
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67664324460786",
@@ -3982,7 +3593,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417027854578",
         "wood": "15422376706290",
         "acrylic": "15422376771826",
         "paper": "15422375198962",
@@ -4025,8 +3635,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/05-petunia-crimson.jpg",
       "webp": "/images/portfolio/botanical/05-petunia-crimson.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "A single crimson petunia on a pale ground",
       "lede": "",
       "story": "",
@@ -4034,20 +3644,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/petunia-crimson.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641852166386",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641852199154",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641852231922",
-            "price": 90
-          }
-        },
         "wood": {
           "16x24": {
             "variant": "67641853182194",
@@ -4144,7 +3740,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417029066994",
         "wood": "15417029263602",
         "acrylic": "15417029394674",
         "paper": "15419988967666",
@@ -4170,8 +3765,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/04-geranium-coral.jpg",
       "webp": "/images/portfolio/botanical/04-geranium-coral.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "A coral geranium cluster in soft light",
       "lede": "",
       "story": "",
@@ -4179,20 +3774,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/geranium-coral.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641853575410",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641853608178",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641853640946",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641853870322",
@@ -4289,7 +3870,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417029492978",
         "wood": "15417029656818",
         "acrylic": "15417029820658",
         "paper": "15419989065970",
@@ -4315,8 +3895,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/07-flower-market.jpg",
       "webp": "/images/portfolio/botanical/07-flower-market.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Buckets of cut dahlias and blooms at a flower market",
       "lede": "",
       "story": "",
@@ -4324,20 +3904,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/the-flower-market.tif",
       "shopify": {
-        "canvas": {
-          "12x18": {
-            "variant": "67641855770866",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641855803634",
-            "price": 90
-          },
-          "8x12": {
-            "variant": "67641855738098",
-            "price": 55
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641856131314",
@@ -4434,7 +4000,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417029984498",
         "wood": "15417030115570",
         "acrylic": "15417030246642",
         "paper": "15419989131506",
@@ -4460,8 +4025,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/03-geranium-white.jpg",
       "webp": "/images/portfolio/botanical/03-geranium-white.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "White geranium blossoms against dark foliage",
       "lede": "",
       "story": "",
@@ -4469,20 +4034,6 @@
       "source_px": 10368,
       "master": "PrintMasters/gelato-ready/HighResolution/geranium-white.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641858294002",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641858326770",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641858359538",
-            "price": 90
-          }
-        },
         "wood": {
           "24x36": {
             "variant": "67664362897650",
@@ -4607,7 +4158,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417031000306",
         "wood": "15422386274546",
         "acrylic": "15422377394418",
         "paper": "15422384898290",
@@ -4650,8 +4200,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/02-hydrangea-blue.jpg",
       "webp": "/images/portfolio/botanical/02-hydrangea-blue.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Deep blue hydrangea blooms against lit green leaves",
       "lede": "",
       "story": "",
@@ -4659,20 +4209,6 @@
       "source_px": 10368,
       "master": "PrintMasters/gelato-ready/HighResolution/hydrangea-deep-blue.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67641861570802",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641861603570",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67641861636338",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67664325509362",
@@ -4797,7 +4333,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417032147186",
         "wood": "15422376902898",
         "acrylic": "15422375461106",
         "paper": "15422375428338",
@@ -4840,8 +4375,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/06-petunia-veined.jpg",
       "webp": "/images/portfolio/botanical/06-petunia-veined.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Purple petunias with dark veining, backlit",
       "lede": "",
       "story": "",
@@ -4849,20 +4384,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/petunia-veined.tif",
       "shopify": {
-        "canvas": {
-          "16x24": {
-            "variant": "67641863831794",
-            "price": 90
-          },
-          "8x12": {
-            "variant": "67641863766258",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67641863799026",
-            "price": 80
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67641864126706",
@@ -4959,7 +4480,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15417032605938",
         "wood": "15417032802546",
         "acrylic": "15418511982834",
         "paper": "15419990343922",
@@ -4985,8 +4505,8 @@
       "category": "botanical",
       "image": "/images/portfolio/botanical/01-petunia-blush.jpg",
       "webp": "/images/portfolio/botanical/01-petunia-blush.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Hot-pink petunias opening in close focus",
       "lede": "",
       "story": "",
@@ -4994,20 +4514,6 @@
       "source_px": 10368,
       "master": "PrintMasters/gelato-ready/HighResolution/petunia-blush.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67646791254258",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67646791287026",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67646791319794",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67664370172146",
@@ -5132,7 +4638,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418512212210",
         "wood": "15422390501618",
         "acrylic": "15422377066738",
         "framed": "15422390436082",
@@ -5175,8 +4680,8 @@
       "category": "urban",
       "image": "/images/portfolio/urban/01-cocktails-neon.jpg",
       "webp": "/images/portfolio/urban/01-cocktails-neon.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "Red neon Cocktails sign glowing in a dark bar window",
       "lede": "",
       "story": "",
@@ -5184,20 +4689,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/cocktails.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67646797119730",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67646797152498",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67646797185266",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67646797349106",
@@ -5294,7 +4785,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418516340978",
         "wood": "15418516439282",
         "acrylic": "15418516603122",
         "paper": "15419991785714",
@@ -5329,20 +4819,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/wall-of-names.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67646831689970",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67646831722738",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67646831755506",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67646836801778",
@@ -5439,7 +4915,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418521452786",
         "wood": "15418523517170",
         "acrylic": "15418533708018",
         "paper": "15419992604914",
@@ -5465,8 +4940,8 @@
       "category": "urban",
       "image": "/images/portfolio/urban/05-mural-sundown.jpg",
       "webp": "/images/portfolio/urban/05-mural-sundown.webp",
-      "width": 2000,
-      "height": 1652,
+      "width": 1600,
+      "height": 1322,
       "alt": "A mural figure silhouetted against a painted sun",
       "lede": "",
       "story": "",
@@ -5474,20 +4949,6 @@
       "source_px": 7324,
       "master": "PrintMasters/gelato-ready/HighResolution/mural-sundown.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67646895587570",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67646895620338",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67646895653106",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67664369484018",
@@ -5612,7 +5073,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418538688754",
         "wood": "15422390370546",
         "acrylic": "15422384210162",
         "paper": "15422389977330",
@@ -5655,8 +5115,8 @@
       "category": "urban",
       "image": "/images/portfolio/urban/03-art-will-save-you.jpg",
       "webp": "/images/portfolio/urban/03-art-will-save-you.webp",
-      "width": 2000,
-      "height": 1333,
+      "width": 1600,
+      "height": 1066,
       "alt": "A sticker reading ART WILL SAVE YOU on a yellow road line",
       "lede": "",
       "story": "",
@@ -5664,20 +5124,6 @@
       "source_px": 5184,
       "master": "PrintMasters/gelato-ready/HighResolution/art-will-save-you.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67647084527858",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67647084560626",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67647084593394",
-            "price": 90
-          }
-        },
         "wood": {
           "8x12": {
             "variant": "67647085805810",
@@ -5774,7 +5220,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418567426290",
         "wood": "15418568212722",
         "acrylic": "15418588725490",
         "paper": "15419994046706",
@@ -5800,8 +5245,8 @@
       "category": "urban",
       "image": "/images/portfolio/urban/06-harbour-pastel.jpg",
       "webp": "/images/portfolio/urban/06-harbour-pastel.webp",
-      "width": 2000,
-      "height": 2000,
+      "width": 1600,
+      "height": 1600,
       "alt": "Still harbour water under a pastel dusk skyline",
       "lede": "",
       "story": "",
@@ -5809,20 +5254,6 @@
       "source_px": 6048,
       "master": "PrintMasters/gelato-ready/HighResolution/harbour-pastel.tif",
       "shopify": {
-        "canvas": {
-          "12x12": {
-            "variant": "67647228313842",
-            "price": 65
-          },
-          "16x16": {
-            "variant": "67647228346610",
-            "price": 80
-          },
-          "20x20": {
-            "variant": "67647228379378",
-            "price": 100
-          }
-        },
         "wood": {
           "12x12": {
             "variant": "67647280578802",
@@ -5911,7 +5342,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15418598654194",
         "wood": "15418622378226",
         "acrylic": "15418625655026",
         "paper": "15420011020530",
@@ -5951,20 +5381,6 @@
       "source_px": 8064,
       "master": "PrintMasters/gelato-ready/HighResolution/glass-spire.tif",
       "shopify": {
-        "canvas": {
-          "8x12": {
-            "variant": "67650334294258",
-            "price": 55
-          },
-          "12x18": {
-            "variant": "67650334327026",
-            "price": 80
-          },
-          "16x24": {
-            "variant": "67650334359794",
-            "price": 90
-          }
-        },
         "wood": {
           "12x18": {
             "variant": "67664324985074",
@@ -6089,7 +5505,6 @@
         }
       },
       "shopify_products": {
-        "canvas": "15419814281458",
         "wood": "15422376804594",
         "acrylic": "15422390468850",
         "paper": "15422385160434",
@@ -6132,8 +5547,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/15-valley-in-violet.jpg",
       "webp": "/images/portfolio/mountains/15-valley-in-violet.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Violet light across a mountain range above a braided river",
       "lede": "",
       "story": "",
@@ -6252,8 +5667,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/17-snowline.jpg",
       "webp": "/images/portfolio/mountains/17-snowline.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Fresh snow along a high Sierra ridgeline",
       "lede": "",
       "story": "",
@@ -6372,8 +5787,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/18-the-long-valley.jpg",
       "webp": "/images/portfolio/mountains/18-the-long-valley.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Green valley floor and river running to distant peaks",
       "lede": "",
       "story": "",
@@ -6492,8 +5907,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/19-range-and-scrub.jpg",
       "webp": "/images/portfolio/mountains/19-range-and-scrub.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "High desert scrub below a long snow-dusted range",
       "lede": "",
       "story": "",
@@ -6932,8 +6347,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/27-still-pond.jpg",
       "webp": "/images/portfolio/mountains/27-still-pond.webp",
-      "width": 2000,
-      "height": 1500,
+      "width": 1600,
+      "height": 1200,
       "alt": "A still pond, autumn tree, and stone wall under blue sky",
       "lede": "",
       "story": "",
@@ -7172,8 +6587,8 @@
       "category": "urban",
       "image": "/images/portfolio/people/04-research-vessel-dawn.jpg",
       "webp": "/images/portfolio/people/04-research-vessel-dawn.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Research vessel deck rigging silhouetted at dawn",
       "lede": "",
       "story": "",
@@ -7292,8 +6707,8 @@
       "category": "urban",
       "image": "/images/portfolio/people/05-peace-skyline.jpg",
       "webp": "/images/portfolio/people/05-peace-skyline.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "PEACE sign glowing against a night city skyline",
       "lede": "",
       "story": "",
@@ -7412,8 +6827,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/05-conifer-canopy.jpg",
       "webp": "/images/portfolio/mountains/05-conifer-canopy.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Looking up into a conifer canopy against a pale sky",
       "lede": "",
       "story": "",
@@ -7532,8 +6947,8 @@
       "category": "urban",
       "image": "/images/portfolio/people/06-city-thunderheads.jpg",
       "webp": "/images/portfolio/people/06-city-thunderheads.webp",
-      "width": 2000,
-      "height": 1500,
+      "width": 1600,
+      "height": 1200,
       "alt": "Thunderheads building over a city skyline at golden hour",
       "lede": "",
       "story": "",
@@ -7592,8 +7007,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/09-palm-canopy.jpg",
       "webp": "/images/portfolio/mountains/09-palm-canopy.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Palm trunks reaching into a bright tropical canopy",
       "lede": "",
       "story": "",
@@ -7652,8 +7067,8 @@
       "category": "mountains",
       "image": "/images/portfolio/mountains/12-forest-fungus.jpg",
       "webp": "/images/portfolio/mountains/12-forest-fungus.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "White fungus blooming on a fallen log",
       "lede": "",
       "story": "",
@@ -7772,8 +7187,8 @@
       "category": "embers",
       "image": "/images/portfolio/mountains/11-ember-study.jpg",
       "webp": "/images/portfolio/mountains/11-ember-study.webp",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "alt": "Close study of campfire flames against the dark",
       "lede": "",
       "story": "",
@@ -7894,8 +7309,8 @@
       "alt": "A single tongue of campfire flame rising against the dark",
       "master": "PrintMasters/mountains/DSC03751.JPG",
       "category": "embers",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "lede": "",
       "story": "",
       "shape": "16:9",
@@ -8014,8 +7429,8 @@
       "alt": "A spray of campfire sparks drifting through the dark",
       "master": "PrintMasters/mountains/DSC03915.JPG",
       "category": "embers",
-      "width": 2000,
-      "height": 1125,
+      "width": 1600,
+      "height": 900,
       "lede": "",
       "story": "",
       "shape": "16:9",

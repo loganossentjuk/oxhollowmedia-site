@@ -1592,3 +1592,89 @@ html.lb-open { overflow: hidden; }
 @media (max-width: 700px) {
   .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 120px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
 }
+
+/* ── Gallery banner: forest-green band with topo contours ─────────────────
+   The card-front green, a warm glow off the top right, and faint contour
+   lines (images/topo.svg) that drift very slowly. Chips and the size toggle
+   flip to cream-on-green. The nav starts light here, as on the home page. */
+#gallery-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 4.5rem) 0 2.75rem;
+  background:
+    radial-gradient(ellipse 60% 90% at 88% 0%, rgba(182,124,86,0.20), transparent 70%),
+    radial-gradient(ellipse 70% 80% at 0% 100%, rgba(13,26,18,0.55), transparent 70%),
+    var(--bg-dark);
+  color: var(--paper);
+}
+#gallery-hero::before {
+  content: "";
+  position: absolute; inset: -40px;
+  z-index: -1;
+  background: url("../images/topo.svg") center / cover no-repeat;
+  opacity: 0.16;
+  animation: topo-drift 40s ease-in-out infinite alternate;
+}
+/* a clay hairline where the band meets the cream gallery */
+#gallery-hero::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--clay) 20%, var(--clay) 80%, transparent);
+  opacity: 0.85;
+}
+@keyframes topo-drift {
+  from { transform: translate3d(-14px, 6px, 0) scale(1.02); }
+  to   { transform: translate3d(14px, -6px, 0) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #gallery-hero::before { animation: none; }
+}
+#gallery-hero .section-label { color: var(--clay); }
+.gallery-title {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  color: var(--paper);
+  letter-spacing: 0.04em;
+  margin: 0.4rem 0 0.9rem;
+  animation: gallery-rise 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+.gallery-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: rgba(244,238,226,0.78);
+  margin: 0;
+  animation: gallery-rise 0.9s 0.12s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes gallery-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-title, .gallery-sub { animation: none; }
+}
+#gallery-hero .filters { margin-top: 2.25rem; }
+#gallery-hero .filter-chip {
+  border-color: rgba(244,238,226,0.28);
+  color: rgba(244,238,226,0.82);
+}
+#gallery-hero .filter-chip:hover { border-color: var(--paper); color: var(--paper); }
+#gallery-hero .filter-chip.active {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--bg-dark);
+}
+#gallery-hero .chip-films { border-color: var(--clay); color: #E2B08E; }
+#gallery-hero .chip-films:hover { background: var(--clay); color: var(--paper); border-color: var(--clay); }
+#gallery-hero .size-label { color: rgba(244,238,226,0.6); }
+#gallery-hero .size-btn { color: rgba(244,238,226,0.7); }
+#gallery-hero .size-btn:hover { color: var(--paper); }
+#gallery-hero .size-btn[aria-pressed="true"] {
+  color: var(--paper);
+  border-color: rgba(244,238,226,0.35);
+  background: rgba(244,238,226,0.08);
+}
+@media (max-width: 700px) {
+  #gallery-hero { padding: calc(var(--nav-h) + 2.5rem) 0 2rem; }
+}

@@ -33,7 +33,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Website and bugs
 - [ ] Links/canonical use `/prints` but Pages serves `/prints/` (308 hop on 221 nav links, sitemap, canonical): switch to `/prints/` (SEO + web-engineer)
 - [ ] Add `<main>` landmarks to about, contact, events, films, filmmaking, gallery, index, privacy, shipping-returns, 404
-- [ ] Images: 10 heaviest (683–917KB) → 1600px WebP q75 + 800px srcset (art-will-save-you, tidepool-lava, aspen-and-cobalt, still-pond, wall-of-names, highland-hollow…)
+- [ ] **Next run, approved by Logan 2026-10-14 (web-engineer):** resize ALL web photos in images/portfolio (not the Dropbox print masters): 1600px WebP ~q75 (aim <350KB) + an 800px version via srcset/sizes on every page and in build_print_pages.py; keep JPG fallbacks; keep higher quality where detail suffers; watermark is already baked in. Preview before live.
 - [ ] Catalog `location` field so print descriptions name the place (e.g. Galápagos) — generator line ~215
 - [ ] Remove the archived Petunia Blush Canvas entry from the catalog
 - [x] Measurement (approved 2026-10-13): cart `ref=` code from UTMs, "How did you hear" field, /links → /prints, shipping-returns Stripe wording

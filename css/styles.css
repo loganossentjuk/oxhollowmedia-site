@@ -1291,13 +1291,22 @@ body.prints-page .container { max-width: 1680px; }
 .nav-links a.nav-cta.swap:hover .swap-clip::after,
 .nav-links a.nav-cta.swap:focus-visible .swap-clip::after { transform: translateY(0); }
 .nav-links a.nav-cta { transition: color 0.3s, background-color 0.3s, border-color 0.3s; }
-/* Over the hero: cream pill, ink label. On light pages / scrolled: green pill. */
+/* At rest the Contact pill is filled forest green with a cream label. Over the
+   dark heroes and the gallery's green band it keeps a cream outline so it does
+   not sink into the background. */
+.nav-links a.nav-cta,
+#nav.scrolled .nav-links a.nav-cta,
+body.light-nav .nav-links a.nav-cta {
+  background: var(--accent); border-color: var(--accent); color: var(--paper);
+}
+body:not(.light-nav) #nav:not(.scrolled) .nav-links a.nav-cta { border-color: rgba(244,238,226,0.5); }
+/* Over the hero: cream pill, ink label. On light pages / scrolled: deeper green. */
 .nav-links a.nav-cta:hover,
 .nav-links a.nav-cta:focus-visible { background: var(--paper); border-color: var(--paper); color: var(--text); }
 #nav.scrolled .nav-links a.nav-cta:hover,
 #nav.scrolled .nav-links a.nav-cta:focus-visible,
 body.light-nav .nav-links a.nav-cta:hover,
-body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--paper); }
 
 /* ── Reveal on scroll ──────────────────────────────────────────────────────
    Replaces the old .fade-in with a longer, softer curve and per-item stagger

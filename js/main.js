@@ -28,6 +28,34 @@
     document.addEventListener(t, (e) => tag(e.target.closest && e.target.closest('a')), true));
 })();
 
+/* ── GA4 events (gtag is loaded in each page's <head>) ──
+   Never send names, emails or messages: only print, size, price and the
+   form's dropdown answers. https://support.google.com/analytics/answer/6366371 */
+const ga = (...args) => { if (typeof gtag === 'function') gtag(...args); };
+const SHOP_CART = /^https:\/\/[^/]+\.myshopify\.com\/cart\//;
+
+/* Cart permalinks skip the Shopify storefront and open checkout, so a click
+   is GA4's begin_checkout. Beacon transport survives the navigation.
+   https://developers.google.com/analytics/devguides/collection/ga4/reference/events#begin_checkout */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('a');
+  if (!a || !SHOP_CART.test(a.href)) return;
+  const text = (sel) => (a.querySelector(sel)?.textContent || '').trim();
+  const price = parseFloat(text('.price, strong').replace(/[^0-9.]/g, ''));
+  const size = a.dataset.size?.replace('x', '×') || text('.size, span').replace(/^Buy\s+/, '').replace(/″$/, '');
+  const mat = a.closest('[data-mat]')?.dataset.mat;
+  const frame = a.closest('[data-frame]')?.dataset.frame;
+  const item = {
+    item_id: a.href.match(/\/cart\/(\d+)/)?.[1],
+    item_name: (document.querySelector('.detail-title, .lb-title')?.textContent || '').trim() || a.dataset.product,
+    item_variant: [size, mat, frame].filter(Boolean).join(' / '),
+    quantity: 1,
+  };
+  const params = { currency: 'USD', items: [item], transport_type: 'beacon' };
+  if (price > 0) { params.value = price; item.price = price; }
+  ga('event', 'begin_checkout', params);
+});
+
 /* ── Nav: add scrolled class ── */
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -59,7 +87,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
    Works the moment an analytics tag is added — no further code needed. */
 function track(name, props) {
   if (window.plausible) window.plausible(name, { props: props || {} });
-  if (window.gtag) window.gtag('event', name, props || {});
+  // GA4 event names allow only letters, digits and underscores.
+  // https://support.google.com/analytics/answer/13316687
+  ga('event', name.toLowerCase().replace(/\s+/g, '_'), props || {});
 }
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a, button');
@@ -70,7 +100,7 @@ document.addEventListener('click', (e) => {
     track(isOrder ? 'Print Order Click' : 'Email Click', { product: a.dataset.product || undefined });
   } else if (href.startsWith('tel:')) {
     track('Phone Click');
-  } else if (a.dataset.product) {
+  } else if (a.dataset.product && !SHOP_CART.test(a.href)) { // Shopify: begin_checkout above
     track('Buy Button Click', { product: a.dataset.product, size: a.dataset.size || undefined });
   } else if (a.dataset.cta) {
     track('CTA Click', { cta: a.dataset.cta });
@@ -97,7 +127,14 @@ if (form) {
       });
       if (res.ok) {
         status.textContent = 'Message sent. We\'ll be in touch soon.';
-        track('Contact Form Submit');
+        // Dropdown answers only; never the name, email or message.
+        // https://developers.google.com/analytics/devguides/collection/ga4/reference/events#generate_lead
+        ga('event', 'generate_lead', {
+          lead_source: form.elements.heard_about?.value || '(not set)',
+          budget: form.elements.budget?.value,
+          project: form.elements.project?.value,
+        });
+        if (window.plausible) window.plausible('Contact Form Submit');
         form.reset();
       } else {
         status.textContent = 'Something went wrong. Please email us directly.';

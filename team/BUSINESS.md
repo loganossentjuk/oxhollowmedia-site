@@ -46,7 +46,8 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 
 ## Facts and decisions from Logan (2026-10-13)
 - **Clients we may name** in outreach and referral asks: Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation. Never invent results or quotes for them. Ask Logan before adding new names to site pages.
-- **Instagram:** @oxhollowmedia is a Business account.
+- **Instagram:** @oxhollowmedia is a Business account. Bio (2026-10-14): "Events · Films · Fine-art prints / San Francisco Bay Area / Closer to nature, one frame at a time."
+- **Mission line (on /about):** "Striving to bring people closer to nature, illuminating stories of action, and belief in conservation, cultivation and care."
 - **Print shop:** no orders yet; Logan is placing the first one. Verdigris and Copper and Teal are ready to sell like any other print.
 - **Growth plan:** event leads lead the next 90 days; prints run on free channels. Ad budget is $0 to start, except a small holiday ad test for prints that Logan is open to (amount for Logan to set).
 - **Event types (Logan's page copy, 2026-10-14):** conferences, launches, demo days, galas, and family celebrations.

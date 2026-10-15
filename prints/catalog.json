@@ -32,6 +32,10 @@
       "name": "Embers",
       "intro": "One campfire, three ways: the wood, the flame, and the sparks it throws into the dark."
     },
+    "abstracts": {
+      "name": "Abstracts",
+      "intro": "Water, rock and colour, framed close until the place falls away. More of these are on the way."
+    },
     "ocean": {
       "name": "Ocean",
       "intro": "Coastline, tidepool, and open water, from the Golden Gate to the volcanic shallows."
@@ -1918,7 +1922,7 @@
     {
       "slug": "phase-shift",
       "title": "Phase Shift",
-      "category": "ocean",
+      "category": "abstracts",
       "image": "/images/portfolio/ocean/14-green-water.jpg",
       "webp": "/images/portfolio/ocean/14-green-water.webp",
       "width": 1600,
@@ -2176,7 +2180,7 @@
     {
       "slug": "divine-duality",
       "title": "Divine Duality",
-      "category": "ocean",
+      "category": "abstracts",
       "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
       "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
       "width": 1600,
@@ -2276,14 +2280,14 @@
     {
       "slug": "obsidian-palace",
       "title": "Obsidian Palace",
-      "category": "ocean",
+      "category": "abstracts",
       "image": "/images/portfolio/ocean/06-tidepool-lava.jpg",
       "webp": "/images/portfolio/ocean/06-tidepool-lava.webp",
       "width": 1600,
       "height": 2000,
       "alt": "An aquamarine tidepool set in dark lava rock",
-      "lede": "",
-      "story": "",
+      "lede": "Aquamarine water held in dark volcanic rock at the Mermaid's Pools on Oahu, Hawaii.",
+      "story": "I shot this from inside a cave as the waves crashed in. The rock is volcanic and nearly black, and it frames the water like a window.",
       "shape": "5:4",
       "source_px": 4096,
       "master": "PrintMasters/gelato-ready/HighResolution/tidepool-lava.tif",

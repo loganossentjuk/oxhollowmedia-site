@@ -111,8 +111,8 @@
       }
     },
     {
-      "slug": "before-the-wind",
-      "title": "Before the Wind",
+      "slug": "into-the-unknown",
+      "title": "Into the Unknown",
       "category": "mountains",
       "image": "/images/portfolio/mountains/20-autumn-flats.jpg",
       "webp": "/images/portfolio/mountains/20-autumn-flats.webp",
@@ -199,14 +199,14 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/before-the-wind-framed-white.jpg",
-          "oak": "/images/mockups/before-the-wind-framed-oak.jpg",
-          "black": "/images/mockups/before-the-wind-framed-black.jpg"
+          "white": "/images/mockups/into-the-unknown-framed-white.jpg",
+          "oak": "/images/mockups/into-the-unknown-framed-oak.jpg",
+          "black": "/images/mockups/into-the-unknown-framed-black.jpg"
         },
         "framed_canvas": {
-          "walnut": "/images/mockups/before-the-wind-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/before-the-wind-framed-canvas-black.jpg",
-          "oak": "/images/mockups/before-the-wind-framed-canvas-oak.jpg"
+          "walnut": "/images/mockups/into-the-unknown-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/into-the-unknown-framed-canvas-black.jpg",
+          "oak": "/images/mockups/into-the-unknown-framed-canvas-oak.jpg"
         }
       }
     },
@@ -271,8 +271,8 @@
       "master": "PrintMasters/gelato-ready/HighResolution/fitz-roy-alpenglow.tif"
     },
     {
-      "slug": "cloudbreak-ridge",
-      "title": "Cloudbreak Ridge",
+      "slug": "mountain-majesty",
+      "title": "Mountain Majesty",
       "category": "mountains",
       "image": "/images/portfolio/mountains/16-cloudbreak-ridge.jpg",
       "webp": "/images/portfolio/mountains/16-cloudbreak-ridge.webp",
@@ -387,14 +387,14 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/cloudbreak-ridge-framed-white.jpg",
-          "oak": "/images/mockups/cloudbreak-ridge-framed-oak.jpg",
-          "black": "/images/mockups/cloudbreak-ridge-framed-black.jpg"
+          "white": "/images/mockups/mountain-majesty-framed-white.jpg",
+          "oak": "/images/mockups/mountain-majesty-framed-oak.jpg",
+          "black": "/images/mockups/mountain-majesty-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/cloudbreak-ridge-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/cloudbreak-ridge-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/cloudbreak-ridge-framed-canvas-black.jpg"
+          "oak": "/images/mockups/mountain-majesty-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/mountain-majesty-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/mountain-majesty-framed-canvas-black.jpg"
         }
       }
     },
@@ -1916,8 +1916,8 @@
       }
     },
     {
-      "slug": "verdigris",
-      "title": "Verdigris",
+      "slug": "phase-shift",
+      "title": "Phase Shift",
       "category": "ocean",
       "image": "/images/portfolio/ocean/14-green-water.jpg",
       "webp": "/images/portfolio/ocean/14-green-water.webp",
@@ -2004,14 +2004,14 @@
       },
       "previews": {
         "framed": {
-          "black": "/images/mockups/verdigris-framed-black.jpg",
-          "white": "/images/mockups/verdigris-framed-white.jpg",
-          "oak": "/images/mockups/verdigris-framed-oak.jpg"
+          "black": "/images/mockups/phase-shift-framed-black.jpg",
+          "white": "/images/mockups/phase-shift-framed-white.jpg",
+          "oak": "/images/mockups/phase-shift-framed-oak.jpg"
         },
         "framed_canvas": {
-          "black": "/images/mockups/verdigris-framed-canvas-black.jpg",
-          "oak": "/images/mockups/verdigris-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/verdigris-framed-canvas-walnut.jpg"
+          "black": "/images/mockups/phase-shift-framed-canvas-black.jpg",
+          "oak": "/images/mockups/phase-shift-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/phase-shift-framed-canvas-walnut.jpg"
         }
       }
     },
@@ -2174,8 +2174,8 @@
       }
     },
     {
-      "slug": "copper-and-teal",
-      "title": "Copper and Teal",
+      "slug": "divine-duality",
+      "title": "Divine Duality",
       "category": "ocean",
       "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
       "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
@@ -2262,20 +2262,20 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/copper-and-teal-framed-white.jpg",
-          "oak": "/images/mockups/copper-and-teal-framed-oak.jpg",
-          "black": "/images/mockups/copper-and-teal-framed-black.jpg"
+          "white": "/images/mockups/divine-duality-framed-white.jpg",
+          "oak": "/images/mockups/divine-duality-framed-oak.jpg",
+          "black": "/images/mockups/divine-duality-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/copper-and-teal-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/copper-and-teal-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/copper-and-teal-framed-canvas-black.jpg"
+          "oak": "/images/mockups/divine-duality-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/divine-duality-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/divine-duality-framed-canvas-black.jpg"
         }
       }
     },
     {
-      "slug": "lava-cradle",
-      "title": "Lava Cradle",
+      "slug": "obsidian-palace",
+      "title": "Obsidian Palace",
       "category": "ocean",
       "image": "/images/portfolio/ocean/06-tidepool-lava.jpg",
       "webp": "/images/portfolio/ocean/06-tidepool-lava.webp",
@@ -2392,14 +2392,14 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/lava-cradle-framed-white.jpg",
-          "oak": "/images/mockups/lava-cradle-framed-oak.jpg",
-          "black": "/images/mockups/lava-cradle-framed-black.jpg"
+          "white": "/images/mockups/obsidian-palace-framed-white.jpg",
+          "oak": "/images/mockups/obsidian-palace-framed-oak.jpg",
+          "black": "/images/mockups/obsidian-palace-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/lava-cradle-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/lava-cradle-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/lava-cradle-framed-canvas-black.jpg"
+          "oak": "/images/mockups/obsidian-palace-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/obsidian-palace-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/obsidian-palace-framed-canvas-black.jpg"
         }
       }
     },

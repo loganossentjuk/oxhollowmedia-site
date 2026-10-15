@@ -55,6 +55,14 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Outreach sender:** Logan wants outreach to come from hello@oxhollowmedia.com.
 - **Measurement:** approved: analytics, a campaign `ref=` code on cart links, and a "How did you hear about me?" field on the contact form. Email signup not approved yet.
 
+## Facts from Logan (2026-10-14, later)
+- **Shooting since 2017.**
+- **Ocean Defenders film:** not commissioned; it was client work done for free (pro bono). Don't call it a commission.
+- **"Photo and video in one booking"** is OK to say.
+- **Obsidian Palace:** shot at the Mermaid's Pools on Oahu, Hawaii: volcanic rock, shot from inside a cave as the waves crashed in. Logan has more abstracts like it.
+- **Abstract series:** approved. Obsidian Palace, Phase Shift and Divine Duality lead it; more abstracts to come.
+- **Client quote:** Logan is getting one. Don't invent or paraphrase one.
+
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.
 - **Print pages:**

@@ -1712,3 +1712,11 @@ html.lb-open { overflow: hidden; }
 #photo-menu .filter-chip { border-color: rgba(244,238,226,0.28); color: rgba(244,238,226,0.85); }
 #photo-menu .filter-chip:hover { border-color: var(--paper); color: var(--paper); }
 #photo-menu .filter-chip.active { background: var(--paper); border-color: var(--paper); color: var(--bg-dark); }
+/* Gallery only: the Contact pill in terracotta, to match the clay accents on the green band */
+body.page-gallery .nav-links a.nav-cta,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta,
+body.page-gallery #nav:not(.scrolled) .nav-links a.nav-cta { background: var(--clay); border-color: var(--clay); color: var(--paper); }
+body.page-gallery .nav-links a.nav-cta:hover,
+body.page-gallery .nav-links a.nav-cta:focus-visible,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta:hover,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background: #9A6444; border-color: #9A6444; color: var(--paper); }

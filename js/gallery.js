@@ -48,6 +48,11 @@ if (filterBar && grid) {
   const photosLabel = filterBar.querySelector('.chip-photos-label');
   const setMenu = (open) => {
     if (!photosBtn) return;
+    if (open) {
+      const r = photosBtn.getBoundingClientRect();
+      photosMenu.style.top = `${r.bottom + 8}px`;
+      photosMenu.style.left = `${r.left}px`;
+    }
     photosMenu.hidden = !open;
     photosBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
@@ -70,6 +75,8 @@ if (filterBar && grid) {
   if (photosBtn) {
     photosBtn.addEventListener('click', () => setMenu(photosMenu.hidden));
     document.addEventListener('click', (e) => { if (!e.target.closest('.chip-menu')) setMenu(false); });
+    window.addEventListener('scroll', () => setMenu(false), { passive: true });
+    window.addEventListener('resize', () => setMenu(false));
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !photosMenu.hidden) { setMenu(false); photosBtn.focus(); }
     });

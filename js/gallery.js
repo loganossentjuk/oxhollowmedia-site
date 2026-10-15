@@ -66,7 +66,7 @@ if (filterBar && grid) {
     const inMenu = chip.classList.contains('menu-item');
     if (photosBtn) {
       photosBtn.classList.toggle('active', inMenu);
-      photosLabel.textContent = inMenu ? `Photos · ${chip.textContent}` : 'Photos';
+      photosLabel.textContent = inMenu ? `Collections · ${chip.textContent}` : 'Collections';
     }
     setMenu(false);
     applyFilter(chip.dataset.filter);

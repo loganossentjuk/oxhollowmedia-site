@@ -60,6 +60,8 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Ocean Defenders film:** not commissioned; it was client work done for free (pro bono). Don't call it a commission.
 - **"Photo and video in one booking"** is OK to say.
 - **Obsidian Palace:** shot at the Mermaid's Pools on Oahu, Hawaii: volcanic rock, shot from inside a cave as the waves crashed in. Logan has more abstracts like it.
+- **Phase Shift and Divine Duality:** shot at the same place and time as Obsidian Palace (Mermaid's Pools, Oahu).
+- **Series name: "Salt and Stone"** (for now). Site category slug stays `abstracts`.
 - **Abstract series:** approved. Obsidian Palace, Phase Shift and Divine Duality lead it; more abstracts to come.
 - **Client quote:** Logan is getting one. Don't invent or paraphrase one.
 

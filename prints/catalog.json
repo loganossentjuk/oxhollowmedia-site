@@ -33,8 +33,8 @@
       "intro": "One campfire, three ways: the wood, the flame, and the sparks it throws into the dark."
     },
     "abstracts": {
-      "name": "Abstracts",
-      "intro": "Water, rock and colour, framed close until the place falls away. More of these are on the way."
+      "name": "Salt and Stone",
+      "intro": "Water and volcanic rock at the Mermaid's Pools on Oahu, shot from inside a sea cave as the waves came in. More of these are on the way."
     },
     "ocean": {
       "name": "Ocean",
@@ -215,8 +215,8 @@
       }
     },
     {
-      "slug": "fitz-roy-alpenglow",
-      "title": "Fitz Roy, Alpenglow",
+      "slug": "granite-glow",
+      "title": "Granite Glow",
       "category": "mountains",
       "image": "/images/portfolio/mountains/01-fitz-roy-alpenglow.jpg",
       "webp": "/images/portfolio/mountains/01-fitz-roy-alpenglow.webp",
@@ -262,14 +262,14 @@
       },
       "previews": {
         "framed": {
-          "white": "/images/mockups/fitz-roy-alpenglow-framed-white.jpg",
-          "oak": "/images/mockups/fitz-roy-alpenglow-framed-oak.jpg",
-          "black": "/images/mockups/fitz-roy-alpenglow-framed-black.jpg"
+          "white": "/images/mockups/granite-glow-framed-white.jpg",
+          "oak": "/images/mockups/granite-glow-framed-oak.jpg",
+          "black": "/images/mockups/granite-glow-framed-black.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/fitz-roy-alpenglow-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/fitz-roy-alpenglow-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/fitz-roy-alpenglow-framed-canvas-black.jpg"
+          "oak": "/images/mockups/granite-glow-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/granite-glow-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/granite-glow-framed-canvas-black.jpg"
         }
       },
       "master": "PrintMasters/gelato-ready/HighResolution/fitz-roy-alpenglow.tif"
@@ -1928,7 +1928,7 @@
       "width": 1600,
       "height": 1280,
       "alt": "Green and white water sliding over dark rock, the colour of weathered copper",
-      "lede": "",
+      "lede": "Shot alongside Obsidian Palace at the Mermaid's Pools on Oahu, Hawaii, from inside a sea cave as the waves came in.",
       "story": "",
       "shape": "5:4",
       "source_px": 4096,
@@ -2186,7 +2186,7 @@
       "width": 1600,
       "height": 1280,
       "alt": "Teal water against oxidised copper-red rock",
-      "lede": "",
+      "lede": "Shot alongside Obsidian Palace at the Mermaid's Pools on Oahu, Hawaii, from inside a sea cave as the waves came in.",
       "story": "",
       "shape": "5:4",
       "source_px": 4094,
@@ -3399,8 +3399,8 @@
       }
     },
     {
-      "slug": "humpback-breach",
-      "title": "Humpback Breach",
+      "slug": "leviathans-leap",
+      "title": "Leviathan's Leap",
       "category": "wildlife",
       "image": "/images/portfolio/ocean/01-humpback-breach.jpg",
       "webp": "/images/portfolio/ocean/01-humpback-breach.webp",
@@ -3446,14 +3446,14 @@
       },
       "previews": {
         "framed": {
-          "black": "/images/mockups/humpback-breach-framed-black.jpg",
-          "white": "/images/mockups/humpback-breach-framed-white.jpg",
-          "oak": "/images/mockups/humpback-breach-framed-oak.jpg"
+          "black": "/images/mockups/leviathans-leap-framed-black.jpg",
+          "white": "/images/mockups/leviathans-leap-framed-white.jpg",
+          "oak": "/images/mockups/leviathans-leap-framed-oak.jpg"
         },
         "framed_canvas": {
-          "oak": "/images/mockups/humpback-breach-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/humpback-breach-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/humpback-breach-framed-canvas-black.jpg"
+          "oak": "/images/mockups/leviathans-leap-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/leviathans-leap-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/leviathans-leap-framed-canvas-black.jpg"
         }
       },
       "master": "PrintMasters/gelato-ready/HighResolution/humpback-breach.tif"

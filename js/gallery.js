@@ -42,13 +42,38 @@ if (filterBar && grid) {
     });
   }
 
+  // Photos ▾ holds the collections (Ocean, Abstracts, Mountains…); All and Films sit beside it.
+  const photosBtn = filterBar.querySelector('.chip-photos');
+  const photosMenu = document.getElementById('photo-menu');
+  const photosLabel = filterBar.querySelector('.chip-photos-label');
+  const setMenu = (open) => {
+    if (!photosBtn) return;
+    photosMenu.hidden = !open;
+    photosBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   const selectChip = (chip) => {
-    filterBar.querySelectorAll('.filter-chip').forEach((c) => {
+    filterBar.querySelectorAll('.filter-chip[data-filter]').forEach((c) => {
       c.classList.toggle('active', c === chip);
-      c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+      if (c.classList.contains('menu-item')) c.setAttribute('aria-checked', c === chip ? 'true' : 'false');
+      else c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
     });
+    const inMenu = chip.classList.contains('menu-item');
+    if (photosBtn) {
+      photosBtn.classList.toggle('active', inMenu);
+      photosLabel.textContent = inMenu ? `Photos · ${chip.textContent}` : 'Photos';
+    }
+    setMenu(false);
     applyFilter(chip.dataset.filter);
   };
+
+  if (photosBtn) {
+    photosBtn.addEventListener('click', () => setMenu(photosMenu.hidden));
+    document.addEventListener('click', (e) => { if (!e.target.closest('.chip-menu')) setMenu(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !photosMenu.hidden) { setMenu(false); photosBtn.focus(); }
+    });
+  }
 
   filterBar.addEventListener('click', (e) => {
     // .chip-films links out to /films, not a category — it has no data-filter and

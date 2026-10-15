@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=58" />
+  <link rel="stylesheet" href="css/styles.css?v=59" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ImageGallery", "name": "Ox Hollow Media Photography Gallery", "url": "https://oxhollowmedia.com/gallery", "description": "Ocean, mountain, and wildlife photography available as fine-art prints, plus event photography and portraits.", "publisher": {"@id": "https://oxhollowmedia.com/#business"}}</script>
 </head>
 <body>
@@ -82,14 +82,19 @@
 
       <div class="filters" id="filters" aria-label="Filter by category">
         <button class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-chip" data-filter="ocean" aria-pressed="false">Ocean</button>
-        <button class="filter-chip" data-filter="abstracts" aria-pressed="false">Abstracts</button>
-        <button class="filter-chip" data-filter="mountains" aria-pressed="false">Mountains</button>
-        <button class="filter-chip" data-filter="forests" aria-pressed="false">Forests</button>
-        <button class="filter-chip" data-filter="botanical" aria-pressed="false">Botanical</button>
-        <button class="filter-chip" data-filter="urban" aria-pressed="false">Urban</button>
-        <button class="filter-chip" data-filter="portraits" aria-pressed="false">Portraits</button>
-        <button class="filter-chip" data-filter="events" aria-pressed="false">Events</button>
+        <div class="chip-menu">
+          <button class="filter-chip chip-photos" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="photo-menu"><span class="chip-photos-label">Photos</span><svg class="chip-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+          <div class="chip-menu-list" id="photo-menu" role="menu" aria-label="Photo collections" hidden>
+            <button class="filter-chip menu-item" data-filter="ocean" role="menuitemradio" aria-checked="false">Ocean</button>
+            <button class="filter-chip menu-item" data-filter="abstracts" role="menuitemradio" aria-checked="false">Abstracts</button>
+            <button class="filter-chip menu-item" data-filter="mountains" role="menuitemradio" aria-checked="false">Mountains</button>
+            <button class="filter-chip menu-item" data-filter="forests" role="menuitemradio" aria-checked="false">Forests</button>
+            <button class="filter-chip menu-item" data-filter="botanical" role="menuitemradio" aria-checked="false">Botanical</button>
+            <button class="filter-chip menu-item" data-filter="urban" role="menuitemradio" aria-checked="false">Urban</button>
+            <button class="filter-chip menu-item" data-filter="portraits" role="menuitemradio" aria-checked="false">Portraits</button>
+            <button class="filter-chip menu-item" data-filter="events" role="menuitemradio" aria-checked="false">Events</button>
+          </div>
+        </div>
         <a class="filter-chip chip-films" href="/films" aria-label="See the films"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10 6 L3 10.5 Z"/></svg>Films</a>
       </div>
       <div class="filters sub-filters" id="event-filters" role="group" aria-label="Filter event photos" hidden>

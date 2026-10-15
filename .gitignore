@@ -16,3 +16,4 @@ team/drafts/reels/
 
 # gelato_publish.py: listings created but not yet recorded
 .gelato-pending.json
+team/drafts/carousel-*/

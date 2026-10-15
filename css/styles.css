@@ -1694,3 +1694,18 @@ html.lb-open { overflow: hidden; }
 .skip-link { position: absolute; left: 16px; top: -100px; z-index: 10000; padding: 10px 16px; background: var(--accent); color: #fff; text-decoration: none; }
 .skip-link:focus { top: 12px; }
 [tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+
+/* Gallery filters: All · Photos ▾ (collections) · Films */
+.chip-menu { position: relative; }
+.chip-photos { display: inline-flex; align-items: center; gap: 0.5rem; }
+.chip-caret { width: 10px; height: 6px; transition: transform 0.2s ease; }
+.chip-photos[aria-expanded="true"] .chip-caret { transform: rotate(180deg); }
+.chip-menu-list {
+  position: absolute; top: calc(100% + 0.5rem); left: 0; z-index: 30;
+  display: flex; flex-direction: column; gap: 0.35rem; min-width: 12rem;
+  padding: 0.6rem; border-radius: 14px;
+  background: var(--bg-dark); border: 1px solid rgba(244,238,226,0.2);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+.chip-menu-list[hidden] { display: none; }
+.chip-menu-list .filter-chip { text-align: left; width: 100%; }

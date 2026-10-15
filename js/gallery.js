@@ -46,6 +46,10 @@ if (filterBar && grid) {
   const photosBtn = filterBar.querySelector('.chip-photos');
   const photosMenu = document.getElementById('photo-menu');
   const photosLabel = filterBar.querySelector('.chip-photos-label');
+  // The hero band clips and transforms its children, so the menu lives on <body>.
+  if (photosMenu) document.body.appendChild(photosMenu);
+  const allChips = () => [...filterBar.querySelectorAll('.filter-chip[data-filter]'),
+    ...(photosMenu ? photosMenu.querySelectorAll('.filter-chip[data-filter]') : [])];
   const setMenu = (open) => {
     if (!photosBtn) return;
     if (open) {
@@ -58,7 +62,7 @@ if (filterBar && grid) {
   };
 
   const selectChip = (chip) => {
-    filterBar.querySelectorAll('.filter-chip[data-filter]').forEach((c) => {
+    allChips().forEach((c) => {
       c.classList.toggle('active', c === chip);
       if (c.classList.contains('menu-item')) c.setAttribute('aria-checked', c === chip ? 'true' : 'false');
       else c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
@@ -74,7 +78,13 @@ if (filterBar && grid) {
 
   if (photosBtn) {
     photosBtn.addEventListener('click', () => setMenu(photosMenu.hidden));
-    document.addEventListener('click', (e) => { if (!e.target.closest('.chip-menu')) setMenu(false); });
+    photosMenu.addEventListener('click', (e) => {
+      const item = e.target.closest('.filter-chip[data-filter]');
+      if (item) selectChip(item);
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.chip-menu') && !e.target.closest('#photo-menu')) setMenu(false);
+    });
     window.addEventListener('scroll', () => setMenu(false), { passive: true });
     window.addEventListener('resize', () => setMenu(false));
     document.addEventListener('keydown', (e) => {
@@ -94,7 +104,7 @@ if (filterBar && grid) {
      (linked from the corporate landing page and Work With Me). */
   const hash = (location.hash || '').replace('#', '');
   const deepLinked = hash
-    ? filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`)
+    ? allChips().find((c) => c.dataset.filter === hash)
     : null;
   if (deepLinked) selectChip(deepLinked);
   else applyFilter('all');   // run once on load so events start hidden

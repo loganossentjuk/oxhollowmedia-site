@@ -1709,3 +1709,6 @@ html.lb-open { overflow: hidden; }
 }
 .chip-menu-list[hidden] { display: none; }
 .chip-menu-list .filter-chip { text-align: left; width: 100%; }
+#photo-menu .filter-chip { border-color: rgba(244,238,226,0.28); color: rgba(244,238,226,0.85); }
+#photo-menu .filter-chip:hover { border-color: var(--paper); color: var(--paper); }
+#photo-menu .filter-chip.active { background: var(--paper); border-color: var(--paper); color: var(--bg-dark); }

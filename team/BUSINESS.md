@@ -65,6 +65,11 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Abstract series:** approved. Obsidian Palace, Phase Shift and Divine Duality lead it; more abstracts to come.
 - **Client quote:** Logan is getting one. Don't invent or paraphrase one.
 
+## Print locations confirmed by Logan (2026-10-16)
+- **Into the Unknown:** Bishop, California.
+- **Highland Hollow:** Scotland.
+- **Shark Shadow:** Galápagos, 2021.
+
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.
 - **Print pages:**

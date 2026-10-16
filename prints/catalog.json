@@ -557,7 +557,9 @@
           "oak": "/images/mockups/drift-and-timber-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/drift-and-timber-framed-canvas-walnut.jpg",
           "black": "/images/mockups/drift-and-timber-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/drift-and-timber-wood.jpg",
+        "acrylic": "/images/mockups/drift-and-timber-acrylic.jpg"
       }
     },
     {
@@ -775,7 +777,9 @@
           "oak": "/images/mockups/misty-ridgeline-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/misty-ridgeline-framed-canvas-walnut.jpg",
           "black": "/images/mockups/misty-ridgeline-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/misty-ridgeline-wood.jpg",
+        "acrylic": "/images/mockups/misty-ridgeline-acrylic.jpg"
       }
     },
     {
@@ -933,7 +937,9 @@
           "oak": "/images/mockups/dusk-branches-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/dusk-branches-framed-canvas-walnut.jpg",
           "black": "/images/mockups/dusk-branches-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/dusk-branches-wood.jpg",
+        "acrylic": "/images/mockups/dusk-branches-acrylic.jpg"
       }
     },
     {
@@ -1091,7 +1097,9 @@
           "oak": "/images/mockups/aspen-and-cobalt-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/aspen-and-cobalt-framed-canvas-walnut.jpg",
           "black": "/images/mockups/aspen-and-cobalt-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/aspen-and-cobalt-wood.jpg",
+        "acrylic": "/images/mockups/aspen-and-cobalt-acrylic.jpg"
       }
     },
     {
@@ -1621,7 +1629,9 @@
           "walnut": "/images/mockups/the-wax-ritual-framed-canvas-walnut.jpg",
           "black": "/images/mockups/the-wax-ritual-framed-canvas-black.jpg",
           "oak": "/images/mockups/the-wax-ritual-framed-canvas-oak.jpg"
-        }
+        },
+        "wood": "/images/mockups/the-wax-ritual-wood.jpg",
+        "acrylic": "/images/mockups/the-wax-ritual-acrylic.jpg"
       }
     },
     {
@@ -1916,7 +1926,9 @@
           "oak": "/images/mockups/shorebreak-boulders-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/shorebreak-boulders-framed-canvas-walnut.jpg",
           "black": "/images/mockups/shorebreak-boulders-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/shorebreak-boulders-wood.jpg",
+        "acrylic": "/images/mockups/shorebreak-boulders-acrylic.jpg"
       }
     },
     {
@@ -2174,7 +2186,9 @@
           "walnut": "/images/mockups/turquoise-shallows-framed-canvas-walnut.jpg",
           "black": "/images/mockups/turquoise-shallows-framed-canvas-black.jpg",
           "oak": "/images/mockups/turquoise-shallows-framed-canvas-oak.jpg"
-        }
+        },
+        "wood": "/images/mockups/turquoise-shallows-wood.jpg",
+        "acrylic": "/images/mockups/turquoise-shallows-acrylic.jpg"
       }
     },
     {
@@ -2404,7 +2418,9 @@
           "oak": "/images/mockups/obsidian-palace-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/obsidian-palace-framed-canvas-walnut.jpg",
           "black": "/images/mockups/obsidian-palace-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/obsidian-palace-wood.jpg",
+        "acrylic": "/images/mockups/obsidian-palace-acrylic.jpg"
       }
     },
     {
@@ -2534,7 +2550,9 @@
           "oak": "/images/mockups/international-orange-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/international-orange-framed-canvas-walnut.jpg",
           "black": "/images/mockups/international-orange-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/international-orange-wood.jpg",
+        "acrylic": "/images/mockups/international-orange-acrylic.jpg"
       }
     },
     {
@@ -2664,7 +2682,9 @@
           "oak": "/images/mockups/island-moorings-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/island-moorings-framed-canvas-walnut.jpg",
           "black": "/images/mockups/island-moorings-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/island-moorings-wood.jpg",
+        "acrylic": "/images/mockups/island-moorings-acrylic.jpg"
       }
     },
     {
@@ -2882,7 +2902,9 @@
           "oak": "/images/mockups/driftwood-shore-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/driftwood-shore-framed-canvas-walnut.jpg",
           "black": "/images/mockups/driftwood-shore-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/driftwood-shore-wood.jpg",
+        "acrylic": "/images/mockups/driftwood-shore-acrylic.jpg"
       }
     },
     {
@@ -3160,7 +3182,9 @@
           "walnut": "/images/mockups/drifting-at-dusk-framed-canvas-walnut.jpg",
           "black": "/images/mockups/drifting-at-dusk-framed-canvas-black.jpg",
           "oak": "/images/mockups/drifting-at-dusk-framed-canvas-oak.jpg"
-        }
+        },
+        "wood": "/images/mockups/drifting-at-dusk-wood.jpg",
+        "acrylic": "/images/mockups/drifting-at-dusk-acrylic.jpg"
       }
     },
     {
@@ -3335,7 +3359,9 @@
           "oak": "/images/mockups/salt-and-scales-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/salt-and-scales-framed-canvas-walnut.jpg",
           "black": "/images/mockups/salt-and-scales-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/salt-and-scales-wood.jpg",
+        "acrylic": "/images/mockups/salt-and-scales-acrylic.jpg"
       }
     },
     {
@@ -3630,7 +3656,9 @@
           "oak": "/images/mockups/amber-glass-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/amber-glass-framed-canvas-walnut.jpg",
           "black": "/images/mockups/amber-glass-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/amber-glass-wood.jpg",
+        "acrylic": "/images/mockups/amber-glass-acrylic.jpg"
       }
     },
     {
@@ -3760,7 +3788,9 @@
           "oak": "/images/mockups/petunia-crimson-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/petunia-crimson-framed-canvas-walnut.jpg",
           "black": "/images/mockups/petunia-crimson-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/petunia-crimson-wood.jpg",
+        "acrylic": "/images/mockups/petunia-crimson-acrylic.jpg"
       }
     },
     {
@@ -3890,7 +3920,9 @@
           "black": "/images/mockups/geranium-coral-framed-canvas-black.jpg",
           "oak": "/images/mockups/geranium-coral-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/geranium-coral-framed-canvas-walnut.jpg"
-        }
+        },
+        "wood": "/images/mockups/geranium-coral-wood.jpg",
+        "acrylic": "/images/mockups/geranium-coral-acrylic.jpg"
       }
     },
     {
@@ -4020,7 +4052,9 @@
           "oak": "/images/mockups/buckets-of-blooms-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/buckets-of-blooms-framed-canvas-walnut.jpg",
           "black": "/images/mockups/buckets-of-blooms-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/buckets-of-blooms-wood.jpg",
+        "acrylic": "/images/mockups/buckets-of-blooms-acrylic.jpg"
       }
     },
     {
@@ -4195,7 +4229,9 @@
           "oak": "/images/mockups/geranium-white-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/geranium-white-framed-canvas-walnut.jpg",
           "black": "/images/mockups/geranium-white-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/geranium-white-wood.jpg",
+        "acrylic": "/images/mockups/geranium-white-acrylic.jpg"
       }
     },
     {
@@ -4370,7 +4406,9 @@
           "oak": "/images/mockups/hydrangea-deep-blue-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/hydrangea-deep-blue-framed-canvas-walnut.jpg",
           "black": "/images/mockups/hydrangea-deep-blue-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/hydrangea-deep-blue-wood.jpg",
+        "acrylic": "/images/mockups/hydrangea-deep-blue-acrylic.jpg"
       }
     },
     {
@@ -4500,7 +4538,9 @@
           "oak": "/images/mockups/purple-petunia-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/purple-petunia-framed-canvas-walnut.jpg",
           "black": "/images/mockups/purple-petunia-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/purple-petunia-wood.jpg",
+        "acrylic": "/images/mockups/purple-petunia-acrylic.jpg"
       }
     },
     {
@@ -4658,7 +4698,9 @@
           "oak": "/images/mockups/petunia-blush-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/petunia-blush-framed-canvas-walnut.jpg",
           "black": "/images/mockups/petunia-blush-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/petunia-blush-wood.jpg",
+        "acrylic": "/images/mockups/petunia-blush-acrylic.jpg"
       },
       "retired_products": {
         "framed": [
@@ -4805,7 +4847,9 @@
           "walnut": "/images/mockups/neon-nightcap-framed-canvas-walnut.jpg",
           "black": "/images/mockups/neon-nightcap-framed-canvas-black.jpg",
           "oak": "/images/mockups/neon-nightcap-framed-canvas-oak.jpg"
-        }
+        },
+        "wood": "/images/mockups/neon-nightcap-wood.jpg",
+        "acrylic": "/images/mockups/neon-nightcap-acrylic.jpg"
       }
     },
     {
@@ -4935,7 +4979,9 @@
           "oak": "/images/mockups/wall-of-names-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/wall-of-names-framed-canvas-walnut.jpg",
           "black": "/images/mockups/wall-of-names-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/wall-of-names-wood.jpg",
+        "acrylic": "/images/mockups/wall-of-names-acrylic.jpg"
       }
     },
     {
@@ -5110,7 +5156,9 @@
           "oak": "/images/mockups/sundown-silhouette-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/sundown-silhouette-framed-canvas-walnut.jpg",
           "black": "/images/mockups/sundown-silhouette-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/sundown-silhouette-wood.jpg",
+        "acrylic": "/images/mockups/sundown-silhouette-acrylic.jpg"
       }
     },
     {
@@ -5240,7 +5288,9 @@
           "oak": "/images/mockups/art-will-save-you-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/art-will-save-you-framed-canvas-walnut.jpg",
           "black": "/images/mockups/art-will-save-you-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/art-will-save-you-wood.jpg",
+        "acrylic": "/images/mockups/art-will-save-you-acrylic.jpg"
       }
     },
     {
@@ -5367,7 +5417,9 @@
           "white": "/images/mockups/pastel-harbor-framed-white.jpg",
           "oak": "/images/mockups/pastel-harbor-framed-oak.jpg",
           "black": "/images/mockups/pastel-harbor-framed-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/pastel-harbor-wood.jpg",
+        "acrylic": "/images/mockups/pastel-harbor-acrylic.jpg"
       }
     },
     {
@@ -5542,7 +5594,9 @@
           "oak": "/images/mockups/glass-spire-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/glass-spire-framed-canvas-walnut.jpg",
           "black": "/images/mockups/glass-spire-framed-canvas-black.jpg"
-        }
+        },
+        "wood": "/images/mockups/glass-spire-wood.jpg",
+        "acrylic": "/images/mockups/glass-spire-acrylic.jpg"
       }
     },
     {

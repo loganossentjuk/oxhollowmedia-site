@@ -191,8 +191,12 @@ def materials(p):
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
     order = [m for m in names if m in mats and not (m == "canvas" and "framed_canvas" in mats)]
+    # Wood and acrylic tabs carry Gelato's mockup (catalog "previews", from
+    # scripts/gelato_previews.py); framed tabs preview per frame colour instead.
+    shown = p.get("previews") or {}
     tabs = "".join(
-        f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
+        f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"'
+        f'{preview_attr(shown.get(m) if isinstance(shown.get(m), str) else "")}{" checked" if i == 0 else ""}>'
         f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
         for i, m in enumerate(order))
     panels = ""
@@ -315,7 +319,7 @@ def page(p):
   </section>
 
 {FOOTER}
-  <script src="/js/print-buy.js?v=3"></script>
+  <script src="/js/print-buy.js?v=4"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

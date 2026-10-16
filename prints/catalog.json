@@ -3396,7 +3396,8 @@
           "walnut": "/images/mockups/shark-shadow-framed-canvas-walnut.jpg",
           "black": "/images/mockups/shark-shadow-framed-canvas-black.jpg"
         }
-      }
+      },
+      "mockup_mat": 0.035
     },
     {
       "slug": "leviathans-leap",

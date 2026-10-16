@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
 Render an Instagram carousel (1080x1350) that reads like a photobook you page through:
-closed cloth cover -> title spread -> one photo per spread (or a pair) -> back page colophon.
+closed cloth cover -> title page -> one photo per page (one page per slide, alternating
+verso/recto) -> back page colophon. Set "mode": "spreads" in book.json for two-page open
+spreads instead (each entry "layout": "spread" or "pair").
 
     python3 scripts/make_photobook.py book.json OUT_DIR
 
@@ -325,6 +327,107 @@ def back_page(book, out):
     bg.save(out, quality=92)
 
 
+# ---------- single-page mode (default): one leaf per slide ----------
+PW, PH = 960, 1230
+PX0, PY0 = (W - PW) // 2, (H - PH) // 2 - 6
+
+
+def leaf(side):
+    """One page of the open book, centred: cloth rim, page-block edges on the outer side
+    and foot, spine shading on the inner side. side = 'recto' (spine left) or 'verso'."""
+    import math
+    c = table()
+    x0, y0, x1, y1 = PX0, PY0, PX0 + PW, PY0 + PH
+    rim = (x0 - 14, y0 - 12, x1 + 14, y1 + 16)
+    shadow(c, rim, blur=30, offset=(0, 20), alpha=120)
+    cl = linen((rim[2] - rim[0], rim[3] - rim[1]))
+    m = Image.new("L", cl.size, 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, cl.width - 1, cl.height - 1), 7, fill=255)
+    c.paste(cl, rim[:2], m)
+    d = ImageDraw.Draw(c)
+    for i in range(5, 0, -1):
+        o = i * 2
+        tone = tuple(v - 10 - i * 3 for v in CREAM)
+        line = tuple(v - 40 for v in CREAM)
+        if side == "recto":
+            d.rectangle((x0, y0 + o // 2, x1 + o, y1 + o), fill=tone, outline=line)
+        else:
+            d.rectangle((x0 - o, y0 + o // 2, x1, y1 + o), fill=tone, outline=line)
+    c.paste(paper((PW, PH)), (x0, y0))
+    return c
+
+
+def leaf_shade(c, side):
+    import math
+    row = []
+    for x in range(PW):
+        di = x if side == "recto" else PW - 1 - x      # distance from the spine
+        v = 0.15 * math.exp(-di / 20) + 0.07 * math.exp(-di / 130) + 0.05 * math.exp(-(PW - 1 - di) / 30)
+        row.append(int(min(255, v * 255)))
+    m = Image.new("L", (PW, 1))
+    m.putdata(row)
+    c.paste((40, 36, 28), (PX0, PY0), m.resize((PW, PH)))
+
+
+def leaf_folio(c, side, n):
+    d = ImageDraw.Draw(c)
+    y = PY0 + PH - 64
+    if side == "recto":
+        tracked_at(d, PX0 + PW - 64, y, str(n), font(26), INK, 0.12, "r")
+    else:
+        tracked_at(d, PX0 + 64, y, str(n), font(26), INK, 0.12, "l")
+
+
+def page_slide(p, side, n, out):
+    c = leaf(side)
+    inner, outer = 52, 34                      # a wider margin on the spine side
+    bx0 = PX0 + (inner if side == "recto" else outer)
+    bx1 = PX0 + PW - (outer if side == "recto" else inner)
+    x0, y0, x1, y1 = mount(c, p["image"], (bx0, PY0 + 70, bx1, PY0 + PH - 210))
+    leaf_shade(c, side)
+    d = ImageDraw.Draw(c)
+    cx = (x0 + x1) / 2
+    tracked(d, cx, y1 + 44, p["title"].upper(), font(26), GREEN, 0.14)
+    size = fit_italic_size(p["detail"], 36, x1 - x0)
+    italic(c, (cx, y1 + 90), p["detail"], size, INK, "c")
+    leaf_folio(c, side, n)
+    c.save(out, quality=92)
+
+
+def title_leaf(book, out):
+    c = leaf("recto")
+    leaf_shade(c, "recto")
+    d = ImageDraw.Draw(c)
+    cx = PX0 + PW / 2 + 9
+    col, mk = recolour(MOON, 58, GREEN)
+    c.paste(col, (round(cx - mk.width / 2), 470), mk)
+    y = 580
+    for i, line in enumerate(book["title_page"]):
+        f = font(78 if i == 0 else 50)
+        tracked(d, cx, y, line, f, GREEN, 0.12)
+        y += f.size * 1.35
+    if book.get("title_note"):
+        size = fit_italic_size(book["title_note"], 38, PW - 160)
+        italic(c, (cx, y + 34), book["title_note"], size, INK, "c")
+    c.save(out, quality=92)
+
+
+def back_leaf(book, out):
+    c = leaf("recto")
+    leaf_shade(c, "recto")
+    d = ImageDraw.Draw(c)
+    cx = PX0 + PW / 2 + 9
+    col, mk = recolour(LOGO, 440, GREEN)
+    c.paste(col, (round(cx - mk.width / 2), 400), mk)
+    y = 400 + mk.height + 80
+    d.line((cx - 36, y, cx + 36, y), fill=GREEN, width=1)
+    tracked(d, cx, y + 46, "PRINTS FROM THIS BOOK", font(30), GREEN, 0.14)
+    tracked(d, cx, y + 96, "oxhollowmedia.com/prints", font(40), INK, 0.04)
+    size = fit_italic_size(book["colophon_line"], 38, PW - 160)
+    italic(c, (cx, y + 200), book["colophon_line"], size, INK, "c")
+    c.save(out, quality=92)
+
+
 def main():
     if len(sys.argv) != 3:
         sys.exit(__doc__)
@@ -333,14 +436,24 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     i = 1
     cover(book, out / f"{i}-cover.jpg"); i += 1
-    title_spread(book, out / f"{i}-title.jpg"); i += 1
-    folio = 4
-    for p in book["pages"]:
-        name = (p.get("image") or p["left"]["image"]).split("/")[-1].split(".")[0].lstrip("0123456789-")
-        (spread if p["layout"] == "spread" else pair)(p, folio, out / f"{i}-{name}.jpg")
-        i += 1
-        folio += 2
-    back_page(book, out / f"{i}-back.jpg")
+    if book.get("mode", "pages") == "pages":     # default: one page per slide, alternating sides
+        title_leaf(book, out / f"{i}-title.jpg"); i += 1
+        n = 2
+        for p in book["pages"]:
+            name = p["image"].split("/")[-1].split(".")[0].lstrip("0123456789-")
+            page_slide(p, "verso" if n % 2 == 0 else "recto", n, out / f"{i}-{name}.jpg")
+            i += 1
+            n += 1
+        back_leaf(book, out / f"{i}-back.jpg")
+    else:                                         # "mode": "spreads" -> two-page open spreads
+        title_spread(book, out / f"{i}-title.jpg"); i += 1
+        folio = 4
+        for p in book["pages"]:
+            name = (p.get("image") or p["left"]["image"]).split("/")[-1].split(".")[0].lstrip("0123456789-")
+            (pair if p.get("layout") == "pair" else spread)(p, folio, out / f"{i}-{name}.jpg")
+            i += 1
+            folio += 2
+        back_page(book, out / f"{i}-back.jpg")
     print(f"{i} slides -> {out}")
 
 

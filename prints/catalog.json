@@ -3401,7 +3401,8 @@
           "black": "/images/mockups/shark-shadow-framed-canvas-black.jpg"
         }
       },
-      "mockup_mat": 0.035
+      "mockup_mat": 0.0,
+      "mockup_paper": "A4"
     },
     {
       "slug": "leviathans-leap",

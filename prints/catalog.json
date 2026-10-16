@@ -40,6 +40,10 @@
       "name": "Ocean",
       "intro": "Coastline, tidepool, and open water, from the Golden Gate to the volcanic shallows."
     },
+    "galapagos": {
+      "name": "Galápagos",
+      "intro": "Five prints from one trip to the Galápagos Islands in 2019: a blue-footed booby, a sea lion, a marine iguana, a shark and a humpback."
+    },
     "wildlife": {
       "name": "Wildlife",
       "intro": "The creatures that call these places home."
@@ -2888,7 +2892,7 @@
     {
       "slug": "blue-footed-display",
       "title": "Blue-Footed Display",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/04-blue-footed-booby.jpg",
       "webp": "/images/portfolio/ocean/04-blue-footed-booby.webp",
       "width": 1600,
@@ -2948,7 +2952,7 @@
     {
       "slug": "sea-lion-siesta",
       "title": "Sea Lion Siesta",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/03-sea-lion-pup.jpg",
       "webp": "/images/portfolio/ocean/03-sea-lion-pup.webp",
       "width": 1600,
@@ -3166,7 +3170,7 @@
     {
       "slug": "salt-and-scales",
       "title": "Salt and Scales",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/12-marine-iguana.jpg",
       "webp": "/images/portfolio/ocean/12-marine-iguana.webp",
       "width": 1600,
@@ -3341,7 +3345,7 @@
     {
       "slug": "shark-shadow",
       "title": "Shark Shadow",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/02-shark-silhouette.jpg",
       "webp": "/images/portfolio/ocean/02-shark-silhouette.webp",
       "width": 1600,
@@ -3402,7 +3406,7 @@
     {
       "slug": "leviathans-leap",
       "title": "Leviathan's Leap",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/01-humpback-breach.jpg",
       "webp": "/images/portfolio/ocean/01-humpback-breach.webp",
       "width": 1600,

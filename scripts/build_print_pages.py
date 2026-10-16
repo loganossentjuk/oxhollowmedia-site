@@ -292,7 +292,7 @@ def page(p):
     <div class="container">
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
-        <div class="detail-frame">
+        <div class="detail-frame{' salon-look' if p.get('detail_look') == 'salon' else ''}">
           {picture(p, ' fetchpriority="high"', DETAIL_SIZES)}
         </div>
         <div class="detail-buy">
@@ -315,7 +315,7 @@ def page(p):
   </section>
 
 {FOOTER}
-  <script src="/js/print-buy.js?v=3"></script>
+  <script src="/js/print-buy.js?v=4"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

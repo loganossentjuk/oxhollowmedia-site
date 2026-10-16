@@ -1720,3 +1720,13 @@ body.page-gallery .nav-links a.nav-cta:hover,
 body.page-gallery .nav-links a.nav-cta:focus-visible,
 body.page-gallery #nav.scrolled .nav-links a.nav-cta:hover,
 body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background: #9A6444; border-color: #9A6444; color: var(--paper); }
+/* Print page, gallery look (catalog "detail_look": "salon"): the photo itself in
+   the same black frame and cream mat as the gallery wall; a picked frame's mockup
+   (.is-mockup) shows without the extra frame. */
+.detail-frame.salon-look { background: none; border: 0; padding: 0; }
+.detail-frame.salon-look picture {
+  display: block; padding: 18px; background: #FBF9F4; border: 9px solid #1E1C1A;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 14px 30px rgba(35,33,32,0.18);
+}
+.detail-frame.salon-look.is-mockup { background: #fff; border: 1px solid var(--border); padding: 1.1rem; }
+.detail-frame.salon-look.is-mockup picture { padding: 0; border: 0; background: none; box-shadow: none; }

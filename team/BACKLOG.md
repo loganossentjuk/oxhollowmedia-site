@@ -19,7 +19,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Content
 - [x] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
 - [ ] Print stories: a 2–3 sentence story per print in the catalog (place, light, moment); start with the gallery-wall top 10
-- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2021", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
+- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2019", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
   - Draft it in `team/drafts/`.
   - List the personal details needed from Logan as short questions.
   - Propose a simple `/journal` page design for review. The journal is approved as print stories plus guides for event clients.

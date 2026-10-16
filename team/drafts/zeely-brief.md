@@ -36,7 +36,7 @@ Frame match per print:
 |---|---|
 | Into the Unknown (Bishop, California) | oak framed print or walnut framed canvas |
 | Highland Hollow (Scotland) | oak or white framed print |
-| Shark Shadow (Galápagos, 2021) | black or white framed print |
+| Shark Shadow (Galápagos, 2019) | black or white framed print |
 | Obsidian Palace (Oahu) | black framed print; acrylic for a modern room |
 | Salt and Stone (Obsidian Palace, Phase Shift, Divine Duality) | all three in matching black frames |
 | International Orange (Golden Gate) | white or black framed print. Never plain canvas |
@@ -57,7 +57,7 @@ Frame match per print:
    - CTA: Shop now · `/prints/highland-hollow?…&utm_content=living-landscape`
 3. **Shark Shadow**
    - H: A shark along the reef
-   - P: A shark gliding past a reef wall in the Galápagos, 2021. Framed, made to order. Free US shipping.
+   - P: A shark gliding past a reef wall in the Galápagos, 2019. Framed, made to order. Free US shipping.
    - CTA: Shop now · `/prints/shark-shadow?…&utm_content=shark-frame`
 4. **Obsidian Palace**
    - H: Shot from inside a sea cave

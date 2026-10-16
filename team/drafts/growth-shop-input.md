@@ -26,7 +26,7 @@ All 65 prints have framed mockups in `previews`, so every pick below already has
 | Pinterest lead (portrait) | Fog Forest (`fog-forest`) | Portrait, 12000 px, every material and size, Seattle (confirmed) | Framed canvas 16x24 ($195), walnut or oak mockup |
 | Pinterest lead (portrait) | Aspen and Cobalt (`aspen-and-cobalt`) | Portrait, full ladder, Colorado (confirmed), autumn colour fits the Oct–Nov feed | Framed print 12x18 ($155), oak |
 | Local / Bay Area gift guide | Golden Gate, Fog (`golden-gate-fog`) | The one unmistakably SF image; portrait 2:1. Reaches 16x24 only | Framed print 12x18 ($155) |
-| Story-led gift (journal tie-in) | Blue-Footed Booby, Humpback Breach, Sea Lion Pup | Galápagos 2021 (confirmed). Journal entry 1 is about them. 8x12 only (2000 px) | Framed print 8x12 ($115): the "gift-sized" price point |
+| Story-led gift (journal tie-in) | Blue-Footed Booby, Humpback Breach, Sea Lion Pup | Galápagos 2019 (confirmed). Journal entry 1 is about them. 8x12 only (2000 px) | Framed print 8x12 ($115): the "gift-sized" price point |
 | Set / bundle | Ember Study, Rising Flame, Sparks (`embers`) | A natural triptych, all three with the full ladder; winter and fireside mood | Three framed 8x12 or 12x18 (see offer B) |
 | Square Pins / Instagram grid | Harbour, Pastel (`harbour-pastel`) | The only square print; 12x12 to 20x20, plus 24x24 framed canvas | Framed canvas 12x12 ($130) |
 

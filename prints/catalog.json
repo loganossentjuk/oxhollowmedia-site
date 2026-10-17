@@ -289,34 +289,6 @@
       "source_px": 4096,
       "master": "PrintMasters/gelato-ready/HighResolution/cloudbreak-ridge.tif",
       "shopify": {
-        "acrylic": {
-          "8x12": {
-            "variant": "67640050254066",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67640050352370",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67640050450674",
-            "price": 130
-          }
-        },
-        "wood": {
-          "8x12": {
-            "variant": "67640050319602",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67640050417906",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67640050516210",
-            "price": 160
-          }
-        },
         "framed": {
           "16x24": {
             "price": 205,
@@ -382,12 +354,42 @@
               "black": "67650395177202"
             }
           }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67759588966642",
+            "price": 160
+          },
+          "8x12": {
+            "variant": "67759588901106",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67759588933874",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "8x12": {
+            "variant": "67759591391474",
+            "price": 75
+          },
+          "12x18": {
+            "variant": "67759591424242",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67759591457010",
+            "price": 130
+          }
         }
       },
       "shopify_products": {
         "framed": "15419871887602",
         "paper": "15419814805746",
-        "framed_canvas": "15419872477426"
+        "framed_canvas": "15419872477426",
+        "wood": "15438985462002",
+        "acrylic": "15438987624690"
       },
       "previews": {
         "framed": {
@@ -400,6 +402,11 @@
           "walnut": "/images/mockups/mountain-majesty-framed-canvas-walnut.jpg",
           "black": "/images/mockups/mountain-majesty-framed-canvas-black.jpg"
         }
+      },
+      "retired_products": {
+        "combined": [
+          "archived wood/acrylic/canvas listing"
+        ]
       }
     },
     {
@@ -1177,42 +1184,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/marsh-at-dusk.tif",
       "shopify": {
-        "acrylic": {
-          "8x12": {
-            "variant": "67640138432754",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67640138531058",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67640138629362",
-            "price": 130
-          },
-          "24x36": {
-            "variant": "67640138727666",
-            "price": 210
-          }
-        },
-        "wood": {
-          "8x12": {
-            "variant": "67640138498290",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67640138596594",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67640138694898",
-            "price": 160
-          },
-          "24x36": {
-            "variant": "67640138793202",
-            "price": 225
-          }
-        },
         "paper": {
           "8x12": {
             "variant": "67650836398322",
@@ -1298,12 +1269,50 @@
               "black": "67663752691954"
             }
           }
+        },
+        "wood": {
+          "16x24": {
+            "variant": "67759589490930",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67759589523698",
+            "price": 225
+          },
+          "8x12": {
+            "variant": "67759589425394",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67759589458162",
+            "price": 125
+          }
+        },
+        "acrylic": {
+          "12x18": {
+            "variant": "67759600599282",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67759600632050",
+            "price": 130
+          },
+          "24x36": {
+            "variant": "67759600664818",
+            "price": 210
+          },
+          "8x12": {
+            "variant": "67759600566514",
+            "price": 75
+          }
         }
       },
       "shopify_products": {
         "paper": "15419960590578",
         "framed": "15422165516530",
-        "framed_canvas": "15422174724338"
+        "framed_canvas": "15422174724338",
+        "wood": "15438985855218",
+        "acrylic": "15438990999794"
       },
       "previews": {
         "framed": {
@@ -1316,6 +1325,11 @@
           "walnut": "/images/mockups/tidal-twilight-framed-canvas-walnut.jpg",
           "black": "/images/mockups/tidal-twilight-framed-canvas-black.jpg"
         }
+      },
+      "retired_products": {
+        "combined": [
+          "archived wood/acrylic/canvas listing"
+        ]
       }
     },
     {
@@ -1333,42 +1347,6 @@
       "source_px": 6000,
       "master": "PrintMasters/gelato-ready/HighResolution/sun-on-the-water.tif",
       "shopify": {
-        "acrylic": {
-          "8x12": {
-            "variant": "67640159764722",
-            "price": 75
-          },
-          "12x18": {
-            "variant": "67640159863026",
-            "price": 100
-          },
-          "16x24": {
-            "variant": "67640159961330",
-            "price": 130
-          },
-          "24x36": {
-            "variant": "67640160059634",
-            "price": 210
-          }
-        },
-        "wood": {
-          "8x12": {
-            "variant": "67640159830258",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67640159928562",
-            "price": 125
-          },
-          "16x24": {
-            "variant": "67640160026866",
-            "price": 160
-          },
-          "24x36": {
-            "variant": "67640160125170",
-            "price": 225
-          }
-        },
         "paper": {
           "8x12": {
             "variant": "67650859991282",
@@ -1454,12 +1432,50 @@
               "black": "67663766847730"
             }
           }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67759598764274",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67759598797042",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67759598829810",
+            "price": 160
+          },
+          "24x36": {
+            "variant": "67759598862578",
+            "price": 225
+          }
+        },
+        "acrylic": {
+          "12x18": {
+            "variant": "67759597912306",
+            "price": 100
+          },
+          "16x24": {
+            "variant": "67759597945074",
+            "price": 130
+          },
+          "8x12": {
+            "variant": "67759597879538",
+            "price": 75
+          },
+          "24x36": {
+            "variant": "67759597977842",
+            "price": 210
+          }
         }
       },
       "shopify_products": {
         "paper": "15419967570162",
         "framed": "15422176690418",
-        "framed_canvas": "15422179115250"
+        "framed_canvas": "15422179115250",
+        "wood": "15438989885682",
+        "acrylic": "15438989689074"
       },
       "previews": {
         "framed": {
@@ -1472,6 +1488,11 @@
           "oak": "/images/mockups/sun-on-the-tide-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/sun-on-the-tide-framed-canvas-walnut.jpg"
         }
+      },
+      "retired_products": {
+        "combined": [
+          "archived wood/acrylic/canvas listing"
+        ]
       }
     },
     {

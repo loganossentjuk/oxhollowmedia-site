@@ -62,7 +62,7 @@ PPI = 150          # same rule as the paper sizes: long side x 150 must fit the 
 ALL_MATERIALS = ["framed", "paper", "framed_canvas", "canvas", "wood", "acrylic"]
 DEFAULT = ["framed", "paper", "framed_canvas", "wood", "acrylic"]
 FRAMED = {"framed", "framed_canvas"}           # variants carry a frame colour
-HIDDEN_UNTIL_PRICED = FRAMED | {"paper"}   # API ignores template prices: hidden until priced in Shopify
+HIDDEN_UNTIL_PRICED = set(ALL_MATERIALS)  # API ignores template prices: every listing stays hidden until priced in Shopify
 LABEL = {"framed": "Framed Print", "paper": "Paper", "framed_canvas": "Framed Canvas",
          "canvas": "Canvas", "wood": "Wood", "acrylic": "Acrylic"}
 BLURB = {

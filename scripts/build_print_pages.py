@@ -241,7 +241,7 @@ def page(p):
     if framed(p):
         # Framed only: no unframed paper buttons; the material picker is the buy block.
         buy = f'''
-          <p class="detail-spec">{e(PAPER)}, framed in black, white or oak · made to order</p>{materials(p)}'''
+          <p class="detail-spec">{e(PAPER)}, framed in black, white or oak, with a white border inside the frame · made to order</p>{materials(p)}'''
         note = ("Each print is made to order and framed behind shatterproof plexiglass, ready to hang. "
                 "Allow a few days for printing and framing plus transit.")
         ask = "Questions or other sizes?"

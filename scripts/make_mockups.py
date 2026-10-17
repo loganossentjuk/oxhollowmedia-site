@@ -7,6 +7,9 @@ recorded in the catalog's "previews" so the print page swaps to them.
     python3 scripts/make_mockups.py                 # framed listings without a preview
     python3 scripts/make_mockups.py --all           # every framed listing (replaces Gelato mockups)
     python3 scripts/make_mockups.py --clean DIR     # unwatermarked <slug>.jpg sources
+    python3 scripts/make_mockups.py --all --bordered --only framed
+        # framed prints as Gelato makes them: no mat, the bordered print file
+        # (gelato-ready-bordered/, scripts/make_bordered_files.py) filling the frame
 
 The photo inside the frame carries the site watermark (same size, corner and
 opacity as scripts/watermark.py), so a mockup never shows an unmarked print.
@@ -15,13 +18,14 @@ Sources, best first: --clean DIR, the Dropbox gelato-ready file, the site image.
 import json, random, sys
 import watermark as wm
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFilter, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 CAT_PATH = ROOT / "prints" / "catalog.json"
 OUT = ROOT / "images" / "mockups"
 # The unwatermarked print files (as Gelato's mockups use); the site image is a fallback.
 READY = Path.home() / "Library/CloudStorage/Dropbox/Career/OxHollow/PrintMasters/gelato-ready"
+BORDERED = READY.parent / "gelato-ready-bordered"
 ORDER = ["8x12", "12x12", "12x18", "16x16", "16x24", "20x20", "24x24", "24x36"]
 WOOD = {"oak": (214, 188, 150), "walnut": (92, 62, 42)}
 SOLID = {"black": (24, 24, 24), "white": (244, 243, 240)}
@@ -63,7 +67,18 @@ def stamp(pic, mark):
     return base.convert("RGB")
 
 
-def draw(photo, mat, colour, w_in, h_in, mark, mat_frac=0.11):
+def stamp_on_paper(paper, mark):
+    """Watermark the photo on a bordered print file, not its white border."""
+    box = ImageChops.difference(paper, Image.new("RGB", paper.size, "white")).convert("L") \
+        .point(lambda v: 255 if v > 24 else 0).getbbox()
+    if not box:
+        return stamp(paper, mark)
+    out = paper.copy()
+    out.paste(stamp(paper.crop(box), mark), box[:2])
+    return out
+
+
+def draw(photo, mat, colour, w_in, h_in, mark, mat_frac=0.11, paper=None):
     canvas = Image.new("RGB", (S, S), "white")
     scale = 0.86 * S / max(w_in, h_in)
     fw, fh = int(w_in * scale), int(h_in * scale)
@@ -82,7 +97,9 @@ def draw(photo, mat, colour, w_in, h_in, mark, mat_frac=0.11):
     d.rectangle([x0, y0, x0 + fw - 1, y0 + fh - 1], outline=(0, 0, 0), width=1)
     ix0, iy0, ix1, iy1 = x0 + t, y0 + t, x0 + fw - t, y0 + fh - t
     d.rectangle([ix0, iy0, ix1, iy1], outline=(60, 60, 60), width=2)  # inner bevel line
-    if mat == "framed":
+    if mat == "framed" and paper is not None:     # the bordered print fills the frame, no mat
+        canvas.paste(paper.resize((ix1 - ix0 - 3, iy1 - iy0 - 3), Image.LANCZOS), (ix0 + 2, iy0 + 2))
+    elif mat == "framed":
         d.rectangle([ix0 + 2, iy0 + 2, ix1 - 2, iy1 - 2], fill=(248, 247, 243))  # mat
         m = int(mat_frac * (ix1 - ix0))   # per-print override: catalog "mockup_mat"
         bx0, by0, bx1, by1 = ix0 + m, iy0 + m, ix1 - m, iy1 - m
@@ -105,13 +122,15 @@ def draw(photo, mat, colour, w_in, h_in, mark, mat_frac=0.11):
 
 def main():
     every = "--all" in sys.argv
+    bordered = "--bordered" in sys.argv
+    only = sys.argv[sys.argv.index("--only") + 1].split(",") if "--only" in sys.argv else None
     clean = Path(sys.argv[sys.argv.index("--clean") + 1]) if "--clean" in sys.argv else None
     mark = Image.open(wm.MARK).convert("RGBA")
     cat = json.loads(CAT_PATH.read_text())
     OUT.mkdir(parents=True, exist_ok=True)
     made = 0
     for p in cat["prints"]:
-        for mat in ("framed", "framed_canvas"):
+        for mat in only or ("framed", "framed_canvas"):
             e = (p.get("shopify") or {}).get(mat)
             have = (p.get("previews") or {}).get(mat)
             if not e or (have and not every):
@@ -126,10 +145,20 @@ def main():
             photo.draft("RGB", (1600, 1600))
             photo = ImageOps.exif_transpose(photo).convert("RGB")
             photo.thumbnail((1600, 1600), Image.LANCZOS)
+            paper = None
+            if bordered and mat == "framed":
+                shape = "sq" if a == b else "A4" if k == "8x12" else "3x2"
+                f = BORDERED / f"{p['slug']}-framed-{shape}.jpg"
+                if not f.exists():
+                    print(f"  ! {p['slug']}: no {f.name}"); continue
+                paper = Image.open(f); paper.draft("RGB", (1600, 1600)); paper = paper.convert("RGB")
+                paper.thumbnail((1600, 1600), Image.LANCZOS)
+                paper = stamp_on_paper(paper, mark)
+                w_in, h_in = paper.size                    # the frame takes the paper's shape (A4 for 8x12)
             urls = {}
             for colour in e[k]["frames"]:
                 name = f"{p['slug']}-{mat.replace('_', '-')}-{colour}.jpg"
-                draw(photo, mat, colour, w_in, h_in, mark, p.get("mockup_mat", 0.11)).resize((1200, 1200), Image.LANCZOS).save(OUT / name, quality=84, optimize=True)
+                draw(photo, mat, colour, w_in, h_in, mark, p.get("mockup_mat", 0.11), paper).resize((1200, 1200), Image.LANCZOS).save(OUT / name, quality=84, optimize=True)
                 urls[colour] = f"/images/mockups/{name}"
                 made += 1
             p.setdefault("previews", {})[mat] = urls

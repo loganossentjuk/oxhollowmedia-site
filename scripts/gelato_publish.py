@@ -11,6 +11,9 @@ get the material picker.
     python3 scripts/gelato_publish.py --materials framed,framed_canvas
     python3 scripts/gelato_publish.py --templates ID,ID,...    # find new templates by name
     python3 scripts/gelato_publish.py --quote                  # Gelato cost + suggested price per size
+    python3 scripts/gelato_publish.py --materials framed --bordered    # framed prints with a white border
+        # remake the framed listings from gelato-ready-bordered/<slug>-framed-<A4|3x2|sq>.jpg
+        # (scripts/make_bordered_files.py); old Shopify product IDs go to "retired_products"
     python3 scripts/gelato_publish.py --hires --replace --only amber-glass
         # remake a print's listings from gelato-ready/HighResolution/<slug>.tif
         # (e.g. so a bigger file can offer 24x36); the old Shopify product IDs
@@ -89,6 +92,8 @@ DRY = "--dry-run" in sys.argv
 QUOTE = "--quote" in sys.argv
 HIRES = "--hires" in sys.argv          # print from HighResolution/<slug>.tif
 REPLACE = "--replace" in sys.argv      # remake materials that already have listings
+BORDERED = "--bordered" in sys.argv    # framed: per-size files with the white border built in
+BORDER_DIR = READY.parent / "gelato-ready-bordered"
 ONLY = arg("--only")
 MATERIALS = arg("--materials") or DEFAULT
 bad = [m for m in MATERIALS if m not in ALL_MATERIALS]
@@ -137,9 +142,11 @@ def todo():
     out = []
     for p in cat["prints"]:
         f = READY / "HighResolution" / f"{p['slug']}.tif" if HIRES else READY / f"{p['slug']}.jpg"
+        if BORDERED:   # the bordered files carry the orientation; the print file itself isn't sent
+            f = next((g for g in sorted(BORDER_DIR.glob(f"{p['slug']}-framed-*.jpg"))), f)
         if ONLY and p["slug"] not in ONLY:
             continue
-        if not f.exists() or (not REPLACE and all(m in (p.get("shopify") or {}) for m in MATERIALS)):
+        if not f.exists() or (not REPLACE and not BORDERED and all(m in (p.get("shopify") or {}) for m in MATERIALS)):
             continue
         o = orientation(f)
         if not cfg["templates"].get(o):
@@ -315,6 +322,11 @@ stage = Path(tempfile.mkdtemp(prefix="gelato-"))
 token = secrets.token_urlsafe(16)                     # unguessable path prefix
 (stage / token).mkdir()
 for p, f, _ in jobs:
+    if BORDERED:                                       # ready-made print files, sent as they are
+        for g in BORDER_DIR.glob(f"{p['slug']}-framed-*.jpg"):
+            shutil.copy(g, stage / token / g.name)
+        if MATERIALS == ["framed"]:
+            continue
     # Bake in EXIF rotation so Gelato sees the photo the right way up.
     im = ImageOps.exif_transpose(Image.open(f)).convert("RGB")
     im.thumbnail((10800, 10800), Image.LANCZOS)        # 36in at 300ppi: more is wasted upload
@@ -376,11 +388,21 @@ def wait_reachable(url):
     raise RuntimeError(f"tunnel not reachable ({err}): {url}")
 
 
+def file_url(p, mat, v, url):
+    """The bordered framed print file for this variant's paper (A4 for 8x12, 2:3 above, square), else the print."""
+    if not (BORDERED and mat == "framed"):
+        return url
+    a, b = (int(x) for x in size_key(v["title"]).split("x"))
+    shape = "sq" if a == b else "A4" if (a, b) in ((8, 12), (12, 8)) else "3x2"
+    return f"{base}/{token}/{p['slug']}-framed-{shape}.jpg"
+
+
 def description(p, mat):
     lede = p.get("lede") or p["alt"].rstrip(".") + "."
     return (f"<p>{html.escape(lede)} Photographed by Logan Ossentjuk of Ox Hollow Media.</p>"
             f"<p>{BLURB[mat]} "
-            + ("Printed in full, never cropped. " if FIT.get(mat) == "meet"
+            + ("Printed with a white border inside the frame. " if BORDERED and mat == "framed"
+               else "Printed in full, never cropped. " if FIT.get(mat) == "meet"
                else "Printed edge to edge, so the image is trimmed slightly to fill each size. ")
             + "Made to order and shipped free in the US.</p>")
 
@@ -428,10 +450,13 @@ try:
                 continue                                 # created by an earlier run, still publishing
             t = template(orient, mat)
             allowed = [k for k in sizes_for(orient, mat) if fits(k)]
+            if BORDERED and mat == "framed":             # same sizes as today: those have bordered files
+                allowed = [k for k in allowed if k in ((p.get("shopify") or {}).get("framed") or {})]
             variants = [v for v in t["variants"] if size_key(v["title"]) in allowed
                         and (mat not in FRAMED or frame_key(v) in frames_for(mat))]
             have = set((p.get("shopify") or {}).get(mat, {}))
-            if mat in (p.get("shopify") or {}) and (not REPLACE or {size_key(v["title"]) for v in variants} <= have):
+            if mat in (p.get("shopify") or {}) and not (BORDERED and mat == "framed") \
+                    and (not REPLACE or {size_key(v["title"]) for v in variants} <= have):
                 continue                                 # listed already, with every size the file allows
             body = {
                 "templateId": t["id"],
@@ -445,7 +470,7 @@ try:
                 "vendor": "Ox Hollow Media",
                 "productType": f"{LABEL[mat]} Print",
                 "variants": [{"templateVariantId": v["id"],
-                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": url, "fitMethod": FIT.get(mat, "slice")}
+                              "imagePlaceholders": [{"name": ph["name"], "fileUrl": file_url(p, mat, v, url), "fitMethod": FIT.get(mat, "slice")}
                                                     for ph in v["imagePlaceholders"]]} for v in variants],
             }
             try:

@@ -296,7 +296,7 @@ def page(p):
     <div class="container">
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
-        <div class="detail-frame">
+        <div class="detail-frame salon-look">
           {picture(p, ' fetchpriority="high"', DETAIL_SIZES)}
         </div>
         <div class="detail-buy">

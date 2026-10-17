@@ -104,11 +104,11 @@ TODO(Logan): connect @oxhollowmedia at https://app.metricool.com/brands/connecti
 
 **Wed 10/21, 12:00 pm, Reel: print stories.** File: `team/drafts/reels/2026-10-21-2.mp4`. Turn on Trial [S5].
 - **Photos:** `ocean/04-blue-footed-booby.jpg`, `ocean/03-sea-lion-pup.jpg`, `ocean/12-marine-iguana.jpg`, `ocean/02-shark-silhouette.jpg` (Reef Passage), `ocean/01-humpback-breach.jpg`
-- **Hook:** GALÁPAGOS, 2021. **Last clip:** FIVE PRINTS FROM ONE TRIP
-- **Caption:** One trip to the Galápagos in 2021. A booby, a sea lion pup, an iguana, a reef, a whale. All five are prints now. TODO(Logan): one personal detail from the trip.
+- **Hook:** GALÁPAGOS, 2019. **Last clip:** FIVE PRINTS FROM ONE TRIP
+- **Caption:** One trip to the Galápagos in 2019. A booby, a sea lion pup, an iguana, a reef, a whale. All five are prints now. TODO(Logan): one personal detail from the trip.
 - **Hashtags:** #galapagos #wildlifephotography #fineartprints #oceanlife
 - **Cover:** the blue-footed booby
-- **CTA:** `https://oxhollowmedia.com/prints/blue-footed-booby?utm_source=instagram&utm_medium=social&utm_campaign=galapagos-2021`
+- **CTA:** `https://oxhollowmedia.com/prints/blue-footed-booby?utm_source=instagram&utm_medium=social&utm_campaign=galapagos-2019`
 
 **Thu 10/22, 9:00 am, Reel: place.** File: `team/drafts/reels/2026-10-22-3.mp4`.
 - **Photos:** `mountains/16-cloudbreak-ridge.jpg`, `mountains/14-sierra-river-bend.jpg`, `mountains/15-valley-in-violet.jpg`, `mountains/17-snowline.jpg`, `mountains/18-the-long-valley.jpg`, `mountains/19-range-and-scrub.jpg`
@@ -233,7 +233,7 @@ TODO(Logan): connect @oxhollowmedia at https://app.metricool.com/brands/connecti
 ```
 P=images/portfolio
 python3 scripts/make_reel.py team/drafts/reels/2026-10-19-1.mp4 $P/events/02-keynote.jpg "What a day of coverage looks like" $P/events/10-tech-talk.jpg "" $P/events/11-stage-qa.jpg "" $P/events/04-industry-mingle.jpg "" $P/events/05-evening-reception.jpg "" $P/events/14-team-portrait.jpg "Highlights within the week"
-python3 scripts/make_reel.py team/drafts/reels/2026-10-21-2.mp4 $P/ocean/04-blue-footed-booby.jpg "Galápagos, 2021" $P/ocean/03-sea-lion-pup.jpg "" $P/ocean/12-marine-iguana.jpg "" $P/ocean/02-shark-silhouette.jpg "" $P/ocean/01-humpback-breach.jpg "Five prints from one trip"
+python3 scripts/make_reel.py team/drafts/reels/2026-10-21-2.mp4 $P/ocean/04-blue-footed-booby.jpg "Galápagos, 2019" $P/ocean/03-sea-lion-pup.jpg "" $P/ocean/12-marine-iguana.jpg "" $P/ocean/02-shark-silhouette.jpg "" $P/ocean/01-humpback-breach.jpg "Five prints from one trip"
 python3 scripts/make_reel.py team/drafts/reels/2026-10-22-3.mp4 $P/mountains/16-cloudbreak-ridge.jpg "Eastern Sierra" $P/mountains/14-sierra-river-bend.jpg "" $P/mountains/15-valley-in-violet.jpg "" $P/mountains/17-snowline.jpg "" $P/mountains/18-the-long-valley.jpg "" $P/mountains/19-range-and-scrub.jpg "Bishop to Mammoth Lakes"
 ```
 

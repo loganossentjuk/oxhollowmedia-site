@@ -38,11 +38,11 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Eastern Sierra, Bishop / Mammoth Lakes area, California:** Sierra River Bend, Cloudbreak Ridge, Blue Hour Ridge, Valley in Violet, Snowline, The Long Valley, Range and Scrub, Fog on the Flats, Golden Brush.
 - **Around Seattle, Washington:** Fog Forest, Highland River, Misty Ridgeline, Rainier Afterglow, Forest Fungus, Winter Bark.
 - **Rocky Mountains, Colorado:** Aspen and Cobalt, Sunflare Oak, Autumn Against Blue, Still Pond.
-- **Galápagos Islands, 2021:** Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage, Humpback Breach.
+- **Galápagos Islands, 2019:** Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage, Humpback Breach.
 
 **Journal**
 - Approved, as "stories behind the prints" plus guides for event clients.
-- The first entry is the Galápagos (2021). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
+- The first entry is the Galápagos (2019). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
 
 ## Facts and decisions from Logan (2026-10-13)
 - **Clients we may name** in outreach and referral asks: Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation. Never invent results or quotes for them. Ask Logan before adding new names to site pages.
@@ -64,6 +64,11 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Series name: "Salt and Stone"** (for now). Site category slug stays `abstracts`.
 - **Abstract series:** approved. Obsidian Palace, Phase Shift and Divine Duality lead it; more abstracts to come.
 - **Client quote:** Logan is getting one. Don't invent or paraphrase one.
+
+## Print locations confirmed by Logan (2026-10-16)
+- **Into the Unknown:** Bishop, California.
+- **Highland Hollow:** Scotland.
+- **Shark Shadow:** Galápagos, 2019.
 
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.

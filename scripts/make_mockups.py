@@ -63,7 +63,7 @@ def stamp(pic, mark):
     return base.convert("RGB")
 
 
-def draw(photo, mat, colour, w_in, h_in, mark):
+def draw(photo, mat, colour, w_in, h_in, mark, mat_frac=0.11):
     canvas = Image.new("RGB", (S, S), "white")
     scale = 0.86 * S / max(w_in, h_in)
     fw, fh = int(w_in * scale), int(h_in * scale)
@@ -84,7 +84,7 @@ def draw(photo, mat, colour, w_in, h_in, mark):
     d.rectangle([ix0, iy0, ix1, iy1], outline=(60, 60, 60), width=2)  # inner bevel line
     if mat == "framed":
         d.rectangle([ix0 + 2, iy0 + 2, ix1 - 2, iy1 - 2], fill=(248, 247, 243))  # mat
-        m = int(0.11 * (ix1 - ix0))
+        m = int(mat_frac * (ix1 - ix0))   # per-print override: catalog "mockup_mat"
         bx0, by0, bx1, by1 = ix0 + m, iy0 + m, ix1 - m, iy1 - m
         pic = photo.copy(); pic.thumbnail((bx1 - bx0, by1 - by0), Image.LANCZOS)   # printed in full
         pic = stamp(pic, mark)
@@ -129,7 +129,7 @@ def main():
             urls = {}
             for colour in e[k]["frames"]:
                 name = f"{p['slug']}-{mat.replace('_', '-')}-{colour}.jpg"
-                draw(photo, mat, colour, w_in, h_in, mark).resize((1200, 1200), Image.LANCZOS).save(OUT / name, quality=84, optimize=True)
+                draw(photo, mat, colour, w_in, h_in, mark, p.get("mockup_mat", 0.11)).resize((1200, 1200), Image.LANCZOS).save(OUT / name, quality=84, optimize=True)
                 urls[colour] = f"/images/mockups/{name}"
                 made += 1
             p.setdefault("previews", {})[mat] = urls

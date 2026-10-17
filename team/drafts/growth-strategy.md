@@ -187,7 +187,7 @@ Instagram is the one place both plans share. The same weekly Reels work for both
 - **Creative:** the best organic print Reel of the week (12–20 s, silent, Logan adds audio in-app).
 - **Audience 1 (prospecting):** US, 25–65, interests in landscape photography, national parks, hiking, interior design, home décor. Placement: Instagram Reels.
 - **Audience 2 (retargeting, after Pixel):** visitors to `/prints/*` or `/gallery` in the last 30 days who did not buy.
-- **Primary text:** "Eastern Sierra, early light, before the wind came up. Sierra River Bend, framed and ready to hang." (story text from the existing Oct 9 draft) · "Five prints from the Galápagos, 2021. Each one has a story." · "Order by [G-day] for Christmas." (only after Gelato dates are known)
+- **Primary text:** "Eastern Sierra, early light, before the wind came up. Sierra River Bend, framed and ready to hang." (story text from the existing Oct 9 draft) · "Five prints from the Galápagos, 2019. Each one has a story." · "Order by [G-day] for Christmas." (only after Gelato dates are known)
 - **Button:** Shop now → `https://oxhollowmedia.com/prints/sierra-river-bend?utm_source=meta&utm_medium=paid&utm_campaign=holiday-2026`
 - No "stunning", no exclamation marks, no prices unless the Shop analyst input confirms them.
 

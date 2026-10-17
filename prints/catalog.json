@@ -40,6 +40,10 @@
       "name": "Ocean",
       "intro": "Coastline, tidepool, and open water, from the Golden Gate to the volcanic shallows."
     },
+    "galapagos": {
+      "name": "Galápagos",
+      "intro": "Five prints from one trip to the Galápagos Islands in 2019: a blue-footed booby, a sea lion, a marine iguana, a shark and a humpback."
+    },
     "wildlife": {
       "name": "Wildlife",
       "intro": "The creatures that call these places home."
@@ -123,7 +127,7 @@
       "width": 1600,
       "height": 900,
       "alt": "Autumn scrub and river flats beneath the eastern Sierra",
-      "lede": "Snowmelt finding its way through the valley, with the range still holding winter.",
+      "lede": "Snowmelt finding its way through the valley near Bishop, California, with the range still holding onto winter.",
       "story": "Shot from the flats on the eastern side, early, before the wind came up and put texture on the water. The peaks hold snow into summer out here. The river is what that snow becomes on its way down.",
       "shape": "16:9",
       "source_px": 4096,
@@ -578,7 +582,7 @@
       "width": 1500,
       "height": 2000,
       "alt": "River winding through a green highland valley",
-      "lede": "",
+      "lede": "A river winding through a green highland valley in Scotland.",
       "story": "",
       "shape": "4:3",
       "source_px": 2000,
@@ -2931,7 +2935,7 @@
     {
       "slug": "blue-footed-display",
       "title": "Blue-Footed Display",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/04-blue-footed-booby.jpg",
       "webp": "/images/portfolio/ocean/04-blue-footed-booby.webp",
       "width": 1600,
@@ -2991,7 +2995,7 @@
     {
       "slug": "sea-lion-siesta",
       "title": "Sea Lion Siesta",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/03-sea-lion-pup.jpg",
       "webp": "/images/portfolio/ocean/03-sea-lion-pup.webp",
       "width": 1600,
@@ -3211,7 +3215,7 @@
     {
       "slug": "salt-and-scales",
       "title": "Salt and Scales",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/12-marine-iguana.jpg",
       "webp": "/images/portfolio/ocean/12-marine-iguana.webp",
       "width": 1600,
@@ -3388,13 +3392,13 @@
     {
       "slug": "shark-shadow",
       "title": "Shark Shadow",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/02-shark-silhouette.jpg",
       "webp": "/images/portfolio/ocean/02-shark-silhouette.webp",
       "width": 1600,
       "height": 1200,
       "alt": "A shark gliding through hazy blue water beside a reef wall",
-      "lede": "",
+      "lede": "A shark gliding past a reef wall in the Galápagos Islands, 2019.",
       "story": "",
       "shape": "4:3",
       "source_px": 2000,
@@ -3443,12 +3447,13 @@
           "walnut": "/images/mockups/shark-shadow-framed-canvas-walnut.jpg",
           "black": "/images/mockups/shark-shadow-framed-canvas-black.jpg"
         }
-      }
+      },
+      "mockup_mat": 0.035
     },
     {
       "slug": "leviathans-leap",
       "title": "Leviathan's Leap",
-      "category": "wildlife",
+      "category": "galapagos",
       "image": "/images/portfolio/ocean/01-humpback-breach.jpg",
       "webp": "/images/portfolio/ocean/01-humpback-breach.webp",
       "width": 1600,

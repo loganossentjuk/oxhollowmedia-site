@@ -30,9 +30,11 @@
   // Swap only once the mockup has loaded, so a slow or missing mockup never
   // blanks the photo; the latest pick wins if several are in flight.
   let want = '';
+  const frameBox = img.closest('.detail-frame');
   const show = (url) => {
     const back = !url || url === original.src;
     want = back ? '' : url;
+    if (frameBox) frameBox.classList.toggle('is-mockup', !back);
     if (back) {
       if (source) source.srcset = original.srcset;
       img.src = original.src;
@@ -60,6 +62,8 @@
       show(picked ? picked.dataset.preview : r.dataset.preview || '');
     });
   });
+  // Salon-look prints open on the photo in a gallery-style frame; mockups
+  // appear once a frame is picked.
   const first = document.querySelector('.mat-radio:checked');
-  if (first) first.dispatchEvent(new Event('change'));
+  if (first && !(frameBox && frameBox.classList.contains('salon-look'))) first.dispatchEvent(new Event('change'));
 })();

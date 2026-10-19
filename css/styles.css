@@ -734,6 +734,7 @@ footer {
 .footer-logo .brand-mark { width: 16px; height: 16px; }
 .footer-tagline { color: rgba(244,238,226,0.3); font-size: 0.9rem; font-family: var(--serif); font-style: italic; }
 .footer-copy { color: rgba(244,238,226,0.5); font-size: 0.78rem; }
+.footer-copy a { text-decoration: underline; text-underline-offset: 0.2em; }
 
 /* ── Fade-in animation ── */
 
@@ -848,6 +849,7 @@ footer {
   color: var(--text);
 }
 .faq-list dd { color: var(--text-muted); margin-top: 0.35rem; }
+.faq-list dd a { text-decoration: underline; text-underline-offset: 0.2em; }
 
 /* Newsletter band (dark, matches contact styling) */
 #newsletter {
@@ -1297,13 +1299,22 @@ body.prints-page .container { max-width: 1680px; }
 .nav-links a.nav-cta.swap:hover .swap-clip::after,
 .nav-links a.nav-cta.swap:focus-visible .swap-clip::after { transform: translateY(0); }
 .nav-links a.nav-cta { transition: color 0.3s, background-color 0.3s, border-color 0.3s; }
-/* Over the hero: cream pill, ink label. On light pages / scrolled: green pill. */
+/* At rest the Contact pill is filled forest green with a cream label. Over the
+   dark heroes and the gallery's green band it keeps a cream outline so it does
+   not sink into the background. */
+.nav-links a.nav-cta,
+#nav.scrolled .nav-links a.nav-cta,
+body.light-nav .nav-links a.nav-cta {
+  background: var(--accent); border-color: var(--accent); color: var(--paper);
+}
+body:not(.light-nav) #nav:not(.scrolled) .nav-links a.nav-cta { border-color: rgba(244,238,226,0.5); }
+/* Over the hero: cream pill, ink label. On light pages / scrolled: deeper green. */
 .nav-links a.nav-cta:hover,
 .nav-links a.nav-cta:focus-visible { background: var(--paper); border-color: var(--paper); color: var(--text); }
 #nav.scrolled .nav-links a.nav-cta:hover,
 #nav.scrolled .nav-links a.nav-cta:focus-visible,
 body.light-nav .nav-links a.nav-cta:hover,
-body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+body.light-nav .nav-links a.nav-cta:focus-visible { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--paper); }
 
 /* ── Reveal on scroll ──────────────────────────────────────────────────────
    Replaces the old .fade-in with a longer, softer curve and per-item stagger
@@ -1511,12 +1522,14 @@ html.lb-open { overflow: hidden; }
    stay exactly the same height. S/M/L change the row height. */
 #gallery-wrap { background: var(--bg-section); padding-top: 3.5rem; padding-bottom: 6rem; }
 .masonry.salon {
-  --row-h: 300px; --frame: 7px; --mat: 16px;
+  --row-h: 320px; --frame: 7px; --mat: 12px;
   column-count: auto;
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
-  gap: 2.6rem 1.7rem;
+  gap: 2.2rem 1.2rem;
 }
-#gallery-wrap .container { max-width: 1680px; }
+/* Edge-to-edge wall (like a print shop's collection grid): slim side
+   margins, no width cap, so the frames take the room instead of the page. */
+#gallery-wrap .container { max-width: none; padding: 0 1.25rem; }
 .masonry.salon::after { content: ""; flex-grow: 999; }      /* last row keeps its natural size */
 .masonry.salon.size-s { --row-h: 170px; --mat: 10px; --frame: 5px; gap: 2rem 1.2rem; }
 .masonry.salon.size-m { --row-h: 240px; }
@@ -1566,7 +1579,8 @@ html.lb-open { overflow: hidden; }
   .masonry.salon.size-m { --row-h: 200px; }
 }
 @media (max-width: 700px) {
-  .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
+  #gallery-wrap .container { padding: 0 10px; }
+  .masonry.salon, .masonry.salon.size-m { --row-h: 150px; --mat: 7px; --frame: 4px; gap: 1.4rem 0.6rem; }
   .masonry.salon.size-s { --row-h: 105px; --mat: 6px; --frame: 3px; }
   .masonry.salon.size-l { --row-h: 240px; --mat: 10px; --frame: 5px; }
   .salon .frame-title { font-size: 0.85rem; }
@@ -1577,7 +1591,7 @@ html.lb-open { overflow: hidden; }
 .print-grid.salon-wall, .more-grid.salon-wall {
   --row-h: 190px; --frame: 7px; --mat: 16px;
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center;
-  gap: 2.6rem 1.7rem;
+  gap: 2.2rem 1.2rem;
 }
 .more-grid.salon-wall { --row-h: 180px; }
 .salon-wall::after { content: ""; flex-grow: 999; }
@@ -1595,3 +1609,130 @@ html.lb-open { overflow: hidden; }
 @media (max-width: 700px) {
   .print-grid.salon-wall, .more-grid.salon-wall { --row-h: 120px; --mat: 8px; --frame: 4px; gap: 1.6rem 0.9rem; }
 }
+
+/* ── Gallery banner: forest-green band with topo contours ─────────────────
+   The card-front green, a warm glow off the top right, and faint contour
+   lines (images/topo.svg) that drift very slowly. Chips and the size toggle
+   flip to cream-on-green. The nav starts light here, as on the home page. */
+#gallery-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 4.5rem) 0 2.75rem;
+  background:
+    radial-gradient(ellipse 60% 90% at 88% 0%, rgba(182,124,86,0.20), transparent 70%),
+    radial-gradient(ellipse 70% 80% at 0% 100%, rgba(13,26,18,0.55), transparent 70%),
+    var(--bg-dark);
+  color: var(--paper);
+}
+#gallery-hero::before {
+  content: "";
+  position: absolute; inset: -40px;
+  z-index: -1;
+  background: url("../images/topo.svg?v=2") center / cover no-repeat;
+  opacity: 0.32;
+  animation: topo-drift 40s ease-in-out infinite alternate;
+}
+/* a clay hairline where the band meets the cream gallery */
+#gallery-hero::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--clay) 20%, var(--clay) 80%, transparent);
+  opacity: 0.85;
+}
+@keyframes topo-drift {
+  from { transform: translate3d(-14px, 6px, 0) scale(1.02); }
+  to   { transform: translate3d(14px, -6px, 0) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #gallery-hero::before { animation: none; }
+}
+#gallery-hero .section-label { color: var(--clay); }
+.gallery-title {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  color: var(--paper);
+  letter-spacing: 0.04em;
+  margin: 0.4rem 0 0.9rem;
+  animation: gallery-rise 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+.gallery-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: rgba(244,238,226,0.78);
+  margin: 0;
+  animation: gallery-rise 0.9s 0.12s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes gallery-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-title, .gallery-sub { animation: none; }
+}
+#gallery-hero .filters { margin-top: 2.25rem; }
+#gallery-hero .filter-chip {
+  border-color: rgba(244,238,226,0.28);
+  color: rgba(244,238,226,0.82);
+}
+#gallery-hero .filter-chip:hover { border-color: var(--paper); color: var(--paper); }
+#gallery-hero .filter-chip.active {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--bg-dark);
+}
+#gallery-hero .chip-films { border-color: var(--clay); color: #E2B08E; }
+#gallery-hero .chip-films:hover { background: var(--clay); color: var(--paper); border-color: var(--clay); }
+#gallery-hero .size-label { color: rgba(244,238,226,0.6); }
+#gallery-hero .size-btn { color: rgba(244,238,226,0.7); }
+#gallery-hero .size-btn:hover { color: var(--paper); }
+#gallery-hero .size-btn[aria-pressed="true"] {
+  color: var(--paper);
+  border-color: rgba(244,238,226,0.35);
+  background: rgba(244,238,226,0.08);
+}
+@media (max-width: 700px) {
+  #gallery-hero { padding: calc(var(--nav-h) + 2.5rem) 0 2rem; }
+}
+
+/* Skip link (injected by main.js): off-screen until keyboard focus. */
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 10000; padding: 10px 16px; background: var(--accent); color: #fff; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+
+/* Gallery filters: All · Photos ▾ (collections) · Films */
+.chip-menu { position: relative; }
+.chip-photos { display: inline-flex; align-items: center; gap: 0.5rem; }
+.chip-caret { width: 10px; height: 6px; transition: transform 0.2s ease; }
+.chip-photos[aria-expanded="true"] .chip-caret { transform: rotate(180deg); }
+.chip-menu-list {
+  position: fixed; z-index: 60;   /* fixed so the hero band's overflow:hidden can't clip it; placed by gallery.js */
+  display: flex; flex-direction: column; gap: 0.35rem; min-width: 12rem;
+  padding: 0.6rem; border-radius: 14px;
+  background: var(--bg-dark); border: 1px solid rgba(244,238,226,0.2);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+.chip-menu-list[hidden] { display: none; }
+.chip-menu-list .filter-chip { text-align: left; width: 100%; }
+#photo-menu .filter-chip { border-color: rgba(244,238,226,0.28); color: rgba(244,238,226,0.85); }
+#photo-menu .filter-chip:hover { border-color: var(--paper); color: var(--paper); }
+#photo-menu .filter-chip.active { background: var(--paper); border-color: var(--paper); color: var(--bg-dark); }
+/* Gallery only: the Contact pill in terracotta, to match the clay accents on the green band */
+body.page-gallery .nav-links a.nav-cta,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta,
+body.page-gallery #nav:not(.scrolled) .nav-links a.nav-cta { background: var(--clay); border-color: var(--clay); color: var(--paper); }
+body.page-gallery .nav-links a.nav-cta:hover,
+body.page-gallery .nav-links a.nav-cta:focus-visible,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta:hover,
+body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background: #9A6444; border-color: #9A6444; color: var(--paper); }
+/* Print page, gallery look (catalog "detail_look": "salon"): the photo itself in
+   the same black frame and cream mat as the gallery wall; a picked frame's mockup
+   (.is-mockup) shows without the extra frame. */
+.detail-frame.salon-look { background: none; border: 0; padding: 0; }
+.detail-frame.salon-look picture {
+  display: block; padding: 18px; background: #FBF9F4; border: 9px solid #1E1C1A;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 14px 30px rgba(35,33,32,0.18);
+}
+.detail-frame.salon-look.is-mockup { background: #fff; border: 1px solid var(--border); padding: 1.1rem; }
+.detail-frame.salon-look.is-mockup picture { padding: 0; border: 0; background: none; box-shadow: none; }

@@ -112,8 +112,17 @@ def product_ld(p):
                       ensure_ascii=False)
 
 
-def picture(p, extra=""):
-    return (f'<picture><source type="image/webp" srcset="{p["webp"]}"><img src="{p["image"]}" '
+GRID_SIZES = "(max-width: 600px) 100vw, 33vw"
+DETAIL_SIZES = "(max-width: 900px) 100vw, 60vw"
+
+
+def picture(p, extra="", sizes=GRID_SIZES):
+    """<name>-800.webp and <name>.webp are made by scripts/resize_web_images.py;
+    width/height in the catalog are the big file's size."""
+    small = p["webp"][:-5] + "-800.webp"
+    srcset = (f'{small} 800w, {p["webp"]} {p["width"]}w" sizes="{sizes}'
+              if (ROOT / small.lstrip("/")).exists() else p["webp"])
+    return (f'<picture><source type="image/webp" srcset="{srcset}"><img src="{p["image"]}" '
             f'width="{p["width"]}" height="{p["height"]}" decoding="async" alt="{e(p["alt"])}"{extra}></picture>')
 
 
@@ -182,8 +191,12 @@ def materials(p):
         return ""
     store, names = CAT["shopify_store"], CAT["materials"]
     order = [m for m in names if m in mats and not (m == "canvas" and "framed_canvas" in mats)]
+    # Wood and acrylic tabs carry Gelato's mockup (catalog "previews", from
+    # scripts/gelato_previews.py); framed tabs preview per frame colour instead.
+    shown = p.get("previews") or {}
     tabs = "".join(
-        f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"{" checked" if i == 0 else ""}>'
+        f'<input type="radio" name="mat-{p["slug"]}" id="mat-{p["slug"]}-{m}" class="mat-radio"'
+        f'{preview_attr(shown.get(m) if isinstance(shown.get(m), str) else "")}{" checked" if i == 0 else ""}>'
         f'<label for="mat-{p["slug"]}-{m}" class="mat-tab">{e(names[m])}</label>'
         for i, m in enumerate(order))
     panels = ""
@@ -228,7 +241,7 @@ def page(p):
     if framed(p):
         # Framed only: no unframed paper buttons; the material picker is the buy block.
         buy = f'''
-          <p class="detail-spec">{e(PAPER)}, framed in black, white or oak · made to order</p>{materials(p)}'''
+          <p class="detail-spec">{e(PAPER)}, framed in black, white or oak, with a white border inside the frame · made to order</p>{materials(p)}'''
         note = ("Each print is made to order and framed behind shatterproof plexiglass, ready to hang. "
                 "Allow a few days for printing and framing plus transit.")
         ask = "Questions or other sizes?"
@@ -243,6 +256,14 @@ def page(p):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', {{ allow_google_signals: false, allow_ad_personalization_signals: false }});
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{e(desc)}" />
@@ -275,8 +296,8 @@ def page(p):
     <div class="container">
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
-        <div class="detail-frame">
-          {picture(p, ' fetchpriority="high"')}
+        <div class="detail-frame salon-look">
+          {picture(p, ' fetchpriority="high"', DETAIL_SIZES)}
         </div>
         <div class="detail-buy">
           <p class="section-label">{"Framed fine art print" if framed(p) else "Fine art print"}</p>
@@ -298,7 +319,7 @@ def page(p):
   </section>
 
 {FOOTER}
-  <script src="/js/print-buy.js?v=3"></script>
+  <script src="/js/print-buy.js?v=4"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

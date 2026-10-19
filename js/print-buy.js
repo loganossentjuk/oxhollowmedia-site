@@ -20,7 +20,8 @@
 /* ── Frame preview ──
    A frame swatch with data-preview (Gelato's mockup of this print in that
    frame, from prints/catalog.json "previews") swaps the page photo to it;
-   "No frame" swaps back to the photo itself. */
+   "No frame" swaps back to the photo itself. A wood or acrylic tab with
+   data-preview shows Gelato's mockup of that material. */
 (() => {
   const img = document.querySelector('.detail-frame img');
   const source = document.querySelector('.detail-frame source');
@@ -29,9 +30,11 @@
   // Swap only once the mockup has loaded, so a slow or missing mockup never
   // blanks the photo; the latest pick wins if several are in flight.
   let want = '';
+  const frameBox = img.closest('.detail-frame');
   const show = (url) => {
     const back = !url || url === original.src;
     want = back ? '' : url;
+    if (frameBox) frameBox.classList.toggle('is-mockup', !back);
     if (back) {
       if (source) source.srcset = original.srcset;
       img.src = original.src;
@@ -45,19 +48,22 @@
     };
     pre.src = url;
   };
-  if (!document.querySelector('.frame-radio[data-preview]')) return;
+  if (!document.querySelector('.frame-radio[data-preview], .mat-radio[data-preview]')) return;
   // A frame with no mockup yet shows the photo itself.
   document.querySelectorAll('.frame-radio').forEach((r) => {
     r.addEventListener('change', () => { if (r.checked) show(r.dataset.preview); });
   });
-  // Switching material shows that material's checked frame (or the photo).
+  // Switching material shows that material's checked frame, else the
+  // material's own mockup (wood, acrylic), else the photo.
   document.querySelectorAll('.mat-radio').forEach((r) => {
     r.addEventListener('change', () => {
       const panel = document.querySelectorAll('.mat-panel')[[...document.querySelectorAll('.mat-radio')].indexOf(r)];
       const picked = panel && panel.querySelector('.frame-radio:checked');
-      show(picked ? picked.dataset.preview : '');
+      show(picked ? picked.dataset.preview : r.dataset.preview || '');
     });
   });
+  // Salon-look prints open on the photo in a gallery-style frame; mockups
+  // appear once a frame is picked.
   const first = document.querySelector('.mat-radio:checked');
-  if (first) first.dispatchEvent(new Event('change'));
+  if (first && !(frameBox && frameBox.classList.contains('salon-look'))) first.dispatchEvent(new Event('change'));
 })();

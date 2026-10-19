@@ -19,7 +19,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 ## Content
 - [x] FAQ section on work-with-me for tech event planners (only facts already on the site; the rest as TODO(Logan))
 - [ ] Print stories: a 2–3 sentence story per print in the catalog (place, light, moment); start with the gallery-wall top 10
-- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2021", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
+- [ ] **Top priority.** Journal entry 1: "The Galápagos, 2019", the story behind Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage and Humpback Breach. Link each print page.
   - Draft it in `team/drafts/`.
   - List the personal details needed from Logan as short questions.
   - Propose a simple `/journal` page design for review. The journal is approved as print stories plus guides for event clients.
@@ -31,20 +31,33 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
 
 ## Website and bugs
+- [ ] Links/canonical use `/prints` but Pages serves `/prints/` (308 hop on 221 nav links, sitemap, canonical): switch to `/prints/` (SEO + web-engineer)
+- [ ] Add `<main>` landmarks to about, contact, events, films, filmmaking, gallery, index, privacy, shipping-returns, 404
+- [ ] **Next run, approved by Logan 2026-10-14 (web-engineer):** resize ALL web photos in images/portfolio (not the Dropbox print masters): 1600px WebP ~q75 (aim <350KB) + an 800px version via srcset/sizes on every page and in build_print_pages.py; keep JPG fallbacks; keep higher quality where detail suffers; watermark is already baked in. Preview before live.
+- [ ] Catalog `location` field so print descriptions name the place (e.g. Galápagos) — generator line ~215
+- [ ] Remove the archived Petunia Blush Canvas entry from the catalog
+- [x] Measurement (approved 2026-10-13): cart `ref=` code from UTMs, "How did you hear" field, /links → /prints, shipping-returns Stripe wording
+- [x] Cloudflare Web Analytics: already on since 2026-07-14 (auto-install); GA4 G-8BE3SQGCQG live 2026-10-13 with begin_checkout/generate_lead, /privacy page
+- [ ] Email signup form (not yet approved)
 - [ ] Image weight: find the largest images and propose or serve responsive sizes
 - [ ] Accessibility pass (contrast, focus states, labels) on nav, print pickers and forms
 - [x] 404 page links back to prints and gallery
 
-## Reminders for Logan (repeat in every report's Needs-you list until ticked)
+## Reminders for Logan
+- [ ] **(Logan)** Client logos for the About page (Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation): get files + OK to show them
+- [ ] **(Logan)** Client quote for the About/events pages (in progress)
+- [ ] **(Logan)** Send the other abstracts (like Obsidian Palace) for the series (repeat in every report's Needs-you list until ticked)
+- [ ] **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
 - [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
 
 ## Shop
 - [x] Batch 2 framed listings priced and published (2026-10-09)
-- [ ] Verdigris and Copper & Teal are held until their print files are re-made **(Logan)**
+- [x] Verdigris and Copper & Teal: files re-made, ready to sell (Logan, 2026-10-13)
 - [ ] Holiday gift-deadline banner idea, using Gelato's published shipping cut-offs **(Logan)**
 
 ## Marketing
-- [ ] **Top priority (marketing-lead, with shop-manager input). Growth strategy: ads and outreach.** Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
+- [x] **Growth strategy drafted 2026-10-13** (`team/drafts/growth-strategy.md`). Logan chose: events lead + prints organic, $0 budget plus a small holiday print-ad test. Weekly marketing work now follows it.
+- [ ] ~~Original brief:~~ Growth strategy: ads and outreach. Deliver `team/drafts/growth-strategy.md` with two plans: event-photography leads, and gallery/print-shop sales.
   - **Research first and cite sources:**
     - realistic costs and results for Google Ads (local "event photographer San Francisco" searches), Meta/Instagram ads (Reels boosts, retargeting site visitors), LinkedIn (tech event planners), and Pinterest (wall art)
     - free channels: Google Business Profile, event-venue preferred-vendor lists, planner and agency partnerships, tech meetup and community sponsorships, referral asks to past clients, directory listings
@@ -59,12 +72,12 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
   - **Draft-only extras:** ad copy and audiences, plus 3 cold-outreach templates for event planners in Logan's voice. Nothing gets launched, spent or sent.
   - **Return** the plan for Logan to choose. After that, each week's marketing work follows the chosen plan.
 - [ ] Monthly newsletter draft (first run of each month)
-- [ ] Instagram bio link page (`/links`): check its UTM links point at live pages (`/store` exists?)
+- [x] Instagram bio link page (`/links`): Shop now points at /prints with UTMs (2026-10-13)
 
 ## New ideas (2026-10-09, ranked)
 - [x] Home page: short distinct H1/intro with "San Francisco event photography"
 - [ ] Internal-link pass: events <-> work-with-me <-> contact, print pages -> gallery
-- [x] `/links`: add h1; point Shop button at `/prints`; bump CSS version to ?v=53
+- [ ] `/links`: add h1 (Shop button → /prints done 2026-10-13)
 - [ ] Focus-visible outlines, skip link, axe contrast audit
 - [ ] BreadcrumbList JSON-LD on print pages; VideoObject for films (fix placeholder uploadDate)
 - [ ] Generator: stop rewriting sitemap lastmod on every build

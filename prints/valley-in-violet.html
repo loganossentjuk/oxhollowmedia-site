@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', { allow_google_signals: false, allow_ad_personalization_signals: false });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Valley in Violet, a framed fine-art print by Logan Ossentjuk. Violet light across a mountain range above a braided river. Made to order, free US shipping." />
@@ -22,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=53" />
+  <link rel="stylesheet" href="/css/styles.css?v=63" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Valley in Violet", "description": "Violet light across a mountain range above a braided river.", "image": "https://oxhollowmedia.com/images/portfolio/mountains/15-valley-in-violet.jpg", "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": {"@type": "AggregateOffer", "lowPrice": "35", "highPrice": "330", "offerCount": 12, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://oxhollowmedia.com/prints/valley-in-violet", "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}}}}</script>
 </head>
 <body class="light-nav">
@@ -68,57 +76,57 @@
     <div class="container">
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
-        <div class="detail-frame">
-          <picture><source type="image/webp" srcset="/images/portfolio/mountains/15-valley-in-violet.webp"><img src="/images/portfolio/mountains/15-valley-in-violet.jpg" width="2000" height="1125" decoding="async" alt="Violet light across a mountain range above a braided river" fetchpriority="high"></picture>
+        <div class="detail-frame salon-look">
+          <picture><source type="image/webp" srcset="/images/portfolio/mountains/15-valley-in-violet-800.webp 800w, /images/portfolio/mountains/15-valley-in-violet.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw"><img src="/images/portfolio/mountains/15-valley-in-violet.jpg" width="1600" height="900" decoding="async" alt="Violet light across a mountain range above a braided river" fetchpriority="high"></picture>
         </div>
         <div class="detail-buy">
           <p class="section-label">Framed fine art print</p>
           <h1 class="detail-title">Valley in Violet</h1>
           <p class="detail-lede">Violet light across a mountain range above a braided river.</p>
-          <p class="detail-spec">Archival matte fine-art paper, 200gsm, framed in black, white or oak · made to order</p>
+          <p class="detail-spec">Archival matte fine-art paper, 200gsm, framed in black, white or oak, with a white border inside the frame · made to order</p>
           <div class="materials is-primary">
             <div class="mat-tabs"><input type="radio" name="mat-valley-in-violet" id="mat-valley-in-violet-framed" class="mat-radio" checked><label for="mat-valley-in-violet-framed" class="mat-tab">Framed print</label><input type="radio" name="mat-valley-in-violet" id="mat-valley-in-violet-framed_canvas" class="mat-radio"><label for="mat-valley-in-violet-framed_canvas" class="mat-tab">Framed canvas</label>
             <div class="mat-panel" data-mat="framed">
-              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-black" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/e5a3fb83-a031-4e88-8a5c-dbcbf4e1b449.jpg" checked><label for="frame-valley-in-violet-framed-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-white" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/5f2a163f-a254-4815-afeb-ba16da103689.jpg"><label for="frame-valley-in-violet-framed-white" class="frame-tab"><span class="frame-swatch frame-white"></span>White</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-oak" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/01afaaba-38ad-4c80-817f-74f9de9ed8d5.jpg"><label for="frame-valley-in-violet-framed-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-none" class="frame-radio" data-preview="/images/portfolio/mountains/15-valley-in-violet.jpg"><label for="frame-valley-in-violet-framed-none" class="frame-tab"><span class="frame-swatch frame-none"></span>No frame</label>
+              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-black" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-black.jpg" checked><label for="frame-valley-in-violet-framed-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-white" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-white.jpg"><label for="frame-valley-in-violet-framed-white" class="frame-tab"><span class="frame-swatch frame-white"></span>White</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-oak" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-oak.jpg"><label for="frame-valley-in-violet-framed-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-valley-in-violet-framed" id="frame-valley-in-violet-framed-none" class="frame-radio" data-preview="/images/portfolio/mountains/15-valley-in-violet.jpg"><label for="frame-valley-in-violet-framed-none" class="frame-tab"><span class="frame-swatch frame-none"></span>No frame</label>
                 <div class="frame-panel" data-frame="black">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427453682:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456175346:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427551986:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456273650:1" rel="nofollow">
                     <span class="size">Buy 12×18″</span><span class="price">$155</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427650290:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456371954:1" rel="nofollow">
                     <span class="size">Buy 16×24″</span><span class="price">$205</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427748594:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456470258:1" rel="nofollow">
                     <span class="size">Buy 24×36″</span><span class="price">$315</span>
                   </a>
                 </div>
                 <div class="frame-panel" data-frame="white">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427388146:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456109810:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427486450:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456208114:1" rel="nofollow">
                     <span class="size">Buy 12×18″</span><span class="price">$155</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427584754:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456306418:1" rel="nofollow">
                     <span class="size">Buy 16×24″</span><span class="price">$205</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427683058:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456404722:1" rel="nofollow">
                     <span class="size">Buy 24×36″</span><span class="price">$315</span>
                   </a>
                 </div>
                 <div class="frame-panel" data-frame="oak">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427420914:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456142578:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427519218:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456240882:1" rel="nofollow">
                     <span class="size">Buy 12×18″</span><span class="price">$155</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427617522:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456339186:1" rel="nofollow">
                     <span class="size">Buy 16×24″</span><span class="price">$205</span>
                   </a>
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650427715826:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67765456437490:1" rel="nofollow">
                     <span class="size">Buy 24×36″</span><span class="price">$315</span>
                   </a>
                 </div>
@@ -139,7 +147,7 @@
               </div>
             </div>
             <div class="mat-panel" data-mat="framed_canvas">
-              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-black" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/3bfc57d9-3eaf-4c8d-b923-90403f17549b.jpg" checked><label for="frame-valley-in-violet-framed_canvas-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-oak" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/d7138793-2c59-4dd2-ab52-779986ebe7ca.jpg"><label for="frame-valley-in-violet-framed_canvas-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-walnut" class="frame-radio" data-preview="https://cdn.shopify.com/s/files/1/0858/7211/5954/files/a43740c4-917c-443c-8be3-10dea442dba2.jpg"><label for="frame-valley-in-violet-framed_canvas-walnut" class="frame-tab"><span class="frame-swatch frame-walnut"></span>Walnut</label>
+              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-black" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-canvas-black.jpg" checked><label for="frame-valley-in-violet-framed_canvas-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-oak" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-canvas-oak.jpg"><label for="frame-valley-in-violet-framed_canvas-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-valley-in-violet-framed_canvas" id="frame-valley-in-violet-framed_canvas-walnut" class="frame-radio" data-preview="/images/mockups/valley-in-violet-framed-canvas-walnut.jpg"><label for="frame-valley-in-violet-framed_canvas-walnut" class="frame-tab"><span class="frame-swatch frame-walnut"></span>Walnut</label>
                 <div class="frame-panel" data-frame="black">
                   <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67650439708914:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$125</span>
@@ -198,22 +206,22 @@
       <p class="section-label">More prints</p>
       <div class="more-grid salon-wall">
         <div class="print-card" style="--ar:1.7778">
-          <a class="print-mat" href="/prints/snowline">
-            <picture><source type="image/webp" srcset="/images/portfolio/mountains/17-snowline.webp"><img src="/images/portfolio/mountains/17-snowline.jpg" width="2000" height="1125" decoding="async" alt="Fresh snow along a high Sierra ridgeline" loading="lazy"></picture>
+          <a class="print-mat" href="/prints/sierra-snowline">
+            <picture><source type="image/webp" srcset="/images/portfolio/mountains/17-snowline-800.webp 800w, /images/portfolio/mountains/17-snowline.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/mountains/17-snowline.jpg" width="1600" height="900" decoding="async" alt="Fresh snow along a high Sierra ridgeline" loading="lazy"></picture>
           </a>
-          <h3>Snowline</h3>
+          <h3>Sierra Snowline</h3>
         </div>
         <div class="print-card" style="--ar:1.7778">
-          <a class="print-mat" href="/prints/the-long-valley">
-            <picture><source type="image/webp" srcset="/images/portfolio/mountains/18-the-long-valley.webp"><img src="/images/portfolio/mountains/18-the-long-valley.jpg" width="2000" height="1125" decoding="async" alt="Green valley floor and river running to distant peaks" loading="lazy"></picture>
+          <a class="print-mat" href="/prints/river-to-the-range">
+            <picture><source type="image/webp" srcset="/images/portfolio/mountains/18-the-long-valley-800.webp 800w, /images/portfolio/mountains/18-the-long-valley.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/mountains/18-the-long-valley.jpg" width="1600" height="900" decoding="async" alt="Green valley floor and river running to distant peaks" loading="lazy"></picture>
           </a>
-          <h3>The Long Valley</h3>
+          <h3>River to the Range</h3>
         </div>
         <div class="print-card" style="--ar:1.7778">
-          <a class="print-mat" href="/prints/range-and-scrub">
-            <picture><source type="image/webp" srcset="/images/portfolio/mountains/19-range-and-scrub.webp"><img src="/images/portfolio/mountains/19-range-and-scrub.jpg" width="2000" height="1125" decoding="async" alt="High desert scrub below a long snow-dusted range" loading="lazy"></picture>
+          <a class="print-mat" href="/prints/scrub-and-snow">
+            <picture><source type="image/webp" srcset="/images/portfolio/mountains/19-range-and-scrub-800.webp 800w, /images/portfolio/mountains/19-range-and-scrub.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/mountains/19-range-and-scrub.jpg" width="1600" height="900" decoding="async" alt="High desert scrub below a long snow-dusted range" loading="lazy"></picture>
           </a>
-          <h3>Range and Scrub</h3>
+          <h3>Scrub and Snow</h3>
         </div>
       </div>
     </div>
@@ -231,13 +239,13 @@
       </span>
       <span class="footer-tagline"><em>Dare to see.</em></span>
       <span class="footer-social">
-        <a href="https://instagram.com/oxhollowmedia?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
+        <a href="https://www.instagram.com/oxhollowmedia/?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
       </span>
-      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media · <a href="/privacy">Privacy</a></span>
     </div>
   </footer>
 
-  <script src="/js/print-buy.js?v=3"></script>
+  <script src="/js/print-buy.js?v=4"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

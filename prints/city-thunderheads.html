@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', { allow_google_signals: false, allow_ad_personalization_signals: false });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="City Thunderheads, a framed fine-art print by Logan Ossentjuk. Thunderheads building over a city skyline at golden hour. Made to order, free US shipping." />
@@ -22,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=53" />
+  <link rel="stylesheet" href="/css/styles.css?v=63" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "City Thunderheads", "description": "Thunderheads building over a city skyline at golden hour.", "image": "https://oxhollowmedia.com/images/portfolio/people/06-city-thunderheads.jpg", "brand": {"@type": "Brand", "name": "Ox Hollow Media"}, "offers": {"@type": "AggregateOffer", "lowPrice": "35", "highPrice": "125", "offerCount": 3, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://oxhollowmedia.com/prints/city-thunderheads", "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}}}}</script>
 </head>
 <body class="light-nav">
@@ -68,30 +76,30 @@
     <div class="container">
       <p class="crumb"><a href="/prints">← All prints</a></p>
       <div class="detail-grid">
-        <div class="detail-frame">
-          <picture><source type="image/webp" srcset="/images/portfolio/people/06-city-thunderheads.webp"><img src="/images/portfolio/people/06-city-thunderheads.jpg" width="2000" height="1500" decoding="async" alt="Thunderheads building over a city skyline at golden hour" fetchpriority="high"></picture>
+        <div class="detail-frame salon-look">
+          <picture><source type="image/webp" srcset="/images/portfolio/people/06-city-thunderheads-800.webp 800w, /images/portfolio/people/06-city-thunderheads.webp 1600w" sizes="(max-width: 900px) 100vw, 60vw"><img src="/images/portfolio/people/06-city-thunderheads.jpg" width="1600" height="1200" decoding="async" alt="Thunderheads building over a city skyline at golden hour" fetchpriority="high"></picture>
         </div>
         <div class="detail-buy">
           <p class="section-label">Framed fine art print</p>
           <h1 class="detail-title">City Thunderheads</h1>
           <p class="detail-lede">Thunderheads building over a city skyline at golden hour.</p>
-          <p class="detail-spec">Archival matte fine-art paper, 200gsm, framed in black, white or oak · made to order</p>
+          <p class="detail-spec">Archival matte fine-art paper, 200gsm, framed in black, white or oak, with a white border inside the frame · made to order</p>
           <div class="materials is-primary">
             <div class="mat-tabs"><input type="radio" name="mat-city-thunderheads" id="mat-city-thunderheads-framed" class="mat-radio" checked><label for="mat-city-thunderheads-framed" class="mat-tab">Framed print</label><input type="radio" name="mat-city-thunderheads" id="mat-city-thunderheads-framed_canvas" class="mat-radio"><label for="mat-city-thunderheads-framed_canvas" class="mat-tab">Framed canvas</label>
             <div class="mat-panel" data-mat="framed">
-              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-black" class="frame-radio" checked><label for="frame-city-thunderheads-framed-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-white" class="frame-radio"><label for="frame-city-thunderheads-framed-white" class="frame-tab"><span class="frame-swatch frame-white"></span>White</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-oak" class="frame-radio"><label for="frame-city-thunderheads-framed-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-none" class="frame-radio" data-preview="/images/portfolio/people/06-city-thunderheads.jpg"><label for="frame-city-thunderheads-framed-none" class="frame-tab"><span class="frame-swatch frame-none"></span>No frame</label>
+              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-black" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-black.jpg" checked><label for="frame-city-thunderheads-framed-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-white" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-white.jpg"><label for="frame-city-thunderheads-framed-white" class="frame-tab"><span class="frame-swatch frame-white"></span>White</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-oak" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-oak.jpg"><label for="frame-city-thunderheads-framed-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-city-thunderheads-framed" id="frame-city-thunderheads-framed-none" class="frame-radio" data-preview="/images/portfolio/people/06-city-thunderheads.jpg"><label for="frame-city-thunderheads-framed-none" class="frame-tab"><span class="frame-swatch frame-none"></span>No frame</label>
                 <div class="frame-panel" data-frame="black">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67663990849778:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67766025355506:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
                 </div>
                 <div class="frame-panel" data-frame="white">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67663990784242:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67766025289970:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
                 </div>
                 <div class="frame-panel" data-frame="oak">
-                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67663990817010:1" rel="nofollow">
+                  <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67766025322738:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$115</span>
                   </a>
                 </div>
@@ -103,7 +111,7 @@
               </div>
             </div>
             <div class="mat-panel" data-mat="framed_canvas">
-              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-black" class="frame-radio" checked><label for="frame-city-thunderheads-framed_canvas-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-oak" class="frame-radio"><label for="frame-city-thunderheads-framed_canvas-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-walnut" class="frame-radio"><label for="frame-city-thunderheads-framed_canvas-walnut" class="frame-tab"><span class="frame-swatch frame-walnut"></span>Walnut</label>
+              <div class="frame-pick"><span class="frame-label">Frame</span><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-black" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-canvas-black.jpg" checked><label for="frame-city-thunderheads-framed_canvas-black" class="frame-tab"><span class="frame-swatch frame-black"></span>Black</label><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-oak" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-canvas-oak.jpg"><label for="frame-city-thunderheads-framed_canvas-oak" class="frame-tab"><span class="frame-swatch frame-oak"></span>Oak</label><input type="radio" name="frame-city-thunderheads-framed_canvas" id="frame-city-thunderheads-framed_canvas-walnut" class="frame-radio" data-preview="/images/mockups/city-thunderheads-framed-canvas-walnut.jpg"><label for="frame-city-thunderheads-framed_canvas-walnut" class="frame-tab"><span class="frame-swatch frame-walnut"></span>Walnut</label>
                 <div class="frame-panel" data-frame="black">
                   <a class="buy-btn" href="https://sessjk-nj.myshopify.com/cart/67663991275762:1" rel="nofollow">
                     <span class="size">Buy 8×12″</span><span class="price">$125</span>
@@ -134,23 +142,23 @@
     <div class="container">
       <p class="section-label">More prints</p>
       <div class="more-grid salon-wall">
-        <div class="print-card" style="--ar:1.5004">
-          <a class="print-mat" href="/prints/cocktails">
-            <picture><source type="image/webp" srcset="/images/portfolio/urban/01-cocktails-neon.webp"><img src="/images/portfolio/urban/01-cocktails-neon.jpg" width="2000" height="1333" decoding="async" alt="Red neon Cocktails sign glowing in a dark bar window" loading="lazy"></picture>
+        <div class="print-card" style="--ar:1.5009">
+          <a class="print-mat" href="/prints/neon-nightcap">
+            <picture><source type="image/webp" srcset="/images/portfolio/urban/01-cocktails-neon-800.webp 800w, /images/portfolio/urban/01-cocktails-neon.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/urban/01-cocktails-neon.jpg" width="1600" height="1066" decoding="async" alt="Red neon Cocktails sign glowing in a dark bar window" loading="lazy"></picture>
           </a>
-          <h3>Cocktails</h3>
+          <h3>Neon Nightcap</h3>
         </div>
         <div class="print-card" style="--ar:0.6665">
           <a class="print-mat" href="/prints/wall-of-names">
-            <picture><source type="image/webp" srcset="/images/portfolio/urban/02-wall-of-names.webp"><img src="/images/portfolio/urban/02-wall-of-names.jpg" width="1333" height="2000" decoding="async" alt="Layered graffiti tags across a brick wall" loading="lazy"></picture>
+            <picture><source type="image/webp" srcset="/images/portfolio/urban/02-wall-of-names-800.webp 800w, /images/portfolio/urban/02-wall-of-names.webp 1333w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/urban/02-wall-of-names.jpg" width="1333" height="2000" decoding="async" alt="Layered graffiti tags across a brick wall" loading="lazy"></picture>
           </a>
           <h3>Wall of Names</h3>
         </div>
-        <div class="print-card" style="--ar:1.2107">
-          <a class="print-mat" href="/prints/mural-sundown">
-            <picture><source type="image/webp" srcset="/images/portfolio/urban/05-mural-sundown.webp"><img src="/images/portfolio/urban/05-mural-sundown.jpg" width="2000" height="1652" decoding="async" alt="A mural figure silhouetted against a painted sun" loading="lazy"></picture>
+        <div class="print-card" style="--ar:1.2103">
+          <a class="print-mat" href="/prints/sundown-silhouette">
+            <picture><source type="image/webp" srcset="/images/portfolio/urban/05-mural-sundown-800.webp 800w, /images/portfolio/urban/05-mural-sundown.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="/images/portfolio/urban/05-mural-sundown.jpg" width="1600" height="1322" decoding="async" alt="A mural figure silhouetted against a painted sun" loading="lazy"></picture>
           </a>
-          <h3>Mural, Sundown</h3>
+          <h3>Sundown Silhouette</h3>
         </div>
       </div>
     </div>
@@ -168,13 +176,13 @@
       </span>
       <span class="footer-tagline"><em>Dare to see.</em></span>
       <span class="footer-social">
-        <a href="https://instagram.com/oxhollowmedia?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
+        <a href="https://www.instagram.com/oxhollowmedia/?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
       </span>
-      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media · <a href="/privacy">Privacy</a></span>
     </div>
   </footer>
 
-  <script src="/js/print-buy.js?v=3"></script>
+  <script src="/js/print-buy.js?v=4"></script>
   <script src="/js/main.js?v=3"></script>
   <script src="/js/motion.js?v=5"></script>
 </body>

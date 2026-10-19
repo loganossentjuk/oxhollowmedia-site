@@ -38,11 +38,37 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Eastern Sierra, Bishop / Mammoth Lakes area, California:** Sierra River Bend, Cloudbreak Ridge, Blue Hour Ridge, Valley in Violet, Snowline, The Long Valley, Range and Scrub, Fog on the Flats, Golden Brush.
 - **Around Seattle, Washington:** Fog Forest, Highland River, Misty Ridgeline, Rainier Afterglow, Forest Fungus, Winter Bark.
 - **Rocky Mountains, Colorado:** Aspen and Cobalt, Sunflare Oak, Autumn Against Blue, Still Pond.
-- **Galápagos Islands, 2021:** Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage, Humpback Breach.
+- **Galápagos Islands, 2019:** Blue-footed Booby, Sea Lion Pup, Marine Iguana, Reef Passage, Humpback Breach.
 
 **Journal**
 - Approved, as "stories behind the prints" plus guides for event clients.
-- The first entry is the Galápagos (2021). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
+- The first entry is the Galápagos (2019). The content writer drafts it from the facts above and asks Logan only for the personal details it can't know.
+
+## Facts and decisions from Logan (2026-10-13)
+- **Clients we may name** in outreach and referral asks: Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation. Never invent results or quotes for them. Ask Logan before adding new names to site pages.
+- **Instagram:** @oxhollowmedia is a Business account. Bio (2026-10-14): "Events · Films · Fine-art prints / San Francisco Bay Area / Closer to nature, one frame at a time."
+- **Mission line (on /about):** "Striving to bring people closer to nature, illuminating stories of action, and belief in conservation, cultivation and care."
+- **Print shop:** no orders yet; Logan is placing the first one. Verdigris and Copper and Teal are ready to sell like any other print.
+- **Growth plan:** event leads lead the next 90 days; prints run on free channels. Ad budget is $0 to start, except a small holiday ad test for prints that Logan is open to (amount for Logan to set).
+- **Event types (Logan's page copy, 2026-10-14):** conferences, launches, demo days, galas, and family celebrations.
+- **People in photos:** Instagram and marketing may only show recognisable people with their OK; flag face-forward photos for Logan to clear.
+- **Outreach sender:** Logan wants outreach to come from hello@oxhollowmedia.com.
+- **Measurement:** approved: analytics, a campaign `ref=` code on cart links, and a "How did you hear about me?" field on the contact form. Email signup not approved yet.
+
+## Facts from Logan (2026-10-14, later)
+- **Shooting since 2017.**
+- **Ocean Defenders film:** not commissioned; it was client work done for free (pro bono). Don't call it a commission.
+- **"Photo and video in one booking"** is OK to say.
+- **Obsidian Palace:** shot at the Mermaid's Pools on Oahu, Hawaii: volcanic rock, shot from inside a cave as the waves crashed in. Logan has more abstracts like it.
+- **Phase Shift and Divine Duality:** shot at the same place and time as Obsidian Palace (Mermaid's Pools, Oahu).
+- **Series name: "Salt and Stone"** (for now). Site category slug stays `abstracts`.
+- **Abstract series:** approved. Obsidian Palace, Phase Shift and Divine Duality lead it; more abstracts to come.
+- **Client quote:** Logan is getting one. Don't invent or paraphrase one.
+
+## Print locations confirmed by Logan (2026-10-16)
+- **Into the Unknown:** Bishop, California.
+- **Highland Hollow:** Scotland.
+- **Shark Shadow:** Galápagos, 2019.
 
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.

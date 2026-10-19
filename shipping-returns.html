@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', { allow_google_signals: false, allow_ad_personalization_signals: false });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Shipping, replacements, and returns for Ox Hollow Media fine-art prints. Free US shipping on every print, made to order." />
@@ -20,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=53" />
+  <link rel="stylesheet" href="/css/styles.css?v=63" />
 </head>
 <body class="light-nav">
 
@@ -74,9 +82,9 @@
         <dt>Where do you ship?</dt>
         <dd>Anywhere in the United States. Shipping is free and already included in the price.</dd>
         <dt>How long until my print arrives?</dt>
-        <dd>Each print is made to order, so allow a few days for printing plus transit. You'll get a receipt from Stripe when you order, and an email from me when your print ships.</dd>
+        <dd>Each print is made to order, so allow a few days for printing plus transit. You'll get an order confirmation and receipt from Shopify when you order, and an email from me when your print ships.</dd>
         <dt>How is it packed?</dt>
-        <dd>Prints ship unframed and carefully packed, ready for framing.</dd>
+        <dd>Carefully, by the print lab. Framed prints and framed canvases arrive ready to hang. Unframed prints arrive ready for framing.</dd>
         <dt>My print arrived damaged or isn't what I ordered.</dt>
         <dd>Email a photo of the print and packaging to <a href="mailto:oxhollowmedia@gmail.com">oxhollowmedia@gmail.com</a> within 14 days of delivery and I'll send a free replacement. There's nothing to send back.</dd>
         <dt>My print never arrived.</dt>
@@ -104,9 +112,9 @@
       </span>
       <span class="footer-tagline"><em>Dare to see.</em></span>
       <span class="footer-social">
-        <a href="https://instagram.com/oxhollowmedia?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
+        <a href="https://www.instagram.com/oxhollowmedia/?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener">Instagram</a>
       </span>
-      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media · <a href="/privacy">Privacy</a></span>
     </div>
   </footer>
 

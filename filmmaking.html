@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4: Google signals and ad personalisation off. See /privacy. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BE3SQGCQG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    if (/(^|\.)oxhollowmedia\.com$/.test(location.hostname)) gtag('config', 'G-8BE3SQGCQG', { allow_google_signals: false, allow_ad_personalization_signals: false });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Documentary and brand films on conservation and the natural world, from the Bay Area filmmaker behind Ocean Defenders. Films from $6,500." />
@@ -24,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=53" />
+  <link rel="stylesheet" href="css/styles.css?v=63" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Environmental and Conservation Filmmaking", "serviceType": "Documentary Film Production", "provider": {"@id": "https://oxhollowmedia.com/#business"}, "areaServed": ["San Francisco, CA", "San Francisco Bay Area", "Oakland, CA", "San Jose, CA", "Palo Alto, CA"], "url": "https://oxhollowmedia.com/filmmaking", "description": "Documentary, impact, and brand films about conservation and the natural world for nonprofits, research groups, and ocean and outdoor brands.", "offers": {"@type": "Offer", "price": "6500", "priceCurrency": "USD", "description": "Films from $6,500; most projects $8,000 to $20,000."}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What kinds of films do you make?", "acceptedAnswer": {"@type": "Answer", "text": "Short documentaries, impact films for nonprofits, and brand films for ocean and outdoor companies."}}, {"@type": "Question", "name": "Do you handle the whole production?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Concept, interviews, filming on land and on the water, editing, color, and sound."}}, {"@type": "Question", "name": "How much does a film cost?", "acceptedAnswer": {"@type": "Answer", "text": "Films start at $6,500. Most land between $8,000 and $20,000, depending on shoot days, travel, crew, and licensing."}}, {"@type": "Question", "name": "Where do you film?", "acceptedAnswer": {"@type": "Answer", "text": "I’m based in the San Francisco Bay Area and film across California and the West Coast. Travel is quoted per project."}}]}</script>
 </head>
@@ -134,10 +142,10 @@
         <a href="/gallery" class="btn btn-dark">Gallery &rarr;</a>
       </div>
       <div class="masonry">
-        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/people/03-scientist-with-sample.webp"><img src="images/portfolio/people/03-scientist-with-sample.jpg" width="2000" height="1125" decoding="async" alt="Documentary frame of a marine scientist at work" loading="lazy"></picture><div class="cap"><span class="cap-cat">Portraits</span></div></a>
-        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/ocean/01-humpback-breach.webp"><img src="images/portfolio/ocean/01-humpback-breach.jpg" width="2000" height="1331" decoding="async" alt="Humpback whale breaching" loading="lazy"></picture><div class="cap"><span class="cap-cat">Ocean</span></div></a>
-        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/people/02-field-notes-at-sea.webp"><img src="images/portfolio/people/02-field-notes-at-sea.jpg" width="2000" height="1333" decoding="async" alt="Researcher taking field notes at sea" loading="lazy"></picture><div class="cap"><span class="cap-cat">Portraits</span></div></a>
-        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/mountains/04-fog-forest.webp"><img src="images/portfolio/mountains/04-fog-forest.jpg" width="1125" height="2000" decoding="async" alt="Fog drifting through conifer forest" loading="lazy"></picture><div class="cap"><span class="cap-cat">Forests</span></div></a>
+        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/people/03-scientist-with-sample-800.webp 800w, images/portfolio/people/03-scientist-with-sample.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="images/portfolio/people/03-scientist-with-sample.jpg" width="1600" height="900" decoding="async" alt="Documentary frame of a marine scientist at work" loading="lazy"></picture><div class="cap"><span class="cap-cat">Portraits</span></div></a>
+        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/ocean/01-humpback-breach-800.webp 800w, images/portfolio/ocean/01-humpback-breach.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="images/portfolio/ocean/01-humpback-breach.jpg" width="1600" height="1065" decoding="async" alt="Humpback whale breaching" loading="lazy"></picture><div class="cap"><span class="cap-cat">Ocean</span></div></a>
+        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/people/02-field-notes-at-sea-800.webp 800w, images/portfolio/people/02-field-notes-at-sea.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="images/portfolio/people/02-field-notes-at-sea.jpg" width="1600" height="900" decoding="async" alt="Researcher taking field notes at sea" loading="lazy"></picture><div class="cap"><span class="cap-cat">Portraits</span></div></a>
+        <a class="masonry-item" href="/gallery"><picture><source type="image/webp" srcset="images/portfolio/mountains/04-fog-forest-800.webp 800w, images/portfolio/mountains/04-fog-forest.webp 1125w" sizes="(max-width: 600px) 100vw, 33vw"><img src="images/portfolio/mountains/04-fog-forest.jpg" width="1125" height="2000" decoding="async" alt="Fog drifting through conifer forest" loading="lazy"></picture><div class="cap"><span class="cap-cat">Forests</span></div></a>
       </div>
     </div>
   </section>
@@ -200,9 +208,9 @@
       </span>
       <span class="footer-tagline"><em>Dare to see.</em></span>
       <span class="footer-social">
-        <a href="https://instagram.com/oxhollowmedia?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 6.53a3.31 3.31 0 100 6.62 3.31 3.31 0 000-6.62zm0 5.46a2.15 2.15 0 110-4.3 2.15 2.15 0 010 4.3zm4.21-5.59a.77.77 0 11-1.55 0 .77.77 0 011.55 0z"/></svg>@oxhollowmedia</a>
+        <a href="https://www.instagram.com/oxhollowmedia/?utm_source=oxhollowmedia.com&amp;utm_medium=footer" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 6.53a3.31 3.31 0 100 6.62 3.31 3.31 0 000-6.62zm0 5.46a2.15 2.15 0 110-4.3 2.15 2.15 0 010 4.3zm4.21-5.59a.77.77 0 11-1.55 0 .77.77 0 011.55 0z"/></svg>@oxhollowmedia</a>
       </span>
-      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media</span>
+      <span class="footer-copy">&copy; <span id="year"></span> Ox Hollow Media · <a href="/privacy">Privacy</a></span>
     </div>
   </footer>
 

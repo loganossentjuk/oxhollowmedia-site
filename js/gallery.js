@@ -42,13 +42,55 @@ if (filterBar && grid) {
     });
   }
 
+  // Photos ▾ holds the collections (Ocean, Abstracts, Mountains…); All and Films sit beside it.
+  const photosBtn = filterBar.querySelector('.chip-photos');
+  const photosMenu = document.getElementById('photo-menu');
+  const photosLabel = filterBar.querySelector('.chip-photos-label');
+  // The hero band clips and transforms its children, so the menu lives on <body>.
+  if (photosMenu) document.body.appendChild(photosMenu);
+  const allChips = () => [...filterBar.querySelectorAll('.filter-chip[data-filter]'),
+    ...(photosMenu ? photosMenu.querySelectorAll('.filter-chip[data-filter]') : [])];
+  const setMenu = (open) => {
+    if (!photosBtn) return;
+    if (open) {
+      const r = photosBtn.getBoundingClientRect();
+      photosMenu.style.top = `${r.bottom + 8}px`;
+      photosMenu.style.left = `${r.left}px`;
+    }
+    photosMenu.hidden = !open;
+    photosBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   const selectChip = (chip) => {
-    filterBar.querySelectorAll('.filter-chip').forEach((c) => {
+    allChips().forEach((c) => {
       c.classList.toggle('active', c === chip);
-      c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+      if (c.classList.contains('menu-item')) c.setAttribute('aria-checked', c === chip ? 'true' : 'false');
+      else c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
     });
+    const inMenu = chip.classList.contains('menu-item');
+    if (photosBtn) {
+      photosBtn.classList.toggle('active', inMenu);
+      photosLabel.textContent = inMenu ? `Collections · ${chip.textContent}` : 'Collections';
+    }
+    setMenu(false);
     applyFilter(chip.dataset.filter);
   };
+
+  if (photosBtn) {
+    photosBtn.addEventListener('click', () => setMenu(photosMenu.hidden));
+    photosMenu.addEventListener('click', (e) => {
+      const item = e.target.closest('.filter-chip[data-filter]');
+      if (item) selectChip(item);
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.chip-menu') && !e.target.closest('#photo-menu')) setMenu(false);
+    });
+    window.addEventListener('scroll', () => setMenu(false), { passive: true });
+    window.addEventListener('resize', () => setMenu(false));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !photosMenu.hidden) { setMenu(false); photosBtn.focus(); }
+    });
+  }
 
   filterBar.addEventListener('click', (e) => {
     // .chip-films links out to /films, not a category — it has no data-filter and
@@ -62,7 +104,7 @@ if (filterBar && grid) {
      (linked from the corporate landing page and Work With Me). */
   const hash = (location.hash || '').replace('#', '');
   const deepLinked = hash
-    ? filterBar.querySelector(`.filter-chip[data-filter="${hash}"]`)
+    ? allChips().find((c) => c.dataset.filter === hash)
     : null;
   if (deepLinked) selectChip(deepLinked);
   else applyFilter('all');   // run once on load so events start hidden

@@ -31,6 +31,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Review the blue-tagged photos and decide which go on the site. Added 2026-10-09.
 
 ## Website and bugs
+- [ ] (QA 2026-10-19, after PR #4 merges) `<main>` + skip link on 12 top-level pages and in build_print_pages.py; h1 on links.html; meta description/canonical on 404 and thank-you; add axe-core contrast/focus pass
 - [ ] Links/canonical use `/prints` but Pages serves `/prints/` (308 hop on 221 nav links, sitemap, canonical): switch to `/prints/` (SEO + web-engineer)
 - [ ] Add `<main>` landmarks to about, contact, events, films, filmmaking, gallery, index, privacy, shipping-returns, 404
 - [ ] **Next run, approved by Logan 2026-10-14 (web-engineer):** resize ALL web photos in images/portfolio (not the Dropbox print masters): 1600px WebP ~q75 (aim <350KB) + an 800px version via srcset/sizes on every page and in build_print_pages.py; keep JPG fallbacks; keep higher quality where detail suffers; watermark is already baked in. Preview before live.

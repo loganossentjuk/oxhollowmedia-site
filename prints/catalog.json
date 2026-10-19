@@ -374,32 +374,32 @@
             }
           }
         },
-        "wood": {
-          "16x24": {
-            "variant": "67759588966642",
-            "price": 160
-          },
-          "8x12": {
-            "variant": "67759588901106",
-            "price": 80
-          },
-          "12x18": {
-            "variant": "67759588933874",
-            "price": 125
-          }
-        },
         "acrylic": {
           "8x12": {
-            "variant": "67759591391474",
+            "variant": "67796615168242",
             "price": 75
           },
           "12x18": {
-            "variant": "67759591424242",
+            "variant": "67796615201010",
             "price": 100
           },
           "16x24": {
-            "variant": "67759591457010",
+            "variant": "67796615233778",
             "price": 130
+          }
+        },
+        "wood": {
+          "8x12": {
+            "variant": "67796627882226",
+            "price": 80
+          },
+          "12x18": {
+            "variant": "67796627914994",
+            "price": 125
+          },
+          "16x24": {
+            "variant": "67796627947762",
+            "price": 160
           }
         }
       },
@@ -407,8 +407,8 @@
         "framed": "15439566864626",
         "paper": "15419814805746",
         "framed_canvas": "15419872477426",
-        "wood": "15438985462002",
-        "acrylic": "15438987624690"
+        "acrylic": "15446356623602",
+        "wood": "15446359900402"
       },
       "previews": {
         "framed": {
@@ -420,7 +420,9 @@
           "oak": "/images/mockups/mountain-majesty-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/mountain-majesty-framed-canvas-walnut.jpg",
           "black": "/images/mockups/mountain-majesty-framed-canvas-black.jpg"
-        }
+        },
+        "acrylic": "/images/mockups/mountain-majesty-acrylic.jpg",
+        "wood": "/images/mockups/mountain-majesty-wood.jpg"
       },
       "retired_products": {
         "combined": [
@@ -428,6 +430,12 @@
         ],
         "framed": [
           "15419871887602"
+        ],
+        "wood": [
+          "15438985462002"
+        ],
+        "acrylic": [
+          "15438987624690"
         ]
       }
     },
@@ -1323,39 +1331,39 @@
           }
         },
         "wood": {
+          "12x18": {
+            "variant": "67796616446194",
+            "price": 125
+          },
           "16x24": {
-            "variant": "67759589490930",
+            "variant": "67796616478962",
             "price": 160
           },
           "24x36": {
-            "variant": "67759589523698",
+            "variant": "67796616511730",
             "price": 225
           },
           "8x12": {
-            "variant": "67759589425394",
+            "variant": "67796616413426",
             "price": 80
-          },
-          "12x18": {
-            "variant": "67759589458162",
-            "price": 125
           }
         },
         "acrylic": {
+          "8x12": {
+            "variant": "67796623130866",
+            "price": 75
+          },
           "12x18": {
-            "variant": "67759600599282",
+            "variant": "67796623163634",
             "price": 100
           },
           "16x24": {
-            "variant": "67759600632050",
+            "variant": "67796623196402",
             "price": 130
           },
           "24x36": {
-            "variant": "67759600664818",
+            "variant": "67796623229170",
             "price": 210
-          },
-          "8x12": {
-            "variant": "67759600566514",
-            "price": 75
           }
         }
       },
@@ -1363,8 +1371,8 @@
         "paper": "15419960590578",
         "framed": "15439567618290",
         "framed_canvas": "15422174724338",
-        "wood": "15438985855218",
-        "acrylic": "15438990999794"
+        "wood": "15446357213426",
+        "acrylic": "15446358687986"
       },
       "previews": {
         "framed": {
@@ -1376,7 +1384,9 @@
           "oak": "/images/mockups/tidal-twilight-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/tidal-twilight-framed-canvas-walnut.jpg",
           "black": "/images/mockups/tidal-twilight-framed-canvas-black.jpg"
-        }
+        },
+        "acrylic": "/images/mockups/tidal-twilight-acrylic.jpg",
+        "wood": "/images/mockups/tidal-twilight-wood.jpg"
       },
       "retired_products": {
         "combined": [
@@ -1384,6 +1394,12 @@
         ],
         "framed": [
           "15422165516530"
+        ],
+        "wood": [
+          "15438985855218"
+        ],
+        "acrylic": [
+          "15438990999794"
         ]
       }
     },
@@ -1489,38 +1505,38 @@
           }
         },
         "wood": {
+          "24x36": {
+            "variant": "67796621263090",
+            "price": 225
+          },
           "8x12": {
-            "variant": "67759598764274",
+            "variant": "67796621164786",
             "price": 80
           },
           "12x18": {
-            "variant": "67759598797042",
+            "variant": "67796621197554",
             "price": 125
           },
           "16x24": {
-            "variant": "67759598829810",
+            "variant": "67796621230322",
             "price": 160
-          },
-          "24x36": {
-            "variant": "67759598862578",
-            "price": 225
           }
         },
         "acrylic": {
+          "8x12": {
+            "variant": "67796625359090",
+            "price": 75
+          },
           "12x18": {
-            "variant": "67759597912306",
+            "variant": "67796625391858",
             "price": 100
           },
           "16x24": {
-            "variant": "67759597945074",
+            "variant": "67796625424626",
             "price": 130
           },
-          "8x12": {
-            "variant": "67759597879538",
-            "price": 75
-          },
           "24x36": {
-            "variant": "67759597977842",
+            "variant": "67796625457394",
             "price": 210
           }
         }
@@ -1529,8 +1545,8 @@
         "paper": "15419967570162",
         "framed": "15439637414130",
         "framed_canvas": "15422179115250",
-        "wood": "15438989885682",
-        "acrylic": "15438989689074"
+        "wood": "15446358294770",
+        "acrylic": "15446359179506"
       },
       "previews": {
         "framed": {
@@ -1542,7 +1558,9 @@
           "black": "/images/mockups/sun-on-the-tide-framed-canvas-black.jpg",
           "oak": "/images/mockups/sun-on-the-tide-framed-canvas-oak.jpg",
           "walnut": "/images/mockups/sun-on-the-tide-framed-canvas-walnut.jpg"
-        }
+        },
+        "acrylic": "/images/mockups/sun-on-the-tide-acrylic.jpg",
+        "wood": "/images/mockups/sun-on-the-tide-wood.jpg"
       },
       "retired_products": {
         "combined": [
@@ -1550,6 +1568,12 @@
         ],
         "framed": [
           "15422176690418"
+        ],
+        "wood": [
+          "15438989885682"
+        ],
+        "acrylic": [
+          "15438989689074"
         ]
       }
     },

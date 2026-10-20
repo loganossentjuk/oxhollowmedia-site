@@ -107,6 +107,11 @@ Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollo
 - **Never post, email or message anyone outside the team.**
   - Social posts, newsletters and outreach are drafts in `team/drafts/` for Logan to send.
   - The one exception: the manager emails the weekly report to oxhollowmedia@gmail.com.
+- **Ask Logan before changing any visible copy** (Logan, 2026-10-20):
+  - this covers headlines, taglines, hero and section text, page intros, print titles and stories, button labels and nav names
+  - "Dare to see." stays the home headline unless Logan says otherwise
+  - put the proposed wording in the report's "Needs you" section as current text vs proposed text, and ship it only after Logan approves
+  - typo, broken-link and factual-error fixes, and hidden text (alt text, meta descriptions, structured data, screen-reader headings) can ship without asking; list them in the report
 - **Never push to `main` or merge.** All work goes on the weekly branch and into one pull request that Logan approves.
 - **Never spend money or sign up for services.**
 - **Research is required:**

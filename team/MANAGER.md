@@ -40,6 +40,7 @@ For every specialist report and diff (`git diff`), check:
 - **Rules:** nothing touched prices, Shopify, Gelato, Stripe, DNS, or `prints/*.html` by hand.
 - **Research:** each recommendation cites real sources. Spot-check one or two URLs with WebFetch.
 - **Voice:** first person, quiet, concrete, no hype words.
+- **Copy approval:** no visible copy change (headlines, taglines, page text, titles, button labels) ships without Logan's OK. Move proposed wording to the report's Needs you section as current vs proposed. See team/BUSINESS.md.
 - **It works:**
   1. Run `python3 scripts/build_print_pages.py` if the catalog or generator changed. It must be clean, with no unexpected diff.
   2. Serve locally and smoke-test the changed pages with Playwright: no console errors, links resolve, mobile width OK.

@@ -1798,7 +1798,7 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 
 /* Section rhythm */
 .work-section { padding: var(--work-pad) 0; background: var(--bg); }
-#work-events { background: var(--bg-section); }
+#work-photos { background: var(--bg-section); }
 .work-head { margin-bottom: var(--work-head-gap); }
 .work-head::before {                       /* the thin clay rule over each label */
   content: ""; display: block;

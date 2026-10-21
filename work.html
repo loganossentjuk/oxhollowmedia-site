@@ -32,10 +32,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://player.vimeo.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=65" />
+  <link rel="stylesheet" href="css/styles.css?v=66" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "name": "Selected work: Logan Ossentjuk", "url": "https://oxhollowmedia.com/work", "mainEntity": {"@type": "Person", "@id": "https://oxhollowmedia.com/about#logan", "name": "Logan Ossentjuk", "url": "https://oxhollowmedia.com/about", "jobTitle": "Ocean & Climate Communicator | Science Storyteller | NOAA Coastal Resilience Specialist | Filmmaker | Translating Ocean Intelligence into Living Stories", "description": "Ocean & Climate Communicator | Science Storyteller | NOAA Coastal Resilience Specialist | Filmmaker | Translating Ocean Intelligence into Living Stories", "email": "hello@oxhollowmedia.com", "address": {"@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US"}, "knowsAbout": ["Event photography", "Videography", "Documentary filmmaking", "Video editing", "Science communication", "Conservation storytelling"], "worksFor": {"@id": "https://oxhollowmedia.com/#business"}, "sameAs": ["https://www.linkedin.com/in/logan-ossentjuk/", "https://www.instagram.com/oxhollowmedia/"]}}</script>
 </head>
-<body class="light-nav">
+<body class="page-work">
 
   <!-- ── Navigation ── -->
   <nav id="nav">
@@ -73,69 +73,100 @@
   </div>
   <div class="drawer-overlay" id="overlay"></div>
 
-  <!-- ── Intro ── -->
-  <header class="page-hero">
+  <!-- ── Intro: forest-green topo band ── -->
+  <header id="work-hero">
     <div class="container">
       <p class="section-label">Selected work</p>
-      <h1>Logan Ossentjuk</h1>
-      <p>Ocean &amp; Climate Communicator<br>Science Storyteller<br>NOAA Coastal Resilience Specialist<br>Filmmaker<br>Translating Ocean Intelligence into Living Stories</p>
-      <p>San Francisco Bay Area &middot; since 2017</p>
-      <p><a href="mailto:hello@oxhollowmedia.com" class="inline-link">hello@oxhollowmedia.com</a> &middot; <a href="https://www.linkedin.com/in/logan-ossentjuk/" class="inline-link" target="_blank" rel="noopener">LinkedIn</a></p>
+      <h1 class="work-name">Logan Ossentjuk</h1>
+      <ul class="work-headline">
+        <li>Ocean &amp; Climate Communicator</li>
+        <li>Science Storyteller</li>
+        <li>NOAA Coastal Resilience Specialist</li>
+        <li>Filmmaker</li>
+        <li>Translating Ocean Intelligence into Living Stories</li>
+      </ul>
+      <p class="work-contact">
+        <span>San Francisco Bay Area</span>
+        <a href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a>
+        <a href="https://www.linkedin.com/in/logan-ossentjuk/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </div>
   </header>
 
+  <main id="content">
+
   <!-- ── Films ── -->
-  <section id="films-page">
+  <section class="work-section" id="work-films">
     <div class="container">
-      <p class="section-label">Films</p>
-      <p>Directed, shot, edited and produced.</p>
-      <article class="film-row">
-        <div class="film-frame">
-          <iframe src="https://player.vimeo.com/video/1049186301?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;loop=0&amp;muted=0&amp;controls=1" title="Ocean Defenders" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="film-copy">
-          <h2>Ocean Defenders</h2>
+      <div class="work-head">
+        <p class="section-label">Films</p>
+        <h2>Directed, shot, edited and produced.</h2>
+      </div>
+      <div class="work-films">
+        <article class="work-film">
+          <div class="film-frame">
+            <iframe src="https://player.vimeo.com/video/1049186301?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;loop=0&amp;muted=0&amp;controls=1" title="Ocean Defenders" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>Ocean Defenders</h3>
           <p class="film-meta">2023 &middot; 9:28 &middot; Pro bono, for Ocean Defenders Alliance</p>
           <p>Fishermen and a nonprofit recovering lost gear off Southern California.</p>
-        </div>
-      </article>
-      <article class="film-row">
-        <div class="film-frame">
-          <iframe src="https://player.vimeo.com/video/846297616?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;loop=0&amp;muted=0&amp;controls=1" title="Brushstrokes For Survival" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="film-copy">
-          <h2>Brushstrokes For Survival</h2>
+        </article>
+        <article class="work-film">
+          <div class="film-frame">
+            <iframe src="https://player.vimeo.com/video/846297616?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0&amp;loop=0&amp;muted=0&amp;controls=1" title="Brushstrokes For Survival" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>Brushstrokes For Survival</h3>
           <p class="film-meta">2023 &middot; 14:35</p>
           <p>A father and son painting for endangered steelhead in the Santa Ynez River Valley.</p>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- ── Event work ── -->
-  <section id="highlights">
+  <!-- ── Event work: editorial grid. Each row is a flex line whose items grow
+       by their aspect ratio (--ar), so every photo in a row shares one height
+       and nothing is cropped. Rows stack to one column on phones. ── -->
+  <section class="work-section" id="work-events">
     <div class="container">
-      <p class="section-label">Events</p>
-      <h2>Event photography</h2>
-      <div class="masonry size-l">
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/29-surprised-toast-800.webp 800w, images/portfolio/events/29-surprised-toast.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/29-surprised-toast.jpg" width="1600" height="1066" decoding="async" alt="Two guests reacting with surprise mid-toast at a party" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/12-awards-embrace-800.webp 800w, images/portfolio/events/12-awards-embrace.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/12-awards-embrace.jpg" width="1600" height="900" decoding="async" alt="Two colleagues embracing on stage at a sales kickoff awards ceremony" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/33-sunset-dinner-800.webp 800w, images/portfolio/events/33-sunset-dinner.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/33-sunset-dinner.jpg" width="1600" height="1066" decoding="async" alt="Guests dining at long tables outdoors at sunset under palm trees" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/09-garden-party-toast-800.webp 800w, images/portfolio/events/09-garden-party-toast.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/09-garden-party-toast.jpg" width="1600" height="1066" decoding="async" alt="Friends laughing and clinking glasses at an evening garden party" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/21-keynote-stage-800.webp 800w, images/portfolio/events/21-keynote-stage.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/21-keynote-stage.jpg" width="1600" height="1066" decoding="async" alt="Speaker presenting on stage to a seated audience at a company offsite" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/32-applause-800.webp 800w, images/portfolio/events/32-applause.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/32-applause.jpg" width="1600" height="1066" decoding="async" alt="Audience applauding during a presentation at a company offsite" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/36-awards-laughter-800.webp 800w, images/portfolio/events/36-awards-laughter.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/36-awards-laughter.jpg" width="1600" height="900" decoding="async" alt="Award presenters laughing together in front of a Golden Gate Bridge backdrop" loading="lazy"></picture></a>
-        <a class="masonry-item" href="/events"><picture><source type="image/webp" srcset="images/portfolio/events/23-live-guitarist-800.webp 800w, images/portfolio/events/23-live-guitarist.webp 1600w" sizes="(max-width: 768px) 100vw, 50vw"><img src="images/portfolio/events/23-live-guitarist.jpg" width="1600" height="1066" decoding="async" alt="Guitarist performing in front of a green hedge wall at an outdoor event" loading="lazy"></picture></a>
+      <div class="work-head">
+        <p class="section-label">Events</p>
+        <h2>Event photography</h2>
       </div>
-      <p><a href="/events" class="inline-link">More event work &rarr;</a></p>
+      <div class="work-grid">
+        <div class="work-row work-row--lead">
+          <a class="work-photo" href="/events" style="--ar:1.7778"><picture><source type="image/webp" srcset="images/portfolio/events/36-awards-laughter-800.webp 800w, images/portfolio/events/36-awards-laughter.webp 1600w" sizes="(max-width: 700px) 100vw, 100vw"><img src="images/portfolio/events/36-awards-laughter.jpg" width="1600" height="900" decoding="async" alt="Award presenters laughing together in front of a Golden Gate Bridge backdrop" loading="lazy"></picture></a>
+        </div>
+        <div class="work-row">
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/29-surprised-toast-800.webp 800w, images/portfolio/events/29-surprised-toast.webp 1600w" sizes="(max-width: 700px) 100vw, 41vw"><img src="images/portfolio/events/29-surprised-toast.jpg" width="1600" height="1066" decoding="async" alt="Two guests reacting with surprise mid-toast at a party" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:0.6645"><picture><source type="image/webp" srcset="images/portfolio/events/13-ferry-building-tower-800.webp 800w, images/portfolio/events/13-ferry-building-tower.webp 1329w" sizes="(max-width: 700px) 100vw, 18vw"><img src="images/portfolio/events/13-ferry-building-tower.jpg" width="1329" height="2000" decoding="async" alt="San Francisco Ferry Building clock tower against a clear blue sky" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/09-garden-party-toast-800.webp 800w, images/portfolio/events/09-garden-party-toast.webp 1600w" sizes="(max-width: 700px) 100vw, 41vw"><img src="images/portfolio/events/09-garden-party-toast.jpg" width="1600" height="1066" decoding="async" alt="Friends laughing and clinking glasses at an evening garden party" loading="lazy"></picture></a>
+        </div>
+        <div class="work-row">
+          <a class="work-photo" href="/events" style="--ar:1.7778"><picture><source type="image/webp" srcset="images/portfolio/events/24-holiday-friends-800.webp 800w, images/portfolio/events/24-holiday-friends.webp 1600w" sizes="(max-width: 700px) 100vw, 54vw"><img src="images/portfolio/events/24-holiday-friends.jpg" width="1600" height="900" decoding="async" alt="Three colleagues smiling together at a holiday party" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/18-garden-twirl-800.webp 800w, images/portfolio/events/18-garden-twirl.webp 1600w" sizes="(max-width: 700px) 100vw, 46vw"><img src="images/portfolio/events/18-garden-twirl.jpg" width="1600" height="1066" decoding="async" alt="Couple twirling on a garden path at an evening celebration" loading="lazy"></picture></a>
+        </div>
+        <div class="work-row">
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/33-sunset-dinner-800.webp 800w, images/portfolio/events/33-sunset-dinner.webp 1600w" sizes="(max-width: 700px) 100vw, 41vw"><img src="images/portfolio/events/33-sunset-dinner.jpg" width="1600" height="1066" decoding="async" alt="Guests dining at long tables outdoors at sunset under palm trees" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:0.6665"><picture><source type="image/webp" srcset="images/portfolio/events/27-table-detail-800.webp 800w, images/portfolio/events/27-table-detail.webp 1333w" sizes="(max-width: 700px) 100vw, 18vw"><img src="images/portfolio/events/27-table-detail.jpg" width="1333" height="2000" decoding="async" alt="Vintage camper van figurine and teal candle holders on a wooden event table" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/07-come-play-neon-800.webp 800w, images/portfolio/events/07-come-play-neon.webp 1600w" sizes="(max-width: 700px) 100vw, 41vw"><img src="images/portfolio/events/07-come-play-neon.jpg" width="1600" height="1066" decoding="async" alt="Red neon sign reading Come play with me glowing on a dark wall at a ping pong venue" loading="lazy"></picture></a>
+        </div>
+        <div class="work-row">
+          <a class="work-photo" href="/events" style="--ar:1.7778"><picture><source type="image/webp" srcset="images/portfolio/events/12-awards-embrace-800.webp 800w, images/portfolio/events/12-awards-embrace.webp 1600w" sizes="(max-width: 700px) 100vw, 45vw"><img src="images/portfolio/events/12-awards-embrace.jpg" width="1600" height="900" decoding="async" alt="Two colleagues embracing on stage at a sales kickoff awards ceremony" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:0.6665"><picture><source type="image/webp" srcset="images/portfolio/events/19-sushi-platter-800.webp 800w, images/portfolio/events/19-sushi-platter.webp 1333w" sizes="(max-width: 700px) 100vw, 17vw"><img src="images/portfolio/events/19-sushi-platter.jpg" width="1333" height="2000" decoding="async" alt="Rows of nigiri sushi on a long wooden serving board" loading="lazy"></picture></a>
+          <a class="work-photo" href="/events" style="--ar:1.5009"><picture><source type="image/webp" srcset="images/portfolio/events/31-ferry-building-arcade-800.webp 800w, images/portfolio/events/31-ferry-building-arcade.webp 1600w" sizes="(max-width: 700px) 100vw, 38vw"><img src="images/portfolio/events/31-ferry-building-arcade.jpg" width="1600" height="1066" decoding="async" alt="Colleagues gathered at sunlit picnic tables beneath the Ferry Building arcade in San Francisco" loading="lazy"></picture></a>
+        </div>
+      </div>
+      <p class="work-more"><a href="/events" class="inline-link">More event work &rarr;</a></p>
     </div>
   </section>
 
   <!-- ── Nature and fine art ── -->
-  <section id="work-prints">
+  <section class="work-section" id="work-prints">
     <div class="container">
-      <p class="section-label">Prints</p>
-      <h2>Nature &amp; fine art</h2>
+      <div class="work-head">
+        <p class="section-label">Prints</p>
+        <h2>Nature &amp; fine art</h2>
+      </div>
       <div class="print-grid salon-wall">
           <div class="print-card" style="--ar:0.8000">
             <a class="print-mat" href="/prints/obsidian-palace">
@@ -177,13 +208,28 @@
     </div>
   </section>
 
-  <!-- ── Clients ── -->
-  <section id="clients">
-    <div class="container">
-      <p class="section-label">Clients</p>
-      <p>Semgrep &middot; Bucket Brigade &middot; Ocean Defenders Alliance &middot; Conservation Made Simple &middot; Illuminate Conservation</p>
+  <!-- ── Closing band: clients + contact ── -->
+  <section class="work-section" id="work-close">
+    <div class="container work-close-grid">
+      <div>
+        <p class="section-label">Clients</p>
+        <ul class="work-clients">
+          <li>Semgrep</li>
+          <li>Bucket Brigade</li>
+          <li>Ocean Defenders Alliance</li>
+          <li>Conservation Made Simple</li>
+          <li>Illuminate Conservation</li>
+        </ul>
+      </div>
+      <div>
+        <p class="section-label">Contact</p>
+        <p class="work-email"><a href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a></p>
+        <p class="work-contact"><a href="https://www.linkedin.com/in/logan-ossentjuk/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ── Footer ── -->
   <footer>

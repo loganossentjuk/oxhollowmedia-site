@@ -11,7 +11,7 @@ Ox Hollow Media is Logan Ossentjuk's one-person studio in the San Francisco Bay 
 3. **Documentary and conservation films**: `/films` and `/filmmaking`. These build the brand and bring in commissions.
 
 The name: Logan means "little hollow" and Ossentjuk means "oxen yoke". Tagline: "Dare to see."
-Instagram: @oxhollowmedia. Email: oxhollowmedia@gmail.com. Site: https://oxhollowmedia.com
+Instagram: @oxhollowmedia. Public email: hello@oxhollowmedia.com (forwards to the oxhollowmedia@gmail.com inbox). Site: https://oxhollowmedia.com
 
 ## Facts from Logan (2026-10-09). Use these and don't re-ask.
 **Event services**

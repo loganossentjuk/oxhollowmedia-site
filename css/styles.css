@@ -1736,3 +1736,14 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 }
 .detail-frame.salon-look.is-mockup { background: #fff; border: 1px solid var(--border); padding: 1.1rem; }
 .detail-frame.salon-look.is-mockup picture { padding: 0; border: 0; background: none; box-shadow: none; }
+
+/* ── Two doors (home): hire me / collect a print ── */
+#doors { padding: 5rem 0; background: var(--bg); }
+#doors h2 { margin-bottom: 2.5rem; }
+.offer-grid.doors .offer-card p { margin-bottom: 1.5rem; }
+.door-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; }
+@media (min-width: 961px) {
+  .offer-grid.doors { grid-template-columns: repeat(2, 1fr); }
+  .offer-grid.doors .offer-card { padding-right: 3rem; }
+  .offer-grid.doors .offer-card + .offer-card { padding-left: 3rem; }
+}

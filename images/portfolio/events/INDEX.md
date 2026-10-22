@@ -53,3 +53,4 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E42 | mural lounge chat | Candids | EPD Offsite 2026 |
 | E43 | garden conversation | Candids | 9/19 J&J Party |
 | E44 | booth from above | Candids | Sales Kickoff 2026 · Album 1 |
+| E45 | stage smile | Candids | Semgrep Group Photo Selects (Google Photos) |

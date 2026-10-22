@@ -70,6 +70,21 @@ Instagram: @oxhollowmedia. Public email: hello@oxhollowmedia.com (forwards to th
 - **Highland Hollow:** Scotland.
 - **Shark Shadow:** Galápagos, 2019.
 
+## Print margins (2026-10-22)
+"Keep" means price minus Gelato printing, minus US shipping (free to customers, so Logan pays it), minus the Shopify card fee (2.9% + 30¢). The Shopify Basic plan is about $39 a month on top.
+
+| Type | 8x12 | 12x18 | 16x24 | 24x36 | Margin |
+|---|---|---|---|---|---|
+| Framed print ($115/155/205/315) | $67 | $89 | $118 | $182 | ~58% |
+| Framed canvas ($125/150/195/330) | $73 | $85 | $111 | $188 | ~57% |
+| Wood ($80/125/160/225) | $48 | $71 | $91 | $115 | 51–61% |
+| Acrylic ($85/115/145/225, raised 2026-10-22) | $47 | $62 | $85 | $126 | 55–59% |
+| Paper, no frame ($35/50/55/70) | $19 | $32 | $34 | $41 | 55–64% |
+
+- **Gelato costs:** Gelato's print cost per variant is in Shopify (`inventoryItem.unitCost`). Shipping comes from Gelato's US quote; wood and acrylic shipping are estimates.
+- **Strategy:** lead with framed print and framed canvas, especially the 8x12 and 12x18 gift sizes. They earn 3–4x a paper sale. Paper is the "No frame" option and never the headline.
+- **Discount codes:** at-cost codes like OHM-SAMPLE-* lose money (the card fee plus nothing back). Flag any code that brings a price under Gelato cost.
+
 ## How the site works
 - **Hosting:** a static site (HTML/CSS/JS) on Cloudflare Pages. A push to `main` deploys to production. Any other branch gets a preview URL. There's no build step for most pages.
 - **Print pages:**

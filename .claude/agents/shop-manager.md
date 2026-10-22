@@ -28,7 +28,7 @@ Start by reading `team/BUSINESS.md`, `GELATO-FRAMED.md`, `team/BACKLOG.md` and t
 - If the Shopify connector isn't available, say so. Do the catalog checks and research anyway.
 
 ## Report back to the manager
-- **Sales:** sales snapshot (numbers only; the manager keeps them out of committed files).
+- **Sales:** sales snapshot (numbers only; the manager keeps them out of committed files). Report revenue and estimated profit by print type, using the margin table in `team/BUSINESS.md` and each variant's `inventoryItem.unitCost`. Flag any order or discount code that sold below Gelato cost.
 - **Listing health:** listing-health findings, each with product + issue + recommended fix + urgency.
 - **Pricing:** price-consistency result.
 - **Research:** market-research takeaways with sources.

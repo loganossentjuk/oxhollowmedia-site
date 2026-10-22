@@ -62,6 +62,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
     - realistic costs and results for Google Ads (local "event photographer San Francisco" searches), Meta/Instagram ads (Reels boosts, retargeting site visitors), LinkedIn (tech event planners), and Pinterest (wall art)
     - free channels: Google Business Profile, event-venue preferred-vendor lists, planner and agency partnerships, tech meetup and community sponsorships, referral asks to past clients, directory listings
     - print-shop tactics: gift guides, interior designers and offices, holiday timing using Gelato's cut-offs, email list capture
+    - **use the margin table in `team/BUSINESS.md`:** promote framed print and framed canvas first, and size any ad budget against profit per sale (about $67–$188 framed) rather than price
   - **For each plan:**
     - who to target
     - 3–5 channels ranked by expected return for a small budget

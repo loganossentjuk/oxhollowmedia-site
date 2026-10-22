@@ -1614,7 +1614,7 @@ html.lb-open { overflow: hidden; }
    The card-front green, a warm glow off the top right, and faint contour
    lines (images/topo.svg) that drift very slowly. Chips and the size toggle
    flip to cream-on-green. The nav starts light here, as on the home page. */
-#gallery-hero {
+#gallery-hero, #work-hero {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1625,7 +1625,7 @@ html.lb-open { overflow: hidden; }
     var(--bg-dark);
   color: var(--paper);
 }
-#gallery-hero::before {
+#gallery-hero::before, #work-hero::before {
   content: "";
   position: absolute; inset: -40px;
   z-index: -1;
@@ -1634,7 +1634,7 @@ html.lb-open { overflow: hidden; }
   animation: topo-drift 40s ease-in-out infinite alternate;
 }
 /* a clay hairline where the band meets the cream gallery */
-#gallery-hero::after {
+#gallery-hero::after, #work-hero::after {
   content: "";
   position: absolute; left: 0; right: 0; bottom: 0;
   height: 3px;
@@ -1646,7 +1646,7 @@ html.lb-open { overflow: hidden; }
   to   { transform: translate3d(14px, -6px, 0) scale(1.05); }
 }
 @media (prefers-reduced-motion: reduce) {
-  #gallery-hero::before { animation: none; }
+  #gallery-hero::before, #work-hero::before { animation: none; }
 }
 #gallery-hero .section-label { color: var(--clay); }
 .gallery-title {
@@ -1736,3 +1736,151 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 }
 .detail-frame.salon-look.is-mockup { background: #fff; border: 1px solid var(--border); padding: 1.1rem; }
 .detail-frame.salon-look.is-mockup picture { padding: 0; border: 0; background: none; box-shadow: none; }
+
+/* ═════════════════════════════════════════════════════════════════════════
+   /work portfolio (work.html, body.page-work)
+   One rhythm for every section: the same vertical padding (--work-pad), the
+   same label → heading → content gaps, and the shared .container gutters, so
+   every left edge lines up. The hero borrows the gallery's green topo band
+   (#work-hero is added to those selectors above). Labels on green use the
+   light clay (#E2B08E, 5.8:1 on #294132) to clear WCAG AA at small sizes.
+   ═════════════════════════════════════════════════════════════════════════ */
+.page-work {
+  --work-pad: clamp(4.5rem, 8vw, 7rem);
+  --work-head-gap: clamp(2rem, 3.5vw, 3rem);
+  --work-gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  --clay-light: #E2B08E;
+}
+
+/* Hero band */
+#work-hero { padding: calc(var(--nav-h) + clamp(3.5rem, 7vw, 6rem)) 0 clamp(3rem, 6vw, 4.5rem); }
+#work-hero .section-label { color: var(--clay-light); margin-bottom: 1rem; }
+.work-name {
+  font-size: clamp(2.6rem, 8.5vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  margin: 0 0 1.5rem;
+  animation: gallery-rise 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+.work-headline {
+  display: flex; flex-wrap: wrap;
+  max-width: 66rem;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.45;
+  color: rgba(244,238,226,0.9);
+  animation: gallery-rise 0.9s 0.12s cubic-bezier(.2,.7,.2,1) both;
+}
+/* the dot trails each title, so a wrapped line never starts with one */
+.work-headline li:nth-last-child(n+3)::after { content: "·" / ""; margin: 0 0.6em; color: var(--clay-light); }
+.work-headline li:last-child { flex-basis: 100%; font-style: italic; color: rgba(244,238,226,0.75); margin-top: 0.35rem; }
+@media (max-width: 760px) {                 /* phones: one title per line, no dots */
+  .work-headline { display: block; }
+  .work-headline li:nth-last-child(n+3)::after { content: none; }
+}
+.work-contact {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem;
+  margin: 2rem 0 0; max-width: none;
+  font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(244,238,226,0.72);
+}
+.work-contact a {
+  color: var(--paper);
+  border-bottom: 1px solid rgba(226,176,142,0.6);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.work-contact a:hover, .work-contact a:focus-visible { color: var(--clay-light); border-color: var(--clay-light); }
+@media (prefers-reduced-motion: reduce) {
+  .work-name, .work-headline { animation: none; }
+}
+
+/* Section rhythm */
+.work-section { padding: var(--work-pad) 0; background: var(--bg); }
+#work-photos { background: var(--bg-section); }
+.work-head { margin-bottom: var(--work-head-gap); }
+.work-head::before {                       /* the thin clay rule over each label */
+  content: ""; display: block;
+  width: 3rem; height: 1px;
+  background: var(--clay);
+  margin-bottom: 1.25rem;
+}
+.work-head .section-label { margin-bottom: 1rem; }
+.work-head h2 { margin: 0; max-width: 24ch; }
+
+/* Films: two-up with captions */
+.work-films {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem clamp(1.5rem, 3vw, 2.5rem);
+}
+.work-film h3 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  letter-spacing: 0; line-height: 1.15;
+  margin: 1.25rem 0 0.4rem;
+}
+.work-film .film-meta { margin-bottom: 0.6rem; }
+.work-film p:last-child { font-size: 0.95rem; margin: 0; }
+@media (max-width: 760px) { .work-films { grid-template-columns: minmax(0, 1fr); } }
+
+/* Events: editorial grid. Items grow by aspect ratio so a row shares one
+   height and nothing is cropped (the box matches the photo's own ratio). */
+.work-grid { display: flex; flex-direction: column; gap: var(--work-gap); }
+.work-row { display: flex; gap: var(--work-gap); }
+.work-photo {
+  --ar: 1.5;
+  flex: var(--ar) 1 0;
+  min-width: 0;
+  aspect-ratio: var(--ar);
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #D9D1BB;
+  box-shadow: 0 1px 2px rgba(35,33,32,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.work-photo picture, .work-photo img { display: block; width: 100%; height: 100%; }
+.work-photo img { object-fit: cover; transition: transform 0.6s ease; }
+.work-photo:hover, .work-photo:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px -22px rgba(35,33,32,0.55);
+}
+.work-photo:hover img { transform: scale(1.02); }
+.work-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.work-more { margin: 2rem 0 0; }
+@media (max-width: 700px) {
+  .work-row { flex-direction: column; }
+  .work-photo { flex: none; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-photo, .work-photo img { transition: none; }
+  .work-photo:hover, .work-photo:hover img { transform: none; }
+}
+
+/* Closing band: clients + contact */
+#work-close { background: var(--bg-dark); color: var(--paper); }
+#work-close .section-label { color: var(--clay-light); }
+.work-close-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+}
+.work-clients {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  line-height: 1.45;
+  color: var(--paper);
+}
+.work-email { margin: 0; max-width: none; }
+.work-email a {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  color: var(--paper);
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid rgba(226,176,142,0.6);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.work-email a:hover, .work-email a:focus-visible { color: var(--clay-light); border-color: var(--clay-light); }
+#work-close .work-contact { margin-top: 1.25rem; }
+@media (max-width: 760px) { .work-close-grid { grid-template-columns: minmax(0, 1fr); } }

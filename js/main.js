@@ -115,7 +115,7 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.action.includes('YOUR_FORM_ID')) {
-      status.textContent = 'Form not configured yet. Email oxhollowmedia@gmail.com.';
+      status.textContent = 'Form not configured yet. Email hello@oxhollowmedia.com.';
       return;
     }
     status.textContent = 'Sending…';

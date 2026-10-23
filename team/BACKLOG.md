@@ -93,3 +93,10 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Hidden UTM/source field on /contact form; Pinterest pins; email capture; holiday banner (blocked on Gelato 2026 dates)
 - [ ] Axe contrast audit and skip link; BreadcrumbList on print pages
 - [ ] VideoObject for Brushstrokes For Survival and Fluid Frontier once Vimeo dates are confirmed
+
+## New ideas (2026-10-23, ranked)
+- [ ] Generator: only bump sitemap lastmod when a page changes
+- [ ] Fix "Galápagos 2021" to 2019 in `team/drafts/instagram-2026-10-12.md`
+- [ ] Shop: research Gelato 2026 holiday cut-off dates for the banner
+- [ ] Verify PyBay, SF Tech Week and Cloudflare Connect dates, and the Exploratorium and Palace of Fine Arts rental pages
+- [ ] Before the Wind listings still use `autumn-flats-*` handles (catalog)

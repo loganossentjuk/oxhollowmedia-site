@@ -26,6 +26,10 @@ Goal: grow revenue evenly across **events, prints and films**, with $0 ad spend 
 - Only public business contacts, cited. Never guess emails. Contact-form-only targets: draft the text with the form link.
 - Keep a running log: `team/outreach-log.md` (date, org, channel, status: drafted / sent / replied / booked / no reply). Don't re-contact anyone within 60 days.
 
+## Etsy (added 2026-10-23)
+- Shop: https://oxhollowmediashop.etsy.com. Role: **discovery channel**; the site stays home base. Etsy prices ≈ site +10–15% (ending in 5 or 9). Fulfilled by Gelato (production partner disclosed). Launch kit: team/drafts/etsy-launch.md + etsy-listings.csv.
+- Weekly report adds Etsy views, favourites, orders (from Logan's Etsy Stats page until there's a feed).
+
 ## Revenue levers in order
 1. **Retainers and repeat corporate clients** (one retainer ≈ $30k/yr).
 2. **Event bookings from outreach and referrals:** referral asks to the five named clients, then planners and venues.

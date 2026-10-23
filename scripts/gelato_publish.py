@@ -14,6 +14,10 @@ get the material picker.
     python3 scripts/gelato_publish.py --materials framed --bordered    # framed prints with a white border
         # remake the framed listings from gelato-ready-bordered/<slug>-framed-<A4|3x2|sq>.jpg
         # (scripts/make_bordered_files.py); old Shopify product IDs go to "retired_products"
+    python3 scripts/gelato_publish.py --store etsy --only international-orange
+        # Etsy drafts (framed + paper) in the Etsy store (gelato.etsy_store_id), with the
+        # title, tags and description from team/drafts/etsy-listings.csv; results go to
+        # "etsy"/"etsy_products" in the catalog, never "shopify". Framed uses the bordered files.
     python3 scripts/gelato_publish.py --hires --replace --only amber-glass
         # remake a print's listings from gelato-ready/HighResolution/<slug>.tif
         # (e.g. so a bigger file can offer 24x36); the old Shopify product IDs
@@ -95,12 +99,22 @@ REPLACE = "--replace" in sys.argv      # remake materials that already have list
 BORDERED = "--bordered" in sys.argv    # framed: per-size files with the white border built in
 BORDER_DIR = READY.parent / "gelato-ready-bordered"
 ONLY = arg("--only")
-MATERIALS = arg("--materials") or DEFAULT
+ETSY = (arg("--store") or ["shopify"])[0] == "etsy"
+BORDERED = BORDERED or ETSY            # Etsy framed listings match the site's bordered framed prints
+CH = "etsy" if ETSY else "shopify"     # catalog keys this run writes: CH, CH_products, retired
+MATERIALS = arg("--materials") or (["framed", "paper"] if ETSY else DEFAULT)
 bad = [m for m in MATERIALS if m not in ALL_MATERIALS]
 if bad:
     sys.exit(f"unknown material(s): {', '.join(bad)} (choose from {', '.join(ALL_MATERIALS)})")
 cat = json.loads(CAT_PATH.read_text())
 cfg = cat["gelato"]
+STORE_ID = cfg["etsy_store_id"] if ETSY else cfg["store_id"]
+PRICES = cfg["etsy_prices"] if ETSY else cfg["prices"]
+LISTINGS = {}
+if ETSY:   # SEO title, tags and description per print, from the Etsy launch kit
+    import csv
+    with open(ROOT / "team/drafts/etsy-listings.csv", newline="") as fh:
+        LISTINGS = {r["slug"]: r for r in csv.DictReader(fh)}
 
 
 def save():
@@ -111,7 +125,7 @@ def save():
     mine = {p["slug"]: p for p in cat["prints"]}
     for p in disk["prints"]:
         q = mine.get(p["slug"])
-        for k in ("shopify", "shopify_products", "retired_products"):
+        for k in (CH, CH + "_products", "retired_products"):
             if q and q.get(k):
                 p.setdefault(k, {}).update(q[k])
     g = disk.setdefault("gelato", {})
@@ -146,8 +160,10 @@ def todo():
             f = next((g for g in sorted(BORDER_DIR.glob(f"{p['slug']}-framed-*.jpg"))), f)
         if ONLY and p["slug"] not in ONLY:
             continue
-        if not f.exists() or (not REPLACE and not BORDERED and all(m in (p.get("shopify") or {}) for m in MATERIALS)):
+        if not f.exists() or (not REPLACE and (ETSY or not BORDERED) and all(m in (p.get(CH) or {}) for m in MATERIALS)):
             continue
+        if ETSY and p["slug"] not in LISTINGS:
+            continue                       # no Etsy copy for this print yet
         o = orientation(f)
         if not cfg["templates"].get(o):
             print(f"  skip {p['slug']}: {o} (no {o} templates yet)")
@@ -312,7 +328,7 @@ if missing:
     sys.exit("Gelato templates not found: " + ", ".join(missing))
 unpriced = sorted({f"{m} {k}" for p, _, o in jobs for m in MATERIALS for k in sizes_for(o, m)
                    if max(map(int, k.split("x"))) * PPI <= p["source_px"]
-                   and k not in cfg["prices"].get(m, {})})
+                   and k not in PRICES.get(m, {})})
 if unpriced:
     sys.exit("No price in gelato.prices for: " + ", ".join(unpriced) + " (run with --quote)")
 
@@ -398,6 +414,8 @@ def file_url(p, mat, v, url):
 
 
 def description(p, mat):
+    if ETSY:   # plain text: Etsy shows descriptions as typed
+        return LISTINGS[p["slug"]]["description"] + "\n\nPhotographed by Logan Ossentjuk of Ox Hollow Media."
     lede = p.get("lede") or p["alt"].rstrip(".") + "."
     return (f"<p>{html.escape(lede)} Photographed by Logan Ossentjuk of Ox Hollow Media.</p>"
             f"<p>{BLURB[mat]} "
@@ -409,7 +427,7 @@ def description(p, mat):
 
 # Created-but-not-yet-recorded products, so a stopped run can pick them up
 # (and never create them twice): [{"slug", "mat", "id"}].
-PENDING = ROOT / ".gelato-pending.json"
+PENDING = ROOT / (".gelato-pending-etsy.json" if ETSY else ".gelato-pending.json")
 pending = json.loads(PENDING.read_text()) if PENDING.exists() else []
 
 
@@ -418,7 +436,7 @@ def save_pending():
 
 
 def record(p, mat, prod):
-    price = cfg["prices"][mat]
+    price = PRICES[mat]
     if mat in FRAMED:
         # {"12x18": {"price": 120, "frames": {"black": variant, "white": ..., "oak": ...}}}
         entry = {}
@@ -426,15 +444,15 @@ def record(p, mat, prod):
             k, fk = size_key(v["title"]), frame_key(v)
             if v.get("externalId") and k and fk:
                 entry.setdefault(k, {"price": price[k], "frames": {}})["frames"][fk] = v["externalId"]
-        p.setdefault("shopify", {})[mat] = entry
+        p.setdefault(CH, {})[mat] = entry
     else:
-        p.setdefault("shopify", {})[mat] = {
+        p.setdefault(CH, {})[mat] = {
             size_key(v["title"]): {"variant": v["externalId"], "price": price[size_key(v["title"])]}
             for v in prod["variants"] if v.get("externalId") and size_key(v["title"])}
-    old = p.get("shopify_products", {}).get(mat)
+    old = p.get(CH + "_products", {}).get(mat)
     if old and old != prod["externalId"]:
-        p.setdefault("retired_products", {}).setdefault(mat, []).append(old)
-    p.setdefault("shopify_products", {})[mat] = prod["externalId"]
+        p.setdefault("retired_products", {}).setdefault(("etsy_" if ETSY else "") + mat, []).append(old)
+    p.setdefault(CH + "_products", {})[mat] = prod["externalId"]
 
 
 failed = []
@@ -454,19 +472,25 @@ try:
                 allowed = [k for k in allowed if k in ((p.get("shopify") or {}).get("framed") or {})]
             variants = [v for v in t["variants"] if size_key(v["title"]) in allowed
                         and (mat not in FRAMED or frame_key(v) in frames_for(mat))]
-            have = set((p.get("shopify") or {}).get(mat, {}))
-            if mat in (p.get("shopify") or {}) and not (BORDERED and mat == "framed") \
+            have = set((p.get(CH) or {}).get(mat, {}))
+            if mat in (p.get(CH) or {}) and (ETSY or not (BORDERED and mat == "framed")) \
                     and (not REPLACE or {size_key(v["title"]) for v in variants} <= have):
                 continue                                 # listed already, with every size the file allows
+            title = f"{p['title']} - {LABEL[mat]}"
+            if ETSY:   # the kit's titles say "Framed"; the paper listing says "Unframed" instead
+                title = LISTINGS[p["slug"]]["title"]
+                if mat == "paper":
+                    title = title.replace("Framed Fine Art", "Unframed Fine Art").replace("Framed ", "")
             body = {
                 "templateId": t["id"],
-                "title": f"{p['title']} - {LABEL[mat]}",
+                "title": title[:140],
                 "description": description(p, mat),
                 # Framed/paper listings start hidden: Gelato would publish them at its own
                 # default (cost-plus) price. They're priced, then published, afterwards.
                 "isVisibleInTheOnlineStore": mat not in HIDDEN_UNTIL_PRICED,
                 "salesChannels": ["web"],
-                "tags": ["print", mat, p["category"]],
+                "tags": ([t.strip()[:20] for t in LISTINGS[p["slug"]]["tags"].split(",")][:13] if ETSY
+                         else ["print", mat, p["category"]]),
                 "vendor": "Ox Hollow Media",
                 "productType": f"{LABEL[mat]} Print",
                 "variants": [{"templateVariantId": v["id"],
@@ -474,11 +498,11 @@ try:
                                                     for ph in v["imagePlaceholders"]]} for v in variants],
             }
             try:
-                prod = gelato("POST", f"/stores/{cfg['store_id']}/products:create-from-template", body)
+                prod = gelato("POST", f"/stores/{STORE_ID}/products:create-from-template", body)
             except RuntimeError as e:
                 if "connection failed" not in str(e):
                     raise
-                failed.append(f"{p['slug']} {mat} (create call dropped; check Shopify for a listing before re-running)")
+                failed.append(f"{p['slug']} {mat} (create call dropped; check {'Etsy drafts' if ETSY else 'Shopify'} for a listing before re-running)")
                 print(f"  ! {p['slug']} {mat}: {e}")
                 continue
             pending.append({"slug": p["slug"], "mat": mat, "id": prod["id"]})
@@ -496,7 +520,7 @@ try:
         time.sleep(30)
         for x in list(pending):
             try:
-                prod = gelato("GET", f"/stores/{cfg['store_id']}/products/{x['id']}")
+                prod = gelato("GET", f"/stores/{STORE_ID}/products/{x['id']}")
             except (RuntimeError, OSError):              # transient network/API hiccup: keep waiting
                 continue
             linked = (prod.get("externalId") and prod.get("variants")

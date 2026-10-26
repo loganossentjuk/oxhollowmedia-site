@@ -47,7 +47,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Client logos for the About page (Semgrep, Bucket Brigade, Ocean Defenders Alliance, Conservation Made Simple, Illuminate Conservation): get files + OK to show them
 - [ ] **(Logan)** Client quote for the About/events pages (in progress)
 - [ ] **(Logan)** Send the other abstracts (like Obsidian Palace) for the series (repeat in every report's Needs-you list until ticked)
-- [ ] **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
+- [x] (done, confirmed 2026-10-26) **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
 - [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
 
 ## Shop
@@ -93,3 +93,10 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Hidden UTM/source field on /contact form; Pinterest pins; email capture; holiday banner (blocked on Gelato 2026 dates)
 - [ ] Axe contrast audit and skip link; BreadcrumbList on print pages
 - [ ] VideoObject for Brushstrokes For Survival and Fluid Frontier once Vimeo dates are confirmed
+
+## New ideas (2026-10-26, ranked)
+- [ ] Generator: keep sitemap lastmod stable for unchanged pages
+- [ ] Confirm Exploratorium and Cal Academy rentals pages (needs a run with working fetch)
+- [ ] Check MongoDB.local SF 2027 date once announced
+- [ ] Draft LinkedIn post "how I cover a keynote" (calendar, Nov 9)
+- [ ] Review automatic app discount in Shopify (Logan)

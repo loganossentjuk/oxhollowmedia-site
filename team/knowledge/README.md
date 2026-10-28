@@ -6,6 +6,10 @@ These files are research for the team, not drafts for posting. Read them before 
 |---|---|
 | [instagram-growth.md](instagram-growth.md) | Which signals Instagram rewards in 2026, formats for photographers, cadence, captions and hashtags, collabs, a 10-minute engagement routine, and a teardown of 10 photography accounts |
 | [pinterest-tiktok.md](pinterest-tiktok.md) | Whether Ox Hollow should be on Pinterest and TikTok, the boards, pins per week, Rich Pins and Etsy, TikTok reposting and TikTok Shop, and a minimal weekly workflow through Metricool |
+| [outreach-playbook.md](outreach-playbook.md) | **Rules for every cold email** (who, structure, follow-ups, timing, mix) |
+| [reels-playbook.md](reels-playbook.md) | **Weekly automated Reels**: formats, what ships with each, the loop |
+| [research-tech-events-and-reels.md](research-tech-events-and-reels.md) | Cited research behind both playbooks (2026-10-28) |
+| [etsy-growth.md](etsy-growth.md) | Etsy search, shop audit, ads and offers, checklist |
 | [ad-budget.md](ad-budget.md) | Whether paid ads are worth it now: Meta, Pinterest, TikTok and Etsy costs compared with print margins, and a staged plan with kill rules |
 
 **Related drafts:** `team/drafts/instagram-plan.md` (cadence, aesthetic, times), `team/drafts/etsy-launch.md` (Etsy prices and fees), `team/drafts/photo-competitions.md` (free credibility).

@@ -30,6 +30,7 @@ Instagram: @oxhollowmedia. Public email: hello@oxhollowmedia.com (forwards to th
 - **Price tier:** "$$". Logan wants to be affordable.
 - **Phone number:** not in structured data.
 - **Location:** central San Francisco is fine for the business address and geo.
+- **Postal address for cold-email footers (CAN-SPAM, Logan 2026-10-28):** 2139 Turk Blvd, San Francisco, CA 94115. Use it in outreach signatures only; don't add it to the website without asking.
 
 **Films**
 - Ocean Defenders was published 2023-06-03.

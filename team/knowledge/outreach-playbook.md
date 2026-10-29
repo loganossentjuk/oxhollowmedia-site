@@ -20,7 +20,13 @@ The batch went to info@ inboxes and opened with "I'm Logan, an event photographe
 3. **Line 2:** one line of proof. Example: "I shot Semgrep's offsite and conference" plus **one** link to the single most relevant gallery or recap, not the whole site.
 4. **Line 3:** the outcome, not a feature list. Example: "a short recap reel cut for LinkedIn within 48 hours, photos the same week". Photo and video come in one booking.
 5. **Close:** a yes/no interest question. Examples: "Worth a look for the January offsite?" or "Is that useful for you?" Never ask for a call, a rate-sheet request or a referral in the first email.
-6. **Signature:** Logan Ossentjuk · Ox Hollow Media · oxhollowmedia.com · San Francisco, plus a postal address line and "Reply 'no thanks' and I won't follow up." Both are CAN-SPAM requirements.
+6. **Signature:**
+   ```
+   Logan Ossentjuk · Ox Hollow Media
+   oxhollowmedia.com · 2139 Turk Blvd, San Francisco, CA 94115
+   Reply "no thanks" and I won't follow up.
+   ```
+   The address and the opt-out line are both CAN-SPAM requirements.
 
 **Mission line:**
 - **Tech:** at most one short clause, e.g. "I'm also an ocean and climate storyteller, so I care about getting people's stories right".

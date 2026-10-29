@@ -28,7 +28,13 @@ The batch went to info@ inboxes and opened with "I'm Logan, an event photographe
    ```
    The address and the opt-out line are both CAN-SPAM requirements.
 
-**Mission line:**
+**Approved lines (Logan, 2026-10-28). Use these exact words, one per email:**
+- **Tech** (one line, after the proof): "Illuminating the unseen: the moments and people that show who your company really is."
+- **Nonprofits, science and climate groups** (opening, as the mission): "Striving to bring people closer to nature, illuminating stories of action, and belief in conservation, cultivation and care."
+- **Planners and venues** (closing note): "I capture the moments and the feeling of your event so they last long after the night ends."
+- Keep NOAA out of all Ox Hollow outreach; that role is separate.
+
+**Mission line placement:**
 - **Tech:** at most one short clause, e.g. "I'm also an ocean and climate storyteller, so I care about getting people's stories right".
 - **Nonprofits and science groups, People/Workplace teams and climate-tech companies:** lead with it.
 - Draft lines for each audience are in `research-tech-events-and-reels.md` §3. They're visible copy, so use only lines Logan has approved.
@@ -48,8 +54,10 @@ The batch went to info@ inboxes and opened with "I'm Logan, an event photographe
 - **Volume:** 10 a week, sent by Logan. Turn open/click tracking off.
 - **Deliverability:** a custom-domain sender (hello@oxhollowmedia.com) roughly doubles replies compared with a free Gmail address. Setting up Gmail "send as" with SPF and DKIM is on Logan's list.
 
-## The offer to test
-A fixed-price first job for tech: a "recap package" of 2 hours of coverage, 30–40 edited photos the same week and a 30–60 s recap reel within 48 hours. Logan sets the price; don't put a price in emails until he does.
+## The offer: The Recap (Logan, 2026-10-28)
+- **What it is:** up to 2 hours of coverage, about 100–150 edited photos within the week, and a 30–60 s recap reel within 48 hours.
+- **Price:** **$1,200** standard; **$1,000 for a first booking**.
+- **In first emails:** mention it as "a first-booking recap package". Give the price when they show interest or reply, or in follow-up 2.
 
 ## Mix (from 2026-10-28, 90 days)
 - 6 tech events: in-house event, community and People teams, plus agencies and venues that serve tech.

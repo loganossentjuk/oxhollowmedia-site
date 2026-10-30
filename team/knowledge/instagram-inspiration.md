@@ -6,6 +6,15 @@ Logan's Mac Claude session fills this file by browsing the collection in Logan's
 
 **Last refreshed:** not yet. If this date is more than 30 days old, the manager adds "Refresh the Instagram Inspiration notes (ask the Mac session)" to the report's "Needs you" list.
 
+## How to refresh (Mac session, Logan's logged-in browser)
+1. **Open the collection:** `git pull` on main, then open instagram.com and go to Profile → Saved → **Inspiration**.
+2. **Record each saved Reel** (up to about 30, newest first) as one row in the table below.
+3. **Fill in Patterns:** 3–7 short bullets each. Split them into what make_reel.py can do with existing photos and what needs new footage.
+4. **Set "Last refreshed"** to today's date, then commit and push to main. Only this file changes.
+5. **Report to Logan** in one short message: how many Reels you recorded and the top 3 patterns.
+
+**Only look.** Don't like, comment, follow, save, unsave, download or post anything. If the browser isn't logged in to Instagram, tell Logan and stop.
+
 ## How to record a Reel
 Record the *format*, not the content. Never copy another creator's footage, caption, voiceover script or exact audio.
 

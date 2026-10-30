@@ -182,7 +182,7 @@ document.querySelectorAll('#gallery-grid .masonry-item').forEach((item) => {
     { key: '24x36', label: '24×36″', price: 70 },
   ];
   const NOT_FOR_SALE = ['events', 'portraits'];
-  const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slugify = (t) => t.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   let links = {};
   fetch('/stripe-links.json', { cache: 'no-cache' })

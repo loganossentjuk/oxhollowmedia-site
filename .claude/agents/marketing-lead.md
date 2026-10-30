@@ -16,6 +16,13 @@ Everything goes in a single file, `team/drafts/marketing-YYYY-MM-DD.md` (today's
    - **Build each Reel** as a silent 9:16 MP4 with `python3 scripts/make_reel.py team/drafts/reels/<date>-<n>.mp4 <image> "<text>" ...`.
      - Use 4–7 real photos from `images/portfolio/` and 3 seconds each, so 12–20 seconds total.
      - Text over the first clip is the hook, so it has to land in the first 2 seconds. Keep text short, in Logan's voice, and only use facts from `team/BUSINESS.md`.
+   - **Start from Logan's Inspiration notes:**
+     - Read `team/knowledge/instagram-inspiration.md` first. It records the Reels Logan saved in the "Inspiration" collection on Instagram.
+     - Model each draft on one of its patterns: the hook, pacing, text style, motion and audio mood.
+     - Name the pattern in the write-up, e.g. "follows Inspiration #4: one-word hook, fast cuts on the beat".
+     - Use only Logan's own photos and words. Borrow format, never content.
+     - If a pattern needs footage Logan doesn't have, put it in the shot list instead.
+     - Update the file's **Patterns** section when you find something new.
    - **Group by story:** a trip (Galápagos 2019, Eastern Sierra, Seattle, Colorado), a print, an event, or a behind-the-scenes moment.
    - **Write up each Reel** with:
      - the file path

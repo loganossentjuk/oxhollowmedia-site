@@ -1,4 +1,4 @@
-# Content calendar, updated 2026-10-12 (covers about 2026-10-12 to 2026-11-23, plus holiday runway to Jan 10)
+# Content calendar, updated 2026-11-02 (covers about 2026-10-12 to 2026-11-30, plus holiday runway to Jan 10; see the 11-02 addendum at the end)
 
 Sources read via search summaries 2026-10-09 and 2026-10-12; verify dates marked (check). Post slots follow `instagram-2026-10-09.md` and `instagram-2026-10-12.md`. Plans: `growth-strategy.md`.
 
@@ -31,3 +31,21 @@ Sources read via search summaries 2026-10-09 and 2026-10-12; verify dates marked
 
 ## Newsletter (first run of November, due Nov 2-6)
 Not due today: October's first run was 2026-10-09 and no newsletter was drafted then (the manager's report said first-run status was unconfirmed). If Logan wants an October one, say so and it goes in next week's run. A November draft will follow once the Gelato 2026 dates are known; outline: featured print (Fog Forest or a Galapagos print), one line on the studio's news (TODO(Logan)), a "gift deadline" line with the real date.
+
+## Addendum, 2026-11-02 (one week extended, to Nov 30; corrections)
+Posts: `instagram-2026-11-02.md`. Leads: `leads-2026-11-02.md`.
+
+| Date | Hook | Idea | Source |
+|---|---|---|---|
+| Nov 3 (Tue) | US Election Day | No promotion (unchanged) | calendar |
+| Nov 5 (Thu, 9 am) | Post slot | **Correction:** Galapagos is **2019**, not 2021 (BUSINESS.md). Reel brief, 5 Galapagos prints | instagram-2026-11-02.md |
+| Nov 7 (Sat, 10 am) | Post slot (new) | Event detail post, Semgrep offsite table detail (client OK first) | instagram-2026-11-02.md |
+| Nov 8 (Sun, 6 pm) | Post slot (new) | Salt and Stone, Obsidian Palace Reel brief (Mermaid's Pools, Oahu) | instagram-2026-11-02.md |
+| Nov 9-10 | Outreach window | Send planner notes (ABCey, ROAR, Event Solutions) Wed-Thu 8 am-noon once contacts are named | leads-2026-11-02.md |
+| Nov 24-25 | Thanksgiving week | No outreach (plan). Post only if G-day is known | growth-strategy.md |
+| Nov 30 (Mon) | Cyber Monday; holiday-party last-minute window | Gift-guide email or Reel only after G-day is known; $200 rush add-on is a stated service | growth-strategy.md |
+| Early Dec | RSAC and GDC lead-in | Send sponsor and studio notes (not QCon week, not Thanksgiving week) | leads-2026-11-02.md |
+| Mar 1-5, 2027 | GDC, Moscone (dates third-party, unconfirmed) | Event-side hook for studios | https://www.pocketgamer.biz/events/gdc-festival-of-gaming-2027/ (read via search summary 2026-11-02) |
+| Apr 5-8, 2027 | RSAC, Moscone | Event-side hook for sponsors | https://moscone.com/events/rsac-2027-conference (read via search summary 2026-11-02) |
+
+Gelato G-day is still unknown: **TODO(Logan)** read the 2026 US last-order dates in the Gelato dashboard. Every "order by" row above and in the main table waits on it.

@@ -1,5 +1,5 @@
 # The climb
-**Account:** @logo_osso_photo · **Pillar:** the climb · **Length:** 20–45 s or carousel · **Status:** not yet tried
+**Account:** @oxhollowmedia · **Pillar:** the climb · **Length:** 20–45 s or carousel · **Status:** not yet tried
 
 ## Structure
 Numbered series. "Week 3 of trying to shoot for a magazine." What he did this week toward it (applied, pitched, scouted, printed), what came back, next step. Ends with a question to the room.

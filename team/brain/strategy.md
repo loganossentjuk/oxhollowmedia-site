@@ -1,36 +1,31 @@
 # Strategy (updated 2026-11-02; supersedes ../knowledge/social-strategy.md)
 
-Change log: 2026-11-02 split into two accounts after Logan's decision; face and voice approved; science background approved as backstory.
+Change log: 2026-11-02 (am) split into two accounts; (pm) Logan: growth and revenue focus is @oxhollowmedia; @logo_osso_photo is personal and outside this plan. Face, voice and science background approved.
 
 ## Goal, 90 days (to 2027-01-31)
-Audience size, measured as follows per 1,000 views and total followers, with @logo_osso_photo as the growth engine and @oxhollowmedia as the shop window.
+Grow @oxhollowmedia (followers, follows per 1,000 views) and turn it into revenue (print-page clicks via UTM, print orders, event inquiries). @logo_osso_photo is personal and not measured here.
 
 ## Positioning
-- **@logo_osso_photo:** "I'm a scientist turned photographer trying to earn a seat at the table where Nat Geo stories get told. Here's the work, the misses and what I'm learning." The journey is the hook; the finished frames are the proof.
-- **@oxhollowmedia:** "Ox Hollow shows you the parts of the ocean and wild places most people never see." Dare to see.
+**@oxhollowmedia:** "A scientist turned photographer, showing you the parts of the ocean and wild places most people never see, and how he gets there." Dare to see. The finished frame is the proof; the story of getting it is the hook; the print or the booking is the ask.
 
-## Content pillars
-### @logo_osso_photo (growth)
-1. **The climb:** where I am, what I'm going for, what I applied to, what came back. Numbered series ("Trip 1, day 2").
-2. **In the field:** Logan on location, phone clips, waiting, the shot or the miss. Face and voice.
-3. **The science aside:** one true thing about the animal or place, from a scientist's mouth.
-4. **Hindsight:** a finished frame from the archive with what he'd do differently now.
-5. **Ask the room:** which frame, which crop, what would you do. Comments are the point.
-
-### @oxhollowmedia (proof + sales)
-1. Collection photobooks (carousels). 2. Film clips and event recaps (with OK'd faces). 3. Print reveals and framed-in-room. 4. Original vs edited. 5. Partner collabs.
+## Content pillars (@oxhollowmedia)
+1. **Story behind the shot** (reach): Logan on voice or camera, 20–45 s, what happened: the wait, the miss, the moment. Galápagos, Oahu, Sierra, Bay coast, events.
+2. **The work, finished** (proof, saves): photobook carousels, print reveals, framed-in-room, film clips, event recaps with OK'd faces.
+3. **Field note** (saves, authority): one thing he read in the light, one setting, one mistake. Scientist's eye.
+4. **The climb** (follows): what he's going for and what he did this week toward it: pitches, applications, prints checked, a trip scouted. Numbered series.
+5. **Ask the room** (comments): which frame, which crop, which print for this wall.
+Every post ends with one ask: the print page, the bio link, or "DM for events."
 
 ## Cadence (fits ~2 h/week of Logan)
-- @logo_osso_photo: 3 posts/week (2 Reels, 1 carousel or single) + Stories on shoot days. Logan films 1–3 clips per outing; team cuts.
-- @oxhollowmedia: 2/week (1 Reel, 1 carousel) + collab monthly.
-- TikTok: Logan re-posts @logo_osso_photo Reels with a trending sound.
+- @oxhollowmedia: 3 Reels/week (at least one with Logan's voice or face) + 1 carousel + Stories on shoot days + 1 collab/month. Logan films 1–3 phone clips per outing or records a 30 s voice memo; team cuts.
+- TikTok: Logan re-posts the same Reels with a trending sound. No separate TikTok plan for 90 days.
 - Pinterest: 1 pin/day from @oxhollowmedia work.
 
 ## Format rotation
-See `formats/`. Each week: one from pillar 2, one from pillar 1 or 4, one from pillar 5; the proof account takes one photobook and one reveal.
+See `formats/`. Each week on @oxhollowmedia: one story-behind-the-shot (voice), one finished-work piece (photobook or reveal), one field note or climb post; the carousel is the photobook. Rotate places so the feed never shows the same trip twice in a row.
 
 ## What we're testing first
-See `experiments/`. Open: E01 face-vs-text, E02 series numbering, E03 science asides.
+See `experiments/`. Open (all on @oxhollowmedia): E01 voice/face vs text-only, E02 numbered series, E03 science asides.
 
 ## Pending research to fold in
 `../knowledge/research-reddit-following.md` and `../knowledge/research-journey-accounts.md` (both in progress 2026-11-02).

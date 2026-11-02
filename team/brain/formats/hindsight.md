@@ -1,5 +1,5 @@
 # Hindsight
-**Account:** @logo_osso_photo · **Pillar:** hindsight · **Length:** 10–20 s or carousel · **Status:** not yet tried
+**Account:** @oxhollowmedia · **Pillar:** hindsight · **Length:** 10–20 s or carousel · **Status:** not yet tried
 
 ## Structure
 Archive frame → "Galápagos, 2019. I was 23 and had one lens." → what he'd do differently now (crop, timing, settings) → the frame again, maybe re-edited.

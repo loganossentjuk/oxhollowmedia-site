@@ -1,5 +1,5 @@
 # Field clip
-**Account:** @logo_osso_photo · **Pillar:** in the field · **Length:** 15–40 s · **Status:** not yet tried (needs footage)
+**Account:** @oxhollowmedia · **Pillar:** in the field · **Length:** 15–40 s · **Status:** not yet tried (needs footage)
 
 ## Structure
 1. 0–2 s: Logan's phone clip, mid-action, voice: where we are and what we're waiting for.

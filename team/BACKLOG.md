@@ -86,6 +86,12 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Shop: finish batch 2 framed switch, then holiday banner and gift-sized picks
 - [ ] Weekly QA script in scripts/ (Node Playwright)
 
+## New ideas (2026-11-02, ranked)
+- [ ] Add the 70 wood/acrylic listings (created Oct 29-30) to the catalog and rebuild; remove petunia-blush canvas
+- [ ] Check Embedded Vision Summit (Feb 2-4, 2027); look at BoomPop, The Great Event, MFactor Meetings
+- [ ] Find sponsor/media contacts at rsaconference.com and gdconf.com
+- [ ] Semgrep case-study gallery page as a single proof link for outreach
+
 ## New ideas (2026-10-12, ranked)
 - [ ] Journal entry 1 is a scaffold: needs Logan's answers (team/drafts/journal-galapagos-2021.md), then fill catalog `story` fields
 - [ ] Catalog: drop archived canvas entry for `petunia-blush`; add framed entries for Verdigris, Copper & Teal; add Rising Flame and Sparks (needs Logan OK)

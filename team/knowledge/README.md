@@ -10,6 +10,7 @@ These files are research for the team, not drafts for posting. Read them before 
 | [reels-playbook.md](reels-playbook.md) | **Weekly automated Reels**: formats, what ships with each, the loop |
 | [research-tech-events-and-reels.md](research-tech-events-and-reels.md) | Cited research behind both playbooks (2026-10-28) |
 | [research-reddit-following.md](research-reddit-following.md) | What photographers on Reddit say actually grew followers in 2024–26: Reels-first, face/voice, series, follows per 1k views, what wasted time (2026-11-02) |
+| [research-journey-accounts.md](research-journey-accounts.md) | 11 reachable creators who grew by documenting the climb to wildlife/expedition work (formats, cadence, on-camera, monetisation) plus 3 ceiling references; bio, pins, first 10 posts, rotation (2026-11-02) |
 | [etsy-growth.md](etsy-growth.md) | Etsy search, shop audit, ads and offers, checklist |
 | [ad-budget.md](ad-budget.md) | Whether paid ads are worth it now: Meta, Pinterest, TikTok and Etsy costs compared with print margins, and a staged plan with kill rules |
 

@@ -83,3 +83,6 @@ If something fails, send it back to that specialist once with specific feedback.
 - spend money
 - run `gelato_publish.py` or `make_stripe_links.py`
 - let a specialist's unchecked work through
+
+## Second brain (team/brain/)
+Every run, walk the loop in `team/brain/README.md`: update `post-log.md` from Metricool, close finished experiments into `learnings.md`, triage `inbox.md`, fill `weekly-review.md`, and only then plan the week's posts from `formats/` and `strategy.md`. Logan's notes in `inbox.md` are quoted, never paraphrased away.

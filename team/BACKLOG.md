@@ -93,3 +93,9 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] Hidden UTM/source field on /contact form; Pinterest pins; email capture; holiday banner (blocked on Gelato 2026 dates)
 - [ ] Axe contrast audit and skip link; BreadcrumbList on print pages
 - [ ] VideoObject for Brushstrokes For Survival and Fluid Frontier once Vimeo dates are confirmed
+
+## Added 2026-11-02 (social strategy)
+- Logan: client quote (gates event bookings); liability insurance decision.
+- One offline print channel: café wall / holiday market / interior designer (shop-manager to shortlist Bay Area options).
+- Scripts to promote from scratchpad: make_pins.py (Pinterest framed pin), tt_detail_reveal.py (guess/reveal).
+- Read Nat Geo Society early-career grant rules; log as a 'climb' series if Logan wants that path.

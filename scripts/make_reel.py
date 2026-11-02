@@ -20,6 +20,7 @@ Options:
   --end cream|green|none   brand end card (default cream)
   --end-text TEXT  end card line (default "Dare to see.")
   --fit            show each image whole on cream (for framed mockups) instead of filling the frame
+  --loop           push in and ease back out so the last frame matches the first (seamless loop; use with --end none)
 Needs ffmpeg and Pillow. Font: scripts/fonts/CormorantGaramond-Medium.ttf (OFL).
 """
 import subprocess, sys, tempfile
@@ -128,6 +129,8 @@ def main():
     end_text = opt(args, "--end-text", "Dare to see.")
     fit = "--fit" in args
     if fit: args.remove("--fit")
+    loop = "--loop" in args
+    if loop: args.remove("--loop")
     if len(args) < 3 or len(args[1:]) % 2:
         sys.exit(__doc__)
     out, pairs = args[0], list(zip(args[1::2], args[2::2]))
@@ -140,7 +143,8 @@ def main():
             cmd += ["-i", str(f)]   # one frame in; zoompan makes all n frames from it
         parts = []
         for k in range(len(pairs)):
-            parts.append(f"[{k}:v]zoompan=z='1+{zoom}*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            z = f"1+{zoom}*sin(PI*on/{n})" if loop else f"1+{zoom}*on/{n}"
+            parts.append(f"[{k}:v]zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
                          f":d={n}:s={W}x{H}:fps={FPS},setsar=1,format=yuv420p[v{k}]")
         clips = [(f"v{k}", secs) for k in range(len(pairs))]
         if end != "none":

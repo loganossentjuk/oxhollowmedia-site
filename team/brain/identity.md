@@ -24,3 +24,6 @@ Why Logan is on camera on the brand account: the Reddit research (../knowledge/r
 ## Off-limits
 - Recognisable people without their OK. Client results or quotes we don't have. Insurance claims. Employer names on the science side. Invented trip details.
 - Nothing posts anywhere without Logan's approval, except Pinterest pins he's cleared in style, and the weekly report email.
+
+
+**Instagram display name (set 2026-11-02):** Ox Hollow Media | Ocean & Wildlife Photographer. Bio unchanged by Logan's choice: "Films • Fine-art Prints • Events | San Francisco Bay Area | Closer to nature, one frame at a time".

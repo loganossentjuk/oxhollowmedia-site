@@ -9,3 +9,6 @@ Format: **Rule.** Confidence (low/med/high). Evidence. Date.
 - **Keep the brand account clean; put the journey on the personal account.** High. Logan's decision, 2026-11-02.
 - **One account, one platform, 90 days: @oxhollowmedia on Instagram, with Logan on voice/camera; @logo_osso_photo parked.** High. Logan's decision after the Reddit and models research, 2026-11-02.
 - **Instagram is proof, not the funnel. Events pay; prints come from search; say so in every report.** High. Reddit threads + Logan agreed, 2026-11-02.
+
+- **Team-built Reels: 16:9, no text, no cards.** Logan adds text and sound in the app. (Logan, 2026-11-02; rule, high confidence.)
+- **Every post ends with one ask**, rotated: prints / events / follow / room. (Logan approved 2026-11-02.)

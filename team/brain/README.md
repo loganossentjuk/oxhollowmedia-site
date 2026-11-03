@@ -4,6 +4,8 @@ A living knowledge base. Everything the team and Logan learn about growing an au
 
 **The loop:** idea → `inbox.md` → experiment in `experiments/` → post logged in `post-log.md` → result → rule in `learnings.md` → update `strategy.md`. The Monday team run walks this loop every week (see "Weekly review" below).
 
+- `plan-2026-11.md`: the live post-by-post plan; builders, asks, what Logan owes.
+
 ## Map
 
 | File | What it holds | Who updates it |

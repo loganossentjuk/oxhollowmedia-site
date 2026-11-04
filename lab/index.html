@@ -8,7 +8,7 @@
 <link rel="icon" href="/images/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&family=Caveat:wght@500&family=Kalam:wght@400&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg: #F3EFE4; --bg-section: #E5DEC8; --green: #294132; --ink: #191817; --text: #232120;
@@ -24,16 +24,6 @@
   @media (hover: none) { a { cursor: pointer; } }
   img, video { display: block; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  /* handwritten accent (demo): switch fonts with the pill in the corner */
-  body[data-accent] .accent { font-family: var(--hand); font-style: normal; font-weight: inherit; font-size-adjust: .42; letter-spacing: 0; }
-  body[data-accent="caveat"] { --hand: 'Caveat', cursive; }
-  body[data-accent="kalam"] { --hand: 'Kalam', cursive; }
-  body[data-accent="shadows"] { --hand: 'Shadows Into Light Two', cursive; }
-  .accent-pick { position: fixed; right: 1rem; bottom: 1rem; z-index: 95; display: flex; gap: .25rem; align-items: center; padding: .35rem;
-    background: rgba(25,24,23,.82); color: var(--paper); border-radius: 999px; backdrop-filter: blur(8px); font-size: .7rem; }
-  .accent-pick span { padding: 0 .6rem 0 .5rem; opacity: .7; letter-spacing: .14em; text-transform: uppercase; font-size: .6rem; }
-  .accent-pick button { border: 0; background: none; color: inherit; font: inherit; padding: .45rem .8rem; border-radius: 999px; cursor: pointer; }
-  .accent-pick button[aria-pressed="true"] { background: var(--paper); color: var(--ink); }
   .label { font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; }
 
   /* film grain */
@@ -186,9 +176,6 @@
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
-<div class="accent-pick" role="group" aria-label="Accent font"><span>Accent</span>
-  <button data-font="">None</button><button data-font="caveat" style="font-family:Caveat;font-size:.95rem">Caveat</button><button data-font="kalam" style="font-family:Kalam">Kalam</button><button data-font="shadows" style="font-family:'Shadows Into Light Two'">Shadows</button>
-</div>
 <div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label">View</span></div><div class="cursor__dot"></div></div>
 <div class="loader" aria-hidden="true"><div class="loader__word"><span>O</span><span>x</span><span>&nbsp;</span><span>H</span><span>o</span><span>l</span><span>l</span><span>o</span><span>w</span></div></div>
 
@@ -224,20 +211,20 @@
   <div class="flight__shade"></div>
   <p class="hud hud--tl label">Santa Barbara<br>California</p>
   <p class="hud hud--tr label">Drone<br><b class="tc">00:00</b></p>
-  <p class="flight__line accent">Curving coastlines,</p>
-  <p class="flight__line accent">mile-high mountains,</p>
-  <p class="flight__line accent">foggy forests,</p>
-  <p class="flight__line accent">and the people in between.</p>
-  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b class="accent">Sun on the Tide</b><span>Plate 01 · Ocean</span></p></a>
-  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b class="accent">Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
-  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b class="accent">Drift and Timber</b><span>Plate 03</span></p></a>
-  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b class="accent">Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
+  <p class="flight__line">Curving coastlines,</p>
+  <p class="flight__line">mile-high mountains,</p>
+  <p class="flight__line">foggy forests,</p>
+  <p class="flight__line">and the people in between.</p>
+  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b>Sun on the Tide</b><span>Plate 01 · Ocean</span></p></a>
+  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b>Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
+  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
+  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
 </section>
 
 <section class="strip" id="strip">
   <div class="topo" aria-hidden="true"></div>
-  <div class="head"><h2>From the<br><em class="accent">field</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><span></span></div>
   <div class="strip__track">
     <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><span>01</span><b>Leviathan's Leap</b><span>Ocean</span></p></a>
     <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><span>02</span><b>Granite Glow</b><span>Mountains</span></p></a>
@@ -269,7 +256,7 @@
 
 <section class="index" id="index">
   <div class="topo" aria-hidden="true"></div>
-  <div class="head"><h2>Field <em class="accent">index</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="head"><h2>Field <em>index</em></h2><div class="head__rule"></div><span></span></div>
   <div class="index__list">
     <a class="index__row" href="/about"><span class="label">01</span><h3>About</h3><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
     <a class="index__row" href="/work-with-me"><span class="label">02</span><h3>Work With Me</h3><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
@@ -282,7 +269,7 @@
 <footer class="outro" id="outro">
   <div class="topo" aria-hidden="true"></div>
   <div class="outro__inner">
-    <h2>Dare to <em class="accent">see.</em></h2>
+    <h2>Dare to <em>see.</em></h2>
     <a class="magnet label" href="/contact" data-magnet>Contact</a>
   </div>
   <div class="outro__foot label">
@@ -430,17 +417,6 @@ document.querySelectorAll('[data-magnet]').forEach(m => {
     gsap.to(m, { x: (e.clientX - r.left - r.width / 2) * .35, y: (e.clientY - r.top - r.height / 2) * .35, duration: .4 }); });
   m.addEventListener('mouseleave', () => gsap.to(m, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }));
 });
-
-// accent font demo: remember the pick for this browser
-const picks = document.querySelectorAll('.accent-pick button');
-function setAccent(f) {
-  if (f) document.body.dataset.accent = f; else delete document.body.dataset.accent;
-  picks.forEach(b => b.setAttribute('aria-pressed', b.dataset.font === f));
-  try { localStorage.setItem('lab-accent', f); } catch (e) {}
-}
-let saved = 'caveat'; try { saved = localStorage.getItem('lab-accent') ?? 'caveat'; } catch (e) {}
-setAccent(saved);
-picks.forEach(b => b.addEventListener('click', () => setAccent(b.dataset.font)));
 
 if (reduce) gsap.globalTimeline.timeScale(20);
 </script>

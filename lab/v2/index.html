@@ -92,7 +92,7 @@
   .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .flight__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.08) 55%, rgba(0,0,0,.2)); opacity: 0; }
   .flight__line { position: absolute; left: var(--gutter); bottom: 18vh; z-index: 3; max-width: 11ch; font-family: var(--serif); font-weight: 400; font-style: italic;
-    font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: .95; opacity: 0; text-shadow: 0 0 2px rgba(0,0,0,.25), 0 4px 60px rgba(0,0,0,.5); }
+    font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: 1.06; opacity: 0; text-shadow: 0 0 2px rgba(0,0,0,.25), 0 4px 60px rgba(0,0,0,.5); }
   .flight__line:first-of-type { max-width: 14ch; }
   .plate { position: absolute; z-index: 2; right: calc(var(--gutter) + 4vw); top: 50%; background: var(--paper); color: var(--text);
     padding: 10px 10px 0; box-shadow: 0 30px 80px rgba(0,0,0,.45); opacity: 0; will-change: transform, clip-path; }
@@ -128,7 +128,7 @@
   .ev { display: block; min-width: 0; background: var(--paper); padding: 7px; box-shadow: 0 20px 60px rgba(0,0,0,.35); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
   .ev div { width: 100%; overflow: hidden; }
   .ev img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
-  .ev:hover { transform: translateY(-5px); } .ev:hover img { transform: scale(1.04); }
+  .ev:hover { transform: translateY(-5px); }
   .events__aside { position: sticky; top: 110px; }
   .events__aside .lede { font-family: var(--serif); font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1.12; margin-bottom: 1.6rem; }
   .events__aside ul { list-style: none; border-top: 1px solid rgba(244,238,226,.16); margin-bottom: 2.2rem; }
@@ -181,7 +181,7 @@
   .strip__track { position: relative; display: flex; gap: 3vw; padding: 0 var(--gutter); width: max-content; align-items: flex-end; will-change: transform; }
   .strip__item { flex: none; position: relative; width: min-content; }
   .strip__item figure { height: 54vh; overflow: hidden; background: var(--bg-section); }
-  .strip__item img { height: 100%; width: auto; transform: scale(1.12); }
+  .strip__item img { height: 100%; width: auto; }
   .tag { display: flex; gap: .9rem; align-items: baseline; margin-top: .8rem; font-size: .62rem; letter-spacing: .18em; line-height: 1.3; text-transform: uppercase; color: var(--muted); }
   .tag b { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; letter-spacing: .01em; text-transform: none; color: var(--text); }
   .tag span:last-child { margin-left: auto; }
@@ -228,9 +228,8 @@
   .entry-wrap:nth-child(4) { padding-top: 5vh; } .entry-wrap:nth-child(4) .entry { transform: rotate(1.1deg); }
   .entry-wrap:nth-child(5) { padding-top: 2vh; } .entry-wrap:nth-child(5) .entry { transform: rotate(-.9deg); }
   .entry-wrap .entry:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 26px 64px rgba(35,33,32,.24); }
-  .entry__frame { aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg-section); }
+  .entry__frame { overflow: hidden; background: var(--bg-section); }
   .entry__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
-  .entry:hover .entry__frame img { transform: scale(1.06); }
   .entry__tag { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .6rem; padding: .8rem .15rem .25rem; }
   .entry__tag .label { font-size: .62rem; color: var(--muted); }
   .entry__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; line-height: 1.05; }
@@ -264,8 +263,8 @@
     .loader__mark { width: 4.6rem; } .loader__word { font-size: 1.9rem; }
     .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
     .hud--tr { right: var(--gutter); }
-    .flight__line { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.6rem, 12vw, 3.6rem); }
-    .plate { bottom: 13vh; }
+    .flight__line, .flight__line:first-of-type { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1.1; max-width: 13ch; }
+    .plate { bottom: 15vh; }
     .plate__tag { flex-direction: column; gap: .2rem; }
     .strip__track { gap: 6vw; }
     .tag { flex-wrap: wrap; gap: .3rem .7rem; }
@@ -274,7 +273,7 @@
     .outro__foot { margin-top: 3.5rem; flex-direction: column; }
     .menu a { font-size: 2.2rem; }
     .plate { right: 50%; top: auto; bottom: 12vh; }
-    .plate--land .plate__frame { width: 78vw; } .plate--tall .plate__frame { height: 44vh; }
+    .plate--land .plate__frame { width: 80vw; } .plate--tall .plate__frame { height: 33vh; }
     .strip__item figure { height: 44vh; }
     .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
     .outro__inner { grid-template-columns: 1fr; }
@@ -394,11 +393,11 @@
   <div class="topo" aria-hidden="true"></div>
   <div class="head"><h2>Field <em>guide</em></h2><div class="head__rule"></div><span></span></div>
   <div class="index__grid">
-    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img src="/images/about/portrait.webp" alt="" loading="lazy" style="object-position:22% 50%"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/events" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/events/05-evening-reception.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Events</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:2000/1125"><img src="/images/about/portrait.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/events" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1125/2000"><img src="/images/portfolio/events/05-evening-reception.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Events</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1200/1200"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1280/720"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
   </div>
 </section>
 
@@ -588,10 +587,6 @@ const track = document.querySelector('.strip__track');
 const strip = gsap.to(track, {
   x: () => -(track.scrollWidth - innerWidth), ease: 'none',
   scrollTrigger: { trigger: '.strip', start: 'top top', end: () => '+=' + (track.scrollWidth - innerWidth), pin: true, scrub: 1, invalidateOnRefresh: true }
-});
-gsap.utils.toArray('.strip__item img').forEach(img => {
-  gsap.fromTo(img, { xPercent: -5 }, { xPercent: 5, ease: 'none',
-    scrollTrigger: { trigger: img.closest('.strip__item'), containerAnimation: strip, start: 'left right', end: 'right left', scrub: true } });
 });
 
 // 4. films: play in place, over the page

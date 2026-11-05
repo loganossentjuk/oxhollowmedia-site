@@ -752,10 +752,14 @@ footer {
   .masonry { column-count: 2; }
 }
 
-@media (max-width: 768px) {
-  h2 { font-size: 2.1rem; }
+/* seven menu items: the menu button takes over below 1000px */
+@media (max-width: 1000px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 2.1rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-image { order: -1; }
   .image-placeholder { aspect-ratio: 3/2; }

@@ -38,9 +38,6 @@
     animation: grain 1s steps(6) infinite; }
   @keyframes grain { 0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-2%)} 60%{transform:translate(-2%,-4%)} 80%{transform:translate(4%,2%)} 100%{transform:translate(0,0)} }
 
-  /* cursor */
-    transform: translate(-50%,-50%); transition: width .35s, height .35s, background .35s; }
-    text-transform: uppercase; color: #000; opacity: 0; transition: opacity .25s; white-space: nowrap; }
 
   /* loader */
   .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
@@ -310,8 +307,8 @@
   <video src="/lab/media/reel.mp4" autoplay muted loop playsinline></video>
   <h1 class="sr-only">Dare to see.</h1>
   <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-200" width="3400" height="1400">
-      <rect x="-1200" y="-200" width="3400" height="1400" fill="#fff"/>
+    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-1600" width="3400" height="4200">
+      <rect x="-1200" y="-1600" width="3400" height="4200" fill="#fff"/>
       <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
       <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">t<tspan class="o-glyph">o</tspan> <tspan font-style="italic">see.</tspan></text></g>
       <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
@@ -321,8 +318,8 @@
     </mask>
     <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath></defs>
     <g mask="url(#words)">
-      <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)"/>
-      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity="1"/>
+      <rect x="-1200" y="-1600" width="3400" height="4200" style="fill:var(--bg)"/>
+      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="none" opacity="1"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
       <g class="aperture__facets"><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/></g>
@@ -549,9 +546,12 @@ function drawZoom() {
   // the portrait holds still on screen while the words fly past it
   const W = heroSvg.clientWidth || innerWidth, H = heroSvg.clientHeight || innerHeight, sc = Math.min(W, H) / size;
   const vw = W / sc, vh = H / sc, vx = x0 - (vw - size) / 2, vy = y0 - (vh - size) / 2;
-  const top = Math.max(vy, -200), bottom = Math.min(vy + vh, 1200);
-  portrait.setAttribute('x', vx); portrait.setAttribute('y', top);
-  portrait.setAttribute('width', vw); portrait.setAttribute('height', Math.max(0, bottom - top));
+  // cover the screen, keeping the face (28% across the photo) in view: left-aligned on wide screens, centred on phones
+  const IMG = 2000 / 1125, FACE = .28;
+  const iw = Math.max(vw, vh * IMG), ih = iw / IMG;
+  const ix = Math.min(vx, Math.max(vx + vw - iw, vx + vw / 2 - FACE * iw));
+  portrait.setAttribute('x', ix); portrait.setAttribute('y', vy + (vh - ih) / 2);
+  portrait.setAttribute('width', iw); portrait.setAttribute('height', ih);
   // One camera move, in three beats:
   //   fill   the letter o becomes a round lens of footage the same size
   //   close  the seven blades sweep in and stop down, like a shutter

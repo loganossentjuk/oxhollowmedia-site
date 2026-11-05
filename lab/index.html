@@ -306,24 +306,25 @@
   <video src="/lab/media/reel.mp4" autoplay muted loop playsinline></video>
   <h1 class="sr-only">Dare to see.</h1>
   <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-200" width="3400" height="1400">
-      <rect x="-1200" y="-200" width="3400" height="1400" fill="#fff"/>
+    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-1600" width="3400" height="4200">
+      <rect x="-1200" y="-1600" width="3400" height="4200" fill="#fff"/>
       <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
-      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">to <tspan font-style="italic">see.</tspan></text></g>
+      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">t<tspan class="o-glyph">o</tspan> <tspan font-style="italic">see.</tspan></text></g>
       <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
-      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">to</text>
+      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">t<tspan class="o-glyph">o</tspan></text>
       <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
       <polygon class="iris" points="0,0" fill="#000"/>
     </mask>
     <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath></defs>
     <g mask="url(#words)">
-      <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)"/>
-      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity=".3"/>
+      <rect x="-1200" y="-1600" width="3400" height="4200" style="fill:var(--bg)"/>
+      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="none" opacity="1"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
-      <g fill="none" stroke="#232120" stroke-width="1" stroke-opacity=".38"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
+      <g class="aperture__facets"><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/></g>
+      <g fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".75"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
     </g>
-    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#232120" stroke-width="1.3" stroke-opacity=".5" vector-effect="non-scaling-stroke"/>
+    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
   </svg></div>
   <div class="flight__shade"></div>
   <p class="hud hud--tl label">Santa Barbara<br>California</p>
@@ -510,6 +511,8 @@ const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.queryS
 const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySelector('.aperture__rim');
 const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
 const BLADES = blades.length;
+const facets = [...heroSvg.querySelectorAll('.aperture__facets polygon')], apertureG = heroSvg.querySelector('.aperture');
+const oGlyphs = [...heroSvg.querySelectorAll('.o-glyph')];
 let aim = { x: 290, y: 714, end: 40, R: 40 };
 // the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
 function findHole() {
@@ -527,7 +530,7 @@ function findHole() {
     if (!on && s >= 0) { runs.push([s - 200, x - 200]); s = -1; }
   }
   const [, l, r] = runs;                                             // t stem, o left stroke, o right stroke
-  aim = l && r ? { x: (l[1] + r[0]) / 2, y: row, R: (r[0] - l[1]) / 2 * .96, end: fs * .12 }
+  aim = l && r ? { x: (l[0] + r[1]) / 2, y: row, R: (r[1] - l[0]) / 2, end: fs * .2 }
                : { x: aim.x, y: row, R: fs * .12, end: fs * .12 };
   housing.setAttribute('cx', aim.x); housing.setAttribute('cy', aim.y); housing.setAttribute('r', aim.R);
   rim.setAttribute('cx', aim.x); rim.setAttribute('cy', aim.y); rim.setAttribute('r', aim.R);
@@ -542,23 +545,55 @@ function drawZoom() {
   // the portrait holds still on screen while the words fly past it
   const W = heroSvg.clientWidth || innerWidth, H = heroSvg.clientHeight || innerHeight, sc = Math.min(W, H) / size;
   const vw = W / sc, vh = H / sc, vx = x0 - (vw - size) / 2, vy = y0 - (vh - size) / 2;
-  const top = Math.max(vy, -200), bottom = Math.min(vy + vh, 1200);
-  portrait.setAttribute('x', vx); portrait.setAttribute('y', top);
-  portrait.setAttribute('width', vw); portrait.setAttribute('height', Math.max(0, bottom - top));
-  // a seven-blade iris: closed in the hollow, turning open as we fly in, until the footage fills the screen
-  // the zoom carries the lens up to fill the screen, so the opening only has to grow to the lens itself
-  const o = clamp01(p / .92), e = o * o * (3 - 2 * o);
-  const r = aim.R * (.34 + 1.5 * e), turn = -.35 - e * 1.4;          // a small opening at rest; at the end it clears the whole hollow
+  // cover the screen, keeping the face (28% across the photo) in view: left-aligned on wide screens, centred on phones
+  const IMG = 2000 / 1125, FACE = .28;
+  const iw = Math.max(vw, vh * IMG), ih = iw / IMG;
+  const ix = Math.min(vx, Math.max(vx + vw - iw, vx + vw / 2 - FACE * iw));
+  portrait.setAttribute('x', ix); portrait.setAttribute('y', vy + (vh - ih) / 2);
+  portrait.setAttribute('width', iw); portrait.setAttribute('height', ih);
+  // One camera move, in three beats:
+  //   fill   the letter o becomes a round lens of footage the same size
+  //   close  the seven blades sweep in and shut completely, and hold for a beat, like a shutter
+  //   open   they turn back open as we fly in, and the opening rounds into a circle that fills the screen
+  const R = aim.R, ss = v => v * v * (3 - 2 * v);
+  const sh = ss(clamp01((p - .02) / .1));                            // fill
+  const cl = ss(clamp01((p - .11) / .19));                           // close, shut by .30, held until .36
+  const e = ss(clamp01((p - .36) / .58));                            // open
+  const r = p < .36 ? R * (1 - .985 * cl) : R * (.015 + 1.85 * e * e);
+  const round = p < .36 ? 1 - cl : ss(clamp01((r / R - .8) / .35));  // 1 = a circle, 0 = the blades' seven sides
+  const turn = -.35 - cl * .55 - e * 1.2;
+  oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
   const pts = Array.from({ length: BLADES }, (_, i) => {
     const a = turn + i * 2 * Math.PI / BLADES; return [aim.x + r * Math.cos(a), aim.y + r * Math.sin(a)];
   });
-  iris.setAttribute('points', pts.map(q => q.join(',')).join(' '));
+  // the opening: the blades' polygon, eased toward a true circle when the blades are drawn back
+  const SEG = 12, ring = [];
+  pts.forEach((a, i) => {
+    const b = pts[(i + 1) % BLADES];
+    for (let k = 0; k < SEG; k++) {
+      const q = [a[0] + (b[0] - a[0]) * k / SEG, a[1] + (b[1] - a[1]) * k / SEG];
+      const dx = q[0] - aim.x, dy = q[1] - aim.y, d = Math.hypot(dx, dy) || 1, f = (1 - round) + round * r / d;
+      ring.push(`${aim.x + dx * f},${aim.y + dy * f}`);
+    }
+  });
+  iris.setAttribute('points', ring.join(' '));
+  iris.setAttribute('fill-opacity', sh);
   blades.forEach((ln, i) => {                                        // each blade edge runs on past the next corner
     const [ax, ay] = pts[i], [bx, by] = pts[(i + 1) % BLADES], d = Math.hypot(bx - ax, by - ay) || 1;
     ln.setAttribute('x1', ax); ln.setAttribute('y1', ay);
-    ln.setAttribute('x2', ax + (bx - ax) / d * aim.R * 3); ln.setAttribute('y2', ay + (by - ay) / d * aim.R * 3);
+    ln.setAttribute('x2', ax + (bx - ax) / d * R * 3); ln.setAttribute('y2', ay + (by - ay) / d * R * 3);
   });
-  rim.setAttribute('stroke-opacity', .3 * clamp01(1 - (r / aim.R - .85) / .2));   // the rim fades as the opening passes it
+  // each blade is the wedge between one edge carried past its corner and the next edge (the housing trims them)
+  const L = R * 3;
+  facets.forEach((f, i) => {
+    const a = pts[i], b = pts[(i + 1) % BLADES], cc = pts[(i + 2) % BLADES];
+    const d1 = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, d2 = Math.hypot(cc[0] - b[0], cc[1] - b[1]) || 1;
+    const u = [b[0] + (b[0] - a[0]) / d1 * L, b[1] + (b[1] - a[1]) / d1 * L];
+    const v = [b[0] + (cc[0] - b[0]) / d2 * L, b[1] + (cc[1] - b[1]) / d2 * L];
+    f.setAttribute('points', [b, u, v].map(q => q.join(',')).join(' '));
+  });
+  apertureG.style.opacity = sh * (1 - round);                        // blades show only while they're in
+  rim.setAttribute('stroke-opacity', .7 * sh * clamp01(1 - (r / R - 1) / .25));
 }
 document.fonts.ready.then(() => { findHole(); drawZoom(); });
 addEventListener('resize', () => { findHole(); drawZoom(); });

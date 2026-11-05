@@ -1893,3 +1893,17 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .work-email a:hover, .work-email a:focus-visible { color: var(--clay-light); border-color: var(--clay-light); }
 #work-close .work-contact { margin-top: 1.25rem; }
 @media (max-width: 760px) { .work-close-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ── Homepage nods (body.nods): the contour lines with one terracotta line, and the homepage buttons ──
+   Faint topo behind the opening, the rate cards and the green booking band; buttons warm to terracotta. */
+.nods .page-hero, .nods #packages, .nods #contact { position: relative; isolation: isolate; }
+.nods .page-hero::before, .nods #packages::before, .nods #contact::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url("../images/topo-ink.svg?v=1") center / cover no-repeat;
+}
+.nods #contact::before { background-image: url("../images/topo-marked.svg?v=1"); }
+.nods .page-hero .btn-outline { background: rgba(41,65,50,.7); border-color: transparent; color: var(--paper); }
+.nods .btn-filled:hover, .nods #contact .btn-filled:hover, .nods .btn-dark:hover,
+.nods .page-hero .btn-outline:hover, .nods #contact .btn-outline:hover {
+  background: var(--clay); border-color: var(--clay); color: var(--paper);
+}

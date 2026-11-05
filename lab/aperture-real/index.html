@@ -167,6 +167,13 @@
     .ev-row .ev:first-child:nth-last-child(3) { flex-basis: 100% !important; }
   }
 
+  /* act straight away: the two calls to action ride along with the footage once the aperture opens */
+  .hero__cta { position: absolute; z-index: 4; left: var(--gutter); bottom: 4.6rem; display: flex; gap: .8rem;
+    opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .hero__cta.is-on, .flight .hero__cta { opacity: 1; transform: none; pointer-events: auto; }
+  .hero__cta .btn--ghost { background: rgba(25,24,23,.32); color: var(--paper); box-shadow: inset 0 0 0 1px rgba(244,238,226,.6);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .hero__cta .btn--ghost:hover { background: var(--paper); color: var(--ink); }
   /* field-journal pieces */
   .topo { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .topo svg { width: 100%; height: 100%; }
@@ -266,7 +273,8 @@
     .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
     .hud--tr { right: var(--gutter); }
     .flight__line, .flight__line:first-of-type { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1.1; max-width: 13ch; }
-    .plate { bottom: 15vh; }
+    .hero__cta { right: var(--gutter); bottom: 6.2rem; gap: .6rem; }
+    .hero__cta .btn { flex: 1; text-align: center; padding: .95rem .5rem; }
     .plate__tag { flex-direction: column; gap: .2rem; }
     .strip__track { gap: 6vw; }
     .tag { flex-wrap: wrap; gap: .3rem .7rem; }
@@ -274,7 +282,7 @@
     .magnet { width: 116px; height: 116px; }
     .outro__foot { margin-top: 3.5rem; flex-direction: column; }
     .menu a { font-size: 2.2rem; }
-    .plate { right: 50%; top: auto; bottom: 12vh; }
+    .plate { right: 50%; top: auto; bottom: 21vh; }
     .plate--land .plate__frame { width: 80vw; } .plate--tall .plate__frame { height: 33vh; }
     .strip__item figure { height: 44vh; }
     .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
@@ -347,6 +355,7 @@
   <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
   <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
+  <div class="hero__cta"><a class="btn" href="/events">Hire for an event</a><a class="btn btn--ghost" href="/gallery">Walk the gallery</a></div>
   <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
 </section>
 
@@ -641,8 +650,10 @@ const shade = document.querySelector('.flight__shade'), huds = gsap.utils.toArra
 const tc = document.querySelector('.tc'), bar = document.querySelector('.hud__bar i');
 const mobile = () => innerWidth <= 760;
 const flight = { p: 0 };
+const cta = document.querySelector('.hero__cta');
 function updateFlight() {
   const p = flight.p, on = clamp01(p / .04);
+  cta.classList.toggle('is-on', p > .005);
   huds.forEach(h => h.style.opacity = on);
   const t = Math.floor(hv.currentTime || 0);
   tc.textContent = '00:' + String(t).padStart(2, '0');

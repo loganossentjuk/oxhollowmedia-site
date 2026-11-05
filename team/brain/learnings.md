@@ -12,3 +12,4 @@ Format: **Rule.** Confidence (low/med/high). Evidence. Date.
 
 - **Team-built Reels: 16:9, no text, no cards.** Logan adds text and sound in the app. (Logan, 2026-11-02; rule, high confidence.)
 - **Every post ends with one ask**, rotated: prints / events / follow / room. (Logan approved 2026-11-02.)
+- **Brand voice is humble and nature-first.** Taglines/hooks that lead with Logan's achievement read as arrogant to him. Lead with the place, the animal, the unseen; Logan is the guide. (Logan, 2026-11-04; rule, high confidence.)

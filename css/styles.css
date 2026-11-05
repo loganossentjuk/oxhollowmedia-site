@@ -2041,10 +2041,6 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .collection-card.is-in .cc-count { animation: cc-rise 0.9s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @keyframes cc-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
-/* 2. Shutter over the window while the collection swaps */
-.shutter { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 200; pointer-events: none; display: none; }
-.shutter.is-on { display: block; }
-
 @media (prefers-reduced-motion: reduce) {
   .gal .ln-i { transform: none; transition: none; }
   .collection-card.is-in .cc-title, .collection-card.is-in .cc-count { animation: none; }

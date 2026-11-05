@@ -26,6 +26,11 @@
   @media (hover: none) { a { cursor: pointer; } }
   img, video { display: block; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  /* text links: hairline underline that draws away on hover and back on leave */
+  .u { background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: .12em; border-bottom: 0 !important;
+    transition: background-size .55s cubic-bezier(.2,.8,.2,1); }
+  .u:hover { background-size: 0 1px; background-position: 100% 100%; }
+  :focus-visible { outline: 2px solid var(--clay); outline-offset: 4px; }
   .label { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; line-height: 1.4; }
 
   /* film grain */
@@ -65,7 +70,8 @@
   .nav__links a:not(.nav__cta)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor;
     transform: scaleX(0); transform-origin: right; transition: transform .4s; }
   .nav__links a:not(.nav__cta):hover::after { transform: scaleX(1); transform-origin: left; }
-  .nav__cta { background: var(--green); color: var(--paper); padding: .7rem 1.2rem; border-radius: 2px; }
+  .nav__cta { background: var(--green); color: var(--paper); padding: .7rem 1.2rem; border-radius: 2px; transition: background .35s; }
+  .nav__cta:hover { background: var(--clay); }
   .nav__toggle { display: none; background: none; border: 0; font: inherit; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: inherit; }
   .menu { position: fixed; inset: 0; z-index: 74; background: var(--green); color: var(--paper); padding: 6rem var(--gutter) 2rem;
     display: flex; flex-direction: column; gap: .4rem; transform: translateY(-100%); transition: transform .6s cubic-bezier(.7,0,.2,1); }
@@ -137,13 +143,32 @@
   .events__aside .lede { font-family: var(--serif); font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1.12; margin-bottom: 1.6rem; }
   .events__aside ul { list-style: none; border-top: 1px solid rgba(244,238,226,.16); margin-bottom: 2.2rem; }
   .events__aside li { padding: .9rem 0; border-bottom: 1px solid rgba(244,238,226,.16); font-size: .92rem; opacity: .85; }
+  .btn { transition: background .35s, color .35s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .btn:hover { background: var(--clay); color: var(--paper); }
   .btn { display: inline-block; background: var(--paper); color: var(--ink); padding: 1rem 1.5rem; border-radius: 2px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
   .events__aside .more { display: inline-block; margin-top: 1.4rem; font-family: var(--serif); font-size: 1.3rem; border-bottom: 1px solid currentColor; }
+  .events__more { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 5vw; margin-top: clamp(3.5rem, 9vh, 6rem); padding-top: 2.4rem; border-top: 1px solid rgba(244,238,226,.16); }
+  .events__more > div > .label { opacity: .6; margin-bottom: 1.4rem; display: block; }
+  .rates__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2vw; margin-bottom: 1.8rem; }
+  .rate { display: flex; flex-direction: column; gap: .3rem; padding: 1.4rem 1.3rem 1.5rem; border: 1px solid rgba(244,238,226,.16); border-radius: 2px;
+    transition: background .4s, border-color .4s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .rate:hover { background: rgba(244,238,226,.05); border-color: rgba(244,238,226,.4); transform: translateY(-3px); }
+  .rate .label { opacity: .55; }
+  .rate b { font-family: var(--serif); font-weight: 500; font-size: 1.55rem; line-height: 1.1; margin-top: .4rem; }
+  .rate__price { color: var(--clay); font-size: .9rem; }
+  .rate p { font-size: .84rem; opacity: .72; margin-top: .5rem; }
+  .steps ol { list-style: none; counter-reset: none; }
+  .steps li { display: grid; grid-template-columns: 2.2rem 1fr; gap: .4rem; padding: .95rem 0; border-top: 1px solid rgba(244,238,226,.12); }
+  .steps li:last-child { border-bottom: 1px solid rgba(244,238,226,.12); }
+  .steps li > span { font-size: .66rem; letter-spacing: .16em; color: var(--clay); padding-top: .25rem; }
+  .steps b { font-weight: 500; font-size: .95rem; }
+  .steps p { font-size: .84rem; opacity: .7; }
   .strip__note { color: var(--muted); max-width: 34ch; font-size: .9rem; margin-bottom: .6rem; }
   .strip__end a + br + a { display: inline-block; margin-top: 1.2rem; }
   @media (max-width: 900px) {
     .creed__grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
-    .events__body { grid-template-columns: minmax(0, 1fr); row-gap: 3.4rem; } .events__aside { position: static; }
+    .events__body, .events__more { grid-template-columns: minmax(0, 1fr); row-gap: 3.4rem; }
+    .rates__row { grid-template-columns: minmax(0, 1fr); gap: .8rem; } .events__aside { position: static; }
     .ev-grid, .ev-row { gap: 2.6vw; }
     .ev-row { flex-wrap: wrap; }
     .ev-row .ev { flex: 1 1 calc(50% - 1.3vw) !important; }
@@ -229,13 +254,21 @@
   /* 6. outro: quiet sign-off */
   .outro { position: relative; background: var(--green); color: var(--paper); padding: var(--pad) var(--gutter) 2.4rem; overflow: hidden; }
   .outro .topo { color: rgba(244,238,226,.1); }
-  .outro__inner { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; }
+  .outro__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 3rem 6vw; }
+  .outro__mark { width: 54px; height: 54px; margin-bottom: 1.8rem; color: var(--paper); }
+  .outro__lede { max-width: 40ch; margin-top: 1.6rem; opacity: .75; }
+  .outro__contact { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
+  .outro__contact .label { opacity: .6; margin-bottom: .4rem; }
+  .outro__mail { font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.15; }
+  .outro__note { font-size: .85rem; opacity: .6; margin-bottom: 1.4rem; }
   .outro h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.4rem, 9vw, 8.5rem); line-height: .9; }
   .outro h2 em { color: var(--clay); }
-  .magnet { display: inline-grid; place-items: center; width: 150px; height: 150px; border-radius: 50%; background: var(--paper); color: var(--ink); }
+  .magnet { display: inline-grid; place-items: center; width: 150px; height: 150px; border-radius: 50%; background: var(--paper); color: var(--ink); transition: background .35s, color .35s; }
+  .magnet:hover { background: var(--clay); color: var(--paper); }
   .outro__foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-top: 14vh; padding-top: 1.4rem;
     border-top: 1px solid rgba(244,238,226,.16); opacity: .7; }
   .outro__foot nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+  .outro__foot a { padding-bottom: .1em; }
 
   @media (max-width: 760px) {
     .loader__mark { width: 4.6rem; } .loader__word { font-size: 1.9rem; }
@@ -290,6 +323,7 @@
       <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
       <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">to</text>
       <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
+      <circle class="iris" cx="0" cy="0" r="0" fill="#000"/>
     </mask></defs>
     <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)" mask="url(#words)"/>
   </svg></div>
@@ -321,7 +355,7 @@
     <div class="creed__item"><span class="label">Vision</span><p>Ox Hollow strives to bring people closer to nature, illuminating stories of action, passion, and belief in conservation, cultivation, and care.</p></div>
     <div class="creed__item"><span class="label">Mission</span><p>To illuminate the unseen, instill devotion, and craft stories of our innate natural connections.</p></div>
   </div>
-  <div class="creed__foot"><p>The name is an homage: Logan means “little hollow,” Ossentjuk means “oxen yoke.”</p><a href="/about" data-cursor="Open">Read the story</a></div>
+  <div class="creed__foot"><p>The name is an homage: Logan means “little hollow,” Ossentjuk means “oxen yoke.”</p><a class="u" href="/about" data-cursor="Open">Read the story</a></div>
 </section>
 
 <section class="events" id="events">
@@ -342,8 +376,28 @@
       <p class="lede">Editorial event photography and brand films for Bay Area companies.</p>
       <ul><li>Trusted by Bay Area companies like Semgrep</li><li>Booked in a day, delivered in five.</li><li>Replies within 1 business day</li></ul>
       <a class="btn" href="/events#packages" data-magnet>Hire for an event</a><br>
-      <a class="more" href="/events" data-cursor="Open">Event photography in San Francisco</a>
+      <a class="more u" href="/events" data-cursor="Open">Event photography in San Francisco</a>
     </aside>
+  </div>
+  <div class="events__more">
+    <div class="rates">
+      <p class="label">Clear rates. No surprises.</p>
+      <div class="rates__row">
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Half day</span><b>The Session</b><span class="rate__price">from $1,000</span><p>Up to 4 hours on site. Ideal for a single keynote, a launch, or a reception.</p></a>
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Full day</span><b>The Day</b><span class="rate__price">from $2,000</span><p>Up to 8 hours. Full conference or gala coverage, with a same-week highlight set for social.</p></a>
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Multi-day</span><b>The Production</b><span class="rate__price">from $5,000</span><p>Two-plus-day conferences, second shooter, or event + brand film combined.</p></a>
+      </div>
+      <a class="more u" href="/events#packages" data-cursor="Open">All packages, including film and monthly content</a>
+    </div>
+    <div class="steps">
+      <p class="label">How it works</p>
+      <ol>
+        <li><span>01</span><div><b>Tell me the date &amp; scope</b><p>Share the date, the venue, and what you need to walk away with.</p></div></li>
+        <li><span>02</span><div><b>Quote &amp; shot plan</b><p>Availability, a quote, and a simple shot plan within one business day.</p></div></li>
+        <li><span>03</span><div><b>The shoot</b><p>Candid, unobtrusive, editorial. I work the room without interrupting it.</p></div></li>
+        <li><span>04</span><div><b>Your gallery</b><p>A same-week social highlight set, and the full edited gallery within 5 business days.</p></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -367,7 +421,7 @@
     <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-846297616.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>Film 02 · 2023 · 14:35</span></p></button></div>
     <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-304798458.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>Film 03 · 2018 · 2:52</span></p></button></div>
   </div>
-  <a class="films__all" href="/films" data-cursor="Open">About the films</a>
+  <a class="films__all u" href="/films" data-cursor="Open">About the films</a>
 </section>
 
 <section class="strip" id="strip">
@@ -383,7 +437,7 @@
     <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><span>07</span><b>Salt and Scales</b><span>Ocean</span></p></a>
     <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><span>08</span><b>Rainier Afterglow</b><span>Mountains</span></p></a>
     <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><span>09</span><b>Sea Cave Glow</b></p></a>
-    <div class="strip__end"><a href="/gallery" data-cursor="Open">See the full gallery</a><br><a href="/prints" data-cursor="Open">Visit the store</a></div>
+    <div class="strip__end"><a class="u" href="/gallery" data-cursor="Open">See the full gallery</a><br><a class="u" href="/prints" data-cursor="Open">Visit the store</a></div>
   </div>
 </section>
 
@@ -392,12 +446,22 @@
 <footer class="outro" id="outro">
   <div class="topo" aria-hidden="true"></div>
   <div class="outro__inner">
-    <h2>Dare to <em>see.</em></h2>
-    <a class="magnet label" href="/contact" data-magnet>Contact</a>
+    <div class="outro__brand">
+      <svg class="outro__mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
+      <h2>Dare to <em>see.</em></h2>
+      <p class="outro__lede">Editorial event photography and brand films for Bay Area companies, and fine-art prints of the wild.</p>
+    </div>
+    <div class="outro__contact">
+      <p class="label">Available for booking</p>
+      <a class="outro__mail u" href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a>
+      <a class="u" href="tel:+13039055199">(303) 905-5199</a>
+      <p class="outro__note">Replies within 1 business day</p>
+      <a class="magnet label" href="/contact" data-magnet>Contact</a>
+    </div>
   </div>
   <div class="outro__foot label">
-    <span>Ox Hollow Media · San Francisco Bay Area</span>
-    <nav aria-label="Footer"><a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="https://www.instagram.com/oxhollowmedia/" target="_blank" rel="noopener">Instagram</a></nav>
+    <span>© Ox Hollow Media · San Francisco Bay Area</span>
+    <nav aria-label="Footer"><a class="u" href="/about">About</a><a class="u" href="/events">Events</a><a class="u" href="/prints">Prints</a><a class="u" href="/gallery">Gallery</a><a class="u" href="/films">Films</a><a class="u" href="https://www.instagram.com/oxhollowmedia/" target="_blank" rel="noopener">Instagram</a></nav>
     <span>Lab prototype, not published</span>
   </div>
 </footer>
@@ -446,21 +510,36 @@ document.querySelector('.peek-tab').addEventListener('click', () => { peeking = 
 toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; open ? lenis.stop() : lenis.start(); syncNav(); });
 
 // 1. hero: zoom into the hole of the "o" in "to"
-function holeOrigin() {
+const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.querySelector('.iris');
+let aim = { x: 290, y: 714, end: 40 };
+// the hollow of the "o" in "to": centre of the letter's box, halfway up the x-height
+function findHole() {
   const tall = matchMedia('(max-aspect-ratio: 4/5)').matches;
-  const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole'), e = t.getExtentOfChar(1);
-  const W = innerWidth, H = innerHeight, k = Math.min(W, H) / 1000;
-  const cx = e.x + e.width / 2, cy = +t.getAttribute('y') - +t.getAttribute('font-size') * 0.19;
-  return `${(W - 1000 * k) / 2 + cx * k}px ${(H - 1000 * k) / 2 + cy * k}px`;
+  const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole');
+  const fs = +t.getAttribute('font-size'), base = +t.getAttribute('y');
+  const g = document.createElement('canvas').getContext('2d'); g.font = `500 ${fs}px "Cormorant Garamond"`;
+  const m = g.measureText('o'), a = t.getStartPositionOfChar(1).x;
+  aim = { x: a + (m.actualBoundingBoxRight - m.actualBoundingBoxLeft) / 2,
+          y: base - m.actualBoundingBoxAscent / 2, end: fs * .12 };
 }
-const setOrigin = () => gsap.set('.hero__mask', { transformOrigin: holeOrigin() });
-document.fonts.ready.then(setOrigin); addEventListener('resize', setOrigin);
+const zoom = { p: 0 };
+function drawZoom() {
+  const p = zoom.p, size = 1000 * Math.pow(aim.end / 1000, p), k = size / 1000;   // even, exponential zoom
+  const c = p * p;                                                   // drift the hollow to the centre as we arrive
+  const x0 = (aim.x - aim.x * k) * (1 - c) + (aim.x - size / 2) * c;
+  const y0 = (aim.y - aim.y * k) * (1 - c) + (aim.y - size / 2) * c;
+  heroSvg.setAttribute('viewBox', `${x0} ${y0} ${size} ${size}`);
+  // the hollow opens like an aperture over the last stretch until the footage fills the screen
+  const o = Math.min(1, Math.max(0, (p - .55) / .45)), ease = o * o * (3 - 2 * o);
+  iris.setAttribute('cx', aim.x); iris.setAttribute('cy', aim.y); iris.setAttribute('r', ease * size * 1.15);
+}
+document.fonts.ready.then(() => { findHole(); drawZoom(); });
+addEventListener('resize', () => { findHole(); drawZoom(); });
 const heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=160%', scrub: true, pin: true } });
 lenis.on('scroll', ({ scroll }) => { const p = scroll > heroTl.scrollTrigger.end - innerHeight * .25; if (p !== pastHero) { pastHero = p; syncNav(); } });
 heroTl
   .to('.hero__hint', { opacity: 0, duration: .1 }, 0)
-  .to('.hero__mask', { scale: 9, ease: 'power2.in', duration: 1 }, 0)
-  .to('.hero__mask', { opacity: 0, duration: .45, ease: 'power1.in' }, .5)
+  .to(zoom, { p: 1, ease: 'power2.in', duration: 1, onUpdate: drawZoom }, 0)
   .set('.hero__mask', { visibility: 'hidden' }, 1);
 
 // 2. flight: scroll is the drone's position; each line holds the screen for a quarter of the flight,
@@ -543,7 +622,7 @@ gsap.from('.ev-row', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', stagg
 gsap.from('.events__aside', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.events__aside', start: 'top 90%', once: true } });
 gsap.from('.entry-wrap', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: '.index__grid', start: 'top 88%', once: true } });
 gsap.from('.film-wrap', { y: 80, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.films__grid', start: 'top 85%', once: true } });
-gsap.from('.outro h2', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.outro', start: 'top 70%', once: true } });
+gsap.from('.outro__brand > *, .outro__contact > *', { y: 30, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: '.outro', start: 'top 70%', once: true } });
 
 // cursor
 const cur = document.querySelector('.cursor'), dot = cur.querySelector('.cursor__dot'), ring = cur.querySelector('.cursor__ring'), label = cur.querySelector('.cursor__label');

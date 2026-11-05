@@ -554,13 +554,13 @@ function drawZoom() {
   portrait.setAttribute('width', iw); portrait.setAttribute('height', ih);
   // One camera move, in three beats:
   //   fill   the letter o becomes a round lens of footage the same size
-  //   close  the seven blades sweep in and stop down, like a shutter
+  //   close  the seven blades sweep in and shut completely, and hold for a beat, like a shutter
   //   open   they turn back open as we fly in, and the opening rounds into a circle that fills the screen
   const R = aim.R, ss = v => v * v * (3 - 2 * v);
   const sh = ss(clamp01((p - .02) / .1));                            // fill
-  const cl = ss(clamp01((p - .12) / .2));                            // close
+  const cl = ss(clamp01((p - .11) / .19));                           // close, shut by .30, held until .36
   const e = ss(clamp01((p - .36) / .58));                            // open
-  const r = p < .36 ? R * (1 - .58 * cl) : R * (.42 + 1.45 * e * e);
+  const r = p < .36 ? R * (1 - .985 * cl) : R * (.015 + 1.85 * e * e);
   const round = p < .36 ? 1 - cl : ss(clamp01((r / R - .8) / .35));  // 1 = a circle, 0 = the blades' seven sides
   const turn = -.35 - cl * .55 - e * 1.2;
   oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));

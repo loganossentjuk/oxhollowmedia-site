@@ -87,25 +87,6 @@
     draw();
   }
 
-  /* ── 4. Rates count up the first time they come into view ── */
-  if (!reduced && hasIO) {
-    const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
-    const io2 = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        io2.unobserve(e.target);
-        const el = e.target, to = Number(el.dataset.to), t0 = performance.now(), dur = 1100;
-        const step = (t) => {
-          const k = Math.min(1, (t - t0) / dur);
-          el.textContent = fmt(to * (1 - Math.pow(1 - k, 3)));
-          if (k < 1) requestAnimationFrame(step); else el.textContent = fmt(to);
-        };
-        requestAnimationFrame(step);
-      });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('.pkg-num[data-to]').forEach((el) => io2.observe(el));
-  }
-
   /* ── 5. How it works: the line draws as you scroll ── */
   const proc = document.getElementById('process');
   const line = proc && proc.querySelector('.step-line');

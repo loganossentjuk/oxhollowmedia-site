@@ -99,3 +99,6 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - One offline print channel: café wall / holiday market / interior designer (shop-manager to shortlist Bay Area options).
 - Scripts to promote from scratchpad: make_pins.py (Pinterest framed pin), tt_detail_reveal.py (guess/reveal).
 - Read Nat Geo Society early-career grant rules; log as a 'climb' series if Logan wants that path.
+
+## Parked 2026-11-04
+- **(Logan)** Branch `brand-lines` (home vision block ends with the voice line; About carries "Closer to nature, one frame at a time."; guidelines open questions resolved) is PARKED: Logan is reworking pages and wants those finalised before any content changes. Do not merge; do not touch site copy until he says the rework is done. Preview: https://brand-lines.oxhollowmedia-site.pages.dev

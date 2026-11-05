@@ -23,7 +23,7 @@
   .side--left { justify-content: flex-end; justify-self: end; }
   .side--right { justify-self: start; }
   .side span { display: inline-block; }
-  .mark { width: .68em; height: .68em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
+  .mark { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
   .mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
   .mark .moon { opacity: 0; }
 
@@ -42,21 +42,19 @@
 <div class="stage">
   <div class="lock" aria-label="Ox Hollow">
     <div class="side side--left"><span>O</span><span>X</span><span>&nbsp;</span><span>H</span></div>
-    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="41.5" fill="none" stroke="currentColor" stroke-width="11" pathLength="1"/><path class="moon" d="M26.4,15.87 A41.5,41.5 0 0 0 26.4,84.13 Z" fill="currentColor"/></svg>
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/><defs><clipPath id="lens"><circle cx="50" cy="50" r="37.8"/></clipPath><mask id="ib0" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib1" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib2" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib3" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib4" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib5" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib6" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask></defs><g class="iris" clip-path="url(#lens)"><g mask="url(#ib0)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib1)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib2)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib3)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib4)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib5)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib6)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g></g></svg>
     <div class="side side--right"><span>L</span><span>L</span><span>O</span><span>W</span></div>
   </div>
 </div>
 <div class="panel" role="group" aria-label="Playground">
-  <button data-v="unroll" aria-pressed="true">Unroll</button>
+  <button data-v="shutter" aria-pressed="true">Shutter</button>
+  <button data-v="unroll">Unroll</button>
   <button data-v="fly">Fly out</button>
   <button data-v="split">Split</button>
   <span class="sep"></span>
   <button data-s=".6">Slow</button>
   <button data-s="1" aria-pressed="true">Normal</button>
   <button data-s="1.5">Quick</button>
-  <span class="sep"></span>
-  <button data-w="thin">Thin ring</button>
-  <button data-w="matched" aria-pressed="true">Matched ring</button>
   <span class="sep"></span>
   <button class="replay">Replay</button>
 </div>
@@ -66,9 +64,27 @@
 const left = document.querySelector('.side--left'), right = document.querySelector('.side--right');
 const mark = document.querySelector('.mark'), ring = mark.querySelector('.ring'), moon = mark.querySelector('.moon');
 const lettersL = [...left.children], lettersR = [...right.children];
-let variant = 'unroll', speed = 1, tl;
+let variant = 'shutter', speed = 1, tl;
+
+const irisG = mark.querySelector('.iris'), blades = [...irisG.children];
+const masks = Array.from({ length: 7 }, (_, k) => mark.querySelector('#ib' + k));
+const IR = 38, RHO = IR * 1.55, T = RHO * .62, iris = { g: IR, turn: 0 };
+function drawIris() {
+  const reach = Math.sqrt(Math.max(0, (RHO + iris.g) ** 2 - T * T));
+  const C = Array.from({ length: 7 }, (_, i) => {
+    const a = iris.turn + i * 2 * Math.PI / 7, ux = Math.cos(a), uy = Math.sin(a);
+    return [50 + reach * ux - T * uy, 50 + reach * uy + T * ux];
+  });
+  const put = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', RHO); };
+  for (let i = 0; i < 7; i++) {
+    const me = C[i], next = C[(i + 1) % 7];
+    put(masks[i].querySelector('.m-self'), me); put(masks[i].querySelector('.m-next'), next);
+    put(blades[i].querySelector('.b-fill'), me); put(blades[i].querySelector('.b-edge'), next);
+  }
+}
 
 function reset() {
+  iris.g = IR; iris.turn = 0; drawIris(); gsap.set(irisG, { opacity: 0 });
   if (tl) tl.kill();
   gsap.set([left, right], { clearProps: 'width' });
   gsap.set([...lettersL, ...lettersR], { clearProps: 'all' });
@@ -82,7 +98,22 @@ function play() {
   tl = gsap.timeline({ defaults: { ease: 'expo.inOut' } }).timeScale(speed);
   // 1. the mark draws itself, large, in the centre
   tl.to(ring, { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut' })
-    .to(moon, { opacity: 1, duration: .35, ease: 'power1.out' }, '-=.2');
+    .to(moon, { opacity: variant === 'shutter' ? 0 : 1, duration: .35, ease: 'power1.out' }, '-=.2');
+
+  if (variant === 'shutter') {
+    // 2. the ring becomes a lens: the blades sweep in and shut, then open on the mark's crescent
+    gsap.set(moon, { opacity: 0 });
+    gsap.set([left, right], { width: 0 });
+    tl.set(irisG, { opacity: 1 }, '-=.15')
+      .to(iris, { g: 0, turn: -.9, duration: .55, ease: 'power3.in', onUpdate: drawIris }, '<')
+      .set(moon, { opacity: 1 })                                     // already behind the shut blades
+      .to(iris, { g: IR, turn: -2, duration: .7, ease: 'power3.out', onUpdate: drawIris }, '+=.18')
+      .set(irisG, { opacity: 0 })
+      // 3. it settles to letter size and the name unrolls out of it
+      .to(mark, { scale: 1, duration: .95 }, '-=.15')
+      .fromTo(left, { width: 0 }, { width: wl, duration: 1.05 }, '<+.12')
+      .fromTo(right, { width: 0 }, { width: wr, duration: 1.05 }, '<');
+  }
 
   if (variant === 'unroll') {
     // 2. it shrinks to letter size and the name unrolls out of it, both ways at once
@@ -122,15 +153,7 @@ document.querySelectorAll('[data-s]').forEach(b => b.addEventListener('click', (
   speed = +b.dataset.s; document.querySelectorAll('[data-s]').forEach(x => x.setAttribute('aria-pressed', x === b)); play();
 }));
 document.querySelector('.replay').addEventListener('click', play);
-// compare the brand mark's own thin ring with one weighted to match the letters
-const RINGS = { thin: { w: 4.7, r: 40, d: 'M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z', size: '.74em' },
-                matched: { w: 11, r: 41.5, d: 'M26.4,15.87 A41.5,41.5 0 0 0 26.4,84.13 Z', size: '.68em' } };
-document.querySelectorAll('[data-w]').forEach(b => b.addEventListener('click', () => {
-  const k = RINGS[b.dataset.w];
-  ring.setAttribute('stroke-width', k.w); ring.setAttribute('r', k.r); moon.setAttribute('d', k.d);
-  mark.style.width = mark.style.height = k.size;
-  document.querySelectorAll('[data-w]').forEach(x => x.setAttribute('aria-pressed', x === b)); play();
-}));
+
 document.fonts.ready.then(play);
 </script>
 </body>

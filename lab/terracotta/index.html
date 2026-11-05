@@ -183,7 +183,6 @@
   .topo path { stroke: currentColor; stroke-opacity: 1; }
   .head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 1.5rem; padding: 0 var(--gutter); }
   .head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: .95; }
-  .head h2 em { color: var(--clay); }                               /* echoes the see. at the bottom */
   .head__rule { height: 1px; background: currentColor; opacity: .2; margin-bottom: .8rem; transform-origin: left; }
   .head .label { opacity: .7; margin-bottom: .5rem; }
 
@@ -348,8 +347,7 @@
       <g class="lens__ticks" stroke="#F4EEE2" stroke-opacity=".55" stroke-width=".9"></g>
       <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
       <path class="lens__glint" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-linecap="round" stroke-width="2" vector-effect="non-scaling-stroke"/>
-      <circle class="lens__index" fill="#B67C56"/>
-      <text class="lens__f" text-anchor="middle" fill="#B67C56">ƒ/1.4</text>
+      <text class="lens__f" text-anchor="middle" fill="#F4EEE2">ƒ/1.4</text>
     </g>
   </svg></div>
   <div class="flight__shade"></div>
@@ -602,8 +600,6 @@ function findHole() {
   }
   const g0 = Math.PI * 1.08, g1 = Math.PI * 1.38, gr = R * .93;      // a glint of light on the glass, top left
   glint.setAttribute('d', `M${aim.x + gr * Math.cos(g0)},${aim.y + gr * Math.sin(g0)}A${gr},${gr} 0 0,1 ${aim.x + gr * Math.cos(g1)},${aim.y + gr * Math.sin(g1)}`);
-  const idx = heroSvg.querySelector('.lens__index');               // the index mark, top of the lens like a camera's
-  idx.setAttribute('cx', aim.x); idx.setAttribute('cy', aim.y - R * .79); idx.setAttribute('r', R * .04);
   fText.setAttribute('x', aim.x); fText.setAttribute('y', aim.y + R * 1.42);
   fText.setAttribute('font-size', R * .17); fText.setAttribute('letter-spacing', R * .03);
   fText.style.fontFamily = 'DM Sans, system-ui, sans-serif';
@@ -726,7 +722,7 @@ fetch('/images/topo.svg').then(r => r.text()).then(svg => {
     box.innerHTML = svg;
     const paths = box.querySelectorAll('path');
     paths.forEach(p => { p.setAttribute('pathLength', 1); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; });
-    const marked = paths[Math.floor(paths.length * .46)];
+    const marked = paths[Math.floor(paths.length * .46)];            // one contour in terracotta, like the marked line on a map
     if (marked) { marked.style.stroke = '#B67C56'; marked.style.strokeOpacity = box.closest('.creed, .index, .strip') ? .6 : .5; marked.style.strokeWidth = 1.6; }
     gsap.to(paths, { strokeDashoffset: 0, ease: 'none', stagger: { each: .004 },
       scrollTrigger: { trigger: box.parentElement, start: 'top 85%', end: 'top 10%', scrub: 1 } });

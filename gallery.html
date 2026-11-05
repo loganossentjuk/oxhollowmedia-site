@@ -32,10 +32,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=77" />
+  <link rel="stylesheet" href="css/styles.css?v=79" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ImageGallery", "name": "Ox Hollow Media Photography Gallery", "url": "https://oxhollowmedia.com/gallery", "description": "Ocean, mountain, and wildlife photography available as fine-art prints, plus event photography and portraits.", "publisher": {"@id": "https://oxhollowmedia.com/#business"}}</script>
 </head>
-<body class="page-gallery">
+<body class="page-gallery gal">
 
   <!-- ── Navigation ── -->
   <nav id="nav">
@@ -68,11 +68,12 @@
   <div class="drawer-overlay" id="overlay"></div>
 
   <!-- ── Gallery header ── -->
+  <div class="scroll-line" aria-hidden="true"><span></span></div>
   <header id="gallery-hero">
     <div class="container">
       <p class="section-label">The Collection</p>
       <h1 class="gallery-title">Gallery</h1>
-      <p class="gallery-sub">Curving coastlines, mile-high mountains, foggy forests, and the people in between.</p>
+      <p class="gallery-sub gallery-lines">Curving <button type="button" class="line-link" data-line="ocean">coastlines</button>, mile-high <button type="button" class="line-link" data-line="mountains">mountains</button>, foggy <button type="button" class="line-link" data-line="forests">forests</button>, and <button type="button" class="line-link" data-line="people">the people in between</button>.</p>
 
       <div class="filters" id="filters" aria-label="Filter by category">
         <button class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
@@ -113,6 +114,10 @@
   <!-- ── Gallery grid ── -->
   <section id="gallery-wrap">
     <div class="container">
+      <div class="collection-card" id="collection-card" aria-live="polite" hidden>
+        <h2 class="cc-title"></h2>
+        <p class="cc-count"></p>
+      </div>
       <div class="masonry salon size-m" id="gallery-grid">
         <!-- 2026 print masters lead the grid (data-new marks them for the New badge). -->
         <a class="masonry-item" data-cat="ocean" data-new="1" href="/prints/dawn-patrol"><picture><source type="image/webp" srcset="images/portfolio/ocean/22-dawn-patrol-800.webp 800w, images/portfolio/ocean/22-dawn-patrol.webp 1600w" sizes="(max-width: 600px) 100vw, 33vw"><img src="images/portfolio/ocean/22-dawn-patrol.jpg" width="1600" height="900" decoding="async" alt="A surfer holding a longboard at the water's edge, silhouetted against a sunset sky"></picture><div class="cap"><span class="cap-cat">Ocean</span><div class="cap-title">Dawn Patrol</div></div></a>
@@ -257,6 +262,7 @@
 
   <script src="js/main.js?v=3"></script>
   <script src="js/motion.js?v=6"></script>
-  <script src="js/gallery.js?v=30"></script>
+  <script src="js/gallery.js?v=31"></script>
+  <script src="js/gallery-motion.js?v=1"></script>
 </body>
 </html>

@@ -20,6 +20,8 @@ if (filterBar && grid) {
       // Any frame marked data-filter-only does the same (e.g. Window Portrait).
       const match = cat === 'all'
         ? item.dataset.cat !== 'events' && !('filterOnly' in item.dataset)
+        : cat === 'people'
+          ? item.dataset.cat === 'events' || item.dataset.cat === 'portraits'
         : item.dataset.cat === cat
           && (cat !== 'events' || sub === 'all' || item.dataset.sub === sub);
       item.classList.toggle('is-hidden', !match);
@@ -27,7 +29,10 @@ if (filterBar && grid) {
     });
     emptyMsg.style.display = shown === 0 ? 'block' : 'none';
     if (subBar) subBar.hidden = cat !== 'events';
+    document.dispatchEvent(new CustomEvent('gallery:filter', { detail: { cat, shown } }));
   };
+  // Swaps go through the shutter (js/gallery-motion.js) when it's loaded.
+  const swap = (cat) => (window.oxShutter ? window.oxShutter(() => applyFilter(cat)) : applyFilter(cat));
 
   if (subBar) {
     subBar.addEventListener('click', (e) => {
@@ -73,7 +78,24 @@ if (filterBar && grid) {
       photosLabel.textContent = inMenu ? `Collections · ${chip.textContent}` : 'Collections';
     }
     setMenu(false);
-    applyFilter(chip.dataset.filter);
+    swap(chip.dataset.filter);
+  };
+
+  // The hero line's phrases (coastlines, mountains, forests, the people in
+  // between) select collections too. "people" has no chip of its own.
+  window.oxGallery = {
+    select(cat) {
+      const chip = allChips().find((c) => c.dataset.filter === cat);
+      if (chip) { selectChip(chip); return; }
+      allChips().forEach((c) => {
+        c.classList.remove('active');
+        if (c.classList.contains('menu-item')) c.setAttribute('aria-checked', 'false');
+        else c.setAttribute('aria-pressed', 'false');
+      });
+      if (photosBtn) { photosBtn.classList.add('active'); photosLabel.textContent = 'Collections · People'; }
+      setMenu(false);
+      swap(cat);
+    },
   };
 
   if (photosBtn) {
@@ -106,7 +128,7 @@ if (filterBar && grid) {
   const deepLinked = hash
     ? allChips().find((c) => c.dataset.filter === hash)
     : null;
-  if (deepLinked) selectChip(deepLinked);
+  if (deepLinked) { const sh = window.oxShutter; window.oxShutter = null; selectChip(deepLinked); window.oxShutter = sh; }
   else applyFilter('all');   // run once on load so events start hidden
 }
 

@@ -560,35 +560,49 @@ function drawZoom() {
   const top = Math.max(vy, -200), bottom = Math.min(vy + vh, 1200);
   portrait.setAttribute('x', vx); portrait.setAttribute('y', top);
   portrait.setAttribute('width', vw); portrait.setAttribute('height', Math.max(0, bottom - top));
-  // a seven-blade iris: closed in the hollow, turning open as we fly in, until the footage fills the screen
-  // the zoom carries the lens up to fill the screen, so the opening only has to grow to the lens itself
-  // a clean o on entry; the blades close in as you start to scroll, then turn open
-  // a clean o on entry; as you scroll the letter dissolves into a round lens of the same size, which turns open
-  const show = clamp01((p - .03) / .22), sh = show * show * (3 - 2 * show);
-  const o = clamp01((p - .2) / .72), e = o * o * (3 - 2 * o);
-  const r = aim.R * (.42 * sh + 1.45 * e * e), turn = -.35 - e * 1.4 - (1 - sh) * .7;
+  // One camera move, in three beats:
+  //   fill   the letter o becomes a round lens of footage the same size
+  //   close  the seven blades sweep in and stop down, like a shutter
+  //   open   they turn back open as we fly in, and the opening rounds into a circle that fills the screen
+  const R = aim.R, ss = v => v * v * (3 - 2 * v);
+  const sh = ss(clamp01((p - .02) / .1));                            // fill
+  const cl = ss(clamp01((p - .12) / .2));                            // close
+  const e = ss(clamp01((p - .36) / .58));                            // open
+  const r = p < .36 ? R * (1 - .58 * cl) : R * (.42 + 1.45 * e * e);
+  const round = p < .36 ? 1 - cl : ss(clamp01((r / R - .8) / .35));  // 1 = a circle, 0 = the blades' seven sides
+  const turn = -.35 - cl * .55 - e * 1.2;
   oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
   const pts = Array.from({ length: BLADES }, (_, i) => {
     const a = turn + i * 2 * Math.PI / BLADES; return [aim.x + r * Math.cos(a), aim.y + r * Math.sin(a)];
   });
-  iris.setAttribute('points', pts.map(q => q.join(',')).join(' '));
+  // the opening: the blades' polygon, eased toward a true circle when the blades are drawn back
+  const SEG = 12, ring = [];
+  pts.forEach((a, i) => {
+    const b = pts[(i + 1) % BLADES];
+    for (let k = 0; k < SEG; k++) {
+      const q = [a[0] + (b[0] - a[0]) * k / SEG, a[1] + (b[1] - a[1]) * k / SEG];
+      const dx = q[0] - aim.x, dy = q[1] - aim.y, d = Math.hypot(dx, dy) || 1, f = (1 - round) + round * r / d;
+      ring.push(`${aim.x + dx * f},${aim.y + dy * f}`);
+    }
+  });
+  iris.setAttribute('points', ring.join(' '));
+  iris.setAttribute('fill-opacity', sh);
   blades.forEach((ln, i) => {                                        // each blade edge runs on past the next corner
     const [ax, ay] = pts[i], [bx, by] = pts[(i + 1) % BLADES], d = Math.hypot(bx - ax, by - ay) || 1;
     ln.setAttribute('x1', ax); ln.setAttribute('y1', ay);
-    ln.setAttribute('x2', ax + (bx - ax) / d * aim.R * 3); ln.setAttribute('y2', ay + (by - ay) / d * aim.R * 3);
+    ln.setAttribute('x2', ax + (bx - ax) / d * R * 3); ln.setAttribute('y2', ay + (by - ay) / d * R * 3);
   });
   // each blade is the wedge between one edge carried past its corner and the next edge (the housing trims them)
-  const R = aim.R, L = R * 3;
+  const L = R * 3;
   facets.forEach((f, i) => {
-    const a = pts[i], b = pts[(i + 1) % BLADES], c = pts[(i + 2) % BLADES];
-    const d1 = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, d2 = Math.hypot(c[0] - b[0], c[1] - b[1]) || 1;
+    const a = pts[i], b = pts[(i + 1) % BLADES], cc = pts[(i + 2) % BLADES];
+    const d1 = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, d2 = Math.hypot(cc[0] - b[0], cc[1] - b[1]) || 1;
     const u = [b[0] + (b[0] - a[0]) / d1 * L, b[1] + (b[1] - a[1]) / d1 * L];
-    const v = [b[0] + (c[0] - b[0]) / d2 * L, b[1] + (c[1] - b[1]) / d2 * L];
+    const v = [b[0] + (cc[0] - b[0]) / d2 * L, b[1] + (cc[1] - b[1]) / d2 * L];
     f.setAttribute('points', [b, u, v].map(q => q.join(',')).join(' '));
-    f.style.display = r < R * 1.02 ? '' : 'none';
   });
-  rim.setAttribute('stroke-opacity', .7 * sh * clamp01(1 - (r / R - .9) / .2));
-  apertureG.style.opacity = sh;   // the rim fades as the opening passes it
+  apertureG.style.opacity = sh * (1 - round);                        // blades show only while they're in
+  rim.setAttribute('stroke-opacity', .7 * sh * clamp01(1 - (r / R - 1) / .25));
 }
 document.fonts.ready.then(() => { findHole(); drawZoom(); });
 addEventListener('resize', () => { findHole(); drawZoom(); });

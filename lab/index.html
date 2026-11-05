@@ -121,7 +121,7 @@
   .head .label { opacity: .7; margin-bottom: .5rem; }
 
   /* 3. sideways gallery: every frame keeps its photograph's own shape */
-  .strip { position: relative; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; justify-content: center; }
+  .strip { position: relative; overflow: hidden; background: var(--bg-section); display: flex; flex-direction: column; justify-content: center; }
   .strip .topo { color: rgba(41,65,50,.16); }
   .strip .head { position: relative; margin-bottom: 2.6rem; }
   .strip__track { position: relative; display: flex; gap: 3vw; padding: 0 var(--gutter); width: max-content; align-items: flex-end; will-change: transform; }
@@ -162,7 +162,7 @@
   .viewer__close { position: absolute; top: 1.2rem; right: var(--gutter); background: none; border: 0; color: var(--paper); font: inherit; cursor: pointer; }
 
   /* 5. field index: one plate per part of the site */
-  .index { position: relative; background: var(--bg-section); padding: 16vh 0 18vh; overflow: hidden; }
+  .index { position: relative; background: var(--bg); padding: 16vh 0 18vh; overflow: hidden; }
   .index .topo { color: rgba(41,65,50,.14); }
   .index .head { position: relative; margin-bottom: 3.4rem; }
   .index__grid { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2vw; padding: 0 var(--gutter); align-items: start; }
@@ -275,20 +275,18 @@
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
 </section>
 
-<section class="strip" id="strip">
+
+
+
+<section class="index" id="index">
   <div class="topo" aria-hidden="true"></div>
-  <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><span></span></div>
-  <div class="strip__track">
-    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><span>01</span><b>Leviathan's Leap</b><span>Ocean</span></p></a>
-    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><span>02</span><b>Granite Glow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><span>03</span><b>Blue-Footed Display</b><span>Ocean</span></p></a>
-    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><span>04</span><b>Highland Hollow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><span>05</span><b>International Orange</b></p></a>
-    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><span>06</span><b>Shark Shadow</b><span>Ocean</span></p></a>
-    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><span>07</span><b>Salt and Scales</b><span>Ocean</span></p></a>
-    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><span>08</span><b>Rainier Afterglow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><span>09</span><b>Sea Cave Glow</b></p></a>
-    <div class="strip__end"><a href="/gallery" data-cursor="Open">See the full gallery</a></div>
+  <div class="head"><h2>Field <em>index</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="index__grid">
+    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img src="/images/about/portrait.webp" alt="" loading="lazy" style="object-position:30% 50%"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/work-with-me" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/events/02-keynote.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Work With Me</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
   </div>
 </section>
 
@@ -303,15 +301,20 @@
   <a class="films__all" href="/films" data-cursor="Open">About the films</a>
 </section>
 
-<section class="index" id="index">
+<section class="strip" id="strip">
   <div class="topo" aria-hidden="true"></div>
-  <div class="head"><h2>Field <em>index</em></h2><div class="head__rule"></div><span></span></div>
-  <div class="index__grid">
-    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img src="/images/about/portrait.webp" alt="" loading="lazy" style="object-position:30% 50%"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/work-with-me" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/events/02-keynote.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Work With Me</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img src="/images/mockups/aspen-and-cobalt-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
+  <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="strip__track">
+    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><span>01</span><b>Leviathan's Leap</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><span>02</span><b>Granite Glow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><span>03</span><b>Blue-Footed Display</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><span>04</span><b>Highland Hollow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><span>05</span><b>International Orange</b></p></a>
+    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><span>06</span><b>Shark Shadow</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><span>07</span><b>Salt and Scales</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><span>08</span><b>Rainier Afterglow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><span>09</span><b>Sea Cave Glow</b></p></a>
+    <div class="strip__end"><a href="/gallery" data-cursor="Open">See the full gallery</a></div>
   </div>
 </section>
 

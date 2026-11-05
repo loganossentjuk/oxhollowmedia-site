@@ -86,3 +86,7 @@ If something fails, send it back to that specialist once with specific feedback.
 
 ## Second brain (team/brain/)
 Every run, walk the loop in `team/brain/README.md`: update `post-log.md` from Metricool, close finished experiments into `learnings.md`, triage `inbox.md`, fill `weekly-review.md`, and only then plan the week's posts from `formats/` and `strategy.md`. Logan's notes in `inbox.md` are quoted, never paraphrased away.
+
+
+## Brand voice
+Every piece of visible copy (captions, pins, outreach drafts, shop text, site copy) is checked against `.claude/brand-voice-guidelines.md` before it reaches Logan. Nature is the subject; Logan holds the light. The three lines: "Dare to see." / "Closer to nature, one frame at a time." / "We care for what we come to know."

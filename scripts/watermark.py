@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Stamp the Ox Hollow watermark (moon + OX HOLLOW, bottom-right) on the site's
+Stamp the Ox Hollow watermark (the OX H◐LLOW wordmark, bottom-right) on the site's
 display images in images/portfolio/.
 
 Print files come from Dropbox (scripts/gelato_publish.py), never from here,
@@ -18,9 +18,9 @@ from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 PORTFOLIO = ROOT / "images" / "portfolio"
-MARK = ROOT / "brand" / "watermark" / "watermark-horizontal-white.png"
+MARK = ROOT / "brand" / "watermark" / "watermark-lockup-white.png"   # scripts/make_wordmark.py
 LEDGER = PORTFOLIO / ".watermarked.json"
-WIDTH = 0.24      # mark width as a share of image width (0.32 on portrait images)
+WIDTH = 0.27      # mark width as a share of image width (0.36 on portrait images)
 MARGIN = 0.03     # gap from the edges, share of the shorter side
 OPACITY = 0.85
 

@@ -29,4 +29,7 @@ Why Logan is on camera on the brand account: the Reddit research (../knowledge/r
 **Instagram display name (set 2026-11-02):** Ox Hollow Media | Ocean & Wildlife Photographer. Bio unchanged by Logan's choice: "Films • Fine-art Prints • Events | San Francisco Bay Area | Closer to nature, one frame at a time".
 
 ## Voice rule: nature is the subject, Logan holds the light (2026-11-04)
-Logan rejected taglines like "I went. Here's what I saw." as arrogant. Vision: bring people closer to nature; mission: illuminate the unseen, instill devotion, craft stories of our innate natural connections. So: lines put nature, the place or the animal in the subject position; Logan appears as the one showing, not the one who dared. Never "I did / I earned / I went" as a brand line. Headline stays "Dare to see."; candidate voice line "What we see, we care for." (pending Logan's pick). Name story: Logan = little hollow, Ossentjuk = oxen yoke.
+Logan rejected taglines like "I went. Here's what I saw." as arrogant. Vision: bring people closer to nature; mission: illuminate the unseen, instill devotion, craft stories of our innate natural connections. So: lines put nature, the place or the animal in the subject position; Logan appears as the one showing, not the one who dared. Never "I did / I earned / I went" as a brand line. Headline stays "Dare to see."; voice line chosen 2026-11-04: **"We care for what we come to know."** Used as the last line of the bio (pending Logan's OK on the bio edit), the final beat of Reels, and caption sign-offs. Headline "Dare to see." unchanged.. Name story: Logan = little hollow, Ossentjuk = oxen yoke.
+
+
+**Full brand voice guidelines:** `.claude/brand-voice-guidelines.md` (generated 2026-11-04). This file stays the short version.

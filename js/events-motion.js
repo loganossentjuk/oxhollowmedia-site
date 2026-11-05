@@ -103,7 +103,6 @@
   const strip = document.getElementById('event-grid');
   if (strip && strip.classList.contains('filmstrip')) {
     const bar = document.querySelector('.strip-bar span');
-    const items = [...strip.querySelectorAll('.masonry-item')];
     let ticking = false;
 
     const paint = () => {
@@ -113,15 +112,6 @@
         bar.style.setProperty('--w', (strip.clientWidth / max * 100).toFixed(2) + '%');
         bar.style.setProperty('--l', (strip.scrollLeft / max * 100).toFixed(2) + '%');
       }
-      if (reduced) return;
-      // Each photo drifts a little inside its frame, against the direction of travel.
-      const mid = innerWidth / 2;
-      items.forEach((it) => {
-        const b = it.getBoundingClientRect();
-        if (b.right < -50 || b.left > innerWidth + 50) return;
-        const off = clamp((b.left + b.width / 2 - mid) / innerWidth, -1, 1);
-        it.querySelector('img').style.setProperty('--dx', (off * -18).toFixed(1) + 'px');
-      });
     };
     const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
     strip.addEventListener('scroll', req, { passive: true });

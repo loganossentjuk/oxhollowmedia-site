@@ -1963,8 +1963,8 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .filmstrip.dragging { cursor: grabbing; scroll-snap-type: none; }
 .filmstrip .masonry-item { flex: 0 0 auto; height: clamp(280px, 56vh, 540px); margin: 0; overflow: hidden; scroll-snap-align: start; border-radius: var(--radius); }
 .filmstrip .masonry-item picture { display: block; height: 100%; }
-.filmstrip .masonry-item img { height: 100%; width: auto; transform: scale(1.1) translateX(var(--dx, 0px)); transition: none; user-select: none; -webkit-user-drag: none; }
-.filmstrip .masonry-item:hover img { transform: scale(1.13) translateX(var(--dx, 0px)); }
+/* No zoom or drift on the photos: the frame shows the whole image, watermark included. */
+.filmstrip .masonry-item img, .filmstrip .masonry-item:hover img { height: 100%; width: auto; transform: none; transition: none; user-select: none; -webkit-user-drag: none; }
 .strip-nav { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
 .strip-bar { position: relative; flex: 1; height: 2px; background: var(--border); }
 .strip-bar span { position: absolute; top: 0; bottom: 0; left: var(--l, 0%); width: var(--w, 20%); background: var(--clay); }
@@ -1975,7 +1975,6 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .filmstrip .masonry-item { height: 62vw; max-height: 340px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .filmstrip .masonry-item img, .filmstrip .masonry-item:hover img { transform: none; }
   .ev #process .step-num { color: var(--clay); }
   .step-line span { transform: none; }
 }
@@ -1988,7 +1987,9 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .ev .pkg-price { font-family: var(--serif); font-weight: 500; font-size: clamp(3.2rem, 5.2vw, 4.75rem); line-height: 1; letter-spacing: -0.02em; color: var(--text); white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
 .ev .pkg-price small { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); vertical-align: 0.35em; margin-right: 0.15rem; }
 .ev .pkg-price .pkg-per { font-family: var(--serif); font-size: 0.42em; letter-spacing: 0; text-transform: none; vertical-align: baseline; margin-left: 0.1rem; }
-.ev #packages .offer-grid:first-of-type .offer-card:nth-child(2) .pkg-price { color: #955A36; }
+.ev #packages .offer-grid + .offer-grid { grid-template-columns: repeat(2, 1fr); max-width: 66.666%; margin-left: auto; margin-right: auto; }
+.ev #packages .rate-note { text-align: center; max-width: 62ch; margin: 3rem auto 0; }
 @media (max-width: 900px) {
   .ev #packages .offer-card:not(:first-child) { padding-left: 0; }
+  .ev #packages .offer-grid + .offer-grid { grid-template-columns: 1fr; max-width: none; }
 }

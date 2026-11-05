@@ -1907,3 +1907,75 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   background: var(--clay); border-color: var(--clay); color: var(--paper);
 }
 .nods .page-hero .btn-outline:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }   /* terracotta, then forest green */
+
+/* ══ Events page: readability + personality (body.ev) ═══════════════════════ */
+/* Readability */
+.ev .section-label { font-size: 0.8rem; letter-spacing: 0.16em; }
+.ev :is(.page-hero, section) p:not(.section-label):not(.rate-note) { font-size: 1.0625rem; line-height: 1.65; }
+.ev .rate-note { font-size: 0.95rem; }
+.ev .contact-text p { color: rgba(244,238,226,0.82); }
+.ev #contact .section-label { color: #E2B08E; }
+.nods.ev .page-hero .btn-outline { background: #955A36; border-color: #955A36; font-weight: 600; }
+.nods.ev .page-hero .btn-outline:hover { background: var(--accent); border-color: var(--accent); }
+
+/* 1. Hero headline */
+.ev .page-hero h1 { font-size: clamp(3rem, 8.4vw, 7.25rem); line-height: 0.98; letter-spacing: -0.015em; margin-bottom: 2rem; }
+.ev .ev-accent { font-style: italic; color: var(--clay); }
+
+/* 2. Headings rise line by line (classes added by js/events-motion.js) */
+.ev .ln { display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.ev .ln-i { display: block; transform: translateY(110%); transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1); }
+.ev .ln + .ln .ln-i { transition-delay: 0.12s; }
+.ev .rise.is-in .ln-i { transform: none; }
+
+/* 3. What I photograph: big words, photo follows */
+.ev #offerings h2 { margin-bottom: 3rem; }
+.aud { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: start; }
+.aud-frame { position: sticky; top: calc(var(--nav-h) + 2rem); aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
+.aud-photo { position: absolute; inset: 0; opacity: 0; transform: scale(1.07); transition: opacity 0.7s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.aud-photo.is-active { opacity: 1; transform: none; }
+.aud-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aud-list { list-style: none; border-top: 1px solid var(--border); }
+.aud-row { display: grid; grid-template-columns: 3rem 1fr; column-gap: 0.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+.aud-num { font-family: var(--serif); font-size: 1.05rem; color: var(--text-muted); padding-top: 0.9rem; transition: color 0.4s; }
+.ev .aud-word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -0.01em; color: var(--text-muted); margin: 0 0 0.75rem; transition: color 0.4s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); outline-offset: 6px; }
+.aud-row p { grid-column: 2; max-width: 46ch; margin: 0; color: var(--text-muted); }
+.aud-row.is-active .aud-word { color: var(--text); transform: translateX(0.5rem); }
+.aud-row.is-active .aud-num { color: var(--clay); }
+@media (max-width: 900px) {
+  .aud { grid-template-columns: 1fr; gap: 1.5rem; }
+  .aud-frame { top: calc(var(--nav-h) + 0.75rem); z-index: 2; box-shadow: 0 -0.75rem 0 0 var(--bg), 0 10px 24px -14px rgba(35,33,32,0.5); }
+  .aud-row { grid-template-columns: 2.25rem 1fr; padding: 1.4rem 0; }
+  .aud-row p { grid-column: 1 / -1; }
+}
+
+/* 5. How it works: big numbers on a terracotta line */
+.step-line { position: relative; height: 2px; background: var(--border); margin: 0.5rem 0 2.25rem; }
+.step-line span { position: absolute; inset: 0; background: var(--clay); transform-origin: left; transform: scaleX(var(--p, 0)); }
+.ev .step-num { display: block; font-family: var(--serif); font-size: clamp(3.2rem, 5vw, 4.6rem); line-height: 1; color: var(--border); margin-bottom: 1rem; transition: color 0.6s; }
+.ev #process .offer-card.lit .step-num { color: var(--clay); }
+.ev #process h3 { font-size: 1.3rem; }
+
+/* 6. Recent events as a filmstrip */
+.strip-wrap { margin-top: 2rem; }
+.filmstrip { display: flex; gap: 1rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; margin-right: calc(50% - 50vw); padding-right: 2.5rem; cursor: grab; outline-offset: 4px; }
+.filmstrip::-webkit-scrollbar { display: none; }
+.filmstrip.dragging { cursor: grabbing; scroll-snap-type: none; }
+.filmstrip .masonry-item { flex: 0 0 auto; height: clamp(280px, 56vh, 540px); margin: 0; overflow: hidden; scroll-snap-align: start; border-radius: var(--radius); }
+.filmstrip .masonry-item picture { display: block; height: 100%; }
+.filmstrip .masonry-item img { height: 100%; width: auto; transform: scale(1.1) translateX(var(--dx, 0px)); transition: none; user-select: none; -webkit-user-drag: none; }
+.filmstrip .masonry-item:hover img { transform: scale(1.13) translateX(var(--dx, 0px)); }
+.strip-nav { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+.strip-bar { position: relative; flex: 1; height: 2px; background: var(--border); }
+.strip-bar span { position: absolute; top: 0; bottom: 0; left: var(--l, 0%); width: var(--w, 20%); background: var(--clay); }
+.strip-btn { width: 46px; height: 46px; flex: 0 0 auto; border: 1px solid var(--text); border-radius: 50%; background: transparent; color: var(--text); font-size: 1.1rem; cursor: pointer; transition: background 0.25s, border-color 0.25s, color 0.25s; }
+.strip-btn:hover, .strip-btn:focus-visible { background: var(--clay); border-color: var(--clay); color: var(--paper); }
+@media (max-width: 600px) {
+  .filmstrip { padding-right: 1.25rem; gap: 0.6rem; }
+  .filmstrip .masonry-item { height: 62vw; max-height: 340px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .filmstrip .masonry-item img, .filmstrip .masonry-item:hover img { transform: none; }
+  .ev #process .step-num { color: var(--clay); }
+  .step-line span { transform: none; }
+}

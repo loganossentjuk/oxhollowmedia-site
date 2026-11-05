@@ -13,7 +13,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E02 | keynote | Candids | Original site set |
 | E03 | team celebration | Portraits | Original site set |
 | E04 | industry mingle | Candids | Original site set |
-| E05 | evening reception | Candids | Original site set |
+| E05 | evening reception (retired 2026-11-04: dark and small; off /events and the gallery) | Candids | Original site set |
 | E06 | offsite group photo | Portraits | semgrep offsite 2026 |
 | E07 | come play neon | Atmosphere | EPD Offsite 2026 |
 | E08 | ping pong serve | Candids | EPD Offsite 2026 |
@@ -27,7 +27,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E16 | ferry building lunch | Portraits | EPD Offsite 2026 |
 | E17 | evening toast | Portraits | 9/19 J&J Party |
 | E18 | garden twirl | Candids | 9/19 J&J Party |
-| E19 | sushi platter | Atmosphere | EPD Offsite 2026 |
+| E19 | sushi platter (retired 2026-11-04: replaced by E47 (sushi chef); off /events and the gallery) | Atmosphere | EPD Offsite 2026 |
 | E20 | offsite smile | Candids | EPD Offsite 2026 |
 | E21 | keynote stage | Atmosphere | semgrep offsite 2026 |
 | E22 | offsite conversation | Candids | EPD Offsite 2026 |
@@ -36,7 +36,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E25 | redwood couple | Portraits | 9/19 J&J Party |
 | E26 | hackathon winners | Portraits | EPD Offsite 2026 |
 | E27 | table detail | Atmosphere | semgrep offsite 2026 |
-| E28 | awards screen | Candids | Sales Kickoff 2026 · Album 2 |
+| E28 | awards screen (retired 2026-11-04: shows a guest's name on the screen; off /events and the gallery) | Candids | Sales Kickoff 2026 · Album 2 |
 | E29 | surprised toast | Candids | 9/19 J&J Party |
 | E30 | paddle and net | Atmosphere | EPD Offsite 2026 |
 | E31 | ferry building arcade | Atmosphere | EPD Offsite 2026 |
@@ -49,8 +49,22 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E38 | lounge conversation | Candids | EPD Offsite 2026 |
 | E39 | garden trio | Portraits | 9/19 J&J Party |
 | E40 | holiday storyteller | Candids | Semgrep Holiday Party |
-| E41 | holiday lights chat | Candids | Semgrep Holiday Party |
+| E41 | holiday lights chat (retired 2026-11-04: dark and small; off /events and the gallery) | Candids | Semgrep Holiday Party |
 | E42 | mural lounge chat | Candids | EPD Offsite 2026 |
 | E43 | garden conversation | Candids | 9/19 J&J Party |
 | E44 | booth from above | Candids | Sales Kickoff 2026 · Album 1 |
 | E45 | stage smile | Candids | Semgrep Group Photo Selects (Google Photos) |
+| E46 | ping pong basket | Atmosphere | EPD Offsite 2026 |
+| E47 | sushi chef | Atmosphere | EPD Offsite 2026 |
+| E48 | mural serve | Candids | EPD Offsite 2026 |
+| E49 | offsite laugh | Candids | EPD Offsite 2026 |
+| E50 | sunlit lunch | Candids | EPD Offsite 2026 |
+| E51 | drinks laugh | Candids | EPD Offsite 2026 |
+| E52 | game room laugh | Candids | EPD Offsite 2026 |
+| E53 | bar laughter | Candids | Sales Kickoff 2026 · Album 1 |
+| E54 | edison bulb chat | Candids | Sales Kickoff 2026 · Album 1 |
+| E55 | arm in arm | Portraits | Sales Kickoff 2026 · Album 1 |
+| E56 | holiday toast trio | Portraits | Semgrep Holiday Party |
+| E57 | holiday pair | Portraits | Semgrep Holiday Party |
+| E58 | office opening laugh | Candids | Semgrep Office Opening |
+| E59 | holiday lights group | Candids | Semgrep Holiday Party |

@@ -70,3 +70,27 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E59 | holiday lights group (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Candids | Semgrep Holiday Party |
 | E60 | mural ping pong | Candids | EPD Offsite 2026 |
 | E61 | poster mural | Atmosphere | EPD Offsite 2026 |
+| E62 | golden hour laugh | Candids | semgrep offsite 2026 |
+| E63 | golden hour mingle | Candids | semgrep offsite 2026 |
+| E64 | sunstar high tops | Atmosphere | semgrep offsite 2026 |
+| E65 | palm silhouettes | Atmosphere | semgrep offsite 2026 |
+| E66 | wing toast | Candids | semgrep offsite 2026 |
+| E67 | wings raised | Candids | semgrep offsite 2026 |
+| E68 | wing laugh | Candids | semgrep offsite 2026 |
+| E69 | playful pose | Portraits | semgrep offsite 2026 |
+| E70 | crowd grin | Candids | semgrep offsite 2026 |
+| E71 | mc and guest | Candids | semgrep offsite 2026 |
+| E72 | keynote curtain | Candids | semgrep offsite 2026 |
+| E73 | hedge headshot | Portraits | semgrep offsite 2026 |
+| E74 | sun hat trio | Portraits | semgrep offsite 2026 |
+| E75 | marina laugh | Candids | Leadership Circle |
+| E76 | table setting | Atmosphere | Leadership Circle |
+| E77 | grazing spread | Atmosphere | Leadership Circle |
+| E78 | marina conversation | Candids | Leadership Circle |
+| E79 | rooftop haze laugh | Candids | Leadership Circle |
+| E80 | rooftop flare | Candids | Leadership Circle |
+| E81 | garden hug laugh | Candids | 9/19 J&J Party |
+| E82 | garden path hug | Candids | 9/19 J&J Party |
+| E83 | pink drink laugh | Candids | 9/19 J&J Party |
+| E84 | porch light laugh | Candids | 9/19 J&J Party |
+| E85 | friends reaction | Candids | 9/19 J&J Party |

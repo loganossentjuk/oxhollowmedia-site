@@ -329,16 +329,18 @@ gsap.ticker.lagSmoothing(0);
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.getAttribute('href')); }));
 
 // loader
-// the mark sits centred, the name slides out from behind it, and the pair settles to centre
+// the mark draws itself large in the centre, then shrinks into place as the name slides out from behind it
 document.fonts.ready.then(() => {
 const clipW = document.querySelector('.loader__clip').offsetWidth + parseFloat(getComputedStyle(document.querySelector('.loader__lockup')).gap);
 gsap.set('.loader__lockup', { x: clipW / 2 });
 gsap.set('.loader__word', { xPercent: -105 });
+gsap.set('.loader__mark', { scale: 2.4, transformOrigin: '50% 50%' });
 gsap.timeline()
   .to('.loader__mark .ring', { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' })
   .to('.loader__mark .moon', { opacity: 1, duration: .5, ease: 'power1.out' }, '-=.25')
   .to('.loader__lockup', { x: 0, duration: 1.1, ease: 'expo.inOut' }, '+=.05')
-  .to('.loader__word', { xPercent: 0, duration: 1.1, ease: 'expo.inOut' }, '<')
+  .to('.loader__mark', { scale: 1, duration: 1.1, ease: 'expo.inOut' }, '<')
+  .to('.loader__word', { xPercent: 0, duration: 1.1, ease: 'expo.inOut' }, '<+=.12')
   .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=.45')
   .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
 });

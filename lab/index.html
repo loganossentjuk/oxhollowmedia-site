@@ -92,6 +92,11 @@
   .flight { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
   .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero .hud, .flight__shade { opacity: 0; }
+  /* the shutter click: a camera flash the instant the blades are fully shut */
+  .flash { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0;
+    background: radial-gradient(circle at var(--fx, 50%) var(--fy, 50%), #fff 0, rgba(255,255,255,.85) 22%, rgba(255,250,240,.35) 60%, rgba(255,250,240,.12) 100%); }
+  .flash.is-firing { animation: flash .65s cubic-bezier(.1,.7,.3,1) both; }
+  @keyframes flash { 0% { opacity: 0; } 7% { opacity: .9; } 100% { opacity: 0; } }
   /* act straight away: the two calls to action ride along with the footage once the aperture opens */
   .hero__cta { position: absolute; z-index: 4; left: var(--gutter); bottom: 4.6rem; display: flex; gap: .8rem;
     opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); }
@@ -356,6 +361,7 @@
   <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
   <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
+  <div class="flash" aria-hidden="true"></div>
   <div class="hero__cta"><a class="btn" href="/events">Hire for an event</a><a class="btn btn--ghost" href="/gallery">Walk the gallery</a></div>
   <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
 </section>
@@ -578,6 +584,14 @@ function findHole() {
   heroSvg.querySelectorAll('.blade__shadow').forEach(c => c.setAttribute('stroke-width', R * .12));
 }
 const zoom = { p: 0 };
+const flashEl = document.querySelector('.flash');
+let flashFired = false;
+function fireFlash() {
+  const r = heroSvg.querySelector('.housing').getBoundingClientRect();      // centre the burst on the lens
+  flashEl.style.setProperty('--fx', (r.left + r.width / 2) + 'px'); flashEl.style.setProperty('--fy', (r.top + r.height / 2) + 'px');
+  flashEl.classList.remove('is-firing'); void flashEl.offsetWidth;     // restart the burst
+  flashEl.classList.add('is-firing');
+}
 function drawZoom() {
   const p = zoom.p, size = 1000 * Math.pow(aim.end / 1000, p), k = size / 1000;   // even, exponential zoom
   const c = p * p;                                                   // drift the hollow to the centre as we arrive
@@ -605,6 +619,9 @@ function drawZoom() {
   const e = ss(clamp01((p - .36) / .58));                            // open
   const r = p < .36 ? R * (1 - .985 * cl) : R * (.015 + 1.85 * e * e);
   const turn = -.35 - cl * .55 - e * 1.2;
+  // fire the flash once each time the shutter shuts on the way down (timed in real seconds, not scroll)
+  if (p >= .3 && !flashFired) { flashFired = true; if (!reduce) fireFlash(); }
+  if (p < .27) flashFired = false;
   oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
   // Curved blades. Each blade is a large disc set off to one side of the lens, so its edge sweeps across as an arc
   // and its neighbour overlaps it, like a real iris. Sliding the discs out from the centre opens the hole.

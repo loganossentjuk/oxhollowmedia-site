@@ -1979,3 +1979,16 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .ev #process .step-num { color: var(--clay); }
   .step-line span { transform: none; }
 }
+
+/* 4. Packages: the rates are the headline */
+.ev #packages .offer-card:not(:first-child) { padding-left: 2rem; }
+.ev #packages .offer-num { font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8A5232; margin-bottom: 1rem; }
+.ev .pkg { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.ev .pkg-name { font-family: var(--sans); font-size: 1.15rem; font-weight: 500; }
+.ev .pkg-price { font-family: var(--serif); font-weight: 500; font-size: clamp(3.2rem, 5.2vw, 4.75rem); line-height: 1; letter-spacing: -0.02em; color: var(--text); white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+.ev .pkg-price small { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); vertical-align: 0.35em; margin-right: 0.15rem; }
+.ev .pkg-price .pkg-per { font-family: var(--serif); font-size: 0.42em; letter-spacing: 0; text-transform: none; vertical-align: baseline; margin-left: 0.1rem; }
+.ev #packages .offer-grid:first-of-type .offer-card:nth-child(2) .pkg-price { color: #955A36; }
+@media (max-width: 900px) {
+  .ev #packages .offer-card:not(:first-child) { padding-left: 0; }
+}

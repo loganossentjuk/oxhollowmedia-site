@@ -29,9 +29,9 @@
   /* ── 5. Title card for the collection on view ── */
   const card = document.getElementById('collection-card');
   const names = {
-    ocean: 'Ocean', galapagos: 'Galápagos', abstracts: 'Salt and Stone', mountains: 'Mountains',
+    ocean: 'Oceans', galapagos: 'Galápagos', abstracts: 'Salt and Stone', mountains: 'Mountains',
     forests: 'Forests', botanical: 'Botanical', urban: 'Urban', portraits: 'Portraits',
-    events: 'Events', people: 'The people in between',
+    events: 'Events', people: 'People',
   };
   document.addEventListener('gallery:filter', (e) => {
     const { cat, shown } = e.detail;

@@ -125,6 +125,8 @@
   /* 2c. events: the work that books, shown first */
   .events { position: relative; background: var(--text); color: var(--paper); padding: var(--pad) var(--gutter); overflow: hidden; }
   .events .head { padding: 0; margin-bottom: var(--head-gap); }
+  .events .topo { color: rgba(244,238,226,.1); }                    /* the same contour lines, in cream on charcoal */
+  .events .head, .events__body, .events__more { position: relative; }
   .events__body { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 5vw; align-items: start; }
   .ev-grid { display: flex; flex-direction: column; gap: 1.2vw; }
   .ev-row { display: flex; gap: 1.2vw; align-items: flex-start; }
@@ -366,6 +368,7 @@
 </section>
 
 <section class="events" id="events">
+  <div class="topo" aria-hidden="true"></div>
   <div class="head"><h2>Event photography<br>&amp; <em>videography.</em></h2><div class="head__rule"></div><p class="label">Companies, nonprofits &amp; life events</p></div>
   <div class="events__body">
     <div class="ev-grid">

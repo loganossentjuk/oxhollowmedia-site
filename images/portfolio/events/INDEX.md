@@ -72,25 +72,25 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E61 | poster mural | Atmosphere | EPD Offsite 2026 |
 | E62 | golden hour laugh | Candids | semgrep offsite 2026 |
 | E63 | golden hour mingle | Candids | semgrep offsite 2026 |
-| E64 | sunstar high tops | Atmosphere | semgrep offsite 2026 |
-| E65 | palm silhouettes | Atmosphere | semgrep offsite 2026 |
-| E66 | wing toast | Candids | semgrep offsite 2026 |
-| E67 | wings raised | Candids | semgrep offsite 2026 |
-| E68 | wing laugh | Candids | semgrep offsite 2026 |
-| E69 | playful pose | Portraits | semgrep offsite 2026 |
-| E70 | crowd grin | Candids | semgrep offsite 2026 |
-| E71 | mc and guest | Candids | semgrep offsite 2026 |
-| E72 | keynote curtain | Candids | semgrep offsite 2026 |
+| E64 | sunstar high tops (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Atmosphere | semgrep offsite 2026 |
+| E65 | palm silhouettes (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Atmosphere | semgrep offsite 2026 |
+| E66 | wing toast (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
+| E67 | wings raised (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
+| E68 | wing laugh (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
+| E69 | playful pose (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Portraits | semgrep offsite 2026 |
+| E70 | crowd grin (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
+| E71 | mc and guest (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
+| E72 | keynote curtain (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | semgrep offsite 2026 |
 | E73 | hedge headshot | Portraits | semgrep offsite 2026 |
-| E74 | sun hat trio | Portraits | semgrep offsite 2026 |
+| E74 | sun hat trio (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Portraits | semgrep offsite 2026 |
 | E75 | marina laugh | Candids | Leadership Circle |
 | E76 | table setting | Atmosphere | Leadership Circle |
 | E77 | grazing spread | Atmosphere | Leadership Circle |
 | E78 | marina conversation | Candids | Leadership Circle |
-| E79 | rooftop haze laugh | Candids | Leadership Circle |
-| E80 | rooftop flare | Candids | Leadership Circle |
-| E81 | garden hug laugh | Candids | 9/19 J&J Party |
-| E82 | garden path hug | Candids | 9/19 J&J Party |
+| E79 | rooftop haze laugh (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | Leadership Circle |
+| E80 | rooftop flare (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | Leadership Circle |
+| E81 | garden hug laugh (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | 9/19 J&J Party |
+| E82 | garden path hug (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | 9/19 J&J Party |
 | E83 | pink drink laugh | Candids | 9/19 J&J Party |
 | E84 | porch light laugh | Candids | 9/19 J&J Party |
-| E85 | friends reaction | Candids | 9/19 J&J Party |
+| E85 | friends reaction (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | 9/19 J&J Party |

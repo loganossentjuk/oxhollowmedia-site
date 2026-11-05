@@ -330,13 +330,13 @@
     <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath></defs>
     <g mask="url(#words)">
       <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)"/>
-      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity=".7"/>
+      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity=".5"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
-      <path class="aperture__blades" fill="#E2DAC4" fill-rule="evenodd"/>
-      <g fill="none" stroke="#232120" stroke-width="1" stroke-opacity=".38"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
+      <g class="aperture__facets"><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/></g>
+      <g fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".75"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
     </g>
-    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#232120" stroke-width="1.6" stroke-opacity=".55" vector-effect="non-scaling-stroke"/>
+    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
   </svg></div>
   <div class="flight__shade"></div>
   <p class="hud hud--tl label">Santa Barbara<br>California</p>
@@ -523,7 +523,7 @@ const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.queryS
 const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySelector('.aperture__rim');
 const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
 const BLADES = blades.length;
-const bladeFill = heroSvg.querySelector('.aperture__blades');
+const facets = [...heroSvg.querySelectorAll('.aperture__facets polygon')];
 let aim = { x: 290, y: 714, end: 40, R: 40 };
 // the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
 function findHole() {
@@ -572,11 +572,17 @@ function drawZoom() {
     ln.setAttribute('x1', ax); ln.setAttribute('y1', ay);
     ln.setAttribute('x2', ax + (bx - ax) / d * aim.R * 3); ln.setAttribute('y2', ay + (by - ay) / d * aim.R * 3);
   });
-  const R = aim.R;
-  bladeFill.setAttribute('d', `M${aim.x - R},${aim.y}a${R},${R} 0 1,0 ${2 * R},0a${R},${R} 0 1,0 ${-2 * R},0Z` +
-    'M' + pts.map(q => q.join(',')).join('L') + 'Z');
-  rim.setAttribute('stroke-opacity', .55 * clamp01(1 - (r / R - .9) / .2));
-  bladeFill.style.display = r < R * 1.02 ? '' : 'none';             // once open, nothing left to draw at the rim   // the rim fades as the opening passes it
+  // each blade is the wedge between one edge carried past its corner and the next edge (the housing trims them)
+  const R = aim.R, L = R * 3;
+  facets.forEach((f, i) => {
+    const a = pts[i], b = pts[(i + 1) % BLADES], c = pts[(i + 2) % BLADES];
+    const d1 = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, d2 = Math.hypot(c[0] - b[0], c[1] - b[1]) || 1;
+    const u = [b[0] + (b[0] - a[0]) / d1 * L, b[1] + (b[1] - a[1]) / d1 * L];
+    const v = [b[0] + (c[0] - b[0]) / d2 * L, b[1] + (c[1] - b[1]) / d2 * L];
+    f.setAttribute('points', [b, u, v].map(q => q.join(',')).join(' '));
+    f.style.display = r < R * 1.02 ? '' : 'none';
+  });
+  rim.setAttribute('stroke-opacity', .7 * clamp01(1 - (r / R - .9) / .2));   // the rim fades as the opening passes it
 }
 document.fonts.ready.then(() => { findHole(); drawZoom(); });
 addEventListener('resize', () => { findHole(); drawZoom(); });

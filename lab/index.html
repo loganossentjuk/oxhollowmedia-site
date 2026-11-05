@@ -330,13 +330,12 @@
     <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath></defs>
     <g mask="url(#words)">
       <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)"/>
-      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity=".2"/>
+      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="xMinYMid slice" opacity=".3"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
-      <path class="aperture__blades" fill="#232120" fill-opacity=".94" fill-rule="evenodd"/>
-      <g fill="none" stroke="#F4EEE2" stroke-width="1" stroke-opacity=".32"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
+      <g fill="none" stroke="#232120" stroke-width="1" stroke-opacity=".38"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
     </g>
-    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#232120" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#232120" stroke-width="1.3" stroke-opacity=".5" vector-effect="non-scaling-stroke"/>
   </svg></div>
   <div class="flight__shade"></div>
   <p class="hud hud--tl label">Santa Barbara<br>California</p>
@@ -522,18 +521,26 @@ toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-
 const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.querySelector('.iris');
 const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySelector('.aperture__rim');
 const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
-const bladeFill = heroSvg.querySelector('.aperture__blades');
 const BLADES = blades.length;
 let aim = { x: 290, y: 714, end: 40, R: 40 };
 // the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
 function findHole() {
   const tall = matchMedia('(max-aspect-ratio: 4/5)').matches;
   const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole');
-  const fs = +t.getAttribute('font-size'), base = +t.getAttribute('y');
-  const g = document.createElement('canvas').getContext('2d'); g.font = `500 ${fs}px "Cormorant Garamond"`;
-  const m = g.measureText('o'), a = t.getStartPositionOfChar(1).x;
-  aim = { x: a + (m.actualBoundingBoxRight - m.actualBoundingBoxLeft) / 2, y: base - m.actualBoundingBoxAscent / 2,
-          end: fs * .12, R: fs * .105 };
+  const fs = +t.getAttribute('font-size'), base = +t.getAttribute('y'), x0 = t.getStartPositionOfChar(0).x;
+  const c = document.createElement('canvas'); c.width = 1400; c.height = Math.ceil(base + fs);
+  const g = c.getContext('2d'); g.font = `500 ${fs}px "Cormorant Garamond"`;
+  g.fillText('to', x0 + 200, base);
+  const asc = g.measureText('o').actualBoundingBoxAscent, row = Math.round(base - asc / 2);
+  const px = g.getImageData(0, row, c.width, 1).data, runs = [];
+  for (let x = 0, s = -1; x <= c.width; x++) {
+    const on = x < c.width && px[x * 4 + 3] > 200;
+    if (on && s < 0) s = x;
+    if (!on && s >= 0) { runs.push([s - 200, x - 200]); s = -1; }
+  }
+  const [, l, r] = runs;                                             // t stem, o left stroke, o right stroke
+  aim = l && r ? { x: (l[1] + r[0]) / 2, y: row, R: (r[0] - l[1]) / 2 * .96, end: fs * .12 }
+               : { x: aim.x, y: row, R: fs * .12, end: fs * .12 };
   housing.setAttribute('cx', aim.x); housing.setAttribute('cy', aim.y); housing.setAttribute('r', aim.R);
   rim.setAttribute('cx', aim.x); rim.setAttribute('cy', aim.y); rim.setAttribute('r', aim.R);
 }
@@ -552,8 +559,8 @@ function drawZoom() {
   portrait.setAttribute('width', vw); portrait.setAttribute('height', Math.max(0, bottom - top));
   // a seven-blade iris: closed in the hollow, turning open as we fly in, until the footage fills the screen
   // the zoom carries the lens up to fill the screen, so the opening only has to grow to the lens itself
-  const o = clamp01((p - .25) / .75), e = o * o * (3 - 2 * o);
-  const r = aim.R * (.16 + 1.14 * e), turn = -.35 - e * 1.6;          // closed: a pinhole; open: past the rim
+  const o = clamp01(p / .92), e = o * o * (3 - 2 * o);
+  const r = aim.R * (.34 + 1.5 * e), turn = -.35 - e * 1.4;          // a small opening at rest; at the end it clears the whole hollow
   const pts = Array.from({ length: BLADES }, (_, i) => {
     const a = turn + i * 2 * Math.PI / BLADES; return [aim.x + r * Math.cos(a), aim.y + r * Math.sin(a)];
   });
@@ -563,11 +570,7 @@ function drawZoom() {
     ln.setAttribute('x1', ax); ln.setAttribute('y1', ay);
     ln.setAttribute('x2', ax + (bx - ax) / d * aim.R * 3); ln.setAttribute('y2', ay + (by - ay) / d * aim.R * 3);
   });
-  // dark blades fill the housing around the opening (the housing clip trims them to the lens)
-  const R = aim.R;
-  bladeFill.setAttribute('d', `M${aim.x - R},${aim.y}a${R},${R} 0 1,0 ${2 * R},0a${R},${R} 0 1,0 ${-2 * R},0Z` +
-    'M' + pts.map(q => q.join(',')).join('L') + 'Z');
-  rim.setAttribute('stroke-opacity', .55 * (1 - e));
+  rim.setAttribute('stroke-opacity', .3 * clamp01(1 - (r / aim.R - .85) / .2));   // the rim fades as the opening passes it
 }
 document.fonts.ready.then(() => { findHole(); drawZoom(); });
 addEventListener('resize', () => { findHole(); drawZoom(); });

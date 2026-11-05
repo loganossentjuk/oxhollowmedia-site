@@ -148,10 +148,10 @@
     size();
     draw(R, 0);
     svg.classList.add('is-on');
-    await tween(0, 1, 380, easeIn, (k) => draw(R * (1 - k), -0.9 * k));
+    await tween(0, 1, 280, easeIn, (k) => draw(R * (1 - k), -0.9 * k));
     swap();
-    await new Promise((r) => setTimeout(r, 120));
-    await tween(0, 1, 520, easeOut, (k) => draw(R * k, -0.9 - 1.1 * k));
+    await new Promise((r) => setTimeout(r, 80));
+    await tween(0, 1, 380, easeOut, (k) => draw(R * k, -0.9 - 1.1 * k));
     svg.classList.remove('is-on');
     busy = false;
   };

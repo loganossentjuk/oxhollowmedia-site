@@ -23,7 +23,7 @@
   .side--left { justify-content: flex-end; justify-self: end; }
   .side--right { justify-self: start; }
   .side span { display: inline-block; }
-  .mark { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
+  .mark { width: .68em; height: .68em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
   .mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
   .mark .moon { opacity: 0; }
 
@@ -42,7 +42,7 @@
 <div class="stage">
   <div class="lock" aria-label="Ox Hollow">
     <div class="side side--left"><span>O</span><span>X</span><span>&nbsp;</span><span>H</span></div>
-    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="41.5" fill="none" stroke="currentColor" stroke-width="11" pathLength="1"/><path class="moon" d="M26.4,15.87 A41.5,41.5 0 0 0 26.4,84.13 Z" fill="currentColor"/></svg>
     <div class="side side--right"><span>L</span><span>L</span><span>O</span><span>W</span></div>
   </div>
 </div>
@@ -54,6 +54,9 @@
   <button data-s=".6">Slow</button>
   <button data-s="1" aria-pressed="true">Normal</button>
   <button data-s="1.5">Quick</button>
+  <span class="sep"></span>
+  <button data-w="thin">Thin ring</button>
+  <button data-w="matched" aria-pressed="true">Matched ring</button>
   <span class="sep"></span>
   <button class="replay">Replay</button>
 </div>
@@ -119,6 +122,15 @@ document.querySelectorAll('[data-s]').forEach(b => b.addEventListener('click', (
   speed = +b.dataset.s; document.querySelectorAll('[data-s]').forEach(x => x.setAttribute('aria-pressed', x === b)); play();
 }));
 document.querySelector('.replay').addEventListener('click', play);
+// compare the brand mark's own thin ring with one weighted to match the letters
+const RINGS = { thin: { w: 4.7, r: 40, d: 'M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z', size: '.74em' },
+                matched: { w: 11, r: 41.5, d: 'M26.4,15.87 A41.5,41.5 0 0 0 26.4,84.13 Z', size: '.68em' } };
+document.querySelectorAll('[data-w]').forEach(b => b.addEventListener('click', () => {
+  const k = RINGS[b.dataset.w];
+  ring.setAttribute('stroke-width', k.w); ring.setAttribute('r', k.r); moon.setAttribute('d', k.d);
+  mark.style.width = mark.style.height = k.size;
+  document.querySelectorAll('[data-w]').forEach(x => x.setAttribute('aria-pressed', x === b)); play();
+}));
 document.fonts.ready.then(play);
 </script>
 </body>

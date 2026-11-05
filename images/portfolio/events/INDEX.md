@@ -18,7 +18,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E07 | come play neon | Atmosphere | EPD Offsite 2026 |
 | E08 | ping pong serve | Candids | EPD Offsite 2026 |
 | E09 | garden party toast | Candids | 9/19 J&J Party |
-| E10 | tech talk | Candids | EPD Offsite 2026 |
+| E10 | tech talk (retired 2026-11-04: not a strong photo; off /events and the gallery) | Candids | EPD Offsite 2026 |
 | E11 | stage qa | Candids | EPD Offsite 2026 |
 | E12 | awards embrace | Candids | Sales Kickoff 2026 · Album 2 |
 | E13 | ferry building tower | Atmosphere | EPD Offsite 2026 |

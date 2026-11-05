@@ -752,8 +752,8 @@ footer {
   .masonry { column-count: 2; }
 }
 
-/* seven menu items: the menu button takes over below 1000px */
-@media (max-width: 1000px) {
+/* the menu button takes over below 880px, before the links crowd the logo */
+@media (max-width: 880px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
 }

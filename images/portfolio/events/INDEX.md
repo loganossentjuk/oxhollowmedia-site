@@ -68,3 +68,5 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E57 | holiday pair (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Portraits | Semgrep Holiday Party |
 | E58 | office opening laugh | Candids | Semgrep Office Opening |
 | E59 | holiday lights group (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Candids | Semgrep Holiday Party |
+| E60 | mural ping pong | Candids | EPD Offsite 2026 |
+| E61 | poster mural | Atmosphere | EPD Offsite 2026 |

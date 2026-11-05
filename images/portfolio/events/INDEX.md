@@ -56,7 +56,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E45 | stage smile | Candids | Semgrep Group Photo Selects (Google Photos) |
 | E46 | ping pong basket | Atmosphere | EPD Offsite 2026 |
 | E47 | sushi chef (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Atmosphere | EPD Offsite 2026 |
-| E48 | mural serve | Candids | EPD Offsite 2026 |
+| E48 | mural serve (not used: repeat of a photo already on the page, removed 2026-11-04 before launch; files not shipped) | Candids | EPD Offsite 2026 |
 | E49 | offsite laugh (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Candids | EPD Offsite 2026 |
 | E50 | sunlit lunch (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Candids | EPD Offsite 2026 |
 | E51 | drinks laugh (not used: Logan passed on it 2026-11-04 before launch; number stays reserved, files not shipped) | Candids | EPD Offsite 2026 |

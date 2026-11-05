@@ -44,8 +44,12 @@
 
   /* loader */
   .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
-  .loader__word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 7vw, 6rem); letter-spacing: .12em; overflow: hidden; display: flex; }
-  .loader__word span { display: inline-block; transform: translateY(110%); }
+  .loader__lockup { display: flex; align-items: center; gap: clamp(.8rem, 1.6vw, 1.4rem); transform: translateX(var(--shift, 0)); }
+  .loader__mark { width: clamp(3.2rem, 7vw, 5.6rem); height: auto; flex: none; position: relative; z-index: 2; overflow: visible; }
+  .loader__mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
+  .loader__mark .moon { opacity: 0; }
+  .loader__clip { overflow: hidden; }
+  .loader__word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6vw, 5.2rem); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; line-height: 1.1; }
 
   /* top bar: hidden during the opening, slides in after the headline */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 75; height: 64px; display: flex; align-items: center; justify-content: space-between;
@@ -71,15 +75,22 @@
   .nav.is-shown ~ .peek-tab { opacity: 0; pointer-events: none; }
 
   /* 1. hero: the headline is a window onto the drone footage */
-  .hero { position: relative; height: 100vh; overflow: hidden; background: var(--ink); }
+  .hero, .flight, .strip { height: 100vh; height: 100svh; }
+  .hero { position: relative; overflow: hidden; background: var(--ink); }
   .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero__mask { position: absolute; inset: 0; }
   .hero__mask svg { width: 100%; height: 100%; overflow: visible; }
   .hero__mask text { font-family: var(--serif); font-weight: 500; }
-  .hero__hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: var(--muted); z-index: 2; }
+  .words-tall { display: none; }
+  @media (max-aspect-ratio: 4/5) { .words-wide { display: none; } .words-tall { display: inline; } }
+  .hero__hint { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .7rem;
+    color: #fff; mix-blend-mode: difference; }
+  .hero__hint i { position: relative; width: 1px; height: 54px; background: rgba(255,255,255,.35); overflow: hidden; }
+  .hero__hint i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 18px; background: #fff; animation: drip 1.8s cubic-bezier(.6,0,.3,1) infinite; }
+  @keyframes drip { 0% { transform: translateY(-18px); } 70%, 100% { transform: translateY(54px); } }
 
   /* 2. flight: scroll flies the drone; photographs surface on their lines */
-  .flight { position: relative; height: 100vh; overflow: hidden; background: var(--ink); color: var(--paper); }
+  .flight { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
   .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .flight__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.08) 55%, rgba(0,0,0,.2)); opacity: 0; }
   .flight__line { position: absolute; left: var(--gutter); bottom: 18vh; z-index: 3; max-width: 11ch; font-family: var(--serif); font-weight: 400; font-style: italic;
@@ -110,7 +121,7 @@
   .head .label { opacity: .7; margin-bottom: .5rem; }
 
   /* 3. sideways gallery: every frame keeps its photograph's own shape */
-  .strip { position: relative; height: 100vh; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; justify-content: center; }
+  .strip { position: relative; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; justify-content: center; }
   .strip .topo { color: rgba(41,65,50,.16); }
   .strip .head { position: relative; margin-bottom: 2.6rem; }
   .strip__track { position: relative; display: flex; gap: 3vw; padding: 0 var(--gutter); width: max-content; align-items: flex-end; will-change: transform; }
@@ -165,7 +176,21 @@
   .outro__foot nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
 
   @media (max-width: 760px) {
-    .flight__line { bottom: auto; top: 14vh; }
+    .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
+    .hud--tr { right: var(--gutter); }
+    .flight__line { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.6rem, 12vw, 3.6rem); }
+    .plate { bottom: 13vh; }
+    .plate__tag { flex-direction: column; gap: .2rem; }
+    .strip__track { gap: 6vw; }
+    .strip .head { margin-bottom: 1.6rem; }
+    .tag { flex-wrap: wrap; gap: .3rem .7rem; }
+    .films { padding: 12vh 0 12vh; } .index { padding: 12vh 0 10vh; }
+    .films__row { grid-template-columns: 2.2rem 1fr auto; padding: 1.5rem 0; }
+    .index__row { gap: .6rem 1rem; padding: 1.3rem 0; }
+    .head { grid-template-columns: auto 1fr; } .head > span { display: none; }
+    .magnet { width: 116px; height: 116px; }
+    .outro { padding-top: 12vh; } .outro__foot { margin-top: 9vh; flex-direction: column; }
+    .menu a { font-size: 2.2rem; }
     .plate { right: 50%; top: auto; bottom: 12vh; }
     .plate--land .plate__frame { width: 78vw; } .plate--tall .plate__frame { height: 44vh; }
     .strip__item figure { height: 44vh; }
@@ -177,7 +202,10 @@
 <body>
 <div class="grain" aria-hidden="true"></div>
 <div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label">View</span></div><div class="cursor__dot"></div></div>
-<div class="loader" aria-hidden="true"><div class="loader__word"><span>O</span><span>x</span><span>&nbsp;</span><span>H</span><span>o</span><span>l</span><span>l</span><span>o</span><span>w</span></div></div>
+<div class="loader" aria-hidden="true"><div class="loader__lockup">
+  <svg class="loader__mark" viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
+  <div class="loader__clip"><div class="loader__word">Ox Hollow</div></div>
+</div></div>
 
 <header class="nav" id="nav">
   <a class="nav__mark" href="/lab/" aria-label="Ox Hollow Media home"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>Ox Hollow</a>
@@ -198,12 +226,15 @@
   <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
     <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-200" width="3400" height="1400">
       <rect x="-1200" y="-200" width="3400" height="1400" fill="#fff"/>
-      <text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
-      <text x="500" y="790" text-anchor="middle" font-size="380" fill="#000">to <tspan font-style="italic">see.</tspan></text>
+      <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
+      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">to <tspan font-style="italic">see.</tspan></text></g>
+      <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
+      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">to</text>
+      <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
     </mask></defs>
     <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)" mask="url(#words)"/>
   </svg></div>
-  <p class="hero__hint label">Scroll</p>
+  <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
 </section>
 
 <section class="flight" aria-label="Curving coastlines, mile-high mountains, foggy forests, and the people in between">
@@ -284,6 +315,9 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 gsap.registerPlugin(ScrollTrigger);
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+scrollTo(0, 0);
+ScrollTrigger.config({ ignoreMobileResize: true });
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp01 = v => Math.max(0, Math.min(1, v));
 
@@ -294,32 +328,42 @@ gsap.ticker.lagSmoothing(0);
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.getAttribute('href')); }));
 
 // loader
+// the mark sits centred, the name slides out from behind it, and the pair settles to centre
+document.fonts.ready.then(() => {
+const clipW = document.querySelector('.loader__clip').offsetWidth + parseFloat(getComputedStyle(document.querySelector('.loader__lockup')).gap);
+gsap.set('.loader__lockup', { x: clipW / 2 });
+gsap.set('.loader__word', { xPercent: -105 });
 gsap.timeline()
-  .to('.loader__word span', { y: 0, duration: .9, ease: 'expo.out', stagger: .05 })
-  .to('.loader__word span', { y: '-110%', duration: .6, ease: 'expo.in', stagger: .03 }, '+=.35')
-  .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '-=.2')
+  .to('.loader__mark .ring', { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' })
+  .to('.loader__mark .moon', { opacity: 1, duration: .5, ease: 'power1.out' }, '-=.25')
+  .to('.loader__lockup', { x: 0, duration: 1.1, ease: 'expo.inOut' }, '+=.05')
+  .to('.loader__word', { xPercent: 0, duration: 1.1, ease: 'expo.inOut' }, '<')
+  .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=.45')
   .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
+});
 
 // top bar: hidden through the opening, in once the headline is behind you.
 // Before that, a small "Menu" tab (or moving the mouse to the top edge) brings it down.
 const nav = document.getElementById('nav'), menu = document.getElementById('menu'), toggle = nav.querySelector('.nav__toggle');
 let pastHero = false, peeking = false;
 const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || menu.classList.contains('is-open'));
-ScrollTrigger.create({ trigger: '.flight', start: 'top 55%', end: 'max', refreshPriority: -1, onToggle: self => { pastHero = self.isActive; syncNav(); } });
 addEventListener('mousemove', e => { const p = e.clientY < 70 || (peeking && e.clientY < 90); if (p !== peeking) { peeking = p; syncNav(); } });
 document.querySelector('.peek-tab').addEventListener('click', () => { peeking = true; syncNav(); });
-toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; syncNav(); });
+toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; open ? lenis.stop() : lenis.start(); syncNav(); });
 
 // 1. hero: zoom into the hole of the "o" in "to"
 function holeOrigin() {
-  const t = document.querySelectorAll('.hero__mask text')[1], e = t.getExtentOfChar(1);
+  const tall = matchMedia('(max-aspect-ratio: 4/5)').matches;
+  const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole'), e = t.getExtentOfChar(1);
   const W = innerWidth, H = innerHeight, k = Math.min(W, H) / 1000;
-  const cx = e.x + e.width / 2, cy = 790 - 380 * 0.19;
+  const cx = e.x + e.width / 2, cy = +t.getAttribute('y') - +t.getAttribute('font-size') * 0.19;
   return `${(W - 1000 * k) / 2 + cx * k}px ${(H - 1000 * k) / 2 + cy * k}px`;
 }
 const setOrigin = () => gsap.set('.hero__mask', { transformOrigin: holeOrigin() });
 document.fonts.ready.then(setOrigin); addEventListener('resize', setOrigin);
-gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=160%', scrub: true, pin: true } })
+const heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=160%', scrub: true, pin: true } });
+lenis.on('scroll', ({ scroll }) => { const p = scroll > heroTl.scrollTrigger.end - innerHeight * .25; if (p !== pastHero) { pastHero = p; syncNav(); } });
+heroTl
   .to('.hero__hint', { opacity: 0, duration: .1 }, 0)
   .to('.hero__mask', { scale: 9, ease: 'power2.in', duration: 1 }, 0)
   .to('.hero__mask', { opacity: 0, duration: .45, ease: 'power1.in' }, .5)

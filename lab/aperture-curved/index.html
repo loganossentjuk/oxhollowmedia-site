@@ -317,8 +317,9 @@
       <g class="iris__blades" clip-path="url(#housing)"><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/></g>
     </mask>
     <pattern id="photoPat" patternUnits="userSpaceOnUse"><image class="photoPat__img" href="/images/about/portrait.webp" preserveAspectRatio="none" x="0" y="0"/></pattern>
+    <mask id="bm0" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm1" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm2" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm3" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm4" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm5" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm6" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask>
     <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath>
-    <linearGradient id="bladeLight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4EEE2" stop-opacity=".38"/><stop offset=".55" stop-color="#F4EEE2" stop-opacity=".1"/><stop offset="1" stop-color="#F4EEE2" stop-opacity=".02"/></linearGradient>
+    <linearGradient id="bladeLight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4EEE2" stop-opacity=".24"/><stop offset=".5" stop-color="#F4EEE2" stop-opacity=".07"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".18"/></linearGradient>
     <linearGradient id="bladeDark" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E0D0C" stop-opacity=".38"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".06"/></linearGradient>
     <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur class="soft__blur" stdDeviation="3"/></filter></defs>
     <g mask="url(#words)">
@@ -326,7 +327,7 @@
       <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="none" opacity="1"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
-      <g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeLight)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeDark)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeLight)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeDark)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeLight)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeDark)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g><g class="blade"><circle fill="url(#photoPat)"/><circle fill="url(#bladeLight)"/><circle fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)" class="blade__shadow"/><circle fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".8" vector-effect="non-scaling-stroke"/></g>
+      <g class="blade" mask="url(#bm0)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm1)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm2)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm3)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm4)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm5)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm6)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g>
     </g>
     <g class="lens">
       <g class="lens__ticks" stroke="#F4EEE2" stroke-opacity=".55" stroke-width=".9"></g>
@@ -522,7 +523,8 @@ const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySel
 const BLADES = 7;
 const apertureG = heroSvg.querySelector('.aperture');
 const maskBlades = [...heroSvg.querySelectorAll('.iris__blades circle')];
-const bladeGroups = [...heroSvg.querySelectorAll('.aperture .blade')].map(g => [...g.querySelectorAll('circle')]);
+const bladeGroups = [...heroSvg.querySelectorAll('.aperture .blade')];
+const bladeMasks = Array.from({ length: 7 }, (_, k) => heroSvg.querySelector('#bm' + k));
 const pat = heroSvg.querySelector('#photoPat'), patImg = heroSvg.querySelector('.photoPat__img');
 const oGlyphs = [...heroSvg.querySelectorAll('.o-glyph')];
 const ticks = heroSvg.querySelector('.lens__ticks'), glint = heroSvg.querySelector('.lens__glint'), fText = heroSvg.querySelector('.lens__f');
@@ -599,10 +601,17 @@ function drawZoom() {
   // and its neighbour overlaps it, like a real iris. Sliding the discs out from the centre opens the hole.
   const g = Math.min(r, R), RHO = R * 1.55, T = RHO * .62;           // g: radius of the hole the blades leave
   const reach = Math.sqrt(Math.max(0, (RHO + g) ** 2 - T * T));
-  for (let i = 0; i < BLADES; i++) {
+  const C = Array.from({ length: BLADES }, (_, i) => {
     const a = turn + i * 2 * Math.PI / BLADES, ux = Math.cos(a), uy = Math.sin(a);
-    const cx = aim.x + reach * ux - T * uy, cy = aim.y + reach * uy + T * ux;
-    [maskBlades[i], ...bladeGroups[i]].forEach(c => { c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', RHO); });
+    return [aim.x + reach * ux - T * uy, aim.y + reach * uy + T * ux];
+  });
+  const place = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', RHO); };
+  for (let i = 0; i < BLADES; i++) {
+    const me = C[i], next = C[(i + 1) % BLADES], g = bladeGroups[i], m = bladeMasks[i];
+    place(maskBlades[i], me);
+    place(m.querySelector('.bm__self'), me); place(m.querySelector('.bm__next'), next);
+    place(g.querySelector('.b__photo'), me); place(g.querySelector('.b__sheen'), me);
+    place(g.querySelector('.b__shadow'), next); place(g.querySelector('.b__edge'), next);   // the next blade's edge and shadow lie on this one
   }
   iris.setAttribute('cx', aim.x); iris.setAttribute('cy', aim.y); iris.setAttribute('r', Math.max(R, r));
   iris.setAttribute('fill-opacity', sh);

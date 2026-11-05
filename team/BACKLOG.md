@@ -102,3 +102,6 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 
 ## Parked 2026-11-04
 - **(Logan)** Branch `brand-lines` (home vision block ends with the voice line; About carries "Closer to nature, one frame at a time."; guidelines open questions resolved) is PARKED: Logan is reworking pages and wants those finalised before any content changes. Do not merge; do not touch site copy until he says the rework is done. Preview: https://brand-lines.oxhollowmedia-site.pages.dev
+
+- **(Logan)** Pick the rate card: see Dropbox/Career/OxHollow/Invoices/quote-template.md (legacy client rate vs quoted rate; minimum booking; half/full-day). Added 2026-11-04.
+- **(Logan)** Approve the speed-to-lead scheduled task (ox-speed-to-lead, weekdays 8-18 every 2 h): the auto-mode classifier refused to create it from the team session. Added 2026-11-04.

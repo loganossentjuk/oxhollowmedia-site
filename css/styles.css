@@ -1934,6 +1934,7 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .aud-frame { position: sticky; top: calc(var(--nav-h) + 2rem); aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
 .aud-photo { position: absolute; inset: 0; opacity: 0; transform: scale(1.07); transition: opacity 0.7s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
 .aud-photo.is-active { opacity: 1; transform: none; }
+.aud-live .aud-photo { transition: none; will-change: opacity, transform; }
 .aud-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .aud-list { list-style: none; border-top: 1px solid var(--border); }
 .aud-row { display: grid; grid-template-columns: 3rem 1fr; column-gap: 0.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
@@ -1993,3 +1994,10 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .ev #packages .offer-card:not(:first-child) { padding-left: 0; }
   .ev #packages .offer-grid + .offer-grid { grid-template-columns: 1fr; max-width: none; }
 }
+
+/* Pinned filmstrip: the page scroll drives the strip (js/events-motion.js) */
+#highlights.pinned { overflow-x: clip; }
+#highlights.pinned > .container { position: sticky; }
+#highlights.pinned .filmstrip { overflow: visible; scroll-snap-type: none; cursor: default; will-change: transform; }
+#highlights.pinned .filmstrip .masonry-item { height: clamp(240px, 50vh, 480px); }
+@media (max-width: 600px) { #highlights.pinned .filmstrip .masonry-item { height: 58vw; max-height: 320px; } }

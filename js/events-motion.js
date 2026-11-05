@@ -28,40 +28,63 @@
     });
   }
 
-  /* ── 3. What I photograph: the active word picks the photo ── */
+  /* ── 3. What I photograph: scrolling crossfades the photos ──
+     A float position f runs 0..n-1 as the rows pass the reading line; each
+     photo fades in over the one before it, and the drawn value eases toward
+     the target every frame so the swap glides instead of snapping. */
   const aud = document.querySelector('.aud');
   if (aud) {
     const rows = [...aud.querySelectorAll('.aud-row')];
     const photos = [...aud.querySelectorAll('.aud-photo')];
     const frame = aud.querySelector('.aud-frame');
-    let current = 0;
-    let hovering = false;
-    const set = (i) => {
-      if (i === current) return;
-      current = i;
-      rows.forEach((r, k) => r.classList.toggle('is-active', k === i));
-      photos.forEach((p, k) => p.classList.toggle('is-active', k === i));
-    };
-    rows.forEach((r, i) => {
-      r.addEventListener('mouseenter', () => { hovering = true; set(i); });
-      r.addEventListener('mouseleave', () => { hovering = false; });
-      r.addEventListener('focusin', () => set(i));
-      r.addEventListener('click', () => set(i));
-    });
-    // Scrolling also walks the list: the row nearest the reading line is active.
-    const onScroll = () => {
-      if (hovering) return;
+    const n = rows.length;
+    let target = 0, drawn = 0, hover = -1, active = 0, running = false;
+
+    const smooth = (x) => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); };
+    const fromScroll = () => {
       const stacked = getComputedStyle(aud).gridTemplateColumns.split(' ').length === 1;
-      const line = stacked ? frame.getBoundingClientRect().bottom + 90 : innerHeight * 0.5;
-      let best = current, dist = Infinity;
-      rows.forEach((r, i) => {
-        const b = r.getBoundingClientRect();
-        const d = Math.abs((b.top + Math.min(b.height, 120) / 2) - line);
-        if (d < dist) { dist = d; best = i; }
-      });
-      set(best);
+      const line = stacked ? frame.getBoundingClientRect().bottom + 70 : innerHeight * 0.5;
+      const c = rows.map((r) => { const b = r.getBoundingClientRect(); return b.top + Math.min(b.height, 140) / 2; });
+      if (line <= c[0]) return 0;
+      if (line >= c[n - 1]) return n - 1;
+      for (let i = 0; i < n - 1; i++) {
+        if (line <= c[i + 1]) return i + (line - c[i]) / (c[i + 1] - c[i]);
+      }
+      return n - 1;
     };
-    addEventListener('scroll', onScroll, { passive: true });
+    const draw = () => {
+      photos.forEach((p, i) => {
+        const o = i === 0 ? 1 : smooth((drawn - (i - 1) - 0.15) / 0.7);
+        p.style.opacity = o.toFixed(3);
+        p.style.transform = reduced ? 'none' : 'scale(' + (1 + 0.05 * (1 - o)).toFixed(4) + ')';
+        p.style.zIndex = i;
+      });
+      const now = Math.round(drawn);
+      if (now !== active) {
+        active = now;
+        rows.forEach((r, k) => r.classList.toggle('is-active', k === active));
+      }
+    };
+    const tick = () => {
+      drawn += (target - drawn) * (reduced ? 1 : 0.14);
+      if (Math.abs(target - drawn) < 0.002) { drawn = target; running = false; draw(); return; }
+      draw();
+      requestAnimationFrame(tick);
+    };
+    const kick = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
+    const update = () => { target = hover >= 0 ? hover : fromScroll(); kick(); };
+
+    aud.classList.add('aud-live');
+    rows.forEach((r, i) => {
+      r.addEventListener('mouseenter', () => { hover = i; update(); });
+      r.addEventListener('mouseleave', () => { hover = -1; update(); });
+      r.addEventListener('focusin', () => { hover = i; update(); });
+      r.addEventListener('focusout', () => { hover = -1; update(); });
+    });
+    addEventListener('scroll', () => { if (hover < 0) update(); }, { passive: true });
+    addEventListener('resize', update);
+    target = drawn = fromScroll();
+    draw();
   }
 
   /* ── 4. Rates count up the first time they come into view ── */
@@ -99,55 +122,97 @@
     update();
   }
 
-  /* ── 6. Recent events filmstrip ── */
+  /* ── 6. Recent events filmstrip ──
+     With motion on, the section pins and scrolling down slides the strip
+     sideways (like the homepage flight lines). With reduced motion it stays a
+     normal sideways-scrolling row. */
   const strip = document.getElementById('event-grid');
-  if (strip && strip.classList.contains('filmstrip')) {
+  const sec = document.getElementById('highlights');
+  if (strip && sec && strip.classList.contains('filmstrip')) {
     const bar = document.querySelector('.strip-bar span');
-    let ticking = false;
+    const pin = sec.querySelector('.container');
+    const btns = document.querySelectorAll('.strip-btn');
+    const filters = document.getElementById('event-filters');
 
+    if (!reduced) {
+      sec.classList.add('pinned');
+      const SPEED = innerWidth <= 600 ? 2.5 : 3.5;   // px of sideways travel per px scrolled
+      let travel = 0, start = 0, len = 1, target = 0, drawn = 0, running = false;
+
+      const visible = () => [...strip.children].filter((c) => c.offsetParent !== null);
+      const layout = () => {
+        sec.style.height = '';
+        const items = visible();
+        const last = items[items.length - 1];
+        const left = strip.getBoundingClientRect().left;
+        const end = last ? last.offsetLeft + last.offsetWidth : 0;
+        const pad = innerWidth <= 600 ? 20 : 40;
+        travel = Math.max(0, end - (innerWidth - left) + pad);
+        const top = Math.max(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72,
+                             (innerHeight - pin.offsetHeight) / 2);
+        pin.style.top = top + 'px';
+        const base = sec.offsetHeight;
+        len = Math.max(1, travel / SPEED);
+        sec.style.height = (base + len) + 'px';
+        start = sec.getBoundingClientRect().top + scrollY + parseFloat(getComputedStyle(sec).paddingTop) - top;
+        if (bar) bar.style.setProperty('--w', (100 * (innerWidth - left) / (innerWidth - left + travel)).toFixed(2) + '%');
+        update();
+      };
+      const progress = () => clamp((scrollY - start) / len, 0, 1);
+      const draw = () => {
+        strip.style.transform = 'translate3d(' + (-drawn * travel).toFixed(1) + 'px,0,0)';
+        if (bar) {
+          const w = parseFloat(bar.style.getPropertyValue('--w')) || 20;
+          bar.style.setProperty('--l', (drawn * (100 - w)).toFixed(2) + '%');
+        }
+      };
+      const tick = () => {
+        drawn += (target - drawn) * 0.12;
+        if (Math.abs(target - drawn) < 0.0005) { drawn = target; running = false; draw(); return; }
+        draw();
+        requestAnimationFrame(tick);
+      };
+      const update = () => { target = progress(); if (!running) { running = true; requestAnimationFrame(tick); } };
+
+      addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', layout);
+      addEventListener('load', layout);
+      layout();
+
+      // Arrows move the page, so the strip follows.
+      btns.forEach((b) => b.addEventListener('click', () => {
+        const step = (innerWidth * 0.6) / Math.max(1, travel) * len;
+        scrollTo({ top: clamp(scrollY + Number(b.dataset.dir) * step, start, start + len), behavior: 'smooth' });
+      }));
+      // Keyboard: arrow keys on the focused strip do the same.
+      strip.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        btns[e.key === 'ArrowRight' ? 1 : 0].click();
+      });
+      // A filter changes the strip's length: re-measure and go back to its start.
+      if (filters) filters.addEventListener('click', () => requestAnimationFrame(() => {
+        layout();
+        if (scrollY > start) scrollTo({ top: start, behavior: 'auto' });
+        drawn = target = progress(); draw();
+      }));
+      return;
+    }
+
+    // Reduced motion: plain sideways scrolling with arrows and a progress bar.
     const paint = () => {
-      ticking = false;
       const max = strip.scrollWidth;
       if (bar && max) {
         bar.style.setProperty('--w', (strip.clientWidth / max * 100).toFixed(2) + '%');
         bar.style.setProperty('--l', (strip.scrollLeft / max * 100).toFixed(2) + '%');
       }
     };
-    const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
-    strip.addEventListener('scroll', req, { passive: true });
-    addEventListener('resize', req);
-    addEventListener('load', req);
-    req();
-
-    document.querySelectorAll('.strip-btn').forEach((b) => {
-      b.addEventListener('click', () => {
-        strip.scrollBy({ left: Number(b.dataset.dir) * strip.clientWidth * 0.75, behavior: reduced ? 'auto' : 'smooth' });
-      });
-    });
-
-    // Filters reset the strip to the start.
-    const filters = document.getElementById('event-filters');
-    if (filters) filters.addEventListener('click', () => { strip.scrollLeft = 0; req(); });
-
-    // Mouse drag (touch and trackpads scroll natively).
-    let down = false, startX = 0, startLeft = 0, moved = false;
-    strip.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      down = true; moved = false; startX = e.clientX; startLeft = strip.scrollLeft;
-    });
-    addEventListener('pointermove', (e) => {
-      if (!down) return;
-      const dx = e.clientX - startX;
-      if (!moved && Math.abs(dx) > 5) { moved = true; strip.classList.add('dragging'); }
-      if (moved) strip.scrollLeft = startLeft - dx;
-    });
-    addEventListener('pointerup', () => {
-      if (!down) return;
-      down = false;
-      strip.classList.remove('dragging');
-    });
-    // A drag shouldn't also open the photo it ended on.
-    strip.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
-    strip.addEventListener('dragstart', (e) => e.preventDefault());
+    strip.addEventListener('scroll', paint, { passive: true });
+    addEventListener('resize', paint);
+    paint();
+    btns.forEach((b) => b.addEventListener('click', () => {
+      strip.scrollBy({ left: Number(b.dataset.dir) * strip.clientWidth * 0.75 });
+    }));
+    if (filters) filters.addEventListener('click', () => { strip.scrollLeft = 0; paint(); });
   }
 })();

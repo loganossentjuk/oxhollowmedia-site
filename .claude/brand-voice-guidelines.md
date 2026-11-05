@@ -131,6 +131,8 @@ Against polished wildlife accounts: we show the process and the misses. Against 
 
 ## Open Questions for Team Discussion
 
+All three resolved by Logan, 2026-11-04: (1) placement as recommended, (2) "Scientist by training", no degree or employer, (3) no emoji in brand copy, at most one per caption, never in hooks.
+
 ### High priority
 1. **Placement of the three lines.** Found: headline on home; descriptor in IG bio; voice line chosen but not placed. Recommendation: home keeps "Dare to see."; the vision block gains the voice line as its last sentence; IG bio last line becomes "We care for what we come to know." and the descriptor moves to the About page. Need: yes/no on bio and site edits (preview branch first).
 

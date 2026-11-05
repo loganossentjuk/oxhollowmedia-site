@@ -2,6 +2,10 @@
 /store    /prints/   301
 /store/    /prints/   301
 
+# Work With Me merged into /events (Nov 2026): one page for event searches.
+/work-with-me    /events    301
+/work-with-me/   /events    301
+
 # Service pages consolidated into /events and /filmmaking (Sep 2026).
 /corporate-event-photographer-san-francisco   /events       301
 /nonprofit-event-photographer-san-francisco   /events       301

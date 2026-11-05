@@ -48,7 +48,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Client quote for the About/events pages (in progress)
 - [ ] **(Logan)** Send the other abstracts (like Obsidian Palace) for the series (repeat in every report's Needs-you list until ticked)
 - [ ] **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
-- [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
+- [ ] **(Logan)** Buy general liability insurance: options compared in team/knowledge/insurance-options.md (recommend Full Frame Annual, $129/yr). Started 2026-10-09; researched 2026-11-05.
 
 ## Shop
 - [x] Batch 2 framed listings priced and published (2026-10-09)

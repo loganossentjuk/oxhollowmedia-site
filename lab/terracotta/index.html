@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Lab: Terracotta | Ox Hollow Media</title>
+<link rel="icon" href="/images/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #F3EFE4; --bg-section: #E5DEC8; --green: #294132; --ink: #191817; --text: #232120;
+    --clay: #B67C56; --paper: #F4EEE2; --muted: #625D52; --border: #DCD4C0;
+    --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+    --gutter: clamp(1.1rem, 3vw, 2.4rem);
+    --pad: clamp(4.5rem, 14vh, 9rem);
+    --head-gap: clamp(2rem, 5vh, 3.4rem);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  @media (hover: none) { a { cursor: pointer; } }
+  img, video { display: block; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  /* text links: hairline underline that draws away on hover and back on leave */
+  .u { background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; padding-bottom: .12em; border-bottom: 0 !important;
+    transition: background-size .55s cubic-bezier(.2,.8,.2,1); }
+  .u:hover { background-size: 0 1px; background-position: 100% 100%; }
+  :focus-visible { outline: 2px solid var(--clay); outline-offset: 4px; }
+  .label { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; line-height: 1.4; }
+
+  /* film grain */
+  .grain { position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain 1s steps(6) infinite; }
+  @keyframes grain { 0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-2%)} 60%{transform:translate(-2%,-4%)} 80%{transform:translate(4%,2%)} 100%{transform:translate(0,0)} }
+
+
+  /* loader */
+  .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
+  .loader__lock { width: 100vw; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    font-family: var(--serif); font-weight: 500; text-transform: uppercase; font-size: clamp(2rem, 7vw, 6rem); letter-spacing: .12em; line-height: 1; white-space: nowrap; }
+  .loader__side { display: flex; overflow: hidden; }
+  .loader__side--left { justify-content: flex-end; justify-self: end; } .loader__side--right { justify-self: start; }
+  .loader__mark { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
+  .loader__mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
+  .loader__mark .moon { opacity: 0; }
+
+  /* top bar: hidden during the opening, slides in after the headline */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 75; height: 64px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 var(--gutter); background: rgba(243,239,228,.86); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid rgba(35,33,32,.08); transform: translateY(-105%); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+  .nav.is-shown { transform: none; }
+  .nav__mark { display: flex; align-items: center; gap: .6rem; font-family: var(--serif); font-weight: 500; font-size: 1.1rem; letter-spacing: .14em; text-transform: uppercase; }
+  .nav__mark svg { width: 26px; height: 26px; color: var(--green); }
+  .nav__links { display: flex; align-items: center; gap: 2rem; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; }
+  .nav__links a:not(.nav__cta) { position: relative; padding: .4rem 0; }
+  .nav__links a:not(.nav__cta)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor;
+    transform: scaleX(0); transform-origin: right; transition: transform .4s; }
+  .nav__links a:not(.nav__cta):hover::after { transform: scaleX(1); transform-origin: left; }
+  .nav__cta { background: var(--green); color: var(--paper); padding: .7rem 1.2rem; border-radius: 2px; transition: background .35s; }
+  .nav__cta:hover { background: var(--clay); }
+  .nav__toggle { display: none; background: none; border: 0; font: inherit; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: inherit; }
+  .menu { position: fixed; inset: 0; z-index: 74; background: var(--green); color: var(--paper); padding: 6rem var(--gutter) 2rem;
+    display: flex; flex-direction: column; gap: .4rem; transform: translateY(-100%); transition: transform .6s cubic-bezier(.7,0,.2,1); }
+  .menu.is-open { transform: none; }
+  .menu a { font-family: var(--serif); font-size: 2.6rem; line-height: 1.15; border-bottom: 1px solid rgba(244,238,226,.15); padding: .4rem 0; }
+  @media (max-width: 860px) { .nav__links { display: none; } .nav__toggle { display: block; } }
+  .peek-tab { position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 74; padding: .5rem 1rem .6rem; color: #fff;
+    mix-blend-mode: difference; transition: opacity .4s; }
+  .nav.is-shown ~ .peek-tab { opacity: 0; pointer-events: none; }
+
+  /* 1. hero: the headline is a window onto the drone footage */
+  .hero, .flight, .strip { height: 100vh; height: 100svh; }
+  .hero { color: var(--paper); }
+  .hero { position: relative; overflow: hidden; background: var(--ink); }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero__mask { position: absolute; inset: 0; z-index: 1; }
+  .hero__mask svg { width: 100%; height: 100%; overflow: visible; }
+  .hero__mask text { font-family: var(--serif); font-weight: 500; }
+  .words-tall { display: none; }
+  @media (max-aspect-ratio: 4/5) { .words-wide { display: none; } .words-tall { display: inline; } }
+  .hero__hint { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .7rem;
+    color: #fff; mix-blend-mode: difference; }
+  .hero__hint i { position: relative; width: 1px; height: 54px; background: rgba(255,255,255,.35); overflow: hidden; }
+  .hero__hint i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 18px; background: #fff; animation: drip 1.8s cubic-bezier(.6,0,.3,1) infinite; }
+  @keyframes drip { 0% { transform: translateY(-18px); } 70%, 100% { transform: translateY(54px); } }
+
+  /* 2. flight: scroll flies the drone; photographs surface on their lines */
+  .flight { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
+  .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero .hud, .flight__shade { opacity: 0; }
+  /* act straight away: the two calls to action ride along with the footage once the aperture opens */
+  .hero__cta { position: absolute; z-index: 4; left: var(--gutter); bottom: 4.6rem; display: flex; gap: .8rem;
+    opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .hero__cta.is-on { opacity: 1; transform: none; pointer-events: auto; }
+  .hero__cta .btn--ghost { background: rgba(41,65,50,.7); color: var(--paper); box-shadow: inset 0 0 0 1px rgba(244,238,226,.6);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .hero__cta .btn--ghost:hover { background: var(--clay); color: var(--paper); box-shadow: inset 0 0 0 1px var(--clay); }
+  .flight__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.08) 55%, rgba(0,0,0,.2)); opacity: 0; }
+  .flight__line { position: absolute; left: var(--gutter); bottom: 18vh; z-index: 3; max-width: 11ch; font-family: var(--serif); font-weight: 400; font-style: italic;
+    font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: 1.06; opacity: 0; text-shadow: 0 0 2px rgba(0,0,0,.25), 0 4px 60px rgba(0,0,0,.5); }
+  .flight__line:first-of-type { max-width: 14ch; }
+  .plate { position: absolute; z-index: 2; right: calc(var(--gutter) + 4vw); top: 50%; background: var(--paper); color: var(--text);
+    padding: 10px 10px 0; box-shadow: 0 30px 80px rgba(0,0,0,.45); opacity: 0; will-change: transform, clip-path; }
+  .plate img { height: 100%; width: 100%; object-fit: cover; }
+  .plate__frame { overflow: hidden; }
+  .plate__tag { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: .75rem .15rem .8rem; font-size: .62rem; letter-spacing: .18em; line-height: 1.3; text-transform: uppercase; color: var(--muted); }
+  .plate__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; letter-spacing: .02em; text-transform: none; color: var(--text); }
+  .plate--land .plate__frame { width: min(38vw, 620px); aspect-ratio: 16 / 9; }
+  .plate--tall .plate__frame { height: min(56vh, 560px); aspect-ratio: 9 / 16; }
+  .hud { position: absolute; z-index: 3; }
+  .hud--tl { top: 5.6rem; left: var(--gutter); } .hud--tr { top: 5.6rem; right: var(--gutter); text-align: right; }
+  .hud--bl { bottom: 2rem; left: var(--gutter); right: var(--gutter); display: flex; align-items: center; gap: 1rem; }
+  .hud__bar { flex: 1; height: 1px; background: rgba(244,238,226,.3); position: relative; }
+  .hud__bar i { position: absolute; inset: 0; background: var(--clay); transform-origin: left; transform: scaleX(0); }
+  .hud b { font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  /* 2b. who we are: vision and mission, straight after the flight */
+  .creed { position: relative; background: var(--bg); padding: var(--pad) var(--gutter); overflow: hidden; }
+  .creed .topo { color: rgba(41,65,50,.13); }
+  .creed__grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6vw; }
+  .creed__item .label { color: var(--clay); margin-bottom: 1.2rem; display: block; }
+  .creed__item p { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 2.9vw, 2.9rem); line-height: 1.12; }
+  .creed__foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem 2rem; margin-top: 9vh; padding-top: 1.4rem; border-top: 1px solid rgba(35,33,32,.14); }
+  .creed__foot p { color: var(--muted); max-width: 52ch; font-size: .95rem; }
+  .creed__foot a { font-family: var(--serif); font-size: 1.5rem; border-bottom: 1px solid currentColor; }
+
+  /* 2c. events: the work that books, shown first */
+  .events { position: relative; background: var(--text); color: var(--paper); padding: var(--pad) var(--gutter); overflow: hidden; }
+  .events .head { padding: 0; margin-bottom: var(--head-gap); }
+  .events .topo { color: rgba(244,238,226,.1); }                    /* the same contour lines, in cream on charcoal */
+  .events .head, .events__body, .events__more { position: relative; }
+  .events__body { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 5vw; align-items: start; }
+  .ev-grid { display: flex; flex-direction: column; gap: 1.2vw; }
+  .ev-row { display: flex; gap: 1.2vw; align-items: flex-start; }
+  .ev { display: block; min-width: 0; background: var(--paper); padding: 7px; box-shadow: 0 20px 60px rgba(0,0,0,.35); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .ev div { width: 100%; overflow: hidden; }
+  .ev img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .ev:hover { transform: translateY(-5px); }
+  .events__aside { position: sticky; top: 110px; }
+  .events__aside .lede { font-family: var(--serif); font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1.12; margin-bottom: 1.6rem; }
+  .events__aside ul { list-style: none; border-top: 1px solid rgba(244,238,226,.16); margin-bottom: 2.2rem; }
+  .events__aside li { padding: .9rem 0; border-bottom: 1px solid rgba(244,238,226,.16); font-size: .92rem; opacity: .85; }
+  .btn { transition: background .35s, color .35s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .btn:hover { background: var(--clay); color: var(--paper); }
+  .btn { display: inline-block; background: var(--paper); color: var(--ink); padding: 1rem 1.5rem; border-radius: 2px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
+  .events__aside .more { display: inline-block; margin-top: 1.4rem; font-family: var(--serif); font-size: 1.3rem; border-bottom: 1px solid currentColor; }
+  .events__more { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 5vw; margin-top: clamp(3.5rem, 9vh, 6rem); padding-top: 2.4rem; border-top: 1px solid rgba(244,238,226,.16); }
+  .events__more > div > .label { opacity: .6; margin-bottom: 1.4rem; display: block; }
+  .rates__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2vw; margin-bottom: 1.8rem; }
+  .rate { display: flex; flex-direction: column; gap: .3rem; padding: 1.4rem 1.3rem 1.5rem; border: 1px solid rgba(244,238,226,.16); border-radius: 2px;
+    transition: background .4s, border-color .4s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .rate:hover { background: rgba(244,238,226,.05); border-color: rgba(244,238,226,.4); transform: translateY(-3px); }
+  .rate .label { opacity: .55; }
+  .rate b { font-family: var(--serif); font-weight: 500; font-size: 1.55rem; line-height: 1.1; margin-top: .4rem; }
+  .rate__price { color: var(--clay); font-size: .9rem; }
+  .rate p { font-size: .84rem; opacity: .72; margin-top: .5rem; }
+  .steps ol { list-style: none; counter-reset: none; }
+  .steps li { display: grid; grid-template-columns: 2.2rem 1fr; gap: .4rem; padding: .95rem 0; border-top: 1px solid rgba(244,238,226,.12); }
+  .steps li:last-child { border-bottom: 1px solid rgba(244,238,226,.12); }
+  .steps li > span { font-size: .66rem; letter-spacing: .16em; color: var(--clay); padding-top: .25rem; }
+  .steps b { font-weight: 500; font-size: .95rem; }
+  .steps p { font-size: .84rem; opacity: .7; }
+  .strip__note { color: var(--muted); max-width: 34ch; font-size: .9rem; margin-bottom: .6rem; }
+  .strip__end a + br + a { display: inline-block; margin-top: 1.2rem; }
+  @media (max-width: 900px) {
+    .creed__grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+    .events__body, .events__more { grid-template-columns: minmax(0, 1fr); row-gap: 3.4rem; }
+    .rates__row { grid-template-columns: minmax(0, 1fr); gap: .8rem; } .events__aside { position: static; }
+    .ev-grid, .ev-row { gap: 2.6vw; }
+    .ev-row { flex-wrap: wrap; }
+    .ev-row .ev { flex: 1 1 calc(50% - 1.3vw) !important; }
+    .ev-row .ev:first-child:nth-last-child(3) { flex-basis: 100% !important; }
+  }
+
+  /* field-journal pieces */
+  .topo { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .topo svg { width: 100%; height: 100%; }
+  .topo path { stroke: currentColor; stroke-opacity: 1; }
+  .head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 1.5rem; padding: 0 var(--gutter); }
+  .head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: .95; }
+  .head h2 em { color: var(--clay); }                               /* echoes the see. at the bottom */
+  .head__rule { height: 1px; background: currentColor; opacity: .2; margin-bottom: .8rem; transform-origin: left; }
+  .head .label { opacity: .7; margin-bottom: .5rem; }
+
+  /* 3. sideways gallery: every frame keeps its photograph's own shape */
+  .strip { position: relative; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; justify-content: center; }
+  .strip .topo { color: rgba(41,65,50,.16); }
+  .strip .head { position: relative; margin-bottom: clamp(1.4rem, 4vh, 2.6rem); }
+  .strip__track { position: relative; display: flex; gap: 3vw; padding: 0 var(--gutter); width: max-content; align-items: flex-end; will-change: transform; }
+  .strip__item { flex: none; position: relative; width: min-content; }
+  .strip__item figure { height: 54vh; overflow: hidden; background: var(--bg-section); }
+  .strip__item img { height: 100%; width: auto; }
+  .tag { display: flex; gap: .9rem; align-items: baseline; margin-top: .8rem; font-size: .62rem; letter-spacing: .18em; line-height: 1.3; text-transform: uppercase; color: var(--muted); }
+  .tag b { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; letter-spacing: .01em; text-transform: none; color: var(--text); }
+  .tag span:last-child { margin-left: auto; }
+  .strip__end { flex: none; align-self: center; width: 22vw; min-width: 220px; }
+  .strip__end a { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1.05; border-bottom: 1px solid currentColor; }
+
+  /* 4. films: three framed plates, played in place */
+  .films { position: relative; background: var(--green); color: var(--paper); padding: var(--pad) 0; overflow: hidden; }
+  .films .topo { color: rgba(244,238,226,.12); }
+  .films .head { position: relative; margin-bottom: var(--head-gap); }
+  .films__grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3vw; padding: 0 var(--gutter); align-items: start; }
+  .film { display: block; text-align: left; background: var(--paper); padding: 10px 10px 0; box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s; border: 0; font: inherit; color: inherit; width: 100%; }
+  .film-wrap:nth-child(1) .film { transform: rotate(-1.4deg); }
+  .film-wrap:nth-child(2) { padding-top: 6vh; } .film-wrap:nth-child(2) .film { transform: rotate(.9deg); }
+  .film-wrap:nth-child(3) { padding-top: 1.5vh; } .film-wrap:nth-child(3) .film { transform: rotate(-.6deg); }
+  .film-wrap .film:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 28px 70px rgba(0,0,0,.4); }
+  .film__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+  .film__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .film:hover .film__frame img { transform: scale(1.06); }
+  .film__play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; border-radius: 50%; background: rgba(244,238,226,.92);
+    display: grid; place-items: center; transform: translate(-50%,-50%) scale(.85); opacity: .0; transition: opacity .4s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .film__play::after { content: ""; margin-left: 4px; border-left: 14px solid var(--ink); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+  .film:hover .film__play, .film:focus-visible .film__play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  @media (hover: none) { .film__play { opacity: 1; transform: translate(-50%,-50%) scale(.8); } }
+  .film .plate__tag { padding: .8rem .1rem .9rem; }
+  .films__all { position: relative; display: inline-block; margin: 9vh var(--gutter) 0; font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 2rem); border-bottom: 1px solid currentColor; }
+  .viewer { position: fixed; inset: 0; z-index: 96; background: rgba(25,24,23,.92); display: grid; place-items: center; padding: 4vw; opacity: 0; pointer-events: none; transition: opacity .4s; }
+  .viewer.is-open { opacity: 1; pointer-events: auto; }
+  .viewer__box { width: min(100%, 1280px); aspect-ratio: 16 / 9; background: #000; }
+  .viewer__box iframe { width: 100%; height: 100%; border: 0; }
+  .viewer__close { position: absolute; top: 1.2rem; right: var(--gutter); background: none; border: 0; color: var(--paper); font: inherit; cursor: pointer; }
+
+  /* 5. field index: one plate per part of the site */
+  .index { position: relative; background: var(--bg-section); padding: var(--pad) 0; overflow: hidden; }
+  .index .topo { color: rgba(41,65,50,.14); }
+  .index .head { position: relative; margin-bottom: var(--head-gap); }
+  .index__grid { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2vw; padding: 0 var(--gutter); align-items: start; }
+  .entry { display: block; background: var(--paper); padding: 9px 9px 0; box-shadow: 0 16px 44px rgba(35,33,32,.15);
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s; }
+  .entry-wrap:nth-child(1) .entry { transform: rotate(-1.2deg); }
+  .entry-wrap:nth-child(2) { padding-top: 4vh; } .entry-wrap:nth-child(2) .entry { transform: rotate(.8deg); }
+  .entry-wrap:nth-child(3) { padding-top: 1vh; } .entry-wrap:nth-child(3) .entry { transform: rotate(-.5deg); }
+  .entry-wrap:nth-child(4) { padding-top: 5vh; } .entry-wrap:nth-child(4) .entry { transform: rotate(1.1deg); }
+  .entry-wrap:nth-child(5) { padding-top: 2vh; } .entry-wrap:nth-child(5) .entry { transform: rotate(-.9deg); }
+  .entry-wrap .entry:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 26px 64px rgba(35,33,32,.24); }
+  .entry__frame { overflow: hidden; background: var(--bg-section); }
+  .entry__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .entry__tag { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .6rem; padding: .8rem .15rem .25rem; }
+  .entry__tag .label { font-size: .62rem; color: var(--muted); }
+  .entry__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; line-height: 1.05; }
+  .entry__tag svg { align-self: center; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .entry:hover .entry__tag svg { transform: translateX(5px); }
+  .entry p { padding: 0 .15rem 1rem; font-size: .8rem; line-height: 1.45; color: var(--muted); }
+  @media (max-width: 1100px) { .index__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem 3vw; } .entry-wrap:nth-child(n) { padding-top: 0; } }
+  @media (max-width: 760px) { .index__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1rem; } .entry-wrap:nth-child(n) .entry { transform: rotate(0); }
+    .entry__tag b { font-size: 1.1rem; } .entry p { font-size: .74rem; } }
+
+  /* 6. outro: quiet sign-off */
+  .outro { position: relative; background: var(--green); color: var(--paper); padding: var(--pad) var(--gutter) 2.4rem; overflow: hidden; }
+  .outro .topo { color: rgba(244,238,226,.1); }
+  .outro__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 3rem 6vw; }
+  .outro__lock { display: flex; align-items: center; margin-bottom: 1.8rem; font-family: var(--serif); font-weight: 500; text-transform: uppercase;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing: .12em; line-height: 1; white-space: nowrap; color: var(--paper); }
+  .outro__lock svg { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; }
+  .outro__lede { max-width: 40ch; margin-top: 1.6rem; opacity: .75; }
+  .outro__contact { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
+  .outro__contact .label { opacity: .6; margin-bottom: .4rem; }
+  .outro__mail { font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.15; }
+  .outro__note { font-size: .85rem; opacity: .6; margin-bottom: 1.4rem; }
+  .outro h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.4rem, 9vw, 8.5rem); line-height: .9; }
+  .outro h2 em { color: var(--clay); }
+  .magnet { display: inline-grid; place-items: center; width: 150px; height: 150px; border-radius: 50%; background: var(--paper); color: var(--ink); transition: background .35s, color .35s; }
+  .magnet:hover { background: var(--clay); color: var(--paper); }
+  .outro__foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-top: 14vh; padding-top: 1.4rem;
+    border-top: 1px solid rgba(244,238,226,.16); opacity: .7; }
+  .outro__foot nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+  .outro__foot a { padding-bottom: .1em; }
+
+  @media (max-width: 760px) {
+    .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
+    .hud--tr { right: var(--gutter); }
+    .flight__line, .flight__line:first-of-type { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1.1; max-width: 13ch; }
+    .hero__cta { right: var(--gutter); bottom: 6.2rem; gap: .6rem; }
+    .hero__cta .btn { flex: 1; text-align: center; padding: .95rem .5rem; }
+    .plate__tag { flex-direction: column; gap: .2rem; }
+    .strip__track { gap: 6vw; }
+    .tag { flex-wrap: wrap; gap: .3rem .7rem; }
+    .head { grid-template-columns: auto 1fr; } .head > span { display: none; }
+    .magnet { width: 116px; height: 116px; }
+    .outro__foot { margin-top: 3.5rem; flex-direction: column; }
+    .menu a { font-size: 2.2rem; }
+    .plate { right: 50%; top: auto; bottom: 21vh; }
+    .plate--land .plate__frame { width: 80vw; } .plate--tall .plate__frame { height: 33vh; }
+    .strip__item figure { height: 44vh; }
+    .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
+    .outro__inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="loader" aria-hidden="true"><div class="loader__lock">
+  <div class="loader__side loader__side--left"><span>O</span><span>X</span><span>&nbsp;</span><span>H</span></div>
+  <svg class="loader__mark" viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/><defs><clipPath id="lens"><circle cx="50" cy="50" r="37.8"/></clipPath><mask id="ib0" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib1" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib2" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib3" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib4" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib5" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib6" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask></defs><g class="iris" clip-path="url(#lens)"><g mask="url(#ib0)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib1)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib2)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib3)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib4)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib5)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib6)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g></g></svg>
+  <div class="loader__side loader__side--right"><span>L</span><span>L</span><span>O</span><span>W</span></div>
+</div></div>
+</div></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="/lab/" aria-label="Ox Hollow Media home"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>Ox Hollow</a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a>
+    <a class="nav__cta" href="/contact">Contact</a>
+  </nav>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+<nav class="menu" id="menu" aria-label="Main">
+  <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
+</nav>
+<button class="peek-tab label" aria-label="Show menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
+
+<section class="hero" aria-label="Dare to see. Curving coastlines, mile-high mountains, foggy forests, and the people in between">
+  <video src="/lab/media/reel.mp4" autoplay muted loop playsinline></video>
+  <h1 class="sr-only">Dare to see.</h1>
+  <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-1600" width="3400" height="4200">
+      <rect x="-1200" y="-1600" width="3400" height="4200" fill="#fff"/>
+      <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
+      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">t<tspan class="o-glyph">o</tspan> <tspan font-style="italic">see.</tspan></text></g>
+      <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
+      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">t<tspan class="o-glyph">o</tspan></text>
+      <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
+      <circle class="iris" cx="0" cy="0" r="0" fill="#000"/>
+      <g class="iris__blades" clip-path="url(#housing)"><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/></g>
+    </mask>
+    <pattern id="photoPat" patternUnits="userSpaceOnUse"><image class="photoPat__img" href="/images/about/portrait.webp" preserveAspectRatio="none" x="0" y="0"/></pattern>
+    <mask id="bm0" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm1" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm2" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm3" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm4" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm5" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm6" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask>
+    <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath>
+    <linearGradient id="bladeLight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4EEE2" stop-opacity=".24"/><stop offset=".5" stop-color="#F4EEE2" stop-opacity=".07"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".18"/></linearGradient>
+    <linearGradient id="bladeDark" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E0D0C" stop-opacity=".38"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".06"/></linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur class="soft__blur" stdDeviation="3"/></filter></defs>
+    <g mask="url(#words)">
+      <rect x="-1200" y="-1600" width="3400" height="4200" style="fill:var(--bg)"/>
+      <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="none" opacity="1"/>
+    </g>
+    <g class="aperture" clip-path="url(#housing)">
+      <g class="blade" mask="url(#bm0)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm1)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm2)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm3)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm4)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm5)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm6)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g>
+    </g>
+    <g class="lens">
+      <g class="lens__ticks" stroke="#F4EEE2" stroke-opacity=".55" stroke-width=".9"></g>
+      <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
+      <path class="lens__glint" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-linecap="round" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle class="lens__index" fill="#B67C56"/>
+      <text class="lens__f" text-anchor="middle" fill="#B67C56">ƒ/1.4</text>
+    </g>
+  </svg></div>
+  <div class="flight__shade"></div>
+  <p class="hud hud--tl label">Santa Barbara<br>California</p>
+  <p class="hud hud--tr label">Drone<br><b class="tc">00:00</b></p>
+  <p class="flight__line">Curving coastlines,</p>
+  <p class="flight__line">mile-high mountains,</p>
+  <p class="flight__line">foggy forests,</p>
+  <p class="flight__line">and the people in between.</p>
+  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b>Sun on the Tide</b><span>Plate 01 · Ocean</span></p></a>
+  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b>Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
+  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
+  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
+  <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
+  <div class="hero__cta"><a class="btn" href="/events">Hire for an event</a><a class="btn btn--ghost" href="/gallery">Walk the gallery</a></div>
+  <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
+</section>
+
+
+
+
+
+
+<section class="creed" id="creed">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="creed__grid">
+    <div class="creed__item"><span class="label">Vision</span><p>Ox Hollow strives to bring people closer to nature, illuminating stories of action, passion, and belief in conservation, cultivation, and care.</p></div>
+    <div class="creed__item"><span class="label">Mission</span><p>To illuminate the unseen, instill devotion, and craft stories of our innate natural connections.</p></div>
+  </div>
+  <div class="creed__foot"><p>The name is an homage: Logan means “little hollow,” Ossentjuk means “oxen yoke.”</p><a class="u" href="/about" data-cursor="Open">Read the story</a></div>
+</section>
+
+<section class="events" id="events">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>Event photography<br>&amp; <em>videography.</em></h2><div class="head__rule"></div><p class="label">Companies, nonprofits &amp; life events</p></div>
+  <div class="events__body">
+    <div class="ev-grid">
+      <div class="ev-row">
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.5009 1 0"><div style="aspect-ratio:1600/1066"><img src="/images/portfolio/events/01-gala-conversation.webp" alt="Guests in conversation at a gala" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:0.7500 1 0"><div style="aspect-ratio:1500/2000"><img src="/images/portfolio/events/02-keynote.webp" alt="A keynote speaker on stage" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:0.6665 1 0"><div style="aspect-ratio:1333/2000"><img src="/images/portfolio/events/08-ping-pong-serve.webp" alt="A ping pong serve at a company party" loading="lazy"></div></a>
+      </div>
+      <div class="ev-row">
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.7778 1 0"><div style="aspect-ratio:1600/900"><img src="/images/portfolio/events/04-industry-mingle.webp" alt="Guests mingling at an industry evening" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.8670 1 0"><div style="aspect-ratio:1600/857"><img src="/images/portfolio/events/06-offsite-group-photo.webp" alt="A company offsite group photo" loading="lazy"></div></a>
+      </div>
+    </div>
+    <aside class="events__aside">
+      <p class="lede">Editorial event photography and brand films for Bay Area companies.</p>
+      <ul><li>Trusted by Bay Area companies like Semgrep</li><li>Booked in a day, delivered in five.</li><li>Replies within 1 business day</li></ul>
+      <a class="btn" href="/events#packages" data-magnet>Hire for an event</a><br>
+      <a class="more u" href="/events" data-cursor="Open">Event photography in San Francisco</a>
+    </aside>
+  </div>
+  <div class="events__more">
+    <div class="rates">
+      <p class="label">Clear rates. No surprises.</p>
+      <div class="rates__row">
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Half day</span><b>The Session</b><span class="rate__price">from $1,000</span><p>Up to 4 hours on site. Ideal for a single keynote, a launch, or a reception.</p></a>
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Full day</span><b>The Day</b><span class="rate__price">from $2,000</span><p>Up to 8 hours. Full conference or gala coverage, with a same-week highlight set for social.</p></a>
+        <a class="rate" href="/events#packages" data-cursor="Rates"><span class="label">Multi-day</span><b>The Production</b><span class="rate__price">from $5,000</span><p>Two-plus-day conferences, second shooter, or event + brand film combined.</p></a>
+      </div>
+      <a class="more u" href="/events#packages" data-cursor="Open">All packages, including film and monthly content</a>
+    </div>
+    <div class="steps">
+      <p class="label">How it works</p>
+      <ol>
+        <li><span>01</span><div><b>Tell me the date &amp; scope</b><p>Share the date, the venue, and what you need to walk away with.</p></div></li>
+        <li><span>02</span><div><b>Quote &amp; shot plan</b><p>Availability, a quote, and a simple shot plan within one business day.</p></div></li>
+        <li><span>03</span><div><b>The shoot</b><p>Candid, unobtrusive, editorial. I work the room without interrupting it.</p></div></li>
+        <li><span>04</span><div><b>Your gallery</b><p>A same-week social highlight set, and the full edited gallery within 5 business days.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="index" id="index">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>Field <em>guide</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="index__grid">
+    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:2000/1125"><img src="/images/about/portrait.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/events" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1125/2000"><img src="/images/portfolio/events/05-evening-reception.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Events</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1200/1200"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame" style="aspect-ratio:1280/720"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
+  </div>
+</section>
+
+<section class="films" id="films">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>Films</h2><div class="head__rule"></div><span></span></div>
+  <div class="films__grid">
+    <div class="film-wrap"><button class="film" data-vimeo="1049186301" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-1049186301.jpg" alt="Ocean Defenders"><span class="film__play"></span></div><p class="plate__tag"><b>Ocean Defenders</b><span>Film 01 · 2023 · 9:28</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-846297616.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>Film 02 · 2023 · 14:35</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-304798458.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>Film 03 · 2018 · 2:52</span></p></button></div>
+  </div>
+  <a class="films__all u" href="/films" data-cursor="Open">About the films</a>
+</section>
+
+<section class="strip" id="strip">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><p class="strip__note">The gallery's nature frames are for captivating your wall: archival fine-art prints.</p></div>
+  <div class="strip__track">
+    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><span>01</span><b>Leviathan's Leap</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><span>02</span><b>Granite Glow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><span>03</span><b>Blue-Footed Display</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><span>04</span><b>Highland Hollow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><span>05</span><b>International Orange</b></p></a>
+    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><span>06</span><b>Shark Shadow</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><span>07</span><b>Salt and Scales</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><span>08</span><b>Rainier Afterglow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><span>09</span><b>Sea Cave Glow</b></p></a>
+    <div class="strip__end"><a class="u" href="/gallery" data-cursor="Open">See the full gallery</a><br><a class="u" href="/prints" data-cursor="Open">Visit the store</a></div>
+  </div>
+</section>
+
+<div class="viewer" role="dialog" aria-modal="true" aria-label="Film player"><button class="viewer__close label">Close</button><div class="viewer__box"></div></div>
+
+<footer class="outro" id="outro">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="outro__inner">
+    <div class="outro__brand">
+      <p class="outro__lock" aria-label="Ox Hollow"><span>OX H</span><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg><span>LLOW</span></p>
+      <h2>Dare to <em>see.</em></h2>
+      <p class="outro__lede">Editorial event photography and brand films for Bay Area companies, and fine-art prints of the wild.</p>
+    </div>
+    <div class="outro__contact">
+      <p class="label">Available for booking</p>
+      <a class="outro__mail u" href="mailto:hello@oxhollowmedia.com">hello@oxhollowmedia.com</a>
+      <a class="u" href="tel:+13039055199">(303) 905-5199</a>
+      <p class="outro__note">Replies within 1 business day</p>
+      <a class="magnet label" href="/contact" data-magnet>Contact</a>
+    </div>
+  </div>
+  <div class="outro__foot label">
+    <span>© Ox Hollow Media · San Francisco Bay Area</span>
+    <nav aria-label="Footer"><a class="u" href="/about">About</a><a class="u" href="/events">Events</a><a class="u" href="/prints">Prints</a><a class="u" href="/gallery">Gallery</a><a class="u" href="/films">Films</a><a class="u" href="https://www.instagram.com/oxhollowmedia/" target="_blank" rel="noopener">Instagram</a></nav>
+    <span>Lab prototype, not published</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+scrollTo(0, 0);
+ScrollTrigger.config({ ignoreMobileResize: true });
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp01 = v => Math.max(0, Math.min(1, v));
+
+const lenis = window.lenis = new Lenis({ lerp: 0.09 });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.getAttribute('href')); }));
+
+// loader
+// the ring draws large in the centre, a shutter closes inside it and opens on the crescent,
+// then the mark settles as the first O of HOLLOW while the name unrolls out of it both ways
+const lMark = document.querySelector('.loader__mark'), lIris = lMark.querySelector('.iris'), lBlades = [...lIris.children];
+const lMasks = Array.from({ length: 7 }, (_, k) => lMark.querySelector('#ib' + k));
+const IR = 38, IRHO = IR * 1.55, IT = IRHO * .62, shutter = { g: IR, turn: 0 };
+function drawShutter() {
+  const reach = Math.sqrt(Math.max(0, (IRHO + shutter.g) ** 2 - IT * IT));
+  const C = Array.from({ length: 7 }, (_, i) => {
+    const a = shutter.turn + i * 2 * Math.PI / 7, ux = Math.cos(a), uy = Math.sin(a);
+    return [50 + reach * ux - IT * uy, 50 + reach * uy + IT * ux];
+  });
+  const put = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', IRHO); };
+  for (let i = 0; i < 7; i++) {
+    put(lMasks[i].querySelector('.m-self'), C[i]); put(lMasks[i].querySelector('.m-next'), C[(i + 1) % 7]);
+    put(lBlades[i].querySelector('.b-fill'), C[i]); put(lBlades[i].querySelector('.b-edge'), C[(i + 1) % 7]);
+  }
+}
+document.fonts.ready.then(() => {
+  const L = document.querySelector('.loader__side--left'), Rt = document.querySelector('.loader__side--right');
+  const wl = L.scrollWidth, wr = Rt.scrollWidth;
+  drawShutter();
+  gsap.set([L, Rt], { width: 0 });
+  gsap.set(lIris, { opacity: 0 });
+  gsap.set(lMark, { scale: 2.4, transformOrigin: '50% 50%' });
+  gsap.timeline({ defaults: { ease: 'expo.inOut' } })
+    .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut' })
+    .set(lIris, { opacity: 1 }, '-=.15')
+    .to(shutter, { g: 0, turn: -.9, duration: .55, ease: 'power3.in', onUpdate: drawShutter }, '<')
+    .set('.loader__mark .moon', { opacity: 1 })
+    .to(shutter, { g: IR, turn: -2, duration: .7, ease: 'power3.out', onUpdate: drawShutter }, '+=.18')
+    .set(lIris, { opacity: 0 })
+    .to(lMark, { scale: 1, duration: .95 }, '-=.15')
+    .fromTo(L, { width: 0 }, { width: wl, duration: 1.05 }, '<+.12')
+    .fromTo(Rt, { width: 0 }, { width: wr, duration: 1.05 }, '<')
+    .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=.7')
+    .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
+});
+
+// top bar: hidden through the opening, in once the headline is behind you.
+// Before that, a small "Menu" tab (or moving the mouse to the top edge) brings it down.
+const nav = document.getElementById('nav'), menu = document.getElementById('menu'), toggle = nav.querySelector('.nav__toggle');
+let pastHero = false, peeking = false;
+const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || menu.classList.contains('is-open'));
+addEventListener('mousemove', e => { const p = e.clientY < 70 || (peeking && e.clientY < 90); if (p !== peeking) { peeking = p; syncNav(); } });
+document.querySelector('.peek-tab').addEventListener('click', () => { peeking = true; syncNav(); });
+toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; open ? lenis.stop() : lenis.start(); syncNav(); });
+
+// 1. hero: zoom into the hole of the "o" in "to"
+const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.querySelector('.iris');
+const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySelector('.aperture__rim');
+const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
+const BLADES = 7;
+const apertureG = heroSvg.querySelector('.aperture');
+const maskBlades = [...heroSvg.querySelectorAll('.iris__blades circle')];
+const bladeGroups = [...heroSvg.querySelectorAll('.aperture .blade')];
+const bladeMasks = Array.from({ length: 7 }, (_, k) => heroSvg.querySelector('#bm' + k));
+const pat = heroSvg.querySelector('#photoPat'), patImg = heroSvg.querySelector('.photoPat__img');
+const oGlyphs = [...heroSvg.querySelectorAll('.o-glyph')];
+const ticks = heroSvg.querySelector('.lens__ticks'), glint = heroSvg.querySelector('.lens__glint'), fText = heroSvg.querySelector('.lens__f');
+const lensG = heroSvg.querySelector('.lens');
+const STOPS = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+let aim = { x: 290, y: 714, end: 40, R: 40 };
+// the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
+function findHole() {
+  const tall = matchMedia('(max-aspect-ratio: 4/5)').matches;
+  const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole');
+  const fs = +t.getAttribute('font-size'), base = +t.getAttribute('y'), x0 = t.getStartPositionOfChar(0).x;
+  const c = document.createElement('canvas'); c.width = 1400; c.height = Math.ceil(base + fs);
+  const g = c.getContext('2d'); g.font = `500 ${fs}px "Cormorant Garamond"`;
+  g.fillText('to', x0 + 200, base);
+  const asc = g.measureText('o').actualBoundingBoxAscent, row = Math.round(base - asc / 2);
+  const px = g.getImageData(0, row, c.width, 1).data, runs = [];
+  for (let x = 0, s = -1; x <= c.width; x++) {
+    const on = x < c.width && px[x * 4 + 3] > 200;
+    if (on && s < 0) s = x;
+    if (!on && s >= 0) { runs.push([s - 200, x - 200]); s = -1; }
+  }
+  const [, l, r] = runs;                                             // t stem, o left stroke, o right stroke
+  aim = l && r ? { x: (l[0] + r[1]) / 2, y: row, R: (r[1] - l[0]) / 2, end: fs * .2 }
+               : { x: aim.x, y: row, R: fs * .12, end: fs * .12 };
+  housing.setAttribute('cx', aim.x); housing.setAttribute('cy', aim.y); housing.setAttribute('r', aim.R);
+  rim.setAttribute('cx', aim.x); rim.setAttribute('cy', aim.y); rim.setAttribute('r', aim.R);
+  const R = aim.R, NS = 'http://www.w3.org/2000/svg';
+  ticks.innerHTML = '';                                              // engraved ticks just inside the rim
+  for (let k = 0; k < 60; k++) {
+    const a = k / 60 * 2 * Math.PI, long = k % 5 === 0, r0 = R * (long ? .86 : .91), r1 = R * .97;
+    const t = document.createElementNS(NS, 'line');
+    t.setAttribute('x1', aim.x + r0 * Math.cos(a)); t.setAttribute('y1', aim.y + r0 * Math.sin(a));
+    t.setAttribute('x2', aim.x + r1 * Math.cos(a)); t.setAttribute('y2', aim.y + r1 * Math.sin(a));
+    t.setAttribute('vector-effect', 'non-scaling-stroke'); ticks.appendChild(t);
+  }
+  const g0 = Math.PI * 1.08, g1 = Math.PI * 1.38, gr = R * .93;      // a glint of light on the glass, top left
+  glint.setAttribute('d', `M${aim.x + gr * Math.cos(g0)},${aim.y + gr * Math.sin(g0)}A${gr},${gr} 0 0,1 ${aim.x + gr * Math.cos(g1)},${aim.y + gr * Math.sin(g1)}`);
+  const idx = heroSvg.querySelector('.lens__index');               // the index mark, top of the lens like a camera's
+  idx.setAttribute('cx', aim.x); idx.setAttribute('cy', aim.y - R * .79); idx.setAttribute('r', R * .04);
+  fText.setAttribute('x', aim.x); fText.setAttribute('y', aim.y + R * 1.42);
+  fText.setAttribute('font-size', R * .17); fText.setAttribute('letter-spacing', R * .03);
+  fText.style.fontFamily = 'DM Sans, system-ui, sans-serif';
+  heroSvg.querySelector('.soft__blur').setAttribute('stdDeviation', R * .045);
+  heroSvg.querySelectorAll('.blade__shadow').forEach(c => c.setAttribute('stroke-width', R * .12));
+}
+const zoom = { p: 0 };
+function drawZoom() {
+  const p = zoom.p, size = 1000 * Math.pow(aim.end / 1000, p), k = size / 1000;   // even, exponential zoom
+  const c = p * p;                                                   // drift the hollow to the centre as we arrive
+  const x0 = (aim.x - aim.x * k) * (1 - c) + (aim.x - size / 2) * c;
+  const y0 = (aim.y - aim.y * k) * (1 - c) + (aim.y - size / 2) * c;
+  heroSvg.setAttribute('viewBox', `${x0} ${y0} ${size} ${size}`);
+  // the portrait holds still on screen while the words fly past it
+  const W = heroSvg.clientWidth || innerWidth, H = heroSvg.clientHeight || innerHeight, sc = Math.min(W, H) / size;
+  const vw = W / sc, vh = H / sc, vx = x0 - (vw - size) / 2, vy = y0 - (vh - size) / 2;
+  // cover the screen, keeping the face (28% across the photo) in view: left-aligned on wide screens, centred on phones
+  const IMG = 2000 / 1125, FACE = .28;
+  const iw = Math.max(vw, vh * IMG), ih = iw / IMG;
+  const ix = Math.min(vx, Math.max(vx + vw - iw, vx + vw / 2 - FACE * iw));
+  portrait.setAttribute('x', ix); portrait.setAttribute('y', vy + (vh - ih) / 2);
+  portrait.setAttribute('width', iw); portrait.setAttribute('height', ih);
+  pat.setAttribute('x', ix); pat.setAttribute('y', vy + (vh - ih) / 2); pat.setAttribute('width', iw); pat.setAttribute('height', ih);
+  patImg.setAttribute('width', iw); patImg.setAttribute('height', ih);
+  // One camera move, in three beats:
+  //   fill   the letter o becomes a round lens of footage the same size
+  //   close  the seven blades sweep in and shut completely, and hold for a beat, like a shutter
+  //   open   they turn back open as we fly in, and the opening rounds into a circle that fills the screen
+  const R = aim.R, ss = v => v * v * (3 - 2 * v);
+  const sh = ss(clamp01((p - .02) / .1));                            // fill
+  const cl = ss(clamp01((p - .11) / .19));                           // close, shut by .30, held until .36
+  const e = ss(clamp01((p - .36) / .58));                            // open
+  const r = p < .36 ? R * (1 - .985 * cl) : R * (.015 + 1.85 * e * e);
+  const turn = -.35 - cl * .55 - e * 1.2;
+  oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
+  // Curved blades. Each blade is a large disc set off to one side of the lens, so its edge sweeps across as an arc
+  // and its neighbour overlaps it, like a real iris. Sliding the discs out from the centre opens the hole.
+  const g = Math.min(r, R), RHO = R * 1.55, T = RHO * .62;           // g: radius of the hole the blades leave
+  const reach = Math.sqrt(Math.max(0, (RHO + g) ** 2 - T * T));
+  const C = Array.from({ length: BLADES }, (_, i) => {
+    const a = turn + i * 2 * Math.PI / BLADES, ux = Math.cos(a), uy = Math.sin(a);
+    return [aim.x + reach * ux - T * uy, aim.y + reach * uy + T * ux];
+  });
+  const place = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', RHO); };
+  for (let i = 0; i < BLADES; i++) {
+    const me = C[i], next = C[(i + 1) % BLADES], g = bladeGroups[i], m = bladeMasks[i];
+    place(maskBlades[i], me);
+    place(m.querySelector('.bm__self'), me); place(m.querySelector('.bm__next'), next);
+    place(g.querySelector('.b__photo'), me); place(g.querySelector('.b__sheen'), me);
+    place(g.querySelector('.b__shadow'), next); place(g.querySelector('.b__edge'), next);   // the next blade's edge and shadow lie on this one
+  }
+  iris.setAttribute('cx', aim.x); iris.setAttribute('cy', aim.y); iris.setAttribute('r', Math.max(R, r));
+  iris.setAttribute('fill-opacity', sh);
+  const bladesIn = clamp01(1 - (g / R - .9) / .1);                   // once drawn back past the rim, nothing to show
+  heroSvg.querySelector('.iris__blades').style.opacity = bladesIn;
+  apertureG.style.opacity = sh * bladesIn;
+  rim.setAttribute('stroke-opacity', .7);
+  lensG.style.opacity = sh * clamp01(1 - (r / R - 1) / .25);
+  // the f-number clicks through real stops: wide open f/1.4, shut f/22
+  const open = clamp01(r / (R * .96)), fv = 22 * Math.pow(1.4 / 22, open);
+  const stop = STOPS.reduce((a, b) => Math.abs(Math.log(b / fv)) < Math.abs(Math.log(a / fv)) ? b : a);
+  fText.textContent = 'ƒ/' + stop;
+}
+document.fonts.ready.then(() => { findHole(); drawZoom(); });
+addEventListener('resize', () => { findHole(); drawZoom(); });
+
+// the four lines, over the same footage that opened up through the "o"
+const hv = document.querySelector('.hero video');
+const lines = gsap.utils.toArray('.flight__line'), plates = gsap.utils.toArray('.plate');
+const shade = document.querySelector('.flight__shade'), huds = gsap.utils.toArray('.hero .hud');
+const tc = document.querySelector('.tc'), bar = document.querySelector('.hud__bar i');
+const mobile = () => innerWidth <= 760;
+const flight = { p: 0 };
+const cta = document.querySelector('.hero__cta');
+function updateFlight() {
+  const p = flight.p, on = clamp01(p / .04);
+  cta.classList.toggle('is-on', p > .005);
+  huds.forEach(h => h.style.opacity = on);
+  const t = Math.floor(hv.currentTime || 0);
+  tc.textContent = '00:' + String(t).padStart(2, '0');
+  bar.style.transform = `scaleX(${p})`;
+  let shadeOn = 0;
+  lines.forEach((el, i) => {
+    const local = p * lines.length - i;                       // 0..1 while this line is on
+    const vis = clamp01(Math.min(local / .18, (1 - local) / .18));
+    el.style.opacity = vis;
+    el.style.transform = `translateY(${(local - .5) * -60}px)`;
+    el.style.filter = `blur(${(1 - vis) * 10}px)`;
+    const pl = plates[i];
+    const reveal = clamp01(local / .22), hide = clamp01((1 - local) / .16);
+    pl.style.opacity = Math.min(1, reveal * 3) * hide;
+    pl.style.clipPath = `inset(${(1 - reveal) * 100}% 0 0 0)`;
+    const tilt = (i % 2 ? -1.6 : 1.4);
+    pl.style.transform = mobile()
+      ? `translate(50%, ${(local - .5) * -50}px) rotate(${tilt}deg)`
+      : `translate(0, calc(-50% + ${(local - .5) * -90}px)) rotate(${tilt}deg)`;
+    pl.style.pointerEvents = vis > .5 ? 'auto' : 'none';
+    shadeOn = Math.max(shadeOn, vis);
+  });
+  shade.style.opacity = on * Math.max(.55, shadeOn);
+}
+hv.addEventListener('timeupdate', () => { if (flight.p > 0) tc.textContent = '00:' + String(Math.floor(hv.currentTime)).padStart(2, '0'); });
+
+// one pinned scene: 1.6 screens to fly in through the "o", then 5 screens of lines over the footage
+const ZOOM = 1.6, LINES = 5;
+const heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: `+=${(ZOOM + LINES) * 100}%`, scrub: true, pin: true } });
+heroTl
+  .to('.hero__hint', { opacity: 0, duration: .15 }, 0)
+  .to(zoom, { p: 1, ease: 'power2.in', duration: ZOOM, onUpdate: drawZoom }, 0)
+  .set('.hero__mask', { visibility: 'hidden' }, ZOOM)
+  .to(flight, { p: 1, ease: 'none', duration: LINES, onUpdate: updateFlight }, ZOOM);
+lenis.on('scroll', ({ scroll }) => {
+  const st = heroTl.scrollTrigger, p = scroll > st.start + (st.end - st.start) * ZOOM / (ZOOM + LINES) - innerHeight * .25;
+  if (p !== pastHero) { pastHero = p; syncNav(); }
+});
+
+// topo contour lines, drawn as their section scrolls in
+fetch('/images/topo.svg').then(r => r.text()).then(svg => {
+  document.querySelectorAll('.topo').forEach(box => {
+    box.innerHTML = svg;
+    const paths = box.querySelectorAll('path');
+    paths.forEach(p => { p.setAttribute('pathLength', 1); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; });
+    const marked = paths[Math.floor(paths.length * .46)];
+    if (marked) { marked.style.stroke = '#B67C56'; marked.style.strokeOpacity = box.closest('.creed, .index, .strip') ? .6 : .5; marked.style.strokeWidth = 1.6; }
+    gsap.to(paths, { strokeDashoffset: 0, ease: 'none', stagger: { each: .004 },
+      scrollTrigger: { trigger: box.parentElement, start: 'top 85%', end: 'top 10%', scrub: 1 } });
+  });
+  ScrollTrigger.refresh();
+});
+gsap.utils.toArray('.head__rule').forEach(r => gsap.from(r, { scaleX: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: r, start: 'top 90%', once: true } }));
+
+// 3. strip: vertical scroll moves the plates sideways; each photo drifts in its frame
+const track = document.querySelector('.strip__track');
+const strip = gsap.to(track, {
+  x: () => -(track.scrollWidth - innerWidth), ease: 'none',
+  scrollTrigger: { trigger: '.strip', start: 'top top', end: () => '+=' + (track.scrollWidth - innerWidth), pin: true, scrub: 1, invalidateOnRefresh: true }
+});
+
+// 4. films: play in place, over the page
+const viewer = document.querySelector('.viewer'), vbox = viewer.querySelector('.viewer__box');
+function closeViewer() { viewer.classList.remove('is-open'); vbox.innerHTML = ''; lenis.start(); }
+document.querySelectorAll('.film').forEach(f => f.addEventListener('click', () => {
+  vbox.innerHTML = `<iframe src="https://player.vimeo.com/video/${f.dataset.vimeo}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${f.querySelector('b').textContent}"></iframe>`;
+  viewer.classList.add('is-open'); lenis.stop();
+}));
+viewer.querySelector('.viewer__close').addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer(); });
+
+// 5 + 6. rows and sign-off rise in
+gsap.from('.creed__item, .creed__foot', { y: 50, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.creed', start: 'top 75%', once: true } });
+gsap.from('.ev-row', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .1, scrollTrigger: { trigger: '.ev-grid', start: 'top 85%', once: true } });
+gsap.from('.events__aside', { y: 40, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.events__aside', start: 'top 90%', once: true } });
+gsap.from('.entry-wrap', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: '.index__grid', start: 'top 88%', once: true } });
+gsap.from('.film-wrap', { y: 80, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.films__grid', start: 'top 85%', once: true } });
+gsap.from('.outro__brand > *, .outro__contact > *', { y: 30, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: '.outro', start: 'top 70%', once: true } });
+
+
+// magnetic contact button
+document.querySelectorAll('[data-magnet]').forEach(m => {
+  m.addEventListener('mousemove', e => { const r = m.getBoundingClientRect();
+    gsap.to(m, { x: (e.clientX - r.left - r.width / 2) * .35, y: (e.clientY - r.top - r.height / 2) * .35, duration: .4 }); });
+  m.addEventListener('mouseleave', () => gsap.to(m, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }));
+});
+
+if (reduce) gsap.globalTimeline.timeScale(20);
+</script>
+</body>
+</html>

@@ -254,7 +254,9 @@
   .outro { position: relative; background: var(--green); color: var(--paper); padding: var(--pad) var(--gutter) 2.4rem; overflow: hidden; }
   .outro .topo { color: rgba(244,238,226,.1); }
   .outro__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: end; gap: 3rem 6vw; }
-  .outro__mark { width: 54px; height: 54px; margin-bottom: 1.8rem; color: var(--paper); }
+  .outro__lock { display: flex; align-items: center; margin-bottom: 1.8rem; font-family: var(--serif); font-weight: 500; text-transform: uppercase;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing: .12em; line-height: 1; white-space: nowrap; color: var(--paper); }
+  .outro__lock svg { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; }
   .outro__lede { max-width: 40ch; margin-top: 1.6rem; opacity: .75; }
   .outro__contact { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
   .outro__contact .label { opacity: .6; margin-bottom: .4rem; }
@@ -465,7 +467,7 @@
   <div class="topo" aria-hidden="true"></div>
   <div class="outro__inner">
     <div class="outro__brand">
-      <svg class="outro__mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
+      <p class="outro__lock" aria-label="Ox Hollow"><span>OX H</span><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg><span>LLOW</span></p>
       <h2>Dare to <em>see.</em></h2>
       <p class="outro__lede">Editorial event photography and brand films for Bay Area companies, and fine-art prints of the wild.</p>
     </div>

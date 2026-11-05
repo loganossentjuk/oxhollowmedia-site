@@ -92,6 +92,13 @@
   .flight { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
   .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .hero .hud, .flight__shade { opacity: 0; }
+  /* act straight away: the two calls to action ride along with the footage once the aperture opens */
+  .hero__cta { position: absolute; z-index: 4; left: var(--gutter); bottom: 4.6rem; display: flex; gap: .8rem;
+    opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .hero__cta.is-on { opacity: 1; transform: none; pointer-events: auto; }
+  .hero__cta .btn--ghost { background: rgba(25,24,23,.32); color: var(--paper); box-shadow: inset 0 0 0 1px rgba(244,238,226,.6);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .hero__cta .btn--ghost:hover { background: var(--paper); color: var(--ink); }
   .flight__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.08) 55%, rgba(0,0,0,.2)); opacity: 0; }
   .flight__line { position: absolute; left: var(--gutter); bottom: 18vh; z-index: 3; max-width: 11ch; font-family: var(--serif); font-weight: 400; font-style: italic;
     font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: 1.06; opacity: 0; text-shadow: 0 0 2px rgba(0,0,0,.25), 0 4px 60px rgba(0,0,0,.5); }
@@ -266,7 +273,8 @@
     .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
     .hud--tr { right: var(--gutter); }
     .flight__line, .flight__line:first-of-type { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1.1; max-width: 13ch; }
-    .plate { bottom: 15vh; }
+    .hero__cta { right: var(--gutter); bottom: 6.2rem; gap: .6rem; }
+    .hero__cta .btn { flex: 1; text-align: center; padding: .95rem .5rem; }
     .plate__tag { flex-direction: column; gap: .2rem; }
     .strip__track { gap: 6vw; }
     .tag { flex-wrap: wrap; gap: .3rem .7rem; }
@@ -274,7 +282,7 @@
     .magnet { width: 116px; height: 116px; }
     .outro__foot { margin-top: 3.5rem; flex-direction: column; }
     .menu a { font-size: 2.2rem; }
-    .plate { right: 50%; top: auto; bottom: 12vh; }
+    .plate { right: 50%; top: auto; bottom: 21vh; }
     .plate--land .plate__frame { width: 80vw; } .plate--tall .plate__frame { height: 33vh; }
     .strip__item figure { height: 44vh; }
     .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
@@ -313,18 +321,28 @@
       <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
       <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">t<tspan class="o-glyph">o</tspan></text>
       <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
-      <polygon class="iris" points="0,0" fill="#000"/>
+      <circle class="iris" cx="0" cy="0" r="0" fill="#000"/>
+      <g class="iris__blades" clip-path="url(#housing)"><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/><circle fill="#fff"/></g>
     </mask>
-    <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath></defs>
+    <pattern id="photoPat" patternUnits="userSpaceOnUse"><image class="photoPat__img" href="/images/about/portrait.webp" preserveAspectRatio="none" x="0" y="0"/></pattern>
+    <mask id="bm0" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm1" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm2" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm3" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm4" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm5" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask><mask id="bm6" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="7000" height="7000"><circle class="bm__self" fill="#fff"/><circle class="bm__next" fill="#000"/></mask>
+    <clipPath id="housing"><circle class="housing" cx="0" cy="0" r="0"/></clipPath>
+    <linearGradient id="bladeLight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4EEE2" stop-opacity=".24"/><stop offset=".5" stop-color="#F4EEE2" stop-opacity=".07"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".18"/></linearGradient>
+    <linearGradient id="bladeDark" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E0D0C" stop-opacity=".38"/><stop offset="1" stop-color="#0E0D0C" stop-opacity=".06"/></linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur class="soft__blur" stdDeviation="3"/></filter></defs>
     <g mask="url(#words)">
       <rect x="-1200" y="-1600" width="3400" height="4200" style="fill:var(--bg)"/>
       <image class="hero__portrait" href="/images/about/portrait.webp" preserveAspectRatio="none" opacity="1"/>
     </g>
     <g class="aperture" clip-path="url(#housing)">
-      <g class="aperture__facets"><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/><polygon fill="#1C1A19" fill-opacity=".16"/><polygon fill="#F4EEE2" fill-opacity=".22"/></g>
-      <g fill="none" stroke="#F4EEE2" stroke-width="1.2" stroke-opacity=".75"><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/><line vector-effect="non-scaling-stroke"/></g>
+      <g class="blade" mask="url(#bm0)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm1)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm2)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm3)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm4)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm5)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g><g class="blade" mask="url(#bm6)"><circle class="b__photo" fill="url(#photoPat)"/><circle class="b__sheen" fill="url(#bladeLight)"/><circle class="b__shadow blade__shadow" fill="none" stroke="#000" stroke-opacity=".55" filter="url(#soft)"/><circle class="b__edge" fill="none" stroke="#F4EEE2" stroke-width="2.2" stroke-opacity=".85" vector-effect="non-scaling-stroke"/></g>
     </g>
-    <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
+    <g class="lens">
+      <g class="lens__ticks" stroke="#F4EEE2" stroke-opacity=".55" stroke-width=".9"></g>
+      <circle class="aperture__rim" cx="0" cy="0" r="0" fill="none" stroke="#F4EEE2" stroke-width="1.6" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
+      <path class="lens__glint" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-linecap="round" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <text class="lens__f" text-anchor="middle" fill="#F4EEE2">ƒ/1.4</text>
+    </g>
   </svg></div>
   <div class="flight__shade"></div>
   <p class="hud hud--tl label">Santa Barbara<br>California</p>
@@ -338,6 +356,7 @@
   <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
   <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
+  <div class="hero__cta"><a class="btn" href="/events">Hire for an event</a><a class="btn btn--ghost" href="/gallery">Walk the gallery</a></div>
   <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
 </section>
 
@@ -510,9 +529,16 @@ toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-
 const heroSvg = document.querySelector('.hero__mask svg'), iris = heroSvg.querySelector('.iris');
 const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySelector('.aperture__rim');
 const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
-const BLADES = blades.length;
-const facets = [...heroSvg.querySelectorAll('.aperture__facets polygon')], apertureG = heroSvg.querySelector('.aperture');
+const BLADES = 7;
+const apertureG = heroSvg.querySelector('.aperture');
+const maskBlades = [...heroSvg.querySelectorAll('.iris__blades circle')];
+const bladeGroups = [...heroSvg.querySelectorAll('.aperture .blade')];
+const bladeMasks = Array.from({ length: 7 }, (_, k) => heroSvg.querySelector('#bm' + k));
+const pat = heroSvg.querySelector('#photoPat'), patImg = heroSvg.querySelector('.photoPat__img');
 const oGlyphs = [...heroSvg.querySelectorAll('.o-glyph')];
+const ticks = heroSvg.querySelector('.lens__ticks'), glint = heroSvg.querySelector('.lens__glint'), fText = heroSvg.querySelector('.lens__f');
+const lensG = heroSvg.querySelector('.lens');
+const STOPS = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
 let aim = { x: 290, y: 714, end: 40, R: 40 };
 // the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
 function findHole() {
@@ -534,6 +560,22 @@ function findHole() {
                : { x: aim.x, y: row, R: fs * .12, end: fs * .12 };
   housing.setAttribute('cx', aim.x); housing.setAttribute('cy', aim.y); housing.setAttribute('r', aim.R);
   rim.setAttribute('cx', aim.x); rim.setAttribute('cy', aim.y); rim.setAttribute('r', aim.R);
+  const R = aim.R, NS = 'http://www.w3.org/2000/svg';
+  ticks.innerHTML = '';                                              // engraved ticks just inside the rim
+  for (let k = 0; k < 60; k++) {
+    const a = k / 60 * 2 * Math.PI, long = k % 5 === 0, r0 = R * (long ? .86 : .91), r1 = R * .97;
+    const t = document.createElementNS(NS, 'line');
+    t.setAttribute('x1', aim.x + r0 * Math.cos(a)); t.setAttribute('y1', aim.y + r0 * Math.sin(a));
+    t.setAttribute('x2', aim.x + r1 * Math.cos(a)); t.setAttribute('y2', aim.y + r1 * Math.sin(a));
+    t.setAttribute('vector-effect', 'non-scaling-stroke'); ticks.appendChild(t);
+  }
+  const g0 = Math.PI * 1.08, g1 = Math.PI * 1.38, gr = R * .93;      // a glint of light on the glass, top left
+  glint.setAttribute('d', `M${aim.x + gr * Math.cos(g0)},${aim.y + gr * Math.sin(g0)}A${gr},${gr} 0 0,1 ${aim.x + gr * Math.cos(g1)},${aim.y + gr * Math.sin(g1)}`);
+  fText.setAttribute('x', aim.x); fText.setAttribute('y', aim.y + R * 1.42);
+  fText.setAttribute('font-size', R * .17); fText.setAttribute('letter-spacing', R * .03);
+  fText.style.fontFamily = 'DM Sans, system-ui, sans-serif';
+  heroSvg.querySelector('.soft__blur').setAttribute('stdDeviation', R * .045);
+  heroSvg.querySelectorAll('.blade__shadow').forEach(c => c.setAttribute('stroke-width', R * .12));
 }
 const zoom = { p: 0 };
 function drawZoom() {
@@ -551,6 +593,8 @@ function drawZoom() {
   const ix = Math.min(vx, Math.max(vx + vw - iw, vx + vw / 2 - FACE * iw));
   portrait.setAttribute('x', ix); portrait.setAttribute('y', vy + (vh - ih) / 2);
   portrait.setAttribute('width', iw); portrait.setAttribute('height', ih);
+  pat.setAttribute('x', ix); pat.setAttribute('y', vy + (vh - ih) / 2); pat.setAttribute('width', iw); pat.setAttribute('height', ih);
+  patImg.setAttribute('width', iw); patImg.setAttribute('height', ih);
   // One camera move, in three beats:
   //   fill   the letter o becomes a round lens of footage the same size
   //   close  the seven blades sweep in and shut completely, and hold for a beat, like a shutter
@@ -560,40 +604,35 @@ function drawZoom() {
   const cl = ss(clamp01((p - .11) / .19));                           // close, shut by .30, held until .36
   const e = ss(clamp01((p - .36) / .58));                            // open
   const r = p < .36 ? R * (1 - .985 * cl) : R * (.015 + 1.85 * e * e);
-  const round = p < .36 ? 1 - cl : ss(clamp01((r / R - .8) / .35));  // 1 = a circle, 0 = the blades' seven sides
   const turn = -.35 - cl * .55 - e * 1.2;
   oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
-  const pts = Array.from({ length: BLADES }, (_, i) => {
-    const a = turn + i * 2 * Math.PI / BLADES; return [aim.x + r * Math.cos(a), aim.y + r * Math.sin(a)];
+  // Curved blades. Each blade is a large disc set off to one side of the lens, so its edge sweeps across as an arc
+  // and its neighbour overlaps it, like a real iris. Sliding the discs out from the centre opens the hole.
+  const g = Math.min(r, R), RHO = R * 1.55, T = RHO * .62;           // g: radius of the hole the blades leave
+  const reach = Math.sqrt(Math.max(0, (RHO + g) ** 2 - T * T));
+  const C = Array.from({ length: BLADES }, (_, i) => {
+    const a = turn + i * 2 * Math.PI / BLADES, ux = Math.cos(a), uy = Math.sin(a);
+    return [aim.x + reach * ux - T * uy, aim.y + reach * uy + T * ux];
   });
-  // the opening: the blades' polygon, eased toward a true circle when the blades are drawn back
-  const SEG = 12, ring = [];
-  pts.forEach((a, i) => {
-    const b = pts[(i + 1) % BLADES];
-    for (let k = 0; k < SEG; k++) {
-      const q = [a[0] + (b[0] - a[0]) * k / SEG, a[1] + (b[1] - a[1]) * k / SEG];
-      const dx = q[0] - aim.x, dy = q[1] - aim.y, d = Math.hypot(dx, dy) || 1, f = (1 - round) + round * r / d;
-      ring.push(`${aim.x + dx * f},${aim.y + dy * f}`);
-    }
-  });
-  iris.setAttribute('points', ring.join(' '));
+  const place = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', RHO); };
+  for (let i = 0; i < BLADES; i++) {
+    const me = C[i], next = C[(i + 1) % BLADES], g = bladeGroups[i], m = bladeMasks[i];
+    place(maskBlades[i], me);
+    place(m.querySelector('.bm__self'), me); place(m.querySelector('.bm__next'), next);
+    place(g.querySelector('.b__photo'), me); place(g.querySelector('.b__sheen'), me);
+    place(g.querySelector('.b__shadow'), next); place(g.querySelector('.b__edge'), next);   // the next blade's edge and shadow lie on this one
+  }
+  iris.setAttribute('cx', aim.x); iris.setAttribute('cy', aim.y); iris.setAttribute('r', Math.max(R, r));
   iris.setAttribute('fill-opacity', sh);
-  blades.forEach((ln, i) => {                                        // each blade edge runs on past the next corner
-    const [ax, ay] = pts[i], [bx, by] = pts[(i + 1) % BLADES], d = Math.hypot(bx - ax, by - ay) || 1;
-    ln.setAttribute('x1', ax); ln.setAttribute('y1', ay);
-    ln.setAttribute('x2', ax + (bx - ax) / d * R * 3); ln.setAttribute('y2', ay + (by - ay) / d * R * 3);
-  });
-  // each blade is the wedge between one edge carried past its corner and the next edge (the housing trims them)
-  const L = R * 3;
-  facets.forEach((f, i) => {
-    const a = pts[i], b = pts[(i + 1) % BLADES], cc = pts[(i + 2) % BLADES];
-    const d1 = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1, d2 = Math.hypot(cc[0] - b[0], cc[1] - b[1]) || 1;
-    const u = [b[0] + (b[0] - a[0]) / d1 * L, b[1] + (b[1] - a[1]) / d1 * L];
-    const v = [b[0] + (cc[0] - b[0]) / d2 * L, b[1] + (cc[1] - b[1]) / d2 * L];
-    f.setAttribute('points', [b, u, v].map(q => q.join(',')).join(' '));
-  });
-  apertureG.style.opacity = sh * (1 - round);                        // blades show only while they're in
-  rim.setAttribute('stroke-opacity', .7 * sh * clamp01(1 - (r / R - 1) / .25));
+  const bladesIn = clamp01(1 - (g / R - .9) / .1);                   // once drawn back past the rim, nothing to show
+  heroSvg.querySelector('.iris__blades').style.opacity = bladesIn;
+  apertureG.style.opacity = sh * bladesIn;
+  rim.setAttribute('stroke-opacity', .7);
+  lensG.style.opacity = sh * clamp01(1 - (r / R - 1) / .25);
+  // the f-number clicks through real stops: wide open f/1.4, shut f/22
+  const open = clamp01(r / (R * .96)), fv = 22 * Math.pow(1.4 / 22, open);
+  const stop = STOPS.reduce((a, b) => Math.abs(Math.log(b / fv)) < Math.abs(Math.log(a / fv)) ? b : a);
+  fText.textContent = 'ƒ/' + stop;
 }
 document.fonts.ready.then(() => { findHole(); drawZoom(); });
 addEventListener('resize', () => { findHole(); drawZoom(); });
@@ -605,8 +644,10 @@ const shade = document.querySelector('.flight__shade'), huds = gsap.utils.toArra
 const tc = document.querySelector('.tc'), bar = document.querySelector('.hud__bar i');
 const mobile = () => innerWidth <= 760;
 const flight = { p: 0 };
+const cta = document.querySelector('.hero__cta');
 function updateFlight() {
   const p = flight.p, on = clamp01(p / .04);
+  cta.classList.toggle('is-on', p > .005);
   huds.forEach(h => h.style.opacity = on);
   const t = Math.floor(hv.currentTime || 0);
   tc.textContent = '00:' + String(t).padStart(2, '0');

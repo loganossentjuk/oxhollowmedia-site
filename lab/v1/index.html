@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Lab v1 (saved): Flight | Ox Hollow Media</title>
+<link rel="icon" href="/images/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #F3EFE4; --bg-section: #E5DEC8; --green: #294132; --ink: #191817; --text: #232120;
+    --clay: #B67C56; --paper: #F4EEE2; --muted: #625D52; --border: #DCD4C0;
+    --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+    --gutter: clamp(1.1rem, 3vw, 2.4rem);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ink); }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; cursor: none; }
+  @media (hover: none) { body { cursor: auto; } .cursor { display: none; } }
+  a { color: inherit; text-decoration: none; cursor: none; }
+  @media (hover: none) { a { cursor: pointer; } }
+  img, video { display: block; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .label { font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; }
+
+  /* film grain */
+  .grain { position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: .08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain 1s steps(6) infinite; }
+  @keyframes grain { 0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-2%)} 60%{transform:translate(-2%,-4%)} 80%{transform:translate(4%,2%)} 100%{transform:translate(0,0)} }
+
+  /* cursor */
+  .cursor { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; mix-blend-mode: difference; }
+  .cursor__dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; transform: translate(-50%,-50%); }
+  .cursor__ring { position: fixed; left: 0; top: 0; width: 40px; height: 40px; border: 1px solid #fff; border-radius: 50%;
+    transform: translate(-50%,-50%); transition: width .35s, height .35s, background .35s; }
+  .cursor.is-big .cursor__ring { width: 90px; height: 90px; background: #fff; }
+  .cursor__label { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: .6rem; letter-spacing: .2em;
+    text-transform: uppercase; color: #000; opacity: 0; transition: opacity .25s; white-space: nowrap; }
+  .cursor.is-big .cursor__label { opacity: 1; }
+
+  /* loader */
+  .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
+  .loader__lockup { display: flex; align-items: center; gap: clamp(.8rem, 1.6vw, 1.4rem); transform: translateX(var(--shift, 0)); }
+  .loader__mark { width: clamp(5.4rem, 12vw, 9.5rem); height: auto; flex: none; position: relative; z-index: 2; overflow: visible; }
+  .loader__mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
+  .loader__mark .moon { opacity: 0; }
+  .loader__clip { overflow: hidden; }
+  .loader__word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6vw, 5.2rem); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; line-height: 1.1; }
+
+  /* top bar: hidden during the opening, slides in after the headline */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 75; height: 64px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 var(--gutter); background: rgba(243,239,228,.86); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid rgba(35,33,32,.08); transform: translateY(-105%); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+  .nav.is-shown { transform: none; }
+  .nav__mark { display: flex; align-items: center; gap: .6rem; font-family: var(--serif); font-weight: 500; font-size: 1.1rem; letter-spacing: .14em; text-transform: uppercase; }
+  .nav__mark svg { width: 26px; height: 26px; color: var(--green); }
+  .nav__links { display: flex; align-items: center; gap: 2rem; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; }
+  .nav__links a:not(.nav__cta) { position: relative; padding: .4rem 0; }
+  .nav__links a:not(.nav__cta)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor;
+    transform: scaleX(0); transform-origin: right; transition: transform .4s; }
+  .nav__links a:not(.nav__cta):hover::after { transform: scaleX(1); transform-origin: left; }
+  .nav__cta { background: var(--green); color: var(--paper); padding: .7rem 1.2rem; border-radius: 2px; }
+  .nav__toggle { display: none; background: none; border: 0; font: inherit; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: inherit; }
+  .menu { position: fixed; inset: 0; z-index: 74; background: var(--green); color: var(--paper); padding: 6rem var(--gutter) 2rem;
+    display: flex; flex-direction: column; gap: .4rem; transform: translateY(-100%); transition: transform .6s cubic-bezier(.7,0,.2,1); }
+  .menu.is-open { transform: none; }
+  .menu a { font-family: var(--serif); font-size: 2.6rem; line-height: 1.15; border-bottom: 1px solid rgba(244,238,226,.15); padding: .4rem 0; }
+  @media (max-width: 860px) { .nav__links { display: none; } .nav__toggle { display: block; } }
+  .peek-tab { position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 74; padding: .5rem 1rem .6rem; color: #fff;
+    mix-blend-mode: difference; transition: opacity .4s; }
+  .nav.is-shown ~ .peek-tab { opacity: 0; pointer-events: none; }
+
+  /* 1. hero: the headline is a window onto the drone footage */
+  .hero, .flight, .strip { height: 100vh; height: 100svh; }
+  .hero { position: relative; overflow: hidden; background: var(--ink); }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero__mask { position: absolute; inset: 0; }
+  .hero__mask svg { width: 100%; height: 100%; overflow: visible; }
+  .hero__mask text { font-family: var(--serif); font-weight: 500; }
+  .words-tall { display: none; }
+  @media (max-aspect-ratio: 4/5) { .words-wide { display: none; } .words-tall { display: inline; } }
+  .hero__hint { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .7rem;
+    color: #fff; mix-blend-mode: difference; }
+  .hero__hint i { position: relative; width: 1px; height: 54px; background: rgba(255,255,255,.35); overflow: hidden; }
+  .hero__hint i::after { content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 18px; background: #fff; animation: drip 1.8s cubic-bezier(.6,0,.3,1) infinite; }
+  @keyframes drip { 0% { transform: translateY(-18px); } 70%, 100% { transform: translateY(54px); } }
+
+  /* 2. flight: scroll flies the drone; photographs surface on their lines */
+  .flight { position: relative; overflow: hidden; background: var(--ink); color: var(--paper); }
+  .flight video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .flight__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,.08) 55%, rgba(0,0,0,.2)); opacity: 0; }
+  .flight__line { position: absolute; left: var(--gutter); bottom: 18vh; z-index: 3; max-width: 11ch; font-family: var(--serif); font-weight: 400; font-style: italic;
+    font-size: clamp(2.8rem, 7vw, 7.5rem); line-height: .95; opacity: 0; text-shadow: 0 0 2px rgba(0,0,0,.25), 0 4px 60px rgba(0,0,0,.5); }
+  .flight__line:first-of-type { max-width: 14ch; }
+  .plate { position: absolute; z-index: 2; right: calc(var(--gutter) + 4vw); top: 50%; background: var(--paper); color: var(--text);
+    padding: 10px 10px 0; box-shadow: 0 30px 80px rgba(0,0,0,.45); opacity: 0; will-change: transform, clip-path; }
+  .plate img { height: 100%; width: 100%; object-fit: cover; }
+  .plate__frame { overflow: hidden; }
+  .plate__tag { display: flex; justify-content: space-between; gap: 1.5rem; padding: .7rem .1rem .75rem; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .plate__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; letter-spacing: .02em; text-transform: none; color: var(--text); }
+  .plate--land .plate__frame { width: min(38vw, 620px); aspect-ratio: 16 / 9; }
+  .plate--tall .plate__frame { height: min(56vh, 560px); aspect-ratio: 9 / 16; }
+  .hud { position: absolute; z-index: 3; }
+  .hud--tl { top: 5.6rem; left: var(--gutter); } .hud--tr { top: 5.6rem; right: var(--gutter); text-align: right; }
+  .hud--bl { bottom: 2rem; left: var(--gutter); right: var(--gutter); display: flex; align-items: center; gap: 1rem; }
+  .hud__bar { flex: 1; height: 1px; background: rgba(244,238,226,.3); position: relative; }
+  .hud__bar i { position: absolute; inset: 0; background: var(--paper); transform-origin: left; transform: scaleX(0); }
+  .hud b { font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  /* field-journal pieces */
+  .topo { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .topo svg { width: 100%; height: 100%; }
+  .topo path { stroke: currentColor; stroke-opacity: 1; }
+  .head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 1.5rem; padding: 0 var(--gutter); }
+  .head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: .95; }
+  .head__rule { height: 1px; background: currentColor; opacity: .2; margin-bottom: .8rem; transform-origin: left; }
+  .head .label { opacity: .7; margin-bottom: .5rem; }
+
+  /* 3. sideways gallery: every frame keeps its photograph's own shape */
+  .strip { position: relative; overflow: hidden; background: var(--bg-section); display: flex; flex-direction: column; justify-content: center; }
+  .strip .topo { color: rgba(41,65,50,.16); }
+  .strip .head { position: relative; margin-bottom: 2.6rem; }
+  .strip__track { position: relative; display: flex; gap: 3vw; padding: 0 var(--gutter); width: max-content; align-items: flex-end; will-change: transform; }
+  .strip__item { flex: none; position: relative; }
+  .strip__item figure { height: 54vh; overflow: hidden; background: var(--bg-section); }
+  .strip__item img { height: 100%; width: auto; transform: scale(1.12); }
+  .tag { display: flex; gap: .9rem; align-items: baseline; margin-top: .8rem; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .tag b { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; letter-spacing: .01em; text-transform: none; color: var(--text); }
+  .tag span:last-child { margin-left: auto; }
+  .strip__end { flex: none; align-self: center; width: 22vw; min-width: 220px; }
+  .strip__end a { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1.05; border-bottom: 1px solid currentColor; }
+
+  /* 4. films: three framed plates, played in place */
+  .films { position: relative; background: var(--green); color: var(--paper); padding: 16vh 0 18vh; overflow: hidden; }
+  .films .topo { color: rgba(244,238,226,.12); }
+  .films .head { position: relative; margin-bottom: 3.4rem; }
+  .films__grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3vw; padding: 0 var(--gutter); align-items: start; }
+  .film { display: block; text-align: left; background: var(--paper); padding: 10px 10px 0; box-shadow: 0 18px 50px rgba(0,0,0,.28);
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s; border: 0; font: inherit; color: inherit; width: 100%; }
+  .film-wrap:nth-child(1) .film { transform: rotate(-1.4deg); }
+  .film-wrap:nth-child(2) { padding-top: 6vh; } .film-wrap:nth-child(2) .film { transform: rotate(.9deg); }
+  .film-wrap:nth-child(3) { padding-top: 1.5vh; } .film-wrap:nth-child(3) .film { transform: rotate(-.6deg); }
+  .film-wrap .film:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 28px 70px rgba(0,0,0,.4); }
+  .film__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+  .film__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .film:hover .film__frame img { transform: scale(1.06); }
+  .film__play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; border-radius: 50%; background: rgba(244,238,226,.92);
+    display: grid; place-items: center; transform: translate(-50%,-50%) scale(.85); opacity: .0; transition: opacity .4s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .film__play::after { content: ""; margin-left: 4px; border-left: 14px solid var(--ink); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+  .film:hover .film__play, .film:focus-visible .film__play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  @media (hover: none) { .film__play { opacity: 1; transform: translate(-50%,-50%) scale(.8); } }
+  .film .plate__tag { padding: .8rem .1rem .9rem; }
+  .films__all { position: relative; display: inline-block; margin: 9vh var(--gutter) 0; font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 2rem); border-bottom: 1px solid currentColor; }
+  .viewer { position: fixed; inset: 0; z-index: 96; background: rgba(25,24,23,.92); display: grid; place-items: center; padding: 4vw; opacity: 0; pointer-events: none; transition: opacity .4s; }
+  .viewer.is-open { opacity: 1; pointer-events: auto; }
+  .viewer__box { width: min(100%, 1280px); aspect-ratio: 16 / 9; background: #000; }
+  .viewer__box iframe { width: 100%; height: 100%; border: 0; }
+  .viewer__close { position: absolute; top: 1.2rem; right: var(--gutter); background: none; border: 0; color: var(--paper); font: inherit; cursor: pointer; }
+
+  /* 5. field index: one plate per part of the site */
+  .index { position: relative; background: var(--bg); padding: 16vh 0 18vh; overflow: hidden; }
+  .index .topo { color: rgba(41,65,50,.14); }
+  .index .head { position: relative; margin-bottom: 3.4rem; }
+  .index__grid { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2vw; padding: 0 var(--gutter); align-items: start; }
+  .entry { display: block; background: var(--paper); padding: 9px 9px 0; box-shadow: 0 16px 44px rgba(35,33,32,.15);
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s; }
+  .entry-wrap:nth-child(1) .entry { transform: rotate(-1.2deg); }
+  .entry-wrap:nth-child(2) { padding-top: 4vh; } .entry-wrap:nth-child(2) .entry { transform: rotate(.8deg); }
+  .entry-wrap:nth-child(3) { padding-top: 1vh; } .entry-wrap:nth-child(3) .entry { transform: rotate(-.5deg); }
+  .entry-wrap:nth-child(4) { padding-top: 5vh; } .entry-wrap:nth-child(4) .entry { transform: rotate(1.1deg); }
+  .entry-wrap:nth-child(5) { padding-top: 2vh; } .entry-wrap:nth-child(5) .entry { transform: rotate(-.9deg); }
+  .entry-wrap .entry:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 26px 64px rgba(35,33,32,.24); }
+  .entry__frame { aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg-section); }
+  .entry__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .entry:hover .entry__frame img { transform: scale(1.06); }
+  .entry__tag { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: .6rem; padding: .8rem .15rem .25rem; }
+  .entry__tag .label { font-size: .58rem; color: var(--muted); }
+  .entry__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; line-height: 1.05; }
+  .entry__tag svg { align-self: center; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .entry:hover .entry__tag svg { transform: translateX(5px); }
+  .entry p { padding: 0 .15rem 1rem; font-size: .8rem; line-height: 1.45; color: var(--muted); }
+  @media (max-width: 1100px) { .index__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem 3vw; } .entry-wrap:nth-child(n) { padding-top: 0; } }
+  @media (max-width: 760px) { .index__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1rem; } .entry-wrap:nth-child(n) .entry { transform: rotate(0); }
+    .entry__tag b { font-size: 1.1rem; } .entry p { font-size: .74rem; } }
+
+  /* 6. outro: quiet sign-off */
+  .outro { position: relative; background: var(--green); color: var(--paper); padding: 18vh var(--gutter) 2.4rem; overflow: hidden; }
+  .outro .topo { color: rgba(244,238,226,.1); }
+  .outro__inner { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; }
+  .outro h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(3.4rem, 9vw, 8.5rem); line-height: .9; }
+  .outro h2 em { color: var(--clay); }
+  .magnet { display: inline-grid; place-items: center; width: 150px; height: 150px; border-radius: 50%; background: var(--paper); color: var(--ink); }
+  .outro__foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-top: 14vh; padding-top: 1.4rem;
+    border-top: 1px solid rgba(244,238,226,.16); opacity: .7; }
+  .outro__foot nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
+
+  @media (max-width: 760px) {
+    .loader__mark { width: 4.6rem; } .loader__word { font-size: 1.9rem; }
+    .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
+    .hud--tr { right: var(--gutter); }
+    .flight__line { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.6rem, 12vw, 3.6rem); }
+    .plate { bottom: 13vh; }
+    .plate__tag { flex-direction: column; gap: .2rem; }
+    .strip__track { gap: 6vw; }
+    .strip .head { margin-bottom: 1.6rem; }
+    .tag { flex-wrap: wrap; gap: .3rem .7rem; }
+    .films { padding: 12vh 0 12vh; } .index { padding: 12vh 0 12vh; }
+    .head { grid-template-columns: auto 1fr; } .head > span { display: none; }
+    .magnet { width: 116px; height: 116px; }
+    .outro { padding-top: 12vh; } .outro__foot { margin-top: 9vh; flex-direction: column; }
+    .menu a { font-size: 2.2rem; }
+    .plate { right: 50%; top: auto; bottom: 12vh; }
+    .plate--land .plate__frame { width: 78vw; } .plate--tall .plate__frame { height: 44vh; }
+    .strip__item figure { height: 44vh; }
+    .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
+    .outro__inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label">View</span></div><div class="cursor__dot"></div></div>
+<div class="loader" aria-hidden="true"><div class="loader__lockup">
+  <svg class="loader__mark" viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
+  <div class="loader__clip"><div class="loader__word">Ox Hollow</div></div>
+</div></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="/lab/" aria-label="Ox Hollow Media home"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>Ox Hollow</a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="/about">About</a><a href="/work-with-me">Work With Me</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a>
+    <a class="nav__cta" href="/contact">Contact</a>
+  </nav>
+  <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+<nav class="menu" id="menu" aria-label="Main">
+  <a href="/about">About</a><a href="/work-with-me">Work With Me</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
+</nav>
+<button class="peek-tab label" aria-label="Show menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
+
+<section class="hero">
+  <video src="/lab/media/reel.mp4" autoplay muted loop playsinline></video>
+  <h1 class="sr-only">Dare to see.</h1>
+  <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-200" width="3400" height="1400">
+      <rect x="-1200" y="-200" width="3400" height="1400" fill="#fff"/>
+      <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
+      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">to <tspan font-style="italic">see.</tspan></text></g>
+      <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
+      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">to</text>
+      <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
+    </mask></defs>
+    <rect x="-1200" y="-200" width="3400" height="1400" style="fill:var(--bg)" mask="url(#words)"/>
+  </svg></div>
+  <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
+</section>
+
+<section class="flight" aria-label="Curving coastlines, mile-high mountains, foggy forests, and the people in between">
+  <video src="/lab/media/flight-scrub.mp4" muted playsinline preload="auto" poster="/lab/media/flight-poster.jpg"></video>
+  <div class="flight__shade"></div>
+  <p class="hud hud--tl label">Santa Barbara<br>California</p>
+  <p class="hud hud--tr label">Drone<br><b class="tc">00:00</b></p>
+  <p class="flight__line">Curving coastlines,</p>
+  <p class="flight__line">mile-high mountains,</p>
+  <p class="flight__line">foggy forests,</p>
+  <p class="flight__line">and the people in between.</p>
+  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b>Sun on the Tide</b><span>Plate 01 · Ocean</span></p></a>
+  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b>Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
+  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
+  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
+  <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
+</section>
+
+
+
+
+<section class="index" id="index">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>Field <em>index</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="index__grid">
+    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img src="/images/about/portrait.webp" alt="" loading="lazy" style="object-position:30% 50%"></div><p class="entry__tag"><span class="label">01</span><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/work-with-me" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/events/02-keynote.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">02</span><b>Work With Me</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">03</span><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">04</span><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img src="/lab/media/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><span class="label">05</span><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
+  </div>
+</section>
+
+<section class="films" id="films">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>Films</h2><div class="head__rule"></div><span></span></div>
+  <div class="films__grid">
+    <div class="film-wrap"><button class="film" data-vimeo="1049186301" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-1049186301.jpg" alt="Ocean Defenders"><span class="film__play"></span></div><p class="plate__tag"><b>Ocean Defenders</b><span>Film 01 · 2023 · 9:28</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-846297616.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>Film 02 · 2023 · 14:35</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-304798458.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>Film 03 · 2018 · 2:52</span></p></button></div>
+  </div>
+  <a class="films__all" href="/films" data-cursor="Open">About the films</a>
+</section>
+
+<section class="strip" id="strip">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><span></span></div>
+  <div class="strip__track">
+    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><span>01</span><b>Leviathan's Leap</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><span>02</span><b>Granite Glow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><span>03</span><b>Blue-Footed Display</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><span>04</span><b>Highland Hollow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><span>05</span><b>International Orange</b></p></a>
+    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><span>06</span><b>Shark Shadow</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><span>07</span><b>Salt and Scales</b><span>Ocean</span></p></a>
+    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><span>08</span><b>Rainier Afterglow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><span>09</span><b>Sea Cave Glow</b></p></a>
+    <div class="strip__end"><a href="/gallery" data-cursor="Open">See the full gallery</a></div>
+  </div>
+</section>
+
+<div class="viewer" role="dialog" aria-modal="true" aria-label="Film player"><button class="viewer__close label">Close</button><div class="viewer__box"></div></div>
+
+<footer class="outro" id="outro">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="outro__inner">
+    <h2>Dare to <em>see.</em></h2>
+    <a class="magnet label" href="/contact" data-magnet>Contact</a>
+  </div>
+  <div class="outro__foot label">
+    <span>Ox Hollow Media · San Francisco Bay Area</span>
+    <nav aria-label="Footer"><a href="/about">About</a><a href="/work-with-me">Work With Me</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="https://www.instagram.com/oxhollowmedia/" target="_blank" rel="noopener">Instagram</a></nav>
+    <span>Lab prototype, not published</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+scrollTo(0, 0);
+ScrollTrigger.config({ ignoreMobileResize: true });
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp01 = v => Math.max(0, Math.min(1, v));
+
+const lenis = window.lenis = new Lenis({ lerp: 0.09 });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.getAttribute('href')); }));
+
+// loader
+// the mark draws itself large in the centre, then shrinks into place as the name slides out from behind it
+document.fonts.ready.then(() => {
+const clipW = document.querySelector('.loader__clip').offsetWidth + parseFloat(getComputedStyle(document.querySelector('.loader__lockup')).gap);
+gsap.set('.loader__lockup', { x: clipW / 2 });
+gsap.set('.loader__word', { xPercent: -105 });
+gsap.set('.loader__mark', { scale: 2.4, transformOrigin: '50% 50%' });
+gsap.timeline()
+  .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .7, ease: 'power2.inOut' })
+  .to('.loader__mark .moon', { opacity: 1, duration: .35, ease: 'power1.out' }, '-=.2')
+  .to('.loader__lockup', { x: 0, duration: .95, ease: 'expo.inOut' }, '+=0')
+  .to('.loader__mark', { scale: 1, duration: .95, ease: 'expo.inOut' }, '<')
+  .to('.loader__word', { xPercent: 0, duration: .95, ease: 'expo.inOut' }, '<+=.1')
+  .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=1.1')
+  .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
+});
+
+// top bar: hidden through the opening, in once the headline is behind you.
+// Before that, a small "Menu" tab (or moving the mouse to the top edge) brings it down.
+const nav = document.getElementById('nav'), menu = document.getElementById('menu'), toggle = nav.querySelector('.nav__toggle');
+let pastHero = false, peeking = false;
+const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || menu.classList.contains('is-open'));
+addEventListener('mousemove', e => { const p = e.clientY < 70 || (peeking && e.clientY < 90); if (p !== peeking) { peeking = p; syncNav(); } });
+document.querySelector('.peek-tab').addEventListener('click', () => { peeking = true; syncNav(); });
+toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; open ? lenis.stop() : lenis.start(); syncNav(); });
+
+// 1. hero: zoom into the hole of the "o" in "to"
+function holeOrigin() {
+  const tall = matchMedia('(max-aspect-ratio: 4/5)').matches;
+  const t = document.querySelector(tall ? '.words-tall .hole' : '.words-wide .hole'), e = t.getExtentOfChar(1);
+  const W = innerWidth, H = innerHeight, k = Math.min(W, H) / 1000;
+  const cx = e.x + e.width / 2, cy = +t.getAttribute('y') - +t.getAttribute('font-size') * 0.19;
+  return `${(W - 1000 * k) / 2 + cx * k}px ${(H - 1000 * k) / 2 + cy * k}px`;
+}
+const setOrigin = () => gsap.set('.hero__mask', { transformOrigin: holeOrigin() });
+document.fonts.ready.then(setOrigin); addEventListener('resize', setOrigin);
+const heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=160%', scrub: true, pin: true } });
+lenis.on('scroll', ({ scroll }) => { const p = scroll > heroTl.scrollTrigger.end - innerHeight * .25; if (p !== pastHero) { pastHero = p; syncNav(); } });
+heroTl
+  .to('.hero__hint', { opacity: 0, duration: .1 }, 0)
+  .to('.hero__mask', { scale: 9, ease: 'power2.in', duration: 1 }, 0)
+  .to('.hero__mask', { opacity: 0, duration: .45, ease: 'power1.in' }, .5)
+  .set('.hero__mask', { visibility: 'hidden' }, 1);
+
+// 2. flight: scroll is the drone's position; each line holds the screen for a quarter of the flight,
+// and lines 2 to 4 bring their photograph up beside them
+const fv = document.querySelector('.flight video');
+const lines = gsap.utils.toArray('.flight__line'), plates = gsap.utils.toArray('.plate');
+const shade = document.querySelector('.flight__shade');
+const tc = document.querySelector('.tc'), bar = document.querySelector('.hud__bar i');
+fv.addEventListener('loadedmetadata', () => ScrollTrigger.refresh());
+const flight = { t: 0 };
+const mobile = () => innerWidth <= 760;
+ScrollTrigger.create({
+  trigger: '.flight', start: 'top top', end: '+=500%', pin: true, scrub: true,
+  onUpdate: self => {
+    const p = self.progress;
+    gsap.to(flight, { t: p, duration: .4, ease: 'power2.out', overwrite: true, onUpdate: () => { if (fv.duration) fv.currentTime = flight.t * (fv.duration - .05); } });
+    tc.textContent = '00:' + String(Math.floor(p * (fv.duration || 20))).padStart(2, '0');
+    bar.style.transform = `scaleX(${p})`;
+    let shadeOn = 0;
+    lines.forEach((el, i) => {
+      const local = p * lines.length - i;                     // 0..1 while this line is on
+      const vis = clamp01(Math.min(local / .18, (1 - local) / .18));
+      el.style.opacity = vis;
+      el.style.transform = `translateY(${(local - .5) * -60}px)`;
+      el.style.filter = `blur(${(1 - vis) * 10}px)`;
+      const pl = plates[i];
+      const reveal = clamp01(local / .22), hide = clamp01((1 - local) / .16);
+      pl.style.opacity = Math.min(1, reveal * 3) * hide;
+      pl.style.clipPath = `inset(${(1 - reveal) * 100}% 0 0 0)`;
+      const tilt = (i % 2 ? -1.6 : 1.4);
+      pl.style.transform = mobile()
+        ? `translate(50%, ${(local - .5) * -50}px) rotate(${tilt}deg)`
+        : `translate(0, calc(-50% + ${(local - .5) * -90}px)) rotate(${tilt}deg)`;
+      pl.style.pointerEvents = vis > .5 ? 'auto' : 'none';
+      shadeOn = Math.max(shadeOn, vis);
+    });
+    shade.style.opacity = Math.max(.55, shadeOn);
+  }
+});
+fv.play().then(() => fv.pause()).catch(() => {});
+
+// topo contour lines, drawn as their section scrolls in
+fetch('/images/topo.svg').then(r => r.text()).then(svg => {
+  document.querySelectorAll('.topo').forEach(box => {
+    box.innerHTML = svg;
+    const paths = box.querySelectorAll('path');
+    paths.forEach(p => { p.setAttribute('pathLength', 1); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; });
+    gsap.to(paths, { strokeDashoffset: 0, ease: 'none', stagger: { each: .004 },
+      scrollTrigger: { trigger: box.parentElement, start: 'top 85%', end: 'top 10%', scrub: 1 } });
+  });
+  ScrollTrigger.refresh();
+});
+gsap.utils.toArray('.head__rule').forEach(r => gsap.from(r, { scaleX: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: r, start: 'top 90%' } }));
+
+// 3. strip: vertical scroll moves the plates sideways; each photo drifts in its frame
+const track = document.querySelector('.strip__track');
+const strip = gsap.to(track, {
+  x: () => -(track.scrollWidth - innerWidth), ease: 'none',
+  scrollTrigger: { trigger: '.strip', start: 'top top', end: () => '+=' + (track.scrollWidth - innerWidth), pin: true, scrub: 1, invalidateOnRefresh: true }
+});
+gsap.utils.toArray('.strip__item img').forEach(img => {
+  gsap.fromTo(img, { xPercent: -5 }, { xPercent: 5, ease: 'none',
+    scrollTrigger: { trigger: img.closest('.strip__item'), containerAnimation: strip, start: 'left right', end: 'right left', scrub: true } });
+});
+
+// 4. films: play in place, over the page
+const viewer = document.querySelector('.viewer'), vbox = viewer.querySelector('.viewer__box');
+function closeViewer() { viewer.classList.remove('is-open'); vbox.innerHTML = ''; lenis.start(); }
+document.querySelectorAll('.film').forEach(f => f.addEventListener('click', () => {
+  vbox.innerHTML = `<iframe src="https://player.vimeo.com/video/${f.dataset.vimeo}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${f.querySelector('b').textContent}"></iframe>`;
+  viewer.classList.add('is-open'); lenis.stop(); cur.classList.remove('is-big');
+}));
+viewer.querySelector('.viewer__close').addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer(); });
+
+// 5 + 6. rows and sign-off rise in
+gsap.from('.entry-wrap', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: '.index__grid', start: 'top 88%' } });
+gsap.from('.film-wrap', { y: 80, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.films__grid', start: 'top 85%' } });
+gsap.from('.outro h2', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.outro', start: 'top 70%' } });
+
+// cursor
+const cur = document.querySelector('.cursor'), dot = cur.querySelector('.cursor__dot'), ring = cur.querySelector('.cursor__ring'), label = cur.querySelector('.cursor__label');
+const dx = gsap.quickTo(dot, 'x', { duration: .1 }), dy = gsap.quickTo(dot, 'y', { duration: .1 });
+const rx = gsap.quickTo(ring, 'x', { duration: .45, ease: 'power3' }), ry = gsap.quickTo(ring, 'y', { duration: .45, ease: 'power3' });
+addEventListener('mousemove', e => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+document.querySelectorAll('[data-cursor]').forEach(el => {
+  el.addEventListener('mouseenter', () => { label.textContent = el.dataset.cursor; cur.classList.add('is-big'); });
+  el.addEventListener('mouseleave', () => cur.classList.remove('is-big'));
+});
+
+// magnetic contact button
+document.querySelectorAll('[data-magnet]').forEach(m => {
+  m.addEventListener('mousemove', e => { const r = m.getBoundingClientRect();
+    gsap.to(m, { x: (e.clientX - r.left - r.width / 2) * .35, y: (e.clientY - r.top - r.height / 2) * .35, duration: .4 }); });
+  m.addEventListener('mouseleave', () => gsap.to(m, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }));
+});
+
+if (reduce) gsap.globalTimeline.timeScale(20);
+</script>
+</body>
+</html>

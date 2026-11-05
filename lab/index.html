@@ -134,23 +134,35 @@
   .strip__end { flex: none; align-self: center; width: 22vw; min-width: 220px; }
   .strip__end a { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1.05; border-bottom: 1px solid currentColor; }
 
-  /* 4. films */
-  .films { position: relative; background: var(--green); color: var(--paper); padding: 16vh 0 18vh; overflow: hidden; }
-  .films .topo { color: rgba(244,238,226,.12); }
-  .films .head { position: relative; margin-bottom: 3rem; }
-  .films__list { position: relative; padding: 0 var(--gutter); }
-  .films__row { display: grid; grid-template-columns: 3rem 1fr auto; align-items: baseline; padding: 2rem 0; border-top: 1px solid rgba(244,238,226,.18); position: relative; z-index: 2; }
-  .films__row:last-child { border-bottom: 1px solid rgba(244,238,226,.18); }
-  .films__row h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6.4vw, 6.8rem); line-height: .92; transition: transform .6s cubic-bezier(.2,.8,.2,1), color .4s; }
-  .films__row .label { opacity: .6; }
-  .films__row:hover h3 { transform: translateX(2vw); font-style: italic; }
-  .films__list:hover .films__row:not(:hover) h3 { color: rgba(244,238,226,.3); }
-  .films__peek { position: fixed; left: 0; top: 0; width: 26vw; aspect-ratio: 16/9; z-index: 1; pointer-events: none; overflow: hidden; opacity: 0; transform: translate(-50%,-50%) scale(.6); }
-  .films__peek img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .3s; }
-  .films__peek img.on { opacity: 1; }
+  /* 4. films: three framed plates, played in place */
+  .films { position: relative; background: var(--bg-section); padding: 16vh 0 18vh; overflow: hidden; }
+  .films .topo { color: rgba(41,65,50,.14); }
+  .films .head { position: relative; margin-bottom: 3.4rem; }
+  .films__grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3vw; padding: 0 var(--gutter); align-items: start; }
+  .film { display: block; text-align: left; background: var(--paper); padding: 10px 10px 0; box-shadow: 0 18px 50px rgba(35,33,32,.16);
+    transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .7s; border: 0; font: inherit; color: inherit; width: 100%; }
+  .film-wrap:nth-child(1) .film { transform: rotate(-1.4deg); }
+  .film-wrap:nth-child(2) { padding-top: 6vh; } .film-wrap:nth-child(2) .film { transform: rotate(.9deg); }
+  .film-wrap:nth-child(3) { padding-top: 1.5vh; } .film-wrap:nth-child(3) .film { transform: rotate(-.6deg); }
+  .film-wrap .film:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 28px 70px rgba(35,33,32,.24); }
+  .film__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+  .film__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .film:hover .film__frame img { transform: scale(1.06); }
+  .film__play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; border-radius: 50%; background: rgba(244,238,226,.92);
+    display: grid; place-items: center; transform: translate(-50%,-50%) scale(.85); opacity: .0; transition: opacity .4s, transform .5s cubic-bezier(.2,.8,.2,1); }
+  .film__play::after { content: ""; margin-left: 4px; border-left: 14px solid var(--ink); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+  .film:hover .film__play, .film:focus-visible .film__play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  @media (hover: none) { .film__play { opacity: 1; transform: translate(-50%,-50%) scale(.8); } }
+  .film .plate__tag { padding: .8rem .1rem .9rem; }
+  .films__all { position: relative; display: inline-block; margin: 9vh var(--gutter) 0; font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 2rem); border-bottom: 1px solid currentColor; }
+  .viewer { position: fixed; inset: 0; z-index: 96; background: rgba(25,24,23,.92); display: grid; place-items: center; padding: 4vw; opacity: 0; pointer-events: none; transition: opacity .4s; }
+  .viewer.is-open { opacity: 1; pointer-events: auto; }
+  .viewer__box { width: min(100%, 1280px); aspect-ratio: 16 / 9; background: #000; }
+  .viewer__box iframe { width: 100%; height: 100%; border: 0; }
+  .viewer__close { position: absolute; top: 1.2rem; right: var(--gutter); background: none; border: 0; color: var(--paper); font: inherit; cursor: pointer; }
 
   /* 5. field index: the whole site, one row each */
-  .index { position: relative; background: var(--bg-section); padding: 16vh 0 14vh; overflow: hidden; }
+  .index { position: relative; background: var(--bg); padding: 16vh 0 14vh; overflow: hidden; }
   .index .topo { color: rgba(41,65,50,.14); }
   .index .head { position: relative; margin-bottom: 2.4rem; }
   .index__list { position: relative; padding: 0 var(--gutter); }
@@ -186,7 +198,6 @@
     .strip .head { margin-bottom: 1.6rem; }
     .tag { flex-wrap: wrap; gap: .3rem .7rem; }
     .films { padding: 12vh 0 12vh; } .index { padding: 12vh 0 10vh; }
-    .films__row { grid-template-columns: 2.2rem 1fr auto; padding: 1.5rem 0; }
     .index__row { gap: .6rem 1rem; padding: 1.3rem 0; }
     .head { grid-template-columns: auto 1fr; } .head > span { display: none; }
     .magnet { width: 116px; height: 116px; }
@@ -195,7 +206,7 @@
     .plate { right: 50%; top: auto; bottom: 12vh; }
     .plate--land .plate__frame { width: 78vw; } .plate--tall .plate__frame { height: 44vh; }
     .strip__item figure { height: 44vh; }
-    .films__peek { display: none; }
+    .films__grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .film-wrap:nth-child(n) { padding-top: 0; } .film-wrap:nth-child(n) .film { transform: rotate(0); }
     .outro__inner { grid-template-columns: 1fr; }
   }
 </style>
@@ -273,17 +284,13 @@
 
 <section class="films" id="films">
   <div class="topo" aria-hidden="true"></div>
-  <div class="head"><h2>Films</h2><div class="head__rule"></div><p class="label">Documentary shorts</p></div>
-  <div class="films__list">
-    <a class="films__row" href="/films" data-peek="0" data-cursor="Watch"><span class="label">01</span><h3>Ocean Defenders</h3><span class="label">2023</span></a>
-    <a class="films__row" href="/films" data-peek="1" data-cursor="Watch"><span class="label">02</span><h3>Brushstrokes for Survival</h3><span class="label"></span></a>
-    <a class="films__row" href="/films" data-peek="2" data-cursor="Watch"><span class="label">03</span><h3>Fluid Frontier</h3><span class="label"></span></a>
+  <div class="head"><h2>Films</h2><div class="head__rule"></div><span></span></div>
+  <div class="films__grid">
+    <div class="film-wrap"><button class="film" data-vimeo="1049186301" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-1049186301.jpg" alt="Ocean Defenders"><span class="film__play"></span></div><p class="plate__tag"><b>Ocean Defenders</b><span>Film 01 · 2023 · 9:28</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-846297616.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>Film 02 · 2023 · 14:35</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img src="/lab/media/film-304798458.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>Film 03 · 2018 · 2:52</span></p></button></div>
   </div>
-  <div class="films__peek" aria-hidden="true">
-    <img src="https://i.vimeocdn.com/video/1973480704-2131f1e85f7b3fa0d11cbf35eac710c03a9c59504ab1cc88b76a47b4df0ca525-d_640" alt="">
-    <img src="/images/portfolio/people/04-research-vessel-dawn-800.webp" alt="">
-    <img src="/images/portfolio/ocean/14-green-water-800.webp" alt="">
-  </div>
+  <a class="films__all" href="/films" data-cursor="Open">About the films</a>
 </section>
 
 <section class="index" id="index">
@@ -297,6 +304,8 @@
     <a class="index__row" href="/films"><span class="label">05</span><h3>Films</h3><p>Three documentary shorts on conservation, art, and the water’s edge.</p><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></a>
   </div>
 </section>
+
+<div class="viewer" role="dialog" aria-modal="true" aria-label="Film player"><button class="viewer__close label">Close</button><div class="viewer__box"></div></div>
 
 <footer class="outro" id="outro">
   <div class="topo" aria-hidden="true"></div>
@@ -435,17 +444,20 @@ gsap.utils.toArray('.strip__item img').forEach(img => {
     scrollTrigger: { trigger: img.closest('.strip__item'), containerAnimation: strip, start: 'left right', end: 'right left', scrub: true } });
 });
 
-// 4. films: a frame trails the cursor
-const peek = document.querySelector('.films__peek'), peekImgs = peek.querySelectorAll('img');
-const px = gsap.quickTo(peek, 'x', { duration: .6, ease: 'power3' }), py = gsap.quickTo(peek, 'y', { duration: .6, ease: 'power3' });
-document.querySelectorAll('.films__row').forEach(row => {
-  row.addEventListener('mouseenter', () => { peekImgs.forEach((im, i) => im.classList.toggle('on', i == row.dataset.peek)); gsap.to(peek, { opacity: 1, scale: 1, duration: .4, ease: 'power3' }); });
-  row.addEventListener('mouseleave', () => gsap.to(peek, { opacity: 0, scale: .6, duration: .3 }));
-});
-addEventListener('mousemove', e => { px(e.clientX); py(e.clientY); });
+// 4. films: play in place, over the page
+const viewer = document.querySelector('.viewer'), vbox = viewer.querySelector('.viewer__box');
+function closeViewer() { viewer.classList.remove('is-open'); vbox.innerHTML = ''; lenis.start(); }
+document.querySelectorAll('.film').forEach(f => f.addEventListener('click', () => {
+  vbox.innerHTML = `<iframe src="https://player.vimeo.com/video/${f.dataset.vimeo}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${f.querySelector('b').textContent}"></iframe>`;
+  viewer.classList.add('is-open'); lenis.stop(); cur.classList.remove('is-big');
+}));
+viewer.querySelector('.viewer__close').addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer(); });
 
 // 5 + 6. rows and sign-off rise in
-gsap.utils.toArray('.index__row, .films__row').forEach(r => gsap.from(r, { y: 40, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: r, start: 'top 92%' } }));
+gsap.utils.toArray('.index__row').forEach(r => gsap.from(r, { y: 40, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: r, start: 'top 92%' } }));
+gsap.from('.film-wrap', { y: 80, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .12, scrollTrigger: { trigger: '.films__grid', start: 'top 85%' } });
 gsap.from('.outro h2', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '.outro', start: 'top 70%' } });
 
 // cursor

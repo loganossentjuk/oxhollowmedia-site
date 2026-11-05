@@ -1902,8 +1902,8 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   background: url("../images/topo-ink.svg?v=1") center / cover no-repeat;
 }
 .nods #contact::before { background-image: url("../images/topo-marked.svg?v=1"); }
-.nods .page-hero .btn-outline { background: rgba(41,65,50,.7); border-color: transparent; color: var(--paper); }
-.nods .btn-filled:hover, .nods #contact .btn-filled:hover, .nods .btn-dark:hover,
-.nods .page-hero .btn-outline:hover, .nods #contact .btn-outline:hover {
+.nods .page-hero .btn-outline { background: var(--clay); border-color: var(--clay); color: var(--paper); }
+.nods .btn-filled:hover, .nods #contact .btn-filled:hover, .nods .btn-dark:hover, .nods #contact .btn-outline:hover {
   background: var(--clay); border-color: var(--clay); color: var(--paper);
 }
+.nods .page-hero .btn-outline:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }   /* terracotta, then forest green */

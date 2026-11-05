@@ -45,7 +45,7 @@
   /* loader */
   .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
   .loader__lockup { display: flex; align-items: center; gap: clamp(.8rem, 1.6vw, 1.4rem); transform: translateX(var(--shift, 0)); }
-  .loader__mark { width: clamp(3.2rem, 7vw, 5.6rem); height: auto; flex: none; position: relative; z-index: 2; overflow: visible; }
+  .loader__mark { width: clamp(5.4rem, 12vw, 9.5rem); height: auto; flex: none; position: relative; z-index: 2; overflow: visible; }
   .loader__mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
   .loader__mark .moon { opacity: 0; }
   .loader__clip { overflow: hidden; }
@@ -176,6 +176,7 @@
   .outro__foot nav { display: flex; flex-wrap: wrap; gap: 1.4rem; }
 
   @media (max-width: 760px) {
+    .loader__mark { width: 4.6rem; } .loader__word { font-size: 1.9rem; }
     .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
     .hud--tr { right: var(--gutter); }
     .flight__line { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.6rem, 12vw, 3.6rem); }

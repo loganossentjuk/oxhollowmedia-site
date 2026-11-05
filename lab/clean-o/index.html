@@ -321,9 +321,9 @@
     <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-200" width="3400" height="1400">
       <rect x="-1200" y="-200" width="3400" height="1400" fill="#fff"/>
       <g class="words-wide"><text x="500" y="470" text-anchor="middle" font-size="380" fill="#000">Dare</text>
-      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">to <tspan font-style="italic">see.</tspan></text></g>
+      <text class="hole" x="500" y="790" text-anchor="middle" font-size="380" fill="#000">t<tspan class="o-glyph">o</tspan> <tspan font-style="italic">see.</tspan></text></g>
       <g class="words-tall"><text x="500" y="270" text-anchor="middle" font-size="400" fill="#000">Dare</text>
-      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">to</text>
+      <text class="hole" x="500" y="610" text-anchor="middle" font-size="400" fill="#000">t<tspan class="o-glyph">o</tspan></text>
       <text x="500" y="950" text-anchor="middle" font-size="400" fill="#000" font-style="italic">see.</text></g>
       <polygon class="iris" points="0,0" fill="#000"/>
     </mask>
@@ -524,6 +524,7 @@ const portrait = heroSvg.querySelector('.hero__portrait'), rim = heroSvg.querySe
 const housing = heroSvg.querySelector('.housing'), blades = [...heroSvg.querySelectorAll('.aperture line')];
 const BLADES = blades.length;
 const facets = [...heroSvg.querySelectorAll('.aperture__facets polygon')], apertureG = heroSvg.querySelector('.aperture');
+const oGlyphs = [...heroSvg.querySelectorAll('.o-glyph')];
 let aim = { x: 290, y: 714, end: 40, R: 40 };
 // the hollow of the "o" in "to": centre of the letter's ink, halfway up the x-height
 function findHole() {
@@ -541,7 +542,7 @@ function findHole() {
     if (!on && s >= 0) { runs.push([s - 200, x - 200]); s = -1; }
   }
   const [, l, r] = runs;                                             // t stem, o left stroke, o right stroke
-  aim = l && r ? { x: (l[1] + r[0]) / 2, y: row, R: (r[0] - l[1]) / 2 * .96, end: fs * .12 }
+  aim = l && r ? { x: (l[0] + r[1]) / 2, y: row, R: (r[1] - l[0]) / 2, end: fs * .2 }
                : { x: aim.x, y: row, R: fs * .12, end: fs * .12 };
   housing.setAttribute('cx', aim.x); housing.setAttribute('cy', aim.y); housing.setAttribute('r', aim.R);
   rim.setAttribute('cx', aim.x); rim.setAttribute('cy', aim.y); rim.setAttribute('r', aim.R);
@@ -562,9 +563,11 @@ function drawZoom() {
   // a seven-blade iris: closed in the hollow, turning open as we fly in, until the footage fills the screen
   // the zoom carries the lens up to fill the screen, so the opening only has to grow to the lens itself
   // a clean o on entry; the blades close in as you start to scroll, then turn open
-  const show = clamp01((p - .03) / .25), sh = show * show * (3 - 2 * show);
-  const o = clamp01((p - .28) / .64), e = o * o * (3 - 2 * o);
-  const r = aim.R * (.2 * sh + 1.7 * e), turn = -.35 - e * 1.4 - (1 - sh) * .7;
+  // a clean o on entry; as you scroll the letter dissolves into a round lens of the same size, which turns open
+  const show = clamp01((p - .03) / .22), sh = show * show * (3 - 2 * show);
+  const o = clamp01((p - .2) / .72), e = o * o * (3 - 2 * o);
+  const r = aim.R * (.42 * sh + 1.45 * e * e), turn = -.35 - e * 1.4 - (1 - sh) * .7;
+  oGlyphs.forEach(g => g.setAttribute('fill-opacity', 1 - sh));
   const pts = Array.from({ length: BLADES }, (_, i) => {
     const a = turn + i * 2 * Math.PI / BLADES; return [aim.x + r * Math.cos(a), aim.y + r * Math.sin(a)];
   });

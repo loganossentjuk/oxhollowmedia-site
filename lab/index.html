@@ -41,12 +41,13 @@
 
   /* loader */
   .loader { position: fixed; inset: 0; z-index: 85; background: var(--green); color: var(--paper); display: grid; place-items: center; }
-  .loader__lockup { display: flex; align-items: center; gap: clamp(.8rem, 1.6vw, 1.4rem); transform: translateX(var(--shift, 0)); }
-  .loader__mark { width: clamp(5.4rem, 12vw, 9.5rem); height: auto; flex: none; position: relative; z-index: 2; overflow: visible; }
+  .loader__lock { width: 100vw; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    font-family: var(--serif); font-weight: 500; text-transform: uppercase; font-size: clamp(2rem, 7vw, 6rem); letter-spacing: .12em; line-height: 1; white-space: nowrap; }
+  .loader__side { display: flex; overflow: hidden; }
+  .loader__side--left { justify-content: flex-end; justify-self: end; } .loader__side--right { justify-self: start; }
+  .loader__mark { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; overflow: visible; position: relative; z-index: 2; }
   .loader__mark .ring { stroke-dasharray: 1; stroke-dashoffset: 1; transform: rotate(-90deg); transform-origin: 50% 50%; }
   .loader__mark .moon { opacity: 0; }
-  .loader__clip { overflow: hidden; }
-  .loader__word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 6vw, 5.2rem); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; line-height: 1.1; }
 
   /* top bar: hidden during the opening, slides in after the headline */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 75; height: 64px; display: flex; align-items: center; justify-content: space-between;
@@ -269,7 +270,6 @@
   .outro__foot a { padding-bottom: .1em; }
 
   @media (max-width: 760px) {
-    .loader__mark { width: 4.6rem; } .loader__word { font-size: 1.9rem; }
     .hud--tl, .hud--tr { top: auto; bottom: 3.6rem; font-size: .56rem; }
     .hud--tr { right: var(--gutter); }
     .flight__line, .flight__line:first-of-type { bottom: auto; top: calc(64px + 4vh); font-size: clamp(2.4rem, 11vw, 3.4rem); line-height: 1.1; max-width: 13ch; }
@@ -292,9 +292,11 @@
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
-<div class="loader" aria-hidden="true"><div class="loader__lockup">
-  <svg class="loader__mark" viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>
-  <div class="loader__clip"><div class="loader__word">Ox Hollow</div></div>
+<div class="loader" aria-hidden="true"><div class="loader__lock">
+  <div class="loader__side loader__side--left"><span>O</span><span>X</span><span>&nbsp;</span><span>H</span></div>
+  <svg class="loader__mark" viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7" pathLength="1"/><path class="moon" d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/><defs><clipPath id="lens"><circle cx="50" cy="50" r="37.8"/></clipPath><mask id="ib0" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib1" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib2" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib3" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib4" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib5" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask><mask id="ib6" maskUnits="userSpaceOnUse" x="-300" y="-300" width="700" height="700"><circle class="m-self" fill="#fff"/><circle class="m-next" fill="#000"/></mask></defs><g class="iris" clip-path="url(#lens)"><g mask="url(#ib0)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib1)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib2)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib3)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib4)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib5)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g><g mask="url(#ib6)"><circle class="b-fill" fill="currentColor"/><circle class="b-edge" fill="none" stroke="#294132" stroke-width="1.6"/></g></g></svg>
+  <div class="loader__side loader__side--right"><span>L</span><span>L</span><span>O</span><span>W</span></div>
+</div></div>
 </div></div>
 
 <header class="nav" id="nav">
@@ -500,20 +502,42 @@ gsap.ticker.lagSmoothing(0);
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); lenis.scrollTo(a.getAttribute('href')); }));
 
 // loader
-// the mark draws itself large in the centre, then shrinks into place as the name slides out from behind it
+// the ring draws large in the centre, a shutter closes inside it and opens on the crescent,
+// then the mark settles as the first O of HOLLOW while the name unrolls out of it both ways
+const lMark = document.querySelector('.loader__mark'), lIris = lMark.querySelector('.iris'), lBlades = [...lIris.children];
+const lMasks = Array.from({ length: 7 }, (_, k) => lMark.querySelector('#ib' + k));
+const IR = 38, IRHO = IR * 1.55, IT = IRHO * .62, shutter = { g: IR, turn: 0 };
+function drawShutter() {
+  const reach = Math.sqrt(Math.max(0, (IRHO + shutter.g) ** 2 - IT * IT));
+  const C = Array.from({ length: 7 }, (_, i) => {
+    const a = shutter.turn + i * 2 * Math.PI / 7, ux = Math.cos(a), uy = Math.sin(a);
+    return [50 + reach * ux - IT * uy, 50 + reach * uy + IT * ux];
+  });
+  const put = (el, c) => { el.setAttribute('cx', c[0]); el.setAttribute('cy', c[1]); el.setAttribute('r', IRHO); };
+  for (let i = 0; i < 7; i++) {
+    put(lMasks[i].querySelector('.m-self'), C[i]); put(lMasks[i].querySelector('.m-next'), C[(i + 1) % 7]);
+    put(lBlades[i].querySelector('.b-fill'), C[i]); put(lBlades[i].querySelector('.b-edge'), C[(i + 1) % 7]);
+  }
+}
 document.fonts.ready.then(() => {
-const clipW = document.querySelector('.loader__clip').offsetWidth + parseFloat(getComputedStyle(document.querySelector('.loader__lockup')).gap);
-gsap.set('.loader__lockup', { x: clipW / 2 });
-gsap.set('.loader__word', { xPercent: -105 });
-gsap.set('.loader__mark', { scale: 2.4, transformOrigin: '50% 50%' });
-gsap.timeline()
-  .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .7, ease: 'power2.inOut' })
-  .to('.loader__mark .moon', { opacity: 1, duration: .35, ease: 'power1.out' }, '-=.2')
-  .to('.loader__lockup', { x: 0, duration: .95, ease: 'expo.inOut' }, '+=0')
-  .to('.loader__mark', { scale: 1, duration: .95, ease: 'expo.inOut' }, '<')
-  .to('.loader__word', { xPercent: 0, duration: .95, ease: 'expo.inOut' }, '<+=.1')
-  .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=1.1')
-  .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
+  const L = document.querySelector('.loader__side--left'), Rt = document.querySelector('.loader__side--right');
+  const wl = L.scrollWidth, wr = Rt.scrollWidth;
+  drawShutter();
+  gsap.set([L, Rt], { width: 0 });
+  gsap.set(lIris, { opacity: 0 });
+  gsap.set(lMark, { scale: 2.4, transformOrigin: '50% 50%' });
+  gsap.timeline({ defaults: { ease: 'expo.inOut' } })
+    .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut' })
+    .set(lIris, { opacity: 1 }, '-=.15')
+    .to(shutter, { g: 0, turn: -.9, duration: .55, ease: 'power3.in', onUpdate: drawShutter }, '<')
+    .set('.loader__mark .moon', { opacity: 1 })
+    .to(shutter, { g: IR, turn: -2, duration: .7, ease: 'power3.out', onUpdate: drawShutter }, '+=.18')
+    .set(lIris, { opacity: 0 })
+    .to(lMark, { scale: 1, duration: .95 }, '-=.15')
+    .fromTo(L, { width: 0 }, { width: wl, duration: 1.05 }, '<+.12')
+    .fromTo(Rt, { width: 0 }, { width: wr, duration: 1.05 }, '<')
+    .to('.loader', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '+=1')
+    .from('.hero__mask', { scale: 1.15, duration: 1.6, ease: 'expo.out' }, '-=.7');
 });
 
 // top bar: hidden through the opening, in once the headline is behind you.

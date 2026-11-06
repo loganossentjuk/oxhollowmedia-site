@@ -30,6 +30,8 @@
 
   <link rel="canonical" href="https://oxhollowmedia.com/" />
 
+  <script>/* connection tier: lite = data saver, 2g/3g, or reduced-data preference */(function(){try{var c=navigator.connection||{},m=window.matchMedia&&matchMedia('(prefers-reduced-data: reduce)').matches;if(c.saveData||/(^|-)2g|3g/.test(c.effectiveType||'')||m)document.documentElement.classList.add('lite')}catch(e){}})();</script>
+  <link rel="preload" as="image" href="/media/home/reel-poster.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -266,15 +268,15 @@
   .entry-wrap .entry:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 26px 64px rgba(35,33,32,.24); }
   .entry__frame { overflow: hidden; background: var(--bg-section); aspect-ratio: 4 / 5; }
   .entry__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
-  .entry__tag { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .6rem; padding: .8rem .15rem .25rem; }
+  .entry__tag { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .6rem; padding: 1.05rem .2rem .55rem; margin-bottom: .7rem; border-bottom: 1px solid rgba(41,65,50,.16); }
   .entry__tag .label { font-size: .62rem; color: var(--muted); }
-  .entry__tag b { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; line-height: 1.05; }
-  .entry__tag svg { align-self: center; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .entry__tag b { font-family: var(--serif); font-weight: 500; font-style: italic; font-size: clamp(1.7rem, 2.3vw, 2.5rem); line-height: 1; letter-spacing: .005em; }
+  .entry__tag svg { color: var(--clay); align-self: center; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
   .entry:hover .entry__tag svg { transform: translateX(5px); }
   .entry p { padding: 0 .15rem 1rem; font-size: .8rem; line-height: 1.45; color: var(--muted); min-height: calc(3 * 1.45em + 1rem); }
   @media (max-width: 1100px) { .index__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem 3vw; } .entry-wrap:nth-child(n) { padding-top: 0; } }
   @media (max-width: 760px) { .index__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 1rem; } .entry-wrap:nth-child(n) .entry { transform: rotate(0); }
-    .entry__tag b { font-size: 1.1rem; } .entry p { font-size: .74rem; } }
+    .entry__tag b { font-size: 1.5rem; } .entry p { font-size: .74rem; } }
 
   /* 6. outro: quiet sign-off */
   .outro { position: relative; background: var(--green); color: var(--paper); padding: var(--pad) var(--gutter) 2.4rem; overflow: hidden; }
@@ -342,7 +344,7 @@
 <button class="peek-tab label" aria-label="Show menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
 
 <section class="hero" aria-label="Dare to see. Curving coastlines, mile-high mountains, foggy forests, and the people in between">
-  <video src="/media/home/reel.mp4" autoplay muted loop playsinline></video>
+  <video poster="/media/home/reel-poster.jpg" muted loop playsinline preload="none"></video>
   <h1 class="sr-only">Dare to see.</h1>
   <div class="hero__mask"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
     <defs><mask id="words" maskUnits="userSpaceOnUse" x="-1200" y="-1600" width="3400" height="4200">
@@ -382,10 +384,10 @@
   <p class="flight__line">mile-high mountains,</p>
   <p class="flight__line">foggy forests,</p>
   <p class="flight__line">and the people in between.</p>
-  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b>Sun on the Tide</b><span>Plate 01 · Oceans</span></p></a>
-  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b>Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
-  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03</span></p></a>
-  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
+  <a class="plate plate--land" href="/prints/sun-on-the-tide" data-cursor="View print"><div class="plate__frame"><img decoding="async" srcset="/images/portfolio/ocean/21-sun-on-the-water-800.webp 800w, /images/portfolio/ocean/21-sun-on-the-water.webp 1600w" sizes="(max-width: 800px) 85vw, 40vw" src="/images/portfolio/ocean/21-sun-on-the-water.webp" alt="Sun on the Tide"></div><p class="plate__tag"><b>Sun on the Tide</b><span>Plate 01 · Oceans</span></p></a>
+  <a class="plate plate--land" href="/prints/into-the-unknown" data-cursor="View print"><div class="plate__frame"><img decoding="async" srcset="/images/portfolio/mountains/20-autumn-flats-800.webp 800w, /images/portfolio/mountains/20-autumn-flats.webp 1600w" sizes="(max-width: 800px) 85vw, 40vw" src="/images/portfolio/mountains/20-autumn-flats.webp" alt="Into the Unknown"></div><p class="plate__tag"><b>Into the Unknown</b><span>Plate 02 · Mountains</span></p></a>
+  <a class="plate plate--tall" href="/prints/drift-and-timber" data-cursor="View print"><div class="plate__frame"><img decoding="async" srcset="/images/portfolio/mountains/04-fog-forest-800.webp 800w, /images/portfolio/mountains/04-fog-forest.webp 1125w" sizes="(max-width: 800px) 85vw, 40vw" src="/images/portfolio/mountains/04-fog-forest.webp" alt="Drift and Timber"></div><p class="plate__tag"><b>Drift and Timber</b><span>Plate 03 · Forests</span></p></a>
+  <a class="plate plate--land" href="/gallery" data-cursor="View"><div class="plate__frame"><img decoding="async" srcset="/images/portfolio/people/02-field-notes-at-sea-800.webp 800w, /images/portfolio/people/02-field-notes-at-sea.webp 1600w" sizes="(max-width: 800px) 85vw, 40vw" src="/images/portfolio/people/02-field-notes-at-sea.webp" alt="Field Notes at Sea"></div><p class="plate__tag"><b>Field Notes at Sea</b><span>Plate 04 · E/V Nautilus</span></p></a>
   <div class="hud hud--bl label"><span>Flight</span><div class="hud__bar"><i></i></div><span>Ox Hollow</span></div>
   <div class="hero__cta"><a class="btn" href="/events">Hire for an event</a><a class="btn btn--ghost" href="/gallery">Walk the gallery</a></div>
   <div class="hero__hint" aria-hidden="true"><span class="label">Scroll</span><i></i></div>
@@ -411,13 +413,13 @@
   <div class="events__body">
     <div class="ev-grid">
       <div class="ev-row">
-        <a class="ev" href="/events" data-cursor="View" style="flex:1.5009 1 0"><div style="aspect-ratio:1600/1066"><img src="/images/portfolio/events/01-gala-conversation.webp" alt="Guests in conversation at a gala" loading="lazy"></div></a>
-        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img src="/images/portfolio/events/115-rooftop-laugh.webp" alt="Guest laughing in golden light on a rooftop overlooking a marina" loading="lazy"></div></a>
-        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img src="/images/portfolio/events/114-mural-leaf-frame.webp" alt="Guest framed by a large leaf in front of a bright orange mural at a company offsite" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.5009 1 0"><div style="aspect-ratio:1600/1066"><img decoding="async" srcset="/images/portfolio/events/01-gala-conversation-800.webp 800w, /images/portfolio/events/01-gala-conversation.webp 1600w" sizes="(max-width: 800px) 92vw, 32vw" src="/images/portfolio/events/01-gala-conversation.webp" alt="Guests in conversation at a gala" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img decoding="async" srcset="/images/portfolio/events/115-rooftop-laugh-800.webp 800w, /images/portfolio/events/115-rooftop-laugh.webp 1600w" sizes="(max-width: 800px) 92vw, 32vw" src="/images/portfolio/events/115-rooftop-laugh.webp" alt="Guest laughing in golden light on a rooftop overlooking a marina" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img decoding="async" srcset="/images/portfolio/events/114-mural-leaf-frame-800.webp 800w, /images/portfolio/events/114-mural-leaf-frame.webp 1600w" sizes="(max-width: 800px) 92vw, 32vw" src="/images/portfolio/events/114-mural-leaf-frame.webp" alt="Guest framed by a large leaf in front of a bright orange mural at a company offsite" loading="lazy"></div></a>
       </div>
       <div class="ev-row">
-        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img src="/images/portfolio/events/62-golden-hour-laugh.webp" alt="Guests laughing together in golden sunset light under palm trees at a company offsite" loading="lazy"></div></a>
-        <a class="ev" href="/events" data-cursor="View" style="flex:1.8670 1 0"><div style="aspect-ratio:1600/857"><img src="/images/portfolio/events/06-offsite-group-photo.webp" alt="A company offsite group photo" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.4995 1 0"><div style="aspect-ratio:1600/1067"><img decoding="async" srcset="/images/portfolio/events/62-golden-hour-laugh-800.webp 800w, /images/portfolio/events/62-golden-hour-laugh.webp 1600w" sizes="(max-width: 800px) 92vw, 32vw" src="/images/portfolio/events/62-golden-hour-laugh.webp" alt="Guests laughing together in golden sunset light under palm trees at a company offsite" loading="lazy"></div></a>
+        <a class="ev" href="/events" data-cursor="View" style="flex:1.8670 1 0"><div style="aspect-ratio:1600/857"><img decoding="async" srcset="/images/portfolio/events/06-offsite-group-photo-800.webp 800w, /images/portfolio/events/06-offsite-group-photo.webp 1600w" sizes="(max-width: 800px) 92vw, 32vw" src="/images/portfolio/events/06-offsite-group-photo.webp" alt="A company offsite group photo" loading="lazy"></div></a>
       </div>
     </div>
     <aside class="events__aside">
@@ -453,11 +455,11 @@
   <div class="topo" aria-hidden="true"></div>
   <div class="head"><h2>Field <em>guide</em></h2><div class="head__rule"></div><span></span></div>
   <div class="index__grid">
-    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img src="/images/about/portrait.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/events" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/events/05-evening-reception.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>Events</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
-    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img src="/media/home/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/about" data-cursor="Open"><div class="entry__frame"><img decoding="async" src="/images/about/portrait.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>About</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>The photographer and documentary filmmaker behind Ox Hollow Media.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/events" data-cursor="Open"><div class="entry__frame"><img decoding="async" srcset="/images/portfolio/events/05-evening-reception-800.webp 800w, /images/portfolio/events/05-evening-reception.webp 1125w" sizes="(max-width: 800px) 45vw, 18vw" src="/images/portfolio/events/05-evening-reception.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>Events</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Event photography and film for Bay Area companies, nonprofits, and life events.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/prints" data-cursor="Open"><div class="entry__frame"><img decoding="async" srcset="/images/mockups/obsidian-palace-framed-oak-800.webp 800w, /images/mockups/obsidian-palace-framed-oak.jpg 1200w" sizes="(max-width: 800px) 45vw, 18vw" src="/images/mockups/obsidian-palace-framed-oak.jpg" alt="" loading="lazy"></div><p class="entry__tag"><b>Prints</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Open-edition archival prints, made to order with free US shipping.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/gallery" data-cursor="Open"><div class="entry__frame"><img decoding="async" srcset="/images/portfolio/mountains/16-cloudbreak-ridge-800.webp 800w, /images/portfolio/mountains/16-cloudbreak-ridge.webp 1600w" sizes="(max-width: 800px) 45vw, 18vw" src="/images/portfolio/mountains/16-cloudbreak-ridge.webp" alt="" loading="lazy"></div><p class="entry__tag"><b>Gallery</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Nature, city, portrait, and event photography.</p></a></div>
+    <div class="entry-wrap"><a class="entry" href="/films" data-cursor="Open"><div class="entry__frame"><img decoding="async" srcset="/media/home/flight-poster-800.webp 800w, /media/home/flight-poster.jpg 1280w" sizes="(max-width: 800px) 45vw, 18vw" src="/media/home/flight-poster.jpg" alt="" loading="lazy"></div><p class="entry__tag"><b>Films</b><svg width="18" height="10" viewBox="0 0 22 12" fill="none" stroke="currentColor"><path d="M0 6h20M15 1l5 5-5 5"/></svg></p><p>Three documentary shorts on conservation, art, and the water’s edge.</p></a></div>
   </div>
 </section>
 
@@ -465,9 +467,9 @@
   <div class="topo" aria-hidden="true"></div>
   <div class="head"><h2>Films</h2><div class="head__rule"></div><span></span></div>
   <div class="films__grid">
-    <div class="film-wrap"><button class="film" data-vimeo="1049186301" data-cursor="Play"><div class="film__frame"><img src="/media/home/ocean-defenders-title.jpg" alt="Ocean Defenders"><span class="film__play"></span></div><p class="plate__tag"><b>Ocean Defenders</b><span>2023 · 9:28</span></p></button></div>
-    <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img src="/images/films/brushstrokes-title.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>2023 · 14:35</span></p></button></div>
-    <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img src="/images/films/fluid-frontier.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>2018 · 2:52</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="1049186301" data-cursor="Play"><div class="film__frame"><img decoding="async" loading="lazy" src="/media/home/ocean-defenders-title.jpg" alt="Ocean Defenders"><span class="film__play"></span></div><p class="plate__tag"><b>Ocean Defenders</b><span>2023 · 9:28</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="846297616" data-cursor="Play"><div class="film__frame"><img decoding="async" loading="lazy" srcset="/images/films/brushstrokes-title-800.webp 800w, /images/films/brushstrokes-title.jpg 1920w" sizes="(max-width: 800px) 92vw, 30vw" src="/images/films/brushstrokes-title.jpg" alt="Brushstrokes for Survival"><span class="film__play"></span></div><p class="plate__tag"><b>Brushstrokes for Survival</b><span>2023 · 14:35</span></p></button></div>
+    <div class="film-wrap"><button class="film" data-vimeo="304798458" data-cursor="Play"><div class="film__frame"><img decoding="async" loading="lazy" srcset="/images/films/fluid-frontier-800.webp 800w, /images/films/fluid-frontier.jpg 1600w" sizes="(max-width: 800px) 92vw, 30vw" src="/images/films/fluid-frontier.jpg" alt="Fluid Frontier"><span class="film__play"></span></div><p class="plate__tag"><b>Fluid Frontier</b><span>2018 · 2:52</span></p></button></div>
   </div>
   <a class="films__all u" href="/films" data-cursor="Open">About the films</a>
 </section>
@@ -476,15 +478,15 @@
   <div class="topo" aria-hidden="true"></div>
   <div class="head"><h2>From the<br><em>field</em></h2><div class="head__rule"></div><p class="strip__note">The gallery's nature frames are for captivating your wall: archival fine-art prints.</p></div>
   <div class="strip__track">
-    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><b>Leviathan's Leap</b><span>Oceans</span></p></a>
-    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><b>Granite Glow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><b>Blue-Footed Display</b><span>Oceans</span></p></a>
-    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><b>Highland Hollow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><b>International Orange</b></p></a>
-    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><b>Shark Shadow</b><span>Oceans</span></p></a>
-    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><b>Salt and Scales</b><span>Oceans</span></p></a>
-    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><b>Rainier Afterglow</b><span>Mountains</span></p></a>
-    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><b>Sea Cave Glow</b></p></a>
+    <a class="strip__item" href="/prints/leviathans-leap" data-cursor="View print"><figure style="aspect-ratio:1600/1065"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/01-humpback-breach-800.webp 800w, /images/portfolio/ocean/01-humpback-breach.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/01-humpback-breach.webp" alt="Leviathan's Leap"></figure><p class="tag"><b>Leviathan's Leap</b><span>Oceans</span></p></a>
+    <a class="strip__item" href="/prints/granite-glow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img decoding="async" loading="lazy" srcset="/images/portfolio/mountains/01-fitz-roy-alpenglow-800.webp 800w, /images/portfolio/mountains/01-fitz-roy-alpenglow.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/mountains/01-fitz-roy-alpenglow.webp" alt="Granite Glow"></figure><p class="tag"><b>Granite Glow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/blue-footed-display" data-cursor="View print"><figure style="aspect-ratio:1600/1066"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/04-blue-footed-booby-800.webp 800w, /images/portfolio/ocean/04-blue-footed-booby.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/04-blue-footed-booby.webp" alt="Blue-Footed Display"></figure><p class="tag"><b>Blue-Footed Display</b><span>Oceans</span></p></a>
+    <a class="strip__item" href="/prints/highland-hollow" data-cursor="View print"><figure style="aspect-ratio:1500/2000"><img decoding="async" loading="lazy" srcset="/images/portfolio/mountains/02-highland-river-800.webp 800w, /images/portfolio/mountains/02-highland-river.webp 1500w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/mountains/02-highland-river.webp" alt="Highland Hollow"></figure><p class="tag"><b>Highland Hollow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/prints/international-orange" data-cursor="View print"><figure style="aspect-ratio:972/2000"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/07-golden-gate-fog-800.webp 800w, /images/portfolio/ocean/07-golden-gate-fog.webp 972w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/07-golden-gate-fog.webp" alt="International Orange"></figure><p class="tag"><b>International Orange</b></p></a>
+    <a class="strip__item" href="/prints/shark-shadow" data-cursor="View print"><figure style="aspect-ratio:1600/1200"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/02-shark-silhouette-800.webp 800w, /images/portfolio/ocean/02-shark-silhouette.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/02-shark-silhouette.webp" alt="Shark Shadow"></figure><p class="tag"><b>Shark Shadow</b><span>Oceans</span></p></a>
+    <a class="strip__item" href="/prints/salt-and-scales" data-cursor="View print"><figure style="aspect-ratio:1600/778"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/12-marine-iguana-800.webp 800w, /images/portfolio/ocean/12-marine-iguana.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/12-marine-iguana.webp" alt="Salt and Scales"></figure><p class="tag"><b>Salt and Scales</b><span>Oceans</span></p></a>
+    <a class="strip__item" href="/prints/rainier-afterglow" data-cursor="View print"><figure style="aspect-ratio:1600/900"><img decoding="async" loading="lazy" srcset="/images/portfolio/mountains/10-rainier-afterglow-800.webp 800w, /images/portfolio/mountains/10-rainier-afterglow.webp 1600w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/mountains/10-rainier-afterglow.webp" alt="Rainier Afterglow"></figure><p class="tag"><b>Rainier Afterglow</b><span>Mountains</span></p></a>
+    <a class="strip__item" href="/gallery" data-cursor="View"><figure style="aspect-ratio:800/1001"><img decoding="async" loading="lazy" srcset="/images/portfolio/ocean/13-sea-cave-glow-800.webp 800w, /images/portfolio/ocean/13-sea-cave-glow.webp 1599w" sizes="(max-width: 800px) 75vw, 34vw" src="/images/portfolio/ocean/13-sea-cave-glow.webp" alt="Sea Cave Glow"></figure><p class="tag"><b>Sea Cave Glow</b></p></a>
     <div class="strip__end"><a class="u" href="/gallery" data-cursor="Open">See the full gallery</a><br><a class="u" href="/prints" data-cursor="Open">Visit the store</a></div>
   </div>
 </section>
@@ -516,6 +518,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
+// hero reel by connection: lite keeps the still frame, phones get the 540p cut, everyone else 720p
+const LITE = document.documentElement.classList.contains('lite');
+(() => {
+  const v = document.querySelector('.hero video');
+  if (LITE) return;
+  v.src = matchMedia('(max-width: 800px)').matches ? '/media/home/reel-540.mp4' : '/media/home/reel.mp4';
+  v.autoplay = true; v.play().catch(() => {});
+})();
 gsap.registerPlugin(ScrollTrigger);
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 scrollTo(0, 0);
@@ -554,7 +564,7 @@ document.fonts.ready.then(() => {
   gsap.set([L, Rt], { width: 0 });
   gsap.set(lIris, { opacity: 0 });
   gsap.set(lMark, { scale: 2.4, transformOrigin: '50% 50%' });
-  gsap.timeline({ defaults: { ease: 'expo.inOut' } })
+  gsap.timeline({ defaults: { ease: 'expo.inOut' } }).timeScale(LITE ? 1.8 : 1)
     .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut', onComplete: () => document.querySelector('.loader__mark .ring').style.strokeDasharray = 'none' })
     .set(lIris, { opacity: 1 }, '-=.15')
     .to(shutter, { g: 0, turn: -.9, duration: .55, ease: 'power3.in', onUpdate: drawShutter }, '<')

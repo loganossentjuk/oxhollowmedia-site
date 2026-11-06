@@ -39,3 +39,24 @@
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
   spy();
 })();
+
+/* Gallery-walk version: arrows to move along each wall. */
+(() => {
+  if (!document.body.classList.contains('pgal')) return;
+  document.querySelectorAll('.pgal .print-grid').forEach((g) => {
+    const nav = document.createElement('div');
+    nav.className = 'wall-nav';
+    nav.innerHTML = '<button type="button" class="wall-btn" data-dir="-1" aria-label="Previous prints">&larr;</button><button type="button" class="wall-btn" data-dir="1" aria-label="Next prints">&rarr;</button>';
+    g.after(nav);
+    const sync = () => {
+      nav.querySelector('[data-dir="-1"]').disabled = g.scrollLeft < 8;
+      nav.querySelector('[data-dir="1"]').disabled = g.scrollLeft > g.scrollWidth - g.clientWidth - 8;
+    };
+    nav.addEventListener('click', (e) => {
+      const b = e.target.closest('.wall-btn'); if (!b) return;
+      g.scrollBy({ left: Number(b.dataset.dir) * g.clientWidth * 0.8, behavior: 'smooth' });
+    });
+    g.addEventListener('scroll', sync, { passive: true });
+    addEventListener('resize', sync); sync();
+  });
+})();

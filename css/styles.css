@@ -2217,3 +2217,44 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .ph-frame { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .pshop .ln-i { transform: none; transition: none; } .ph-frame { transition: none; } }
+
+/* ══ Print shop, gallery-walk version (.pgal): dark walls, spotlights,
+   one long row of frames per collection ══ */
+.pgal { --wall: #1d1b19; }
+.pgal #prints-hero { background: radial-gradient(ellipse 55% 70% at 72% 30%, rgba(255,236,205,0.16), transparent 70%), var(--wall); color: #F4EEE2; }
+.pgal #prints-hero h1 { color: #F4EEE2; }
+.pgal #prints-hero h1 em { color: #E2B08E; }
+.pgal #prints-hero .section-label { color: #E2B08E; }
+.pgal .ph-text p:not(.section-label) { color: rgba(244,238,226,0.75); }
+.pgal .ph-frame { background: #0e0d0c; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.9); }
+.pgal .ph-cap { color: rgba(244,238,226,0.6); }
+.pgal .print-jump-bar { background: rgba(22,21,19,0.88); border-bottom-color: rgba(244,238,226,0.08); }
+.pgal .print-jump-bar .filter-chip { color: rgba(244,238,226,0.75); border-color: rgba(244,238,226,0.22); background: transparent; }
+.pgal .print-jump-bar .filter-chip:hover { color: #F4EEE2; border-color: #E2B08E; }
+.pgal .print-jump-bar .filter-chip.is-on { background: #955A36; border-color: #955A36; color: #F4EEE2; }
+.pgal .print-section { background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255,236,205,0.10), transparent 70%), var(--wall); color: #F4EEE2; padding: 5.5rem 0 4.5rem; border-top: 1px solid rgba(244,238,226,0.06); }
+.pgal .print-section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 3rem; align-items: end; margin-bottom: 3rem; }
+.pgal .print-section-head h2 { color: #F4EEE2; font-size: clamp(3rem, 7vw, 6rem); grid-row: span 2; margin: 0; }
+.pgal .print-section-head p { color: rgba(244,238,226,0.7); max-width: 40ch; }
+.pgal .print-count { color: #E2B08E; }
+/* one long wall */
+.pgal .print-grid.salon-wall { --row-h: min(46vh, 420px); --frame: 9px; --mat: 20px; flex-wrap: nowrap; justify-content: flex-start; align-items: flex-end; gap: 4rem; overflow-x: auto; scroll-snap-type: x proximity; padding: 2rem max(2.5rem, calc((100vw - var(--max-w)) / 2 + 2.5rem)) 1.5rem; margin: 0 calc(50% - 50vw); scrollbar-width: none; }
+.pgal .print-grid.salon-wall::-webkit-scrollbar { display: none; }
+.pgal .salon-wall::after { display: none; }
+.pgal .salon-wall .print-card { flex: 0 0 calc(var(--ar) * var(--row-h) + 2 * (var(--frame) + var(--mat))); max-width: none; scroll-snap-align: center; position: relative; }
+.pgal .salon-wall .print-card::before { content: ""; position: absolute; left: -15%; right: -15%; top: -2.5rem; height: calc(var(--row-h) + 6rem); background: radial-gradient(ellipse 50% 45% at 50% 30%, rgba(255,238,210,0.13), transparent 70%); pointer-events: none; z-index: 0; }
+.pgal .salon-wall .print-mat { position: relative; z-index: 1; background: #F7F3EA; border-color: #0e0d0c; box-shadow: 0 30px 60px -28px rgba(0,0,0,0.95), 0 6px 14px rgba(0,0,0,0.4); }
+.pgal .salon-wall .print-card:hover .print-mat { box-shadow: 0 40px 70px -26px rgba(0,0,0,1), 0 8px 16px rgba(0,0,0,0.45); }
+.pgal .print-card h3 { color: #F4EEE2; position: relative; }
+.pgal .print-spec { color: rgba(244,238,226,0.55); max-width: 34ch; margin-left: auto; margin-right: auto; }
+.pgal .print-cta { color: #E2B08E; }
+.pgal .print-cta:hover { color: #F4EEE2; }
+.wall-nav { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem; }
+.wall-btn { width: 3.2rem; height: 3.2rem; border-radius: 50%; border: 1px solid rgba(244,238,226,0.35); background: transparent; color: #F4EEE2; font-size: 1.1rem; cursor: pointer; transition: background 0.3s, border-color 0.3s, opacity 0.3s; }
+.wall-btn:hover:not(:disabled) { background: #955A36; border-color: #955A36; }
+.wall-btn:disabled { opacity: 0.25; cursor: default; }
+@media (max-width: 900px) {
+  .pgal .print-section-head { grid-template-columns: 1fr; }
+  .pgal .print-section-head h2 { grid-row: auto; }
+  .pgal .print-grid.salon-wall { --row-h: 34vh; --frame: 6px; --mat: 12px; gap: 2rem; padding-left: 1.25rem; padding-right: 1.25rem; }
+}

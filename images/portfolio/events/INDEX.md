@@ -116,4 +116,4 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E105 | award trio stage | Candids | EPD Offsite 2026 |
 | E106 | bar laugh | Candids | Sales Kickoff 2026 Album 1 |
 | E107 | lawn golden pair | Portraits | semgrep offsite 2026 |
-| E108 | ocean defenders trap crew (NP01, unedited original) | Candids | Ocean Defenders Alliance trap cleanup (to-edit folder) |
+| E108 | ocean defenders beach walk (NP03, unedited original) | Candids | Ocean Defenders Alliance trap cleanup (to-edit folder) |

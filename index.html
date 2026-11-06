@@ -113,6 +113,11 @@
   .menu.v-a > a:last-of-type { font-style: italic; color: var(--clay); margin-top: .6rem; }
   .menu.v-a .menu__mark { margin: auto 0 0; font-size: clamp(1.6rem, min(4.4vw, 7vh), 3.6rem); opacity: .55; padding-top: 1.4rem; border-top: 1px solid rgba(244,238,226,.18); width: min(100%, 34rem); }
   .menu.v-a .menu__topo { display: block; color: rgba(244,238,226,.08); }
+  /* D: A, with the wordmark resting on its own terracotta contour */
+  .menu__ridge { display: none; }
+  .menu.v-d .menu__mark { position: relative; border-top: 0; opacity: .8; margin-bottom: 7vh; }
+  .menu.v-d .menu__ridge { display: block; position: absolute; left: 50%; top: calc(100% + .9rem); width: 100vw; height: 3.2rem; transform: translateX(-50%); }
+  .menu.v-d .menu__mark .menu__ridge { width: 100vw; height: 3.2rem; margin: 0; }
   /* B: split, contours, stacked wordmark */
   .menu.v-b .menu__topo { display: block; color: rgba(244,238,226,.1); }
   .menu.v-b > a { width: min(100%, 30rem); }
@@ -379,7 +384,7 @@
   <button class="menu__close" type="button">Close</button>
   <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
 
-  <div class="menu__mark" aria-hidden="true"><span class="mk-line">OX&nbsp;</span><span class="mk-line">H<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>LLOW</span></div>
+  <div class="menu__mark" aria-hidden="true"><span class="mk-line">OX&nbsp;</span><span class="mk-line">H<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>LLOW</span><svg class="menu__ridge" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,34 C180,18 330,46 520,38 S760,22 900,30 S1180,50 1440,26" fill="none" stroke="#B67C56" stroke-width="1.6" stroke-opacity=".75" vector-effect="non-scaling-stroke"/></svg></div>
 </nav>
 <button class="peek-tab label" aria-expanded="false" aria-controls="menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
 
@@ -626,7 +631,7 @@ const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || (m
 // during the opening, the Menu tab drops the full-screen menu over the page; the top bar stays put
 const peekTab = document.querySelector('.peek-tab');
 // menu variant for comparison (?menu=a|b|c)
-const mv = new URLSearchParams(location.search).get('menu'); if (/^[abc]$/.test(mv || '')) menu.classList.add('v-' + mv);
+const mv = new URLSearchParams(location.search).get('menu'); if (/^[abcd]$/.test(mv || '')) menu.classList.add('v-' + mv, ...(mv === 'd' ? ['v-a'] : []));
 const openFull = () => { if (menu.classList.contains('is-open')) return; fromPeek = true; menu.classList.add('is-open'); peekTab.setAttribute('aria-expanded', 'true'); lenis.stop(); };
 const closeFull = () => { menu.classList.remove('is-open'); peekTab.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Menu'; fromPeek = false; lenis.start(); syncNav(); };
 peekTab.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) openFull(); });
@@ -802,7 +807,7 @@ fetch('/images/topo.svg').then(r => r.text()).then(svg => {
   document.querySelectorAll('.topo').forEach(box => {
     box.innerHTML = svg;
     const paths = box.querySelectorAll('path');
-    if (box.closest('.menu')) { const m = paths[Math.floor(paths.length * .46)]; if (m) { m.style.stroke = '#B67C56'; m.style.strokeOpacity = .55; m.style.strokeWidth = 1.6; } return; }
+    if (box.closest('.menu')) { const m = paths[Math.floor(paths.length * .46)]; if (m && !box.closest('.v-d')) { m.style.stroke = '#B67C56'; m.style.strokeOpacity = .55; m.style.strokeWidth = 1.6; } return; }
     paths.forEach(p => { p.setAttribute('pathLength', 1); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; });
     const marked = paths[Math.floor(paths.length * .46)];            // one contour in terracotta, like the marked line on a map
     if (marked) { marked.style.stroke = '#B67C56'; marked.style.strokeOpacity = box.closest('.creed, .index, .strip') ? .6 : .5; marked.style.strokeWidth = 1.6; }

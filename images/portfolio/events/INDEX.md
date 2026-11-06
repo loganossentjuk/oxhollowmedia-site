@@ -117,16 +117,16 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E106 | bar laugh | Candids | Sales Kickoff 2026 Album 1 (removed 2026-11-06: not a standout, Logan) |
 | E107 | lawn golden pair | Portraits | semgrep offsite 2026 |
 | E108 | ocean defenders beach walk (NP03, unedited original) | Candids | Ocean Defenders Alliance trap cleanup (to-edit folder) |
-| E109 | resort pools night | Atmosphere | semgrep offsite 2026 |
+| E109 | resort pools night (not used: Logan said no 2026-11-06; files not shipped) | Atmosphere | semgrep offsite 2026 |
 | E110 | garden leaves red shirt | Candids | 9/19 J&J Party |
-| E111 | keynote spotlight | Candids | semgrep offsite 2026 |
-| E112 | office two smiles | Portraits | Semgrep Office Opening |
+| E111 | keynote spotlight (not used: Logan said no 2026-11-06; files not shipped) | Candids | semgrep offsite 2026 |
+| E112 | office two smiles (not used: Logan said no 2026-11-06; files not shipped) | Portraits | Semgrep Office Opening |
 | E113 | redwoods couple | Portraits | 9/19 J&J Party |
 | E114 | mural leaf frame | Candids | EPD Offsite 2026 |
 | E115 | rooftop laugh | Candids | Leadership Circle |
-| E116 | tablescape shells | Atmosphere | semgrep offsite 2026 |
+| E116 | tablescape shells (not used: Logan said no 2026-11-06; files not shipped) | Atmosphere | semgrep offsite 2026 |
 | E117 | blue wall toast | Portraits | 9/19 J&J Party |
-| E118 | warm light pair | Portraits | Sales Kickoff 2026 Album 1 |
+| E118 | warm light pair (not used: Logan said no 2026-11-06; files not shipped) | Portraits | Sales Kickoff 2026 Album 1 |
 | E119 | outdoor lunch | Candids | EPD Offsite 2026 |
-| E120 | sushi chef | Atmosphere | EPD Offsite 2026 |
+| E120 | sushi chef (not used: Logan said no 2026-11-06; files not shipped) | Atmosphere | EPD Offsite 2026 |
 | E121 | cream suit portrait | Portraits | semgrep offsite 2026 |

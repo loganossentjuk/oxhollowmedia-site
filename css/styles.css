@@ -2179,3 +2179,17 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .flm .film-row:nth-of-type(even) .film-frame { order: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .flm .ln-i { transform: none; transition: none; } }
+
+/* Films (cinematic): full-screen still from Ocean Defenders */
+.films-hero { position: relative; min-height: 86vh; min-height: 86svh; display: flex; align-items: flex-end; overflow: hidden; background: #0f2a26; color: #F4EEE2; }
+.films-hero-media, .films-hero-media picture { position: absolute; inset: 0; }
+.films-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 35%; transform: scale(1.06); animation: abt-push 14s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.films-hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,22,20,0.5) 0%, transparent 22%), linear-gradient(to top, rgba(20,22,20,0.85) 0%, rgba(20,22,20,0.2) 50%, transparent 78%); }
+.films-hero-inner { position: relative; z-index: 1; width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 2.5rem 4.5rem; }
+.films-hero .section-label { color: #E2B08E; }
+.films-hero h1 { color: #F4EEE2; font-size: clamp(3.4rem, 9vw, 8rem); line-height: 0.95; letter-spacing: -0.015em; margin: 0.4rem 0 1.25rem; }
+.films-hero h1 em { color: #E2B08E; }
+.films-hero p:not(.section-label) { color: rgba(244,238,226,0.85); max-width: 46ch; }
+.flm #films-page { padding-top: 5rem; }
+@media (max-width: 600px) { .films-hero-inner { padding: 0 1.25rem 3rem; } }
+@media (prefers-reduced-motion: reduce) { .films-hero-media img { animation: none; transform: none; } }

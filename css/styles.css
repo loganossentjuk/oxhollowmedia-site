@@ -2111,7 +2111,7 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .craft-media { aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--ink); margin-bottom: 1.4rem; }
 .craft-media picture, .craft-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .craft-media img { transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.abt .craft-grid h3 { font-size: clamp(1.9rem, 2.8vw, 2.6rem); margin: 0 0 0.6rem; display: inline-block; align-self: flex-start; background: linear-gradient(var(--clay), var(--clay)) left bottom / 0 2px no-repeat; transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1); padding-bottom: 0.1rem; }
+.abt .craft-grid h3 { font-family: var(--serif); font-weight: 500; letter-spacing: 0; text-transform: none; font-size: clamp(2rem, 3vw, 2.8rem); margin: 0 0 0.6rem; display: inline-block; align-self: flex-start; background: linear-gradient(var(--clay), var(--clay)) left bottom / 0 2px no-repeat; transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1); padding-bottom: 0.1rem; }
 .abt .craft-grid .offer-link:hover .craft-media img { transform: scale(1.03); }
 .abt .craft-grid .offer-link:hover h3 { background-size: 100% 2px; }
 .abt .craft-grid.will-rise .offer-card { opacity: 0; transform: translateY(2.5rem); transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1); }

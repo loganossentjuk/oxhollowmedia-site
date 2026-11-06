@@ -102,6 +102,34 @@
   .menu__close { position: absolute; top: 0; left: 50%; transform: translateX(-50%); padding: .5rem 1rem .6rem; background: none; border: 0; color: inherit;
     font: inherit; font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; cursor: pointer; }
   .menu.is-open ~ .peek-tab { opacity: 0; pointer-events: none; }
+  /* menu variants for comparison: ?menu=a|b|c */
+  .menu__topo, .menu__photo { display: none; }
+  .menu > a, .menu__mark, .menu__close { position: relative; z-index: 1; }
+  .menu__close { position: absolute; }
+  /* A: centred */
+  .menu.v-a { align-items: center; text-align: center; }
+  .menu.v-a > a { border-bottom: 0; padding: .25rem 0; }
+  .menu.v-a > a:hover { padding-left: 0 !important; }
+  .menu.v-a > a:last-of-type { font-style: italic; color: var(--clay); margin-top: .6rem; }
+  .menu.v-a .menu__mark { margin: auto 0 0; font-size: clamp(1.6rem, min(4.4vw, 7vh), 3.6rem); opacity: .55; padding-top: 1.4rem; border-top: 1px solid rgba(244,238,226,.18); width: min(100%, 34rem); }
+  .menu.v-a .menu__topo { display: block; color: rgba(244,238,226,.08); }
+  /* B: split, contours, stacked wordmark */
+  .menu.v-b .menu__topo { display: block; color: rgba(244,238,226,.1); }
+  .menu.v-b > a { width: min(100%, 30rem); }
+  .menu.v-b > a:last-of-type { font-style: italic; }
+  .menu.v-b .menu__mark { position: absolute; right: var(--gutter); bottom: 2.2rem; margin: 0; padding: 0; flex-direction: column; align-items: flex-end;
+    font-size: clamp(3rem, min(10vw, 17vh), 10rem); line-height: .9; opacity: .95; }
+  .menu__mark .mk-line { display: flex; align-items: center; }
+  @media (max-width: 860px) { .menu.v-b .menu__mark { font-size: clamp(3rem, 19vw, 6rem); right: var(--gutter); bottom: 1.6rem; } }
+  /* C: photo panel */
+  @media (min-width: 861px) {
+    .menu.v-c { padding-right: 52vw !important; }
+    .menu.v-c .menu__photo { display: block; position: absolute; top: 0; right: 0; bottom: 0; width: 46vw; background: #1d231f url('/images/portfolio/mountains/04-fog-forest.webp') center 40% / cover no-repeat; }
+    .menu.v-c .menu__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,24,21,.7), rgba(20,24,21,0) 45%); }
+    .menu.v-c .menu__mark { position: absolute; right: 0; width: 46vw; bottom: 2.4rem; margin: 0; padding: 0; font-size: clamp(2rem, min(4.6vw, 8vh), 4.4rem); }
+  }
+  @media (max-width: 860px) { .menu.v-c .menu__photo { display: block; height: 22vh; margin: auto calc(var(--gutter) * -1) 0; background: url('/images/portfolio/mountains/04-fog-forest-800.webp') center 40% / cover; order: 9; } .menu.v-c .menu__mark { margin: 1.2rem 0 0; order: 10; font-size: 2.4rem; } }
+  .menu.v-c > a:last-of-type { font-style: italic; color: var(--clay); }
   .menu__mark { margin: auto 0; padding-top: 1rem; display: flex; align-items: center; justify-content: center; white-space: nowrap;
     font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; line-height: 1; font-size: clamp(2.4rem, min(11vw, 15vh), 9.5rem); color: var(--paper); opacity: .92; }
   .menu__mark svg { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; }
@@ -347,10 +375,11 @@
   <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menu</button>
 </header>
 <nav class="menu" id="menu" aria-label="Main">
+  <div class="topo menu__topo" aria-hidden="true"></div><div class="menu__photo" aria-hidden="true"></div>
   <button class="menu__close" type="button">Close</button>
   <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
 
-  <div class="menu__mark" aria-hidden="true">OX H<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>LLOW</div>
+  <div class="menu__mark" aria-hidden="true"><span class="mk-line">OX&nbsp;</span><span class="mk-line">H<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>LLOW</span></div>
 </nav>
 <button class="peek-tab label" aria-expanded="false" aria-controls="menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
 
@@ -596,6 +625,8 @@ let pastHero = false, peeking = false, fromPeek = false;
 const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || (menu.classList.contains('is-open') && !fromPeek));
 // during the opening, the Menu tab drops the full-screen menu over the page; the top bar stays put
 const peekTab = document.querySelector('.peek-tab');
+// menu variant for comparison (?menu=a|b|c)
+const mv = new URLSearchParams(location.search).get('menu'); if (/^[abc]$/.test(mv || '')) menu.classList.add('v-' + mv);
 const openFull = () => { if (menu.classList.contains('is-open')) return; fromPeek = true; menu.classList.add('is-open'); peekTab.setAttribute('aria-expanded', 'true'); lenis.stop(); };
 const closeFull = () => { menu.classList.remove('is-open'); peekTab.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Menu'; fromPeek = false; lenis.start(); syncNav(); };
 peekTab.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) openFull(); });
@@ -771,6 +802,7 @@ fetch('/images/topo.svg').then(r => r.text()).then(svg => {
   document.querySelectorAll('.topo').forEach(box => {
     box.innerHTML = svg;
     const paths = box.querySelectorAll('path');
+    if (box.closest('.menu')) { const m = paths[Math.floor(paths.length * .46)]; if (m) { m.style.stroke = '#B67C56'; m.style.strokeOpacity = .55; m.style.strokeWidth = 1.6; } return; }
     paths.forEach(p => { p.setAttribute('pathLength', 1); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; });
     const marked = paths[Math.floor(paths.length * .46)];            // one contour in terracotta, like the marked line on a map
     if (marked) { marked.style.stroke = '#B67C56'; marked.style.strokeOpacity = box.closest('.creed, .index, .strip') ? .6 : .5; marked.style.strokeWidth = 1.6; }

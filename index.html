@@ -555,7 +555,7 @@ document.fonts.ready.then(() => {
   gsap.set(lIris, { opacity: 0 });
   gsap.set(lMark, { scale: 2.4, transformOrigin: '50% 50%' });
   gsap.timeline({ defaults: { ease: 'expo.inOut' } })
-    .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut' })
+    .to('.loader__mark .ring', { strokeDashoffset: 0, duration: .75, ease: 'power2.inOut', onComplete: () => document.querySelector('.loader__mark .ring').style.strokeDasharray = 'none' })
     .set(lIris, { opacity: 1 }, '-=.15')
     .to(shutter, { g: 0, turn: -.9, duration: .55, ease: 'power3.in', onUpdate: drawShutter }, '<')
     .set('.loader__mark .moon', { opacity: 1 })

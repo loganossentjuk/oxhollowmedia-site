@@ -101,7 +101,7 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E90 | speaker mic | Candids | EPD Offsite 2026 |
 | E91 | cheek to cheek golden | Portraits | 9/19 J&J Party |
 | E92 | hedge wall pair | Portraits | semgrep offsite 2026 |
-| E93 | holiday couple | Portraits | Semgrep Holiday Party |
+| E93 | holiday couple | Portraits | Semgrep Holiday Party (removed 2026-11-06: not a standout, Logan) |
 | E94 | dusk trio | Portraits | semgrep offsite 2026 |
 | E95 | pink drinks garden | Portraits | 9/19 J&J Party |
 | E96 | stairs laugh | Candids | 9/19 J&J Party |
@@ -114,6 +114,6 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E103 | porch light pair | Portraits | 9/19 J&J Party |
 | E104 | offsite four | Portraits | semgrep offsite 2026 |
 | E105 | award trio stage | Candids | EPD Offsite 2026 |
-| E106 | bar laugh | Candids | Sales Kickoff 2026 Album 1 |
+| E106 | bar laugh | Candids | Sales Kickoff 2026 Album 1 (removed 2026-11-06: not a standout, Logan) |
 | E107 | lawn golden pair | Portraits | semgrep offsite 2026 |
 | E108 | ocean defenders beach walk (NP03, unedited original) | Candids | Ocean Defenders Alliance trap cleanup (to-edit folder) |

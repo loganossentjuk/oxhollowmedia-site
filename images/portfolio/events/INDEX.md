@@ -94,3 +94,25 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E83 | pink drink laugh | Candids | 9/19 J&J Party |
 | E84 | porch light laugh | Candids | 9/19 J&J Party |
 | E85 | friends reaction (not used: below the sharpness/clear-face bar, or a wing-night/goofy shot; removed 2026-11-04 before launch; number stays reserved, files not shipped)  | Candids | 9/19 J&J Party |
+| E86 | garden laugh trio | Candids | 9/19 J&J Party |
+| E87 | sunset lawn pair | Portraits | semgrep offsite 2026 |
+| E88 | balloon arch moment | Candids | Semgrep Office Opening |
+| E89 | golden afternoon smiles | Portraits | semgrep offsite 2026 |
+| E90 | speaker mic | Candids | EPD Offsite 2026 |
+| E91 | cheek to cheek golden | Portraits | 9/19 J&J Party |
+| E92 | hedge wall pair | Portraits | semgrep offsite 2026 |
+| E93 | holiday couple | Portraits | Semgrep Holiday Party |
+| E94 | dusk trio | Portraits | semgrep offsite 2026 |
+| E95 | pink drinks garden | Portraits | 9/19 J&J Party |
+| E96 | stairs laugh | Candids | 9/19 J&J Party |
+| E97 | greenery trio | Portraits | Semgrep Holiday Party |
+| E98 | golden gate awards | Candids | Sales Kickoff 2026 Album 2 |
+| E99 | hotel dusk pair | Portraits | semgrep offsite 2026 |
+| E100 | colleagues smiling | Portraits | Semgrep Office Opening |
+| E101 | ugly sweater duo | Portraits | Semgrep Holiday Party |
+| E102 | peace signs | Portraits | semgrep offsite 2026 |
+| E103 | porch light pair | Portraits | 9/19 J&J Party |
+| E104 | offsite four | Portraits | semgrep offsite 2026 |
+| E105 | award trio stage | Candids | EPD Offsite 2026 |
+| E106 | bar laugh | Candids | Sales Kickoff 2026 Album 1 |
+| E107 | lawn golden pair | Portraits | semgrep offsite 2026 |

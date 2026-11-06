@@ -1931,14 +1931,13 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 /* 3. What I photograph: four photo cards, one per client group */
 .ev #offerings h2 { margin-bottom: 3rem; }
 .aud-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-.aud-card-media { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
+.aud-card-media { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
 .aud-card-media picture, .aud-card-media img { display: block; width: 100%; height: 100%; }
 .aud-card-media img { object-fit: cover; transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
-.aud-card-media::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(to top, rgba(20,19,18,0.72), rgba(20,19,18,0)); pointer-events: none; }
-.aud-card-head { position: absolute; left: 1.1rem; right: 1.1rem; bottom: 1rem; z-index: 1; color: #F3EFE4; }
-.aud-num { display: block; font-family: var(--serif); font-size: 0.95rem; color: #E2B08E; margin-bottom: 0.35rem; }
-.ev .aud-word { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 2.3vw, 2.3rem); line-height: 1.05; color: #F3EFE4; margin: 0; display: inline; background: linear-gradient(var(--clay), var(--clay)) left bottom / 0 2px no-repeat; transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1); padding-bottom: 0.15rem; }
-.aud-card p { margin: 1rem 0 0; color: var(--text-muted); font-size: 0.98rem; }
+.aud-card-head { margin-top: 1.1rem; }
+.aud-num { display: block; font-family: var(--serif); font-size: 0.95rem; color: var(--clay); margin-bottom: 0.35rem; }
+.ev .aud-word { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 2.3vw, 2.3rem); line-height: 1.05; color: var(--text); margin: 0; display: inline; background: linear-gradient(var(--clay), var(--clay)) left bottom / 0 2px no-repeat; transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1); padding-bottom: 0.15rem; }
+.aud-card p { margin: 0.7rem 0 0; color: var(--text-muted); font-size: 0.98rem; }
 .aud-card:hover .aud-card-media img { transform: scale(1.05); }
 .aud-card:hover .aud-word { background-size: 100% 2px; }
 /* Cards rise in one after another */

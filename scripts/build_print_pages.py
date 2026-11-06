@@ -347,6 +347,7 @@ def shop_sections():
     <div class="container">
       <div class="print-section-head">
         <h2>{e(meta['name'])}</h2>
+        <p class="print-count">{len(items)} {'print' if len(items) == 1 else 'prints'}</p>
         <p>{e(meta['intro'])}</p>
       </div>
       <div class="print-grid salon-wall">{cards}

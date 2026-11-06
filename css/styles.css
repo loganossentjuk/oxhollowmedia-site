@@ -2103,3 +2103,4 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .about-hero-media img { animation: none; transform: none; }
   .abt .ln-i { transform: none; transition: none; }
 }
+@media (min-width: 900px) { .about-hero-inner { padding-left: 55%; } }

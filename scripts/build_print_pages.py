@@ -35,7 +35,7 @@ def sizes(p):
     """Standard sizes this print's file can support: long side x PPI must fit in source_px."""
     return [z for z in SIZES
             if max(int(n) for n in z["key"].split("x")) * PPI <= p["source_px"]]
-CSS_VER = re.search(r'styles\.css\?v=(\d+)', (ROOT / "index.html").read_text()).group(1)
+CSS_VER = re.search(r"styles\.css\?v=(\d+)", (ROOT / "about.html").read_text()).group(1)
 
 e = lambda s: html.escape(s, quote=True)
 

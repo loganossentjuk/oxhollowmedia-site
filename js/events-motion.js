@@ -28,63 +28,14 @@
     });
   }
 
-  /* ── 3. What I photograph: scrolling crossfades the photos ──
-     A float position f runs 0..n-1 as the rows pass the reading line; each
-     photo fades in over the one before it, and the drawn value eases toward
-     the target every frame so the swap glides instead of snapping. */
-  const aud = document.querySelector('.aud');
-  if (aud) {
-    const rows = [...aud.querySelectorAll('.aud-row')];
-    const photos = [...aud.querySelectorAll('.aud-photo')];
-    const frame = aud.querySelector('.aud-frame');
-    const n = rows.length;
-    let target = 0, drawn = 0, hover = -1, active = 0, running = false;
-
-    const smooth = (x) => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); };
-    const fromScroll = () => {
-      const stacked = getComputedStyle(aud).gridTemplateColumns.split(' ').length === 1;
-      const line = stacked ? frame.getBoundingClientRect().bottom + 70 : innerHeight * 0.5;
-      const c = rows.map((r) => { const b = r.getBoundingClientRect(); return b.top + Math.min(b.height, 140) / 2; });
-      if (line <= c[0]) return 0;
-      if (line >= c[n - 1]) return n - 1;
-      for (let i = 0; i < n - 1; i++) {
-        if (line <= c[i + 1]) return i + (line - c[i]) / (c[i + 1] - c[i]);
-      }
-      return n - 1;
-    };
-    const draw = () => {
-      photos.forEach((p, i) => {
-        const o = i === 0 ? 1 : smooth((drawn - (i - 1) - 0.15) / 0.7);
-        p.style.opacity = o.toFixed(3);
-        p.style.transform = reduced ? 'none' : 'scale(' + (1 + 0.05 * (1 - o)).toFixed(4) + ')';
-        p.style.zIndex = i;
-      });
-      const now = Math.round(drawn);
-      if (now !== active) {
-        active = now;
-        rows.forEach((r, k) => r.classList.toggle('is-active', k === active));
-      }
-    };
-    const tick = () => {
-      drawn += (target - drawn) * (reduced ? 1 : 0.14);
-      if (Math.abs(target - drawn) < 0.002) { drawn = target; running = false; draw(); return; }
-      draw();
-      requestAnimationFrame(tick);
-    };
-    const kick = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
-    const update = () => { target = hover >= 0 ? hover : fromScroll(); kick(); };
-
-    aud.classList.add('aud-live');
-    rows.forEach((r, i) => {
-      r.addEventListener('mouseenter', () => { hover = i; update(); });
-      r.addEventListener('mouseleave', () => { hover = -1; update(); });
-      r.addEventListener('focusin', () => { hover = i; update(); });
-      r.addEventListener('focusout', () => { hover = -1; update(); });
-    });
-    addEventListener('scroll', () => { if (hover < 0) update(); }, { passive: true });
-    addEventListener('resize', update);
-    target = drawn = fromScroll();
-    draw();
+  /* ── 3. What I photograph: the four cards rise in one after another ── */
+  const cards = document.querySelector('.aud-cards');
+  if (cards && !reduced && hasIO) {
+    cards.classList.add('will-rise');
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { cards.classList.add('is-in'); cio.disconnect(); } });
+    }, { threshold: 0.15 });
+    cio.observe(cards);
   }
 
   /* ── 5. How it works: the line draws as you scroll ── */

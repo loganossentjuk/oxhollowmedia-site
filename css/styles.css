@@ -1928,26 +1928,33 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
 .ev .ln + .ln .ln-i { transition-delay: 0.12s; }
 .ev .rise.is-in .ln-i { transform: none; }
 
-/* 3. What I photograph: big words, photo follows */
+/* 3. What I photograph: four photo cards, one per client group */
 .ev #offerings h2 { margin-bottom: 3rem; }
-.aud { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: start; }
-.aud-frame { position: sticky; top: calc(var(--nav-h) + 2rem); aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
-.aud-photo { position: absolute; inset: 0; opacity: 0; transform: scale(1.07); transition: opacity 0.7s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
-.aud-photo.is-active { opacity: 1; transform: none; }
-.aud-live .aud-photo { transition: none; will-change: opacity, transform; }
-.aud-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.aud-list { list-style: none; border-top: 1px solid var(--border); }
-.aud-row { display: grid; grid-template-columns: 3rem 1fr; column-gap: 0.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
-.aud-num { font-family: var(--serif); font-size: 1.05rem; color: var(--text-muted); padding-top: 0.9rem; transition: color 0.4s; }
-.ev .aud-word { font-family: var(--serif); font-weight: 500; font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -0.01em; color: var(--text-muted); margin: 0 0 0.75rem; transition: color 0.4s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); outline-offset: 6px; }
-.aud-row p { grid-column: 2; max-width: 46ch; margin: 0; color: var(--text-muted); }
-.aud-row.is-active .aud-word { color: var(--text); transform: translateX(0.5rem); }
-.aud-row.is-active .aud-num { color: var(--clay); }
+.aud-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.aud-card-media { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
+.aud-card-media picture, .aud-card-media img { display: block; width: 100%; height: 100%; }
+.aud-card-media img { object-fit: cover; transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+.aud-card-media::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(to top, rgba(20,19,18,0.72), rgba(20,19,18,0)); pointer-events: none; }
+.aud-card-head { position: absolute; left: 1.1rem; right: 1.1rem; bottom: 1rem; z-index: 1; color: #F3EFE4; }
+.aud-num { display: block; font-family: var(--serif); font-size: 0.95rem; color: #E2B08E; margin-bottom: 0.35rem; }
+.ev .aud-word { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 2.3vw, 2.3rem); line-height: 1.05; color: #F3EFE4; margin: 0; display: inline; background: linear-gradient(var(--clay), var(--clay)) left bottom / 0 2px no-repeat; transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1); padding-bottom: 0.15rem; }
+.aud-card p { margin: 1rem 0 0; color: var(--text-muted); font-size: 0.98rem; }
+.aud-card:hover .aud-card-media img { transform: scale(1.05); }
+.aud-card:hover .aud-word { background-size: 100% 2px; }
+/* Cards rise in one after another */
+.aud-cards.will-rise .aud-card { opacity: 0; transform: translateY(2.5rem); transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1); transition-delay: calc(var(--d) * 0.12s); }
+.aud-cards.will-rise.is-in .aud-card { opacity: 1; transform: none; }
 @media (max-width: 900px) {
-  .aud { grid-template-columns: 1fr; gap: 1.5rem; }
-  .aud-frame { top: calc(var(--nav-h) + 0.75rem); z-index: 2; box-shadow: 0 -0.75rem 0 0 var(--bg), 0 10px 24px -14px rgba(35,33,32,0.5); }
-  .aud-row { grid-template-columns: 2.25rem 1fr; padding: 1.4rem 0; }
-  .aud-row p { grid-column: 1 / -1; }
+  .aud-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .aud-cards { display: flex; gap: 0.9rem; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -20px; padding: 0 20px 0.5rem; scrollbar-width: none; }
+  .aud-cards::-webkit-scrollbar { display: none; }
+  .aud-card { flex: 0 0 78%; scroll-snap-align: start; }
+  .aud-cards.will-rise .aud-card { transition-delay: 0s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aud-card-media img, .aud-word { transition: none; }
 }
 
 /* 5. How it works: big numbers on a terracotta line */

@@ -2052,3 +2052,11 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .collection-card.is-in .cc-title, .collection-card.is-in .cc-count { animation: none; }
   .line-link { transition: none; }
 }
+
+/* Events: headshots grid */
+.ev #headshots { padding: 4rem 0 5rem; }
+.ev #headshots h2 { margin-bottom: 2rem; }
+.hs-grid { list-style: none; margin: 0 auto; padding: 0; max-width: 900px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.hs-item { aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
+.hs-item picture, .hs-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 600px) { .hs-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; } }

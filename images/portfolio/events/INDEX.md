@@ -130,3 +130,15 @@ Visitors never see these names. Refer to a photo by its number (for example "swa
 | E119 | outdoor lunch | Candids | EPD Offsite 2026 |
 | E120 | sushi chef (not used: Logan said no 2026-11-06; files not shipped) | Atmosphere | EPD Offsite 2026 |
 | E121 | cream suit portrait | Portraits | semgrep offsite 2026 |
+| E122 | vw bus table | Atmosphere | semgrep offsite 2026 |
+| E123 | ping pong net | Atmosphere | EPD Offsite 2026 |
+| E124 | paddle and ball | Atmosphere | EPD Offsite 2026 |
+| E125 | headshot (so-402) | Portraits | semgrep offsite 2026 |
+| E126 | headshot (so-408) | Portraits | semgrep offsite 2026 |
+| E127 | headshot (so-416) | Portraits | semgrep offsite 2026 |
+| E128 | headshot (so-420) | Portraits | semgrep offsite 2026 |
+| E129 | headshot (so-424) | Portraits | semgrep offsite 2026 |
+| E130 | headshot (so-428) | Portraits | semgrep offsite 2026 |
+| E131 | headshot (so-436) | Portraits | semgrep offsite 2026 |
+| E132 | headshot (so-439) | Portraits | semgrep offsite 2026 |
+| E133 | headshot (so-449) | Portraits | semgrep offsite 2026 |

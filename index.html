@@ -102,7 +102,11 @@
   .menu__close { position: absolute; top: 0; left: 50%; transform: translateX(-50%); padding: .5rem 1rem .6rem; background: none; border: 0; color: inherit;
     font: inherit; font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; cursor: pointer; }
   .menu.is-open ~ .peek-tab { opacity: 0; pointer-events: none; }
-  @media (min-width: 861px) { .menu { justify-content: center; padding: 4rem 12vw; } .menu a { font-size: clamp(2.8rem, 5.2vw, 4.6rem); transition: color .3s, padding-left .45s cubic-bezier(.2,.8,.2,1); } .menu a:hover { color: var(--clay); padding-left: 1.2rem; } }
+  .menu__mark { margin-top: auto; padding-top: 2rem; display: flex; align-items: center; justify-content: center; white-space: nowrap;
+    font-family: var(--serif); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; line-height: 1; font-size: clamp(2.4rem, 11vw, 9.5rem); color: var(--paper); opacity: .92; }
+  .menu__mark svg { width: .74em; height: .74em; flex: none; margin: 0 .12em 0 .02em; }
+  .menu a:last-of-type { margin-bottom: 1rem; }
+  @media (min-width: 861px) { .menu { justify-content: flex-start; padding: 5.5rem 12vw 3.5rem; } .menu a { font-size: clamp(2.8rem, 5.2vw, 4.6rem); transition: color .3s, padding-left .45s cubic-bezier(.2,.8,.2,1); } .menu a:hover { color: var(--clay); padding-left: 1.2rem; } }
 
   /* 1. hero: the headline is a window onto the drone footage */
   .hero, .flight, .strip { height: 100vh; height: 100svh; }
@@ -345,6 +349,8 @@
 <nav class="menu" id="menu" aria-label="Main">
   <button class="menu__close" type="button">Close</button>
   <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
+
+  <div class="menu__mark" aria-hidden="true">OX H<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4.7"/><path d="M27.25,17.1 A40,40 0 0 0 27.25,82.9 Z" fill="currentColor"/></svg>LLOW</div>
 </nav>
 <button class="peek-tab label" aria-expanded="false" aria-controls="menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
 

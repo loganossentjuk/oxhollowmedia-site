@@ -85,3 +85,6 @@ Pull from Metricool, Etsy Stats (Logan's page), Shopify (read-only) and site ana
 | Events | Enquiries with "How did you hear about me?" = Instagram | Instagram's job for Plan A | — |
 
 **Never in the report:** customer personal data (BUSINESS.md).
+
+| plugins-playbook.md | Which Small Business / Brand Voice / Marketing plugin skills to use, what each needs, what existing assets feed them | manager, 2026-11-04 |
+| insurance-options.md | General liability options and prices for event work; recommendation Full Frame Annual | manager, 2026-11-05 |

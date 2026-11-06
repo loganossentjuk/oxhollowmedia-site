@@ -6,6 +6,8 @@ A living knowledge base. Everything the team and Logan learn about growing an au
 
 - `plan-2026-11.md`: the live post-by-post plan; builders, asks, what Logan owes.
 
+- `voice-profile.md`: how Logan writes email. Event quote template and comparables live in Dropbox/Career/OxHollow/Invoices/quote-template.md (kept out of the repo).
+
 ## Map
 
 | File | What it holds | Who updates it |

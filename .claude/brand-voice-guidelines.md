@@ -91,11 +91,16 @@ Against polished wildlife accounts: we show the process and the misses. Against 
 
 ### Avoid
 - journey (as a noun), vibes, content, grind, blessed, epic, insane, stunning, breathtaking, capture (as a noun)
+- From the Zeely brand DNA (Oct 2026): elevate, transform your space, statement piece, captivating, must-have, game-changer, wow, gallery-quality, dull, uninspiring, blank walls, limited edition, museum quality, bestseller; headlines that shame the viewer, ALL CAPS, countdowns, fake urgency
+- Closing every post with a question (Fable review, Aug 2026): vary the ask
 - "aspiring", "wannabe", "dream job"
 - "I went / I earned / I dared" as brand lines
 
 ### Never
 - Employer or agency names on the science side; client quotes or results we do not have; invented trip details; "Nat Geo photographer" as a claim.
+
+## Visual don'ts (from Zeely brand DNA)
+- Never alter, extend or regenerate a photograph; only products and formats we sell; moon-mark lockup only, never the old mountain logo; no badges, arrows, starbursts or SALE banners; calm rooms, natural light, one print per wall.
 
 ## Language That Works
 - "Here is where the camera has taken me." (as a Reel hook, not a tagline)
@@ -148,4 +153,5 @@ Against polished wildlife accounts: we show the process and the misses. Against 
 ## Appendix: Sources
 - oxhollowmedia.com: index.html, about.html, work.html (main, 2026-11-04)
 - team/brain/identity.md, audience.md, strategy.md, learnings.md, plan-2026-11.md
+- Dropbox/Career/OxHollow: Instagram Drafts/Zeely Brand DNA fields.md, Zeely brief.md, StoreLaunch/OxHollow_FableReview.md, OxHollow_Instagram_Content.md
 - Logan, manager chat 2026-11-02 to 11-04 (taglines, voice-line choice, "arrogant" correction, 16:9 no-text rule, asks)

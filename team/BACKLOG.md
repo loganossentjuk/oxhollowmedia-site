@@ -48,7 +48,7 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - [ ] **(Logan)** Client quote for the About/events pages (in progress)
 - [ ] **(Logan)** Send the other abstracts (like Obsidian Palace) for the series (repeat in every report's Needs-you list until ticked)
 - [ ] **(Logan)** Shopify: archive `mural-sundown-acrylic-1` (live at Gelato default prices), old combined `sun-on-the-water`, `marsh-at-dusk`, `cloudbreak-ridge`; decide on the 26 plain Canvas listings
-- [ ] **(Logan)** Look into general liability insurance. Venues often ask for a certificate of insurance; quotes run about $350/yr for $1M. Started 2026-10-09.
+- [ ] **(Logan)** Buy general liability insurance: options compared in team/knowledge/insurance-options.md (recommend Full Frame Annual, $129/yr). Started 2026-10-09; researched 2026-11-05.
 
 ## Shop
 - [x] Batch 2 framed listings priced and published (2026-10-09)
@@ -99,3 +99,9 @@ The manager picks from the top of each section and keeps the list ranked. Ideas 
 - One offline print channel: café wall / holiday market / interior designer (shop-manager to shortlist Bay Area options).
 - Scripts to promote from scratchpad: make_pins.py (Pinterest framed pin), tt_detail_reveal.py (guess/reveal).
 - Read Nat Geo Society early-career grant rules; log as a 'climb' series if Logan wants that path.
+
+## Parked 2026-11-04
+- **(Logan)** Branch `brand-lines` (home vision block ends with the voice line; About carries "Closer to nature, one frame at a time."; guidelines open questions resolved) is PARKED: Logan is reworking pages and wants those finalised before any content changes. Do not merge; do not touch site copy until he says the rework is done. Preview: https://brand-lines.oxhollowmedia-site.pages.dev
+
+- **(Logan)** Pick the rate card: see Dropbox/Career/OxHollow/Invoices/quote-template.md (legacy client rate vs quoted rate; minimum booking; half/full-day). Added 2026-11-04.
+- **(Logan)** Approve the speed-to-lead scheduled task (ox-speed-to-lead, weekdays 8-18 every 2 h): the auto-mode classifier refused to create it from the team session. Added 2026-11-04.

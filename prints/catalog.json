@@ -44,10 +44,6 @@
       "name": "Galápagos",
       "intro": "Five prints from one trip to the Galápagos Islands in 2019: a blue-footed booby, a sea lion, a marine iguana, a shark and a humpback."
     },
-    "wildlife": {
-      "name": "Wildlife",
-      "intro": "The creatures that call these places home."
-    },
     "botanical": {
       "name": "Botanical",
       "intro": "Close work: petals, glass, and the market stall. The quiet end of the collection."
@@ -2720,157 +2716,6 @@
       }
     },
     {
-      "slug": "divine-duality",
-      "title": "Divine Duality",
-      "category": "abstracts",
-      "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
-      "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
-      "width": 1600,
-      "height": 1280,
-      "alt": "Teal water against oxidised copper-red rock",
-      "lede": "Shot alongside Obsidian Palace at the Mermaid's Pools on Oahu, Hawaii, from inside a sea cave as the waves came in.",
-      "story": "",
-      "shape": "5:4",
-      "source_px": 4094,
-      "master": "PrintMasters/gelato-ready/HighResolution/copper-and-teal.tif",
-      "shopify": {
-        "paper": {
-          "16x24": {
-            "variant": "67650956787954",
-            "price": 55
-          },
-          "8x12": {
-            "variant": "67650956722418",
-            "price": 35
-          },
-          "12x18": {
-            "variant": "67650956755186",
-            "price": 50
-          }
-        },
-        "framed": {
-          "16x24": {
-            "price": 205,
-            "frames": {
-              "black": "67765451096306",
-              "white": "67765451030770",
-              "oak": "67765451063538"
-            }
-          },
-          "8x12": {
-            "price": 115,
-            "frames": {
-              "white": "67765450834162",
-              "oak": "67765450866930",
-              "black": "67765450899698"
-            }
-          },
-          "12x18": {
-            "price": 155,
-            "frames": {
-              "white": "67765450932466",
-              "oak": "67765450965234",
-              "black": "67765450998002"
-            }
-          }
-        },
-        "framed_canvas": {
-          "16x24": {
-            "price": 195,
-            "frames": {
-              "black": "67664311091442",
-              "oak": "67664311025906",
-              "walnut": "67664311058674"
-            }
-          },
-          "8x12": {
-            "price": 125,
-            "frames": {
-              "oak": "67664310829298",
-              "walnut": "67664310862066",
-              "black": "67664310894834"
-            }
-          },
-          "12x18": {
-            "price": 150,
-            "frames": {
-              "oak": "67664310927602",
-              "walnut": "67664310960370",
-              "black": "67664310993138"
-            }
-          }
-        }
-      },
-      "shopify_products": {
-        "paper": "15419983462642",
-        "framed": "15439567978738",
-        "framed_canvas": "15422374215922"
-      },
-      "previews": {
-        "framed": {
-          "white": "/images/mockups/divine-duality-framed-white.jpg",
-          "oak": "/images/mockups/divine-duality-framed-oak.jpg",
-          "black": "/images/mockups/divine-duality-framed-black.jpg"
-        },
-        "framed_canvas": {
-          "oak": "/images/mockups/divine-duality-framed-canvas-oak.jpg",
-          "walnut": "/images/mockups/divine-duality-framed-canvas-walnut.jpg",
-          "black": "/images/mockups/divine-duality-framed-canvas-black.jpg"
-        }
-      },
-      "retired_products": {
-        "framed": [
-          "15422370480370"
-        ]
-      },
-      "etsy": {
-        "framed": {
-          "8x12": {
-            "price": 129,
-            "frames": {
-              "white": "35587013552",
-              "oak": "35587013550",
-              "black": "35205994685"
-            }
-          },
-          "12x18": {
-            "price": 175,
-            "frames": {
-              "white": "35587013548",
-              "oak": "35205994683",
-              "black": "35587013546"
-            }
-          },
-          "16x24": {
-            "price": 229,
-            "frames": {
-              "white": "35587013544",
-              "oak": "35587013542",
-              "black": "35205994681"
-            }
-          }
-        },
-        "paper": {
-          "8x12": {
-            "variant": "35587494030",
-            "price": 39
-          },
-          "12x18": {
-            "variant": "35206510891",
-            "price": 55
-          },
-          "16x24": {
-            "variant": "35206510889",
-            "price": 65
-          }
-        }
-      },
-      "etsy_products": {
-        "framed": "4601973389",
-        "paper": "4601993229"
-      }
-    },
-    {
       "slug": "obsidian-palace",
       "title": "Obsidian Palace",
       "category": "abstracts",
@@ -3051,6 +2896,157 @@
       "etsy_products": {
         "paper": "4601977078",
         "framed": "4601977817"
+      }
+    },
+    {
+      "slug": "divine-duality",
+      "title": "Divine Duality",
+      "category": "abstracts",
+      "image": "/images/portfolio/ocean/15-copper-and-teal.jpg",
+      "webp": "/images/portfolio/ocean/15-copper-and-teal.webp",
+      "width": 1600,
+      "height": 1280,
+      "alt": "Teal water against oxidised copper-red rock",
+      "lede": "Shot alongside Obsidian Palace at the Mermaid's Pools on Oahu, Hawaii, from inside a sea cave as the waves came in.",
+      "story": "",
+      "shape": "5:4",
+      "source_px": 4094,
+      "master": "PrintMasters/gelato-ready/HighResolution/copper-and-teal.tif",
+      "shopify": {
+        "paper": {
+          "16x24": {
+            "variant": "67650956787954",
+            "price": 55
+          },
+          "8x12": {
+            "variant": "67650956722418",
+            "price": 35
+          },
+          "12x18": {
+            "variant": "67650956755186",
+            "price": 50
+          }
+        },
+        "framed": {
+          "16x24": {
+            "price": 205,
+            "frames": {
+              "black": "67765451096306",
+              "white": "67765451030770",
+              "oak": "67765451063538"
+            }
+          },
+          "8x12": {
+            "price": 115,
+            "frames": {
+              "white": "67765450834162",
+              "oak": "67765450866930",
+              "black": "67765450899698"
+            }
+          },
+          "12x18": {
+            "price": 155,
+            "frames": {
+              "white": "67765450932466",
+              "oak": "67765450965234",
+              "black": "67765450998002"
+            }
+          }
+        },
+        "framed_canvas": {
+          "16x24": {
+            "price": 195,
+            "frames": {
+              "black": "67664311091442",
+              "oak": "67664311025906",
+              "walnut": "67664311058674"
+            }
+          },
+          "8x12": {
+            "price": 125,
+            "frames": {
+              "oak": "67664310829298",
+              "walnut": "67664310862066",
+              "black": "67664310894834"
+            }
+          },
+          "12x18": {
+            "price": 150,
+            "frames": {
+              "oak": "67664310927602",
+              "walnut": "67664310960370",
+              "black": "67664310993138"
+            }
+          }
+        }
+      },
+      "shopify_products": {
+        "paper": "15419983462642",
+        "framed": "15439567978738",
+        "framed_canvas": "15422374215922"
+      },
+      "previews": {
+        "framed": {
+          "white": "/images/mockups/divine-duality-framed-white.jpg",
+          "oak": "/images/mockups/divine-duality-framed-oak.jpg",
+          "black": "/images/mockups/divine-duality-framed-black.jpg"
+        },
+        "framed_canvas": {
+          "oak": "/images/mockups/divine-duality-framed-canvas-oak.jpg",
+          "walnut": "/images/mockups/divine-duality-framed-canvas-walnut.jpg",
+          "black": "/images/mockups/divine-duality-framed-canvas-black.jpg"
+        }
+      },
+      "retired_products": {
+        "framed": [
+          "15422370480370"
+        ]
+      },
+      "etsy": {
+        "framed": {
+          "8x12": {
+            "price": 129,
+            "frames": {
+              "white": "35587013552",
+              "oak": "35587013550",
+              "black": "35205994685"
+            }
+          },
+          "12x18": {
+            "price": 175,
+            "frames": {
+              "white": "35587013548",
+              "oak": "35205994683",
+              "black": "35587013546"
+            }
+          },
+          "16x24": {
+            "price": 229,
+            "frames": {
+              "white": "35587013544",
+              "oak": "35587013542",
+              "black": "35205994681"
+            }
+          }
+        },
+        "paper": {
+          "8x12": {
+            "variant": "35587494030",
+            "price": 39
+          },
+          "12x18": {
+            "variant": "35206510891",
+            "price": 55
+          },
+          "16x24": {
+            "variant": "35206510889",
+            "price": 65
+          }
+        }
+      },
+      "etsy_products": {
+        "framed": "4601973389",
+        "paper": "4601993229"
       }
     },
     {
@@ -3780,7 +3776,7 @@
     {
       "slug": "drifting-at-dusk",
       "title": "Drifting at Dusk",
-      "category": "wildlife",
+      "category": "ocean",
       "image": "/images/portfolio/ocean/09-dusk-waterfowl.jpg",
       "webp": "/images/portfolio/ocean/09-dusk-waterfowl.webp",
       "width": 1600,

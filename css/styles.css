@@ -2258,3 +2258,6 @@ body.page-gallery #nav.scrolled .nav-links a.nav-cta:focus-visible { background:
   .pgal .print-section-head h2 { grid-row: auto; }
   .pgal .print-grid.salon-wall { --row-h: 34vh; --frame: 6px; --mat: 12px; gap: 2rem; padding-left: 1.25rem; padding-right: 1.25rem; }
 }
+/* contour lines for continuity: the hero wall and every other collection wall */
+.pgal #prints-hero, .pgal .print-section:nth-of-type(even) { position: relative; isolation: isolate; }
+.pgal #prints-hero::before, .pgal .print-section:nth-of-type(even)::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url("../images/topo-marked.svg?v=1") center / cover no-repeat; opacity: 0.22; pointer-events: none; }

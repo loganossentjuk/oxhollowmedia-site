@@ -99,6 +99,15 @@
   .peek-tab { position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 74; padding: .5rem 1rem .6rem; color: #fff;
     mix-blend-mode: difference; transition: opacity .4s; }
   .nav.is-shown ~ .peek-tab { opacity: 0; pointer-events: none; }
+  .peek__menu { position: fixed; top: 2.3rem; left: 50%; z-index: 76; min-width: 12.5rem; display: flex; flex-direction: column; align-items: center;
+    padding: .9rem 1.6rem 1rem; background: rgba(28,30,27,.62); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: 1px solid rgba(244,238,226,.14); border-radius: 2px; color: var(--paper);
+    opacity: 0; visibility: hidden; transform: translate(-50%, -8px); transition: opacity .35s, transform .45s cubic-bezier(.2,.8,.2,1), visibility 0s .45s; }
+  .peek__menu.is-open { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .35s, transform .45s cubic-bezier(.2,.8,.2,1); }
+  .peek__menu a { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; line-height: 1; padding: .45rem 0; transition: color .3s; }
+  .peek__menu a:hover { color: var(--clay); }
+  .peek__menu a:last-child { margin-top: .5rem; padding-top: .8rem; border-top: 1px solid rgba(244,238,226,.18); font-style: italic; }
+  .nav.is-shown ~ .peek__menu { opacity: 0; visibility: hidden; pointer-events: none; }
 
   /* 1. hero: the headline is a window onto the drone footage */
   .hero, .flight, .strip { height: 100vh; height: 100svh; }
@@ -341,7 +350,8 @@
 <nav class="menu" id="menu" aria-label="Main">
   <a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a>
 </nav>
-<button class="peek-tab label" aria-label="Show menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
+<button class="peek-tab label" aria-expanded="false" aria-controls="peek-menu" style="background:none;border:0;font:inherit;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase">Menu</button>
+<nav class="peek__menu" id="peek-menu" aria-label="Main"><a href="/about">About</a><a href="/events">Events</a><a href="/prints">Prints</a><a href="/gallery">Gallery</a><a href="/films">Films</a><a href="/contact">Contact</a></nav>
 
 <section class="hero" aria-label="Dare to see. Curving coastlines, mile-high mountains, foggy forests, and the people in between">
   <video poster="/media/home/reel-poster.jpg" muted loop playsinline preload="none"></video>
@@ -583,8 +593,16 @@ document.fonts.ready.then(() => {
 const nav = document.getElementById('nav'), menu = document.getElementById('menu'), toggle = nav.querySelector('.nav__toggle');
 let pastHero = false, peeking = false;
 const syncNav = () => nav.classList.toggle('is-shown', pastHero || peeking || menu.classList.contains('is-open'));
-addEventListener('mousemove', e => { const p = e.clientY < 70 || (peeking && e.clientY < 90); if (p !== peeking) { peeking = p; syncNav(); } });
-document.querySelector('.peek-tab').addEventListener('click', () => { peeking = true; syncNav(); });
+// during the opening, the Menu tab drops a small menu down under itself; the top bar stays put
+const peekTab = document.querySelector('.peek-tab'), peekMenu = document.getElementById('peek-menu');
+let peekT;
+const peekOpen = () => { clearTimeout(peekT); peekMenu.classList.add('is-open'); peekTab.setAttribute('aria-expanded', 'true'); };
+const peekClose = (now) => { clearTimeout(peekT); peekT = setTimeout(() => { peekMenu.classList.remove('is-open'); peekTab.setAttribute('aria-expanded', 'false'); }, now ? 0 : 220); };
+[peekTab, peekMenu].forEach(el => { el.addEventListener('mouseenter', peekOpen); el.addEventListener('mouseleave', () => peekClose()); });
+peekTab.addEventListener('click', () => peekMenu.classList.contains('is-open') ? peekClose(true) : peekOpen());
+peekMenu.addEventListener('focusin', peekOpen); peekMenu.addEventListener('focusout', () => peekClose());
+addEventListener('keydown', e => { if (e.key === 'Escape') peekClose(true); });
+document.addEventListener('click', e => { if (!e.target.closest('.peek-tab, .peek__menu')) peekClose(true); });
 toggle.addEventListener('click', () => { const open = menu.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', open); toggle.textContent = open ? 'Close' : 'Menu'; open ? lenis.stop() : lenis.start(); syncNav(); });
 
 // 1. hero: zoom into the hole of the "o" in "to"

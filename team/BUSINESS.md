@@ -26,6 +26,10 @@ Instagram: @oxhollowmedia. Public email: hello@oxhollowmedia.com (forwards to th
 - **Insurance:** Logan has no liability insurance yet and is looking into it. Never claim to be insured.
 - **Second shooter:** +50% of the package rate (+$500 Session, +$1,000 Day). Already included in The Production.
 
+- **The Short Shoot:** up to 2 hours on site, from $600 (added 2026-11-07). It's on /events alongside The Session ($1,000, up to 4 hours) and The Day ($2,000, up to 8 hours).
+- **Rate plan:** keep $250/hour for now. Move to about $300/hour (Session from $1,200, Day from $2,400) once there are 3–5 paid corporate shoots and 2 client testimonials, or when Logan is booked 3+ weeks out. Overtime stays $250/hour.
+- **First-shoot pricing (2026-11-06 client, via a contact at the company):** billed as The Session at $1,000 with a first-shoot discount, total $750. When a first-time discount is used, show the full rate and the discount as separate lines, so the regular rate is set.
+
 **Pricing and contact**
 - **Price tier:** "$$". Logan wants to be affordable.
 - **Phone number:** not in structured data.
